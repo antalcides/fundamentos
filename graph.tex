@@ -1,0 +1,17 @@
+\documentclass{article}
+
+\usepackage{tikz}
+\usetikzlibrary{automata}
+
+\begin{document}
+
+\begin{tikzpicture}
+  \node[state,initial by arrow, initial text={}] (s)  at ( 0, 0) {$b_{0}b_{1}$};
+  \path[->] (s) edge[loop above] node {1} ();
+  \path[->] (s) edge node[above] {0} +(1,0);
+  \node(a) at ( 2, 0) {$a_1$};
+  \path[->](s)--(a) ;
+\end{tikzpicture}
+
+\end{document}
+

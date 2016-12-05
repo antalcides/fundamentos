@@ -1,0 +1,29 @@
+\documentclass[border=2mm]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,fit,calc,positioning}
+\usepackage{scalefnt}
+
+\begin{document}
+
+\begin{tikzpicture}
+[my shape/.style={rectangle split, rectangle split parts=#1, draw}]
+\tikzset{input/.style={}}
+
+\draw (0,0)--++(0,-10cm);
+\draw (4,0)--++(0,-10cm);
+
+\draw[->] (0,-.5) coordinate (a) -- 
+node [near end,sloped, above=2mm,my shape=2, rectangle split horizontal] (n3) {0\nodepart{two}$m_0$}
+++(4,-.5) coordinate (b);
+
+\node [left =1mm of a,my shape=2, rectangle split horizontal] (n1) {0\nodepart{two}$m_0$};
+
+\node [right=1mm of b, my shape=2, rectangle split horizontal] (n2)  {0\nodepart{two}$m_0$};
+
+\draw[->,red] (b) -- ++(-4,-.5);
+
+\path (a)--node[cross out,draw=red]{} (b);
+
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,431 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\begin_preamble
+\input{preamble2}
+\input{composicion-codigo}
+\usepackage{subcaption}
+\usepackage{fancyvrb}
+\usetikzlibrary{fit,shapes}
+\usepackage{mivenndiagram}
+\usepackage{tikz-cd}% diagramas commutativos
+\usetikzlibrary{matrix}
+\usepackage{ amsmath,amsfonts,amssymb}
+\usepackage{fixltx2e}
+\usepackage{mathtools,theoremref}
+\MakeRobust{\eqref}
+\mathtoolsset{showonlyrefs=true,showmanualtags=true}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=1,
+ breaklinks=false,pdfborder={0 0 0},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false}
+ \newsavebox{\LstBox}
+ %\graphicspath{ {./img/} }
+ \makeatletter
+\def\input@path{{./}{./build/}{./styles/}}
+\makeatother
+ \graphicspath{{./}{./img/}{./build/}}
+ \renewcommand{\baselinestretch}{1.5}
+\raggedbottom %para que no distibuya los espacios verticales en una hoja
+\setcounter{problema}{1}
+%\usepackage[spanish]{babel}
+ 
+
+%}
+\newcommand{\triangulo}{\tikz \filldraw[scale=0.5,fill=teal!20] (0,0) -- ++(60:1) -- ++(-60:1) -- cycle ;
+                 }
+                 \newcommand{\linea}[1]{\overleftrightarrow{#1}}
+\newcommand{\degre}{\ensuremath{^\circ}}
+\newenvironment{prueba}[2]{\renewcommand{\arraystretch}{1.06}
+\vskip 5pt  {
+ \colorbox{teal!30}{\color{white}{Prueba:}}
+ }\vskip 5pt
+$ %
+\begin{tabular}
+[t]{ll||l}\hline
+\multicolumn{2}{c||}{\mbox{Afirmaciones}} & \mbox{Razones}\\\hline\hline
+1. & 
+#1 
+& \multicolumn{1}{|l}{\mbox{Dado}}\\
+#2
+\end{tabular}
+\ \ \ $ 
+\vskip 5pt}{\hfill  \raggedright{ \rule{0.5em}{0.5em} }\vskip 5pt }
+\newcommand{\problemas}[1]
+{
+\section{Problemas}
+\peque
+\begin{changemargin}{23.2cm}{18cm}{0cm}{0cm}{0cm}
+\begin{multicols}{2}
+ \noindent #1
+\end{multicols}
+\end{changemargin}
+{\setlength{\parindent}{0mm}\color{ptctitle}\rule{\linewidth}{1mm}}
+}
+\setlength\columnsep{40pt} 
+%\renewcommand\columnseprulecolor{\color{ptctitle}}
+\def\spanishtablename{Tabla}
+\setlength{\tabcolsep}{8pt}
+%\setlength\columnseprule{2pt} %linea entrecolumnas por defecto 0pt
+\def\firstcircle{(0,0) circle (1.5cm)} 
+\def\secondcircle{(45:2cm) circle (1.5cm)}
+\def\thirdcircle{(0:2cm) circle (1.5cm)} 
+\def\rectangulo{(-2,-2) rectangle (4,3.6)}
+\def\fourcircle{(1.1,1) circle (1.5cm)}
+\def\fivecircle{(-2,1) circle (1.5cm)}
+\def\rect{(-4,-2) rectangle (4,3.6)} 
+\def\sixcircle{(-2.3,1) circle (0.8cm)} 
+\def\sevencircle{(1.1,1) circle (0.8cm)}
+\def\myref#1{\thesection .\ref{#1}}
+\end_preamble
+\options svgnames,x11names,x11names,HTML,twoside
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding utf8x
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 0
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+frontmatter
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagestyle
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+empty
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagecolor{ptcbackground}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{center} 
+\backslash
+vspace*{5cm} 
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+Huge{Fundamentos De Matemáticas}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+[5pt]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+Large{UNIVERSIDAD DEL ATLÁNTICO}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\backslash
+Large{FACULTAD DE CIENCIAS BÁSICAS}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ 
+\backslash
+Large{DEPARTAMENTO DE MATEMÁTICAS} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+ Esp.
+ 
+\backslash
+Large{ANTALCIDES OLIVO} 
+\backslash
+end{center} 
+\backslash
+vfill
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+myclearpage
+\backslash
+clearpage
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+myclearpage
+\backslash
+relax
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+mainmatter
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagestyle
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+headings
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+nocite{*}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "logica.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "conjuntos.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "numeros.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

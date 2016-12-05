@@ -1,0 +1,552 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass book
+\begin_preamble
+\input{preamble2}
+\input{composicion-codigo}
+\usepackage{fancyvrb}
+\usepackage{cancel}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=1,
+ breaklinks=false,pdfborder={0 0 0},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false}
+ \newsavebox{\LstBox}
+ %\graphicspath{ {./img/} }
+ \makeatletter
+\def\input@path{{./}{./build/}}
+\makeatother
+ \graphicspath{{./}{./img/}{./build/}}
+ \renewcommand{\baselinestretch}{1.5}
+\raggedbottom %para que no distibuya los espacios verticales en una hoja
+\setcounter{problema}{1}
+\usepackage[spanish]{babel}
+ 
+\addto\captionsspanish{
+\def\tablename{Tabla}
+\def\listtablename{\'Indice de tablas}
+}
+\newcommand{\triangulo}{\tikz \filldraw[scale=0.5,fill=teal!20] (0,0) -- ++(60:1) -- ++(-60:1) -- cycle ;
+                 }
+                 \newcommand{\linea}[1]{\overleftrightarrow{#1}}
+\newcommand{\degre}{\ensuremath{^\circ}}
+\newenvironment{prueba}[2]{\renewcommand{\arraystretch}{1.06}
+\vskip 5pt  {
+ \colorbox{teal!30}{\color{white}{Prueba:}}
+ }\vskip 5pt
+$ %
+\begin{tabular}
+[t]{ll||l}\hline
+\multicolumn{2}{c||}{\mbox{Afirmaciones}} & \mbox{Razones}\\\hline\hline
+1. & 
+#1 
+& \multicolumn{1}{|l}{\mbox{Dado}}\\
+#2
+\end{tabular}
+\ \ \ $ 
+\vskip 5pt}{\hfill  \raggedright{ \rule{0.5em}{0.5em} }\vskip 5pt }
+\newcommand{\problemas}[1]
+{
+\section{Problemas}
+\peque
+\begin{changemargin}{22.9cm}{18cm}{0cm}{0cm}{0cm}
+\begin{multicols}{2}
+ \noindent #1
+\end{multicols}
+\end{changemargin}
+{\setlength{\parindent}{0mm}\color{ptctitle}\rule{\linewidth}{1mm}}
+}
+\setlength\columnsep{40pt} 
+%\renewcommand\columnseprulecolor{\color{ptctitle}}
+\setlength{\tabcolsep}{8pt}
+%\setlength\columnseprule{2pt} %linea entrecolumnas por defecto 0pt
+\end_preamble
+\options svgnames,x11names,x11names,HTML
+\use_default_options false
+\master fundamentos-matematica.lyx
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8x
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 0
+\use_mathdots 0
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle headings
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagecolor{white} 
+\backslash
+mainmatter 
+\backslash
+pagestyle{headings} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Ecuaciones lineales simultaneas y matrices
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+chaptertoc  
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{competencias}  
+\backslash
+begin{lista}  
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Interpreta correctamente las proposiciones.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Clasifica correctamente las condiciones.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Argumenta los diferentes métodos de demostración.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lista} 
+\backslash
+end{competencias}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{logros}  
+\backslash
+begin{lista}  
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Identifica proposiciones.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Diferencia entre demostraciones directas e indirectas.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Argumenta los distintos tipos de demostración indirectas.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lista} 
+\backslash
+end{logros}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Section
+Relaciones entre conjuntos
+\end_layout
+
+\begin_layout Section
+Representación de conjuntos
+\end_layout
+
+\begin_layout Section
+Operaciones entre conjuntos
+\end_layout
+
+\begin_layout Section
+Propiedades básicas de los conjuntos
+\end_layout
+
+\begin_layout Section
+Sistemas numéricos y sus propiedades.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:problema"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+problemas
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+En los incisos del 
+\series bold
+a)
+\series default
+ al 
+\series bold
+e)
+\series default
+, escriba las proposiciones como implicaciones, luego decida si es falso
+ o verdadero 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\series bold
+Hipótesis
+\series default
+ 
+\begin_inset Formula $p:$
+\end_inset
+
+ Un hombre vive en Barranquilla, 
+\series bold
+Conclusión
+\series default
+ 
+\begin_inset Formula $q:$
+\end_inset
+
+ Vive en Antioquía.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Hipótesis
+\series default
+ 
+\begin_inset Formula $p:$
+\end_inset
+
+ Algunas manzanas son rojas, 
+\series bold
+Conclusión
+\series default
+ 
+\begin_inset Formula $q:$
+\end_inset
+
+ Los caballos tienen cuatro patas.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Hipótesis
+\series default
+ 
+\begin_inset Formula $p:$
+\end_inset
+
+ Dos rectas se intersecan, 
+\series bold
+Conclusión
+\series default
+ 
+\begin_inset Formula $q:$
+\end_inset
+
+ Las dos rectas no son paralelas.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Conclusión
+\series default
+ 
+\begin_inset Formula $q:$
+\end_inset
+
+ Dos rectas son perpendiculares, 
+\series bold
+Hipótesis
+\series default
+ 
+\begin_inset Formula $p:$
+\end_inset
+
+ Las rectas se intersecan.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Hipótesis
+\series default
+ 
+\begin_inset Formula $p:$
+\end_inset
+
+ Dos ángulos tienen la misma medida, 
+\series bold
+Conclusión
+\series default
+ 
+\begin_inset Formula $q:$
+\end_inset
+
+ Los ángulos son congruentes.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Analice la siguiente conjetura
+\series default
+: Si un triángulo tiene un ángulo recto, tiene dos lados congruentes.
+
+\series bold
+ Comentario:
+\series default
+ Para demostrar que la conjetura es falsa, debe presentar un contraejemplo,
+ para explicar que es verdadera use las definiciones.
+ 
+\end_layout
+
+\begin_layout Standard
+				 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

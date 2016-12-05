@@ -1,0 +1,42 @@
+\begin{figure}[H]
+\begin{center}
+\definecolor{qqwuqq}{rgb}{0,0.39,0}
+\definecolor{qqwwtt}{rgb}{0,0.4,0.2}
+\definecolor{ffqqqq}{rgb}{1,0,0}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\begin{tikzpicture}[scale=0.8,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(0.55,-3.02) rectangle (8.94,4.92);
+\draw[color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (6.46,0.36) -- (6.08,0.36) -- (6.08,-0.02) -- (6.46,-0.02) -- cycle; 
+\draw [line width=1.2pt,color=qqqqff] (1.14,-0.02)-- (6.46,-0.02);
+\draw [line width=1.2pt,color=ffqqqq] (6.46,-0.02) circle (1.89cm);
+\draw [->,line width=1.2pt,dotted,color=ffqqqq] (6.46,-0.02) -- (7.36,-1.68);
+\draw (6.51,-0.6) node[anchor=north west] {$r$};
+\draw [shift={(4.57,-0.02)},line width=1.2pt,dash pattern=on 1pt off 1pt,color=ffqqqq]  plot[domain=0.73:1.36,variable=\t]({1*1.89*cos(\t r)+0*1.89*sin(\t r)},{0*1.89*cos(\t r)+1*1.89*sin(\t r)});
+\draw [->,line width=1.2pt,dotted,color=ffqqqq] (4.57,-0.02) -- (5.98,1.24);
+\draw (5.02,1.15) node[anchor=north west] {$r$};
+\draw [shift={(5.52,1.62)},line width=1.2pt,dash pattern=on 1pt off 1pt,color=ffqqqq]  plot[domain=-0.3:0.32,variable=\t]({1*1.89*cos(\t r)+0*1.89*sin(\t r)},{0*1.89*cos(\t r)+1*1.89*sin(\t r)});
+\draw (7.59,0.6) node[anchor=north west] {$r$};
+\draw [shift={(5.52,1.62)},line width=1.2pt,dash pattern=on 1pt off 1pt,color=ffqqqq]  plot[domain=0.8:1.32,variable=\t]({1*1.89*cos(\t r)+0*1.89*sin(\t r)},{0*1.89*cos(\t r)+1*1.89*sin(\t r)});
+\draw [shift={(7.4,1.62)},line width=1.2pt,dash pattern=on 1pt off 1pt,color=ffqqqq]  plot[domain=1.85:2.34,variable=\t]({1*1.89*cos(\t r)+0*1.89*sin(\t r)},{0*1.89*cos(\t r)+1*1.89*sin(\t r)});
+\draw (6.46,-2.85) -- (6.46,4.67);
+\draw [->] (6.46,3.25) -- (6.46,4.64);
+\draw [->] (6.46,-0.02) -- (6.46,-2.87);
+\begin{scriptsize}
+\fill [color=qqqqff] (1.14,-0.02) circle (1.5pt);
+\draw[color=qqqqff] (1.29,0.21) node {$A$};
+\fill [color=qqqqff] (6.46,-0.02) circle (1.5pt);
+\draw[color=qqqqff] (6.83,0.02) node {$B$};
+\fill [color=qqqqff] (7.36,-1.68) circle (1.5pt);
+\draw[color=qqqqff] (7.45,-1.87) node {$C$};
+\fill [color=qqwwtt] (4.57,-0.02) circle (1.5pt);
+\draw[color=qqwwtt] (4.37,0.21) node {$D$};
+\fill [color=qqwwtt] (5.52,1.62) circle (1.5pt);
+\draw[color=qqwwtt] (5.47,1.36) node {$I$};
+\fill [color=qqwwtt] (7.4,1.62) circle (1.5pt);
+\draw[color=qqwwtt] (7.59,1.77) node {$L$};
+\fill [color=qqwwtt] (6.46,3.25) circle (1.5pt);
+\draw[color=qqwwtt] (6.87,3.28) node {$R$};
+\draw[color=qqwuqq] (6.19,0.55) node {$90\textrm{\degre}$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center} \caption{Problema 1.Etapa 5 } \label{fig10} \end{figure}

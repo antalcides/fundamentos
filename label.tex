@@ -1,0 +1,41 @@
+\documentclass{article}
+\makeatletter
+\newcommand{\seclabel}[1]{{%
+  \label{#1}%
+  \edef\@currentlabel{\thesection}%
+  \label{sec:#1}}}
+\makeatother
+
+\begin{document}
+\section{A}
+
+\begin{enumerate}
+\item X
+\item\seclabel{mylabel} Y
+\item Z
+\end{enumerate}
+
+This is a reference to item~\ref{mylabel} in section~\ref{sec:mylabel}
+on page~\pageref{mylabel}.
+
+\end{document}\documentclass{article}
+\makeatletter
+\newcommand{\seclabel}[1]{{%
+  \label{#1}%
+  \edef\@currentlabel{\thesection}%
+  \label{sec:#1}}}
+\makeatother
+
+\begin{document}
+\section{A}
+
+\begin{enumerate}
+\item X
+\item\seclabel{mylabel} Y
+\item Z
+\end{enumerate}
+
+This is a reference to item~\ref{mylabel} in section~\ref{sec:mylabel}
+on page~\pageref{mylabel}.
+
+\end{document}
