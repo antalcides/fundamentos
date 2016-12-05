@@ -1,0 +1,402 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{reales5.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Representación Geométrica} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Racionales e Irracionales} \\ \\ \\
+\end{tabular}
+\docLink{reales7.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 1}}  {\large
+{\color{ azulc} LOS NUMEROS REALES}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 1.6. }}
+{\normalsize {\color{naranja} Los Enteros}}
+
+\newline
+
+En esta sección vamos a mencionar algunas de las propiedades más
+importantes del conjunto $\mathbb{Z}$ de los números enteros.
+Recordamos que $\mathbb{Z}$ esta formado por la unión del conjunto
+de los enteros positivos $1,2,3,4,\cdots$, el conjunto de los
+enteros negativos $-1,-2,-3,-4,\cdots$ y el $0$.
+
+\bigskip
+
+Muchos de los resultados sobre números enteros son consecuencia
+del siguiente resultado:
+
+\bigskip
+
+\textbf{Principio de buena ordenación}. \textit{Todo subconjunto
+no vacío $S$ de números naturales posee un mínimo. Es decir,
+existe $m\in S$ tal que $m\leq s$ para todo $s\in S$.}
+
+\bigskip
+
+Una primera consecuencia de este principio es el resultado
+conocido como algoritmo de la división.
+
+\bigskip
+
+\textbf{Algoritmo de la división}. \textit{Si $a$ y $b$ son
+enteros con $b>0$, entonces existen enteros únicos $q$ y $r$ tales
+que}
+
+\bigskip
+
+\[a=bq+r\quad\text{\textit{con $0\leq r<b$}}\]
+
+\bigskip
+
+Los números $q$ y $r$ se llaman respectivamente, el
+\textit{cociente} y el \textit{residuo} obtenidos al dividir $a$
+por $b$.
+
+\bigskip
+
+El siguiente diagrama ilustra la demostración del resultado
+anterior
+
+\bigskip
+
+\[
+\includegraphics{img/img7.gif}
+\]
+
+\bigskip
+
+Si $a$ es un múltiplo de $b$, es decir si $a=qb$ para algún entero
+$q$, tomamos $r=0$. Si $a$ no es múltiplo de $b$, tomamos $r=a-qb$
+donde $qb$ es el menor múltiplo de $b$ que se encuentra a la
+izquierda del número $a$. Observamos que de esta forma $0\leq
+r<b$.
+
+\bigskip
+
+\textbf{Ejemplo 1.5.} \quad
+\begin{enumerate}
+\item [a)] Si $b=5$, podemos escribir:
+\[34=5\cdot 6+4\qquad 127=5\cdot 25+2\qquad -34=5\cdot(-7)+1\qquad 30=5\cdot
+6+0\]
+
+\bigskip
+
+\item [b)] Si $b=32$, tenemos
+
+\[276=32\cdot 8+20\qquad\qquad -276=32\cdot (-9)+12\]
+
+\end{enumerate}
+
+\bigskip
+
+En virtud de este algoritmo, con $b=2$, podemos representar todo
+entero $n$ en alguna de las formas
+
+\bigskip
+
+\[n=2q \qquad\qquad\text{ o }\qquad \qquad n=2q+1\]
+
+\bigskip
+
+donde $q$ es un entero. Si $n$ se puede representar en la primera
+forma, de\-ci\-mos que $n$ es un entero \textit{par} y cuando se
+puede representar en la segunda forma, de\-ci\-mos que es un
+entero \textit{impar}. Los enteros pares son por lo
+tanto:\linebreak $\cdots,-6,-4,-2,0,2,4,6,\cdots$ y los enteros
+impares son $\cdots,-7,-5,-3,-1$, \linebreak$1,3,5,7,\cdots$.
+
+\bigskip
+
+\textbf{Definición 1.6.1. } Sean $a$ y $b$ números enteros con
+$a\neq 0$. Decimos que $a$ \textit{divide} a $b$ si existe un
+entero $c$ tal que $b=ac$. En tal caso escribimos $a\mid b$.
+Cuando $a$ divide a $b$ decimos también $a$ es un \textit{divisor}
+de $b$, o que $a$ es un \textit{factor} de $b$, ó que $b$ es un
+\textit{múltiplo} de $a$.
+
+\bigskip
+
+Para indicar que $a$ no divide a $b$ escribimos $a\chi b$.
+
+\bigskip
+
+\textbf{Definición 1.6.2. } Un entero positivo $p>1$ se llama un
+número \textit{primo} si tiene exactamente dos divisores positivos
+a saber, $1$ y $p$. Un entero positivo mayor que 1 que no es primo
+se llama \textit{compuesto}.
+
+\bigskip
+
+Los primeros números primos son $2,3,5,7,11,13,17$ y $19$.
+
+\bigskip
+
+Sin duda alguna el siguiente resultado es la propiedad más
+importante que tiene el conjunto de los enteros positivos.
+
+\bigskip
+
+\textbf{Teorema 1.6.1. (Teorema fundamental de la Aritmética)}
+Todo entero $n>1$ ó es primo, ó se puede factorizar como producto
+de primos. Esta factorización es única salvo por el orden de los
+factores.
+
+\bigskip
+
+De acuerdo al teorema anterior, si $n$ es un entero mayor que $1$,
+lo podemos escribir en la forma
+
+\bigskip
+
+\[n=p_{1}p_{2}\cdots p_{r}\]
+
+\bigskip
+
+donde $p_{1},p_{2},\cdots,p_{r}$ son primos no necesariamente
+diferentes. Agrupando los primos iguales en la factorización de
+$n$, lo podemos escribir en la forma
+
+\bigskip
+
+\[n=p_{1}^{n_{1}}p_{2}^{n_{2}}\cdots p_{t}^{n_{t}}\]
+
+\bigskip
+
+donde los primos son ahora diferente y los exponentes son enteros
+positivos. Esta última representación de $n$ se llama la
+representación \textit{natural} o \textit{canónica} de $n$.
+
+\bigskip
+
+\textbf{Ejemplo 1.6. } \quad
+\begin{align*}
+72=2\cdot 2\cdot 2\cdot 3\cdot 3 \quad &\text{o} \quad
+72=2^{3}\cdot 3^{2}\\
+3900=2\cdot 2\cdot 3\cdot 5\cdot 5\cdot 13 \quad &\text{o} \quad
+3900=2^{2}\cdot 3\cdot 5^{2}\cdot 13
+\end{align*}
+
+\bigskip
+
+Cuando trabajamos con varios enteros es deseable utilizar los
+mismos números primos para representarlos y en tal caso aceptamos
+en la representación canónica de un entero, exponentes cero. Así
+por ejemplo escribimos
+
+\bigskip
+
+\[60=2^{2}\cdot 3\cdot 5,\qquad 45=2^{0}\cdot 3^{2}\cdot 5,\qquad 25=2^{0}\cdot 3^{0}\cdot
+5^{2},\]
+
+\bigskip
+
+donde en todos los casos hemos utilizados los mismos primos
+$2,3,5$.
+
+\bigskip
+
+Si la representación canónica de un entero es
+$n=p_{1}^{n_{1}}p_{2}^{n_{2}}\cdots p_{t}^{n_{t}}$, entonces los
+divisores positivos de $n$ tienen la forma
+
+\bigskip
+
+\[d=p_{1}^{d_{1}}p_{2}^{d_{2}}\cdots p_{t}^{d_{t}}\]
+
+\bigskip
+
+donde $0\leq d_{i}\leq n_{i}$ para cada $i=1,2,\cdots,t$.
+
+\bigskip
+
+\textbf{Ejemplo 1.7. } Los divisores positivos de $72=2^{3}\cdot
+3^{2}$ son
+
+\bigskip
+
+\begin{align*}
+2^{0}\cdot 3^{0}&\qquad 2^{1}\cdot 3^{0}\qquad 2^{2}\cdot
+3^{0}\qquad 2^{3}\cdot 3^{0}\\
+2^{0}\cdot 3^{1}&\qquad 2^{1}\cdot 3^{1}\qquad 2^{2}\cdot
+3^{1}\qquad 2^{3}\cdot 3^{1}\\
+2^{0}\cdot 3^{2}&\qquad 2^{1}\cdot 3^{2}\qquad 2^{2}\cdot
+3^{2}\qquad 2^{3}\cdot 3^{2}
+\end{align*}
+
+\bigskip
+
+Si $d\mid a$ y $d\mid b$, decimos que $d$ es un \textit{divisor
+común}de $a$ y $b$. Cuando $a$ y $b$ son enteros no ambos iguales
+a cero, el mayor de los divisores comunes positivos de $a$ y $b$
+se llama el \textit{máximo común divisor} de $a$ y $b$ y lo
+representamos por la notación $(a,b)$.
+
+\bigskip
+
+Puesto que, si $d\mid a$ entonces $d\mid (-a)$, se observa que
+
+\bigskip
+
+\[(a,b)=(a,-b)=(-a,b)=(-a,-b)\]
+
+\bigskip
+
+Como ejemplo tenemos
+
+\bigskip
+
+\[(36,48)=12,\qquad \qquad (-60,75)=15,\qquad \qquad (-10,-98)=2\]
+
+\bigskip
+
+Si $a\mid m$ y $b\mid m$, decimos que $m$ es un \textit{múltiplo
+común} de $a$ y $b$. Cuando $a$ y $b$ son enteros no nulos, el
+menor de los múltiplos comunes positivos de $a$ y $b$, que existe
+por el principio de buena ordenación, se llama el \textit{mínimo
+común múltiplo} de $a$ y $b$ y lo representamos por la notación
+$[a,b]$. En este caso también tenemos
+
+\bigskip
+
+\[[a,b]=[a,-b]=[-a,b]=[-a,-b]\]
+
+\bigskip
+
+Por ejemplo,
+
+\bigskip
+
+\[[36,48]=144,\qquad \qquad \lbrack 60,-75]=300,\qquad \qquad \lbrack
+-10,-98]=490\]
+
+\bigskip
+
+Es conveniente observar que en matemáticas utilizamos a veces la
+misma notación para representar conceptos diferentes, pero el
+contexto nos indica con claridad el significado deseado. Por
+ejemplo, si trabajamos con el orden en los números reales, $(a,b)$
+representa un intervalo abierto, pero si trabajamos con números
+enteros, $(a,b)$ representa el máximo común divisor de dos
+enteros.
+
+\bigskip
+
+Una de las consecuencias del Teorema fundamental de la Aritmética
+es que nos proporciona un método rápido para hallar el máximo
+común divisor y el mínimo común múltiplo de dos enteros.
+Concretamente tenemos el siguiente resultado:
+
+\bigskip
+
+Si $a=p_{1}^{a_{1}}p_{2}^{a_{2}}\cdots p_{t}^{a_{t}}$ y
+$b=p_{1}^{b_{1}}p_{2}^{b_{2}}\cdots p_{t}^{b_{t}}$ con los $p_{i}$
+primos y $a_{i}\geq 0$, $b_{i}\geq 0$ para todo $i$. Entonces,
+
+\bigskip
+
+\[(a,b)=p_{1}^{r_{1}}p_{2}^{r_{2}}\cdots p_{t}^{r_{t}}\quad\text{y} \quad
+[a,b]=p_{1}^{s_{1}}p_{2}^{s_{2}}\cdots p_{t}^{s_{t}}\]
+
+\bigskip
+
+donde $r_{i}=\min \{a_{i},b_{i}\}$ y $s_{i}=\max \{a_{i},b_{i}\}$.
+
+\bigskip
+
+\textbf{Ejemplo 1.8. } Como $360=2^{3}\cdot 3^{2}\cdot 5$ y
+$196=2^{2}\cdot 7^{2}$.
+
+\bigskip
+
+Entonces,
+
+\bigskip
+
+\[(360,196)=2^{2}\cdot 3^0 \cdot 5^{0}\cdot 7^{0}=4 \quad \text{y} \quad [360,196]=2^{3}\cdot 3^2\cdot 5^{1}\cdot
+7^{2}=17662\]
+
+\bigskip
+
+Los resultados anteriores se extienden de manera similar a
+cualquier número finito de enteros.
+
+\bigskip
+
+\textbf{Ejemplo 1.9. } \qquad
+\begin{align*}
+1800&=2^{3}\cdot 3^{2}\cdot 5^{2}\\
+1890&=2\cdot 3^{3}\cdot 5\cdot 7\\
+980&=2^{2}\cdot 5\cdot 7^{2}
+\end{align*}
+
+\bigskip
+
+entonces,
+
+\bigskip
+
+\begin{align*}
+(1800,1890,980)&=2^{1}\cdot 3^{0}\cdot 5^{1}\cdot 7^{0}=10 \\
+
+[1800,1890,980]&=2^{3}\cdot 3^{3}\cdot 5^{2}\cdot 7^{2}=264600
+\end{align*}
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{reales5.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Representación Geométrica} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Racionales e Irracionales} \\ \\ \\
+\end{tabular}
+\docLink{reales7.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

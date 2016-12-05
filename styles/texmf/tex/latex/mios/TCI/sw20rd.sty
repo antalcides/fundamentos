@@ -1,0 +1,28 @@
+% sw20rd {Articl: Revista Dyna}{}{rd}{sw20rd}
+\typeout{TCI Document Style `sw20rd' <10 Ap 2001>.}
+%
+\input teorsupp.tex
+% The following lines occurs in rd.sty:
+%   \def\author{\@ifnextchar [{\@authortwo}{\@authorone}}
+%   \def\@authortwo[#1]#2{\gdef\@author{#2}\gdef\@shortauthor{#1}}
+%   \def\@authorone#1{\gdef\@author{#1}\gdef\@shortauthor{#1}}
+% The problem is that this alters the definition of the LaTeX command
+% \author - it now has an optional parameter which SciWord doesn't 
+% know about.  We'll add a \shortauthor macro so that SciWord users
+% can set the value of \@shortauthor.   
+
+\def\shortauthor#1{\def\@shortauthor{#1}}
+\def\shorttitle#1{\def\@shorttitle{#1}}
+
+% The problem remains that SciWord will not correctly save a file
+% that uses the nonstandard syntax. 
+
+
+\newdimen\dummy
+\dummy=\oddsidemargin
+\addtolength{\dummy}{72pt}
+\marginparwidth=.675\dummy
+\marginparsep=.1\dummy
+
+
+%\def\keyphrases#1{\begin{keywords} #1 \end{keywords}}

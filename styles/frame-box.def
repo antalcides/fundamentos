@@ -1,0 +1,58 @@
+\newcommand{\thmbox}[1]{
+ %\setkeys{boxedtheorem}{#1}
+  \tikzstyle{thmbox} = [rectangle, rounded corners, draw=\boxcolor, fill=\background, inner sep=15pt, drop shadow={fill=\shad, opacity=.5}]%
+  \tikzstyle{fancytitle} =[fill=\titlebackground, text=\titlecolor, rectangle, rounded corners, draw= \titleboxcolor]%
+  \noindent%
+  \begin{tikzpicture}%
+    \node [thmbox] (box){%
+           \vbox{\noindent\textit{#1}}%
+          };%
+  \node[fancytitle, right=10pt] at (box.north west) {\textbf{\title}%
+    };%
+    \noindent \node[fancytitle,inner sep=1ex, left=10pt] at (box.north east){\sffamily  \ \labelbox};
+    \end{tikzpicture}}
+    \newcommand{\th@mbox}[1]{
+    \tikzstyle{thmbox} = [rectangle, rounded corners, draw=\boxcolor, fill=\background, inner sep=15pt, drop shadow={fill=\shad, opacity=.5}]%
+  \tikzstyle{fancytitle} =[fill=\titlebackground, text=\titlecolor, rectangle, rounded corners, draw= \titleboxcolor]%
+  \noindent%
+  \begin{tikzpicture}%
+    \node [thmbox] (box){%
+           \vbox{\noindent\textit{#1}}%
+          };%
+  \node[fancytitle, right=10pt] at (box.north west) {\textbf{\title %\thetheorem
+  }%
+    };%
+    \noindent \node[fancytitle,inner sep=1ex, left=10pt] at (box.north east){\sffamily  \labelbox\ (Continuaci\'on)};
+    \end{tikzpicture}}
+    \newenvironment{frame-box}[1]{%
+    \setkeys{boxedtheorem}{#1}
+    \fboxrule=\FrameRule 
+\fboxsep=\FrameSep 
+  \def\FrameCommand##1{\thmbox{##1}}%
+  \def\FirstFrameCommand##1{\thmbox{#1}{##1}}%
+  \def\LastFrameCommand##1{\th@mbox{##1}}%
+  \def\MidFrameCommand##1{\th@mbox{##1}}%
+  \vskip\baselineskip
+  \MakeFramed {\FrameRestore}
+  %\noindent\tikz\node[inner sep=1ex, draw=black!20,fill=blue!20, 
+         % anchor=north east, overlay] at (0em, 2em) {\sffamily#2};
+                   }%
+{\endMakeFramed}
+%%%%%%%%%%%%%%%%%%teorema%%%%%%%%%%%%%
+\newcommand\thm@etiq[1][]{#1}
+  \newcommand{\framedtheorem}[3][]{%
+  \newcounter{#2}[section]
+            \def\nombre@frame{#3}
+                         \newenvironment{#2}[2][]{%
+           \refstepcounter{#2}
+            \def\titulo@frame{\nombre@frame\ \thesection .\csname the#2\endcsname}
+                  \begin{marco}{#1, title=\titulo@frame  ,labelbox=\thm@etiq{##2}
+                  }      
+      
+      }%
+      {%
+      \end{marco}
+      }
+
+ 
+  }

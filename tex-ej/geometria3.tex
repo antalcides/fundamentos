@@ -1,0 +1,210 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{geometria2.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color {darkgray} {\small Algo de Historia}} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color {darkgray} {\small Polígonos}} \\ \\ \\
+\end{tabular}
+\docLink{geometria4.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 3}}  {\large
+{\color{ azulc} MODULO DE GEOMETRÍA}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 3.1. }}
+{\normalsize {\color{naranja} Introducción}}
+
+\newline
+
+Siguiendo la tradición iniciada por un gran matemático alemán
+David Hibert (1862-1943), consideraremos en este escrito el punto,
+la recta y el plano como términos indefinidos. Las nociones
+intuitivas y sus posibles descripciones nos permitirán usarlos en
+la reconstrucción de algunos elementos de la geo\-me\-tría
+euclidiana, que muy seguramente ya han sido trabajados en la
+básica.
+
+\bigskip
+
+Tomando términos como puntos de partida, podemos recordar unas
+primeras nociones importantes:
+
+\bigskip
+
+\begin{itemize}
+\item Una figura es un conjunto de puntos. \item El espacio es el
+conjunto de todos los puntos. \item Tres o mas puntos son
+colineales sí y solamente sí ellos están sobre la misma recta.
+\item Cuatro o mas puntos son coplanares sí y solamente sí ellos
+están en un mismo plano.
+\end{itemize}
+
+\bigskip
+
+Las figuras que están en un plano tales como cuadrados, círculos y
+triángulos son bidimensionales (tienen dos dimensiones),
+
+\bigskip
+
+\[
+\begin{array}{ccc}
+\includegraphics{/imagenes/cuadrado.gif} & \includegraphics{/imagenes/circulo.gif} & \includegraphics{/imagenes/triangulo.gif}
+\end{array}
+\]
+
+\bigskip
+
+las esferas, cajas, cubos y los objetos reales son figuras
+tridimensionales.
+
+\bigskip
+
+\[
+\begin{array}{ccc}
+\includegraphics{/imagenes/cuborectangular.gif} & \includegraphics{/imagenes/cuborectangular2.gif}
+\end{array}
+\]
+
+\bigskip
+
+Diferentes maneras de describir los puntos y las rectas han dado
+origen a distintas geo\-me\-trías (en la geo\-me\-tría euclidiana,
+por ejemplo, un punto se describe como una localización y en la
+geo\-me\-tría analítica un punto es un par ordenado de números).
+Para hacer mas clara la descripción de los puntos y las rectas se
+plantean los postulados, que además de servir para explicar los
+términos indefinidos sirven de punto de partida para deducir y
+probar otros enunciados. Los postulados en la geo\-me\-tría
+euclidiana, que como lo comentamos en el aparte anterior planteó
+Euclides en los {\bf Elementos} pueden ser resumidos de la
+siguiente manera:
+
+\bigskip
+
+\begin{itemize}
+\item Dos puntos determinan una recta. (A través de cualesquiera
+dos puntos, pasa exactamente una recta) \item Una recta contiene
+infinitos puntos \item Dada una recta en un plano, existe por lo
+menos un punto en el plano que no está en la recta. \item Dado un
+plano en el espacio, existe al menos un punto en el espacio que no
+está en el plano. \item Dos rectas diferentes se intersectan a lo
+mas en un punto.
+\end{itemize}
+
+\bigskip
+
+De los postulados anteriores se derivan definiciones, teoremas y
+caracterizaciones que permitirán posteriormente solucionar
+problemas.
+
+\bigskip
+
+\textbf{Definición 3.3.1.} Dos rectas que están en un mismo plano
+son paralelas sí y solo sí ellas no tienen puntos en común o son
+idénticas.
+
+\bigskip
+
+\textbf{Definición 3.3.2.} El segmento (o segmento de recta) con
+puntos extremos $A$ y $B$, notado $\overline{AB}$, es el conjunto
+formado por los puntos $A$ y $B$ y por todos los puntos ubicados
+entre ellos dos. La longitud del segmento $\overline{AB}$ (notada
+$AB$) se define como la distancia entre $A$ y $B$.
+
+\bigskip
+
+\[
+\begin{array}{ccc}
+\includegraphics{/imagenes/segmento_recta.gif}
+\end{array}
+\]
+
+\bigskip
+
+\textbf{Definición 3.3.3.} El rayo con punto extremo $A$ y que
+contiene un punto $B$, que notaremos $\overline{AB}$, consiste en
+todos los puntos sobre el segmento $\overline{AB}$ y todos los
+puntos que cumplen que $B$ está entre ellos y $A$.
+
+\bigskip
+
+\[
+\begin{array}{ccc}
+\includegraphics{/imagenes/segmento_recta_inclinado.gif}
+\end{array}
+\]
+
+\bigskip
+
+{\bf PROPIEDAD ADITIVA}
+
+\bigskip
+
+Si $B$ está sobre el segmento $\overline{AC}$, entonces
+$AB+BC=AC$.
+
+\bigskip
+
+\[
+\begin{array}{ccc}
+\includegraphics{/imagenes/segmento_recta_1.gif}
+\end{array}
+\]
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{geometria2.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color {darkgray} {\small Algo de Historia}} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color {darkgray} {\small Polígonos}} \\ \\ \\
+\end{tabular}
+\docLink{geometria4.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

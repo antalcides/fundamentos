@@ -1,0 +1,297 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{reales4.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Orden} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Enteros} \\ \\ \\
+\end{tabular}
+\docLink{reales6.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 1}}  {\large
+{\color{ azulc} LOS NUMEROS REALES}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 1.5. }}
+{\normalsize {\color{naranja} Representación Geométrica de los Números Reales}}
+
+\newline
+
+Geométricamente podemos representar el conjunto de los números
+reales mediante los puntos de una recta horizontal que llamaremos
+la \textit{recta real} o el \textit{eje real}. Para ello,escogemos
+un punto de la recta para representar el número $0$ y otro punto a
+la derecha de este para representar al número $1$. La longitud del
+segmento determinado por los puntos marcados $0$ y $1$ se
+selecciona como unidad de distancia. Utilizando esta unidad de
+distancia representamos los números positivos a la derecha del $0$
+y los números negativos a la izquierda del $0.$ El entero positivo
+$n$ se representa por el punto situado a una distancia de $n$
+unidades a la derecha del $0$ y el entero negativo $-n$ se
+representa por el punto situado a una distancia de $n$ unidades a
+la izquierda del $0$, como se indica en la siguiente figura donde
+se representan los enteros entre $-5$ y $5$.
+
+\bigskip
+
+\[
+\includegraphics{img/img1.gif}
+\]
+
+\bigskip
+
+Para representar un número racional positivo $\dfrac{p}{q}$
+dividimos la unidad de distancia, es decir , el segmento
+determinado por $0$ y $1$ en $q$ partes iguales y le asignamos, a
+la derecha de $0$, el punto determinado por $p$ de estas partes de
+longitud $\dfrac{1}{q}$. Para representar el número racional
+negativo $-\dfrac{p}{q}$, procedemos de forma similar, pero
+tomando $p$ partes de longitud $\dfrac{1}{q}$ a la izquierda de
+$0$. La gráfica siguiente nos muestra algunos de los puntos que
+representan números racionales
+
+\bigskip
+
+\[
+\includegraphics{img/img2.gif}
+\]
+
+\bigskip
+
+La siguiente construcción nos muestra como representar el número
+irracional $\sqrt{2}$ sobre la recta:
+
+\bigskip
+
+\[
+\includegraphics{img/img3.gif}
+\]
+
+\bigskip
+
+Concretamente, el punto que representa a $\sqrt{2}$ se obtiene
+trazando desde el punto marcado $1$ un segmento de recta de
+longitud igual a la unidad y perpendicular a la recta real. Se
+forma un triángulo rectángulo cuya hipotenusa tiene longitud
+$\sqrt{2}$. Luego se traza un arco de círculo con centro en $0$ y
+radio $\sqrt{2}$,  el punto de intersección de este arco con el
+eje real represente el número $\sqrt{2}$.
+
+\bigskip
+
+En general es imposible indicar de que forma se puede representar
+cualquier número irracional sobre la recta, pero aceptamos como un
+axioma que a cada número real le corresponde exactamente un punto
+sobre la recta y que recíprocamente, cada punto de la recta
+corresponde a exactamente un número real. Una correspondencia como
+esta se llama un \textit{sistema de coordenadas}. El número
+correspondiente a un punto dado se llama la \textit{coordenada}
+del punto. El punto que corresponde al número cero se llama el
+\textit{origen} del sistema de coordenadas y usualmente lo
+representamos por O. Por ejemplo en la figura siguiente
+
+\bigskip
+
+\[
+\includegraphics{img/img4.gif}
+\]
+
+\bigskip
+
+la coordenada de $R$ es $-2$, la coordenada de $P$ es $1$, la
+coordenada de $T$ es $\pi$ etc.
+
+\bigskip
+
+En la práctica, se acostumbra a identificar un número real con el
+punto sobre la recta que lo representa y, a utilizar como
+sinónimas las expresiones " el punto $x$" y " el número $x$".
+
+\bigskip
+
+Para representar la distancia entre dos puntos de la recta,
+necesitamos calcular la diferencia entre la coordenada del punto
+que esta a la derecha y la coordenada del punto que esta a la
+izquierda. Si los puntos tienen coordenadas $x_{1}$ y $x_{2}$,
+entonces cuando $x_{1}<x_{2}$ la distancia es $x_{2}-x_{1}$ y
+cuando $x_{2}<x_{1}$ la distancia es $x_{1}-x_{2}$, ya que la
+distancia es siempre positiva. Con el fin de tener una única
+fórmula para calcular la distancia en todos los casos,
+introducimos la noción de valor absoluto.
+
+\bigskip
+
+\textbf{Definición 1.5.1. } Si $x$ es un número real, su
+\textit{valor absoluto} que notamos $\left| x\right|$, lo
+definimos
+
+\bigskip
+
+\[\left| x\right|=
+\begin{cases}
+x \quad &\text{ si }x\geq 0 \\
+-x \quad &\text{ si }x<0
+\end{cases}\]
+
+\bigskip
+
+\textbf{Ejemplo 1.4.}
+
+\bigskip
+
+\begin{itemize}
+\item $\left| 5\right| =5$, pues $5>0$ \item $\left| -3\right|
+=-(-3)=3$, pues $-3<0$ \item $\left| \pi -3\right| =\pi -3$, pues
+$\pi -3>0$ \item $\left| 3-\pi \right| =-(3-\pi )=\pi -3$, pues
+$3-\pi <0$ \item $\left| 0\right| =0$
+\end{itemize}
+
+\bigskip
+
+De acuerdo con nuestra observación anterior, si $x_{1}$ y $x_{2}$
+son las coordenadas de dos puntos sobre una recta, la distancia
+entre ellos se define como \ $\left| x_{1}-x_{2}\right|$. En
+particular, $\left|x\right| =\left| x-0\right|$ representa la
+distancia del origen al punto $x$.
+
+\bigskip
+
+\[
+\includegraphics{img/img5.gif}
+\]
+
+\bigskip
+
+La relación de orden entre números reales tiene una interpretación
+geométrica muy simple:
+
+\bigskip
+
+\begin{center}
+\textit{$x<y$ si y sólo si el punto que representa $x$ esta
+localizado a la izquierda del punto que representa $y$.}
+\end{center}
+
+\bigskip
+
+La representación geométrica es de gran utilidad en la resolución
+de problemas y en la visualización de muchas propiedades
+importantes de los números reales.
+
+\bigskip
+
+Es útil introducir la noción de \textit{intervalo}. Si $a$ y $b$
+son números reales, definimos los siguientes subconjuntos de
+$\mathbb{R}:$
+
+\bigskip
+
+\begin{align*}
+(a,b)&=\{x\in \mathbb{R}\mid a<x<b\}\\
+[a,b]&=\{x\in \mathbb{R}\mid a\leq x\leq b\}\\
+(a,b]&=\{x\in \mathbb{R}\mid a<x\leq b\}\\
+[a,b)&=\{x\in \mathbb{R}\mid a\leq x<b\}
+\end{align*}
+
+\bigskip
+
+Los conjuntos así definidos se llaman en su orden, intervalo
+\textit{abierto} de extremos $a$ y $b$, intervalo \textit{cerrado}
+de extremos $a$ y $b$, intervalo \textit{abierto-cerrado} de
+extremos $a$ y $b$ e intervalo \textit{cerrado-abierto} de
+extremos $a$ y $b$.
+
+\bigskip
+
+Geométricamente podemos representar estos intervalos sobre la
+recta real como se indica en las siguientes figuras:
+
+\bigskip
+
+\[
+\includegraphics{img/img6.gif}
+\]
+
+\bigskip
+
+Un paréntesis cuadrado en la figura indica que el extremo
+correspondiente pertenece al intervalo.
+
+\bigskip
+
+Se acostumbra a ampliar el concepto de intervalo para incluir los
+siguientes conjuntos, conocidos con el nombre de
+\textit{intervalos infinitos}:
+
+\bigskip
+
+\begin{align*}
+(a,\infty )&=\{x\in \mathbb{R}\mid x>a\}\\
+[a,\infty )&=\{x\in \mathbb{R}\mid x\geq a\}\\
+(-\infty ,a)&=\{x\in \mathbb{R}\mid x<a\}\\
+(-\infty ,a]&=\{x\in \mathbb{R}\mid x\leq a\}
+\end{align*}
+
+\bigskip
+
+Dejamos al lector la representación geométrica de estos
+intervalos. El símbolo $\infty $ llamado \textit{infinito} que
+aparece en la definición anterior, no es un número real, es tan
+solo un artificio de notación.
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{reales4.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Orden} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Enteros} \\ \\ \\
+\end{tabular}
+\docLink{reales6.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

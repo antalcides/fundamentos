@@ -1,0 +1,327 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{trigo2.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Triángulos Rectángulos} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small $- \theta$} \\ \\ \\
+\end{tabular}
+\docLink{trigo5.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 5}}  {\large
+{\color{ azulc} NOTAS DE TRIGONOMETRIA}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 5.3. }}
+{\normalsize {\color{naranja} Funciones Trigonométricas de \'{A}ngulos}}
+
+\newline
+
+Consideremos un ángulo en posición canónica $\theta $. Si no es un
+ángulo cuadrantal su lado final está contenido en uno de los
+cuadrantes determinados por los ejes coordenados. Este lado final,
+como se ha visto anteriormente, puede pertenecer a ángulos de
+medidas diferentes a las de $\theta$, e inclusive tener distinta
+orientación. (Observe las figuras)
+
+\bigskip
+
+\begin{center}
+\includegraphics{img/img1.gif}
+\includegraphics{img/img2.gif} \\
+\includegraphics{img/img3.gif}
+\includegraphics{img/img3a.gif}
+\end{center}
+
+\bigskip
+
+La definición de las relaciones trigonométricas puede ser
+extendida a este tipo de ángulos.
+
+\bigskip
+
+En efecto: Tomemos inicialmente un ángulo $\theta $ en el primer
+cuadrante:
+
+\bigskip
+
+\begin{center}
+\includegraphics{img/img11.gif}
+\end{center}
+
+\bigskip
+
+$P\left( x,y\right)$ un punto que pertenece al lado final del
+ángulo $\theta $.
+
+\bigskip
+
+El triángulo $\triangle OQP$ es rectángulo. A partir de las
+definiciones dadas para las razones trigonométricas en triángulos
+rectángulos se puede afirmar:
+
+\bigskip
+
+\[sen\theta =\dfrac{y}{r} \quad \cos\theta=\dfrac{x}{r} \quad \tan
+\theta=\dfrac{y}{x}.\]
+
+\bigskip
+
+El Seno y el Coseno de cualquier ángulo pueden ser hallados, no
+así la tangente porque la abscisa del punto no puede ser cero, lo
+que significa que no se puede definir la tangente de un ángulo
+cuyo lado final esté en el eje $y$.
+
+\bigskip
+
+Estas relaciones se extienden para ángulos de cualquier cuadrante.
+
+\bigskip
+
+\textbf{Definición 5.3.1. } Si $\theta $ es un ángulo en posición
+canónica y $P\left(x,y\right)$ es un punto del lado final de
+$\theta $ $r=\sqrt{x^{2}+y^{2}}$, se define:
+
+\bigskip
+
+\[sen\theta =\dfrac{y}{r} \qquad \cos\theta=\dfrac{x}{r}; \quad\text{si}\quad x\neq 0
+\quad\tan\theta=\dfrac{y}{x}.\]
+
+\bigskip
+
+Se tienen además las siguientes relaciones:
+
+\bigskip
+
+\begin{align*}
+\text{cosecante de $\theta=\dfrac{r}{y}$}, &\quad\text{ si $y\neq 0$}\\
+\text{secante de $\theta =\dfrac{r}{x}$}, &\quad\text{ si $x\neq 0$}\\
+\text{cotangente de $\theta =\dfrac{x}{y}$}, &\quad\text{ si
+$y\neq 0$}
+\end{align*}
+
+\bigskip
+
+Observe que salvo las funciones seno y coseno, todas tienen
+restricciones para su definición. También que los valores de las
+relaciones trigonométricas sólo dependen de la ubicación del lado
+final del ángulo. Así para ángulos coterminales, es decir aquellos
+para los cuales coincide el lado final, los valores de sus
+relaciones trigonométricas son iguales respectivamente.
+
+\bigskip
+
+\begin{center}
+\includegraphics{img/img12.gif}
+\end{center}
+
+\bigskip
+
+En general: si $\angle \alpha $ y $\angle \beta $ son
+coterminales: $sen\alpha =sen\beta$; $\cos\alpha =\cos\beta$;
+$\tan \alpha =\tan\beta$, lo mismo sucede con las otras tres
+relaciones.
+
+\bigskip
+
+Como consecuencia de estas definiciones, las funciones son
+positivas o negativas, según el cuadrante que contenga el lado
+final.
+
+\bigskip
+
+\begin{center}
+\includegraphics{img/img13.gif}
+\end{center}
+
+\bigskip
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline CUADRANTE & FUNCIONES POSITIVAS & FUNCIONES NEGATIVAS \\
+\hline I & todas & ninguna \\ \hline II & $sen$, $\csc$ & $\cos$,
+$\tan$, $\sec$, $\cot$ \\ \hline III & $\tan$, $\cot$ &
+$sen$, $\cos$, $\csc$, $\sec$ \\
+\hline IV & $\cos$, $\sec$ & $sen$, $\tan$, $\csc$, $\cot$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\bigskip
+
+Si $\theta$ y $-\theta$ son ángulos con la misma medida pero que
+difieren en la orientación, $P(x,y)$ pertenece al lado final de
+$\theta$, entonces $Q(x,-y)$ pertenecerá al lado final de
+$-\theta$. Observe las figuras:
+
+\bigskip
+
+\begin{center}
+\includegraphics{img/img19.gif}
+\includegraphics{img/img20.gif}
+\end{center}
+
+\bigskip
+
+De ellas concluimos:
+
+\bigskip
+
+Como $\sqrt{x^2+ y^2 }=\sqrt{x^2+(-y)^2}$, la distancia del origen
+a $P$ es igual a la distancia del origen a $Q$. Llamando $r$ a
+esta distancia, tenemos:
+
+\bigskip
+
+\begin{align*}
+sen \theta = \frac{y}{r}; &\quad sen(-\theta)=-\frac{y}{r}\\
+\cos \theta = \frac{x}{r}; &\quad\cos(-\theta)=\frac{x}{r}\\
+\tan \theta = \frac{y}{x}; &\quad\tan(-\theta)=-\frac{y}{x}
+\end{align*}
+
+\bigskip
+
+Esto es:
+
+\bigskip
+
+\begin{align*}
+sen \theta &= -sen(-\theta)\\
+\cos \theta &= \cos(-\theta)\\
+\tan \theta &= -\tan(-\theta)
+\end{align*}
+
+\bigskip
+
+\textbf{Ejemplo 5.6. } Encuentre los valores de las seis funciones
+trigonométricas del ángulo cuyo lado final contiene al punto
+$\left( -1,-3\right) $
+
+\bigskip
+
+\emph{Solución}:
+\begin{align*}
+r&=\sqrt{1+9}=\sqrt{10}\\
+sen \theta &=-\frac{3}{\sqrt{10}};\\
+\cos \theta &=-\frac{1}{\sqrt{10}};\\
+\tan \theta &=-\frac{3}{-1}=3\\
+\csc \theta &=-\frac{\sqrt{10}}{3};\\
+\sec \theta &=-\sqrt{10}; \\
+\cot \theta &=\frac{1}{3}
+\end{align*}
+
+\bigskip
+
+\textbf{Ejemplo 5.7. } Encuentre los valores exactos de las seis
+funciones trigonométricas de $\theta $, si $\ \theta $ es un
+ángulo del segundo cuadrante y el lado final de $\theta $ está en
+la recta $y=-4x$.
+
+\bigskip
+
+\emph{Solución}: Como $\theta $ es un ángulo de segundo cuadrante,
+cualquier punto del lado final debe tener la abscisa negativa.
+Para $x=-1$,
+
+\bigskip
+
+$y=4$. El punto $\left( -1,4\right) $ pertenece al lado final del
+ángulo.
+
+\bigskip
+
+\begin{align*}
+r&=\sqrt{1+16}=\sqrt{17}\\
+sen \theta &=\dfrac{4}{\sqrt{17}};\\
+\cos \theta &=-\dfrac{1}{\sqrt{17}}; \\
+\tan \theta &=-4\\
+\csc \theta &=\dfrac{\sqrt{17}}{4}; \\
+\sec \theta &=-\sqrt{17};\\
+\cot \theta &=-\dfrac{1}{4}
+\end{align*}
+
+\bigskip
+
+\textbf{Ejemplo 5.8. } Encuentre las seis funciones
+trigonométricas del ángulo cuyo lado final biseca el tercer
+cuadrante.
+
+\bigskip
+
+\begin{center}
+\includegraphics{img/img14.gif}
+\end{center}
+
+\bigskip
+
+\emph{Solución}: Tomamos un punto en el tercer cuadrante, por
+ejemplo $\left( -1,-1\right) $
+
+$r=\sqrt{2}$
+
+\begin{center}
+\begin{tabular}{cccc}
+$sen\theta =-\dfrac{1}{\sqrt{2}}$ & $\cos
+\theta=-\dfrac{1}{\sqrt{2}}$ & $\tan \theta = 1$ & $\sec \theta=-\sqrt{2}$ \\
+$sen \theta=-\dfrac{\sqrt{2}}{2}$ & $\cos
+\theta=-\dfrac{\sqrt{2}}{2}$ & $\cot \theta = 1$ & $\csc \theta
+=-\sqrt{2}$
+\end{tabular}
+\end{center}
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{trigo2.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Triángulos Rectángulos} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small $- \theta$} \\ \\ \\
+\end{tabular}
+\docLink{trigo5.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

@@ -1,0 +1,209 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{trigo4.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small \'{A}ngulos Especiales} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Algunas Propiedades} \\ \\ \\
+\end{tabular}
+\docLink{trigo7.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 5}}  {\large
+{\color{ azulc} NOTAS DE TRIGONOMETRIA}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 5.5. }}
+{\normalsize {\color{naranja} Funciones Trigonométricas de Números Reales}}
+
+\newline
+
+En muchas aplicaciones se toma como dominio de las funciones
+trigonométricas subconjuntos de números reales.
+
+\bigskip
+
+\textbf{Definición 5.5.1. } Si $t$ es un número real
+positivo,negativo ó cero.
+
+\bigskip
+
+Si $t$ es positivo y $f$ es una función trigonométrica que está
+definida en $t$, $f(t)$ es la misma imagen por $f$ del ángulo
+orientado positivamente que mide $t$ radianes.
+
+\bigskip
+
+Si $t$ es un real negativo, $f(t)$ es la misma imagen por $f$ del
+ángulo que mide $-t$ radianes y está orientado negativamente.
+
+\bigskip
+
+Igualmente: $cos t$, es el coseno del ángulo cuya medida es $t$
+radianes, orientado positivamente si $t$ es positivo. Si $t$ es
+negativo, $cos t$ es el coseno del ángulo cuya medida es $-t$
+radianes y está orientado negativamente
+
+\bigskip
+
+Si el lado final de $t$ no está en el eje $y$ , $t$ es real $tan
+t$ se define de la misma forma como se definieron Seno y Coseno
+teniendo en cuenta si $t$ es positivo ó $t$ es negativo.
+
+\bigskip
+
+\textbf{Ejemplo 5.9. } $\tan 30$ es la tangente del ángulo que
+mide $30$ radianes. Observe que $\tan 30 \neq \tan 30^\circ$.
+
+\bigskip
+
+$sen \left(-3 \right)$ es el seno del ángulo orientado
+negativamente que mide $3$ radianes.
+
+\bigskip
+
+$\cos \left(-\frac{\pi}{4} \right)$ es el coseno del ángulo que
+mide $\frac{\pi}{4}$ radianes y que está orientado negativamente.
+
+\bigskip
+
+\colorbox{naranja}{{\color{white} \normalsize 5.5.1. }}
+{\normalsize {\color{naranja} Dominio de las funciones}}
+
+\bigskip
+
+Hemos visto anteriormente que no importa cual sea la medida u
+orientación del ángulo, es posible encontrar los valores del seno
+y del coseno; así estas funciones pueden ser definidas para
+cualquier número real, lo que permite afirmar que el dominio de
+las funciones seno y coseno es el conjunto de números reales.
+
+\bigskip
+
+No sucede lo mismo con la función tangente. Se puede calcular
+$\tan t$ sólo si el lado final del ángulo $t$ no está sobre el eje
+$y$, esto implica que en el dominio de la función tangente no
+están:
+
+\bigskip
+
+\[\dfrac{\pi }{2};\dfrac{3\pi }{2};\dfrac{5\pi }{2};\ldots-\dfrac{\pi }{2};-\dfrac{3\pi }{2};-\dfrac{5\pi }{2};\ldots\]
+
+\bigskip
+
+Concluimos entonces que el dominio de la función tangente es:
+
+\bigskip
+
+\[R-\left\{\left( 2n+1\right) \dfrac{\pi }{2}:\text{ n es
+entero}\right\}\]
+
+\bigskip
+
+El dominio de las funciones secante, cosecante y cotangente
+tampoco es el conjunto de todos los números reales.
+
+\bigskip
+
+De acuerdo con sus definiciones:
+
+\bigskip
+
+El dominio de la secante es :
+
+\bigskip
+
+\[R-\left\{ \left( 2n+1\right) \dfrac{\pi }{2}:\text{ n es entero}\right\}\]
+
+\bigskip
+
+El dominio de la cosecante es :
+
+\bigskip
+
+\[R-\left\{ n\pi :\text{ n es entero}\right\} \]
+
+\bigskip
+
+El dominio de la cotangente es:
+\[R-\left\{ n\pi :\text{ n es entero}\right\}\]
+
+\bigskip
+
+\textbf{Ejemplo 5.10. } $\tan 30$ es la tangente del ángulo que
+mide $30$ radianes
+
+\bigskip
+
+\[\tan 30\neq \tan 30^{\circ }\]
+
+\bigskip
+
+$\csc 180$ existe pues $180$ no es un múltiplo de $\pi ,$ pero
+$\csc 180^{\circ }$ no existe.
+
+\bigskip
+
+$sen \left( -3\right) $ es el seno del ángulo orientado
+negativamente que mide 3 radianes
+
+\bigskip
+
+$\cos\left(-\dfrac{\pi }{4}\right) $ es el coseno del ángulo que
+mide $\frac{\pi }{4}$ radianes y que está orientado negativamente.
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{trigo4.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small \'{A}ngulos Especiales} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Algunas Propiedades} \\ \\ \\
+\end{tabular}
+\docLink{trigo7.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

@@ -1,0 +1,29 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Installation}{}% 2
+\BOOKMARK [1][-]{section.3}{Generating Glossary Information}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Storing Glossary Information}{section.3}% 4
+\BOOKMARK [1][-]{section.4}{makeglos.pl}{}% 5
+\BOOKMARK [1][-]{section.5}{Displaying the Glossary}{}% 6
+\BOOKMARK [1][-]{section.6}{Package Options}{}% 7
+\BOOKMARK [2][-]{subsection.6.1}{Examples}{section.6}% 8
+\BOOKMARK [1][-]{section.7}{Defining New Glossary Types}{}% 9
+\BOOKMARK [1][-]{section.8}{Acronyms}{}% 10
+\BOOKMARK [2][-]{subsection.8.1}{Examples}{section.8}% 11
+\BOOKMARK [1][-]{section.9}{Customizing the Glossary}{}% 12
+\BOOKMARK [1][-]{section.10}{Sample Documents}{}% 13
+\BOOKMARK [1][-]{section.11}{LaTeX2HTML Style File}{}% 14
+\BOOKMARK [2][-]{subsection.11.1}{Limitations}{section.11}% 15
+\BOOKMARK [1][-]{section.12}{Troubleshooting}{}% 16
+\BOOKMARK [1][-]{section.13}{Obsolete Commands}{}% 17
+\BOOKMARK [1][-]{section.14}{Contact Details}{}% 18
+\BOOKMARK [1][-]{section.15}{Acknowledgements}{}% 19
+\BOOKMARK [1][-]{section.16}{The Code}{}% 20
+\BOOKMARK [2][-]{subsection.16.1}{Package Definition}{section.16}% 21
+\BOOKMARK [2][-]{subsection.16.2}{Redefining \134glossary format}{section.16}% 22
+\BOOKMARK [2][-]{subsection.16.3}{Storing Glossary Entries}{section.16}% 23
+\BOOKMARK [2][-]{subsection.16.4}{Makeindex style file}{section.16}% 24
+\BOOKMARK [2][-]{subsection.16.5}{Defining a new glossary type}{section.16}% 25
+\BOOKMARK [2][-]{subsection.16.6}{Acronyms}{section.16}% 26
+\BOOKMARK [2][-]{subsection.16.7}{Glossary Hyperlinks}{section.16}% 27
+\BOOKMARK [1][-]{subsection.16.7}{Change History}{}% 28
+\BOOKMARK [1][-]{subsection.16.7}{Index}{}% 29

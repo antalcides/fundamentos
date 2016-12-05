@@ -1,0 +1,222 @@
+%tipo documento y tipo letra
+% color titulo
+% color leccion
+% definiciones propias
+
+
+\documentclass[10pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TCIDATA{OutputFilter=Latex.dll}
+%TCIDATA{Version=5.00.0.2570}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{LastRevised=Thursday, November 04, 2004 16:53:18}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20}
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03}
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}}
+
+\begin{document}
+
+\begin{quote}
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{04_07.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}{\small Funciones Cuadr\'{a}ticas}} \\
+\\
+\\
+\end{tabular}
+& \docLink[_top]{../../index.html}{%
+\includegraphics{../../images/navegacion/inicio.gif}} %
+\docLink{../../docs_curso/contenido.html}{%
+\includegraphics{../../images/navegacion/contenido.gif}} %
+\docLink{../../docs_curso/descripcion.html}{%
+\includegraphics{../../images/navegacion/descripcion.gif}} %
+\docLink{../../docs_curso/profesor.html}{%
+\includegraphics{../../images/navegacion/profesor.gif}} &
+\begin{tabular}{r}
+{\color{darkgray}{\small Logaritmos}} \\
+\\
+\\
+\end{tabular}
+\docLink{04_09.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+} %fin encabezado
+
+%nombre capitulo
+\end{quote}
+
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 4}}  {\large
+{\color{ azulc} FUNCIONES}}
+\end{center}
+
+\begin{quote}
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 4.8. }}
+{\normalsize {\color{naranja} Funciones Exponenciales y Logar\'{\i}tmicas}}
+
+\newline
+
+Consideremos el siguiente problema:
+
+\bigskip
+
+Una población $P_{\circ }$ de bacterias presente en un instante
+$t=0$ se duplica cada hora. transcurrida la primera, la segunda y
+la tercera horas, las poblaciones son respectivamente de
+$2P_{\circ }$, $2^{2}P_{\circ }$, $2^{3}P_{\circ }$,
+$2^{4}P_{\circ }$ más generalmente, transcurridas $k$ horas la
+población es $2^{k}P_{\circ }$.
+
+\bigskip
+
+Ahora bien si $P$ es la población presente en un instante $t$ y la
+población presente media hora después se expresa en la forma $rP$,
+entonces en una hora la población es, de una parte $r\cdot
+rp=r^{2}P$ y, de otra parte es $2P$. Así $r^{2}P=2P$, de donde
+$r=2^{\frac{1}{2}}$.
+
+\bigskip
+
+Más generalmente, si $p$ y $q$ son\ enteros positivos entonces
+$2^{\frac{P}{q}}$ es el factor por el que queda multiplicada la
+población, transcurridos $p$ periodos de $\frac{1}{q}$ horas.
+
+\bigskip
+
+Como el tiempo es continuo y no se restringe solamente a valores
+racionales, para un número real $t>0$, $2^{t}$ es el factor por el
+que se multiplica la población transcurrido un tiempo $t$.
+
+\bigskip
+
+El significado que tiene $2^{t}$ cuando $t$ es un número
+irracional es el valor al cual se acerca $2^{\frac{P}{q}}$ para
+sucesivas aproximaciones decimales racionales de $t$. Así, $1.4$,
+$1.41$, $1.414$, $1.4142$, $1.41421$, $1.414213$,\ldots, son
+aproximaciones decimales racionales de $\sqrt{2}$ entonces
+$2^{1.4}$, $2^{1.41}$, $2^{1.414}$, $2^{1.4142}$, $2^{1.41421}$,
+$2^{1.414213}$,\ldots, se acerca al valor $2^{\sqrt{2}}$.
+
+\bigskip
+
+El ejemplo permite introducir el tema de las {\bf funciones
+exponenciales} de base $a$ para $a$ un número real positivo, es
+decir, funciones de la forma $f\left( x\right)=a^{x}$ con $a>0$ y
+$x$ una variable que recorre el conjunto $\mathbf{R}$.
+
+\bigskip
+
+Anotamos en primer lugar que las {\bf leyes de los exponentes} son
+válidas en este caso, es decir, cualesquiera sean $a$ y $b$
+números reales positivos y $x$ y $y$ números reales, racionales o
+irracionales, tenemos:
+
+\bigskip
+
+\begin{itemize}
+\item $a^{x}a^{y}=a^{x+y}$ \item $\left( a^{x}\right)^{y}=a^{xy}$
+\item $\left( ab\right)^{x}=a^{x}b^{x}$ \item $a^{-x}=\left(
+a^{-1}\right)^{x}=\left( a^{x}\right)^{-1}=\frac{1}{a^{x}}$ \item
+$a^{0}=1$
+\end{itemize}
+
+\bigskip
+
+Cualquiera sea $a>0$, $f\left( x\right)=a^{x}>0$ para todo $x$.
+Con el objeto de analizar otras propiedades distinguimos entre
+$a>1$ y $a<1$.
+
+\bigskip
+
+Supongamos $a>1$ y sea $z=\frac{P}{q}$ un racional positivo.
+Tenemos entonces $a^{z}=a^{\frac{P}{q}}>1$.
+
+\bigskip
+
+Supongamos que $x$ e $y$ son números racionales tales que $x<y$.
+Como $0<y-x$ entonces $1<a^{y-x}$ y, en consecuencia,
+$a^{x}=a^{x}\cdot 1<a^{x}a^{y-x}=a^{y}$. Esto es, a mayor valor
+del exponente corresponde un mayor valor de la función en el caso
+de los exponentes racionales y como para los irracionales la
+función se define a partir de aproximaciones decimales racionales,
+en general, a mayor valor del exponente corresponde un mayor valor
+de la función. Decimos que la {\bf función es creciente}.
+
+\bigskip
+
+Ahora si $0<a<1$, sea $b=\frac{1}{a}$. Como$1<b$ y entonces la
+función $g\left( x\right) =b^{x}$ se comporta como en el caso
+anterior, es decir, si $x$ e $y$ son números reales tales que
+$x<y$ entonces $b^{x}<b^{y}$ esto es $\left( \frac{1}{a}\right)
+^{x}<\left( \frac{1}{a}\right) ^{y}$ o, de otra manera,
+$\frac{1}{a^{x}}<\frac{1}{a^{y}}$ lo cual implica, $a^{y}<a^{x}$.
+Así, en este caso, a mayor valor del exponente corresponde un
+menor valor de la función. Decimos que la {\bf función es
+decreciente}.
+
+\bigskip
+
+Estas son gráficas de funciones exponenciales de base $a$ para
+diferentes valores de $a$
+\end{quote}
+
+\bigskip
+
+\begin{center}
+\includegraphics{imagenes/4_28.gif}
+\end{center}
+
+\bigskip
+
+\begin{quote}
+Si $a>1$ y $x$ e $y$ son números reales tales que $x\neq y$
+entonces $x<y $ o $y<x$. Si $x<y$ entonces $a^{x}<a^{y}$, en
+particular $a^{x}\neq a^{y}$. Si $y<x$, $a^{y}<a^{x}$ y también
+$a^{x}\neq a^{y}$. El caso $0<a<1$ es similar.
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline
+&  &  \\
+\docLink{04_07.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}{\small Funciones Cuadr\'{a}ticas}} \\
+\\
+\\
+\end{tabular}
+& \docLink[_top]{../../index.html}{%
+\includegraphics{../../images/navegacion/inicio.gif}} %
+\docLink{../../docs_curso/contenido.html}{%
+\includegraphics{../../images/navegacion/contenido.gif}} %
+\docLink{../../docs_curso/descripcion.html}{%
+\includegraphics{../../images/navegacion/descripcion.gif}} %
+\docLink{../../docs_curso/profesor.html}{%
+\includegraphics{../../images/navegacion/profesor.gif}} &
+\begin{tabular}{r}
+{\color{darkgray}{\small Logaritmos}} \\
+\\
+\\
+\end{tabular}
+\docLink{04_09.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}%
+\end{tabular}
+}
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+
+\end{document}

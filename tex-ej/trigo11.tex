@@ -1,0 +1,376 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{trigo10.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Gráficas Sinusoidales} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Ecuaciones Trigonométricas} \\ \\ \\
+\end{tabular}
+\docLink{trigo12.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 5}}  {\large
+{\color{ azulc} NOTAS DE TRIGONOMETRIA}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 5.10. }}
+{\normalsize {\color{naranja} Identidades Trigonométricas}}
+
+\newline
+
+Cuando una expresión contiene términos con funciones
+trigonométricas, se dice que es una expresión trigonométrica.
+
+\bigskip
+
+Muchas veces dichas expresiones presentan formas complicadas que
+pueden reemplazarse por expresiones equivalentes.
+
+\bigskip
+
+Una Identidad Trigonométrica es una igualdad entre expresiones
+trigonométricas, que es verdadera para todos los valores para los
+que dicha expresión tenga sentido.
+
+\bigskip
+
+Esto es: Si $f\left(t\right)$ y $g\left(t\right)$ son expresiones
+trigonométricas, f$\left(t\right)=g\left(t\right)$ es una
+identidad trigonométrica, si la igualdad se cumple para todo $t$
+que esté en el dominio de $f$ y en el de $g$.
+
+\bigskip
+
+\colorbox{naranja}{{\color{white} 5.10.1. }}{\color{naranja}
+Identidades fundamentales}
+
+\bigskip
+
+\begin{enumerate}
+\item Recíprocas:
+
+\bigskip
+
+A partir de las definiciones de las funciones trigonométricas de
+ángulos en posición canónica, deducimos
+
+\bigskip
+
+\[\csc \theta =\dfrac{1}{sen\theta}, \quad\sec \theta =\dfrac{1}{\cos\theta }, \quad\cot \theta =\dfrac{1}{\tan\theta}\]
+
+\bigskip
+
+\item Igualmente, teniendo en cuenta las definiciones dadas:
+
+\bigskip
+
+\[\tan\theta =\dfrac{sen\theta}{\cos\theta },\quad \cot\theta =\dfrac{\cos\theta }{sen\theta}\]
+
+\bigskip
+
+\item Identidades Pitagóricas:
+
+\bigskip
+
+\begin{enumerate}
+\item  $sen^{2}t+\cos^{2}t=1$
+
+\bigskip
+
+Recordamos que si $\left( x,y\right) $ es un punto que está en el
+lado final de un ángulo en posición canónica y
+$r=\sqrt{x^{2}+y^{2}}$
+
+\bigskip
+
+\[sen t =\dfrac{y}{r}, \qquad \cos t = \dfrac{x}{r}\]
+
+\bigskip
+
+Entonces:
+
+\bigskip
+
+\begin{align*}
+sen^{2}t+\cos^{2}t&=\dfrac{y^{2}}{r^{2}}+\dfrac{x^{2}}{r^{2}}\\
+&= \dfrac{y^{2}+x^{2}}{r^{2}}\\
+&=\dfrac{r^{2}}{r^{2}}=1
+\end{align*}
+
+\bigskip
+
+\item $1+\tan^{2}t=\sec^{2}t$
+
+\bigskip
+
+Se obtiene dividiendo $sen^{2}t+\cos^{2}t=1$ , por $\cos^{2}t$
+
+\bigskip
+
+\item $1+\cot^{2}\theta =\csc^{2}\theta $
+
+\bigskip
+
+Si se divide la igualdad: $sen^{2}\theta +\cos^{2}\theta =1$, por
+$sen^{2}\theta $
+
+\bigskip
+
+\begin{align*}
+1+\dfrac{\cos^{2}\theta}{sen^{2}\theta}&=\dfrac{1}{sen^{2}\theta}\\
+1+\cot^{2}\theta &=\csc^{2}\theta
+\end{align*}
+\end{enumerate}
+\end{enumerate}
+
+\bigskip
+
+A partir de estas identidades es posible obtener otras más
+complejas. No hay realmente un método especial para demostrar que
+una igualdad es una identidad, pero en general se aconseja iniciar
+con el lado que parezca más complejo y hacer las transformaciones
+que se considere adecuadas, para obtener la expresión del otro
+extremo de la igualdad. No es bueno transformar los dos extremos
+simultáneamente por que se estaría suponiendo que la igualdad es
+verdadera.
+
+\bigskip
+
+\textbf{Ejemplo 5.20. } Haciendo uso de las identidades
+fundamentales encuentre los valores de las funciones
+trigonométricas del ángulo $\theta$ si: $\tan \theta
+=-\dfrac{3}{4}$ y $sen \theta> 0$
+
+\bigskip
+
+\emph{Solución}:
+
+\bigskip
+
+\begin{align*}
+\cot \theta &=\dfrac{1}{\tan\theta }\\
+\cot \theta &=\dfrac{4}{-3}
+\end{align*}
+
+\bigskip
+
+\begin{align*}
+\sec^{2}\theta &=1+\tan^{2}\theta\\
+\sec^{2}\theta &=1+\dfrac{9}{16}\\
+\sec^{2}\theta &=\dfrac{25}{16}\\
+\sec \theta &=\pm \sqrt{\frac{25}{16}}
+\end{align*}
+
+\bigskip
+
+Como la tangente es negativa y el seno positivo, $\theta $ está en
+el segundo cuadrante, por lo tanto la secante es negativa.
+
+\bigskip
+
+\[\sec \theta =-\dfrac{5}{4}\]
+
+\bigskip
+
+Esto nos permite concluir que:
+
+\bigskip
+
+\[\cos \theta =-\dfrac{4}{5}\]
+
+\bigskip
+
+Haciendo uso de la identidad : $1+\cot^{2}\theta =\csc^{2}\theta $
+
+\bigskip
+
+\begin{align*}
+1+\frac{16}{9}&=\csc^{2}\theta\\
+\csc^{2}\theta &=\dfrac{25}{9}\\
+\csc\theta &=\pm \sqrt{\frac{25}{9}}
+\end{align*}
+
+\bigskip
+
+Como $sen \theta > 0$
+
+\bigskip
+
+\[\csc\theta =\dfrac{5}{3}\]
+
+\bigskip
+
+Entonces: $sen \theta =\dfrac{3}{5}$.
+
+\bigskip
+
+En los siguientes ejemplos vamos a demostrar algunas identidades
+trigonométricas:
+
+\bigskip
+
+\textbf{Ejemplo 5.21. } $\csc \theta -sen\theta =\cot\theta
+\cos\theta$.
+
+\bigskip
+
+\emph{Solución}:
+
+\bigskip
+
+\begin{align*}
+\csc\theta -sen\theta &=\dfrac{1}{sen\theta }-sen\theta\\
+&=\dfrac{1-sen^{2}\theta }{sen\theta }\\
+&=\dfrac{\cos^{2}\theta }{sen \theta }\\
+&=\dfrac{\cos\theta }{sen \theta }\cos\theta \\
+&=\cot\theta \cos\theta
+\end{align*}
+
+\bigskip
+
+\textbf{Ejemplo 5.22. } $\tan t +2\cos t \csc t = \sec t \csc t +
+\cot t$
+
+\bigskip
+
+\emph{Solución}:
+
+\bigskip
+
+\begin{align*}
+\tan t + 2\cos t \csc t &=\dfrac{sen t}{\cos t}+2\dfrac{\cos t}{sen t}\\
+&=\dfrac{sen^{2}t+2\cos^{2}t}{\cos t sen t}\\
+&=\dfrac{sen^{2}t+\cos^{2}t+\cos^{2}t}{\left( \cos t\right)
+\left( sen t\right)}\\
+&=\dfrac{1}{\left( \cos t\right) \left( sen t\right)
+}+\dfrac{\cos^{2}t}{\left( \cos t\right) \left( sen t\right)}\\
+&=\left( \sec t\right) \left( \csc t\right) +\dfrac{\cos
+t}{sen t}\\
+&=\left( \sec t\right) \left( \csc t\right) + \cot t
+\end{align*}
+
+\bigskip
+
+\textbf{Ejemplo 5.23. } $\left( \sec u-\tan u\right) \left( \csc
+u+1\right) =\cot u$
+
+\bigskip
+
+\emph{Solución}:
+
+\bigskip
+
+\begin{align*}
+\left(\sec u-\tan u\right) \left( \csc u+1\right) &=\left(
+\dfrac{1}{\cos u}-\dfrac{sen u}{\cos u} \right) \left(
+\dfrac{1}{sen u}+1\right)\\
+&=\left( \dfrac{1-sen u}{\cos u}\right) \left( \dfrac{1+sen
+u}{sen u}\right)\\
+&=\dfrac{1-sen^{2}u}{\left( \cos u\right) \left( sen u\right)}\\
+&=\dfrac{\cos^{2}u}{\left( \cos u\right) \left( sen u\right) }\\
+&=\dfrac{\cos u}{sen u}=\cot u
+\end{align*}
+
+\bigskip
+
+\textbf{Ejemplo 5.24. } $sen^{4}r-\cos^{4}r=sen^{2}r-\cos^{2}r$
+
+\bigskip
+
+\emph{Solución}:
+
+\bigskip
+
+\begin{align*}
+sen^{4}r-\cos^{4}r&=\left( sen^{2}r-\cos^{2}r\right)
+\left(sen^{2}r+\cos^{2}r\right)\\
+&= sen^{2}r-\cos^{2}r
+\end{align*}
+
+\bigskip
+
+\textbf{Ejemplo 5.25. } $\dfrac{1}{1-\cos
+v}+\dfrac{1}{1+\cos\text{ v}}=2\csc^{2}v$
+
+\bigskip
+
+\emph{Solución}:
+
+\bigskip
+
+\begin{align*}
+\dfrac{1}{1-\cos v}+\dfrac{1}{1+\cos\text{ v}}&=\dfrac{\left(
+1+\cos\text{ v}\right) +\left( 1-\cos\text{ v}\right) }{\left(
+1-\cos\text{ v}\right) \left( 1+\cos\text{ v}\right) }\\
+&=\dfrac{2}{1-\cos^{2}v}\\
+&=\dfrac{2}{sen^{2}v}\\
+&=2\csc^{2}v
+\end{align*}
+
+\bigskip
+
+Observe que en cada una de las demostraciones anteriores:
+
+\bigskip
+
+\begin{itemize}
+\item  Se inició en el lado más complejo. \item  Se efectuaron las
+operaciones básicas. \item  Se hizo uso de la factorización \item
+Se emplearon identidades fundamentales.
+\end{itemize}
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{trigo10.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Gráficas Sinusoidales} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Ecuaciones Trigonométricas} \\ \\ \\
+\end{tabular}
+\docLink{trigo12.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

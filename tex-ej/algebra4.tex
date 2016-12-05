@@ -1,0 +1,294 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{algebra3.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Exponentes Enteros} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Radicales} \\ \\ \\
+\end{tabular}
+\docLink{algebra5.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 2}}  {\large
+{\color{ azulc} FUNDAMENTOS DE ALGEBRA}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 2.4. }}
+{\normalsize {\color{naranja} Exponentes Racionales}}
+
+\bigskip
+
+Vamos a extender nuestra definición del símbolo $a^{n}$ al caso en
+que el exponente es un número racional. Para empezar necesitamos
+la siguiente definición
+
+\bigskip
+
+\textbf{Definición 2.4.1. } Sea $n$ un entero positivo mayor que
+$1$, y $a$ un número real. Si $r$ es un número real que satisface
+la ecuación $r^{n}=a$, decimos que $r$ es una \textit{raíz}
+$n${-ésima de} $a$.
+
+\bigskip
+
+\textbf{Ejemplo 2.8. } \quad\begin{itemize} \item $3$ y $-3$ son
+raíces cuadradas de $9$, pues $3^{2}=9$ y $(-3)^{2}=9$. \item $2$
+es una raíz cúbica de $8$, puesto que $2^{3}=8$. \item $-3$ es una
+raíz cúbica de $-27$, puesto que $(-3)^{3}=-27$.
+\end{itemize}
+
+\bigskip
+
+Se puede demostrar que todo número real diferente de cero tiene
+exactamente $n$ raíces $n$-ésimas, aunque la mayoría de ellas son
+números complejos. Entre las raíces $n$-ésimas de un número real
+$a$, vamos a elegir una de ellas como la \textit{raíz}
+$n$\textit{-ésima principal}, esta raíz la representamos por el
+símbolo $\sqrt[n]{a}$ y la definimos como sigue:
+
+\bigskip
+
+\textbf{Definición 2.4.2. } Sea $n$ un entero positivo mayor que
+$1$ y $a$ un número real. Establecemos que
+
+\bigskip
+
+\begin{enumerate}
+\item Si $a>0$, $\sqrt[n]{a}$ es la raíz $n$-ésima positiva de
+$a$. \item Si $a<0$ y $n$ es impar, $\sqrt[n]{a}$ es la raíz
+$n$-ésima negativa de $a$. \item Si $a=0$, $\sqrt[n]{a}=0$. \item
+Si $a<0$ y $n$ es par, $\sqrt[n]{a}$ no la definimos, pues en este
+caso no existe ningún número real $r$ tal que $r^{n}=a$.
+\end{enumerate}
+
+\bigskip
+
+El símbolo $\sqrt[n]{a}$ se llama un \textit{radical}, el número
+$a$ es el \textit{radicando} y el número $n$ es el \textit{índice}
+del radical. Cuando $n=2$ en lugar de $\sqrt[2]{a}$ escribimos
+simplemente $\sqrt{a}$.
+
+\bigskip
+
+\textbf{Ejemplo 2.9. } \quad\begin{itemize} \item $\sqrt{25}=5$
+\item $\sqrt[3]{-64}=-4$ \item
+$\sqrt[5]{\dfrac{-1}{32}}=-\dfrac{1}{2}$ \item $\sqrt{-9}$ y
+$\sqrt[6]{-72}$ no son números reales
+\end{itemize}
+
+\bigskip
+
+Recalcamos que $\sqrt[n]{a}$ no existe solo en el caso en que $a$
+es negativo y $n$ es par.
+
+\bigskip
+
+Nuestro interés es no solo definir $a^{n}$ cuando $n$ es un número
+racional, sino hacerlo de tal forma que se sigan cumpliendo las
+Leyes de los Exponentes. Si $n=\dfrac{1}{q}$ donde $q$ es un
+entero positivo, y deseamos que se cumpla la ley (1) debemos tener
+que
+
+\bigskip
+
+\[\underbrace{a^{\frac{1}{q}}\cdot a^{\frac{1}{q}}\cdot
+a^{\frac{1}{q}}\cdots \cdot \cdot a^{\frac{1}{q}}}_{\text{$q$
+factores de $a^{\frac{1}{q}}$}}=a^{\frac{q}{q}}=a\]
+
+\bigskip
+
+lo cual nos indica que debemos definir $a^{\frac{1}{q}}$ como una
+raíz $q$-ésima de $a$. En consecuencia establecemos la siguiente
+definición.
+
+\textbf{Definición 2.4.3. } Sea $q$ un entero positivo mayor que
+$1$ y $a$ un número real tal que $\sqrt[q]{a}$ exista.
+Establecemos que
+
+\bigskip
+
+\[a^{\frac{1}{q}}=\sqrt[q]{a}\]
+
+\bigskip
+
+\textbf{Ejemplo 2.10. } \quad\begin{itemize} \item
+$2^{\frac{1}{3}}=\sqrt[3]{2}$ \item
+$(-32)^{\frac{1}{5}}=\sqrt[5]{-32}=-2$ \item $(-16)^{\frac{1}{4}}$
+no existe porque $\sqrt[4]{-16}$ no es un número real
+\end{itemize}
+
+\bigskip
+
+Si $n=\dfrac{p}{q}$ con $p$ y $q$ enteros positivos, y deseamos
+que se cumpla la ley (2) de los exponentes, debemos tener que
+
+\bigskip
+
+\[(a^{\frac{1}{q}})^{p}=a^{\frac{p}{q}}\]
+
+\bigskip
+
+En consecuencia debemos establecer la siguiente definición
+
+\bigskip
+
+\textbf{Definición 2.4.4. } Sea $\dfrac{p}{q}$ un número racional
+donde $p$ y $q$ son enteros positivos diferentes, y sea $a$ un
+número real tal que $\sqrt[q]{a}$ exista. Establecemos que
+
+\bigskip
+
+\[a^{\frac{p}{q}}=\left(a^{\frac{1}{q}}\right)^{p}=(\sqrt[q]{a})^{p}\]
+
+\bigskip
+
+De las definiciones anteriores y las leyes de los exponentes
+podemos deducir fácilmente que si $a^{\frac{p}{q}}$ existe
+entonces, también $a^{\frac{p}{q}}$ es la raíz $q$-ésima principal
+de $a^{p}$, es decir tenemos
+
+\bigskip
+
+\[a^{\frac{p}{q}}=\sqrt[q]{a^{p}}=(a^{p})^{\frac{1}{q}}\]
+
+\bigskip
+
+Finalmente extendemos nuestra definición de $a^{n}$ al caso en que
+$n$ es un número racional negativo.
+
+\bigskip
+
+\textbf{Definición 2.4.5. } Sea $\dfrac{p}{q}$ un número racional
+con $p$ y $q$ enteros positivos diferentes, y sea $a$ un número
+tal que $\sqrt[q]{a}$ exista. Establecemos que
+
+\bigskip
+
+\[a^{-\text{ }\frac{p}{q}}=\frac{1}{a^{\frac{p}{q}}}\]
+
+\bigskip
+
+\textbf{Ejemplo 2.11. } \quad\begin{itemize} \item
+$27^{\frac{2}{3}}=(\sqrt[3]{27})^{2}=3^{2}=9$ \item
+$81^{-\frac{3}{4}}=\dfrac{1}{81^{\frac{3}{4}}}=\dfrac{1}{(\sqrt[4]{81})^{3}}=
+\dfrac{1}{3^{3}}=\dfrac{1}{27}$ \item
+$y^{\frac{4}{7}}=(\sqrt[7]{y})^{4}=\sqrt[7]{y^{4}}$
+\end{itemize}
+
+\bigskip
+
+Se puede demostrar que las Leyes de los exponentes (1) a (6) son
+válidas para exponentes racionales siempre y cuando que $a$ y $b$
+sean \textbf{números positivos}. Cuando $a$ y $b$ son negativos
+algunas de las leyes (1) a (6) no se cumplen.
+
+\bigskip
+
+\textbf{Ejemplo 2.12. } \quad\begin{itemize} \item
+\begin{align*}
+[(-4)^{2}]^{\frac{1}{2}}&=16^{\frac{1}{2}}=4\\
+(-4)^{2\cdot \frac{1}{2}}&=(-4)^{1}=-4
+\end{align*}
+
+\bigskip
+
+Observamos que
+
+\bigskip
+
+\[[(-4)^{2}]^{\frac{1 }{2}}\neq (-4)^{2\cdot \frac{1}{2}}\]
+
+\bigskip
+
+Luego la propiedad
+
+\bigskip
+
+\[a^{m}a^{n}=a^{m+n}\]
+
+\bigskip
+
+no se cumple en este caso.
+
+\bigskip
+
+\item\[\left(\frac{-2}{-5}\right)^{\frac{1}{4}}=\left(\frac{2}{5}\right)^{\frac{1}{4}}\]
+pero
+
+\bigskip
+
+\[\frac{(-2)^{\frac{1}{4}}}{(-5)^{\frac{1}{4}}}\]
+
+\bigskip
+
+no esta definido. Luego la propiedad
+
+\bigskip
+
+\[\left(\dfrac{a}{b}\right)^{n}=\dfrac{a^{n}}{b^{n}}\]
+
+\bigskip
+
+no se cumple en este caso
+
+\bigskip
+
+Para evitar este tipo de problemas, en adelante, cuando trabajemos
+con exponentes solo consideraremos bases positivas.
+\end{itemize}
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{algebra3.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Exponentes Enteros} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Radicales} \\ \\ \\
+\end{tabular}
+\docLink{algebra5.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

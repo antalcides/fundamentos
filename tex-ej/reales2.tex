@@ -1,0 +1,234 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{reales1.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Visión Preliminar} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Diferencia y Cociente} \\ \\ \\
+\end{tabular}
+\docLink{reales3.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 1}}  {\large
+{\color{ azulc} LOS NUMEROS REALES}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 1.2. }}
+{\normalsize {\color{naranja} Adición y Multiplicación de Números Reales}}
+
+\bigskip
+
+Sobre el conjunto $\mathbb{R}$ de los números reales tenemos
+definidas dos operaciones, la \textit{adición} y la
+\textit{multiplicación} que asignan a cada par $x,y$ de números
+reales su \textit{suma} $x+y$ y su \textit{producto} $x\cdot y$
+(que escribiremos abreviadamente como $xy$) de tal manera que se
+cumplen las siguientes propiedades básicas:
+
+\bigskip
+
+\begin{description}
+\item[P.1] $\mathbb{R}$ es \textit{cerrado} para la adición y la
+multiplicación. Es decir, si $x$ y $y$ son números reales,
+entonces $x+y$ y $xy$ son también números reales.
+
+\bigskip
+
+\item[P.2] La adición y la multiplicación en $\mathbb{R}$ son
+\textit{conmutativas}. Es decir, si $x$ y $y$ son números reales,
+entonces
+
+\bigskip
+
+\[x+y=y+x\qquad\text{y}\qquad xy=yx\]
+
+\bigskip
+
+\item[P.3] La adición y la multiplicación en $\mathbb{R}$ son
+\textit{asociativas}. Es decir, si $x,y$ y $z$ son números reales,
+entonces
+
+\bigskip
+
+\[x+(y+z)=(x+y)+z\qquad\text{y}\qquad x(yz)=(xy)z\]
+
+\bigskip
+
+\item[P.4] La multiplicación es \textit{distributiva}, a izquierda
+y a derecha, con respecto a la adición en $\mathbb{R}.$ Es decir,
+si $x,y$ y $z$ son números reales, entonces
+
+\bigskip
+
+\[x(y+z)=xy+xz\qquad\text{y}\qquad(x+y)z=xz+yz\]
+
+\bigskip
+
+\item[P.5] Existen \textit{identidades} para la adición y la
+multiplicación en $\mathbb{R}$. Es decir, existen dos números
+reales diferentes que representamos por $0$ y $1$, tales que para
+todo número real $x$ se tiene
+
+\bigskip
+
+\[x+0=0+x=x\qquad\text{y}\qquad x1=1x=x.\]
+
+\bigskip
+
+\item[P.6] Existen \textit{inversos} para la adición de números
+reales y para la multiplicación de números reales diferentes de
+cero. Es decir,
+
+\bigskip
+
+Para todo número real $x$, existe un número real que representamos
+por $-x$, tal que
+
+\bigskip
+
+\[x+(-x)=(-x)+x=0\quad\text{y}\]
+
+\bigskip
+
+Para todo número real $x\neq 0$, existe un número real que
+representamos por $\dfrac{1}{x}$, tal que
+
+\bigskip
+
+\[x\dfrac{1}{x}=\dfrac{1}{x}x=1\]
+
+\bigskip
+
+El número $-x$ se llama el \textit{inverso aditivo} de $x$ o el
+\textit{opuesto} de $x$. El número $\dfrac{1}{x}$ se llama el
+\textit{inverso multiplicativo} de $x$ o el \textit{recíproco} de
+$x$.
+\end{description}
+
+\bigskip
+
+Dados los números reales $x,y$ y $z$, la propiedad asociativa de
+la adición nos dice que $x+(y+z)=(x+y)+z$. Esto nos lleva a
+definir sin ambigüedades el símbolo $x+y+z$ como el resultado
+común de estas expresiones. Similarmente, si $x,y,z$ y $w$ son
+números reales, por repetidas aplicaciones de la propiedad
+asociativa de la adición podemos comprobar que los números
+
+\bigskip
+
+\begin{align*}
+&x+(y+(z+w)),\\
+&x+((y+z)+w),\\
+&(x+(y+z))+w,\\
+&((x+y)+z)+w \qquad\text{ y}\\
+&(x+y)+(z+w),
+\end{align*}
+
+\bigskip
+
+son todos iguales y definir $x+y+z+w$ como el resultado común de
+estas expresiones. En general, si tenemos una colección finita
+$x_{1},x_{2},\ldots,x_{n\text{ }}$ de números reales, todas las
+formas posibles en que los asociemos para sumarlos producen el
+mismo resultado y podemos definir
+$x_{1}+x_{2}+\cdots+x_{n\text{}}$ como este resultado común.
+
+\bigskip
+
+También, dada una suma $x_{1}+x_{2}+\cdots+x_{n\text{ }}$ de $n$
+números reales, la propiedad conmutativa de la adición nos permite
+cambiar arbitrariamente el orden de los sumandos.
+
+\bigskip
+
+Obviamente, podemos hacer consideraciones similares para la
+multiplicación de números reales.
+
+\bigskip
+
+\textbf{ Ejemplo 1.1. } En la siguiente lista se ilustran algunas
+de las propiedades de la adición y multiplicación de números
+reales. Todas las letras representan números reales.
+
+\bigskip
+
+\begin{itemize}
+\item $5+0=5$\quad Existencia de identidad para la adición.
+
+\item $2r+7s=7s+2r$\quad Conmutatividad de la adición.
+
+\item $6\cdot \dfrac{1}{6}=1$\quad Existencia de inversos
+multiplicativos. \item $(a+b)(c+d)=(a+b)c+(a+b)d=ac+bc+ab+bd$\quad
+Propiedad distributiva.
+
+\item $\pi +(-\pi )=0$\quad Existencia de inversos aditivos.
+
+\item $x+y=x\cdot 1+y\cdot 1$\quad Existencia de identidad para la
+multiplicación.
+
+\item $(p+2q)+3r=p+(2q+3r)$\quad Asociatividad de la adición.
+
+\item $(x+y)(x-y)=(x-y)(x+y)$\quad Conmutatividad de la
+multiplicación. \item $\dfrac{1}{3x+5}(3x+5)=1$ si $3x+5\neq 0$
+\quad Existencia de inversos multiplicativos.
+
+\item $((4r)s)(3t)=(4r)(s(3t))$\quad Asociatividad de la
+multiplicación.
+\end{itemize}
+
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{reales1.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Visión Preliminar} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Diferencia y Cociente} \\ \\ \\
+\end{tabular}
+\docLink{reales3.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

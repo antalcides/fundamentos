@@ -1,0 +1,196 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{04_09.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Logaritmos} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Operaciones de Funciones} \\ \\ \\
+\end{tabular}
+\docLink{04_11.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 4}}  {\large
+{\color{ azulc} FUNCIONES}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 4.10. }}
+{\normalsize {\color{naranja} Las funciones $e^x$ \ y Logaritmo Natural}}
+
+\newline
+
+Consideremos ahora esta situación:
+
+\bigskip
+
+Mensualmente se invierte un capital $C$. Si la tasa de interés $i$
+es anual y se expresa como decimal, la cantidad acumulada al mes,
+capital mas interés, es $A\left( 1+\frac{i}{12}\right) $ y si se
+invierte $k$ meses, la cantidad acumulada es
+$A\left(1+\frac{i}{12}\right)^{k}$. Más generalmente, si $n$ son
+los períodos de inversión durante el año y el capital se invierte
+durante $t$ años, el capital acumulado será $A\left(
+t\right)=C\left( 1+\frac{i}{n}\right)^{nt}$. Esta es la fórmula de
+interés compuesto y es un ejemplo ilustrativo del crecimiento
+exponencial.
+
+\bigskip
+
+Supongamos que el número $n$ de períodos se incrementa cada vez
+más. Para algunos enteros $n$, aproximando a la octava cifra
+decimal, el comportamiento de la expresión
+$\left(1+\frac{i}{n}\right)^{n}$ tomando $i=1$ está descrito en la
+siguiente tabla
+
+\bigskip
+
+\begin{center}
+\begin{tabular}{llcll}
+$n$ & $\left( 1+\frac{1}{n}\right)^{n}$ &  & $n$ & $\left(1+\frac{1}{n}\right)^{n}$ \\
+$1$ & $2$ &  & $1000000$ & $2.71828047$ \\
+$10$ & $2.59374246$ & & $10000000$ & $2.71828169$ \\
+$100$ & $2.70481383$ &  & $100000000$ & $2.71828181$ \\
+$1000$ & $2.71692393$ &  & $1000000000$ & $2.71828183$
+\end{tabular}
+\end{center}
+
+\bigskip
+
+El valor de la expresión $\left(1+\frac{1}{n}\right)^{n}$ tiende a
+un número irracional denotado por $e$, que aparece en matemáticas
+y en física y que, con 14 cifras decimales es $e \approx
+2.71828182849045$. Una aproximación es $2.71828$.
+
+\bigskip
+
+\textbf{Definición 4.10.1. } La {\bf función exponencial natural}
+es la función exponencial de base $e$, $f\left( x\right)=e^{x}$.
+
+\bigskip
+
+La función exponencial natural como toda exponencial solo toma
+valores positivos y, puesto que $e>1$, es una función creciente.
+La función $e^{-x}$ es decreciente.
+
+\bigskip
+
+\begin{center}
+\begin{array}{cc}
+\includegraphics{/imagenes/4_30.gif} &
+\includegraphics{/imagenes/4_31.gif} \\
+$y=e^{x}$ & $y=e^{-x}$
+\end{array}
+\end{center}
+
+\bigskip
+
+\textbf{Definición 4.10.2. } Si $y$ es un número real que puede
+escribirse en la forma $y=e^{x}$ entonces el exponente $x$ se
+llama el logaritmo natural de $y$ y se denota con $\ln y$.
+
+\bigskip
+
+Así, como vimos en general,
+
+\bigskip
+
+\begin{itemize}
+\item $y=e^{x}\Leftrightarrow \ln y=x$ \item $\ln
+\left(e^{x}\right)=x$, $x\in \mathbf{R}$ \item $e^{\ln y}=y$,
+$y\in \mathbf{R}^{+}$
+\end{itemize}
+
+\bigskip
+
+También de la observaciones generales tenemos que la gráfica de la
+función $g\left( x\right)=\ln x$ se puede obtener reflejando la
+gráfica de la función $f\left(x\right)=e^{x}$ en la recta de
+ecuación $y=x$. Estas son las gráficas de las dos funciones y de
+la recta.
+
+\bigskip
+
+\begin{center}
+\includegraphics{/imagenes/4_32.gif}
+\end{center}
+
+\bigskip
+
+La función logaritmo natural es creciente; y satisface las
+siguientes condiciones.
+
+\bigskip
+
+\begin{enumerate}
+\item $\ln x+\ln y=\ln xy$ \item $\ln x-\ln y=\ln \frac{x}{y}$
+\item $\ln x^{y}=y\ln x$ \item $\log _{a}x=\frac{\ln x}{\ln a}$
+\end{enumerate}
+
+\bigskip
+
+\textbf{Ejemplo 4.13. } \quad \begin{enumerate} \item Usando
+logaritmo natural, la igualdad $e^{2t}=4+x$ se puede expresar en
+la forma $2t=\ln \left( 4+x\right)$ y la igualdad $e^{4}=a$ en la
+forma $4=\ln a$.
+
+\bigskip
+
+\item $\ln \sqrt[3]{1+e}-\ln \sqrt[3]{e+e^{2}}=\ln
+\left(\sqrt[3]{\frac{1+e}{e+e^{2}}}\right) =\ln
+e^{-\frac{1}{3}}=-\frac{1}{3}\ln e=-\frac{1}{3}$
+\end{enumerate}
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{04_09.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Logaritmos} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Operaciones de Funciones} \\ \\ \\
+\end{tabular}
+\docLink{04_11.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

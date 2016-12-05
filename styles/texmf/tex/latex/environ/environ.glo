@@ -1,0 +1,6 @@
+\glossaryentry{v0.3> =General:>Use trimspaces package, remove eTeX requirement.}{6}
+\glossaryentry{v0.2>NewEnviron=\verb!*+\NewEnviron+:>Added.}{10}
+\glossaryentry{v0.1a>NewEnvironment=\verb!*+\NewEnvironment+:>Changed \cs  {@currenv} to \texttt  {\#1} to allow nesting.}{11}
+\glossaryentry{v0.2>NewEnvironment=\verb!*+\NewEnvironment+:>Deprecated.}{11}
+\glossaryentry{v0.3>NewEnvironment=\verb!*+\NewEnvironment+:>Deleted.}{11}
+\glossaryentry{v0.3>EnvironArgs=\verb!*+\EnvironArgs+:>Deleted.}{11}

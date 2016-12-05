@@ -1,0 +1,260 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{algebra13.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Desigualdades Cuadráticas} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Cap. 3. Geometría} \\ \\ \\
+\end{tabular}
+\docLink{../cap3/geometria1.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 2}}  {\large
+{\color{ azulc} FUNDAMENTOS DE ALGEBRA}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 2.15. }}
+{\normalsize {\color{naranja} Desigualdades con Valor Absoluto}}
+
+\newline
+
+En el capítulo 1 definimos el valor absoluto de un número real
+$x$, que representamos por $\left| x\right|$, mediante
+
+\bigskip
+
+\[\left| x\right| =
+\begin{cases}
+x &\text{ \ si \ }x\geq 0 \\
+-x &\text{ \ si \ }x<0
+\end{cases}
+\]
+
+\bigskip
+
+También observamos en dicho capítulo que $\left| x\right|$
+representa la distancia del origen al punto $x$, y de forma mas
+general que $\left| x_{1}-x_{2}\right|$ representa la distancia
+entre $x_{1}$ y $x_{2}$.
+
+\bigskip
+
+Las propiedades siguientes del valor absoluto nos indican que este
+se comporta muy bien con respecto a la multiplicación y la
+división, pero no así con respecto a la adición y la sustracción.
+
+\bigskip
+
+\textbf{Propiedades del valor absoluto.} Si $x$ y $y$ son números
+reales arbitrarios entonces
+
+\bigskip
+
+\begin{enumerate}
+\item $\left| -x\right| =\left| x\right| $ \item $\left| xy\right|
+=\left| x\right| \left| y\right| $ \item $\left|
+\dfrac{x}{y}\right| =\dfrac{\left| x\right| }{\left| y\right|}$,
+$y\neq 0)$ \item $\left| x+y\right| \leq \left| x\right| +\left|
+y\right| $ (Desigualdad triangular) \item $\left| x\right| -\left|
+y\right| \leq \left| x-y\right| $  y  $\left| y\right| -\left|
+x\right| \leq \left|x-y\right| $
+
+\bigskip
+
+La interpretación geométrica de $\left| x\right| $ nos proporciona
+una justificación de las siguientes dos propiedades
+
+\bigskip
+
+Sea $a\geq 0$. Entonces
+
+\bigskip
+
+\item $\left| x\right| \leq a$ es equivalente a $-a\leq x\leq a$
+\item $\left| x\right| \geq a$ es equivalente a $x\geq a$ o $x\leq
+-a$
+
+\bigskip
+
+Gráficamente tenemos
+
+\bigskip
+
+\[
+\includegraphics{img/img6.gif}
+\]
+
+\bigskip
+
+Otra propiedad del valor absoluto, muy utilizada en la solución de
+desigualdades, es la siguiente
+
+\bigskip
+
+\item $\left| x\right| \leq \left| y\right| $ es equivalente a
+$x^{2}\leq y^{2}$
+
+\end{enumerate}
+
+\bigskip
+
+En las propiedades (6) a (8) el símbolo $\leq $ puede remplazarse
+por $<$.
+
+\bigskip
+
+\textbf{Ejemplo 2.49. } Resolvamos la desigualdad $\left|
+3-4x\right| \leq 7$.
+
+\bigskip
+
+Utilizando la propiedad (6), tenemos la siguiente cadena de
+desigualdades equivalentes:
+
+\bigskip
+
+\begin{gather*}
+\left| 3-4x\right| \leq 7\\
+-7\leq 3-4x\leq 7\\
+-10\leq -4x\leq 4\\
+-\dfrac{10}{4}\leq -x\leq 1\\
+\dfrac{10}{4}\geq x\geq -1
+\end{gather*}
+
+\bigskip
+
+Por lo tanto, la solución de la desigualdad es el intervalo
+$\left[-1,\dfrac{10}{4}\right]$.
+
+\bigskip
+
+\textbf{Ejemplo 2.50. } Resolvamos la desigualdad $\left|
+5x+14\right|
+>10$.
+
+\bigskip
+
+La propiedad (7) nos dice que la desigualdad es equivalente a
+
+\bigskip
+
+\[5x+14>10 \qquad \text{o} \qquad 5x+14<-10\]
+
+\bigskip
+
+Resolviendo
+
+\bigskip
+
+\[5x>-4 \qquad \text{o} \qquad 5x<-24\]
+
+\bigskip
+
+o sea
+
+\bigskip
+
+\[x>-\dfrac{4}{5} \qquad \text{o} \qquad x<-\dfrac{24}{5}\]
+
+\bigskip
+
+Por lo tanto, la solución de la desigualdad dada es
+$\left(-\infty,-\dfrac{24}{5}\right)\cup
+\left(-\dfrac{4}{5},\infty \right)$
+
+\bigskip
+
+\textbf{Ejemplo 2.51. } Resolvamos la desigualdad $\left|
+\dfrac{2x-1}{x+3}\right| \geq 3$.
+
+\bigskip
+
+Utilizando la propiedad (8) del valor absoluto, tenemos la
+siguiente cadena de desigualdades equivalentes:
+
+\bigskip
+
+\begin{align*}
+\left| \dfrac{2x-1}{x+3}\right| &\geq 3\\
+\dfrac{\left| 2x-1\right| }{\left| x+3\right| } &\geq 3\\
+\left| 2x-1\right| &\geq 3\left| x+3\right|\\
+(2x-1)^{2} &\geq 9(x+3)^{2}\\
+(2x-1)^{2}-9(x+3)^{2} &\geq 0\\
+[(2x-1)-3(x+3)][(2x-1)+3(x+3)] &\geq 0\\
+(-x-10)(5x+8) &\geq 0
+\end{align*}
+
+\bigskip
+
+Elaborando un diagrama de signos tenemos
+
+\bigskip
+
+\begin{center}
+\begin{tabular}{lccc}
+Signo de $(-x-10)$ & + & - & -\\
+Signo de $(5x+8)$ & - & - & +\\ \hline Signo de $(-x-10)(5x+8)$ &
+- & + & -
+\end{tabular}
+\end{center}
+
+\bigskip
+
+Vemos que la solución de la desigualdad es
+$\left[-10,-\dfrac{8}{5}\right]$.
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{algebra13.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Desigualdades Cuadráticas} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Cap. 3. Geometría} \\ \\ \\
+\end{tabular}
+\docLink{../cap3/geometria1.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

@@ -1,0 +1,226 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{reales3.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Diferencia y Cociente} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Representación Geométrica} \\ \\ \\
+\end{tabular}
+\docLink{reales5.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 1}}  {\large
+{\color{ azulc} LOS NUMEROS REALES}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 1.4. }}
+{\normalsize {\color{naranja} Orden en los Números Reales}}
+
+\newline
+
+El conjunto $\mathbb{R}$ de los números reales contiene un
+subconjunto especial llamado el conjunto de los \textit{números
+positivos}, que representamos por $\mathbb{P}$, cuyas propiedades
+básicas son:
+
+\bigskip
+
+\begin{description}
+\item[P.7] Si $x$ y $y$ pertenecen a $\mathbb{P}$, entonces $x+y$
+pertenece a $\mathbb{P}$.
+
+\item[P.8] Si $x$ y $y$ pertenecen a $\mathbb{P}$, entonces $xy$
+pertenece a $\mathbb{P}$.
+
+\item[P.9] Si $x$ es un número real, se cumple exactamente una de
+las siguientes relaciones.
+
+\bigskip
+
+\[x\in \mathbb{P}, \quad x=0, \quad -x\in \mathbb{P}\]
+\end{description}
+
+\bigskip
+
+Estas propiedades las completamos con la siguiente definición:
+
+\bigskip
+
+\textbf{Definición 1.4.1.} Si $x$ y $y$ son números reales,
+entonces
+
+\bigskip
+
+\begin{itemize}
+\item $x<y$ significa que $y-x\in \mathbb{P}$.
+
+\item $x>y$ significa que $y<x$.
+
+\item $x\leq y$ significa que $x<y$ o $x=y$.
+
+\item $ x\geq y$ significa que $x>y$ o $x=y$.
+\end{itemize}
+
+\bigskip
+
+De acuerdo a la definición anterior tenemos que
+
+\bigskip
+
+\begin{center}
+$x>0$ si y sólo si $x$ es positivo, es decir, $x>0$ si y sólo si
+$x\in \mathbb{P}$.
+\end{center}
+
+\bigskip
+
+Utilizando la notación anterior, podemos expresar las propiedades
+básicas de los números positivos de la siguiente forma:
+
+\bigskip
+
+\begin{description}
+\item[P.7] Si $x>0$ y $y>0$ entonces $x+y>0$.
+
+\item[P.8] Si $x>0$ y $y>0$ entonces $xy>0$.
+
+\item[P.9] Si $x$ es un número real, se cumple exactamente una de
+las siguientes relaciones
+
+\[x>0, \quad x=0, \quad -x>0\]
+\end{description}
+
+\bigskip
+
+Las siguientes terminologías se usan con frecuencia:
+
+\bigskip
+
+\begin{itemize}
+\item Si $x<0$ decimos que $x$ es \textit{negativo}.
+
+\item Si $x\geq 0$ decimos que $x$ es \textit{no negativo}.
+
+\item $x<y<z$ significa que $x<y$ y $y<z$.
+
+\item $x\leq y<z$ significa que $x\leq y$ y $y<z$.
+
+\item $x<y\leq z$ significa que $x<y$ y $y\leq z$.
+
+\item $x\leq y\leq z$ significa que $x\leq y$ y $y\leq z$.
+\end{itemize}
+
+\bigskip
+
+De estas propiedades se deducen las reglas usuales que rigen las
+operaciones con desigualdades. Como ejemplo podemos citar algunas
+de ellas de uso muy frecuente:
+
+\bigskip
+
+\begin{itemize}
+
+\bigskip
+
+\item Si $x$ y $y$ son números reales tales que $x<y$, entonces
+$x+z<y+z$ para todo número real $z$.
+
+\item Si $x,y$ y $z$ son números reales tales que $x<y$ y $z>0$,
+entonces $xz<yz$.
+
+\item Si $x,y$ y $z$ son números reales tales que $x<y$ y $z<0$,
+entonces $xz>yz$.
+
+\item Si $x>0$ entonces $-x<0$ y si $x<0$ entonces $-x>0$.
+
+\item Si $x>0$ entonces $\dfrac{1}{x}>0$ y si $x<0$ entonces
+$\dfrac{1}{x}<0$.
+
+\item Si $x$ y $y$ son números reales tales que $xy>0$, entonces
+$x>0$ y $y>0$, o, $x<0$ y $y<0$.
+
+\item Si $x$ y $y$ son números reales tales que $xy<0$, entonces
+$x>0 $ y $y<0$, o, $x<0$ y $y>0$.
+\end{itemize}
+
+\bigskip
+
+\textbf{Ejemplo 1.3.}
+
+\bigskip
+
+\begin{itemize}
+\item $4<7$ pues $7-4=3>0$
+
+\item $-10<-5$ pues $(-5)-(-10)=-5+10=5>0$
+
+\item $-6<0$ pues $0-(-6)=6>0$
+
+\item $3<\dfrac{10}{3}<4$ pues $3<\dfrac{10}{3}$ y
+$\dfrac{10}{3}<4$
+
+\item Si $-2x<-8$ entonces $x>4$
+
+\item Si $-3\leq 2x-5\leq 7$ entonces $2\leq 2x\leq 12$ y por lo
+tanto $1\leq x\leq 6$
+
+\item Para todo número real $a$ se tiene que $a^{2}\geq 0$ \item
+Si $a$ y $b$ son números reales tales que $a<b$ entonces
+$a<\dfrac{a+b}{2}<b$
+\end{itemize}
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{reales3.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Diferencia y Cociente} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Representación Geométrica} \\ \\ \\
+\end{tabular}
+\docLink{reales5.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

@@ -1,0 +1,289 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{04_11.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Operaciones} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Cap. 5. Trigonometría} \\ \\ \\
+\end{tabular}
+\docLink{../cap5/trigo1.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 4}}  {\large
+{\color{ azulc} FUNCIONES}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 4.12. }}
+{\normalsize {\color{naranja} Composición de Funciones}}
+
+\newline
+
+Existe otra manera de obtener una función a partir de dos
+funciones dadas y es haciendo actuar una función después de la
+otra: se define la {\bf función compuesta} de las funciones $f$ y
+$g$, denotada con $f\circ g$, así:
+
+\bigskip
+
+\[\left( f\circ g\right) \left(x\right)=f\left(g\left(x\right)\right)\]
+
+\bigskip
+
+Esta función puede aplicarse a los números reales $x$ para los
+cuales están definidas tanto $g\left( x\right)$ como
+$f\left(g\left( x\right) \right) $, así:
+
+\bigskip
+
+\[D_{f\circ g}=\left\{ x\in D_{g}/g\left( x\right) \in
+D_{f}\right\}\]
+
+\bigskip
+
+\textbf{Ejemplo 4.15. } \quad\begin{enumerate} \item Sean v
+$f(x)=4-2x$ y $g(x)=16-x^{2}$
+
+\bigskip
+
+\begin{align*}
+\left( f\circ g\right) \left( x\right) &=f\left( g\left( x\right)
+\right) =f\left( 16-x^{2}\right) =4-2\left( 16-x^{2}\right)
+=-28+2x^{2}\\
+D_{f\circ g}&=\left\{ x\in D_{g}/g\left( x\right) \in
+D_{f}\right\}\\
+&=\left\{ x\in \mathbf{R}/g\left( x\right) \in \mathbf{R}\right\}
+=\mathbf{R}\\
+\left( g\circ f\right) \left( x\right) &=g\left( f\left( x\right)
+\right) =g\left( 4-2x\right) =16-\left( 4-2x\right)^{2}=16x-4x^{2}\\
+D_{g\circ f}&=\left\{ x\in D_{f}/g\left( x\right) \in
+D_{g}\right\}\\
+&=\left\{ x\in \mathbf{R}/g\left( x\right) \in \mathbf{R}\right\}
+=\mathbf{R}
+\end{align*}
+
+\bigskip
+
+Estas son sus gráficas
+
+\bigskip
+
+\begin{center}
+\includegraphics{imagenes/4_42.gif} \\
+\includegraphics{imagenes/4_43.gif} \\
+\end{center}
+
+\bigskip
+
+Note que las funciones $f\circ g$ y $g\circ f$ son distintas.
+
+\bigskip
+
+\item Si $f\left( x\right)=\frac{3}{x+1}$, entonces
+\begin{enumerate}
+\item $f\left( x^{2}\right)=\frac{3}{x^{2}+1}$, en particular,
+$f\left(2^{2}\right) =\frac{3}{5}$ \item $f(x)^{2}=\left(
+\frac{3}{x+1}\right)^{2}=\frac{9}{\left( x+1\right)^{2}}$, en
+particular, $f\left( 2\right)^{2}=1$ \item $\left( f\circ f\right)
+\left( x\right) =f\left( f\left( x\right)\right)=f\left(
+\frac{3}{x+1}\right)=\frac{3}{\frac{3}{x+1}+1}=\frac{3\left(x+1\right)
+}{x+4}$.
+
+\bigskip
+
+También
+
+\bigskip
+
+$f\left(f\left(x\right)\right)=\frac{3}{f\left(x\right)+1}$. En
+particular, $\left( f\circ f\right) \left( 2\right) =\frac{3}{2}$
+\end{enumerate}
+
+\bigskip
+
+En general $f\left( x^{2}\right)\neq f(x)^{2}$,
+$f\left(x^{2}\right) \neq f\left( f\left( x\right) \right)$  y
+$f(x)^{2}\neq f\left( f\left( x\right) \right)$.
+
+\bigskip
+
+\item La función $h\left( x\right) =\sqrt{x^{2}-1}$ puede
+obtenerse en la forma $\left( f\circ g\right)\left(x\right)$ para
+que $g\left(x\right) =x^{2}-1$ y $f\left( x\right)=\sqrt{x}$.
+
+\item La función $k\left( x\right)=\frac{2}{x^{2}+2x+3}$ puede
+expresarse como una función compuesta, de más de una manera. Así
+por ejemplo,
+
+\bigskip
+
+Si $f_{1}\left( x\right)=\frac{1}{x}$ y
+$g_{1}\left(x\right)=\frac{x^{2}+2x+3}{2}$ entonces
+
+\bigskip
+
+\begin{align*}
+(f_{1}\circ g_{1})\left(x\right)&=f_{1}\left(g_{1}\left(x\right)
+\right)=\frac{1}{g_{1}\left(x\right)}=\frac{1}{\frac{x^{2}+2x+3}{2}}\\
+&=\frac{2}{x^{2}+2x+3}=k\left(x\right)
+\end{align*}
+
+\bigskip
+
+Si $f_{2}\left(x\right)=\frac{2}{x^{2}+2}$ y $g_{2}\left(
+x\right)=x+1$ entonces
+
+\bigskip
+
+\begin{align*}
+(f_{2}\circ
+g_{2})\left(x\right)&=f_{2}\left(g_{2}\left(x\right)\right)=f_{2}\left(x+1\right)=\frac{2}{\left(x+1\right)^{2}+2}\\
+&=\frac{2}{x^{2}+2x+3}=k\left(x\right)
+\end{align*}
+
+\bigskip
+
+Además, si $f_{3}\left(x\right)=\frac{2}{x}$,
+$g_{3}\left(x\right)=x+3$ y $h\left( x\right)=x^{2}+2x$ entonces
+
+\bigskip
+
+\begin{align*}
+\left( \left( f_{3}\circ g_{3}\right) \circ h\right)
+\left(x\right)&=\left( f_{3}\circ g_{3}\right)
+h\left(x\right)=f_{3}\left( g_{3}\left( h\left( x\right) \right)
+\right)\\
+&=f_{3}\left( g_{3}\left( x^{2}+2x\right) \right)
+=f_{3}\left(x^{2}+2x+3\right)\\
+&=\frac{2}{x^{2}+2x+3}
+\end{align*}
+
+\bigskip
+
+También
+
+\bigskip
+
+\[\left( f_{3}\circ \left( g_{3}\circ h\right) \right) \left(x\right) =f_{3}\left( \left( g_{3}\circ h\right) \left( x\right)\right) =f_{3}\left( g_{3}\left( h\left( x\right) \right) \right)=k\left(x\right)\]
+
+\bigskip
+
+\item Sean $a>0$ y $f(x)=a^{x}$ y $g(x)=\log _{a}x$
+\begin{align*}
+\left( f\circ
+g\right)\left(x\right)&=f\left(g\left(x\right)\right)
+=f\left(\log_{a}x\right)=a^{\log_{a}x}=x\\
+D_{f\circ g}&=\left\{ x\in D_{g}/g\left( x\right) \in
+D_{f}\right\}\\
+&=\left\{ x\in \mathbf{R},\text{ }x>0/g\left( x\right) \in
+\mathbf{R}\right\} =\left\{ x\in \mathbf{R},\text{ }x>0\right\}
+=\mathbf{R}^{+}\\
+\left( g\circ f\right) \left( x\right)&=g\left( f\left( x\right)
+\right) =g\left( a^{x}\right) =\log _{a}a^{x}=x\\
+D_{g\circ f}&=\left\{ x\in D_{f}/f\left( x\right) \in
+D_{g}\right\}\\
+&=\left\{ x\in \mathbf{R}/f\left( x\right) >0\right\} =\mathbf{R}
+\end{align*}
+\end{enumerate}
+
+\bigskip
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 4.12.1.
+}} {\normalsize {\color{naranja} Propiedades}}
+
+\bigskip
+
+Examinemos ahora las propiedades de la composici\'{o}n de
+funciones:
+
+\bigskip
+
+\begin{enumerate}
+\item La asociatividad se verifica en general pues
+\begin{align*}
+\left( \left( f\circ g\right) \circ h\right) \left(
+x\right)&=\left( f\circ g\right) \left( h\left( x\right) \right)
+=f\left( g\left( h\left( x\right) \right) \right)\\
+\left( f\circ \left( g\circ h\right) \left( x\right)
+\right)&=f\left( g\left( h\left( x\right) \right) \right)
+\end{align*}
+así
+
+\bigskip
+
+\[\left( f\circ g\right) \circ h=f\circ \left(g\circ h\right)\]
+
+\bigskip
+
+\item La conmutatividad no se verifica en general como lo vimos
+anteriormente.
+
+\item Sea $I$ la función identidad que a cada $x$ asocia $x$, es
+decir, $I\left( x\right)=x$. Para toda función $f$ tenemos
+\begin{align*}
+\left( f\circ I\right) \left( x\right) &=\ f\left( I\left(x\right)\right) =f\left( x\right)\\
+\left( I\circ f\right) \left( x\right) &=I\left(
+f\left(x\right)\right) =f\left( x\right)
+\end{align*}
+esto es,
+
+\bigskip
+
+\[f\circ I=f \quad\text{e}\quad I\circ f=f\]
+
+\end{enumerate}
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{04_11.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Operaciones} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Cap. 5. Trigonometría} \\ \\ \\
+\end{tabular}
+\docLink{../cap5/trigo1.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

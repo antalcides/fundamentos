@@ -1,0 +1,119 @@
+\RequirePackage{xkeyval}
+\RequirePackage{tikz}
+\RequirePackage{amssymb}
+
+\define@key{boxedtheorem}{titlecolor}{\def\titlecolor{#1}}
+\define@key{boxedtheorem}{titlebackground}{\def\titlebackground{#1}}
+\define@key{boxedtheorem}{background}{\def\background{#1}}
+\define@key{boxedtheorem}{titleboxcolor}{\def\titleboxcolor{#1}}
+\define@key{boxedtheorem}{boxcolor}{\def\boxcolor{#1}}
+\define@key{boxedtheorem}{thcounter}{\def\thcounter{#1}}
+\define@key{boxedtheorem}{size}{\def\size{#1}}
+\presetkeys{boxedtheorem}{titlecolor = black, titlebackground = white, background = white,%
+                         titleboxcolor = black, boxcolor = black, thcounter=, size = .9\textwidth}{}
+                         \define@key{boxedtheoremDefTeo}{titlecolor}{\def\titlecolor{#1}}
+\define@key{boxedtheoremDefTeo}{titlebackground}{\def\titlebackground{#1}}
+\define@key{boxedtheoremDefTeo}{background}{\def\background{#1}}
+\define@key{boxedtheoremDefTeo}{titleboxcolor}{\def\titleboxcolor{#1}}
+\define@key{boxedtheoremDefTeo}{boxcolor}{\def\boxcolor{#1}}
+\define@key{boxedtheoremDefTeo}{thcounter}{\def\thcounter{#1}}
+\define@key{boxedtheoremDefTeo}{size}{\def\size{#1}}
+\presetkeys{boxedtheoremDefTeo}{titlecolor = black, titlebackground = white, 
+background = white,%
+titleboxcolor = black, boxcolor = black, thcounter=, size = .9\textwidth}{}
+
+\newcommand{\couleurs}[1][]{%
+    \setkeys{boxedtheorem}{#1}
+    \tikzstyle{fancytitle} =[draw=\titleboxcolor, rounded corners, fill=\titlebackground,
+                            text= \titlecolor]
+    \tikzstyle{mybox} = [draw=\boxcolor, fill=\background, very thick,
+                        rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
+}
+
+\newcommand{\couleursDefTeo}[1][]{%
+    \setkeys{boxedtheoremDefTeo}{#1}
+    \tikzstyle{fancytitleDefTeo} =[draw=\titleboxcolor, fill=\titlebackground,
+                            text= \titlecolor]
+    \tikzstyle{myboxDefTeo} = [draw=\boxcolor, fill=\background, very thick,drop shadow,
+                        rectangle, inner sep=5pt, inner ysep=5pt] %inner = extra espacio para texto
+}
+
+
+%Commande générique pour faire un joli encadré
+\newsavebox{\boiboite}
+\newcommand{\titre}{Titre}
+\newenvironment{boite}[2][]%
+    {%
+    \renewcommand{\titre}{#2}
+    \couleurs[#1]
+    \begin{lrbox}{\boiboite}%
+     \begin{minipage}[!h]{\size}
+    }%
+    {%
+     \end{minipage}
+    \end{lrbox}
+    \begin{center}
+    \begin{tikzpicture}
+    \node [mybox] (box){\usebox{\boiboite}};
+    \node[fancytitle, right=10pt] at (box.north west) {\titre};
+    \end{tikzpicture}
+    \end{center}
+    }
+
+
+%%%%%%%%% #4=contador, ##1=txt en \begin{ejemplo}[txt]
+
+\newcommand{\newboxedtheorem}[4][]{%
+    \couleurs[#1]
+    \@ifnotempty{#4}{%
+      \@ifundefined{the#4}{\@ifundefined{\thcounter}{\newcounter{#4}}{%
+      \newcounter{#4}[\thcounter ] } } { }%
+    }
+    \newenvironment{#2}[1][]{%
+    \@ifnotempty{#4}{\refstepcounter{#4}}
+    \begin{boite}[#1]{\textbf{#3\@ifnotempty{#4}{ \white\csname the#4\endcsname}}\@ifnotempty{##1}{
+    \white##1}}
+    }%
+    {%
+    \end{boite}
+    }
+}
+
+\newsavebox{\boiboiteDefTeo}
+\newcommand{\titreDefTeo}{Titre}
+\newenvironment{boiteDefTeo}[2][]%
+    {%
+    \renewcommand{\titreDefTeo}{#2}
+    \couleursDefTeo[#1]
+    \begin{lrbox}{\boiboiteDefTeo}%
+     \begin{minipage}[!h]{\size}
+    }%
+    {%
+     \end{minipage}
+    \end{lrbox}
+    \begin{center}
+    \begin{tikzpicture}
+    \node [myboxDefTeo] (box){\usebox{\boiboiteDefTeo}};
+    \node[fancytitleDefTeo, right=0pt, yshift=0.25cm ] at (box.north west) {\titreDefTeo};
+    \end{tikzpicture}
+    \end{center}
+    }
+
+%%%%%%%%% #4=contador, ##1=txt en \begin{ejemplo}[txt]
+
+\newcommand{\newboxedtheoremDefTeo}[4][]{%
+    \couleursDefTeo[#1]
+    \@ifnotempty{#4}{%
+      \@ifundefined{the#4}{\@ifundefined{\thcounter}{\newcounter{#4}}{%
+      \newcounter{#4}[\thcounter ] } } { }%
+    }
+    \newenvironment{#2}[1][]{%
+    \@ifnotempty{#4}{\refstepcounter{#4}}
+    \begin{boiteDefTeo}[#1]{\textbf{#3\@ifnotempty{#4}{ \white\csname the#4\endcsname}}\@ifnotempty{##1}{
+    \white##1}}
+    }%
+    {%
+    \end{boiteDefTeo}
+    }
+}
+

@@ -1,0 +1,362 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{trigo14.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small \'{A}ngulos Múltiples} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 5}}  {\large
+{\color{ azulc} NOTAS DE TRIGONOMETRIA}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 5.14. }}
+{\normalsize {\color{naranja} Aplicaciones de la Trigonometría}}
+
+\newline
+
+Hemos visto aplicaciones en problemas que pueden resolverse
+utilizando las funciones trigonométricas en triángulos
+rectángulos. Hay casos en los que se requiere el uso de triángulos
+que no son rectángulos y sin embargo es posible encontrar sus
+elementos (lados, ángulos), mediante los Teoremas del Seno y del
+Coseno, que establecen relaciones entre los lados y los ángulos de
+un triángulo oblicuo (no contiene un ángulo recto).
+
+\bigskip
+
+\colorbox{naranja}{{\color{white} 5.14.1. }} { {\color{naranja}
+Teorema del Seno}}
+
+\bigskip
+
+\begin{center}
+\includegraphics{img/teorema_seno1.gif}
+\end{center}
+
+\bigskip
+
+Si en el triángulo: $\triangle ABC$, $a$, $b$, $c$ son las
+longitudes de los lados opuestos a $A$, $B$, $C$, respectivamente:
+
+\bigskip
+
+\[\dfrac{sen\angle A}{a}=\dfrac{sen\angle B}{b}=\dfrac{sen\angle C}{c}\]
+
+\bigskip
+
+Para encontrar todos los elementos de un triángulo mediante el
+teorema del Seno, debe utilizar cualquiera de las siguientes
+informaciones:
+
+\bigskip
+
+\begin{enumerate}
+\item Dos lados y un ángulo opuesto. \item Dos ángulos y cualquier
+lado.
+\end{enumerate}
+
+\bigskip
+
+\textbf{Ejemplo 5.37. } Encuentre la medida de los ángulos y de
+los lados desconocidos del triángulo $\triangle ABC$ si se sabe
+que: $\angle \alpha =115^{\circ }$, $a=46$, $b=40$.
+
+\bigskip
+
+\begin{center}
+\includegraphics{img/teorema_seno2.gif}
+\end{center}
+
+\bigskip
+
+\emph{Solución}:
+
+\bigskip
+
+$\dfrac{sen\alpha}{a}=\dfrac{sen\beta }{b}$, entonces: $\dfrac{sen
+115^{\circ }}{46}=\dfrac{sen\beta }{40}$.
+
+\bigskip
+
+Despejando:
+
+\bigskip
+
+\[sen\beta =\dfrac{40sen115^{\circ}}{46}\simeq \dfrac{40\left( 0.906\right)}{46}\]
+
+\bigskip
+
+$sen\beta \simeq 0.787$, entonces $\beta \simeq 51.9^{\circ }$.
+
+\bigskip
+
+Como la suma de los ángulos interiores de un triángulo es
+$180^{\circ }$ entonces
+
+\bigskip
+
+\[\gamma =180^{\circ }-\left( 51.9+115\right)\simeq 13.1^{\circ}\]
+
+\bigskip
+
+$\dfrac{sen\gamma}{c}=\dfrac{sen\alpha}{a}$, entonces: $\dfrac{sen
+13.1^{\circ }}{c}=\dfrac{sen 115^{\circ }}{46}$.
+
+\bigskip
+
+Despejando:
+
+\bigskip
+
+$c=\dfrac{46sen 13.1^{\circ }}{sen 115^{\circ }}$, entonces
+$c\simeq \dfrac{\left( 46\left( 0.226\right) \right)}{0.906}\simeq
+11.5$
+
+\bigskip
+
+\textbf{Ejemplo 5.38. } Dos observadores colocados a 110 metros de
+separación en $A$ y en $B$ en la orilla de un río están mirando
+una torre en la orilla opuesta en el punto $C$. Midieron los
+ángulos $\angle CAB$ y $\angle CBA$ que fueron de $43^{\circ }$ y
+$57^{\circ }$ respectivamente.  A qué distancia está el primer
+observador de la torre?
+
+\bigskip
+
+\emph{Solución}:
+
+\bigskip
+
+\begin{center}
+\includegraphics{img/teorema_seno3.gif}
+\end{center}
+
+\bigskip
+
+A partir del triángulo
+
+\bigskip
+
+\[\bigskip \dfrac{b}{sen 57^{\circ}}=\dfrac{110}{sen\gamma }\]
+
+\bigskip
+
+\[\gamma =180^{\circ }-\left( 57^{\circ }+43^{\circ}\right) =80^{\circ}\]
+
+\bigskip
+
+Reemplazando y despejando:
+
+\bigskip
+
+\[b=\dfrac{110sen 57^{\circ }}{sen 80^{\circ }}m=\dfrac{92.25}{0.98}m\simeq 94.13m\]
+
+\bigskip
+
+El primer observador está aproximadamente a $94.13m$. de la torre
+
+\bigskip
+
+\textbf{Ejemplo 5.39. } Un poste vertical de 60 pies de longitud
+está colocado al lado de un camino inclinado. Proyecta una sombra
+de 138 pies de largo directamente colina abajo a lo largo del
+camino, cuando el ángulo de elevación del sol es de 58$^{\circ }$
+(observe la figura). Encuentre el ángulo de inclinación $\theta $
+del camino.
+
+\bigskip
+
+\emph{Solución}:
+
+\bigskip
+
+\begin{center}
+\includegraphics{img/teorema_seno4.gif}
+\end{center}
+
+\bigskip
+
+El triángulo $\triangle ABC$ es rectángulo. Si se conoce $\gamma$,
+puede calcularse $\theta$, teniendo en cuenta que
+$58^{\circ}=\theta +\gamma$.
+
+\bigskip
+
+Por el teorema del Seno: $\dfrac{sen\alpha}{138}=\dfrac{sen\gamma
+}{60}$.
+
+\bigskip
+
+Despejando: $sen\gamma =\dfrac{\left( 60\right)
+\left(0.53\right)}{138}=0.23$; $\gamma \simeq 13.29^{\circ }$.
+
+\bigskip
+
+\[\theta =58^{\circ }-13.29^{\circ }=44.71^{\circ }\]
+
+\bigskip
+
+El ángulo de inclinación es de $44.71^{\circ }$.
+
+\bigskip
+
+\colorbox{naranja}{{\color{white} 5.14.2. }} { {\color{naranja}
+Teorema del Coseno}}
+
+\bigskip
+
+En algunos problemas no es posible aplicar solamente el teorema
+del Seno, como es el caso en el que se conocen solamente dos lados
+y el ángulo comprendido entre ellos. Si se tienen estos elementos
+y se quiere calcular los que hacen falta, se aplica el teorema del
+Coseno y ya conocido el lado restante puede utilizarse el Teorema
+del Seno.
+
+\bigskip
+
+\begin{center}
+\includegraphics{img/teorema_coseno1.gif}
+\end{center}
+
+\bigskip
+
+Si en el triángulo $\triangle ABC$, $a$, $b$, $c$, son los lados
+opuestos a los ángulos $\alpha$, $\beta$, $\gamma$,
+respectivamente, entonces:
+
+\bigskip
+
+\begin{enumerate}
+\item  $a^{2}=b^{2}+c^{2}-2bc\cos\alpha $ \item
+$b^{2}=a^{2}+c^{2}-2ac\cos\beta $ \item
+$c^{2}=a^{2}+b^{2}-2ab\cos\gamma $
+\end{enumerate}
+
+\bigskip
+
+\textbf{Ejemplo 5.40. } En una esquina de un campo triangular, el
+ángulo mide $52.4^{\circ}$, los lados que se encuentran en esa
+esquina miden 100 metros y 120 metros de largo. ¿Cuánto mide el
+tercer lado?
+
+\bigskip
+
+\emph{Solución}:
+
+\bigskip
+
+\begin{center}
+\includegraphics{img/teorema_coseno2.gif}
+\end{center}
+
+\bigskip
+
+\begin{align*}
+l^{2}&=100^{2}+120^{2}-2\left( 120\right) \left( 100\right)
+\cos\left( 52.4^{\circ }\right)\\
+l^{2}&=10000+14400-24000\left( 0.61\right) =9760m^{2}\\
+l =\sqrt{9760}\simeq 98.9 \text{ metros}
+\end{align*}
+
+\bigskip
+
+\textbf{Ejemplo 5.41. } Dos corredores $A$, $C$ parten del mismo
+punto $B$ a las 12:00 del día. Uno de ellos se dirige hacia el
+norte a 6 millas por hora y el otro se dirige a $68^{\circ }$ al
+este del norte a 8 millas por hora. ¿Cuál es la distancia entre
+ellos a las 3:00 de la tarde?
+
+\bigskip
+
+\emph{Solución}:
+
+\bigskip
+
+\begin{center}
+\includegraphics{img/teorema_coseno3.gif}
+\end{center}
+
+\bigskip
+
+Debemos encontrar la longitud de $b$, entonces encontramos las
+longitudes de $a$ y $c$:
+
+\bigskip
+
+Como parten a las 12 del día, a las 3:00 de la tarde cada uno ha
+corrido durante tres horas.
+
+\bigskip
+
+Así:
+\begin{align*}
+c &=\left(6\ \text{millas}\right) 3=18\ \text{millas}\\
+a &= \left( 8\text{ millas}\right) 3=24\text{ millas}
+\end{align*}
+
+\bigskip
+
+Por el teorema del Coseno:
+$b^{2}=a^{2}+c^{2}-2ac\cos\left(68^{\circ }\right)$
+
+\bigskip
+
+\begin{align*}
+b^{2}&=18^{2}+24^{2}-2\left( 18\right) \left( 24\right)
+\left(0.37\right)\\
+b^{2}&=580.32\\
+b&\simeq 24 \text{ millas}
+\end{align*}
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{trigo14.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small \'{A}ngulos Múltiples} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+&
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

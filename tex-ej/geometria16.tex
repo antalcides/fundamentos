@@ -1,0 +1,256 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{geometria15.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color {darkgray} {\small Tipos de Cuadriláteros}} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color {darkgray} {\small Teorema de Pitágoras}} \\ \\ \\
+\end{tabular}
+\docLink{geometria18.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 3}}  {\large
+{\color{ azulc} MODULO DE GEOMETRÍA}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 3.14. }}
+{\normalsize {\color{naranja} \'{A}rea de Polígonos}}
+
+\newline
+
+El área se puede interpretar como la medida del espacio ocupado
+por una región bidimensional. Si recubrimos una región con una
+unidad y contamos el número de copias de la unidad que se
+necesitan para recubrir la región, decimos que este número es el
+área de la región en estas unidades. Usualmente la unidad es un
+cuadrado cuyo lado es una unidad lineal y por eso se afirma que el
+área está medida en las mismas unidades cuadradas.
+
+\bigskip
+
+\[
+\begin{tabular}{cc}
+\includegraphics{imagenes/area_pol.gif} & \includegraphics{imagenes/area_pol1.gif}
+\end{tabular}
+\]
+
+\bigskip
+
+
+
+Es posible usar el razonamiento anterior para concluir que: el
+área $A$ de un rectángulo con dimensiones $a$ y $b$ es $A =a\cdot
+b$ y utilizando la fórmula anterior es posible deducir que el área
+de un cuadrado de lado $l$ es $l^2$.
+
+\bigskip
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 3.14.1.
+}} {\normalsize {\color{naranja} Área del triángulo Rectángulo}}
+
+\bigskip
+
+Es fácil encontrar el área de un triángulo rectángulo
+
+\bigskip
+
+\[
+\includegraphics{imagenes/area_triangulo.gif}
+\]
+
+\bigskip
+
+En la figura los triángulos $ABC$ y $CDA$ son congruentes, $ABCD$
+es un rectángulo y su área es $(AB)\cdot(BC)$, de donde el área
+del triángulo $ABC$ es:
+
+\[\frac{1}{2}(AB)\cdot(BC).\]
+
+\textbf{Ejemplo 3.6. } Determinar el área del $\Delta PQR$.
+
+\bigskip
+
+\[
+\includegraphics{imagenes/area_triangulopqr.gif}
+\]
+
+\bigskip
+
+Los catetos del $\Delta PQR$ tienen 5 y 12 centímetros. Por tanto
+$Area(\Delta PQR)=\frac{1}{2}\cdot 5\cdot 12=30{cms}^{{2}}$.
+
+\bigskip
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 3.14.2.
+}} {\normalsize {\color{naranja} Área de cualquier triángulo}
+
+\bigskip
+
+Del área de un triángulo rectángulo se puede derivar una fórmula
+para el área de cualquier triángulo, se requiere para ello
+recordar la idea de altura.
+
+\bigskip
+
+En un triángulo una altura es el segmento perpendicular de un
+vértice a la recta que contiene el lado opuesto.
+
+\bigskip
+
+En cada una de las figuras que aparecen a continuación
+$\overline{AD}$ es altura del lado  $\overline{BC}$  del triángulo
+$ABC$.
+
+\bigskip
+
+\[
+\begin{array}{cc}
+\includegraphics{imagenes/area_cualq_triangulo.gif} &
+\includegraphics{imagenes/area_cualq_triangulo1.gif} \\
+Altura \ \ $\overline{AD}$ \ \ interior \ \ $\Delta ABC$ & Altura
+\ \ $\overline{AD}$ \ \ exterior \ \ $\Delta ABC$
+\end{array}
+\]
+
+\bigskip
+
+\[
+\begin{array}{c}
+\includegraphics{imagenes/area_cualq_triangulo2.gif} \\
+Altura \ \ $\overline{AD}$ \ \ sobre \ \ $\Delta ABC$
+\end{array}
+\]
+
+\bigskip
+
+La longitud de una altura es llamada la {\bf altura} del triángulo
+relativa a una base. (Como base de un triángulo puede ser tomada
+cualquiera de sus lados, pero a cada base corresponde una altura
+distinta que es la perpendicular a dicha base o a su
+prolongación).
+
+\bigskip
+
+En todos los casos se puede concluir que la misma fórmula simple
+es válida.
+
+\bigskip
+
+\textbf{Teorema 3.14.1. } El área de un triángulo es la mitad del
+producto de un lado (la base) por la altura a ese lado.
+
+\bigskip
+
+\[A=\frac{1}{2}bh\]
+
+\bigskip
+
+\[
+\includegraphics{imagenes/area_cualq_triangulo3.gif}
+\]
+
+\bigskip
+
+\textit{Demostración} Cuando la altura está sobre el triángulo se
+tiene, pues es el caso de un triángulo rectángulo. Analicemos los
+otros casos.
+
+\emph{Caso 1}: Altura interior al triángulo
+
+\bigskip
+
+\[
+\includegraphics{imagenes/area_cualq_triangulo4.gif}
+\]
+
+\bigskip
+
+La altura divide el triángulo en dos triángulos. Sea $BD=x$ y
+$DC=y$.
+
+Entonces $b=x + y$.
+
+\begin{align*}
+\text{Área}(\Delta ABC)&=\text{Área}(\Delta
+ABD)+\text{Área}(\Delta ADC)\\
+&=\frac{1}{2}hx+\frac{1}{2}hy\\
+&=\frac{1}{2}h(x+y)\\
+&=\frac{1}{2}hb
+\end{align*}
+
+\emph{Caso 2}: Altura interior al triángulo
+
+El área de triángulo puede ser determinada restando las áreas de
+dos triángulos rectángulos.
+
+\bigskip
+
+\[
+\includegraphics{imagenes/area_cualq_triangulo5.gif}
+\]
+
+\bigskip
+
+\begin{align*}
+\text{Área}(\Delta ABC)&=\text{Área}(\Delta
+ADC)-\text{Área}(\Delta ADB)\\
+&=\frac{1}{2}h(x+b)-\frac{1}{2}hx\\
+&=\frac{1}{2}hx+\frac{1}{2}hb-\frac{1}{2}hx\\
+&=\frac{1}{2}hb
+\end{align*}
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{geometria15.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color {darkgray} {\small Tipos de Cuadriláteros}} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color {darkgray} {\small Teorema de Pitágoras}} \\ \\ \\
+\end{tabular}
+\docLink{geometria18.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

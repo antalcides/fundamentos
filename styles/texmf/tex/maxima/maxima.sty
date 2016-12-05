@@ -1,0 +1,143 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{maxima}[2005/10/05]
+
+\DeclareOption{amsmath}{\maxima@amsmathtrue}
+
+\newcommand{\macfile}{\jobname.mac}
+\newcommand{\mxxfile}{\jobname.mxx}
+
+\newcounter{maxima@count}
+\def\maxima@out{-1}
+\newcommand{\maximacount}{\value{maxima@count}}
+
+\newif\ifmaximaloaded
+\newif\ifmaxima@autoinsertblock
+\newif\ifmaxima@texout
+\newif\ifmaxima@amsmath
+\maxima@amsmathfalse
+
+\ProcessOptions\relax
+
+
+\newcommand{\maximacurrent}{\ifmaximaloaded\csname \maxima@current\endcsname\fi}
+
+\AtBeginDocument{%
+  \InputIfFileExists{\mxxfile}%
+  {\maximaloadedtrue}%
+  {\maximaloadedfalse}%
+}
+
+\AtEndDocument{%
+  \ifnum\maximacount>0
+    \immediate\closeout\maxima@out
+    \write18{@echo Processing Maxima...}
+    \write18{maxima -b \macfile >\macfile.log}
+    \write18{@echo Maxima processed. See \macfile.log for details}
+    \fi%
+}
+
+\newcommand{\IfMaximaLoaded}[1]{\ifmaximaloaded#1\fi}
+
+\def\maxima@init{%
+  \ifnum\maxima@out=-1
+    \newwrite\maxima@out
+    \immediate\openout \maxima@out \macfile
+    \immediate\write\maxima@out{load("max-tex-init.mac")$}
+    \ifmaxima@amsmath
+      \immediate\write\maxima@out{:lisp(defprop $matrix amsmath-matrix tex)}%
+      \fi
+    \immediate\write\maxima@out{write_stdout("\mxxfile")$}
+    \fi%
+}
+
+\def\@@imaxima#1{%
+  \immediate\write\maxima@out{#1}
+  \ifmaxima@texout
+    \immediate\write\maxima@out{,print(rbrace))$}
+    \fi%
+  \endgroup
+  \ifmaxima@autoinsertblock \maximacurrent \fi
+}
+
+\long\def\@@maxima#1\end{%
+  \immediate\write\maxima@out{#1}
+  \ifmaxima@texout
+    \immediate\write\maxima@out{,print(rbrace))$}
+    \fi%
+  \endgroup
+  \ifmaxima@autoinsertblock \maximacurrent \fi
+  \end
+}
+
+\def\@maxima@common{%
+\begingroup
+  \obeylines
+  \obeyspaces
+  \def\\{\noexpand\\}
+  \newlinechar=`\^^M  % Piet van Oostrum: newline fix on MacOSX
+  \catcode`\"11\relax
+  \catcode`\&11\relax
+  \catcode`\%11\relax
+  \maxima@init
+  \ifmaxima@texout
+    \stepcounter{maxima@count}
+    \immediate\write\maxima@out{^^Jappend_stdout("\mxxfile", print("\\newcommand{\\\maxima@current}",lbracep),}%
+    \fi
+}
+
+\newenvironment{maxima}[1][maxima\romannumeral\maximacount]{%
+  \global\def\maxima@current{#1}
+  \maxima@autoinsertblocktrue
+  \maxima@texouttrue
+  \@maxima@common\@@maxima}{}
+\newenvironment{maxima*}[1][maxima\romannumeral\maximacount]{%
+  \global\def\maxima@current{#1}
+  \maxima@autoinsertblockfalse
+  \maxima@texouttrue
+  \@maxima@common\@@maxima}{}
+
+\newenvironment{maximacmd}{\maxima@autoinsertblockfalse\maxima@texoutfalse\@maxima@common\@@maxima}{}
+\newcommand{\imaximacmd}{\maxima@autoinsertblockfalse\maxima@texoutfalse\@maxima@common\@@imaxima}%
+
+\newcommand{\imaxima}[1][maxima\romannumeral\maximacount]{%
+  \global\def\maxima@current{#1}
+  \@ifstar{\maxima@autoinsertblockfalse\maxima@texouttrue\@maxima@common\@@imaxima}%
+          {\maxima@autoinsertblocktrue\maxima@texouttrue\@maxima@common\@@imaxima}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage{verbatim}
+
+\newenvironment{@vmaximawrite}%
+ {\@bsphack
+  \let\do\@makeother\dospecials\catcode`\^^M\active
+  \def\verbatim@processline{%
+    \immediate\write\maxima@out{\the\verbatim@line}}%
+  \verbatim@start}%
+ {\@esphack}
+
+\newenvironment{@vmaxima}%
+ {\maxima@init
+  \ifmaxima@texout
+    \stepcounter{maxima@count}
+    \immediate\write\maxima@out{^^Jappend_stdout("\mxxfile", print("\noexpand\\newcommand{\noexpand\\\maxima@current}",lbracep),}%
+    \fi
+  \@vmaximawrite}
+ {\end@vmaximawrite
+  \ifmaxima@texout
+    \immediate\write\maxima@out{,print(rbrace))$}
+    \fi}
+
+\newenvironment{vmaxima}[1][maxima\romannumeral\maximacount]{%
+  \global\def\maxima@current{#1}%
+  \maxima@texouttrue\@vmaxima}
+ {\end@vmaxima\maximacurrent}
+
+\newenvironment{vmaxima*}[1][maxima\romannumeral\maximacount]{%
+  \global\def\maxima@current{#1}
+  \maxima@texouttrue\@vmaxima}
+ {\end@vmaxima}
+
+\newenvironment{vmaximacmd}%
+ {\maxima@texoutfalse\@vmaxima}
+ {\end@vmaxima}

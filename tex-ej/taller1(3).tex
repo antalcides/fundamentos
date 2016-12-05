@@ -1,0 +1,406 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.50,0.42,0.42,0.06} % color leccion
+
+\def\Reales{\mathbb{R}}
+\def\Naturales{\mathbb{N}}
+\def\Enteros{\mathbb{Z}}
+\def\Racionales{\mathbb{Q}}
+\def\Irr{\mathbb{I}}
+\def\contradiccion{($\rightarrow \leftarrow$)}
+
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+&
+\docLink[_top]{../../../index.html}{\includegraphics{../../../images/navegacion/inicio.gif}}
+\docLink{../../../docs_curso/contenido.html}{\includegraphics{../../../images/navegacion/contenido.gif}}
+\docLink{../../../docs_curso/descripcion.html}{\includegraphics{../../../images/navegacion/descripcion.gif}}
+\docLink{../../../docs_curso/profesor.html}{\includegraphics{../../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Taller 2} \\ \\ \\
+\end{tabular}
+\docLink{taller2.tex}{\includegraphics{../../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large FUNCIONES}}  {\large
+{\color{ azulc} }}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  TALLER 1 (FUNCIONES)}}
+{\normalsize {\color{naranja} }}
+
+\newline
+
+\begin{enumerate}
+\item Sitúe en el plano cartesiano los siguientes puntos: $P\left(
+-3,4\right)$, $Q\left( 4,-\frac{3}{4}\right)$, $R\left(
+-\frac{7}{5},\frac{4}{5}\right) $, $S\left( \frac{\sqrt{3}}{2},\pi
+\right) $.
+
+\item Halle la distancia que existe entre los puntos P y Q en cada
+uno de los siguientes casos
+\begin{enumerate}
+\item  $P\left( 7,3\right) $, $Q\left( 2,5\right) $ \item $P\left(
+-3,4\right) $, $Q\left( \frac{5}{3},4\right)$ \item
+$P\left(-\frac{3}{2},-\frac{5}{2}\right)$, $Q\left(
+-\frac{2}{3},-1\right) $ \item $P\left( \sqrt{2},\sqrt{2}\right)$,
+$Q\left(\sqrt{3},\sqrt{3}\right) $
+\end{enumerate}
+
+\item Los vértices de la base de un triángulo isósceles están en
+los puntos $\left( 1,2\right) $ y $\left( 8,2\right) $. Si el
+triángulo tiene 4 unidades de altura con respecto a la base, halle
+las coordenadas del tercer vértice.
+
+\item Para cada par de puntos $P$ y $Q$ del punto (2) halle las
+coordenadas del punto medio.
+
+\item Verifique que las siguientes parejas definen una función
+$f:\left( 1,1\right) $, $\left( 2,4\right) $, $\left( 3,9\right)$,
+$\left( 4,16\right) $, $\left( 5,25\right) $.
+\begin{enumerate}
+\item Halle $f\left( 2\right) $, $f\left( 5\right) $. \item Halle
+$x$ tal que $f\left( x\right) =9$.
+\end{enumerate}
+
+\item Determine si las siguientes parejas definen una función
+$\left( -1,-1\right) $, $\left( -3,4\right) $, $\left( 3,5\right)
+$, $\left( 3,6\right) $, $\left( 5,-5\right) $. Justifique su
+respuesta.
+
+\item Verifique que las siguientes parejas definen una función
+$f:\left( 1,\frac{1}{2}\right) $, $\left( -\frac{1}{2},2\right) $,
+$\left( \pi ,-2\right) $, $\left( 4,2\pi \right) $, $\left(
+\frac{\pi }{2},2\right) $.
+\begin{enumerate}
+\item Halle $f\left( \pi \right) $, $f\left( -\frac{1}{2}\right)
+$. \item Halle $x$ tal que $f\left( x\right) =5$. \item Existe
+$f\left( \frac{1}{2}\right)$? \item Existe $x$ tal que $f\left(
+x\right) =\pi $? \item ¿Cuántos elementos distintos posee el
+dominio de $f$? ¿Cuántos elementos distintos posee el rango de
+$f$? \item ¿Cuántos elementos distintos tienen imágenes iguales?
+\end{enumerate}
+
+\item Halle el dominio de cada una de las siguientes funciones
+\begin{enumerate}
+\item $f\left( x\right) =\frac{3x+4}{x+1}$ \item
+$g\left(x\right)=\sqrt{5-2x}$ \item $h\left(
+x\right)=\frac{x+6}{x^{2}+1}$ \item $k\left( x\right)
+=3x^{2}+3+\frac{3}{x}$
+\end{enumerate}
+
+\item Sea $D=\mathbf{R}$ y $f$ la función definida por $f\left(
+x\right) =3x-2$ para todo $x\in D$. Halle $f\left( 0\right) $,
+$f\left( 2\right)$, $f\left( -3\right) $, $-f\left( 3\right) $.
+
+\item Sea $D=\mathbf{R}$ y $f$ la función definida por $f\left(
+x\right) =x^{2}+2x$ para todo $x\in D$.
+\begin{enumerate}
+\item Halle $f\left( \frac{1}{2}\right) $, $f\left(
+\sqrt{2}\right) $, $f\left( -3\right) $, $\frac{8}{f\left(
+2\right) }$. \item Halle todos los valores de $x$ tales que
+$f\left( x\right) =0$.
+\end{enumerate}
+
+\item Para las funciones de los ejercicios 9 y 10, halle $f\left(
+x+h\right)$. Es $f\left( x+h\right) =$ $f\left( x\right)+f\left(
+h\right) $? Halle $\frac{f\left( x+h\right) -f\left(
+x\right)}{h}$.
+
+\item Sea $f\left( x\right) =x^{3}+2x$. Halle $f\left( -x\right) $
+y compare el resultado con $f\left( x\right) $. Cómo se relacionan
+$f\left( -x\right) $ y $f\left( x\right) $?
+
+\item Sea $g\left( x\right) =x^{2}-5$. Halle $g\left( -x\right) $
+y compare el resultado con $g\left( x\right) $. Cómo se relacionan
+$g\left( -x\right) $ y $g\left( x\right) $?
+
+\item Exprese
+\begin{enumerate}
+\item El área de un cuadrado en términos de la longitud de uno de
+su lado. \item El área de un cuadrado en términos de la longitud
+de una de sus diagonales. \item El volumen de un cubo en términos
+de la longitud de su arista. \item El volumen de un cubo en
+términos del área de una de sus caras. \item El volumen de un cubo
+en términos del diámetro. \item El área de un triángulo equilátero
+en términos de la longitud de uno de sus lados.
+\end{enumerate}
+
+\item A partir de una pieza rectangular de cartón de $20\times 30$
+centímetros, se debe elaborar una caja, cortando cuadrados
+idénticos de área $x^{2}$ de cada esquina y volteando hacia arriba
+los lados. Indique el volumen $V$ de la caja en términos de $x$.
+
+\item Si el lado de un cuadrado mide a unidades y se incrementa en
+h unidades, halle el incremento que experimenta el área.
+
+\item Si las aristas de dos cubos miden respectivamente a y 2a
+unidades, qué relación existe entre sus volúmenes?
+
+\item La relación entre las lecturas de las temperaturas
+\textit{Fahrenheit} ($F$) y \textit{Celcius
+(}$\mathit{C}$\textit{)} está dada por $C=\frac{5}{9}(F-32)$
+\begin{enumerate}
+\item A qué la temperatura las lecturas en las dos escalas son
+iguales. \item En qué momento la lectura en Fahrenheit es el doble
+que la lectura en Celsius?
+\end{enumerate}
+
+\item En cada caso determine la ecuación de la recta que cumple
+las condiciones dadas:
+\begin{enumerate}
+\item Pasa por el punto $P\left( 2,-\frac{3}{2}\right)$ y tiene
+pendiente igual a $4$. \item Pasa por el punto $P(1,-1)$ y tiene
+pendiente igual a $-1$. \item Pasa por los puntos $P(3,4)$ y
+$Q(-2,5)$ \item Pasa por los puntos $P(-\frac{2}{3},0)$ y
+$Q(-2,\frac{2}{3})$
+\end{enumerate}
+
+\item Para cada una de las rectas cuyas ecuaciones aparecen a
+continuación halle:
+\begin{itemize}
+\item la pendiente \item las intersecciones con los ejes $X$ e $Y$
+\item la ecuación de la recta perpendicular a ella, que pasa por
+el punto $(1,1)$ \item la ecuación de la recta paralela a ella que
+pasa por $(1,1)$.
+\end{itemize}
+\begin{enumerate}
+\item $\frac{3}{4}x+2y=1$ \item $4x+3y=12$ \item
+$\frac{x}{3}+2y+3=0$
+\end{enumerate}
+
+\item Dada la recta $L$ de ecuación $3x-3y+5=0$ y el punto
+$P(2,-1)$, en cada caso halle la ecuación de la recta que pasa por
+$P$ y verifica la condición :
+\begin{enumerate}
+\item es paralela a $L$ \item es perpendicular a $L$.
+\end{enumerate}
+
+\item Halle los puntos de la recta $3x+y=2$ que están a dos
+unidades del punto $P(1,2)$.
+
+\item Halle la ecuación de la parábola que satisface estas
+condiciones: tiene un vértice en $(0,0)$, pasa por el punto
+$(2,-3)$ y es simétrica con respecto al eje $Y$. Dibuje la
+gráfica.
+
+\item El dominio de cada una de las siguientes funciones es el
+conjunto \textbf{R }de los números reales. Trace la gráfica de
+cada una de las funciones.
+\begin{enumerate}
+\item $f\left( x\right) =3x+4$ \item $g\left( x\right) =5-2x$
+\item $h\left( x\right) =2x^{2}+1$ \item $k\left(x\right)
+=-3x^{2}+4$
+\end{enumerate}
+
+\item Sea $f\left( x\right) =x^{2}-2$. En cada caso, dibuje en el
+mismo sistema de coordenadas las gráficas de $f$ y de la función
+dada:
+\begin{enumerate}
+\item $e\left(x\right) =f\left( x+2\right) $ \item
+$g\left(x\right) =f\left( x-3\right) $ \item $h\left(x\right)
+=f\left( 3x\right) $ \item $k\left(x\right)
+=f\left(\frac{1}{2}x\right) $ \item $l\left(x\right) =f\left(
+x\right)+2$ \item $g\left(x\right) =f\left( x\right) -3$ \item
+$h\left(x\right) =f\left( -x\right) $ \item $k\left(x\right)
+=-f\left( x\right) $ \item $e\left(x\right) =f\left( x^{2}\right)
+$ \item $g\left(x\right) =f\left( x\right)^{2}$
+\end{enumerate}
+
+\item Para cada una de las siguientes funciones elabore una tabla
+de la función para los valores enteros de $x$ pertenecientes al
+intervalo $[-5,5]$. Dibuje la gráfica.
+\begin{enumerate}
+\item $f(x)=3^{x}$ \item $g(x)=(\frac{1}{3})^{x}$ \item
+$h(x)=3^{x+2}-6$ \item $k(x)=3(2^{x})$
+\end{enumerate}
+
+\item Simplifique las siguientes expresiones
+\begin{enumerate}
+\item $2^{3x-2}2^{4-2x}$ \item $(a^{2x})^{3x}$ \item
+$\dfrac{4^{x+9}}{4^{7-x}}$ \item $\dfrac{2^{3x}}{3^{2x}}$
+\end{enumerate}
+
+\item Teniendo en cuenta que si $a$ es positivo y distinto de 1 y
+$u$ y $v$ son números reales entonces $a^{u}=a^{v}$ si solo si
+$u=v$, halle $x$ en cada uno de los siguientes casos:
+\begin{enumerate}
+\item $3^{4x-1}=3^{7x-2}$ \item $5^{6x-3}=125^{x^{2}+1}$
+\item$16^{x^{2}}=4^{5x+3}$
+\end{enumerate}
+
+\item Para cada una de las siguientes igualdades escriba una
+expresión equivalente usando logaritmos:
+\begin{enumerate}
+\item $3^{4}=81$ \item $\sqrt[3]{125}=5$
+\item$4^{-1}=\frac{1}{4}$.
+\end{enumerate}
+
+\item En cada caso halle el valor de $x$ que verifica la igualdad
+\begin{enumerate}
+\item $3\log _{b}2+\frac{1}{2}\log _{b}25-\log _{b}20=\log _{b}x$
+\item $x^{\log x}=100x$.
+\end{enumerate}
+
+\item Use la gráfica de la función $y=e^{x}$ para obtener las
+gráficas de las siguientes funciones:
+\begin{enumerate}
+\item $f(x)=3e^{x}$ \item $g(x)=e^{x}{-3}$ \item $h(x)=2e^{x}-2$
+\item $k(x)=e^{2x}$ \item $g\left( x\right)=e^{\frac{x}{2}}$ \item
+$h\left( x\right) =e^{-x}$
+\end{enumerate}
+
+\item Use las propiedades del logaritmo natural para probar las
+siguientes afirmaciones:
+\begin{enumerate}
+\item Si $\ln (x+8)-\ln (x+)=3\ln (2)$ entonces $x=\frac{8}{7}$
+\item Si $x^{\ln (x)}=100x$ entonces $x=0.1$ o $x=100$
+\end{enumerate}
+
+\item Para la función $f$ dada en el punto 7, determine la función
+cuyos valores son $2f\left( x\right) $.
+
+\item Se definen las funciones $f$ y $g$ de la siguiente forma:
+
+$f:\left( -1,-1\right) $, $\left( 1,1\right) $, $\left(
+2,\sqrt{8}\right) $, $\left( -2,-4\right) $, $\left( 3,9\right) $,
+$\left( -3,-\sqrt{6}\right) ;g:\left( -1,3\right) $, $\left(
+1,-4\right) $, $\left( 2,5\right) $, $\left( -2,-6\right) $,
+$\left( 3,-5\right) $,$\left( -3,4\right) $.
+
+\begin{enumerate}
+\item Escriba la función cuyos valores son $f\left( x\right)
++g\left( x\right) $. \item Escriba la función cuyos valores son
+$f\left( x\right) -g\left( x\right) $.
+\end{enumerate}
+
+\item Se definen las funciones $f$ y $g$ de la siguiente forma:
+
+$f:$ $\left( \frac{1}{2},\frac{1}{2}\right) $, $\left(
+1,\sqrt{2}\right) $, $\left( 2,\sqrt{8}\right) $, $\left(
+-2,-4\right) $, $\left( 3,-\frac{1}{2}\right) $, $\left(
+-3,-6\right) ;g:\left( \frac{1}{2},3\right) $, $\left( 1,-4\right)
+$, $\left( 2,\sqrt{2}\right) $, $\left( -2,-6\right) $, $\left(
+3,-4\right) $,$\left( -3,4\right) $.
+
+\begin{enumerate}
+\item Escriba la función cuyos valores son $f\left( x\right) \cdot
+g\left( x\right) $. \item Escriba la función cuyos valores son
+$\left[ f\left( x\right) \right]^{2}$.
+\item Escriba la función cuyos valores son $\frac{f\left( x\right) }{%
+g\left( x\right) }$.
+\end{enumerate}
+
+\item Se definen las funciones $f$ y $g$ de la siguiente forma:
+
+$f:$ $\left( \frac{1}{2},\frac{1}{2}\right) $, $\left(
+1,\sqrt{2}\right) $, $\left( 2,\sqrt{8}\right) $, $\left(
+-2,-4\right) $, $\left(3,-\frac{1}{2}\right) $, $\left(
+4,-6\right) $;
+
+$g:\left( -1,-\sqrt{2}\right) $, $\left( -\frac{1}{2},1\right) $,
+$\left( 1,-4\right) $, $\left( 2,\sqrt{2}\right) $, $\left(
+-2,-6\right) $, $\left( 3,-4\right) $,$\left( -3,4\right) $.
+
+\begin{enumerate}
+\item Para qué valores de $x$ se puede definir la función cuyos
+valores son $f\left( x\right) +g\left( x\right) $? Escriba esa
+función. \item Para qué valores de $x$ se puede definir la función
+cuyos valores son $f\left( x\right) -g\left( x\right) $? Escriba
+esa función.
+\end{enumerate}
+
+\item Se definen las funciones $f$ y $g$ de la siguiente forma:
+
+$f:$ $\left( -\frac{1}{2},\frac{1}{2}\right) $, $\left(
+1,\sqrt{2}\right) $, $\left( 2,\sqrt{8}\right) $, $\left(
+-2,-4\right) $, $\left(3,-\frac{1}{2} \right) $, $\left(
+-3,-6\right)$ ;
+
+$g:\left( -\frac{1}{2},\frac{3}{2}\right) $, $\left( 0,1\right)
+$,$\left( \frac{1}{2},3\right) $, $\left( 1,0\right) $, $\left(
+2,\sqrt{2}\right) $, $\left( -2,-6\right) $,
+$\left(\frac{5}{2},-4\right) $,$\left( -3,4\right) $.
+
+\begin{enumerate}
+\item Para qué valores de $x$ se puede definir la función cuyos
+valores son $f\left( x\right) \cdot g\left( x\right) $? Escriba
+esa función. \item Para qué valores de $x$ se puede definir la
+función cuyos valores son$\dfrac{f\left(x\right)}{g\left(x\right)
+}$? Escriba esa función.
+\end{enumerate}
+
+\item Sea $D=\mathbf{R}$ y $f$ \ y $g$ las funciones definidas por
+$f\left( x\right) =3x-2$ y \linebreak$g\left( x\right)
+=x^{2}+3x+2$ para todo $x\in D$.
+
+En cada caso halle la función indicada:
+\begin{enumerate}
+\item $f\left( x\right) +g\left( x\right) $ \item $f\left(x\right)
+-g\left( x\right) $ \item $f\left( x\right)\cdot g\left( x\right)
+$ \item $\dfrac{f\left( x\right)}{g\left( x\right) }$
+\end{enumerate}
+
+\item Para las funciones del ejercicio anterior halle
+\begin{enumerate}
+\item $f\left( g\left( 0\right) \right) $ \item $g\left(f\left(
+2\right) \right) $ \item $f\left( g\left( a\right)\right) $ \item
+$g\left( f\left( a\right) \right) $.
+\end{enumerate}
+
+\item Sea $D=\mathbf{R}$ y $f$ y $g$ las funciones definidas por
+$f\left( x\right) =2x+1$ y $g\left( x\right) =x^{2}+2$ para todo
+$x\in D$. Halle
+\begin{enumerate}
+\item $f\left( \frac{1}{a}\right) -\frac{1}{f\left( a\right) }$
+\item $g\left( \sqrt{a}\right) -\sqrt{g\left( a\right) }$ \item
+$f\left( a\right) +g\left( a\right) $ \item $f\left( a+h\right) $
+\item $\frac{g\left( a+h\right) -g\left( a\right) }{h}$ \item
+$f\left( 3\right) +g\left( 1\right) $ \item $f\left( g\left(
+a\right) \right) $ \item $g\left(f\left( a\right) \right) $
+\end{enumerate}
+
+\end{enumerate}
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+&
+\docLink[_top]{../../../index.html}{\includegraphics{../../../images/navegacion/inicio.gif}}
+\docLink{../../../docs_curso/contenido.html}{\includegraphics{../../../images/navegacion/contenido.gif}}
+\docLink{../../../docs_curso/descripcion.html}{\includegraphics{../../../images/navegacion/descripcion.gif}}
+\docLink{../../../docs_curso/profesor.html}{\includegraphics{../../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Taller 2} \\ \\ \\
+\end{tabular}
+\docLink{taller2.tex}{\includegraphics{../../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

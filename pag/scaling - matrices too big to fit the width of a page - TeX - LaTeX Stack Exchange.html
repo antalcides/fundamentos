@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <title>scaling - matrices too big to fit the width of a page - TeX - LaTeX Stack Exchange</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/tex/img/favicon.ico?v=8bd9630dcd9e">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/tex/img/apple-touch-icon.png?v=0a90e8f91d4c">
+    <link rel="search" type="application/opensearchdescription+xml" title="TeX - LaTeX Stack Exchange" href="http://tex.stackexchange.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@StackTeX">
+    <meta name="twitter:domain" content="tex.stackexchange.com">
+    <meta name="og:type" content="website">
+    <meta name="og:image" content="http://cdn.sstatic.net/tex/img/apple-touch-icon@2.png?v=eaf26b461720">
+    <meta name="og:title" content="matrices too big to fit the width of a page">
+    <meta name="og:description" content="When I type matrices in beamer class, they are often too big to fit the width of a page. What is the way to make the matrices smaller? I also want to make the font of the entries of these matrices ">
+    <meta name="og:url" content="http://tex.stackexchange.com/questions/43065/matrices-too-big-to-fit-the-width-of-a-page">
+    <link rel="canonical" href="http://tex.stackexchange.com/questions/43065/matrices-too-big-to-fit-the-width-of-a-page">
+
+    
+    
+    <script src="scaling%20-%20matrices%20too%20big%20to%20fit%20the%20width%20of%20a%20page%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/quant.js" async=""></script><script src="scaling%20-%20matrices%20too%20big%20to%20fit%20the%20width%20of%20a%20page%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/beacon.js" async=""></script><script src="scaling%20-%20matrices%20too%20big%20to%20fit%20the%20width%20of%20a%20page%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/analytics.js" async=""></script><script src="scaling%20-%20matrices%20too%20big%20to%20fit%20the%20width%20of%20a%20page%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/jquery.js"></script>
+    <script src="scaling%20-%20matrices%20too%20big%20to%20fit%20the%20width%20of%20a%20page%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="scaling%20-%20matrices%20too%20big%20to%20fit%20the%20width%20of%20a%20page%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/all.css">
+    
+    <link rel="alternate" type="application/atom+xml" title="Feed for question 'matrices too big to fit the width of a page'" href="http://tex.stackexchange.com/feeds/question/43065">
+    <script>
+        
+        StackExchange.ready(function () {
+
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:2,shownCommentCount:2,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:43065});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('85', '43065');
+            
+                    });
+    </script>
+
+
+    <script>
+        StackExchange.ready(function () {
+            StackExchange.realtime.init('wss://qa.sockets.stackexchange.com,ws://qa.sockets.stackexchange.com');
+            StackExchange.realtime.subscribeToInboxNotifications();
+                    StackExchange.realtime.subscribeToReputationNotifications('85');
+                StackExchange.realtime.subscribeToTopBarNotifications('85');
+        });
+    </script>
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1409929332,"networkMetaHostname":"meta.stackexchange.com","styleCode":true,"enableUserHovercards":true,"site":{"name":"TeX - LaTeX Stack Exchange","description":"Q&A for users of TeX, LaTeX, ConTeXt, and related typesetting systems","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdsB7sSAAAAAAzjgEF_Hd8vXv-C42sa_KyofaGR","recaptchaAudioLang":"en","enableNewTagCreationWarning":false,"enableSocialMediaInSharePopup":true,"useGoogleOAuth2":true},"user":{"fkey":"d7e0a4606f9b482cc0aa2ea4db317c7e","isAnonymous":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"de343f60e0dc","js/moderator.en.js":"3bf88d4bfb80","js/full-anon.en.js":"92f969f30e07","js/full.en.js":"97b3e5de1ac2","js/wmd.en.js":"01338dd4d0bf","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"5a1e717ab0e4","js/help.en.js":"c8c7bae0ab4d","js/tageditor.en.js":"ed2efb9cc7d2","js/tageditornew.en.js":"66116ff1da24","js/inline-tag-editing.en.js":"21223186b436","js/revisions.en.js":"ce4a692d0d20","js/review.en.js":"cfd1cd96065e","js/tagsuggestions.en.js":"7dfec0d2a2d7","js/post-validation.en.js":"b46295429429","js/explore-qlist.en.js":"24424eb238e8","js/events.en.js":"a12784549dc1","js/keyboard-shortcuts.en.js":"4ddb3db16581","js/external-editor.en.js":"4feffae4b337"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script src="scaling%20-%20matrices%20too%20big%20to%20fit%20the%20width%20of%20a%20page%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/full-anon.js" async=""></script><script src="scaling%20-%20matrices%20too%20big%20to%20fit%20the%20width%20of%20a%20page%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/post-validation.js" async=""></script><script src="scaling%20-%20matrices%20too%20big%20to%20fit%20the%20width%20of%20a%20page%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/prettify-full.js" async=""></script><link href="scaling%20-%20matrices%20too%20big%20to%20fit%20the%20width%20of%20a%20page%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/shadow.css" id="SL_resources" rel="stylesheet" type="text/css"></head>
+<body class="question-page new-topbar" itemscope="" itemtype="http://schema.org/QAPage">
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+<div class="topbar">
+    <div class="topbar-wrapper">
+        
+        <div class="js-topbar-dialog-corral">
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://tex.stackexchange.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+            <a href="http://chat.stackexchange.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+                    <a href="http://tex.blogoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:7 })">blog</a>
+            </div>
+
+
+
+
+    <a href="http://tex.stackexchange.com/" class="current-site-link site-link js-gps-track" data-id="85" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-tex" title="TeX - LaTeX"></div>
+        TeX - LaTeX
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.tex.stackexchange.com/" class="site-link js-gps-track" data-id="87" data-gps-track="
+            site.switch({ target_site:87, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-texmeta" title="TeX - LaTeX Meta"></div>
+        TeX - LaTeX Meta
+    </a>
+
+                </li>
+                    </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+                        <a href="https://tex.stackexchange.com/users/signup?returnurl=http%3a%2f%2ftex.stackexchange.com%2fquestions%2f43065%2fmatrices-too-big-to-fit-the-width-of-a-page" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a>
+                    or
+                    <a href="https://tex.stackexchange.com/users/login?returnurl=http%3a%2f%2ftex.stackexchange.com%2fquestions%2f43065%2fmatrices-too-big-to-fit-the-width-of-a-page" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a>
+
+                    to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+            
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 131 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+            
+        </div>
+
+        <div class="topbar-links">
+            
+                <div class="links-container">
+                    <span class="topbar-menu-links">
+                            <a href="https://tex.stackexchange.com/users/signup?returnurl=http%3a%2f%2ftex.stackexchange.com%2fquestions%2f43065%2fmatrices-too-big-to-fit-the-width-of-a-page" class="login-link">sign up</a>
+                            <a href="https://tex.stackexchange.com/users/login?returnurl=http%3a%2f%2ftex.stackexchange.com%2fquestions%2f43065%2fmatrices-too-big-to-fit-the-width-of-a-page" class="login-link">log in</a>
+                            <a href="http://tex.stackexchange.com/tour">tour</a>
+
+                            <a href="#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://tex.stackexchange.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://tex.stackexchange.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.tex.stackexchange.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+
+                    </span>
+                </div>
+
+			<div class="search-container">
+                <form id="search" action="/search" method="get" autocomplete="off">
+                    <input name="q" placeholder="search" tabindex="1" autocomplete="off" maxlength="240" type="text">
+                </form>
+			</div>
+            	
+        </div>      
+    </div> 
+</div>
+<script>
+    StackExchange.ready(function () { StackExchange.topbar.init(); });
+</script>
+    <div class="container">
+        <div id="header" class="headeranon">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://tex.stackexchange.com/">
+                    TeX - LaTeX
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs mainnavsanon">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://tex.stackexchange.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://tex.stackexchange.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://tex.stackexchange.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://tex.stackexchange.com/help/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://tex.stackexchange.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://tex.stackexchange.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+	<link itemprop="image" href="http://cdn.sstatic.net/tex/img/apple-touch-icon.png">
+			<!--googleoff: all-->
+
+<div id="herobox-mini">
+    <div id="hero-content">
+        <span id="controls">
+            <a href="http://tex.stackexchange.com/tour" id="tell-me-more" class="button">Take the 2-minute tour</a>
+            <span id="close"><a title="click to dismiss">×</a></span>
+        </span>
+        <div id="blurb">
+            TeX - LaTeX Stack Exchange is a question and answer site for
+ users of TeX, LaTeX, ConTeXt, and related typesetting systems. It's 
+100% free, no registration required.
+        </div>        
+    </div>
+    <script>
+        $('#tell-me-more').click(function () {
+            var clickSource = $("body").attr("class") + '-mini';
+            if ($("body").hasClass("questions-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("question-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("home-page")) {
+                clickSource = 'homepagemini';
+            }
+
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("aboutpage.click", { aboutclick_location: clickSource } , true);
+            });
+        });
+        $('#herobox-mini #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close" }, true);
+            });
+            $.cookie("hero", "none", { path: "/", expires: 365 });
+            var $hero = $("#herobox-mini");
+            $hero.slideUp('fast', function () { $hero.remove(); });
+            return false;
+        });
+    </script>
+</div>
+			<!--googleon: all-->
+			<div id="question-header">
+			<h1 itemprop="name"><a href="http://tex.stackexchange.com/questions/43065/matrices-too-big-to-fit-the-width-of-a-page" class="question-hyperlink">matrices too big to fit the width of a page</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="43065" id="question">
+
+        <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="43065" type="hidden">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">7</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+    
+    <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b>1</b></div>   
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+        <p>When I type matrices in <code>beamer</code> class, they are 
+often too big to fit the width of a page. What is the way to make the 
+matrices smaller? I also want to make the font of the entries of these 
+matrices smaller. I used </p>
+
+<pre style="" class="lang-tex prettyprint prettyprinted"><code><span class="kwd">\[</span><span class="pln"> </span><span class="kwd">\scriptscriptstyle</span><span class="pln">
+M_</span><span class="pun">{</span><span class="pln">1,k</span><span class="pun">}</span><span class="pln">  </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">\frac</span><span class="pun">{</span><span class="pln">1</span><span class="pun">}{</span><span class="pln">15</span><span class="pun">}</span><span class="pln"> </span><span class="kwd">\left</span><span class="pun">(</span><span class="pln">
+        </span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">array</span><span class="pun">}{</span><span class="pln">cccccccc</span><span class="pun">}</span><span class="pln">
+         0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0  </span><span class="kwd">\\</span><span class="pln">
+         0 </span><span class="typ">&amp;</span><span class="pln"> 12k b_0 </span><span class="typ">&amp;</span><span class="pln"> </span><span class="pun">(</span><span class="pln">12k+15</span><span class="pun">)</span><span class="pln"> b_1 </span><span class="typ">&amp;</span><span class="pln"> </span><span class="pun">(</span><span class="pln">12k+30</span><span class="pun">)</span><span class="pln"> b_2 </span><span class="typ">&amp;</span><span class="pln"> </span><span class="pun">(</span><span class="pln">12k+45</span><span class="pun">)</span><span class="pln">  b_3 </span><span class="typ">&amp;</span><span class="pln"> </span><span class="pun">(</span><span class="pln">12k+60</span><span class="pun">)</span><span class="pln"> b_4  </span><span class="kwd">\\</span><span class="pln">
+         0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0   </span><span class="kwd">\\</span><span class="pln">
+         0 </span><span class="typ">&amp;</span><span class="pln"> 2k  a_0 </span><span class="typ">&amp;</span><span class="pln"> </span><span class="pun">(</span><span class="pln">2k+5</span><span class="pun">)</span><span class="pln">  a_1 </span><span class="typ">&amp;</span><span class="pln"> </span><span class="pun">(</span><span class="pln">2k+10</span><span class="pun">)</span><span class="pln">  a_2 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0   </span><span class="kwd">\\</span><span class="pln">
+        </span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">array</span><span class="pun">}</span><span class="pln">
+      </span><span class="kwd">\right</span><span class="pun">)</span><span class="pln">
+</span><span class="kwd">\]</span></code></pre>
+
+<p>But it only makes the scaler 1/15 smaller, not the entries of this 
+matrix. Is there a way to make the entries smaller, without typing <code>\scriptstyle</code> for each entries? Maybe something we can change the whole size by 75%, 50% of the content in <code>\begin{equation}...\end{equation}</code></p>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://tex.stackexchange.com/questions/tagged/matrices" class="post-tag js-gps-track" title="show questions tagged 'matrices'" rel="tag">matrices</a> <a href="http://tex.stackexchange.com/questions/tagged/scaling" class="post-tag js-gps-track" title="show questions tagged 'scaling'" rel="tag">scaling</a> <a href="http://tex.stackexchange.com/questions/tagged/width" class="post-tag js-gps-track" title="show questions tagged 'width'" rel="tag">width</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://tex.stackexchange.com/q/43065" title="short permalink to this question" class="short-link" id="link-post-43065">share</a><span class="lsep">|</span><a href="http://tex.stackexchange.com/posts/43065/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://tex.stackexchange.com/posts/43065/revisions" title="show all edits to this post">edited <span title="2012-02-02 05:59:36Z" class="relativetime">Feb 2 '12 at 5:59</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://tex.stackexchange.com/users/586/torbj%c3%b8rn-t"><div class="gravatar-wrapper-32"><img src="scaling%20-%20matrices%20too%20big%20to%20fit%20the%20width%20of%20a%20page%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/e92360aba4919cc0c1f1dbc7e381e61e.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://tex.stackexchange.com/users/586/torbj%c3%b8rn-t">Torbjørn T.</a><br>
+        <span class="reputation-score" title="reputation score 44547" dir="ltr">44.5k</span><span title="4 gold badges"><span class="badge1"></span><span class="badgecount">4</span></span><span title="81 silver badges"><span class="badge2"></span><span class="badgecount">81</span></span><span title="147 bronze badges"><span class="badge3"></span><span class="badgecount">147</span></span>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2012-02-01 13:30:22Z" class="relativetime">Feb 1 '12 at 13:30</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://tex.stackexchange.com/users/8971/user565739"><div class="gravatar-wrapper-32"><img src="scaling%20-%20matrices%20too%20big%20to%20fit%20the%20width%20of%20a%20page%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/c0ade41cedf94f802407d52c7956ad18.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://tex.stackexchange.com/users/8971/user565739">user565739</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">1,074</span><span title="2 gold badges"><span class="badge1"></span><span class="badgecount">2</span></span><span title="9 silver badges"><span class="badge2"></span><span class="badgecount">9</span></span><span title="26 bronze badges"><span class="badge3"></span><span class="badgecount">26</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-43065" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-87900" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">put <code>\scriptsize</code> inside the array?</span>
+                –&nbsp;
+                    <a href="http://tex.stackexchange.com/users/215/seamus" title="29385 reputation" class="comment-user">Seamus</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment87900_43065"><span title="2012-02-01 13:54:02Z" class="relativetime-clean">Feb 1 '12 at 13:54</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-87901" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Also, don't do this. No-one will be able to read your slides if you make the text that small.</span>
+                –&nbsp;
+                    <a href="http://tex.stackexchange.com/users/215/seamus" title="29385 reputation" class="comment-user">Seamus</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment87901_43065"><span title="2012-02-01 13:56:52Z" class="relativetime-clean">Feb 1 '12 at 13:56</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-43065" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								3 Answers
+                                <span style="display:none;" itemprop="answerCount">3</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://tex.stackexchange.com/questions/43065/matrices-too-big-to-fit-the-width-of-a-page?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+        <a href="http://tex.stackexchange.com/questions/43065/matrices-too-big-to-fit-the-width-of-a-page?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+        <a class="youarehere" href="http://tex.stackexchange.com/questions/43065/matrices-too-big-to-fit-the-width-of-a-page?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="43067"></a>
+<div id="answer-43067" class="answer accepted-answer" data-answerid="43067" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="43067" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">6</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>One quick (but not very beautiful) solution is to work with <code>\scalebox</code> from the <code>graphicx</code> package, e.g.</p>
+
+<pre style="" class="lang-tex prettyprint prettyprinted"><code><span class="kwd">\newcommand\scalemath</span><span class="pun">[</span><span class="pln">2</span><span class="pun">]{</span><span class="kwd">\scalebox</span><span class="pun">{</span><span class="pln">#1</span><span class="pun">}{</span><span class="kwd">\mbox</span><span class="pun">{</span><span class="kwd">\ensuremath</span><span class="pun">{</span><span class="kwd">\displaystyle</span><span class="pln"> #2</span><span class="pun">}}}}</span><span class="pln">
+
+</span><span class="kwd">\[</span><span class="pln">
+M_</span><span class="pun">{</span><span class="pln">1,k</span><span class="pun">}</span><span class="pln">  </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">\frac</span><span class="pun">{</span><span class="pln">1</span><span class="pun">}{</span><span class="pln">15</span><span class="pun">}</span><span class="pln"> </span><span class="kwd">\left</span><span class="pun">(</span><span class="pln">
+    </span><span class="kwd">\scalemath</span><span class="pun">{</span><span class="pln">0.3</span><span class="pun">}{</span><span class="pln">
+    </span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">array</span><span class="pun">}{</span><span class="pln">cccccccc</span><span class="pun">}</span><span class="pln">
+     0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0  </span><span class="kwd">\\</span><span class="pln">
+     0 </span><span class="typ">&amp;</span><span class="pln"> 12k b_0 </span><span class="typ">&amp;</span><span class="pln"> </span><span class="pun">(</span><span class="pln">12k+15</span><span class="pun">)</span><span class="pln"> b_1 </span><span class="typ">&amp;</span><span class="pln"> </span><span class="pun">(</span><span class="pln">12k+30</span><span class="pun">)</span><span class="pln"> b_2 </span><span class="typ">&amp;</span><span class="pln"> </span><span class="pun">(</span><span class="pln">12k+45</span><span class="pun">)</span><span class="pln">  b_3 </span><span class="typ">&amp;</span><span class="pln"> </span><span class="pun">(</span><span class="pln">12k+60</span><span class="pun">)</span><span class="pln"> b_4  </span><span class="kwd">\\</span><span class="pln">
+     0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0   </span><span class="kwd">\\</span><span class="pln">
+     0 </span><span class="typ">&amp;</span><span class="pln"> 2k  a_0 </span><span class="typ">&amp;</span><span class="pln"> </span><span class="pun">(</span><span class="pln">2k+5</span><span class="pun">)</span><span class="pln">  a_1 </span><span class="typ">&amp;</span><span class="pln"> </span><span class="pun">(</span><span class="pln">2k+10</span><span class="pun">)</span><span class="pln">  a_2 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0   </span><span class="kwd">\\</span><span class="pln">
+    </span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">array</span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+  </span><span class="kwd">\right</span><span class="pun">)</span><span class="pln">
+</span><span class="kwd">\]</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://tex.stackexchange.com/a/43067" title="short permalink to this answer" class="short-link" id="link-post-43067">share</a><span class="lsep">|</span><a href="http://tex.stackexchange.com/posts/43067/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2012-02-01 13:59:06Z" class="relativetime">Feb 1 '12 at 13:59</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://tex.stackexchange.com/users/10777/jofel"><div class="gravatar-wrapper-32"><img src="scaling%20-%20matrices%20too%20big%20to%20fit%20the%20width%20of%20a%20page%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/1fb05a5259d561754538105c0dfcf506.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://tex.stackexchange.com/users/10777/jofel">jofel</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">230</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="4 bronze badges"><span class="badge3"></span><span class="badgecount">4</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-43067" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-88206" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">A choice of <code>\scalemath{0.75}</code> will look quite a bit more beautiful; <code>\scalemath{0.3}</code> renders the contents virtually undecipherable...</span>
+                –&nbsp;
+                    <a href="http://tex.stackexchange.com/users/5001/mico" title="85572 reputation" class="comment-user">Mico</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment88206_43067"><span title="2012-02-02 19:16:49Z" class="relativetime-clean">Feb 2 '12 at 19:16</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-43067" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="43073"></a>
+<div id="answer-43073" class="answer" data-answerid="43073" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="43073" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">12</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>I suggest you insert, after the <code>\begin{frame}</code> statement but before the start of the equation, the following instructions.</p>
+
+<pre style="" class="lang-tex prettyprint prettyprinted"><code><span class="kwd">\footnotesize</span><span class="pln">
+</span><span class="kwd">\arraycolsep</span><span class="pun">=</span><span class="lit">3pt</span><span class="pln">
+</span><span class="kwd">\medmuskip</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> 1mu </span><span class="com">% default: 4mu plus 2mu minus 4mu</span></code></pre>
+
+<p>The command <code>\footnotesize</code> will bring about a roughly 20% reduction in fontsize; <code>\arraycolsep=3pt</code> cuts about 40% from the whitespace that gets inserted between columns (useful because you have 7 such whitespaces), and <code>\medmuskip=1mu</code>
+ drastically reduces the amount of whitespace TeX inserts before and 
+after each "+" symbol (and all other symbols of class "mathbin"). </p>
+
+<p>Here's a complete MWE and its output:</p>
+
+<pre style="" class="lang-tex prettyprint prettyprinted"><code><span class="kwd">\documentclass</span><span class="pun">{</span><span class="pln">beamer</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">document</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">frame</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\footnotesize</span><span class="pln">
+</span><span class="kwd">\arraycolsep</span><span class="pun">=</span><span class="lit">3pt</span><span class="pln"> </span><span class="com">% default: 5pt</span><span class="pln">
+</span><span class="kwd">\medmuskip</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> 1mu </span><span class="com">% default: 4mu plus 2mu minus 4mu</span><span class="pln">
+</span><span class="kwd">\[</span><span class="pln"> 
+M_</span><span class="pun">{</span><span class="pln">1,k</span><span class="pun">}</span><span class="pln">  </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">\frac</span><span class="pun">{</span><span class="pln">1</span><span class="pun">}{</span><span class="pln">15</span><span class="pun">}</span><span class="pln"> 
+</span><span class="kwd">\left</span><span class="pun">(</span><span class="pln"> </span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">array</span><span class="pun">}{</span><span class="pln">rrrrrr</span><span class="pun">}</span><span class="pln"> 
+0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0  </span><span class="kwd">\\</span><span class="pln">
+0 </span><span class="typ">&amp;</span><span class="pln"> 12k b_0 </span><span class="typ">&amp;</span><span class="pln"> </span><span class="pun">(</span><span class="pln">12k+15</span><span class="pun">)</span><span class="pln"> b_1 </span><span class="typ">&amp;</span><span class="pln"> </span><span class="pun">(</span><span class="pln">12k+30</span><span class="pun">)</span><span class="pln"> b_2 </span><span class="typ">&amp;</span><span class="pln"> </span><span class="pun">(</span><span class="pln">12k+45</span><span class="pun">)</span><span class="pln">  b_3 </span><span class="typ">&amp;</span><span class="pln"> </span><span class="pun">(</span><span class="pln">12k+60</span><span class="pun">)</span><span class="pln"> b_4  </span><span class="kwd">\\</span><span class="pln">
+0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0   </span><span class="kwd">\\</span><span class="pln">
+0 </span><span class="typ">&amp;</span><span class="pln"> 2k  a_0 </span><span class="typ">&amp;</span><span class="pln"> </span><span class="pun">(</span><span class="pln">2k+5</span><span class="pun">)</span><span class="pln">  a_1 </span><span class="typ">&amp;</span><span class="pln"> </span><span class="pun">(</span><span class="pln">2k+10</span><span class="pun">)</span><span class="pln">  a_2 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0   </span><span class="kwd">\\</span><span class="pln">
+</span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">array</span><span class="pun">}</span><span class="pln"> </span><span class="kwd">\right</span><span class="pun">)</span><span class="pln">
+</span><span class="kwd">\]</span><span class="pln">
+</span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">frame</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">document</span><span class="pun">}</span></code></pre>
+
+<p><img src="scaling%20-%20matrices%20too%20big%20to%20fit%20the%20width%20of%20a%20page%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/a2ylw.png" alt="enter image description here"></p>
+
+<p><strong>Addendum:</strong> If you need to economize further on 
+whitespace, you could (i) reduce the whitespace around the equal sign by
+ issuing the command <code>\thickmuskip = 2mu</code> and (ii) replace the array preamble line <code>\begin{array}{rrrrrr}</code> with <code>\begin{array}{@{}rrrrrr@{}}</code>;
+ the latter measure will eliminate the whitespace between the opening 
+and closing large parentheses and the first/last column of numbers.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://tex.stackexchange.com/a/43073" title="short permalink to this answer" class="short-link" id="link-post-43073">share</a><span class="lsep">|</span><a href="http://tex.stackexchange.com/posts/43073/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://tex.stackexchange.com/posts/43073/revisions" title="show all edits to this post">edited <span title="2012-02-02 04:35:00Z" class="relativetime">Feb 2 '12 at 4:35</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2012-02-01 14:31:05Z" class="relativetime">Feb 1 '12 at 14:31</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://tex.stackexchange.com/users/5001/mico"><div class="gravatar-wrapper-32"><img src="scaling%20-%20matrices%20too%20big%20to%20fit%20the%20width%20of%20a%20page%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/c7PDj.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://tex.stackexchange.com/users/5001/mico">Mico</a><br>
+        <span class="reputation-score" title="reputation score 85572" dir="ltr">85.6k</span><span title="5 gold badges"><span class="badge1"></span><span class="badgecount">5</span></span><span title="116 silver badges"><span class="badge2"></span><span class="badgecount">116</span></span><span title="279 bronze badges"><span class="badge3"></span><span class="badgecount">279</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-43073" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-43073" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="43075"></a>
+<div id="answer-43075" class="answer" data-answerid="43075" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="43075" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">5</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Resize the width to <code>\linewidth</code></p>
+
+<pre style="" class="lang-tex prettyprint prettyprinted"><code><span class="kwd">\documentclass</span><span class="pun">{</span><span class="pln">beamer</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">document</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">frame</span><span class="pun">}</span><span class="pln">
+
+</span><span class="kwd">\resizebox</span><span class="pun">{</span><span class="kwd">\linewidth</span><span class="pun">}{</span><span class="pln">!</span><span class="pun">}{</span><span class="com">%</span><span class="pln">
+</span><span class="typ">$</span><span class="kwd">\displaystyle</span><span class="pln">
+M_</span><span class="pun">{</span><span class="pln">1,k</span><span class="pun">}</span><span class="pln">  </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">\frac</span><span class="pun">{</span><span class="pln">1</span><span class="pun">}{</span><span class="pln">15</span><span class="pun">}</span><span class="pln"> 
+</span><span class="kwd">\left</span><span class="pun">(</span><span class="pln"> </span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">array</span><span class="pun">}{</span><span class="pln">rrrrrrrr</span><span class="pun">}</span><span class="pln"> 
+0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0  </span><span class="kwd">\\</span><span class="pln">
+0 </span><span class="typ">&amp;</span><span class="pln"> 12k b_0 </span><span class="typ">&amp;</span><span class="pln"> </span><span class="pun">(</span><span class="pln">12k+15</span><span class="pun">)</span><span class="pln"> b_1 </span><span class="typ">&amp;</span><span class="pln"> </span><span class="pun">(</span><span class="pln">12k+30</span><span class="pun">)</span><span class="pln"> b_2 </span><span class="typ">&amp;</span><span class="pln"> </span><span class="pun">(</span><span class="pln">12k+45</span><span class="pun">)</span><span class="pln">  b_3 </span><span class="typ">&amp;</span><span class="pln"> </span><span class="pun">(</span><span class="pln">12k+60</span><span class="pun">)</span><span class="pln"> b_4  </span><span class="kwd">\\</span><span class="pln">
+0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0   </span><span class="kwd">\\</span><span class="pln">
+0 </span><span class="typ">&amp;</span><span class="pln"> 2k  a_0 </span><span class="typ">&amp;</span><span class="pln"> </span><span class="pun">(</span><span class="pln">2k+5</span><span class="pun">)</span><span class="pln">  a_1 </span><span class="typ">&amp;</span><span class="pln"> </span><span class="pun">(</span><span class="pln">2k+10</span><span class="pun">)</span><span class="pln">  a_2 </span><span class="typ">&amp;</span><span class="pln"> 0 </span><span class="typ">&amp;</span><span class="pln"> 0   </span><span class="kwd">\\</span><span class="pln">
+</span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">array</span><span class="pun">}</span><span class="pln"> </span><span class="kwd">\right</span><span class="pun">)</span><span class="pln">
+</span><span class="typ">$</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">frame</span><span class="pun">}</span><span class="pln">
+
+</span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">document</span><span class="pun">}</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://tex.stackexchange.com/a/43075" title="short permalink to this answer" class="short-link" id="link-post-43075">share</a><span class="lsep">|</span><a href="http://tex.stackexchange.com/posts/43075/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2012-02-01 14:36:49Z" class="relativetime">Feb 1 '12 at 14:36</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://tex.stackexchange.com/users/2478/herbert"><div class="gravatar-wrapper-32"><img src="scaling%20-%20matrices%20too%20big%20to%20fit%20the%20width%20of%20a%20page%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/qywAp.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://tex.stackexchange.com/users/2478/herbert">Herbert</a><br>
+        <span class="reputation-score" title="reputation score 174392" dir="ltr">174k</span><span title="12 gold badges"><span class="badge1"></span><span class="badgecount">12</span></span><span title="208 silver badges"><span class="badge2"></span><span class="badgecount">208</span></span><span title="474 bronze badges"><span class="badge3"></span><span class="badgecount">474</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-43075" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-43075" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="/questions/43065/answer/submit" method="post" class="post-form">
+						    <input id="post-id" value="43065" type="hidden">
+                            <input id="qualityBanWarningShown" name="qualityBanWarningShown" value="false" type="hidden">
+							<h2 class="space">Your Answer</h2>
+
+
+
+        
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+         
+        prepareEditor({
+            heartbeatType: 'answer',
+            bindNavPrevention: true,
+            postfix: "",
+            onDemand: true,
+            discardSelector: ".discard-answer"
+            ,immediatelyShowMarkdownHelp:true
+        });
+        
+
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li style="left: 0px;" class="wmd-button" id="wmd-bold-button"><span style="background-position: 0px -20px;"></span></li><li style="left: 25px;" class="wmd-button" id="wmd-italic-button"><span style="background-position: -20px -20px;"></span></li><li style="left: 50px;" class="wmd-spacer" id="wmd-spacer1"><span style="background-position: -40px -20px;"></span></li><li style="left: 75px;" class="wmd-button" id="wmd-link-button"><span style="background-position: -40px -20px;"></span></li><li style="left: 100px;" class="wmd-button" id="wmd-quote-button"><span style="background-position: -60px -20px;"></span></li><li style="left: 125px;" class="wmd-button" id="wmd-code-button"><span style="background-position: -80px -20px;"></span></li><li style="left: 150px;" class="wmd-button" id="wmd-image-button"><span style="background-position: -100px -20px;"></span></li><li style="left: 175px;" class="wmd-spacer" id="wmd-spacer2"><span style="background-position: -120px -20px;"></span></li><li style="left: 200px;" class="wmd-button" id="wmd-olist-button"><span style="background-position: -120px -20px;"></span></li><li style="left: 225px;" class="wmd-button" id="wmd-ulist-button"><span style="background-position: -140px -20px;"></span></li><li style="left: 250px;" class="wmd-button" id="wmd-heading-button"><span style="background-position: -160px -20px;"></span></li><li style="left: 275px;" class="wmd-button" id="wmd-hr-button"><span style="background-position: -180px -20px;"></span></li><li style="left: 300px;" class="wmd-spacer" id="wmd-spacer3"><span style="background-position: -200px -20px;"></span></li><li style="left: 325px;" class="wmd-button" id="wmd-undo-button"><span style="background-position: -200px -20px;"></span></li><li style="left: 350px;" class="wmd-button" id="wmd-redo-button"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="d7e0a4606f9b482cc0aa2ea4db317c7e" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+</div>
+							<div style="position: relative;">
+								
+            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://tex.stackexchange.com/users/login?returnurl=%2fquestions%2f43065%2fmatrices-too-big-to-fit-the-width-of-a-page%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Stack Exchange</span></p>
+                        </div>
+                    </div>
+                    <input name="manual-openid" class="manual-openid" type="hidden">
+                    <input name="use-facebook" class="use-facebook" value="false" type="hidden">
+                    <input name="use-google-oauth2" class="use-google-oauth2" value="false" type="hidden">
+                    <input class="submit-openid" value="Submit" style="display:none" type="button">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" size="30" maxlength="100" tabindex="106" type="text">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', '%2fquestions%2f43065%2fmatrices-too-big-to-fit-the-width-of-a-page%23new-answer');
+                    }
+                );
+            </script>
+            <noscript>
+                        <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+            </noscript>
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" value="Post Your Answer" tabindex="110" type="submit">
+									<a href="#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input name="legalLinksShown" value="1" type="hidden">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://tex.stackexchange.com/questions/tagged/matrices" class="post-tag" title="show questions tagged 'matrices'" rel="tag">matrices</a> <a href="http://tex.stackexchange.com/questions/tagged/scaling" class="post-tag" title="show questions tagged 'scaling'" rel="tag">scaling</a> <a href="http://tex.stackexchange.com/questions/tagged/width" class="post-tag" title="show questions tagged 'width'" rel="tag">width</a>  or <a href="http://tex.stackexchange.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2012-02-01 13:30:22Z"><b>2 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>8426 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://tex.stackexchange.com/questions/43065/matrices-too-big-to-fit-the-width-of-a-page?lastactivity" class="lastactivity-link" title="2012-02-02 05:59:36Z">2 years ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+			<div class="module community-bulletin" data-tracker="cb=1">
+    <div class="related">
+                <div class="bulletin-title">
+                    Upcoming Events
+                </div>
+                <hr>
+    <div class="spacer">
+        
+    <div class="bulletin-item-type"><a href="http://chat.stackexchange.com/rooms/41/tex-latex-and-friends?cb=1" class="question-hyperlink"><div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div></a></div>
+    <div class="bulletin-item-content">
+        <a href="http://chat.stackexchange.com/rooms/41/tex-latex-and-friends?cb=1" class="question-hyperlink">Answer the Unanswered</a>
+        <div><span title="2014-09-06 21:00:00Z" class="relativetime">tomorrow</span></div>
+    </div>
+    <br class="cbt">
+</div>
+    </div>
+</div>			
+			<div style="margin-bottom: 10px;">
+        
+
+<style type="text/css">
+#newsletter-ad {
+    width: 190px;
+    height: 250px;
+    overflow: hidden;
+    background: url('//cdn.sstatic.net/tex/img/newsletter-ad.png');
+    padding: 0 15px 0 15px;
+}
+#newsletter-ad-header {
+    margin-top: 60px;
+}
+#newsletter-ad ul {
+    margin: 1em 0 1em 1.5em;
+}
+#newsletter-ad ul li {
+    margin-bottom: 5px;
+}
+#newsletter-signup-container {
+    text-align: center;
+}
+#newsletter-preview-container {
+    margin-top: 10px;
+    text-align: center;
+}
+#newsletter-email-input {
+    width: 200px;
+}
+</style>
+
+<script>
+    StackExchange.ready(function () {
+        StackExchange.newsletterAd.init();
+    });
+</script>
+
+<div id="newsletter-ad">
+    <p id="newsletter-ad-header">Get the <b>weekly newsletter!</b></p>
+    <ul>
+        <li>Top questions and answers</li>
+        <li>Important announcements</li>
+        <li>Unanswered questions</li>
+    </ul>
+    <div id="newsletter-signup-container"><input id="newsletter-signup" value="Sign up for the newsletter" type="button"></div>
+    <p id="newsletter-preview-container">see an <a href="http://stackexchange.com/newsletters/newsletter?site=tex.stackexchange.com" id="newsletter-preview">example newsletter</a></p>
+    <div class="dno">
+        
+<p class="privacy-policy-agreement">
+By subscribing, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input name="legalLinksShown" value="1" type="hidden">
+    </div>
+</div>
+
+    </div>
+			  
+    
+            
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://tex.stackexchange.com/q/15765?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">5
+    </div>
+</a><a href="http://tex.stackexchange.com/questions/15765/scale-an-image-where-both-width-height-are-off-limits?rq=1" class="question-hyperlink">Scale an image where both width &amp; height are off limits</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://tex.stackexchange.com/q/96408?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">4
+    </div>
+</a><a href="http://tex.stackexchange.com/questions/96408/resize-images-to-half-of-text-width-only-if-too-big-for-page-margin?rq=1" class="question-hyperlink">Resize images to half of text width only if too big for page margin</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://tex.stackexchange.com/q/103929?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">3
+    </div>
+</a><a href="http://tex.stackexchange.com/questions/103929/make-matrix-inside-equation-fit-the-page-width-in-lyx?rq=1" class="question-hyperlink">Make matrix inside equation fit the page width in LyX</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://tex.stackexchange.com/q/107560?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">1
+    </div>
+</a><a href="http://tex.stackexchange.com/questions/107560/fit-table-on-page-width?rq=1" class="question-hyperlink">fit table on page width</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://tex.stackexchange.com/q/109847?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">4
+    </div>
+</a><a href="http://tex.stackexchange.com/questions/109847/adjusting-the-width-of-the-matrix?rq=1" class="question-hyperlink">Adjusting the width of the matrix</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://tex.stackexchange.com/q/110266?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">6
+    </div>
+</a><a href="http://tex.stackexchange.com/questions/110266/set-longtable-to-fit-the-page-width?rq=1" class="question-hyperlink">Set longtable to fit the page-width</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://tex.stackexchange.com/q/131127?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">2
+    </div>
+</a><a href="http://tex.stackexchange.com/questions/131127/stretch-image-width-within-a-two-column-layout-in-context?rq=1" class="question-hyperlink">Stretch image width within a two-column layout in ConTeXt</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://tex.stackexchange.com/q/169500?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">5
+    </div>
+</a><a href="http://tex.stackexchange.com/questions/169500/giving-two-matrices-the-same-width?rq=1" class="question-hyperlink">Giving two matrices the same width</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://tex.stackexchange.com/q/195805?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">2
+    </div>
+</a><a href="http://tex.stackexchange.com/questions/195805/rescale-paragraph-to-fit-margins-or-detect-used-width-of-paragraph?rq=1" class="question-hyperlink">Rescale paragraph to fit margins or detect used width of paragraph</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://tex.stackexchange.com/q/196232?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">5
+    </div>
+</a><a href="http://tex.stackexchange.com/questions/196232/matrix-is-too-small-how-to-make-it-bigger?rq=1" class="question-hyperlink">Matrix is too small, how to make it bigger?</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-askubuntu" title="Ask Ubuntu"></div><a href="http://askubuntu.com/questions/520354/why-isnt-one-bash-command-working-at-startup" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:89 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why isn't one 'bash' command working at startup
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-photo" title="Photography Stack Exchange"></div><a href="http://photo.stackexchange.com/questions/53998/are-nikon-dslr-sensors-actually-better-than-canons" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:61 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Are Nikon DSLR sensors actually better than Canon's?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/194684/why-can-we-say-an-american-but-not-a-british" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why can we say 'an American' but not 'a British'?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/133985/how-can-interstellar-space-have-a-temperature-of-2-3k" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can interstellar space have a temperature of 2-3K?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/920406/why-does-euclid-write-prime-numbers-are-more-than-any-assigned-multitude-of-pri" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does Euclid write "Prime numbers are more than any assigned multitude of prime numbers."
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-graphicdesign" title="Graphic Design Stack Exchange"></div><a href="http://graphicdesign.stackexchange.com/questions/38226/what-is-wrong-with-comic-sans" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:174 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is wrong with Comic Sans?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-skeptics" title="Skeptics Stack Exchange"></div><a href="http://skeptics.stackexchange.com/questions/23095/did-esurance-put-up-a-billboard-saying-cover-your-home-in-a-dick" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:212 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Did Esurance put up a billboard saying "Cover your home in a dick"?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/199621/tikz-control-relative-coordinates-in-background-layer" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Tikz-Control relative coordinates in background layer
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-spanish" title="Spanish Language Stack Exchange"></div><a href="http://spanish.stackexchange.com/questions/8518/por-qu%c3%a9-se-usa-la-forma-t%c3%ba-en-publicidades-en-vez-de-usted" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:353 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    ¿Por qué se usa la forma "tú" en publicidades en vez de "usted"?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/66801/is-encrypting-salt-with-given-users-password-more-secure" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is encrypting SALT with given user's password more secure?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/153943/git-pager-is-less-but-what-caused-the-syntax-highlighting" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Git pager is less, but what caused the syntax highlighting?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/25676961/understanding-how-recursive-functions-work" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Understanding how recursive functions work
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/919973/why-add-before-dividing-in-this-equation" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why add before dividing in this equation?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/27936/is-it-normal-for-an-advisor-to-expect-80-hour-workweeks-from-phd-students-and" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it normal for an advisor to expect &gt;80 hour 
+workweeks from PhD students, and threaten them with dismissal?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-electronics" title="Electrical Engineering Stack Exchange"></div><a href="http://electronics.stackexchange.com/questions/127838/flow-of-electrons-in-a-wire" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Flow of electrons in a wire
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="http://mathematica.stackexchange.com/questions/58940/symbolic-integration-error" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    symbolic integration error
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/67174/why-does-molly-weasley-remember-a-different-gamekeeper" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does Molly Weasley remember a different gamekeeper?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/28054/responding-to-a-reviewer-who-misunderstood-key-concepts-of-a-paper" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Responding to a reviewer who misunderstood key concepts of a paper
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="http://superuser.com/questions/807346/what-does-fck-ram-memory-speed-stand-for" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What does fCK (RAM memory speed) stand for?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-electronics" title="Electrical Engineering Stack Exchange"></div><a href="http://electronics.stackexchange.com/questions/127881/how-to-identify-mutual-inductance" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to identify mutual inductance?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="http://codereview.stackexchange.com/questions/62013/prime-factorization-in-c" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Prime Factorization in C
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-gaming" title="Arqade"></div><a href="http://gaming.stackexchange.com/questions/183197/can-i-give-a-portal-key-to-another-player-in-ingress" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:41 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can I give a portal key to another player in Ingress?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-programmers" title="Programmers Stack Exchange"></div><a href="http://programmers.stackexchange.com/questions/255366/why-are-the-b-and-i-tags-deprecated" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:131 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why are the &lt;b&gt; and &lt;i&gt; tags deprecated?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-gaming" title="Arqade"></div><a href="http://gaming.stackexchange.com/questions/183191/how-do-you-install-skins-on-steam" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:41 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do you install skins on Steam?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://tex.stackexchange.com/feeds/question/43065" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/43065/ivc/e1f7');});
+</script>
+<noscript>
+    <div><img src="/posts/43065/ivc/e1f7" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">lang-tex</div></div>
+
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://tex.stackexchange.com/tour">tour</a>
+                    <a href="http://tex.stackexchange.com/help">help</a>
+                        <a href="http://tex.stackexchange.com/help/badges">badges</a>
+                    <a href="http://tex.blogoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackexchange.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick='StackExchange.switchMobile("on")'>mobile</a>
+                    <b><a href="http://tex.stackexchange.com/contact">contact us</a></b>
+                        <b><a href="http://meta.tex.stackexchange.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="professional system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems.">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="Information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (14)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (10)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2014 stack exchange inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2014.9.5.1816
+            </div>
+            
+        </div>
+    </div>
+    <noscript>
+        <div id="noscript-warning">TeX - LaTeX Stack Exchange works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-24', '.stackexchange.com');
+        
+        
+        ga('set', 'dimension2', '|matrices|scaling|width|');         
+        ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>        
+    
+    
+<div id="SL_shadow_translator"><div id="SL_shadow_balloon" style="display: none; top: 1975px; left: 910px;"><div id="SLplanshet"><div style="display: none;" id="SLarrowTOP"></div><div id="SLtopbar" align="left"><table class="SLtable" width="100%" border="0" cellpadding="0" cellspacing="0" height="25"><tbody><tr><td class="SLtd" align="left" width="24"><div id="SLlogo"></div></td><td class="SLtd" align="left" valign="center" width="210"><span id="SLfrom"></span> » <select class="SLselectbox" id="SLto"></select></td><td class="SLtd" align="right" width="18"><div id="SL_tts" title="Listen to the translation"></div></td><td class="SLtd" align="right" width="18"><div id="SL_copy" class="SL_copy" title="Copy translation to clipboard"></div></td><td class="SLtd" align="right" width="18"><div id="SL_font" class="SL_font_on" title="Font size"></div></td><td class="SLtd" align="right" width="30"><div id="SL_pin" class="SL_pin_on" title="Unpin pop-up bubble"></div></td></tr></tbody></table></div></div><div style="font-size: 13px;" id="SL_result" class="SL_sesultLTRRTL"></div><div id="SL_small_options_switch" class="SL_small_options_switch_off" title="Show options"></div><div id="SL_small_tooltips_switch" class="SL_small_tooltips_switch_on" title="Hide tooltips"></div><div id="SL_small_options" style="display:none;"><div id="SLcontrols"><div class="SLaligner"><input checked="checked" id="SLonoff" type="checkbox"> Pin pop-up bubble</div><div class="SLaligner"><input id="SLshowImTbutton" type="checkbox"> Show Translator's button</div><div class="SLaligner"><input checked="checked" id="SLtranslateOnMouseSelection" type="checkbox"> Translate on mouse selection</div><div id="SLspacer"><table class="SLtable" width="175" border="0" cellpadding="0" cellspacing="0" height="16"><tbody><tr><td class="SLtd"><div id="SLtriggerKey"></div></td><td class="SLtd"><div class="SLaligner2">Trigger&nbsp;key:</div></td><td class="SLtd"><div style="display: none;" id="SL_select_patch"></div><select class="SLselectbox" id="SLoptionsKey"><option value="None">None</option><option selected="selected" value="Alt">Alt</option><option value="Ctrl">Ctrl</option><option value="Shift">Shift</option></select></td></tr></tbody></table></div><div class="SLaligner"><input id="SLAutoCopyClipboard" type="checkbox"> AutoCopy translation to clipboard</div><div class="SLaligner"><div id="SL_sel_source">Select source language:<select id="SLfrom_options"></select></div></div></div><div id="SL_tip">Customize Translator's controls, button and settings</div></div><div id="SL_small_tooltips">Use Options to enable Translator button</div><div style="display: none;" id="SLarrowBOT"></div></div></div></body></html>

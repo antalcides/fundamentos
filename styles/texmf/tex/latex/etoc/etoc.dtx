@@ -1,0 +1,5116 @@
+% -*- coding: iso-latin-1; -*-
+%<*ins>
+\def\pkgname{etoc}
+\def\pkgdate{2013/03/07}
+\def\pkgversion{v1.07f}
+\def\pkgdescription{Completely customisable TOCs (jfB)}
+%</ins>
+%%
+%% Package `etoc' by Jean-Francois Burnol
+%% Copyright (C) 2012, 2013 by Jean-Francois Burnol
+%%
+%
+% The copyright statement at the top of this file applies to `etoc.dtx'
+% and to its derived files.
+% 
+%     This work may be distributed and/or modified under the
+%     conditions of the LaTeX Project Public License, either
+%     version 1.3c of this license or (at your option) any later
+%     version. This version of this license is in 
+%          http://www.latex-project.org/lppl/lppl-1-3c.txt
+%     and the latest version of this license is in
+%          http://www.latex-project.org/lppl.txt
+%     and version 1.3 or later is part of all distributions of
+%     LaTeX version 2005/12/01 or later. 
+%
+% The author of this work is Jean-Francois Burnol <jfbu at free dot fr>. 
+% This work has the LPPL maintenance status `author-maintained'.
+% 
+%  Installation:
+%  ============
+%
+% `latex etoc.dtx' --> this extracts the style file `etoc.sty'
+%
+% `latex etoc.dtx' (twice more) finishes producing the documentation
+%
+%  Move `etoc.sty' to a suitable location within the TeX installation:
+%          etoc.sty -> <TDS>/tex/latex/etoc/etoc.sty
+%
+%  The generated auxiliary files may be discarded.
+% 
+%<*none>
+\def\lasttimestamp{Time-stamp: <14-05-2013 16:34:59 CEST jfb>}
+\def\docdate{2013/05/14}
+\def\striptimestamp#1 <#2 #3 #4 #5>{#2 at #3 #4}
+\edef\dtxtimestamp{\expandafter\striptimestamp\lasttimestamp}
+\ProvidesFile{\pkgname.dtx}
+ [`\pkgname' source and documentation (\dtxtimestamp)]
+\begingroup
+\input docstrip.tex
+\askforoverwritefalse
+\def\pkgpreamble{\defaultpreamble^^J\MetaPrefix^^J%
+\string\ProvidesPackage{\pkgname}^^J%
+\space[\pkgdate\space\pkgversion\space\pkgdescription]}
+\generate{\nopreamble
+\file{\pkgname.ins}{\from{\pkgname.dtx}{ins}}
+\usepreamble\pkgpreamble
+\file{\pkgname.sty}{\from{\pkgname.dtx}{package}}}
+\endgroup
+\iffalse
+%</none>
+%<*ins>
+%-------------------------------------------------------------------------------
+%% This file `etoc.ins' is provided for compatibility with TeX distributions
+%% expecting to find it for installation of `etoc.sty'.
+%%
+%% As usual `latex etoc.ins' produces `etoc.sty' from the source `etoc.dtx'
+%% (an already existing etoc.sty in the same repertory will be overwritten)
+%% 
+%% Move `etoc.sty' to a suitable location:
+%% etoc.sty -> <TDS>/tex/latex/etoc/etoc.sty
+%%
+%% The generated auxiliary files may be discarded. See `etoc.dtx' for the
+%% statements of copyright and conditions of distribution or modification.
+%%
+\input docstrip.tex
+\askforoverwritefalse
+\def\pkgpreamble{\defaultpreamble^^J\MetaPrefix^^J%
+\string\ProvidesPackage{\pkgname}^^J%
+\space[\pkgdate\space\pkgversion\space\pkgdescription]}
+\generate{\usepreamble\pkgpreamble
+\file{\pkgname.sty}{\from{\pkgname.dtx}{package}}}
+\endbatchfile
+%-------------------------------------------------------------------------------
+%</ins>
+%<*none>
+\fi
+\documentclass[a4paper,11pt,abstract]{scrdoc}
+%%\OnlyDescription
+
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage[hscale=0.66,vscale=0.75]{geometry}
+\pagestyle{headings}
+
+\makeatletter
+% 2013/03/07. 
+% This macro allows to conveniently center a line inside a paragraph and still
+% use there in \verb or other commands changing catcodes.
+% A proposito, \centerline uses \hsize and not \linewidth!!!
+    \def\@centeredline {\hbox to \linewidth
+                        \bgroup \hss \bgroup
+                        \aftergroup\centeredline@ }
+    \newcommand*\centeredline {%
+      \ifhmode
+        \\\relax
+        \def\centeredline@{\hss\egroup\hskip\z@skip}%
+      \else
+        \def\centeredline@{\hss\egroup}%
+      \fi
+      \afterassignment\@centeredline
+      \let\next=}
+
+   \let\original@check@percent\check@percent
+   \let\check@percent\relax
+\makeatother
+
+\def\MacroFont{\ttfamily\small\baselineskip12pt\relax}
+
+\usepackage{txfonts} 
+
+% m'occuper de la taille de txtt:
+% au passage je supprime le \hyphenchar \font\m@ne
+
+
+% ATTENTION ATTENTION ATTENTION Un changement de taille comme \small semble
+% déclencher (peut-être) la relecture de t1txtt.fd et quoi qu'il en soit le
+% \hyphenchar est REMIS à -1 !
+
+\DeclareFontFamily{T1}{txtt}{}
+\DeclareFontShape{T1}{txtt}{m}{n}{	%medium
+     <->s*[.96] t1xtt%
+}{}
+\DeclareFontShape{T1}{txtt}{m}{sc}{	%cap & small cap
+     <->s*[.96] t1xttsc%
+}{}
+\DeclareFontShape{T1}{txtt}{m}{sl}{	%slanted
+     <->s*[.96] t1xttsl%
+}{}
+\DeclareFontShape{T1}{txtt}{m}{it}{	%italic
+     <->ssub * txtt/m/sl%
+}{}
+\DeclareFontShape{T1}{txtt}{m}{ui}{   	%unslanted italic
+     <->ssub * txtt/m/sl%
+}{}
+\DeclareFontShape{T1}{txtt}{bx}{n}{	%bold extended
+     <->t1xbtt%
+}{}
+\DeclareFontShape{T1}{txtt}{bx}{sc}{	%bold extended cap & small cap
+     <->t1xbttsc%
+}{}
+\DeclareFontShape{T1}{txtt}{bx}{sl}{	%bold extended slanted
+     <->t1xbttsl%
+}{}
+\DeclareFontShape{T1}{txtt}{bx}{it}{	%bold extended italic
+     <->ssub * txtt/bx/sl%
+}{}
+\DeclareFontShape{T1}{txtt}{bx}{ui}{  	%bold extended unslanted italic
+     <->ssub * txtt/bx/sl%
+}{}
+\DeclareFontShape{T1}{txtt}{b}{n}{	%bold
+     <->ssub * txtt/bx/n%
+}{}
+\DeclareFontShape{T1}{txtt}{b}{sc}{	%bold cap & small cap
+     <->ssub * txtt/bx/sc%
+}{}
+\DeclareFontShape{T1}{txtt}{b}{sl}{	%bold slanted
+     <->ssub * txtt/bx/sl%
+}{}
+\DeclareFontShape{T1}{txtt}{b}{it}{   	%bold italic
+     <->ssub * txtt/bx/it%
+}{}
+\DeclareFontShape{T1}{txtt}{b}{ui}{   	%bold unslanted italic
+     <->ssub * txtt/bx/ui%
+}{}
+
+
+\usepackage{xspace}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{enumitem}
+
+\definecolor{joli}{RGB}{225,95,0}
+\definecolor{JOLI}{RGB}{225,95,0}
+\definecolor{BLUE}{RGB}{0,0,255}
+\colorlet{niceone}{green!35!blue!75}
+
+\usepackage[english]{babel}
+\AtBeginDocument{
+  \renewcommand\partname{Part}
+  \addto\captionsenglish{\renewcommand\partname{Part}}
+}
+
+% ok il faut ceci pour dvipdfmx:
+% \def\pgfsysdriver{pgfsys-dvipdfm.def}
+
+\usepackage{tikz}
+\usetikzlibrary{trees}    % added for "cyclic" grow function 2013/03/02
+\usepackage{tikz-qtree}
+
+\usepackage[% dvipdfmx,
+pdfencoding=pdfdoc,bookmarks=true]{hyperref}
+
+\hypersetup{%
+linktoc=all,%      why is the important stuff
+bookmarksdepth=3,% in a *hard* to find README?
+breaklinks=true,%
+hidelinks,%
+pdfauthor={Jean-Fran\c cois Burnol},%
+pdftitle={The etoc package},%
+pdfsubject={LaTeX, table of contents},%
+pdfkeywords={LaTeX, table of contents},%
+pdfstartview=FitH,%
+pdfpagemode=UseOutlines}
+
+% for use when \usepackage{hyperref} is commented out
+% \makeatletter
+% \let\texorpdfstring\@firstoftwo
+% \def\hyperref[#1]#2{{#2}}
+% \def\href#1#2{{#2}}
+% \makeatother
+
+
+\usepackage{etoc}  % executes \RequirePackage{multicol}
+%--------
+% add-ons for the new section `surprising uses of etoc' (2013/01/24)
+\newcounter{visibletoc}
+\renewcommand{\etocaftertitlehook}
+   {\stepcounter{visibletoc}\etoctoccontentsline{visibletoc}{\thevisibletoc}}
+\etocsetlevel{visibletoc}{6}
+%--------
+% add-ons for the `fancy TOC' (2013/01/25)
+    \newcounter{dummypart}
+    \newcounter{dummychapter}
+    \newcounter{dummysection}
+    \etocsetlevel{dummypart}{6}
+    \etocsetlevel{dummychapter}{6}
+    \etocsetlevel{dummysection}{6}
+%--------
+% for "Another compatibility mode"  (2013/02/21):
+\makeatletter
+\newcommand*{\MyQuasiStandardTOC}[1]{%
+  \begingroup
+  \let\savedsectionline\l@section
+  \let\savedsubsectionline\l@subsection 
+  \etocsetstyle{section}{}
+    {\ifnum\etocthenumber=3
+      \etocsetstyle{subsection}
+        {\par\nopagebreak\begingroup
+         \leftskip1.5em \rightskip\@tocrmarg
+         \parfillskip \@flushglue 
+         \parindent 0pt
+         \normalfont\normalsize\rmfamily\itshape
+         % \columnsep1em
+         % \begin{minipage}{\dimexpr\linewidth-\leftskip-\rightskip\relax}%
+         % \begin{multicols}{2}%
+         \etocskipfirstprefix}
+        {\allowbreak\,--\,}
+        {\etocname\ \textup{(\etocnumber)}}
+        % {.\par\end{multicols}\end{minipage}\par\endgroup}%
+        {.\par\endgroup}%
+      \else
+        \etocsetstyle{subsection}{}{}
+        {\savedsubsectionline{\numberline{\etocnumber}\etocname}{\etocpage}}{}%
+      \fi} 
+    {\savedsectionline
+      {\numberline{{\color{cyan}\etocthenumber}}\etocname}{\etocpage}}
+    {}%
+  \etocstandarddisplaystyle
+  \setcounter{tocdepth}{2}
+  \tableofcontents #1
+  \endgroup}
+\makeatother
+%--------
+% 2 mars \thispartstats macro:
+% 7 mars je retire la phrase Click on the names or numbers to get confirmation!
+
+\newsavebox\firstnamei
+\newsavebox\firstnumberi
+\newsavebox\lastnamei
+\newsavebox\lastnumberi
+\newsavebox\firstnameii
+\newsavebox\firstnumberii
+\newsavebox\lastnameii
+\newsavebox\lastnumberii
+\newcounter{mycounti}
+\newcounter{mycountii}
+
+\newcommand*{\thispartstatsauxi}{}
+\newcommand*{\thispartstatsauxii}{}
+\newcommand*{\oldtocdepth}{}
+
+\newcommand*{\thispartstats}{%
+  \edef\oldtocdepth{\arabic{tocdepth}}%
+  \setcounter{tocdepth}{2}%
+  \setcounter{mycounti}{0}%
+  \setcounter{mycountii}{0}%
+  \def\thispartstatsauxi{%
+         \sbox{\firstnamei}{\color{cyan}\etocname}%
+         \sbox{\firstnumberi}{\color{cyan}\etocnumber}%
+         \def\thispartstatsauxi{}}%
+  \def\thispartstatsauxii{%
+         \sbox{\firstnameii}{\color{cyan}\etocname}%
+         \sbox{\firstnumberii}{\color{cyan}\etocnumber}%
+         \def\thispartstatsauxii{}}%
+  \begingroup
+  \etocsetstyle{subsection}
+    {}
+    {}
+    {\thispartstatsauxii
+     \stepcounter{mycountii}%
+     \sbox{\lastnameii}{\color{teal}\etocname}%
+     \sbox{\lastnumberii}{\color{teal}\etocnumber}}
+    {}
+  \etocsetstyle{section}
+    {}
+    {}
+    {\thispartstatsauxi
+     \stepcounter{mycounti}%
+     \sbox{\lastnamei}{\color{teal}\etocname}%
+     \sbox{\lastnumberi}{\color{teal}\etocnumber}}
+    {Here are some statistics for this part: it contains \arabic{mycounti}
+      section\ifnum\value{mycounti}>1 s\fi{} and
+      \arabic{mycountii} subsection\ifnum\value{mycountii}>1 s\fi. The name of
+	 the first section is 
+     \unhbox\firstnamei{} and the corresponding number is 
+     \unhbox\firstnumberi. The name of the last section is 
+     \unhbox\lastnamei{} and its number is \unhbox\lastnumberi. The name of
+	 the first subsection is 
+     \unhbox\firstnameii{} and the corresponding number is 
+     \unhbox\firstnumberii. The name of the last subsection is 
+     \unhbox\lastnameii{} and its number is \unhbox\lastnumberii.}% 
+  \etocinline % don't do a \par automatically
+  \etocsettocstyle {}{}
+  \localtableofcontents
+  \endgroup
+  \setcounter{tocdepth}{\oldtocdepth}%
+}
+
+% \makeatletter
+% \newcommand*{\restoretocdepth}{}%
+% \newcommand*{\thispartstats}[1][{part}{section}]{%
+% \edef\restoretocdepth{\noexpand\setcounter{tocdepth}{\arabic{tocdepth}}}%
+% \setcounter{tocdepth}{\csname Etoc@\@secondoftwo#1@@\endcsname}%
+% \begingroup
+% \etocsetstyle{\@secondoftwo#1}
+%     {\setcounter{mycount}{0}%
+%      \def\thispartstatsaux{%
+%          \sbox\firstname{\color{cyan}\etocname}%
+%          \sbox\firstnumber{\color{cyan}\etocnumber}%
+%          \def\thispartstatsaux{}}}
+%     {}
+%     {\thispartstatsaux
+%      \stepcounter{mycount}%
+%      \sbox\lastname{\color{teal}\etocname}%
+%      \sbox\lastnumber{\color{teal}\etocnumber}}
+%     {this \@firstoftwo#1 has \arabic{mycount}
+%       \@secondoftwo#1\ifnum\c@mycount>1 s\fi. The name of
+% 	   its first is 
+%      \unhbox\firstname{} and the corresponding number is 
+%      \unhbox\firstnumber. The name of the last \@secondoftwo#1 is 
+%      \unhbox\lastname{} and its number is \unhbox\lastnumber. 
+%      Click on the names or numbers to get confirmation!}% 
+% \etocsettocstyle{Here are some statistics for this \@firstoftwo#1: }{\par}%
+% %\etocinline
+% \localtableofcontents
+% \endgroup
+% \restoretocdepth}
+% \makeatother
+
+
+
+\newcommand\toc{\csa{table\-of\-contents}\xspace}
+\newcommand\localtoc{\csa{local\-table\-of\-contents}\xspace}
+\newcommand\tocb{\csb{table\-of\-contents}\xspace}
+\newcommand\localtocb{\csb{local\-table\-of\-contents}\xspace}
+
+\newcommand\etoc{%
+\texorpdfstring{{\color{joli}\ttfamily\bfseries etoc}}{etoc}\xspace}
+
+\DeclareRobustCommand\csa[1]{{\ttfamily\hyphenchar\font45 \char`\\ #1}}
+\DeclareRobustCommand\csb[1]
+{{\color{blue}\ttfamily\hyphenchar\font45 \char`\\ #1}}
+
+\newcommand\cshyp[1]{\texorpdfstring{\csa{#1}}{\textbackslash #1}}
+\newcommand\csbhyp[1]{\texorpdfstring{\csb{#1}}{\textbackslash #1}}
+
+\newcommand\lowast{\raisebox{-.25\height}{*}}
+\newcommand\starit[1]{\csa{#1\lowast}}
+\newcommand\staritb[1]{\csb{#1\lowast}}
+
+
+\hyphenation{toc-depth sec-num-depth etoc-framed-style etoc-ruled-style}
+\hyphenation{etoc-toc-style-with-marks etoc-ruled etoc-framed}
+\hyphenation{etoc-stan-dard-display-style}
+\hyphenation{etoc-the-page etoc-the-name etoc-the-num-ber etoc-if-num-bered}
+\hyphenation{etoc-link etoc-stan-dard-lines etoc-toc-lines}
+\hyphenation{etoc-in-ner-top-sep}
+\hyphenation{etoc-the-linked-name etoc-the-linked-num-ber etoc-the-linked-page}
+\hyphenation{etoc-the-link}
+\hyphenation{etoc-skip-first-pre-fix etoc-the-page
+  etoc-ruled-style etoc-mul-ti-col-style etoc-default-lines}
+
+\frenchspacing
+
+\renewcommand\familydefault\sfdefault
+
+\setcounter{secnumdepth}{4}
+
+\begin{document}
+
+\rmfamily
+\thispagestyle{empty}
+
+\begin{center}
+  {\normalfont\Large The \etoc package}\\
+\textsc{Jean-François Burnol}\par
+  \footnotesize \ttfamily 
+  jfbu (at) free (dot) fr\\
+  Package version: \pkgversion\ (\pkgdate)\\
+  Documentation generated from the source file\\
+  with timestamp ``\dtxtimestamp''\par
+\end{center}
+
+\begin{abstract}
+  The \etoc package gives to the user complete control on how
+  the entries of the table of contents should be constituted
+  from the \emph{name}, \emph{number}, and \emph{page number}
+  of each sectioning unit. This goes via the definition of
+  \emph{line styles} for each sectioning level used in the
+  document. The package provides its own custom line styles.
+  Simpler ones are given as examples in the documentation. The
+  simplest usage will be to take advantage of the layout facilities
+  of packages dealing with list environments.
+
+  The \csa{tableofcontents} command may be used arbitrarily
+  many times and it has a variant \csa{localtableofcontents}
+  which prints tables of contents `local' to the current
+  surrounding document unit. An extension of the
+  \csa{label}/\csa{ref} syntax allows to reproduce (with another
+  layout) a TOC defined somewhere else in the document.
+
+  The formatting inherited (and possibly customized by other
+  packages) from the document class may also be used in
+  \emph{compatibility mode}. Regarding the \emph{global toc
+    display}, \etoc provides pre-defined styles based on a
+  multi-column format, optionally with a frame or a ruled
+  title.
+
+  As the assignment of levels to the sectioning units can be
+  changed at any time, \etoc can be used in a quite general
+  manner to also create custom ``lists of'', additionally to
+  the tables of contents related to the document sectioning
+  units. No auxiliary file is used apart from the usual |.toc|
+  file.
+\end{abstract}
+
+
+\section*{Foreword}
+
+Popular packages dealing with TOCs include |tocloft|,
+|titletoc| and |minitoc|. Why another one? well, initially I
+started \etoc for my own use, and only later found out about
+the above mentioned packages ... 
+
+As is well explained in the |tocloft| package documentation,
+the standard \LaTeX{} layout for the Table of Contents is
+buried in the class definitions. In particular, most of the
+lengths therein are hardcoded, and the only way for the user
+to change them is to recopy the class definitions into the
+document and then change them to obtain what is desired
+(within suitable \csa{makeatletter} and \csa{makeatother}).
+The more reasonable alternative is to use a dedicated package such as
+|tocloft| or to use another flexible document class.
+
+However, although now things are hopefully not hard-coded, one
+still has to go through the package or class interface. This
+means one has to memorize a (possibly large) number of macros
+which will serve only to this task, and one will always be
+constrained to customizing one initially given layout.
+
+The spirit of \etoc is something else. The user will deal with
+the \emph{name}, the \emph{number} and the \emph{page number}
+corresponding to each document sectional division (and
+found in a line of the |.toc| file) in a completely arbitrary
+manner: they are made available via the \csb{etocname},
+\csb{etocnumber}, and \csb{etocpage} commands. 
+
+\etoc is
+compatible with the |article|, |book|, |report|, |scrartcl|,
+|scrbook|, |scrreprt| and |memoir| classes. 
+
+% Preliminary
+% testing is positive, but the author not being familiar with the
+% latter classes,\footnote{latter=all but |article|...} he does
+% not have a stock of documents which could have been used to
+% test all their bells and whistles in the presence of
+% \etoc. \par
+
+
+\begingroup
+\renewcommand\lowast{{\normalsize\raisebox{-.4\height}{*}}}
+
+\section*{\bfseries\small Change history}
+
+\setlength{\columnsep}{\etoccolumnsep}
+
+\makeatletter
+
+\def\jfverbatim{\@beginparpenalty \predisplaypenalty 
+  %\leftskip \z@
+  \parindent \z@ 
+  \parfillskip \@flushglue 
+  \parskip \tw@\p@ plus 1fil\relax
+  \let \do \@makeother \dospecials
+  \catcode`\~\z@ 
+  \footnotesize\normalfont\baselineskip10pt\relax
+  \frenchspacing \obeyspaces \jf@xverbatim }
+
+
+\begingroup 
+\catcode `|=0 \catcode `[= 1 \catcode`]=2 
+\catcode `\{=12 \catcode `\}=12 \catcode`\\=12 
+|long|gdef|jf@xverbatim#1\end{jfverbatim}[#1|end[jfverbatim]]
+|endgroup
+
+\def\endjfverbatim{} 
+
+\newdimen\jfverbadim
+
+\everypar{\leftskip\jfverbadim\bgroup
+          \def\par{\egroup\jfverbadim\z@\@@par}%
+          \def\jfverbaspace#1{\ifcat\noexpand#1\noexpand~\unskip\else\ \fi#1}}
+
+\begingroup\obeyspaces\def\x{\endgroup%
+\def {\ifvmode\advance\jfverbadim.5em\relax\else\expandafter\jfverbaspace\fi}}\x
+
+\makeatother
+
+\begin{multicols}{2}
+\begin{jfverbatim}
+v1.07f [2013/03/07]
+
+   new macros \etocthelinkedname, \etocthelinkednumber,
+   \etocthelinkedpage, and \etocthelink.
+
+
+v1.07e [2013/03/01]
+
+   improvements in the package own line styles with
+   regards to penalties and vertical spaces. 
+
+   addition to the documentation of an example of
+   a tree-like table of contents (uses tikz).
+
+   more such examples added 2013/03/03.
+
+
+v1.07d [2013/02/24]
+
+   minor code improvements and new documentation 
+   section "Another compatibility mode".
+
+
+v1.07b [2013/02/02]
+
+   removal of the \xspace from the macros \etocname, 
+   \etocnumber, \etocpage.
+
+   additional examples in the documentation.
+
+   
+v1.07 [2013/01/29]
+
+   new commands:
+
+      \etocthename, \etocthenumber, \etocthepage, \etoclink, 
+
+      \etoctoccontentsline, \etoctoccontentsline~lowast
+
+      \etocnopar, \etocaftercontentshook
+
+   modified command: \etocmulticolstyle
+
+   new documentation section "Surprising uses of etoc" which
+   explains how to do "Lists of arbitrary things", in
+   addition to the tables of contents.
+
+
+v1.06 [2012/12/07]
+
+   the standard macros \l@section etc... are modified only
+   during the calls to \tableofcontents; they can thus be
+   customized as will by the user (with the help of a
+   package like tocloft) and this will be taken into account
+   by etoc for the TOCs typeset in compatibility mode.
+
+
+v1.05 [2012/12/01]
+
+   \localtableofcontents replaces \tableofcontents~lowast (for
+   compatibility with the memoir class).
+
+   compatibility with KOMA-script and memoir document
+   classes.
+
+
+v1.04 [2012/11/24]
+
+   a (possibly local) table of contents can be labeled:
+ 
+       \tableofcontents \label{toc:1}
+
+   and reproduced elsewhere in the document (with a possibly
+   completely different layout):
+ 
+       \tableofcontents \ref{toc:1}
+
+   
+v1.02 [2012/11/18]
+
+   initial version.
+
+\end{jfverbatim}
+\end{multicols}
+\endgroup  
+
+\setcounter{tocdepth}{3}
+\etoctoclines
+\etocmarkboth\contentsname
+\etocmulticolstyle[1]
+     {\noindent\bfseries\Large
+      \leaders\hrule height1pt\hfill
+      \MakeUppercase{Table of Contents}}
+\begingroup
+  \etocsetlevel{subsection}{3}
+  \etocsetlevel{subsubsection}{6}
+
+\tableofcontents \label{toc:main}
+
+
+\endgroup
+
+\clearpage
+
+\part{Overview}\label{part:one}
+
+\thispartstats
+
+\setcounter{tocdepth}{-3}
+\localtableofcontents \label{toc:partone}
+\setcounter{tocdepth}{3}
+
+\section{Initial motivation: nested lists}
+
+The initial impetus was to feed nested list environments
+with the data consisting of the \emph{name}
+(\csb{etocname}), \emph{number} (\csb{etocnumber}), and
+\emph{page number} (\csb{etocpage}) as
+recorded\footnote{the \emph{number} has to be disentangled
+  from the \emph{name}, and in case |hyperref| is present, the
+  hyperlink has to be redistributed around each of them.} in the
+|.toc| file.
+% \footnote{I got started about this through
+%   reading this question on the
+%   \TeX{} Stackexchange site:
+%   \href{http://tex.stackexchange.com/questions/79682/can-i-get-a-list-of-all-sections-as-a-simple-enumerate-list}{tex.stackexchange.com/questions/79682}}
+For example, typesetting the line corresponding to the first
+sub-section in a given section would open a list environment
+which would be closed only when a section, chapter, or part
+line entry in the |.toc| file would be encountered. \etoc
+allows to do this very easily and the opening and closing
+may be for example |\begin{enumerate}| and |\end{enumerate}|
+pairs, will all the customizing allowed by packages such as
+|enumitem|.
+
+\subsection{Limitations intrinsic to the use of environments}
+\label{ssec:limitations}
+
+There is a first limitation to this method: the |.toc| file
+may contain other commands, such as language changing
+commands, which do not expect to see their scope limited in
+this way inside a group (\LaTeX's environments create groups).
+Therefore the package own line styles
+(illustrated by the main table of contents in this document)
+do not make use of environments to avoid that problem.
+
+A second limitation is that one may nest at most 4 levels of
+enumerate environments, and 4 levels of itemize environment. I
+tried alternating them and did succeed to nest 6 levels (and
+not 8 alas . . . \footnote{this is
+  surely a well-known issue which I did not at all
+  investigate any further.}). With
+\csb{etocnumber} as the optional parameter to \csa{item}:
+\csa{item}|[\etocnumber]| one may transform the itemize into an
+enumerated list... anyway, 4 levels of sectional divisions in
+a TOC are generally sufficient, and again using |enumerate|
+environments is only a possibility provided by \etoc, it is by
+no means mandatory to use them in the line styles
+specifications.
+
+We will give in this manual a simple-minded example of nested
+use of |enumerate| environments. More sophisticated examples
+would use more sophisticated |enumitem| options. One may say
+then that again the user has to memorize some customizing!
+indeed, but the syntax and option names to memorize are in no
+way related only to matters of tables of contents, hence an
+economy of use of the poor brain.
+
+The built-in default ``line styles'' provided by the package
+do not make use of environments.
+
+\section{Line styles and toc display style}
+
+A distinction shall be made between the \emph{line styles},
+\emph{i.e.} the way the name, number and page numbers are
+used at each level, and the \emph{toc display style} (for
+lack of a better name) which tells how the title should be
+set, whether an entry in the |.toc| file should be made,
+whether the contents should be typeset with multiple columns,
+etc... the latter is governed by the command
+\csa{etocsettocstyle} (or some higher-level commands) and the
+former by the command \csa{etocsetstyle}.
+
+\subsection{\csbhyp{etocsettocstyle} for the toc display}
+
+The low-level \csb{etocsettocstyle} command allows to decide
+what should be done before and after the line entries of the
+TOC are typeset, and in particular how the title should be
+printed. It has two arguments, the first one is executed
+before the TOC contents (typically it will print
+``Contents'' and define suitable head-marks) and the second is
+executed after the TOC contents.
+
+\etoc provides four (customizable) higher level toc styles:
+\csb{etocmulticolstyle}, \csb{etoctocstyle},
+\csb{etocruledstyle}, and \csb{etocframedstyle}. All use the
+|multicol| package with a default of two columns
+(single-column mode is of course allowed).
+
+These commands must be followed either by \toc or \localtoc.
+
+\subsection{\csbhyp{etocsetstyle} for the line styles}
+
+The command to inform \etoc of what to do with \csa{etocname},
+\csa{etocnumber}, and \csa{etocpage} is called
+\csb{etocsetstyle}. It has five mandatory arguments. The first
+one is the name of the sectional unit: a priori known names
+are |book|, |part|, |chapter|, |section|, |subsection|,
+|subsubsection|, |paragraph|, and |subparagraph|. The four
+other arguments say: 1) \emph{what to do when this level is first
+encountered, down from a more general one,} then 2) \& 3) (two
+arguments, a `prefix' and a `contents') \emph{what to do when a new
+entry of that type is found,} and 4) \emph{the last argument is the
+code to execute when a division unit of higher importance is
+again hit upon.}
+
+\subsection{Compatibility mode}\label{ssub:compat}
+
+Both for the ``line styles'' and the ``toc display style'', it is
+possible to switch into a compatibility mode which uses the
+defaults from the
+document class.\footnote{for the ``toc display style''
+  \etoc checks if it knows the class, and if not defaults to
+  the |article| class layout.} This is activated by:\\
+\makebox[5.2cm][l]{\csb{etocstandardlines}}
+ |% `line entries' as without \usepackage{etoc}|\\
+\makebox[5.2cm][l]{\csb{etocstandarddisplaystyle}}
+ |% `toc display'  as without \usepackage{etoc}|
+
+
+If the command \csa{etocsetstyle} has not been used in the
+preamble the package will be at |\begin{document}| in this
+  compatibility mode: hence just adding \csa{usepackage\{etoc\}}
+  should hopefully not change anything to the look of a
+  previously existing document, under the |article|, |book|,
+  |report|, |scrartcl|, |scrbook|, |scrreprt| and |memoir|
+  classes.
+
+  Any use of \csa{etocsetstyle} in the preamble or body of the
+  document turns off the compatibility mode for line styles
+  (but not for the global display style; for this one needs to
+  use the command \csa{etocsettocstyle}).
+
+To exit after \csa{etocstandardlines} from compatibility mode
+one uses the command \csb{etoctoclines}, which re-activates
+the latest line styles as defined by \csa{etocsetstyle} (if
+their scope was not limited to a group or environment). The
+command \csb{etocdefaultlines} resets the line styles to be
+the package initial default ones.
+
+
+\section{Arbitrarily many TOCs, and local ones too}
+
+\etoc allows arbitrarily many \csa{tableofcontents} commands in
+your document. The line styles and the toc display style may of
+course be changed in-between. Furthermore 
+\csa{localtableofcontents} will print local tables of
+contents\footnote{Up to version |1.04| we called this
+  \starit{tableofcontents}, but for reasons of compatibility
+  with the |memoir| class, we have decided to drop this
+  usage.}: \emph{i.e.} all sections and sub-units inside a
+given chapter, or all subsubsections and lower inside a given
+subsection, etc . . .
+
+\subsection{Labeling and reusing elsewhere}
+
+\etoc allows the labeling of a TOC with \csa{label\{toc:A\}}
+and will redisplay it elsewhere when told
+\csa{tableofcontents}\csa{ref\{toc:A\}}. The actual layout
+(title inclusive) used for the cloned TOC will be decided
+locally. The line styles and toc display style (including the
+title) will be the current ones and the current value of the
+|tocdepth| counter is obeyed. As an example here is the table
+of contents of Part \ref{part:custom}:
+
+\begingroup
+
+\etocstandardlines
+\renewcommand{\etocbkgcolorcmd}{\color{green!5}}
+\fboxsep1ex
+
+\etocframed[1]{\fbox{\makebox[.5\linewidth]{\etocfontminusone 
+\hyperref[toc:c]{I am from far away}}}}
+\label{toc:d}
+\ref{toc:c}
+
+\endgroup
+
+We actually did something like:
+\centeredline{\toc\space\csa{label}|{toc:d}|\csa{ref}|{toc:c}|} Hence
+\hyperref[toc:d]{\color{niceone}the present location}
+can itself now be referred to via |\ref{toc:d}|: it gives
+the id of this TOC\footnote{\emph{i.e}
+{\color{niceone}\ref{toc:d}}, there was an invisible
+TOC with id 2 and another one whose identity is left to the reader's sagacity.}
+  in the sequence of 
+document TOCs, and will be a link if package |hyperref| is
+used.
+
+However one should not use elsewhere \toc|\ref{toc:d}|. Due to
+the way \etoc implements the cloning, the doubly cloned TOC
+will be typeset as a full table of contents. So to clone
+again, one should use the original: \toc|\ref{toc:c}|.
+
+\subsection{The hyperref option \emph{bookmarksdepth}}
+\label{ssec:bookmarksdepth}
+
+When modifying the counter |tocdepth| for the purposes of
+multiple uses of \toc or \localtoc, one should consider that
+package |hyperref| by default takes into account the
+\emph{current} value of the |tocdepth| counter to decide
+whether the final |pdf| output will contain a bookmark
+corresponding to the used sectioning command. Thus, one 
+often will have to reset |tocdepth| to its previous value
+immediately after the display of the table of contents. 
+
+Or, there is the \emph{bookmarksdepth=n} option of package
+|hyperref|, with \emph{n} the desired document bookmarks
+depth, which can be numeric or the name of a level known to
+|hyperref|. The present document passed |bookmarksdepth=3| as
+option to |hyperref|, so as to not have to reset |tocdepth|
+each time its value was changed.
+
+\subsection{On manually adding layout commands to the
+  \texorpdfstring{\texttt{.toc}}{.toc} file}
+
+When displaying in that way many tables of contents in the same
+document one should of course beware of the impact of adding
+manually things
+to the |.toc| file. For example, inserting
+\csa{addtocontents}|{toc}{\string\clearpage}|
+just
+before a \csa{part} to fix the problem when some part entry (in
+the table of contents) is isolated at the bottom of one page,
+will cause problems with multiple TOCs: this \csa{clearpage}
+will be executed by \etoc each time a \toc or \localtoc
+command is encountered! The more prudent thing is to have
+issued rather: {\csa{addtocontents}|{toc}{\string\myclearpage}|,}
+to have a |\let\myclearpage\relax| at the top level of the
+document and  to use where needed something like:
+\begin{verbatim}
+\let\myclearpage\clearpage
+\tableofcontents
+\let\myclearpage\relax
+\end{verbatim}
+The |memoir| class has the command \csa{settocdepth} which
+writes a \csa{changetoc\-depth} command inside the |.toc| file.
+This will impact the typesetting by \etoc of \emph{all} tables
+of contents, with possibly unexpected results: imagine the
+document has \csa{settocdepth}|{chapter}| at some point to
+avoid having the sections from subsequent chapters be listed
+in the main table of contents. Then a local table of contents
+in one of these chapters will print a title but will be
+without any entry. A solution is to do \csa{begingroup}
+|\renewcommand*\changetocdepth[1]{}| \csa{localtableofcontents}
+\csa{endgroup}, and to set the desired level for the local
+table of contents with the other |memoir| command \csa{maxtocdepth}.
+\footnote{The |memoir| class allows multiple calls to the \toc
+  command, so these issues already arise there,
+  independently of \etoc, see page 170 of the |memoir|
+  manual.}
+
+\subsection{Shuffling the levels with \csbhyp{etocsetlevel}}
+
+The intrinsic levels manipulated by \etoc are numeric: from
+|-2| (which corresponds to |book| in the |memoir| class) down
+to |5| (|subparagraph|). But the assignment of a numeric level
+to a given name can be modified at any time with the command
+\csa{etocsetlevel}\marg{level\_name}\marg{n}. In conjunction
+with the use of the \LaTeX{} |tocdepth| counter, this has
+powerful applications: \meta{level\_name} does not have to
+coincide with an actual document sectioning command, and \etoc
+can be used to print arbitrary ``lists of things'', using no
+other auxiliary file than the |.toc| file. This is
+explained further in the section \ref{sec:surprising}.
+
+\section{Two examples}
+
+Here is a simple example of use of the package
+functionalities. Immediately after the |\part{Overview}|
+line in the source file we inserted:
+\begin{verbatim}
+    \setcounter{tocdepth}{-3}
+    \localtableofcontents \label{toc:partone}
+    \setcounter{tocdepth}{3}
+\end{verbatim}
+The |tocdepth| having been  set to -3, nothing at all was typeset, as
+\etoc 
+cancels printing even the heading of the TOC if the |tocdepth| is -3 or
+less (and it is even ``-2 or less'', except for the |memoir| class).
+We will then display here this TOC with:
+\centeredline{|\tableofcontents \ref{toc:partone}|}
+
+But first let us set up some line styles. We choose a style for sections and
+sub-sections which would be suitable for, respectively, sections and
+sub-sections in an average length memoir. The line style specifications have
+some redundancy for clarity, and do not care about what to do at possible page
+breaks. Also, they do not worry about potential multi-column use.
+
+\begin{verbatim}
+\begingroup % we start a group to keep the style changes local
+\newlength{\tocleftmargin}    \setlength{\tocleftmargin}{5cm}
+\newlength{\tocrightmargin}   \setlength{\tocrightmargin}{1cm}
+
+\etocsetstyle{section}              % will pretend to be a Chapter
+{\addvspace{1ex}\parfillskip0pt
+ \leftskip\tocleftmargin            % (already done in title)
+ \rightskip\the\tocrightmargin plus 1fil
+ \parindent0pt\color{cyan}}         % (already done)
+{\bfseries\LARGE\upshape\addvspace{1ex}\leavevmode}
+{\llap{Chapter\hspace{.5em}{\etocnumber}\hspace{.75cm}}\etocname
+ \hfill\makebox[-\tocrightmargin][l]{\makebox[0pt]{\etocpage}}\par}
+{}
+
+\etocsetstyle{subsection}           % will pretend to be a Section
+{}
+{\mdseries\large\addvspace{.5ex}\leavevmode}
+{\llap{\etocnumber\hspace{.75cm}}\textit{\etocname}%
+ \hfill\makebox[-\tocrightmargin][l]{\makebox[0pt]{\etocpage}}\par}
+{}
+
+\etocsettocstyle{\color{cyan}\parindent0pt \leftskip\tocleftmargin
+  \leavevmode\leaders\hrule height 1pt\hfill\ 
+  \huge\textit{My Beautiful Thesis}\par}{\bigskip}
+
+% \color{cyan}\parindent0pt and \leftskip\tocleftmargin were repeated
+% in the <start> code of the ``section style'', for clarity of code.
+
+\tableofcontents \ref{toc:partone}
+\endgroup
+\end{verbatim}
+
+\begingroup
+\newlength{\tocleftmargin}
+\setlength{\tocleftmargin}{5cm}
+\newlength{\tocrightmargin}
+\setlength{\tocrightmargin}{1cm}
+
+\etocsetstyle{section}
+{\addvspace{1ex}\parfillskip0pt
+ \leftskip\tocleftmargin
+ \rightskip\the\tocrightmargin plus 1fil
+ \parindent0pt\color{cyan}}
+{\bfseries\LARGE\upshape\addvspace{1ex}\leavevmode}
+{\llap{Chapter\hspace{.5em}{\etocnumber}\hspace{.75cm}}\etocname
+ \hfill\makebox[-\tocrightmargin][l]{\makebox[0pt]{\etocpage}}\par}
+{}
+
+\etocsetstyle{subsection}
+{}
+{\mdseries\large\addvspace{.5ex}\leavevmode}
+{\llap{\etocnumber\hspace{.75cm}}\textit{\etocname}%
+ \hfill\makebox[-\tocrightmargin][l]{\makebox[0pt]{\etocpage}}\par}
+{}
+
+\etocsettocstyle{\color{cyan}\parindent0pt\leftskip\tocleftmargin
+  \leavevmode\leaders\hrule height 1pt\hfill\ 
+  \huge\textit{My Beautiful Thesis}\par}{\bigskip}
+
+\tableofcontents \ref{toc:partone}
+\endgroup
+
+As one can see, the code uses the basic commands from
+\TeX/\LaTeX{} for paragraph layouts and an efficient mix of
+plain \TeX{} and \LaTeX{} syntaxes.
+
+Users not so knowledgeable in the \TeX{} syntax (for cause of having
+been exposed only to \LaTeX{} ``introductions'')
+have the possibility explained earlier to use nested
+|enumerate| environments, of course this means mastering
+another syntax.
+
+However, using as here the \TeX{} primitive |\par|,\footnote{\csa{par} is
+  redefined by \LaTeX{} but this is of no immediate
+  relevance here.} and basic skip registers
+|\leftskip|, |\rightskip|, \csa{parfillskip}, ... is by far the
+surest way to completely understand and master what happens.
+Any user of \LaTeX{} should learn their
+signification.
+
+\subsection{Again the table of contents of this part}\label{ssec:again}
+
+Let us now try out some more sophisticated line styles. The
+display will use the \csa{etocframedstyle} package command, which
+requires that the produced table of contents fits on a single
+page. With all the recent additions to the documentation there is
+not enough room here, so we wrap it up in a figure environment and
+it will show \hyperref[toc:floating]{\color{niceone}on the next page.}
+
+
+\setcounter{tocdepth}{3}
+
+\begin{figure*}[th!]\centering
+\colorlet{subsecnum}{black}
+\colorlet{secbackground}{green!30}
+\colorlet{tocbackground}{red!20!green!20}
+
+\renewcommand{\etocbkgcolorcmd}{\color{tocbackground}}
+\renewcommand{\etocleftrulecolorcmd}{\color{tocbackground}}
+\renewcommand{\etocrightrulecolorcmd}{\color{tocbackground}}
+\renewcommand{\etocbottomrulecolorcmd}{\color{tocbackground}}
+\renewcommand{\etoctoprulecolorcmd}{\color{tocbackground}}
+
+\renewcommand{\etocleftrule}{\vrule width 3cm}
+\renewcommand{\etocrightrule}{\vrule width 1cm}
+\renewcommand{\etocbottomrule}{\hrule height 12pt}
+\renewcommand{\etoctoprule}{\hrule height 12pt}
+
+\renewcommand{\etocinnertopsep}{0pt}
+\renewcommand{\etocinnerbottomsep}{0pt}
+\renewcommand{\etocinnerleftsep}{0pt}
+\renewcommand{\etocinnerrightsep}{0pt}
+
+\newcommand\shiftedwhiterule[2]{%
+    \hbox to \linewidth{\color{white}%
+    \hskip#1\leaders\vrule height1pt\hfil}\nointerlineskip
+\vskip#2}
+
+\etocsetstyle{subsubsection}{\etocskipfirstprefix}
+{\shiftedwhiterule{\leftskip}{6pt}}
+{\sffamily\footnotesize
+\leftskip2.3cm\hangindent1cm\rightskip.5cm\noindent
+\hbox to 1cm{\color{subsecnum}\etocnumber\hss}%
+\color{black}\etocname\leaders\hbox to .2cm{\hss.}\hfill
+\rlap{\hbox to .5cm{\hss\etocpage\hskip.1cm}}\par
+\nointerlineskip\vskip3pt}
+{}
+
+\etocsetstyle{subsection}{\etocskipfirstprefix}
+{\shiftedwhiterule{1.5cm}{6pt}}
+{\sffamily\small
+\leftskip1.5cm\hangindent.8cm\rightskip.5cm\noindent
+\hbox to .75cm{\color{subsecnum}\etocnumber\hss}%
+\color{black}\etocname\leaders\hbox to .2cm{\hss.}\hfill
+\rlap{\hbox to .5cm{\hss\etocpage\hskip.1cm}}\par
+\nointerlineskip\vskip3pt}
+{}
+
+\newcommand{\coloredstuff}[2]{%
+            \leftskip0pt\rightskip0pt\parskip0pt
+            \fboxsep0pt % \colorbox uses \fboxsep also when no frame!
+       \noindent\colorbox{secbackground}
+               {\parbox{\linewidth}{%
+                    \vskip5pt
+                    {\noindent\color{#1}#2\par\nointerlineskip}
+                    \vskip3pt}}%
+       \par\nointerlineskip}
+
+\etocsetstyle{section}{\coloredstuff{blue}
+     {\hfil \bfseries\large Contents of Part One\hfil}}
+{\vskip3pt\sffamily\small}
+{\coloredstuff{blue}{\kern1cm\hbox to .5cm{\etocnumber\hss}%
+    \etocname\hfill
+{\hbox to .5cm{\hss\etocpage\hskip.1cm}}}%
+ \vskip6pt}
+{}
+
+
+% attention car \ref{toc:floating} fera référence au compteur de
+% toutes les toc, pas visibletoc. 
+
+\etocframedstyle[1]{}
+\tableofcontents \label{toc:floating} \ref{toc:partone}
+\vspace{-\baselineskip}
+\centeredline{|\tableofcontents \ref{toc:partone}| 
+(\emph{cf.} \autoref{ssec:again} and \hyperref[toc:clone]{\color{niceone}this other toc})}
+\end{figure*}
+
+The actual design is not pre-built in \etoc; it uses its `framed' style with a
+background color. The frame borders have been set to have the same color as the
+one serving as background for the entire thing. This design (with other colors)
+is in use also for \hyperref[toc:clone]{\color{niceone}this other toc}, and the
+reader is referred to \hyperref[toc:clone]{\color{niceone}its location} for the
+coding used.
+
+\section{Surprising uses of \etoc}
+\label{sec:surprising}
+
+% This variant uses macros rather than boxes, which allows greater flexibility.
+
+\makeatletter
+\newcommand*\firstsubname       {}
+\newcommand*\lastsubname        {}
+\newcommand*\firstsubnumber     {}
+\newcommand*\lastsubnumber      {}
+\newcommand*\thissectionstatsaux{}
+
+\newcommand*{\thissectionstats}{%
+  \edef\oldtocdepth{\arabic{tocdepth}}%
+  \setcounter{tocdepth}{2}%
+  \setcounter{mycounti}{0}%
+  \def\thissectionstatsaux{% ou plus simple si on ne veut pas le lien.
+         \let\firstsubname\etocthelinkedname
+         \let\firstsubnumber\etocthelinkednumber
+         \def\thissectionstatsaux{}}
+  \begingroup
+  \etocsetstyle{subsection} {} {}
+    {\thissectionstatsaux
+     \stepcounter{mycounti}%
+     \let\lastsubname\etocthelinkedname
+     \let\lastsubnumber\etocthelinkednumber }
+    {Here are some statistics for this section. It contains \arabic{mycounti}
+      subsections. The name of 
+	 its first is 
+     \emph{\color{cyan}\firstsubname{}} and the corresponding number is 
+     {\color{cyan}\firstsubnumber}. The name of the last subsection is 
+     \emph{\color{teal}\lastsubname{}} and its number is 
+     {\color{teal}\lastsubnumber}.}% 
+   \etocsettocstyle {}{}
+   \etocinline
+   \localtableofcontents
+  \endgroup
+  \setcounter{tocdepth}{\oldtocdepth}%
+}
+\makeatother
+
+% more general version:
+% \makeatletter
+% \newcommand*\firstsubname{}
+% \newcommand*\lastsubname{}
+% \newcommand*\firstsubnumber{}
+% \newcommand*\lastsubnumber{}
+% \renewcommand*{\thispartstats}[1][section]{%
+% \edef\oldtocdepth{\arabic{tocdepth}}%
+% \setcounter{tocdepth}{\csname Etoc@#1@@\endcsname}%
+% \begingroup
+% \etocsetstyle{book}{}{}{}{}%
+% \etocsetstyle{part}{}{}{}{}%
+% \etocsetstyle{chapter}{}{}{}{}%
+% \etocsetstyle{section}{}{}{}{}%
+% \etocsetstyle{subsection}{}{}{}{}%
+% \etocsetstyle{subsubsection}{}{}{}{}%
+% \etocsetstyle{paragraph}{}{}{}{}%
+% \etocsetstyle{subparagraph}{}{}{}{}%
+% \setcounter{mycounti}{0}%
+% \def\thispartstatsaux{% ou plus simple si on ne veut pas le lien.
+%        \toks@\expandafter{\etocthename}%
+%        \edef\firstsubname{\noexpand\hyperlink{\Hy@tocdestname}{\the\toks@}}%
+%        \toks@\expandafter{\etocthenumber}%
+%        \edef\firstsubnumber{\noexpand\hyperlink{\Hy@tocdestname}{\the\toks@}}%
+%        \def\thispartstatsaux{}}
+% \etocsetstyle{#1}
+%     {}
+%     {}
+%     {\thispartstatsaux
+%      \stepcounter{mycounti}%
+%      \toks@\expandafter{\etocthename}%
+%      \edef\lastsubname{\noexpand\hyperlink{\Hy@tocdestname}{\the\toks@}}%
+%      \toks@\expandafter{\etocthenumber}%
+%      \edef\lastsubnumber{\noexpand\hyperlink{\Hy@tocdestname}{\the\toks@}}%
+%     }
+%     {}% 
+% \etocsettocstyle{}
+% {\arabic{mycounti}
+%       #1\ifnum\c@mycounti>1 s\fi. The name of
+% 	its first is 
+%      \emph{\color{cyan}\firstsubname{}} and the corresponding number is 
+%      {\color{cyan}\firstsubnumber}. The name of the last #1 is 
+%      \emph{\color{teal}\lastsubname{}} and its number is 
+%      {\color{teal}\lastsubnumber}. 
+%      Click on the names or numbers to get confirmation!}%
+% \etocinline
+% Here are some statistics for this unit: it has\localtableofcontents\par
+% \endgroup
+% \setcounter{tocdepth}{\oldtocdepth}}
+% \makeatother
+
+\thissectionstats
+
+\subsection{The TOC of TOCs}
+
+\begingroup % \endgroup just after the \tableofcontents command
+\etocinline
+\etocsetlevel{part}{1}
+\etocsetlevel{chapter}{1}
+\etocsetlevel{visibletoc}{0}
+\etocsetstyle{visibletoc}
+    {\etocskipfirstprefix}
+    {, }
+    {{\color{niceone}\etocname}}
+    {}
+\etocsettocstyle{}{}
+\setcounter{tocdepth}{0}
+
+
+Here is the numbered and linked list of all tables of contents which are
+displayed within this document: 
+\tableofcontents\endgroup. And to obtain
+it here we just wrote:\footnote{click the `\protect\thevisibletoc'
+  in the list to get confirmation... and click on the previous `\number
+  \numexpr\csname c@visibletoc\endcsname-1\relax' for a surprise...
+\\ The \hyperref[toc:floating]{\color{niceone}floating TOC} \number
+  \numexpr\csname c@visibletoc\endcsname-2\relax\ is responsible for
+  some numbering madness here: the numbers are listed
+  in the order the TOCs appear in the document; but the numbering
+  itself is from the order of the TOCs in the \emph{source} of
+  this document... }\par\smallskip 
+{\leftskip1cm\rightskip2cm
+  \ttfamily\small\baselineskip11pt \noindent Here is the
+  numbered and linked list of all tables of contents which are
+  displayed within this
+  document:~\string\tableofcontents.\par}
+
+  The preparatory work was the following. First, we defined a
+  counter |visibletoc| whose vocation is to get incremented at
+  each displayed toc. \etoc has its own private counter but it
+  counts all TOCs, even those not displayed because the |tocdepth|
+  value was |-2| or |-3|.
+
+  We could have added manually |\refstepcounter{visibletoc}|
+  and |\label| commands at all suitable locations in the
+  document source, and we would then have used here |\ref|
+  commands, but this imposes heavy manual editing of the source.
+
+  There is a much better way: there is a hook
+  \csb{etocaftertitlehook} and we told it to increment the
+  |visibletoc| counter and to write a line to the |.toc| file,
+  in a manner analogous to what sectioning commands such as
+  |chapter|, |section|, or |subsection| do. As \etoc
+  increments its own private counter even before typesetting
+  the title of a table of contents, this provides (most of the
+  time) a better link destination than any counter manipulated
+  from inside \csa{etocaftertitlehook} (for which the link
+  would target the area just after the title). So, rather than
+  including |\refstepcounter{visibletoc}| inside
+  \csa{etocaftertitlehook}, we just put there
+  |\stepcounter{visibletoc}| followed by the command
+  \csb{etoctoccontentsline}|{visibletoc}{\thevisibletoc}|. This \etoc
+  command \csb{etoctoccontentsline}\marg{level\_name}\marg{name} has the same
+  effect as:
+  \centeredline{|    |%
+    |\addcontentsline{toc}|\marg{level\_name}\marg{name}}
+  but its usefulness is to circumvent\footnote{using \csa{addtocontents} rather
+    than \csa{addcontentsline}} the patching for automatic creation
+  of bookmarks done to \csa{addcontentsline} by the |hyperref| package, 
+  as pdf bookmarks don't make 
+  much sense here (and would elicit a complaint
+  of |hyperref| that the bookmark level is `unknown').
+
+  The package provides a starred variant
+  \staritb{etoctoccontentsline}, which will allow the creation
+  of bookmarks and has a third mandatory argument which is the
+  Level to be used by these bookmarks.
+
+  Finally, the preamble of the document did
+  |\etocsetlevel{visibletoc}{6}|. The level |6| (or anything
+  with a higher number) is ignored, even if |tocdepth| has
+  value |10| for example; this is independently of whether \etoc
+  uses the document class default line styles or its own line
+  styles, or the ones defined by the user with the
+  \csa{etocsetstyle} command. So there is no need to worry that
+  something could go wrong. 
+
+  Then, only here we have set |\etocsetlevel{visibletoc}{0}|. And to display
+  only this kind of entries we assign temporarily to |part| and |chapter| level
+  |1| (or anything higher than zero) and set |tocdepth| to the value |0|. We
+  also did \csa{etocsetstyle\{visibletoc\}\{\string\etocskipfirstprefix\}\{,
+    \}\{\string\etocname\}\{\}} which defines an inline display with the comma
+  as separator. Finally, as \etoc issues |\par| automatically by default just
+  before typesetting a table of contents, we used the command \csb{etocinline}
+  (also known as \cs{etocnopar}) which turns off this behavior.
+
+Here are the implementation details:
+
+\begingroup
+\begin{verbatim}
+. . . in the preamble:
+\newcounter{visibletoc}
+\renewcommand{\etocaftertitlehook}
+   {\stepcounter{visibletoc}\etoctoccontentsline{visibletoc}{\thevisibletoc}}
+\etocsetlevel{visibletoc}{6}
+. . .
+\begin{document}
+. . . document body
+\subsection{Surprising uses of etoc}
+\begingroup
+    \etocinline
+    \etocsetlevel{part}{1}
+    \etocsetlevel{chapter}{1}
+    \etocsetlevel{visibletoc}{0}
+    \etocsetstyle{visibletoc}
+        {\etocskipfirstprefix}{, }{{\color{niceone}\etocname}}{}
+    \etocsettocstyle{}{}     % don't set any title, rules or frame or multicol!
+    \setcounter{tocdepth}{0} % display only the `visibletoc' entries from .toc
+
+Here is the numbered and linked list of all tables of contents which are
+displayed within this document: \tableofcontents.
+\endgroup
+\end{verbatim}
+
+\endgroup
+
+After |\etocsetstyle{visibletoc}{..}{..}{..}{..}|, all future TOCs (not in
+compatibility mode) will use the
+defined style for level |0| (which is normally the level for
+chapters). To keep these changes strictly local the simplest
+manner is to put everything inside a group.
+
+Subsection \ref{subsec:interverting} gives another use of the
+shuffling of levels. 
+
+
+\subsection{Arbitrary ``Lists Of...''}
+
+
+This idea of interverting the levels is very powerful and allows
+to let \etoc display lists of arbitrary things contained in the
+document. All of that still
+using nothing else than the |.toc| file! 
+Example: imagine a document with dozens of
+exercises, perhaps defined as |\newtheorem{exercise}{}[section]|. Let
+us explain how to instruct \etoc to display an hyperlinked list
+of all these exercises. For this we put in the preamble:
+\begin{verbatim}
+ \newtheorem{exerci}{}[section] 
+    % the exercice number will be recoverable via \etocname: v--here--v
+ \newcommand*{\exercisetotoc}{\etoctoccontentsline{exercise}{\theexerci}}
+ \newenvironment{exercise}{\begin{exerci}\exercisetotoc}{\end{exerci}}
+ \etocsetlevel{exercise}{6}
+\end{verbatim}
+In this way, \csa{etocname} will give the exercise number (but \csa{etocnumber}
+will be empty). Had we used instead
+\begin{verbatim}
+ \newcommand*{\exercisetotoc}
+    {\etoctoccontentsline{exercise}{\protect\numberline{\theexerci}}}
+\end{verbatim}
+the exercise number would then have been available via \csa{etocnumber}, and
+\csa{etocname} would have been empty. It doesn't matter which one of the two
+methods is used. The \etoc command \csa{etoctoccontentsline}|{..}{..}| is
+provided as a substitute to \csa{addcon\-tentsline}|{toc}{..}{..}|: this is to
+avoid the patching which is done by |hyperref| to \csa{addcontentsline} in its
+process of creation of bookmarks. If one wants to authorize |hyperref| to create
+bookmarks at a specific level \meta{n}, one can use (here with \meta{n}$=$|2|)
+the starred variant \starit{etoctoccontentsline} which has an additional
+argument:
+\begin{verbatim}
+\newcommand{\exercisetotoc}{\etoctoccontentsline*{exercise}{\theexerci}{2}}
+\end{verbatim}
+
+This example originates with question |94766| on the
+\TeX-StackExchange site. The counter |exerci| is already
+incremented by the |exerci| theorem environment, and
+provides the correct destination for the link added by package
+|hyperref|. The command \csa{exercisetotoc} adds for each exercise a line
+to the |.toc| file, corresponding to a fictitious document
+unit with name `|exercise|'. A
+four-column list, including the sections, can then be
+typeset with the following code:
+\begin{verbatim}
+  \setcounter{tocdepth}{2}     % sections are at level 1 and will show up
+\begingroup
+  \etocsetlevel{exercise}{2}   % but:
+  \etocsetlevel{chapter}{3}    %     no chapters
+  \etocsetlevel{subsection}{3} %     no subsections
+  \etocsetlevel{part}{3}       %     no parts
+  \etocsetstyle{exercise}{}{}  % \etocname = exercise number
+    {\noindent\etocname\strut\leaders\etoctoclineleaders\hfill\etocpage\par}
+    {\pagebreak[2]\vskip\baselineskip}
+  \etocsetstyle{section}{}{}
+    {\noindent\strut{\bfseries\large\etocnumber\hskip.5em\etocname}\par
+     \nopagebreak[3]}{}
+  \etocruledstyle[4]{\Large\bfseries List of the exercises}
+  \setlength{\columnseprule}{.4pt}
+  \tableofcontents
+\endgroup
+\end{verbatim}
+
+
+In the above, recall that \LaTeX{} counters are global. The
+current |tocdepth| value is |2|, and if not reset it will prevent
+|hyperref| to assign bookmarks to sub-subsections (level |3|).
+The global |hyperref| option \emph{bookmarksdepth} can be
+used to avoid having to systematically reset |tocdepth| after
+having changed it.
+
+
+\subsection{A TOC with a fancy layout}
+
+Another question (numbered |61297|) on the \TeX{} StackExchange
+site was about using \LaTeX{} to obtain a table of contents where
+the sections from a given chapter would be represented by a number
+range (like 18--22 for a given chapter, 42--49 for another one ...
+of course to be inserted automatically in the TOC). Here is
+the result of my effort at using \etoc for this specific problem. How
+this was done will be found on the above cited site.
+
+
+%\clearpage
+
+\begingroup
+
+    \etocsetlevel{dummypart}{-1}
+    \etocsetlevel{dummychapter}{0}
+    \etocsetlevel{dummysection}{1}
+    \etocsetlevel{part}{2}
+    \etocsetlevel{chapter}{2}
+    \etocsetlevel{section}{2}
+
+    \newif\ifextraidone
+    \newif\ifextraiidone
+
+    \etocsetstyle{dummypart}
+    {}
+    {}
+    {\begin{center}\Large\bfseries PART \etocnumber
+    \ifextraiidone\\\etocname.\fi\end{center}
+    \ifextraidone\else
+    \noindent\hskip.7\linewidth
+        \hbox to .2\linewidth
+% février (ou janvier?) 2013
+% je modifie ici en ajoutant un \hss, pour compenser la plus petite
+% taille de txrm. Ok.
+        {\hss\small\textsc{\bfseries Sections.\hss Page.}}\par\fi
+    \extraidonetrue
+    }
+    {}
+
+    \newcommand\mytocleaders{\hbox to .125\linewidth{...\hss}}
+    \etocsetstyle{dummychapter}
+    {}
+    {\par\noindent\etocifnumbered
+        {\makebox[.15\linewidth][r]{\bfseries\etocnumber.}}
+        {\hspace*{.15\linewidth}}}
+    {\hbox to .65\linewidth
+        {\hspace{1em}\etocname\leaders\mytocleaders\hss}%
+     \hskip-.1\linewidth
+     \hbox to .2\linewidth{\hspace{1.5em}...\hss
+                    \etocifnumbered
+                        {\etocpage}
+                        {\ifextraiidone\else\etocpage\fi}}%
+     \hskip-.2\linewidth
+    }
+    {}
+
+    \newbox\forsectionnumbers
+    \makeatletter
+% 21 février 2013: je rajoute \color@begingroup et \color@endgroup
+    \etocsetstyle{dummysection}
+    {\setbox\forsectionnumbers=\hbox to .1\linewidth
+        \bgroup\color@begingroup\hss\etocskipfirstprefix}
+    {\@gobble}
+    {\etocnumber---}
+    {\etocnumber\color@endgroup\egroup
+    % for reasons I do not quite understand, in some pdf viewers the dots
+    % do not completely disappear if here \fboxsep0pt is used.
+    % (problèmes liés à l'anti-aliasing, sur Mac OS X, Skim, Preview...)
+    % (j'ai maintenu ici la méthode de mon post sur stackexchange, mais
+    %  sans doute je pourrais réfléchir à une autre façon évitant d'avoir à
+    %  « effacer ») 
+        \fboxsep=.5pt\colorbox{white}{\box\forsectionnumbers}\par
+        \ifextraiidone\else
+            \begin{center}\bfseries Concord.\end{center}
+            \noindent\makebox[.15\linewidth][r]{\textsc{\bfseries Lesson.}}\par
+        \fi\extraiidonetrue
+    }
+    \makeatother
+
+    \renewcommand{\etocinnertopsep}{0pt}
+
+    \etocruledstyle[1]{%
+        \parbox{\linewidth}{%
+            \centering
+            \textsc{\bfseries\LARGE\MakeUppercase{Table of Contents}}\\
+            \rule{.2\linewidth}{2pt}}%
+    }
+        
+    \setcounter{tocdepth}{1}
+
+    \tableofcontents
+   
+
+\makeatletter
+    \def\adddummysection {\stepcounter{dummysection}%
+      \addtocontents {toc}{\protect\contentsline 
+          {dummysection}{\protect\numberline{\thedummysection}}%
+                   {\the\dummypage }%
+     \ifEtoc@hyperref{\@currentHref }\fi}}
+ 
+    \def\adddummychapter #1{\stepcounter{dummychapter}%
+      \advance\dummypage2
+      \addtocontents {toc}{\protect\contentsline 
+          {dummychapter}{\protect\numberline{\thedummychapter}#1}%
+                   {\the\dummypage }%
+     \ifEtoc@hyperref{\@currentHref }\fi}}
+
+
+    \def\adddummychapno #1{\advance\dummypage2
+      \addtocontents {toc}{\protect\contentsline 
+          {dummychapter}{#1}{\the\dummypage }%
+      \ifEtoc@hyperref{\@currentHref }\fi}}
+
+    \def\adddummypart #1{\stepcounter{dummypart}%
+       \advance\dummypage4
+       \addtocontents {toc}{\protect\contentsline 
+          {dummypart}{\protect\numberline{\Roman{dummypart}}#1}%
+                     {\the\dummypage }%
+       \ifEtoc@hyperref{\@currentHref }\fi}}
+     
+\makeatother
+    
+    \newcount\dummypage \dummypage-1
+
+    \adddummypart {}
+    
+
+    \adddummychapno {Introductory}
+
+    \newcount\tempcount
+
+    \loop\advance\tempcount by 1
+    \adddummysection
+    \ifnum\tempcount<8
+    \repeat
+
+    \adddummychapter {Concord of Subject and Verb}
+
+    \loop\advance\tempcount by 1
+    \adddummysection
+    \ifnum\tempcount<17
+    \repeat
+
+    \adddummychapter {Concord of Substantive and Adjective}
+
+    \loop\advance\tempcount by 1
+    \adddummysection
+    \ifnum\tempcount<22
+    \repeat
+
+    \adddummychapno {Concord of Relative and its Antecedent}
+
+    \loop\advance\tempcount by 1
+    \adddummysection
+    \ifnum\tempcount<25
+    \repeat
+
+    \adddummypart {Government}
+
+    \adddummychapter {The Accusative Case}
+
+    \adddummychapno {General uses}
+
+    \loop\advance\tempcount by 1
+    \adddummysection
+    \ifnum\tempcount<30
+    \repeat
+
+    \adddummychapno {Particular uses}
+
+    \loop\advance\tempcount by 1
+    \adddummysection
+    \ifnum\tempcount<37
+    \repeat
+
+    \adddummychapter {Verbs governing two Accusatives}
+
+    \loop\advance\tempcount by 1
+    \adddummysection
+    \ifnum\tempcount<41
+    \repeat
+
+    \adddummychapter {The Causal}
+
+    \loop\advance\tempcount by 1
+    \adddummysection
+    \ifnum\tempcount<49
+    \repeat
+
+    \adddummychapter {The Instrumental Case}
+
+    \adddummychapno {General uses}
+
+    \loop\advance\tempcount by 1
+    \adddummysection
+    \ifnum\tempcount<54
+    \repeat
+
+    \adddummychapno {Particular uses}
+
+    \loop\advance\tempcount by 1
+    \adddummysection
+    \ifnum\tempcount<59
+    \repeat
+
+    \adddummychapter {The Dative Case}
+
+    \adddummychapno {General uses}
+
+    \loop\advance\tempcount by 1
+    \adddummysection
+    \ifnum\tempcount<65
+    \repeat
+
+    \adddummychapno {Particular uses}
+
+    \loop\advance\tempcount by 1
+    \adddummysection
+    \ifnum\tempcount<71
+    \repeat
+
+    \adddummychapter {The Ablative Case}
+
+    \adddummychapno {General uses}
+
+    \loop\advance\tempcount by 1
+    \adddummysection
+    \ifnum\tempcount<75
+    \repeat
+
+    \adddummychapno {Particular uses}
+
+    \loop\advance\tempcount by 1
+    \adddummysection
+    \ifnum\tempcount<86
+    \repeat
+
+    \adddummychapter {The Locative Case}
+
+    \adddummychapno {General uses}
+
+    \loop\advance\tempcount by 1
+    \adddummysection
+    \ifnum\tempcount<92
+    \repeat
+
+    \adddummychapno {Particular uses}
+
+    \loop\advance\tempcount by 1
+    \adddummysection
+    \ifnum\tempcount<100
+    \repeat
+\endgroup
+This is not an image inclusion, the TOC is produced from its original
+|tex| source inserted in this document after replacement of 
+|part|, |chapter| or |section| with |dummypart|, |dummychapter| and
+|dummysection| (and there is also a dummy page count).  We
+copied the line styles used in the original and
+displayed the table of contents following:
+\begin{verbatim}
+    \etocsetlevel{dummypart}  {-1} \etocsetlevel{part}   {2}
+    \etocsetlevel{dummychapter}{0} \etocsetlevel{chapter}{2}
+    \etocsetlevel{dummysection}{1} \etocsetlevel{section}{2}
+                    \setcounter{tocdepth}{1}
+\end{verbatim}
+Each chapter displays the numbers of only the first and the last sections it
+  contains. A technique for doing this is explained in the
+  \autoref{ssec:statistics}.  
+
+
+\subsection{Another compatibility mode}
+
+As explained in the section \ref{ssub:compat}, the commands
+\csa{etocstandardlines} and \csa{etocstandarddisplaystyle} tell \etoc to,
+essentially, act as an observer. The document class layout for the table of
+contents is then perfectly obeyed. There is no way to customize this standard
+layout (change fonts, margins, vertical spacings, etc...) from within the
+package. For this, use some package dedicated to this task; because \etoc either
+is (temporarily perhaps) in compatibility mode with no customization on its part
+possible, or the user has specified the layout in \csa{etocsetstyle} commands
+(and \csa{etocsettocstyle}) and is (supposedly...) in complete control.
+
+Well, there is actually an alternative. It is possible to use the
+\csa{etocsetstyle} commands to recreate an artificial compatibility mode, in
+order to achieve effects like the following, all things being otherwise equal to
+the document class defaults:
+\begin{enumerate}[noitemsep]
+\item get the |hyperref| link to encapsulate only the names, but not the numbers
+  of each entry of the table of contents,
+\item use the document class style for chapters and sections, but modify it only
+  for subsections,
+\item do either of the above only for some portions of the table of contents.
+\end{enumerate}
+
+Here is how to proceed. One puts in the preamble:
+\begingroup
+\def\MacroFont{\small\ttfamily\baselineskip11pt\relax}
+\begin{verbatim}
+\makeatletter
+\newcommand{\MyStandardTOC}{%
+  \begingroup
+  \let\savedpartline\l@part
+  \let\savedchapterline\l@chapter  %% remove if article/scrartcl class
+  \let\savedsectionline\l@section
+  \let\savedsubsectionline\l@subsection 
+  % and so on if \subsubsection, etc... is used
+  % 
+  % for the book or article classes:
+  \etocsetstyle{part}{}{}
+    {\savedpartline{\etocnumber\hspace{1em}\etocname}{\etocpage}}{}%
+  % for the scrbook or scrartcl classes:
+  \etocsetstyle{part}{}{}
+    {\savedpartline{\numberline{\etocnumber}\etocname}{\etocpage}}{}%
+  % identical in book/article/scrbook/scrartcl classes:
+  \etocsetstyle{chapter}{}{}   %%% only for book and scrbook
+    {\savedchapterline{\numberline{\etocnumber}\etocname}{\etocpage}}{}%
+  \etocsetstyle{section}{}{} 
+    {\savedsectionline{\numberline{\etocnumber}\etocname}{\etocpage}}{}%
+  \etocsetstyle{subsection}{}{}
+    {\savedsubsectionline{\numberline{\etocnumber}\etocname}{\etocpage}}{}%
+  % etc... if further sectioning units are used
+  % (see the text for what to do with the memoir class)
+  \etocstandarddisplaystyle % this is for the title, page-marks, etc...
+  \tableofcontents     
+  \endgroup}
+\makeatother
+\end{verbatim}
+Of course if the document has only one table of contents then there is no need
+to put the commands inside a macro, or even inside a group.\footnote{and if
+moreover one just wants to keep the same layout as in the default, one may
+question why using \etoc... there is \emph{one} good reason: numbers and names
+are separately \texttt{hyperref} links, whereas normally there is only one link
+holding both the number and the name corresponding to one toc entry.} With these
+commands 
+\etoc will construct a TOC completely identical to what would have been done by
+one of the document class: |article|, |book|, |scrartcl|, |scrbook|. \footnote{For the
+|memoir| class, one needs a bit more: each of the command \csa{booknumberline},
+\csa{partnumberline} and \csa{chapternumberline} will have to be saved with a
+\csa{let}, and, one then specifies:
+\centeredline{%
+\csa{etocsetstyle\{chapter\}\{\}\{\}\{\string\savedchapterline\{%
+\string\savedchapternumberline}}
+\hbox to \linewidth{\hfil\hfil \ttfamily 
+        \{\csa{etocnumber}\}\csa{etocname}\}\{\csa{etocpage}\}\}\{\}\hfil} 
+(and analogously for |part|, respectively |book|).}
+The number and the name of each entry are each separately an |hyperref| link, as
+is always the case with \etoc, when not in compatibility mode. Replacing
+\csa{etocnumber} with \csa{etocthenumber} will give a TOC where the numbers are
+not links anymore, but the names still are. Or one may decide to use \csa{etocthename}
+and keep an hyperlinked number with
+\csa{etocnumber}. 
+
+Here is a subtler example where one only marginally modifies the
+sections (adding color to the number and removing the |hyperref| link) and keeps
+the subsections as in the default, \emph{except} for those of one specific
+section, for which the layout is completely modified:
+\MyQuasiStandardTOC{\ref{toc:partone}}
+\bigskip
+This example only has sections and subsections, and the code used in \csa{MyStandardTOC} was:
+\begin{verbatim}
+\etocsetstyle{section}{}
+  {\ifnum\etocthenumber=3
+      \etocsetstyle{subsection}
+        {\par\nopagebreak\begingroup
+         \leftskip1.5em \rightskip\@tocrmarg \parfillskip\@flushglue 
+         \parindent 0pt \normalfont\normalsize\rmfamily\itshape
+         % \columnsep1em
+         % \begin{minipage}{\dimexpr\linewidth-\leftskip-\rightskip\relax}%
+         % \begin{multicols}{2}%
+         \etocskipfirstprefix}
+        {\allowbreak\,--\,}
+        {\etocname\ \textup{(\etocnumber)}}
+        {.\par\endgroup}%
+        % {.\par\end{multicols}\end{minipage}\par\endgroup}%
+    \else
+      \etocsetstyle{subsection}
+       {}{}
+       {\savedsubsectionline{\numberline{\etocnumber}\etocname}{\etocpage}}
+       {}%
+    \fi} 
+  {\savedsectionline{\numberline{{\color{cyan}\etocthenumber}}\etocname}{\etocpage}}
+  {}%
+\end{verbatim}
+\endgroup
+
+Notice the page head-mark added by this standard TOC. Sections and subsections
+are printed exactly as in the default (except for the subsections of one
+specific user-chosen section and except for the color of the section numbers),
+with no need to specify explicitely any length, font or other formatting
+instructions. But we had to examine the |scrartcl| sources to determine what to
+use for \csa{leftskip} and \csa{rightskip} for our customized subsection
+entries.
+
+Also, a fancier layout has been commented out.
+
+\subsection{The TOC as a tree}\label{tocastree}
+
+Using |tikz|\footnote{\url{http://ctan.org/pkg/pgf}} and the package
+|tikz-qtree|\footnote{\url{http://ctan.org/pkg/tikz-qtree}} we shall display the
+table of contents of this part as a tree. The technique (this whole subsection
+perhaps should have double dangerous-bend signs) is to use the \etoc modified
+command \csa{tableofcontents} not for typesetting, but to prepare a
+macro, or rather here a token list with name \csa{treetok}, with all the
+instructions to be executed later. Putting \csa{etocnumber} or \csa{etocname}
+commands in \csa{treetok} would be of no use: to which number or name would they
+refer to, in such a delayed execution? Rather the \emph{contents} of
+\csa{etocthenumber} or \csa{etocthename} are added with suitable decoration to
+\csa{treetok}: the \etoc line styles are modified to expand once
+\csa{etocthename} (for example) at the time of the execution and then add the
+outcome to \csa{treetok} for later execution in a |tikzpicture|.
+
+\newtoks\treetok
+\newtoks\tmptok
+
+\newcommand*\qtreenode{}
+
+\newcommand*\appendtotok[2]{% #1=token list, #2=macro, expands once #2
+  #1\expandafter\expandafter\expandafter
+    {\expandafter\the\expandafter #1#2}}
+
+
+% 7 mars: j'utilise \etocthelinkedname défini à partir de 1.07f
+% mais bien sûr je sais que ça ne marche pas (sauf dans l'arbre pour le lien de
+% la section du bas) dans un QTree. Mais ça marche parfaitement dans un arbre
+% TikZ natif.
+\newcommand*\PrepareSectionNode{%
+  \tmptok {\centering\bfseries}%
+  \appendtotok\tmptok\etocthelinkedname
+  \edef\qtreenode{ [.{\noexpand\parbox{2cm}{\the\tmptok}}}%
+}
+
+% 7 mars: j'utilise maintenant \etocthelinkedname
+\newcommand*{\PrepareSubsectionNode}{%
+  \tmptok {\raggedright}%  j'ai essayé aussi avec \sloppy
+  \appendtotok\tmptok\etocthelinkedname
+  \edef\qtreenode{ [.{\noexpand\parbox{6cm}{\the\tmptok}}}%
+}
+
+\etocsetstyle{section}
+  {\etocskipfirstprefix}
+  {\appendtotok\treetok{ ]}}
+  {\PrepareSectionNode \appendtotok\treetok\qtreenode}
+  {\appendtotok\treetok{ ]}}
+
+\etocsetstyle{subsection}
+  {\etocskipfirstprefix}
+  {\appendtotok\treetok{ ]}}
+  {\PrepareSubsectionNode \appendtotok\treetok\qtreenode}
+  {\appendtotok\treetok{ ]}}
+
+\etocsettocstyle
+    {\treetok{\Tree [.{\hyperref[part:one]{Overview}}}}
+    {\global\appendtotok\treetok{ ]}}
+
+\setcounter{tocdepth}{2}
+\smallskip
+\tableofcontents \ref{toc:partone}
+
+{\centering
+  \begin{tikzpicture}[grow'=right]
+  \tikzset{sibling distance=1ex,
+         level 1/.style={level distance=3cm},
+         level 2/.style={level distance=6cm},
+         every level 0 node/.style={draw,fill=cyan!5,inner sep=6pt},
+         every level 1 node/.style={draw,circle,thick,fill=blue!5},
+         every level 2 node/.style={draw,thick,fill=red!5},   
+         edge from parent/.style= {%
+             draw, thick, color=teal,
+             edge from parent path=
+                {[dashed](\tikzparentnode.east) -- (\tikzchildnode.west)}}
+         } 
+  \the\treetok
+  \end{tikzpicture}
+\par
+}
+\smallskip
+
+We told \etoc to insert the |hyperref|
+links inside the argument to the
+  \csa{Tree} command (from package |tikz-qtree|).%
+\footnote{this uses the macro \csa{etocthelinkedname} introduced with
+package version |1.07f|. The same effect was achieved in earlier versions
+in a more complicated 
+manner.} But here in
+  our use of |tikz-qtree| we have been confronted with the problem that the
+  hyperlinks, even if correctly added to the \csa{treetok} token list, appear
+  in the final document in wrong locations (except for the bottom section and
+the bottom subsection nodes).
+\footnote{|dvipdfmx| complains:\quad
+|** WARNING ** Annotation out of page boundary.|\quad
+|Current page's MediaBox: [0 0 595.276 841.89]|\quad
+|Annotation: [94.3997 1200.33 146.512 1209.98]|. 
+I read on the internet that there is some problem with |pgf| with regards to
+hyperlinks, but I don't know if this is the same issue (as this is my first
+ever use of TikZ). [2013/03/01]\\
+Update [2013/03/03]: it \emph{does} work when using the regular TikZ syntax
+for trees, so perhaps there is here some interaction with |tikz-qtree|. See next section.}
+
+Here is the code used, the whole thing being with double dangerous-bend
+signs, I shall not comment much the actual \LaTeX{} programming used
+therein:
+
+\begingroup
+\def\MacroFont{\small\ttfamily\baselineskip10pt\relax}
+\begin{verbatim}
+\newtoks\treetok  \newtoks\tmptok  \newcommand*\qtreenode{}
+\newcommand*{\appendtotok}[2]{% #1=token list, #2=macro, expands once #2
+  #1\expandafter\expandafter\expandafter
+    {\expandafter\the\expandafter #1#2}}
+
+\newcommand*{\PrepareSectionNode}{%
+  \tmptok {\centering\bfseries}%
+  \appendtotok\tmptok\etocthelinkedname
+  \edef\qtreenode{ [.{\noexpand\parbox{2cm}{\the\tmptok}}}%
+}
+\newcommand*{\PrepareSubsectionNode}{%
+  \tmptok {\raggedright}%
+  \appendtotok\tmptok\etocthelinkedname
+  \edef\qtreenode{ [.{\noexpand\parbox{6cm}{\the\tmptok}}}% 
+}
+%%%% only sections and subsections:
+\etocsetstyle{section}
+  {\etocskipfirstprefix}
+  {\appendtotok\treetok{ ]}}
+  {\PrepareSectionNode \appendtotok\treetok\qtreenode}
+  {\appendtotok\treetok{ ]}}
+\etocsetstyle{subsection}
+  {\etocskipfirstprefix}
+  {\appendtotok\treetok{ ]}}
+  {\PrepareSubsectionNode \appendtotok\treetok\qtreenode}
+  {\appendtotok\treetok{ ]}}
+
+\etocsettocstyle
+    {\treetok{\Tree [.Overview}}
+    {\global\appendtotok\treetok{ ]}}
+% See the tikz-qtree (David Chiang) documentation for the Qtree syntax of
+% Alexis Dimitriadis (the spaces at various places before the square
+% brackets are important).
+
+% The whole effect of \tableofcontents will be to fill the token list
+% \treetok according to the syntax expected by tikz-qtree. The opening
+% portion of \etocsettocstyle initializes \treetok, and the closing portion
+% adds a final square bracket. A \global is needed as etoc always creates a
+% group when typesetting a TOC.
+
+% This QTree syntax has the advantage to use square brackets and not braces,
+% which eases things quite a bit in a TeX context. The next section explains
+% how to create a token list with the original TikZ syntax for trees.
+
+\tableofcontents \ref{toc:partone} 
+% Time now to display the tree (see tikz-qtree documentation)
+\begin{tikzpicture}[grow'=right]
+\tikzset{sibling distance=1ex,
+         level 1/.style={level distance=4cm},
+         level 2/.style={level distance=6cm},
+         every level 0 node/.style={draw,fill=cyan!5,inner sep=6pt},
+         every level 1 node/.style={circle,draw,thick,fill=blue!5},
+         every level 2 node/.style={draw,thick,fill=red!5},   
+         edge from parent/.style= {%
+             draw, thick, color=teal,
+             edge from parent path=
+                {[dashed](\tikzparentnode.east) -- (\tikzchildnode.west)}}
+         }
+\the\treetok
+\end{tikzpicture}
+\end{verbatim}
+\endgroup
+
+
+\subsection{The TOC as a molecule}\label{ssec:molecule}
+
+It is also possible to construct a TOC tree obeying the TikZ syntax for trees:
+this is a more complicated task for the \etoc line styles for reasons related to
+the importance of braces in \TeX{}, they need, when filling up the token list to
+be always balanced at each step (unfortunately \textsc{Leslie Lamport}'s book
+has no mention whatsoever of token lists, and \LaTeX{} does not really expect
+users to know about them; this whole section is thus for advanced users).
+
+The simplest strategy is to allocate a token list (or use a macro) for each
+level used: we may need a \csa{parttok}, a \csa{chaptertok}, a
+\csa{sectiontok} and a \csa{subsectiontok}, to help in the task of filling
+up the total \csa{treetok}. As we are interested here in the table of
+contents of this (or another) document part, only a \csa{sectiontok} and a
+\csa{subsectiontok} will be needed.
+
+And the nice thing is that now, our hyperlinks do work. As mentioned already we
+can not use the commands \csa{etocname}, etc\dots, for delayed execution. We can
+on the other hand store the current values of \csa{etocthename}, etc\dots, but
+don't get then the |hyperref| links. Earlier versions of this documentation
+explained how to do things with |\hyperlink| and |\Hy@tocdestname|, but since
+|1.07f|, the package provides \csa{etocthelinkedname}, etc\dots, specifically
+for 
+this kind of task.
+
+\begingroup
+\def\MacroFont{\small\ttfamily\baselineskip10pt\relax}
+\begin{verbatim}
+% \newtoks\treetok
+\newtoks\sectiontok \newtoks\subsectiontok \newcommand*{\treenode}{}
+
+\newcommand*{\appendchildtree}[2]{% token list t1 becomes: t1 child {t2}
+   \edef\tmp{\the#1 child {\the#2}}%
+   #1\expandafter{\tmp}%
+}
+\newcommand*{\preparetreenode}{%
+  \tmptok\expandafter{\etocthelinkednumber}% expanded one time (mandatory)
+  \edef\treenode{node {\the\tmptok}}%
+}
+
+\setcounter{tocdepth}{2}
+\etocsetstyle{section}
+  {\etocskipfirstprefix}
+  {\appendchildtree\treetok\sectiontok}
+  {\preparetreenode \sectiontok\expandafter{\treenode}}
+  {\appendchildtree\treetok\sectiontok}
+
+\etocsetstyle{subsection}
+  {\etocskipfirstprefix}
+  {\appendchildtree\sectiontok\subsectiontok}
+  {\preparetreenode \subsectiontok\expandafter{\treenode}}
+  {\appendchildtree\sectiontok\subsectiontok}
+
+\etocsettocstyle
+  {\treetok{\node {\hyperref[part:one]{Overview}}}}
+  {\global\appendtotok\treetok{ ;}}
+
+\tableofcontents \ref{toc:partone}
+\end{verbatim}
+
+
+At this stage, \cs{treetok} has been prepared, and a TikZ picture can be
+created (it uses the TikZ library |trees| for its ``cyclic'' grow method):
+\begin{verbatim}
+\begin{center}   
+   \begin{tikzpicture}
+              [grow cyclic,
+               level 1/.style={level distance=4cm,sibling angle=60},
+               level 2/.style={level distance=2cm,sibling angle=60},
+               every node/.style={ball color=red,circle,text=cyan},
+               edge from parent path={[dashed,very thick,color=cyan]
+                           (\tikzparentnode) --(\tikzchildnode)}] 
+     \the\treetok
+   \end{tikzpicture}
+\end{center}
+\end{verbatim}
+\endgroup
+
+
+\newtoks\sectiontok
+\newtoks\subsectiontok
+\newcommand*\treenode {}
+
+\newcommand*{\appendchildtree}[2]{% token list t1 becomes: t1 child {t2}
+   \edef\tmp{\the#1 child {\the#2}}%
+   #1\expandafter{\tmp}%
+}
+
+\newcommand*{\preparetreenode}{%
+  \tmptok\expandafter{\etocthelinkednumber}%
+  \edef\treenode{node {\the\tmptok}}%
+}
+
+\etocsetstyle{section}
+  {\etocskipfirstprefix}
+  {\appendchildtree\treetok\sectiontok}
+  {\preparetreenode
+   \sectiontok\expandafter{\treenode}}
+  {\appendchildtree\treetok\sectiontok}
+
+\etocsetstyle{subsection}
+  {\etocskipfirstprefix}
+  {\appendchildtree\sectiontok\subsectiontok}
+  {\preparetreenode
+   \subsectiontok\expandafter{\treenode}}
+  {\appendchildtree\sectiontok\subsectiontok}
+
+\setcounter{tocdepth}{2}
+
+\etocsettocstyle
+  {\treetok{\node {\hyperref[part:one]{Overview}}}}
+  {\global\appendtotok\treetok{ ;}}
+
+\tableofcontents \ref{toc:partone}
+
+\begin{center}  
+   \begin{tikzpicture}
+              [grow cyclic,
+               level 1/.style={level distance=4cm,sibling angle=60},
+               level 2/.style={level distance=2cm,sibling angle=60},
+               every node/.style={ball color=red,circle,text=cyan},
+               edge from parent path={[dashed,very thick,color=cyan]
+                           (\tikzparentnode) --(\tikzchildnode)}] 
+     \the\treetok
+   \end{tikzpicture}
+\end{center}
+
+This is nice, and especially so as this ``molecule TOC'' is fully hyperlinked!
+I don't know why it goes wrong for the trees
+constructed with the \cs{Tree} command of package |tikz-qtree|, contrarily to
+those coded as here with the original ``child'' TikZ syntax.
+
+
+\etocsettocstyle
+  {\treetok{\node {\autoref{part:globalcmds}}}}
+  {\global\appendtotok\treetok{ ;}}
+
+\tableofcontents \ref{toc:globalcmds}
+
+\noindent  
+\parbox{4cm}{\begin{tikzpicture}
+              [grow cyclic,
+               level 1/.style={level distance=2.5cm,sibling angle=60},
+               level 2/.style={level distance=1cm,sibling angle=50},
+               every node/.style={ball color=red,circle,text=cyan},
+               edge from parent path={[very thick,color=cyan]
+                       (\tikzparentnode) --(\tikzchildnode)}] 
+     \the\treetok
+   \end{tikzpicture}}%
+\begin{minipage}{\dimexpr\linewidth-4cm\relax}
+  On the side, the (fully hyperlinked) table of contents of
+  \autoref{part:globalcmds}.
+  \def\MacroFont{\small\ttfamily\hyphenchar\font-1 \baselineskip10pt\relax}%
+\begin{verbatim}
+\etocsettocstyle
+  {\treetok{\node {\autoref{part:globalcmds}}}}
+  {\global\appendtotok\treetok{ ;}}
+\tableofcontents \ref{toc:globalcmds}
+\noindent  
+\parbox{4cm}{%
+   \begin{tikzpicture}
+      [grow cyclic,
+       level 1/.style={level distance=2.5cm,sibling angle=60},
+       level 2/.style={level distance=1cm,sibling angle=50},
+       every node/.style={ball color=red,circle,text=cyan},
+       edge from parent path={[very thick,color=cyan]
+               (\tikzparentnode) --(\tikzchildnode)}] 
+     \the\treetok
+   \end{tikzpicture}}%
+...
+\end{verbatim}
+\end{minipage}
+
+\part{Package commands for line styles}
+
+\thispartstats
+
+\setcounter{tocdepth}{3}
+
+\etocsetstyle{section}
+{\begin{enumerate}[leftmargin=.75cm, label=\etocifnumbered
+      {{\fboxrule1pt\fcolorbox{green}{white}{\etocnumber}}}{}]}
+% Dec 7, 2012. I hit upon a problem whose origin I found was
+% with xcolor, as xcolor modifies \fbox
+% (try \section{\fbox{A}} with and without xcolor). The fix
+% was to \protect the \fbox used in the |enumitem| label.
+% Strangely enough, with |hyperref| active, the problem did
+% not show up. Anyhow I now use \fcolorbox reather than \fbox
+% and there is no problem anymore. Also I don't have now to
+% use \normalcolor which already needed protection.
+{\normalsize\bfseries\rmfamily\item}
+{\etocname{} (page \etocpage)}
+{\end{enumerate}}
+
+\etocsetstyle{subsection}
+{\begin{enumerate}[leftmargin=0cm, label=\etocnumber]}
+{\normalfont \item}
+{\etocname{} (p.~\etocpage)}
+{\end{enumerate}}
+
+\etocsetstyle{subsubsection}
+{\par\nobreak\begingroup\normalfont\footnotesize\itshape\etocskipfirstprefix}
+{\allowbreak\,--\,}
+{\etocname}
+{.\hfil\par\endgroup\pagebreak[3]}
+
+% 27 janvier 22:30
+% je définis les macros (non protégées) 
+% \etocthename, \etocthenumber, \etocthepage
+
+\etocruledstyle[1]{\etocfontminusone\color{green}%
+     \fboxrule1pt\fboxsep1ex
+     \framebox[\linewidth]
+              {\normalcolor\hss Contents of this second part\hss}}
+\localtableofcontents \label{toc:a}
+
+\section{The \csbhyp{etocsetstyle} command}
+
+
+\subsection{The \csbhyp{etocname} and \csbhyp{etocpage} commands}
+
+Let us explain how \etoc was used to produce the table of
+contents displayed at the beginning of this second part.
+This
+is a local table of contents, and we used the command \localtoc.
+
+
+We shall distinguish between the \emph{line styles} and the
+\emph{toc display style}. The line styles were (essentially)
+obtained in the following manner:%
+\footnote{the present document has
+  {\ttfamily\string\renewcommand\string{%
+      \string\familydefault\string}\string{\string\sfdefault\string}}
+  in its preamble, hence \csa{normalfont} switches to the
+  |sans| typeface; so in the section line-style, I wrote
+  \csa{rmfamily} instead.}
+
+\begingroup\small
+\begin{verbatim}
+\etocsetstyle{section}
+{\begin{enumerate}}
+{\normalsize\bfseries\rmfamily\item}
+{\etocname{} (page \etocpage)}
+{\end{enumerate}}
+
+\etocsetstyle{subsection}
+{\begin{enumerate}}
+{\normalfont\item}
+{\etocname{} (p.~\etocpage)}
+{\end{enumerate}}
+
+\etocsetstyle{subsubsection}
+{\par\nobreak\begingroup\normalfont
+        \footnotesize\itshape\etocskipfirstprefix}
+{\allowbreak\,--\,}
+{\etocname}
+{.\hfil\par\endgroup\pagebreak[3]}
+\end{verbatim}
+\endgroup
+
+These provisory style definitions rely on the automatic
+numbering generated by the |enumerate| environments but it is
+much better to use the further command \csb{etocnumber} inside
+the item label, which gives the real thing. The improved
+definitions will thus be explained later.
+
+Each \csb{etocsetstyle} command has five mandatory arguments:\\
+\hbox to \linewidth
+{\hfil\csb{etocsetstyle}\color{blue}\marg{levelname}%
+  \marg{start}\marg{prefix}\marg{contents}\marg{finish}\hfil}
+The initially recognized \meta{levelname}'s are the sectioning
+levels of the standard document classes: from \emph{part} (or
+\emph{book} which is used by the |memoir| class) down to
+\emph{subparagraph}.
+
+The \meta{start} code is executed when a toc entry of that level is
+encountered and the previous one was at a higher level. The
+\meta{finish} code is executed when one again encounters a higher
+level toc entry. In the mean-time all entries for that level are
+typeset by executing first the \meta{prefix} code and then the
+\meta{contents} code. 
+
+
+The (robust) commands \csb{etocname}, \csb{etocnumber} and \csb{etocpage} are
+provided 
+for use inside the \marg{prefix} and \marg{contents} parts of the
+\csa{etocsetstyle} specification. They represent of course, the name, number, and
+page number of the corresponding toc
+entry.\footnote{\protect\fbox{%
+\parbox{.9\textwidth}{up to version
+\texttt{1.07a} the package put an \csa{xspace} in each of
+\csa{etocname}, \csa{etocnumber}, and \csa{etocpage}, but this
+wasn't such a great idea and has now been removed.}}} If package |hyperref| is
+active in the document and has added hyperlinks to the TOC data, then these
+links are kept in the commands \csa{etocname}, \csa{etocnumber} and
+\csa{etocpage} (this last one will have a link only if |hyperref| was passed option \emph{linktoc=all}.)
+
+\subsection{The \csbhyp{etocskipfirstprefix} command}
+
+The chosen |subsubsection| style also uses the command
+\csb{etocskipfirstprefix}, which, if present, \emph{must} be
+the very last one in the \emph{start} code. It instructs to not
+use for the first item the specified ``prefix'' code.
+
+With this style, one would have 
+to be imaginative to design something then for paragraph and
+subparagraph entries! perhaps as superscripts? Well, usually
+one does not need paragraphs and subparagraphs numbered and
+listed in the TOC, so our putative user here chose a design
+where no provision is made for them and added the definitive:
+\begin{verbatim}
+\etocsetstyle{paragraph}{}{}{}{}
+\etocsetstyle{subparagraph}{}{}{}{}
+\end{verbatim}
+This is also the situation with the default package line styles!
+
+\subsection{The \csbhyp{etocnumber} command}
+So far, our specifications would use the numbering generated
+by the |enumerate| environments, but of course we generally want
+the actual numbers as found in the |.toc| file. This is
+available via the \csb{etocnumber} command. To get the labels
+in the |enumerate| list to use it we can proceed with the
+syntax {\ttfamily label=\char32} from the package |enumitem|:
+\begin{verbatim}
+\etocsetstyle{section}
+{\begin{enumerate}[label=\etocnumber]}
+{\normalsize\bfseries\rmfamily\item}
+{\etocname{} (page \etocpage)}
+{\end{enumerate}}
+\end{verbatim}
+Rather than just \csa{etocnumber} we then used something like
+|\fbox{\etocnumber}|. Note that \csa{etocnumber} is a robust
+command which explains why it can be used inside the label specification
+without needing an added |\protect|.
+
+
+\subsubsection{The \csbhyp{etocifnumbered} switch}
+
+The \csa{fbox} would give an unaesthetic result in the case of
+an unnumbered section (which ended up in the table of
+contents via an \csa{addcontentsline} command).\footnote{as
+  seen we use \csa{fcolorbox} rather than \csa{fbox}. Due
+  to some redefinition made by package |xcolor|, had we used
+  \csa{fbox} (and not used |hyperref|) we would have needed
+  \csa{protect}\csa{fbox}.}
+
+The \csa{etocifnumbered}\marg{A}\marg{B} command executes
+\meta{A} if the number exists, and \meta{B} if not. So we use
+it in the code which was finally chosen for the |section| level:
+\begin{verbatim}
+\etocsetstyle{section}
+{\begin{enumerate}[leftmargin=.75cm, label=\etocifnumbered
+      {{\fboxrule1pt\fcolorbox{green}{white}{\etocnumber}}}{}]}
+{\normalsize\bfseries\rmfamily\item}
+{\etocname{} (page \etocpage)}
+{\end{enumerate}}
+
+\etocsetstyle{subsection}
+{\begin{enumerate}[leftmargin=0cm, label=\etocnumber]}
+{\normalfont \item}
+{\etocname{} (p.~\etocpage)}
+{\end{enumerate}}
+\end{verbatim}
+
+If we had changed only the |section| level, and not the
+|subsection| level, an error on compilation would have occurred
+because the package style for subsections expects to start `in
+vertical mode'. An additional \csa{par} token in the
+\meta{contents} part of the |section| level would have fixed
+this: |{...(page \etocpage)\par}|.
+
+\subsection{The \csbhyp{etocthename}, \csbhyp{etocthenumber}, and
+\csbhyp{etocthepage} commands}
+
+It is sometimes desirable to have access to the name, number
+and page number without the hyperref link data: something
+similar to the starred variant of the \csa{ref} command, when
+package |hyperref| is used. For example one may wish to use
+the unit or page number in some kind of numeric context, or
+change its formatting. This is provided by the |\etocthe...|
+commands.
+
+These commands are not protected, so in moving argument
+contexts (for example in a label specification) they should be
+preceded by |\protect|.
+
+\subsection{The \csbhyp{etoclink} command}
+
+The command \csb{etoclink}\marg{linkname} can be used in the line style
+specifications in a manner analogous to the argument-less
+commands \csa{etocname}, \csa{etocnumber} and \csa{etocpage}. It
+creates a link (if such a link was added by |hyperref| to the
+|.toc| file entry) whose destination is the corresponding document
+unit and whose name is the given argument. 
+Hence |\etoclink{\etocthename}| is like the original
+|\etocname|.
+Notice that if |hyperref| was not instructed to put a link in the page number
+(via 
+its option \emph{linktoc=all}) then \etoc's \csa{etocpage} contains no link
+either, but |\etoclink{\etocthepage}| does. 
+
+
+The command \csa{etoclink} is robust.
+
+\subsection{The \csbhyp{etocthelinkedname}, \csbhyp{etocthelinkednumber},
+\csbhyp{etocthelinkedpage} and \csbhyp{etocthelink} commands.}
+
+This is for advanced uses by advanced users. 
+
+The \csa{etocthename} macro has
+been mentioned before; using it in instructions such as
+|\global\let\lastone\etocthename| in an \etoc line style will
+define the macro |\lastone| to expand to the last name seen at the
+corresponding level. But no facilities was previously available to
+do the same with the link data.
+
+The package now provides \csa{etocthelinkedname} to do the similar
+thing, with the link data included. It was used in this
+documentation when doing the
+\hyperref[tocastree]{examples with trees}.
+
+Also provided with the similar goal: \csa{etocthelinkednumber},
+\csa{etocthelinkedpage} (which contains a link only if |hyperref|
+added one to the page number) and \csa{etocthelink}\marg{linkname}
+which allows to make a link with an arbitrary name.
+
+All these commands are fragile.
+
+
+\section{The \csbhyp{etocsetlevel} command}
+
+As already explained in the section \ref{sec:surprising}, one
+can inform \etoc of a level to associate to a given sectioning
+command with \csa{etocsetlevel}. For example:
+\begin{verbatim}
+\etocsetlevel{cell}{0}
+\etocsetlevel{molecule}{1}
+\etocsetlevel{atom}{2}
+\etocsetlevel{nucleus}{3}
+\end{verbatim}
+Of course, in compatibility mode, it will be assumed here that the
+macros |\l@cell|, |\l@molecule|, ..., pre-exist. If no table
+of contents is typeset in compatibility mode, then all that
+matters is that the line styles have been set. If for example
+|section| is at level |1|, then there is no need to do a
+\csa{etocsetstyle}|{molecule}| if \csa{etocsetstyle}|{section}|
+has already been done (and it has been done by the package
+itself in its definition of its own line styles).
+ 
+The accepted levels run from |-2| to |6| inclusive. Anything else is
+mapped to |6|, which is a dummy level, never displayed. The package
+does:
+\begin{verbatim}
+\etocsetlevel{book}{-2}
+\etocsetlevel{part}{-1}
+\etocsetlevel{chapter}{0}
+\etocsetlevel{section}{1}
+\etocsetlevel{subsection}{2}
+\etocsetlevel{subsubsection}{3}
+\etocsetlevel{paragraph}{4}
+\etocsetlevel{subparagraph}{5}
+\end{verbatim}
+\etoc own custom styles are activated by \csa{etocdefaultlines}. They
+are illustrated by the main table of contents of this
+document. 
+
+These level assignments can be modified at anytime: see the
+section \ref{sec:surprising} for various applications of this technique. As one
+further example, let's mention here that the \hyperref[toc:main]{main table of
+contents} of this document was typeset following these instructions:
+\begin{verbatim}
+\setcounter{tocdepth}{3}
+\etocdefaultlines % use the package default line styles. At this early stage in
+                  % the document they had not yet been modified by \etocsetstyle
+                  % commands, so \etoctoclines could have been used, too.
+\etocmarkboth\contentsname
+\etocmulticolstyle[1]                   % one-column display
+    {\noindent\bfseries\Large
+     \leaders\hrule height1pt\hfill
+     \MakeUppercase{Table of Contents}}
+\begingroup                             % use a group to limit the scope of the
+  \etocsetlevel{subsection}{3}          %   subsection level change.
+  \etocsetlevel{subsubsection}{4}       % anything > tocdepth=3.
+  \tableofcontents \label{toc:main}
+\endgroup
+\end{verbatim}
+In this way, the subsections used the style originally designed for
+subsubsections, the subsubsections were not printed. Without this modification,
+the appearance would have been very different: the package line styles were
+targeted to be employed in documents with many many sub-sub-sections, in a
+two-column layout, giving thus a more compact output that what is achieved by
+the default \LaTeX{} table of contents. But here, we have few sub-sub-sections
+and it is more interesting to drop them and print in a visually different manner
+sections and subsections. 
+
+
+\section{Scope of commands added to 
+         the \texorpdfstring{\texttt{.toc}}{.toc} file}
+
+\begingroup % pour \small et \MacroFont en particulier.
+\small
+
+\subsection{Testing the scope}
+
+Let us switch to the color red, and also add this command to the |.toc| file:
+
+\color{red!50}
+\addtocontents{toc}{\string\color{red!50}}
+
+\def\MacroFont{\footnotesize\ttfamily}
+\begin{verbatim}
+   \color{red!50}                             % changing text color
+   \addtocontents{toc}{\string\color{red!50}} % and also in the .toc file
+\end{verbatim}
+
+
+\subsection{This is a (pale) red subsection for illustrative purposes}
+
+Actually, this title here was printed black, due to the way the |scrartcl| class
+works (it would have been red in the |article| class), but we are more
+interested in how it looks in the tables of contents: it does appear red in the
+\hyperref[toc:main]{\color{niceone}{main table of contents}} at the beginning of
+this document, and also in the \hyperref[toc:a]{\color{niceone}{table of
+contents for this part}}. Both entries obey as expected the
+|\color{red!50}| command inserted in the |.toc| file.
+
+But let us now close this subsection and start a section.
+
+
+\section{Am I also red?}
+
+The question is about how it appears in the tables of contents: the answer is
+that, yes it is red in the \hyperref[toc:main]{\color{niceone}main TOC}, and no
+it is not red in the \hyperref[toc:a]{\color{niceone}local TOC for this part}.
+The reason is that the \meta{finish} code for the subsection level closed a
+group, as it used |\end{enumerate}|.
+
+This illustrates the discussion from \autoref{ssec:limitations}. 
+
+The default package line styles do not contain group opening and closing
+instructions: the influence of a command added to the |.toc| file will propagate
+until cancelled by another explicit such command inserted in the |.toc|
+file.
+
+\begin{verbatim}
+    \normalcolor
+    \addtocontents{toc}{\string\normalcolor}
+\end{verbatim}
+\endgroup
+
+\normalcolor
+\addtocontents{toc}{\string\normalcolor}
+
+Back to black. Note that this scope problem arises in real life in a
+multi-lingual document, as the |babel| package writes to the |.toc| file the
+language changes occurring in the document. 
+
+
+%\clearpage
+
+
+\part{Package commands for toc display styles}
+\label{part:globalcmds}
+
+
+\thispartstats
+
+
+\begin{verbatim}
+\setcounter{tocdepth}{-3}
+\localtableofcontents \label{toc:globalcmds}
+\end{verbatim}
+
+\setcounter{tocdepth}{-3}
+\localtableofcontents \label{toc:globalcmds}
+
+\section{Specifying the toc display style}
+
+
+The \emph{toc display} style says whether the TOC appears with
+multiple columns or just one, whether the title is typeset as
+in the |article| or |book| class, or should be centered above
+the entries, with rules on its sides, or if the entire TOC
+should be put in a frame. For example, to opt for a ruled
+heading and single column layout, one issues commands of the
+following type:
+\begin{verbatim}
+\etocruledstyle[1]{Title}
+    \tableofcontents (or \localtableofcontents)
+shortcuts:
+    \etocruled[1]{Title}  (or  \etoclocalruled[1]{Title})
+\end{verbatim}
+
+\subsection{The command \csbhyp{etocruledstyle}}
+
+The general format of \csa{etocruledstyle} is:\\
+\centerline{\color{blue}\csa{etocruledstyle}%
+\oarg{number of columns}\marg{title of the toc}}
+\noindent Note that the title is horizontal material, if it
+does not fit on one line it should be put in a \csa{parbox} of
+a given width. We did this and even enclosed the parboxes in
+\csa{fbox}es to get frames around them. For the example with
+the standard formatting we did not use an \csa{fbox} and got
+rid of the horizontal rules via:
+\begin{verbatim}
+\renewcommand{\etoctoprule}{\hrule height 0pt}
+\end{verbatim}
+The green frame for the heading of the table of contents at
+the \hyperref[toc:a]{%
+  \color{niceone} start of the second part of this
+  document} was obtained with:
+\begin{verbatim}
+\etocruledstyle[1]{\etocfontminusone\color{green}%
+     \fboxrule1pt\fboxsep1ex
+     \framebox[\linewidth]
+              {\normalcolor\hss Contents of this second part\hss}}
+\end{verbatim}
+
+
+\subsection{The command \csbhyp{etocmulticolstyle}}
+
+This is also a command with one optional and one mandatory argument:\\
+\centerline{\color{blue}\csa{etocmulticolstyle}%
+\oarg{number\_of\_columns}\marg{heading}}
+The \meta{number\_of\_columns} can go from 1 to 10 (it
+defaults to 2, and from 2 on is passed to a |multicols|
+environment). The \meta{heading} should be some `vertical' material like:
+\begin{center}
+  \meta{heading} = {\ttfamily\string\section\lowast}\marg{title}
+\end{center}
+[\emph{New with 1.07}] An explicit |\par| not being accepted in the
+\meta{heading} argument (this is actually a restriction
+originating in the
+|multicols| environment), an implicit one is automatically
+added by \etoc at the end of the argument, as in this
+example which shows how the main table of contents of this document was
+configured:
+\begin{verbatim}
+\etocmulticolstyle{\noindent\bfseries\Large
+                   \leaders\hrule height1pt\hfill
+                   \MakeUppercase{Table of Contents}}
+\end{verbatim}
+After \csa{etocmulticolstyle} all future \csa{tableofcontents} will use the
+specified style, if not changed in-between. A shortcut for
+just one table of contents and 
+not affecting the styles of later TOCs is:\\
+\centerline{\csa{etocmulticol}\oarg{number\_of\_columns}\marg{heading}}
+And there is also
+\csa{etoclocalmulticol}\oarg{number\_of\_columns}\marg{heading}.
+
+
+\subsubsection{The command \csbhyp{etoctocstyle}}
+
+\centeredline{\color{blue}\csa{etoctocstyle}\oarg{kind}%
+\marg{number\_of\_columns}\marg{title}}
+\centeredline{=
+\csa{etocmulticolstyle}|[|{\itshape number\_of\_columns}|]|%
+|{\kind*{|\itshape title\upshape|}}|}
+where |kind| is one of |chapter|, |section|, . . . and defaults
+to |chapter| or |section| depending on the document class.
+
+\paragraph{\texorpdfstring{\csb{etoc\-toc\-style\-with\-marks}}{etoctocstylewithmarks}}%
+\leavevmode\unskip{\color{blue}\oarg{kind}\marg{number\_of\_columns}\marg{title}\marg{mark}}
+\centeredline
+{=\csa{etocmulticolstyle}|[|{\itshape number\_of\_columns}|]|%
+|{\kind*{|\itshape title \ttfamily\upshape\string\markboth%
+|{\MakeUppercase{|{\rmfamily\itshape mark}|}}}}|} 
+where |kind| is one of |chapter|, |section|, ... The
+actual display of the marks depends on the settings of the
+page style. There is variant \csb{etoctocstylewithmarksnouc}
+which does not uppercase.
+
+
+\paragraph{Do we really want paragraph entries in the TOC?}
+
+\paragraph{really?}
+
+\subsection{The command  \csbhyp{etocruled}}
+
+As a shortcut to set the style with \csb{etocruledstyle} and
+then issue a
+\csa{tableofcontents}, all inside a group
+so that  future table of contents will not be
+affected, there is:\\
+\centerline{\csb{etocruled}\oarg{number\_of\_columns}\marg{title}}
+And the local form will be \csb{etoclocalruled}.
+
+\subsection{The commands \csbhyp{etocframedstyle} and \csbhyp{etocframed}}
+
+Same mechanism:\\
+\centerline{\color{blue}\csa{etocframedstyle}%
+  \oarg{number\_of\_columns}\marg{title}}
+and the accompanying shortcut:\\
+\centerline{\csb{etocframed}\oarg{number\_of\_columns}\marg{title}}
+Here the entire table of contents is framed, hence this can
+only work if it fits on a page. Note that the title itself is
+not framed, if one wants a frame one should set it up
+inside the \meta{title} argument to \csa{etocframedstyle} or
+\csa{etocframed}. There is also \csa{etoc\-localframedstyle} and
+\csa{etoclocalframed}.
+
+\subsection{Headings, titles, \csbhyp{etocinnertopsep}}
+
+[\emph{modified in v1.07}] There is a slight difference
+between \csa{etocmulticolstyle} and \csa{etocruledstyle} or
+\csa{etocframedstyle}. For \csa{etocmulticolstyle} the mandatory
+\meta{heading} argument can be something like:
+\starit{section}%
+|{|\emph{Table of Contents}|}|.  On the contrary  \csa{etocruledstyle} and
+\csa{etocframedstyle} expect an argument
+``in LR mode'' (to use the terminology from the \emph{LaTeX, a
+document preparation system}). This means that multiline
+contents arguments to \csa{etocruledstyle} or
+\csa{etocframedstyle} must be enclosed in something like a \csa{parbox}.
+
+[\emph{new in v1.07}] The command \csa{etocmulticolstyle} now
+also accepts horizontal mode material in its mandatory
+argument \meta{heading}: it internally automatically adds a
+closing |\par|. So one can use for example
+|\etocmulticolstyle{Hello World}|. Speaking of |\par|, there
+is a |multicols| aspect which has nothing to do with \etoc,
+the input on the left creates a compilation error:
+\begingroup\renewcommand\columnseprule{.4pt}
+\begin{multicols}{2}
+\begin{verbatim}
+\begin{multicols}{2}[hello\par world]
+someone here?
+\end{multicols}
+\end{verbatim}
+\columnbreak
+\begin{verbatim}
+\let\oldpar\par
+\begin{multicols}{2}[hello\oldpar world]
+  at least me.
+\end{multicols}
+\end{verbatim}
+\end{multicols}
+\endgroup
+But the version on the right does not (it disguises |\par| so as to be
+acceptable).  \etoc provides
+\csb{etocoldpar} as a substitute for |\par| (it does
+|\let\etocoldpar\par| just before the |multicols|
+environment and automatically adds it to close the heading, 
+before the vertical skip of value
+\csa{etocinnertopsep}).\footnote{this command \csa{etocoldpar} (=
+working \csa{par} in the argument to \csa{etocmulticolstyle}) is
+not related to the switch \csa{etocinline} whose purpose is to
+tell \etoc not to do a \csa{par} before the table of
+contents.} The command \csb{etocoldpar} can also be used
+explicitely in the mandatory argument to
+\csa{etocmulticolstyle}.
+
+
+An important dimension used by all three of \csa{etocmulticolstyle},
+\csa{etocruledstyle} and \csa{etocframedstyle} is
+\csb{etocinnertopsep}. It gives the amount of separation
+between the heading and the start of the contents. Its default
+value is |2ex| and it is changed by
+|\renewcommand*{\etocinnertopsep}|\marg{new\_value}, not with
+|\setlength|. 
+
+
+\subsection{The command \csbhyp{etocsettocstyle}}
+
+This is a command with two mandatory arguments:\\
+\centerline{\color{blue}\csa{etocsettocstyle}\marg{before\_toc}%
+\marg{after\_toc}}
+The \marg{before\_toc} part is responsible for typesetting the
+heading, for example it can be something like
+\starit{section}|{\contentsname}|. 
+
+Generally speaking this heading
+should leave \TeX{} in vertical mode when the actual
+typesetting of the contents will start: the line styles (either
+from the standard classes or the package default line styles)
+expect to start in `vertical mode'.
+
+It can also contain
+instructions to mark the page headings.  Or
+it could check (book class) to see if two-column mode is on,
+and switch to one-column style, and the \meta{after\_toc} part
+would then reenact the two-column mode.
+
+The previously described commands \csa{etocmulticolstyle},
+\csa{etocruledstyle}, and \csa{etocframedstyle} actually call
+\csa{etocsettocstyle} as a lower-level routine, and start a
+|multicols| environment in \marg{before\_toc} to close it in
+\marg{after\_toc}. 
+
+\subsection{The compatibility mode \csbhyp{etocstandarddisplaystyle}}
+
+\etoc will then emulate what the document class would have
+done regarding the global display style of the table of
+contents, in its absence. All customizing from inside the
+class should be obeyed, too.
+
+\section{Starred variants of the \csbhyp{tableofcontents}
+  etc... commands}
+
+The \toc, \localtoc, \csa{etocmulticol}, etc... have starred
+variants (the star must be before the other arguments). For
+all but the |memoir| class, they are like the original. For
+the |memoir| class, the original prints an entry in the |.toc|
+file, as is the usage for the original \toc command in that
+class, whereas the starred variants do not, as is the habit in
+that class.
+
+As soon as one starts using local table of contents one
+discovers that the default |memoir| thing which is to create a
+|chapter| entry for each TOC is not convenient. The command
+\csb{etocmemoirtoctotocfmt}\marg{kind}\marg{name} will change
+the format (\meta{kind} is |chapter|, |section|, |subsection|... and
+\meta{name} can be for example \csa{contentsname}.) The initial set-up
+is with |chapter| and |\contentsname|. 
+
+The format of the actual heading of the TOC should also be set
+appropriately (for example with \csa{etoctocstyle}), to use the
+identical division unit as in the first argument to
+\csa{etocmemoirtoctotocfmt}. 
+
+A weird situation arises when one has two successive
+\csa{localtableofcontents} (obviously this is not a truly real
+life situation), just after a \csa{part} for example. The first
+one creates (if the default has not been modified as indicated
+above) a Chapter heading which is
+written to the |.toc|. Then the second one thinks to be local
+to this chapter . . . and as a result it displays nothing. The
+fix is to define the second one to be a clone of the first
+one.
+
+Independently of the situation with the |memoir| class there is
+generally speaking a hook macro called
+\csb{etocaftertitlehook} which is inhibited by using the
+starred variants of the displaying commands. Except for the
+|memoir| class, this hook is initially defined to do nothing.
+There is also \csb{etocaftercontentshook},  similarly
+defined to do nothing. They can be used for some special
+effects.
+
+\section{Table of contents for this part}
+
+
+\subsection{Testing the compatibility mode}
+
+As a third example we now print the local table of contents
+for this part. First we will test the compatibility mode.\footnote{the
+present document uses the |scrartcl| class, and we check here that
+the \etoc compatibility mode does respect the customizing done via the
+class commands.}   The original was invisibly defined with a label at the
+beginning of this part \ref{part:globalcmds}.
+\begin{verbatim}
+\KOMAoptions{toc=left}
+\etocstandarddisplaystyle % necessary for the display to obey toc=left
+\etocstandardlines
+\setcounter{tocdepth}{3}
+\tableofcontents \ref{toc:globalcmds}
+\end{verbatim}
+\KOMAoptions{toc=left}
+\etocstandarddisplaystyle
+\etocstandardlines
+\setcounter{tocdepth}{3}
+\tableofcontents \ref{toc:globalcmds}
+
+\subsection{A framed display}
+
+We now opt for a ``framed'' style, using the package default
+line styles and some colors added. 
+
+% \clearpage
+
+\begin{verbatim}
+\etocdefaultlines
+\begingroup % we use a group to limit the scope of the next commands
+\renewcommand{\etoccolumnsep}{2em}
+\renewcommand{\etocinnerleftsep}{1.5em}
+\renewcommand{\etocinnerrightsep}{1.5em}
+% specify a background color for the toc contents
+\renewcommand{\etocbkgcolorcmd}{\color{yellow!10}}
+%\renewcommand{\etocbkgcolorcmd}{\relax}
+% set up the top and bottom rules 
+\renewcommand{\etoctoprule}{\hrule height 1pt}
+\renewcommand{\etoctoprulecolorcmd}{\color{red!25}}
+\renewcommand{\etocbottomrule}{\hrule height 1pt}
+\renewcommand{\etocbottomrulecolorcmd}{\color{red!25}}
+% set up the left and right rules
+\renewcommand{\etocleftrule}{\vrule width 5pt}
+\renewcommand{\etocrightrule}{\vrule width 5pt}
+\renewcommand{\etocleftrulecolorcmd}{\color{red!25}}
+\renewcommand{\etocrightrulecolorcmd}{\color{red!25}}
+% use \fcolorbox to set up a colored frame for the title
+\fboxrule1pt
+\etocframedstyle{\normalsize\rmfamily\itshape
+  \fcolorbox{red}{white}{\parbox{.8\linewidth}{\centering
+      This is a table of contents \`a la \etoc, but just for
+      the sections and subsections in this part. As it is put
+      in a frame, it has to be small enough to fit on the 
+      current page. It has the label |toc:b|.}}}
+% set up a label for future (or earlier...) reference
+\setcounter{tocdepth}{3}
+\tableofcontents \label{toc:b} \ref{toc:globalcmds}
+\endgroup
+\end{verbatim}
+
+
+\etocdefaultlines
+\begingroup 
+\renewcommand{\etoccolumnsep}{2em}
+\renewcommand{\etocinnerleftsep}{1.5em}
+\renewcommand{\etocinnerrightsep}{1.5em}
+% specify a background color for the toc contents
+\renewcommand{\etocbkgcolorcmd}{\color{yellow!10}}
+% set up the top and bottom rules 
+\renewcommand{\etoctoprule}{\hrule height 1pt}
+\renewcommand{\etoctoprulecolorcmd}{\color{red!25}}
+\renewcommand{\etocbottomrule}{\hrule height 1pt}
+\renewcommand{\etocbottomrulecolorcmd}{\color{red!25}}
+% set up the left and right rules
+\renewcommand{\etocleftrule}{\vrule width 5pt}
+\renewcommand{\etocrightrule}{\vrule width 5pt}
+\renewcommand{\etocleftrulecolorcmd}{\color{red!25}}
+\renewcommand{\etocrightrulecolorcmd}{\color{red!25}}
+% use \fcolorbox to set up a colored frame for the title
+\fboxrule1pt
+\etocframedstyle{\normalsize\rmfamily\itshape
+  \fcolorbox{red}{white}{\parbox{.8\linewidth}{\centering
+      This is a table of contents \`a la \etoc, but just for
+      the sections and subsections in this part. As it is put
+      in a frame, it has to be small enough to fit on the 
+      current page. It has the label |toc:b|.}}}
+% set up a label for future (or earlier...) reference
+\tableofcontents \label{toc:b} \ref{toc:globalcmds}
+\endgroup
+
+\subsection{A (crazy) inline display}
+
+Let us finally make some crazy inline display of the table of
+contents of this entire document. We will typeset the subsections as
+footnotes... This kind of style is suitable for a hyperlinked
+document, not for print! 
+
+
+%\clearpage
+
+\begingroup
+\setcounter{tocdepth}{3}
+\newsavebox{\forsubsections}
+\etocsetstyle{part}{\etocskipfirstprefix}{. \upshape}{\bfseries\etocname:~~}{}
+\etocsetstyle{section}{\itshape\etocskipfirstprefix}{, }{\mdseries\etocname}{}
+\etocsetstyle{subsection}
+   {\begin{lrbox}{\forsubsections}\upshape\etocskipfirstprefix}
+   {; }
+   {\etocname}
+   {\end{lrbox}\footnote{\unhbox\forsubsections.}}
+\etocsetstyle{subsubsection}{ (\itshape\etocskipfirstprefix}
+  {, }{\etocname}{\/\upshape)}
+\etocsettocstyle{Here is the inline table of contents. }{.\par}
+\tableofcontents
+\endgroup
+
+Here is the code which has been used:
+\begin{verbatim}
+\begingroup
+\setcounter{tocdepth}{3}
+\newsavebox{\forsubsections}
+\etocsetstyle{part}{\etocskipfirstprefix}{. \upshape}{\bfseries\etocname:~~}{}
+\etocsetstyle{section}{\itshape\etocskipfirstprefix}{, }{\mdseries\etocname}{}
+\etocsetstyle{subsection}
+   {\begin{lrbox}{\forsubsections}\upshape\etocskipfirstprefix}
+   {; }
+   {\etocname}
+   {\end{lrbox}\footnote{\unhbox\forsubsections.}}
+\etocsetstyle{subsubsection}{ (\itshape\etocskipfirstprefix}
+  {, }{\etocname}{\/\upshape)}
+\etocsettocstyle{Here is the inline table of contents. }{.\par}
+\tableofcontents
+\endgroup
+\end{verbatim}
+
+% \clearpage
+
+\part{Using and customizing \etoc}
+\label{part:custom}
+
+\thispartstats
+
+\etocdefaultlines
+\renewcommand{\etoctoprule}{\hrule height2pt depth0pt}
+\renewcommand{\etoctoprulecolorcmd}{\color{red}}
+
+\etocruledstyle{\normalfont\normalsize\rmfamily\fboxrule1pt\color{red}%
+  \fbox{\parbox{.8\linewidth}{\centering\normalcolor This is a table of
+      contents for the sections and
+      subsections in this part. It carries the label |toc:c|}}} 
+
+\localtableofcontents \label{toc:c}
+
+
+\section{Summary of the main style commands}
+
+\subsection{Setting up local styles}
+
+\hbox{\color{green}\fboxrule1pt\fboxsep1em
+\setbox0\hbox{\csa{etocthename}, \csa{etocthenumber}, \csa{etocthepage}, \csa{etoclink}\marg{linkname}}%
+\framebox[\linewidth][c]
+{\vbox{\hsize\wd0\normalcolor\noindent
+\csa{etocsetstyle}\marg{levelname}%
+  \marg{start}\marg{prefix}\marg{contents}\marg{finish}\\
+\csa{etocname}, \csa{etocnumber}, \csa{etocpage},
+\csa{etocifnumbered}\marg{A}\marg{B}\\
+\csa{etocthename}, \csa{etocthenumber}, \csa{etocthepage}, \csa{etoclink}\marg{linkname}
+}}}
+
+\subsection{Setting up toc display styles}
+
+\medskip
+\hbox{\color{green}\fboxrule1pt\fboxsep1em
+\setbox0\hbox{\csa{etoctocstylewithmarksnouc}\oarg{kind}%
+\marg{number\_of\_columns}\marg{title}\marg{mark}}%
+\framebox[\linewidth][c]
+{\vbox{\hsize\wd0
+\normalcolor\noindent
+\csa{etocmulticolstyle}\oarg{number\_of\_columns}\marg{heading}\\
+\csa{etoctocstyle}\oarg{kind}\marg{number\_of\_columns}\marg{title}\\
+\csa{etoctocstylewithmarks}\oarg{kind}\marg{number\_of\_columns}%
+\marg{title}\marg{mark}\\
+\csa{etoctocstylewithmarksnouc}\oarg{kind}\marg{number\_of\_columns}%
+\marg{title}\marg{mark}\\
+\csa{etocruledstyle}\oarg{number\_of\_columns}\marg{title}\\
+\csa{etocframedstyle}\oarg{number\_of\_columns}\marg{title}\\
+\csa{etocsettocstyle}\marg{before\_toc}\marg{after\_toc}}}}
+
+\subsection{Displaying tables of contents}
+
+
+\medskip \hbox{\color{green}\fboxrule1pt\fboxsep1em
+  \setbox0\hbox{\csa{etocname}, \csa{etocnumber},
+    \csa{etocpage}, \csa{etocifnumbered}\marg{A}\marg{B}}%
+  \framebox[\linewidth][c]
+  {\vbox{\hsize\wd0\normalcolor\noindent
+      \toc\\
+      \localtoc\\
+      \csa{etocmulticol}\oarg{number\_of\_columns}\marg{heading}\\
+      \csa{etoclocalmulticol}\oarg{number\_of\_columns}\marg{heading}\\
+      \csa{etocruled}\oarg{number\_of\_columns}\marg{title}\\
+      \csa{etoclocalruled}\oarg{number\_of\_columns}\marg{title}\\
+      \csa{etocframed}\oarg{number\_of\_columns}\marg{title}\\
+      \csa{etoclocalframed}\oarg{number\_of\_columns}\marg{title}\\
+      \hbox{}{\itshape\ttfamily\ \ \ \  and their starred variants}
+   }}}
+
+\subsection{Labels and references}
+
+The commands (starred or not) to actually display the table of contents
+can be followed with optional labels or references:\par
+
+\medskip \hbox{\color{green}\fboxrule1pt\fboxsep1em
+  \setbox0\hbox{\csa{etocname}, \csa{etocnumber},
+    \csa{etocpage}, \csa{etocifnumbered}\marg{A}\marg{B}}%
+  \framebox[\linewidth][c]
+  {\vbox{\hsize\wd0\normalcolor\noindent
+      \toc \csa{label}|\{toc:here\}|\\ 
+      \toc \csa{ref}|\{toc:far\}| \\
+      \toc \csa{label}|\{toc:here\}| \csa{ref}|\{toc:far\}| \\
+      \localtoc \csa{label}|\{toc:here\}|\\
+      \hbox{}{\itshape\ttfamily\ \ \ \ similarly with\ }%
+      \csa{etocmulticol}{\itshape\ttfamily\ etc . . . }
+   }}}
+
+
+\medskip The commands for local tables of
+contents do \emph{not} react to a \csa{ref} following them. 
+
+When
+re-displaying another toc, only its contents are transferred:
+both the line styles and the toc display style are the ones
+currently defined, not the ones from the cloned toc.
+
+
+\subsection{The package default line styles: \csbhyp{etocdefaultlines}}
+
+
+Activating the use of the package default line styles\footnote{they were written
+  at a very early stage in the development of the package, and version |1.07e|
+  has, among other things, modified the previous unsatisfactory use of penalties
+  and vertical spacing commands. This will cause differences to
+  documents having been compiled with earlier versions, apologies for that.} is
+done via \csa{etocdefaultlines}, or \csa{etoctoclines} if these styles have not
+been modified with \csa{etocsetstyle}. Sections and sub-sections are printed in
+essentially the same manner, except that the leading for sub-sections is a bit
+smaller (with document classes lacking a \csa{chapter} command, the sections are
+printed in bold typeface; this is the case in the present document).
+Sub-sub-sections are printed inline, in one paragraph, with no numbers or page
+numbers. This style was designed and tested with documents having lots of
+sub-sub-sections, and should be used on a two-column layout: it provides (only
+in that situation with many sub-sub-sections) a more compact presentation than
+what is achieved by the \LaTeX{} default.\footnote{and there will never be a
+  Part or Chapter entry alone at the bottom of a column or page (except if it
+  has no sub-unit).} On the other hand, used with a one-column layout, and with
+few sub-sub-sections, the style is a bit more spread out vertically than the
+\LaTeX{} default, sub-sections are not visually much different from sections
+(especially for document classes with a \csa{chapter} command), so the result is
+less hierarchical in appearance than in the \LaTeX{} default.
+
+In this document, for the \hyperref[toc:main]{main table of contents}, we did 
+|\etocsetlevel{subsection}{3}| hence the sub-sections were printed with the
+sub-sub-section inline style. 
+
+Let us, to the contrary, typeset now this main table of contents as if the
+document had been done with a class having the \csa{chapter} command: we will
+print sections as chapters, and subsections as sections. We use
+\csa{etocsetlevel} for that, and also we need to change the font style of
+``sections'' (which in truth are our subsections) to use not the bold but the
+medium series; we modify the \csa{etocfontone} command for that.
+
+
+\begin{verbatim}
+\etocruledstyle[2]{\normalfont\normalsize\rmfamily\itshape
+  \fbox{\parbox{.6\linewidth}{
+      \leftskip 0pt plus .5fil
+      \rightskip 0pt plus -.5fil
+      \parfillskip 0pt plus 1fil This is the global table of
+      contents on two columns, using \etoc default line styles, but with
+      sections 
+      being printed as chapters, and subsections as sections.
+      }}}
+\etocdefaultlines
+\setcounter{tocdepth}{1}
+\begingroup
+\etocsetlevel{section}{0}
+\etocsetlevel{subsection}{1}
+\renewcommand*{\etocfontone}{\normalfont \normalsize}
+\tableofcontents
+\endgroup
+\end{verbatim}
+
+\etocruledstyle[2]{\normalfont\normalsize\rmfamily\itshape
+  \fbox{\parbox{.6\linewidth}{
+      \leftskip 0pt plus .5fil
+      \rightskip 0pt plus -.5fil
+      \parfillskip 0pt plus 1fil This is the global table of
+      contents on two columns, using \etoc default line styles, but with
+      sections 
+      being printed as chapters, and subsections as sections.
+      }}}
+
+\etocdefaultlines
+\setcounter{tocdepth}{1}
+
+\begingroup
+\etocsetlevel{section}{0}
+\etocsetlevel{subsection}{1}
+\renewcommand*{\etocfontone}{\normalfont \normalsize}
+
+\tableofcontents
+\endgroup
+
+\subsection{One more example TOC layout}
+
+
+I got motivated by a
+question\footnote{\href{http://tex.stackexchange.com/questions/83184/how-to-change-style-and-color-of-table-of-content}{tex.stackexchange.com/questions/83184}}
+I saw on the \TeX{} StackExchange site. I copied the color RGB
+specifications from an answer which had been provided to the
+question. The \csa{etocframedstyle} puts the title on the top
+rule in a centered position. This is not very convenient for
+this example so we included the title as part of the
+\meta{start} code at section level, to get it \emph{inside}
+the frame.
+
+\begingroup\def\MacroFont{\footnotesize\ttfamily}%
+
+\begin{verbatim}
+\setcounter{tocdepth}{3}
+\begingroup
+\definecolor{subsecnum}{RGB}{13,151,225}
+\definecolor{secbackground}{RGB}{0,177,235}
+\definecolor{tocbackground}{RGB}{212,237,252}
+
+\renewcommand{\etocbkgcolorcmd}{\color{tocbackground}}
+\renewcommand{\etocleftrulecolorcmd}{\color{tocbackground}}
+\renewcommand{\etocrightrulecolorcmd}{\color{tocbackground}}
+\renewcommand{\etocbottomrulecolorcmd}{\color{tocbackground}}
+\renewcommand{\etoctoprulecolorcmd}{\color{tocbackground}}
+
+\renewcommand{\etocleftrule}{\vrule width 1cm}
+\renewcommand{\etocrightrule}{\vrule width .5cm}
+\renewcommand{\etocbottomrule}{\hrule height 12pt}
+\renewcommand{\etoctoprule}{\hrule height 12pt}
+
+\renewcommand{\etocinnertopsep}{0pt}
+\renewcommand{\etocinnerbottomsep}{0pt}
+\renewcommand{\etocinnerleftsep}{0pt}
+\renewcommand{\etocinnerrightsep}{0pt}
+
+\newcommand\shiftedwhiterule[2]{%
+    \hbox to \linewidth{\color{white}%
+    \hskip#1\leaders\vrule height1pt\hfil}\nointerlineskip\vskip#2}
+
+\etocsetstyle{subsubsection}{\etocskipfirstprefix}
+  {\shiftedwhiterule{\leftskip}{6pt}}
+  {\sffamily\footnotesize
+     \leftskip2.5cm\hangindent1cm\rightskip1cm\noindent
+     \hbox to 1cm{\color{subsecnum}\etocnumber\hss}%
+     \color{black}\etocname\leaders\hbox to .2cm{\hss.}\hfill
+     \rlap{\hbox to 1cm{\hss\etocpage\hskip.2cm}}\par
+     \nointerlineskip\vskip3pt}
+  {}
+
+\etocsetstyle{subsection}{\etocskipfirstprefix}
+  {\shiftedwhiterule{1.5cm}{6pt}}
+  {\sffamily\small
+     \leftskip1.5cm\hangindent1cm\rightskip1cm\noindent
+     \hbox to 1cm{\color{subsecnum}\etocnumber\hss}%
+     \color{black}\etocname\leaders\hbox to .2cm{\hss.}\hfill
+     \rlap{\hbox to 1cm{\hss\etocpage\hskip.2cm}}\par
+     \nointerlineskip\vskip6pt}
+  {}
+
+\newcommand{\coloredstuff}[2]{%
+            \leftskip0pt\rightskip0pt\parskip0pt
+            \fboxsep0pt % \colorbox uses \fboxsep also when no frame!
+       \noindent\colorbox{secbackground}
+               {\parbox{\linewidth}{%
+                    \vskip5pt
+                    {\noindent\color{#1}#2\par\nointerlineskip}
+                    \vskip3pt}}%
+       \par\nointerlineskip}
+
+\etocsetstyle{section}
+    {\coloredstuff{white}
+     {\hfil \hyperref[toc:b]{\bfseries\large I am a twin of  
+     that other TOC (click me!)}\hfil}}
+    {\vskip3pt\sffamily\small}
+    {\coloredstuff{white}{\hbox to 1.5cm{\hss\etocnumber\hskip.2cm}%
+     \etocname\hfill\hbox{\etocpage\hskip.2cm}}\vskip6pt}
+    {}
+
+\etocframedstyle[1]{}
+\tableofcontents \label{toc:clone} \ref{toc:globalcmds}
+\endgroup
+\end{verbatim}
+\endgroup
+
+
+The coding is a bit involved\footnote{and reveals the author's
+preference for the \TeX{} syntax...} as it does not use any additional
+package. Also, it was written at some early stage and I have not revised it
+since. 
+
+A better solution would be to use some package to set
+up a background color possibly extending accross pages, as the
+framed style (which we used to get this background
+color) can only deal with material short enough to fit on one
+page.
+
+Regarding colors, generally speaking all color commands inside
+\etoc are initially defined to do nothing, and the choice to
+use or not colors is left to the user.
+
+\clearpage
+\setcounter{tocdepth}{3}
+
+\begingroup
+\definecolor{subsecnum}{RGB}{13,151,225}
+\definecolor{secbackground}{RGB}{0,177,235}
+\definecolor{tocbackground}{RGB}{212,237,252}
+
+\renewcommand{\etocbkgcolorcmd}{\color{tocbackground}}
+\renewcommand{\etocleftrulecolorcmd}{\color{tocbackground}}
+\renewcommand{\etocrightrulecolorcmd}{\color{tocbackground}}
+\renewcommand{\etocbottomrulecolorcmd}{\color{tocbackground}}
+\renewcommand{\etoctoprulecolorcmd}{\color{tocbackground}}
+
+\renewcommand{\etocleftrule}{\vrule width 1cm}
+\renewcommand{\etocrightrule}{\vrule width .5cm}
+\renewcommand{\etocbottomrule}{\hrule height 12pt}
+\renewcommand{\etoctoprule}{\hrule height 12pt}
+
+\renewcommand{\etocinnertopsep}{0pt}
+\renewcommand{\etocinnerbottomsep}{0pt}
+\renewcommand{\etocinnerleftsep}{0pt}
+\renewcommand{\etocinnerrightsep}{0pt}
+
+\newcommand\shiftedwhiterule[2]{%
+    \hbox to \linewidth{\color{white}%
+    \hskip#1\leaders\vrule height1pt\hfil}\nointerlineskip
+\vskip#2}
+
+\etocsetstyle{subsubsection}{\etocskipfirstprefix}
+{\shiftedwhiterule{\leftskip}{6pt}}
+{\sffamily\footnotesize
+\leftskip2.5cm\hangindent1cm\rightskip1cm\noindent
+\hbox to 1cm{\color{subsecnum}\etocnumber\hss}%
+\color{black}\etocname\leaders\hbox to .2cm{\hss.}\hfill
+\rlap{\hbox to 1cm{\hss\etocpage\hskip.2cm}}\par
+\nointerlineskip\vskip3pt}
+{}
+
+\etocsetstyle{subsection}{\etocskipfirstprefix}
+{\shiftedwhiterule{1.5cm}{6pt}}
+{\sffamily\small
+\leftskip1.5cm\hangindent1cm\rightskip1cm\noindent
+\hbox to 1cm{\color{subsecnum}\etocnumber\hss}%
+\color{black}\etocname\leaders\hbox to .2cm{\hss.}\hfill
+\rlap{\hbox to 1cm{\hss\etocpage\hskip.2cm}}\par
+\nointerlineskip\vskip6pt}
+{}
+
+\newcommand{\coloredstuff}[2]{%
+            \leftskip0pt\rightskip0pt\parskip0pt
+            \fboxsep0pt % \colorbox uses \fboxsep also when no frame!
+       \noindent\colorbox{secbackground}
+               {\parbox{\linewidth}{%
+                    \vskip5pt
+                    {\noindent\color{#1}#2\par\nointerlineskip}
+                    \vskip3pt}}%
+       \par\nointerlineskip}
+
+\etocsetstyle{section}{\coloredstuff{white}
+     {\hfil \hyperref[toc:b]{\bfseries\large I am a twin of  
+     that other TOC (click me!)}\hfil}}
+{\vskip3pt\sffamily\small}
+{\coloredstuff{white}{\hbox to 1.5cm{\hss\etocnumber\hskip.2cm}%
+    \etocname\hfill\hbox{\etocpage\hskip.2cm}}\vskip6pt}
+{}
+
+\etocframedstyle[1]{}
+
+\tableofcontents \label{toc:clone} \ref{toc:globalcmds}
+
+\endgroup
+
+
+\section{Customizing \etoc}
+
+
+
+\subsection{Customizing  the \etoc pre-defined line styles}
+
+
+We will simply list the relevant commands as defined in the
+package. Customizing them goes through suitable
+\csa{renewcommand}s:
+\begin{verbatim}
+\newcommand*\etocfontminustwo{\normalfont \LARGE \bfseries}
+\newcommand*\etocfontminusone{\normalfont \large \bfseries}
+\newcommand*\etocfontzero{\normalfont \large \bfseries}
+\newcommand*\etocfontone{\normalfont \normalsize \bfseries}
+\newcommand*\etocfonttwo{\normalfont \normalsize}
+\newcommand*\etocfontthree{\normalfont \footnotesize}
+
+\newcommand*\etocsepminustwo{4ex plus .5ex minus .5ex}
+\newcommand*\etocsepminusone{4ex plus .5ex minus .5ex}
+\newcommand*\etocsepzero{2.5ex plus .4ex minus .4ex}
+\newcommand*\etocsepone{1.5ex plus .3ex minus .3ex}
+%%\newcommand*\etocseptwo{1ex plus .15ex minus .15ex} % modified in 1.07e
+\newcommand*\etocseptwo{.5ex plus .1ex minus .1ex}
+\newcommand*\etocsepthree{.25ex plus .05ex minus .05ex}
+
+\newcommand*\etocminustwoleftmargin{1.5em plus 0.5fil}
+\newcommand*\etocminustworightmargin{1.5em plus -0.5fil}
+\newcommand*\etocminusoneleftmargin{1em}
+\newcommand*\etocminusonerightmargin{1em}
+
+\newcommand*\etocbaselinespreadminustwo{1}
+\newcommand*\etocbaselinespreadminusone{1}
+\newcommand*\etocbaselinespreadzero{1}
+\newcommand*\etocbaselinespreadone{1}
+\newcommand*\etocbaselinespreadtwo{1}
+\newcommand*\etocbaselinespreadthree{.9}
+\newcommand*\etoctoclineleaders
+    {\hbox{\normalfont\normalsize\hbox to 2ex {\hss.\hss}}}
+\newcommand*\etocabbrevpagename{p.~}
+\newcommand*\etocpartname{\partname}  % utilisateurs de frenchb: attention
+                                      % car donne "partie" sans majuscule.
+\newcommand*\etocbookname{Book} % to be modified according to language
+\end{verbatim}
+
+No customizing of the standard line styles is possible from
+within \etoc. As already explained, when
+\csa{etocstandardlines} has been issued, the package just makes
+itself very discrete and acts only at the global level, and
+the TOC entries are (hopefully) formatted as would have
+happened in the absence of \etoc.\footnote{with the
+  KOMA-script classes, we noticed that
+  \csa{etocstandarddisplaystyle} was apparently needed for the
+  KOMA options |toc=left| to be active at the level of the line entries.}  
+
+
+The \csa{etocstandardlines} compatibility mode will work also with
+sectioning commands made known to \etoc via \csa{etocsetlevel},
+under the condition of course that these sectioning commands
+are accompanied with all the relevant definitions for
+typesetting toc entries in the \LaTeX{} default manner
+(existence of the macros \csa{l@something} . . .).
+
+Using the command \csa{etocsetstyle}, be it in the preamble or
+in the body of the document, has the secondary effect of
+switching off the compatibility mode.
+
+\subsection{Customizing the toc display styles}
+
+
+Again we list the relevant macros, what they do should be
+legible from their names. Note that \csa{renewcommand}'s and
+not \csa{setlength}'s have to be used for what appear to be
+lengths, and that color commands are not just color
+specifications, they must include \csa{color}, and are canceled
+by re-defining them to do \csa{relax}.
+\begin{verbatim}
+\newcommand*\etocabovetocskip{3.5ex plus 1ex minus .2ex} 
+\newcommand*\etocbelowtocskip{3.5ex plus 1ex minus .2ex}
+
+\newcommand*\etoccolumnsep{2em}
+\newcommand*\etocmulticolsep{0ex}
+\newcommand*\etocmulticolpretolerance{-1}
+\newcommand*\etocmulticoltolerance{200}
+\newcommand*\etocdefaultnbcol{2}
+\newcommand*\etocinnertopsep{2ex}
+\newcommand*\etoctoprule{\hrule}
+\newcommand*\etoctoprulecolorcmd{\relax}
+
+% for the framed style only:
+\newcommand*\etocinnerleftsep{2em}
+\newcommand*\etocinnerrightsep{2em}
+\newcommand*\etocinnerbottomsep{3.5ex}
+
+\newcommand*\etocleftrule{\vrule}
+\newcommand*\etocrightrule{\vrule}
+\newcommand*\etocbottomrule{\hrule}
+\newcommand*\etocleftrulecolorcmd{\relax}
+\newcommand*\etocrightrulecolorcmd{\relax}
+\newcommand*\etocbottomrulecolorcmd{\relax}
+
+\newcommand*\etocbkgcolorcmd{\relax}
+
+% hooks
+\newcommand\etocframedmphook{\relax}
+\end{verbatim}
+
+The \csa{etocframedmphook} is positioned immediately
+after the beginning of a minipage environment where the
+contents of the framed TOC are typeset. 
+
+The \csa{...colorcmd} things are initially set to be
+\csa{relax}, so there is no need to do \csa{usepackage}|{color}|
+if the document does not use colors. If the scope of a change
+to a color command such as \csa{etocbkgcolorcmd} has not
+been limited to a group and one then wishes to let it again be
+\csa{relax} one must use a \csa{renewcommand} and not
+\csa{let}\csa{etocbkgcolorcmd}\csa{relax}.
+
+Regarding the dimensions of the top rule they can be specified
+in |ex|'s or |em|'s as in this example:
+\centeredline{|\renewcommand{\etoctoprule}{\hrule height 1ex}|} 
+The package code is done in such a manner
+that it is the font size in instance at the end of typesetting
+the title argument to \csa{etocruledtoc} or
+\csa{etocframedtoc} which will be used for the meaning of the
+`1ex'. Of course also the other rule commands can have their
+dimensions in font relative units, but their values are
+decided on the basis of the font in effect just before the
+table of contents.
+
+The top and bottom rules do not have to be rules and can be
+horizontal \emph{leaders} (of a specified height) in the general
+\TeX{} sense. However the left and right rules are not
+used as (horizontal) leaders but as objects of a given specified
+width. Note that \emph{only} the Plain \TeX{} syntax for rules is
+accepted here. 
+
+
+% \clearpage
+\part{Tips}
+
+\thispartstats
+
+\section{... and tricks}
+
+\subsection{Hacking  framed parboxes}
+
+
+\begin{verbatim}
+\renewcommand\etoctoprule{\hrule height 2pt depth 2pt}
+\etocruled{\color{green}\fboxrule2pt\fboxsep1ex
+               \fbox{\raisebox{-\fontdimen22\textfont2}
+                    {\color{blue}\parbox{.5\linewidth}
+                       {\normalfont This text is perfectly centered
+                        vertically with respect to the
+                        surrounding horizontal rules.}}}}
+\ref{toc:globalcmds}
+\end{verbatim}
+
+\renewcommand\etoctoprule{\hrule height 2pt depth 2pt}
+
+\etocruled{\color{green}\fboxrule2pt\fboxsep1ex
+              \fbox{\raisebox{-\fontdimen22\textfont2}
+                    {\color{blue}\parbox{.5\linewidth}
+                       {\normalfont This text is perfectly centered
+                        vertically with respect to the
+                        surrounding horizontal rules.}}}}
+              \ref{toc:globalcmds}
+
+
+\subsection{Interverting the levels}
+\label{subsec:interverting}
+
+Let us display and count all subsections occurring in this document (see
+section \ref{sec:surprising} for other uses of this technique): 
+\begin{verbatim}
+\setcounter{tocdepth}{2}
+\begingroup
+\etocsetlevel{part}{3}
+\etocsetlevel{section}{3}
+\etocsetstyle{subsection}
+    {\small\begin{enumerate}[itemsep=0pt,label=,leftmargin=0pt]}
+    {\normalfont\bfseries\item}
+    {\roman{enumi}. \mdseries\etocname{} (\etocnumber, p.~\etocpage)}
+    {\end{enumerate}}
+\renewcommand{\etoccolumnsep}{2.75em}
+\renewcommand{\columnseprule}{1pt}
+\etocmarkbothnouc{List of all subsections}
+\etocmulticol[3]{\subsection{All subsections of this document}}
+\endgroup
+\end{verbatim}
+
+\setcounter{tocdepth}{2}
+
+\begingroup
+\etocdefaultlines
+\etocstandarddisplaystyle
+\etocsetlevel{book}{3}
+\etocsetlevel{part}{3}
+\etocsetlevel{chapter}{3}
+\etocsetlevel{section}{3}
+\etocsetstyle{subsection}{\small
+\begin{enumerate}[itemsep=0pt,label=,leftmargin=0pt]}
+{\normalfont\bfseries\item}
+{\roman{enumi}. \mdseries\etocname{} (\etocnumber, p.~\etocpage)}
+{\end{enumerate}}
+
+\renewcommand{\etoccolumnsep}{2.75em}
+\renewcommand{\columnseprule}{1pt}
+
+\etocmarkbothnouc{List of all subsections}
+
+\etocmulticol[3]{\subsection{All subsections of this document}}
+
+\endgroup
+
+\setcounter{tocdepth}{3}
+
+
+\subsection{Displaying statistics}\label{ssec:statistics}
+
+Each part of this document starts with a paragraph telling how many sections and
+subsections it has. Well, each one of this paragraph is a table of contents! We
+designed a macro \csa{thispartstats} to do that. It uses ``storage'' boxes to
+keep the information about the first and last section or subsection. Using boxes
+is the simplest manner to encapsulate the |hyperref| link for later use (whether
+there is one or none). However, one cannot modify then the font or the color
+(using the \TeX{} primitive \csa{setbox} rather than the \LaTeX{} \csa{sbox}
+would allow to change the color of the un-boxed saved box). If such a need
+arises, one must switch from boxes to macros, and store the |hyperref| data for
+later use as was done in the code presented in the \autoref{ssec:molecule}. We
+did this for the first paragraph of the \autoref{sec:surprising}.
+
+But first, the coding of \csa{thispartstats}:\par
+\begingroup
+\def\MacroFont{\footnotesize\ttfamily\relax}
+\begin{verbatim}
+\newsavebox\firstnamei  \newsavebox\firstnumberi
+\newsavebox\lastnamei   \newsavebox\lastnumberi
+\newsavebox\firstnameii \newsavebox\firstnumberii
+\newsavebox\lastnameii  \newsavebox\lastnumberii
+\newcounter{mycounti}   \newcounter{mycountii}
+\newcommand*{\thispartstatsauxi}{} \newcommand*{\thispartstatsauxii}{}
+\newcommand*{\oldtocdepth}{}
+\newcommand*{\thispartstats}{%
+  \edef\oldtocdepth{\arabic{tocdepth}}%
+  \setcounter{tocdepth}{2}%
+  \setcounter{mycounti}{0}%
+  \setcounter{mycountii}{0}%
+  \def\thispartstatsauxi{%
+         \sbox{\firstnamei}{\color{cyan}\etocname}%
+         \sbox{\firstnumberi}{\color{cyan}\etocnumber}%
+         \def\thispartstatsauxi{}}%
+  \def\thispartstatsauxii{%
+         \sbox{\firstnameii}{\color{cyan}\etocname}%
+         \sbox{\firstnumberii}{\color{cyan}\etocnumber}%
+         \def\thispartstatsauxii{}}%
+  \begingroup
+  \etocsetstyle{subsection} {} {}
+    {\thispartstatsauxii
+     \stepcounter{mycountii}%
+     \sbox{\lastnameii}{\color{teal}\etocname}%
+     \sbox{\lastnumberii}{\color{teal}\etocnumber}} {}%
+  \etocsetstyle{section} {} {}
+    {\thispartstatsauxi
+     \stepcounter{mycounti}%
+     \sbox{\lastnamei}{\color{teal}\etocname}%
+     \sbox{\lastnumberi}{\color{teal}\etocnumber}}
+    {Here are some statistics for this part: it contains \arabic{mycounti}
+    section\ifnum\value{mycounti}>1 s\fi{} and \arabic{mycountii}
+    subsection\ifnum\value{mycountii}>1 s\fi. The name of the first section is
+    \unhbox\firstnamei{} and the corresponding number is \unhbox\firstnumberi. 
+    The name of the last section is \unhbox\lastnamei{} and its number is
+    \unhbox\lastnumberi. The name of the first subsection is \unhbox\firstnameii{}
+    and the corresponding number is \unhbox\firstnumberii. The name of the last
+    subsection is \unhbox\lastnameii{} and its number is \unhbox\lastnumberii.}%
+  \etocinline % don't do a \par automatically (but this is not used, actually).
+  \etocsettocstyle {}{}
+  \localtableofcontents  % to be used at the top level of a Part.
+  \endgroup
+  \setcounter{tocdepth}{\oldtocdepth}%
+}
+\end{verbatim}
+%\endgroup
+
+And now, the variant  which was used for
+  \autoref{sec:surprising}, with macros rather than boxes: 
+\begin{verbatim}
+\makeatletter
+\newcommand*\firstsubname   {}  \newcommand*\lastsubname    {}
+\newcommand*\firstsubnumber {}  \newcommand*\lastsubnumber  {}
+\newcommand*\thissectionstatsaux{}
+
+\newcommand*{\thissectionstats}{%
+  \edef\oldtocdepth{\arabic{tocdepth}}%
+  \setcounter{tocdepth}{2}%
+  \setcounter{mycounti}{0}%
+  \def\thissectionstatsaux{% ou plus simple si on ne veut pas le lien.
+         \let\firstsubname\etocthelinkedname
+         \let\firstsubnumber\etocthelinkednumber
+         \def\thissectionstatsaux{}}
+  \begingroup
+  \etocsetstyle{subsection} {} {}
+    {\thissectionstatsaux
+     \stepcounter{mycounti}%
+     \let\lastsubname\etocthelinkedname
+     \let\lastsubnumber\etocthelinkednumber }
+    {Here are some statistics for this section. It contains \arabic{mycounti}
+     subsections. The name of its first is \emph{\color{cyan}\firstsubname{}}
+     and the corresponding number is {\color{cyan}\firstsubnumber}. The name of
+     the last subsection is \emph{\color{teal}\lastsubname{}} and its number is 
+     {\color{teal}\lastsubnumber}.}%
+   \etocsettocstyle {}{}
+   \etocinline
+   \localtableofcontents
+  \endgroup
+  \setcounter{tocdepth}{\oldtocdepth}%
+}
+\makeatother
+\end{verbatim}
+\endgroup
+
+\subsection{Compatibility with other packages}
+
+\etoc loads the package |multicol|.\footnote{\protect\fbox{up to version
+\texttt{1.07a} it also used package \texttt{xspace}, but this
+has been removed from later versions.}} It is
+|hyperref| aware and hopefully |hyperref| compatible! It
+doesn't matter whether \etoc or |hyperref| is loaded first.
+
+The contents of the |.toc| file (if it exists) are read into
+memory by \etoc once, at the time of \csa{usepackage\{etoc\}}.
+The |.toc| file will be opened for write operations only at
+the time of the first TOC displaying command. 
+
+\etoc can not really cohabit with packages modifying the \csa{tableofcontents}
+  command: some sort of truce can be achieved if \etoc is loaded last, hence is
+  the winner. 
+
+When a \localtoc is inserted by the user in the document, a
+line containing an \etoc inner command and an identification
+number is added to the |.toc| file. The correct local table of
+contents will be displayed only on the next |latex| run.
+
+\etoc expects the document sectioning units to write their
+data into the file having extension |.toc|, in the form of
+lines containing the \csa{contentsline} command and its
+arguments. The macros \csa{etocname}, \csa{etocnumber}, and
+\csa{etocpage} contain the |hyperref| links, if present (note
+that the \emph{linktoc=all} option of |hyperref| tells it to
+put a link also in the page number corresponding to a given
+toc entry). For example, the tables of contents of the present document are
+all fully linked.\footnote{except the \hyperref[tocastree]{Qtree TOC} ...}
+
+It is possible to customize (using package |tocloft| for
+example) throughout the document the macros \csa{l@section},
+\csa{l@subsection} ... and the effect will be seen in the next
+table of contents typeset by \etoc in compatibility mode.
+
+It is possible to use simultaneously \etoc and 
+{\color{niceone}|tableof|}\footnote{\url{http://www.ctan.org/pkg/tableof}}. For the
+advanced uses such as what is done in the \autoref{ssec:molecule} it is
+  important 
+to know that |tableof| adds one level of grouping inside the |.toc| file itself.
+So when one needs to make some information \csa{global}, one can not wait to be
+at the level of the second argument of \csa{etocsettocstyle}, as
+|tableof| will already have closed the group then. The \csa{global} things must
+be done at the latest in the \meta{finish} part of the top (or last) sectioning
+  level used. 
+This only applies of course to \csa{tableofcontents} or
+  \csa{localtableofcontents} following the 
+  \csa{nexttocwithtags}|{required}||{forbidden}| command from |tableof|.
+
+And when the commands
+  \csa{tableof} or \csa{tablenotof} of package 
+  |tableof| are used,
+  they typeset the table of contents according to the document class defaults:
+  to benefit from the \etoc styles, it is mandatory to use either
+  \csa{tableofcontents}, or \csa{localtableofcontents} or one of the other \etoc
+  commands, and |tableof (v1.1)| will influence the outcome only if 
+  \csa{nexttocwithtags}|{required}||{forbidden}| was added before the table of
+  contents typesetting command.
+
+\subsection{\TeX nical matters}
+
+The \csa{etocname}, \csa{etocnumber}, \csa{etocpage} commands are protected against
+premature expansion. They contain suitable |hyperref| links if package
+|hyperref| is loaded and active for the TOC. The commands \csa{etoclink} and
+\csa{etocifnumbered} are also protected against premature expansion.
+
+On the other hand \csa{etocthename}, \csa{etocthenumber},
+\csa{etocthepage} do not represent |hyperref| links, and are
+\emph{not} protected against expansion.
+
+The commands such as \csa{etocsetstyle}, \csa{etocsetlevel},
+\csa{etocsettocstyle}, \csa{etocmulticolstyle},
+\csa{etocruledstyle}, \csa{etocframedstyle} obey \LaTeX{}'s
+groups. All TOCs are typeset inside groups.
+
+\subsection{Errors and catastrophes}
+
+  After using \csa{etocsetstyle} for one level, the remaining
+  uncustomized levels use the \etoc default styles (those
+  which are activated by \csa{etocdefaultlines}). One has to
+  make sure that all levels needed for the next table of
+  contents are mutually compatible: in particular the \etoc
+  default styles expect to start in ``vertical mode''.
+
+  When using multiple \toc commands in a document, one should beware from adding
+  typesetting instructions directly in the |.toc| file, as they will be executed
+  by \etoc for all TOCs: even for a \localtoc it doesn't matter if that
+  instruction seems to concern material outside of its scope, it will get
+  executed nevertheless. If absolutely necessary (but this should never be)
+  these instructions should be done in such a way that they can be activated or
+  deactivated easily from the document source, as need be.
+
+  As is usual with toc and labels, after each change, one has
+  to run latex a certain number of times to let the produced
+  document get its final appearance (at least twice).\par
+
+\bigskip
+
+This is the documentation as of \docdate, printed from the source file with the
+time stamp ``\dtxtimestamp''. The package version is \pkgversion, of
+  \pkgdate. See the source for copyright and license information.\par 
+
+
+\part{The code}
+
+This source file |etoc.dtx| produces 
+|etoc.sty| when one does |latex etoc.dtx| or |pdflatex etoc.dtx| 
+(an |etoc.ins| file is also produced, for
+distributions expecting it for installation). Two more runs
+are necessary to finish producing the documentation. The
+|etoc.sty| file should be moved to a suitable location within
+the \TeX{} installation.
+
+\section{Implementation}
+
+\makeatletter
+\StopEventually{\check@checksum\end{document}}
+\let\check@percent\original@check@percent
+\makeatother
+
+Writing-up source code comments is hopefully for a future
+release. 
+
+% I don't want to have to type at this location (far from the top of the
+% file) explicitly the package version or version date, as it is
+% inconvenient to have to remember to do this when updating the package.
+% Also, I prefer not to add macros to the |.sty| file giveing the package
+% date, name, or version. So I cut out the following from the real macrocode
+% environment (leaving out the \init@crossref.)
+\makeatletter
+\begingroup
+\topsep\MacrocodeTopsep
+\trivlist\parskip\z@\item[]
+\macro@font
+\leftskip\@totalleftmargin  \advance\leftskip\MacroIndent
+\rightskip\z@  \parindent\z@  \parfillskip\@flushglue
+\global\@newlistfalse \global\@minipagefalse
+\ifcodeline@index
+  \everypar{\global\advance\c@CodelineNo\@ne
+  \llap{\theCodelineNo\ \hskip\@totalleftmargin}}%
+\fi
+\string\ProvidesPackage\string{\pkgname\string}\par
+\noindent\space [\pkgdate\space\pkgversion\space\pkgdescription]\par
+\nointerlineskip
+\global\@inlabelfalse
+\endtrivlist
+\endgroup
+\makeatother
+
+% The catcode hackery next is to avoid to have <*package> to be listed
+% in the commented source code...
+% (c) 2012/11/19 jf burnol ;-)
+
+
+\MakePercentIgnore
+
+%
+% \catcode`\<=0 \catcode`\>=11 \catcode`\*=11 \catcode`\/=11
+% \let</none>\relax
+% \def<*package>{\catcode`\<=12 \catcode`\>=12 \catcode`\*=12 \catcode`\/=12}
+%
+%</none>
+%<*package>
+%    \begin{macrocode}
+\NeedsTeXFormat{LaTeX2e}
+\RequirePackage{multicol}
+%% \RequirePackage{xspace} %% REMOVED (1.07b)
+\DeclareOption*{\PackageWarning{etoc}{Option `\CurrentOption' is unknown.}}
+\ProcessOptions\relax
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\newtoks\Etoc@toctoks
+\def\Etoc@par{\par}
+\newcommand*{\etocinline}{\def\Etoc@par{}}
+\let\etocnopar\etocinline
+\newif\ifEtoc@jj  % book
+\newif\ifEtoc@j   % part  
+\newif\ifEtoc@    % chapter
+\newif\ifEtoc@i   % section
+\newif\ifEtoc@ii  % subsection
+\newif\ifEtoc@iii % subsubsection
+\newif\ifEtoc@iv  % paragraph
+\newif\ifEtoc@v   % subparagraph
+\newif\ifEtoc@number
+\newif\ifEtoc@hyperref
+\newif\ifEtoc@parskip   % 1.07d
+\newif\ifEtoc@tocwithid
+\newif\ifEtoc@standard
+\newif\ifEtoc@part 
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\newif\ifEtoc@localtoc
+\newif\ifEtoc@skipthisone
+\newif\ifEtoc@stoptoc
+\newif\ifEtoc@notactive
+\newcounter{etoc@tocid}
+\newif\ifEtoc@mustclosegroup
+\def\etoc@{\etoc@} % Delimiter in \Etoc@getnb etc.. macros. This def added 1.07f
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\@ifclassloaded{memoir}{\def\Etoc@minf{-\thr@@}}{\def\Etoc@minf{-\tw@}}
+\def\Etoc@@minustwo@@{-\tw@}
+\let\Etoc@@minusone@@\m@ne
+\chardef\Etoc@@zero@@ 0
+\let\Etoc@@one@@ \@ne
+\let\Etoc@@two@@ \tw@
+\let\Etoc@@three@@ \thr@@
+\chardef\Etoc@@four@@ 4
+\chardef\Etoc@@five@@ 5
+\chardef\Etoc@@six@@ 6
+\let\Etoc@localtop\Etoc@@minustwo@@
+\def\Etoc@@minustwo@{minustwo}
+\def\Etoc@@minusone@{minusone}
+\def\Etoc@@zero@{zero}
+\def\Etoc@@one@{one}
+\def\Etoc@@two@{two}
+\def\Etoc@@three@{three}
+\def\Etoc@@four@{four}
+\def\Etoc@@five@{five}
+%\def\Etoc@@six@{six}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\def\Etoc@levellist{}
+\def\Etoc@newlevel#1{% 
+    \def\Etoc@levellist@elt{\noexpand\Etoc@levellist@elt\noexpand}%
+    \edef\Etoc@levellist{\Etoc@levellist\Etoc@levellist@elt#1}}
+\def\etocsetlevel#1#2{%
+ \expandafter\Etoc@newlevel\csname l@#1\endcsname
+ \ifcase#2\relax
+      \expandafter\let \csname Etoc@#1@@\endcsname\Etoc@@zero@@
+      \expandafter\let \csname Etoc@#1@\endcsname\Etoc@@zero@
+   \or
+      \expandafter\let \csname Etoc@#1@@\endcsname\Etoc@@one@@
+      \expandafter\let \csname Etoc@#1@\endcsname\Etoc@@one@
+   \or
+      \expandafter\let \csname Etoc@#1@@\endcsname\Etoc@@two@@
+      \expandafter\let \csname Etoc@#1@\endcsname\Etoc@@two@
+   \or
+      \expandafter\let \csname Etoc@#1@@\endcsname\Etoc@@three@@
+      \expandafter\let \csname Etoc@#1@\endcsname\Etoc@@three@
+   \or
+      \expandafter\let \csname Etoc@#1@@\endcsname\Etoc@@four@@
+      \expandafter\let \csname Etoc@#1@\endcsname\Etoc@@four@
+   \or
+      \expandafter\let \csname Etoc@#1@@\endcsname\Etoc@@five@@
+      \expandafter\let \csname Etoc@#1@\endcsname\Etoc@@five@
+   \or
+      \expandafter\let \csname Etoc@#1@@\endcsname\Etoc@@six@@
+   \else
+   \ifnum#2=\m@ne
+      \expandafter\let \csname Etoc@#1@@\endcsname\Etoc@@minusone@@
+      \expandafter\let \csname Etoc@#1@\endcsname\Etoc@@minusone@
+   \else
+   \ifnum#2=-\tw@
+      \expandafter\let \csname Etoc@#1@@\endcsname\Etoc@@minustwo@@
+      \expandafter\let \csname Etoc@#1@\endcsname\Etoc@@minustwo@
+   \else
+       \PackageWarning{etoc}
+         {unexpected value `#2' in \string\etocsetlevel.^^J%
+          Should be -2,-1, 0, 1, 2, 3, 4, 5, or 6. Set to 6 (=ignored)}%
+       \expandafter\let\csname Etoc@#1@@\endcsname\Etoc@@six@@
+\fi\fi\fi}
+\etocsetlevel{book}{-2}
+\etocsetlevel{part}{-1}
+\etocsetlevel{chapter}{0}
+\etocsetlevel{section}{1}
+\etocsetlevel{subsection}{2}
+\etocsetlevel{subsubsection}{3}
+\etocsetlevel{paragraph}{4}
+\etocsetlevel{subparagraph}{5}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\def\Etoc@setflags #1{%
+  \ifcase #1\relax
+      \global\Etoc@vfalse
+      \global\Etoc@ivfalse
+      \global\Etoc@iiifalse
+      \global\Etoc@iifalse
+      \global\Etoc@ifalse
+      \global\Etoc@true
+  \or
+      \global\Etoc@vfalse
+      \global\Etoc@ivfalse
+      \global\Etoc@iiifalse
+      \global\Etoc@iifalse
+      \global\Etoc@itrue
+  \or
+      \global\Etoc@vfalse
+      \global\Etoc@ivfalse
+      \global\Etoc@iiifalse
+      \global\Etoc@iitrue
+  \or
+      \global\Etoc@vfalse
+      \global\Etoc@ivfalse
+      \global\Etoc@iiitrue
+  \or
+      \global\Etoc@vfalse
+      \global\Etoc@ivtrue
+  \or
+      \global\Etoc@vtrue
+  \else
+    \ifnum#1=\m@ne
+      \global\Etoc@vfalse
+      \global\Etoc@ivfalse
+      \global\Etoc@iiifalse
+      \global\Etoc@iifalse
+      \global\Etoc@ifalse
+      \global\Etoc@false
+      \global\Etoc@jtrue
+    \else
+      \global\Etoc@vfalse
+      \global\Etoc@ivfalse
+      \global\Etoc@iiifalse
+      \global\Etoc@iifalse
+      \global\Etoc@ifalse
+      \global\Etoc@false
+      \global\Etoc@jfalse
+      \global\Etoc@jjtrue
+    \fi
+  \fi}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\AtBeginDocument{%
+\@ifpackageloaded{parskip}{\Etoc@parskiptrue}{}%
+\@ifpackageloaded{hyperref}{\Etoc@hyperreftrue
+                            \def\Etoc@et@hop#1#2#3#4#5{#1{#3}{#4}{#5}#2}%
+                            \long\def\Etoc@gobblesixorfive#1#2#3#4#5#6{}}
+                           {\def\Etoc@et@hop#1#2#3#4{#1{#3}{#4}#2}%
+                            \long\def\Etoc@gobblesixorfive#1#2#3#4#5{}}%
+}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\def\Etoc@swa#1{%
+        \Etoc@et@hop 
+          {\Etoc@savedcontentsline{#1}}
+          {\Etoc@prefix\Etoc@contents}}
+\def\Etoc@swb#1{%
+        \Etoc@et@hop 
+          {\Etoc@savedcontentsline{#1}}
+          {\Etoc@contents}}
+\let\etocskipfirstprefix\@thirdofthree 
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\def\Etoc@etoccontentsline#1{%
+  \global\expandafter\let\expandafter\Etoc@tmp\csname Etoc@#1@@\endcsname
+  \Etoc@skipthisonefalse
+  \let\Etoc@next\Etoc@gobblesixorfive
+  \ifnum\Etoc@tmp=\Etoc@@six@@
+      \Etoc@skipthisonetrue
+  \else
+    \ifEtoc@localtoc
+      \let\Etoc@prenext\relax
+      \ifEtoc@stoptoc 
+        \Etoc@skipthisonetrue 
+      \fi
+      \ifnum\Etoc@tmp<\Etoc@localtop 
+        \def\Etoc@prenext{\global\Etoc@stoptoctrue}%
+        \Etoc@skipthisonetrue
+      \fi
+      \ifEtoc@notactive
+        \def\Etoc@prenext{\Etoc@setflags{\Etoc@tmp}}%
+        \Etoc@skipthisonetrue
+      \fi
+      \Etoc@prenext
+    \fi
+  \fi
+  \ifnum\c@tocdepth<\Etoc@tmp\relax\else
+  \ifEtoc@skipthisone\else
+  \global\let\Etoc@next\relax  
+  \ifcase\Etoc@tmp 
+      \ifEtoc@v \Etoc@end@five\fi
+      \ifEtoc@iv \Etoc@end@four\fi
+      \ifEtoc@iii \Etoc@end@three\fi
+      \ifEtoc@ii \Etoc@end@two\fi
+      \ifEtoc@i \Etoc@end@one\fi
+      \ifEtoc@ \else \def\Etoc@next{\Etoc@begin@zero}\fi
+      \def\Etoc@contents{\Etoc@contents@zero}%
+      \def\Etoc@prefix{\Etoc@prefix@zero}%
+  \or
+      \ifEtoc@v \Etoc@end@five\fi
+      \ifEtoc@iv \Etoc@end@four\fi
+      \ifEtoc@iii \Etoc@end@three\fi
+      \ifEtoc@ii \Etoc@end@two\fi
+      \ifEtoc@i \else \def\Etoc@next{\Etoc@begin@one}\fi
+      \def\Etoc@contents{\Etoc@contents@one}%
+      \def\Etoc@prefix{\Etoc@prefix@one}%
+  \or
+      \ifEtoc@v \Etoc@end@five\fi
+      \ifEtoc@iv \Etoc@end@four\fi
+      \ifEtoc@iii \Etoc@end@three\fi
+      \ifEtoc@ii \else \def\Etoc@next{\Etoc@begin@two}\fi
+      \def\Etoc@contents{\Etoc@contents@two}%
+      \def\Etoc@prefix{\Etoc@prefix@two}%
+  \or
+      \ifEtoc@v \Etoc@end@five\fi
+      \ifEtoc@iv \Etoc@end@four\fi
+      \ifEtoc@iii \else \def\Etoc@next{\Etoc@begin@three}\fi
+      \def\Etoc@contents{\Etoc@contents@three}%
+      \def\Etoc@prefix{\Etoc@prefix@three}%
+  \or 
+      \ifEtoc@v \Etoc@end@five\fi 
+      \ifEtoc@iv \else \def\Etoc@next{\Etoc@begin@four}\fi
+      \def\Etoc@contents{\Etoc@contents@four}%
+      \def\Etoc@prefix{\Etoc@prefix@four}%
+  \or 
+      \ifEtoc@v \else \def\Etoc@next{\Etoc@begin@five}\fi
+      \def\Etoc@contents{\Etoc@contents@five}%
+      \def\Etoc@prefix{\Etoc@prefix@five}%
+  \else
+    \ifnum\Etoc@tmp=\m@ne
+      \ifEtoc@v \Etoc@end@five\fi
+      \ifEtoc@iv \Etoc@end@four\fi
+      \ifEtoc@iii \Etoc@end@three\fi
+      \ifEtoc@ii \Etoc@end@two\fi
+      \ifEtoc@i \Etoc@end@one\fi
+      \ifEtoc@ \Etoc@end@zero\fi
+      \ifEtoc@j \else \def\Etoc@next{\Etoc@begin@minusone}\fi
+      \def\Etoc@contents{\Etoc@contents@minusone}%
+      \def\Etoc@prefix{\Etoc@prefix@minusone}%
+    \else
+      \ifEtoc@v \Etoc@end@five\fi
+      \ifEtoc@iv \Etoc@end@four\fi
+      \ifEtoc@iii \Etoc@end@three\fi
+      \ifEtoc@ii \Etoc@end@two\fi
+      \ifEtoc@i \Etoc@end@one\fi
+      \ifEtoc@ \Etoc@end@zero\fi
+      \ifEtoc@j \Etoc@end@minusone\fi
+      \ifEtoc@jj \else \def\Etoc@next{\Etoc@begin@minustwo}\fi
+      \def\Etoc@contents{\Etoc@contents@minustwo}%
+      \def\Etoc@prefix{\Etoc@prefix@minustwo}%
+      \fi
+  \fi
+    \ifnum\Etoc@tmp=\m@ne\Etoc@parttrue\else\Etoc@partfalse\fi
+    \Etoc@setflags{\Etoc@tmp}%
+  \fi\fi
+  \Etoc@next
+  \@firstoftwo{\Etoc@swa{#1}}{\Etoc@swb{#1}}}
+%    \end{macrocode}
+% |[2013/03/07]|:
+%
+% Up to |1.06| \etoc defined only \csa{etocname}, \csa{etocnumber} and
+% \csa{etocpage}. The |hyperref| added data is recycled in the simplest manner,
+% prefixing it with \csa{leavevmode}. The included \csa{Hy@tocdestname} is left
+% unexpanded. Due to the initial (enormously incredible and opposite to the
+% credo of separating the content from the form) \LaTeX{} flaw of mixing (Parts
+% having their own format, not to mention other classes) in the |.toc| file the
+% number and the name we have to spend some time with delimited macros to
+% dis-entangle this, and reconstruct the possible |hyperref| data. Note that if
+% the page number is not hyperlinked, \csa{etocpage} does \emph{not} add the
+% link found possibly in the name.
+%
+% Then |1.07| added \csa{etocthename}, \csa{etocthenumber}, \csa{etocthepage}
+% which are left fragile and do not have the links data, and
+% \csa{etoclink}\marg{linkname} which is robust and reconstructs an arbitrarily
+% named link. A need (for things like building up a token list to be used in a
+% |tikzpicture|) arose later to have some form of the link which could be saved
+% by a simple command like one can do |\global\let\lastname\etocthename|, and
+% avoid having to manipulate \csa{Hy@tocdestname}. So |1.07f| adds
+% \csa{etocthelinkedname}, \csa{etocthelinkednumber}, \csa{etocthelinkedpage},
+% \csa{etocthelink}: they use \csa{hyperlink} with an expanded
+% \csa{Hy@tocdestname}. 
+%
+% One could now define \csa{etocname}, etc ... to be the robust versions of
+% \csa{etocthelinkedname}, etc ..., but the original definitions are kept by
+% sentimentalism. |1.07f| also adds \csa{leavevmode} to \csa{etoclink} which
+% should have been done earlier, as it was included in \csa{etocname} etc...
+%
+% attention,  \csa{@namedef}|{A}{B}| and not \csa{@namedef}|{A} {B}| !!
+% on the other hand this gives a simple way to insert a space as the first
+% token in the paramaters. For \csa{Etoc@again} (which appears later in the
+% code), a \csa{@firstofone} construct is however the simplest of all.
+%    \begin{macrocode}
+\def\Etoc@lxyz #1#2{% 
+     \@namedef {etoclink }{\leavevmode}%        fall-back
+     \def\etocthelink         {}%               fall-back
+     \@namedef {etocname }{\leavevmode #1}% fall-back (perhaps linked)
+     \def\etocthename         {#1}%  (if link, will be removed later)
+     \def\etocthelinkedname   {#1}%  will probably get redefined 
+     \@namedef {etocpage }{\leavevmode #2}%      (perhaps linked)
+   \Etoc@getthepage #2\etoc@ % defines also \etocthelinkedpage (and \etoclink)
+   \Etoc@getnb #1\relax\relax\etoc@  % gets number *and* name, and \etoclink
+   \ifEtoc@number\else               
+      \ifEtoc@part 
+        \Etoc@getit #1\hspace\relax\etoc@   % additional job for parts
+      \fi
+   \fi}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\def\Etoc@getthepage #1{%
+  \let\Etoc@next\Etoc@getthepage@nohyp
+  \ifEtoc@hyperref\ifx #1\hyper@linkstart
+    \let\Etoc@next\Etoc@getthepage@hyp
+  \fi\fi
+  \Etoc@next #1%
+}
+\def\Etoc@getthepage@nohyp #1\etoc@ {%
+    \def\etocthepage       {#1}%
+    \def\etocthelinkedpage {#1}%
+}
+\def\Etoc@getthepage@hyp #1#2#3#4#5\etoc@ {%
+  \@namedef{etoclink } ##1{\leavevmode #1{#2}{#3}{##1}#5}%
+  \edef\etocthelink ##1{\noexpand\hyperlink {#3}{##1}}%
+  \def\etocthepage {#4}%
+  \toks@ {#4}%
+  \edef\etocthelinkedpage {\noexpand\hyperlink {#3}{\the\toks@}}%
+}
+%
+\def\Etoc@getnb #1{%
+  \let\Etoc@next\Etoc@getnb@nohyp
+  \ifEtoc@hyperref\ifx #1\hyper@linkstart
+    \let\Etoc@next\Etoc@getnb@hyp
+  \fi\fi
+  \Etoc@next #1%
+}
+%
+\def\Etoc@getit #1{%
+  \let\Etoc@next\Etoc@getit@nohyp
+  \ifEtoc@hyperref\ifx #1\hyper@linkstart
+    \let\Etoc@next\Etoc@getit@hyp
+  \fi\fi
+  \Etoc@next #1%
+}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\def\Etoc@getnb@nohyp #1#2#3\etoc@ {%
+    \def\Etoc@getname ##1\relax\relax\etoc@ {%
+      \@namedef {etocname }{\leavevmode ##1}%
+      \def\etocthename       {##1}%
+      \def\etocthelinkedname {##1}%
+     }%
+  \ifx #1\numberline
+    \@namedef {etocnumber }{\leavevmode #2}%
+    \def\etocthenumber       {#2}%
+    \def\etocthelinkednumber {#2}%
+    \Etoc@numbertrue
+    \Etoc@getname #3\etoc@
+  \else % then \etocthename and \etocthelinkedname already defined
+    \@namedef {etocnumber }{\leavevmode}%
+    \def\etocthenumber       {}%
+    \def\etocthelinkednumber {}%
+    \Etoc@numberfalse
+  \fi
+}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\def\Etoc@getnb@hyp #1#2#3#4#5#6\etoc@ {%
+         \def\Etoc@getname ##1\relax\relax\etoc@ {%
+          \@namedef {etocname }{\leavevmode #1{#2}{#3}{##1}#5}%
+          \def\etocthename {##1}%
+          \toks@           {##1}%
+          \edef\etocthelinkedname {\noexpand\hyperlink {#3}{\the\toks@}}%
+         }%
+         \def\Etoc@getnbr ##1##2##3\etoc@ {%
+          \ifx ##1\numberline
+            \@namedef {etocnumber }{\leavevmode #1{#2}{#3}{##2}#5}%
+            \def\etocthenumber {##2}%
+            \toks@             {##2}%
+            \edef\etocthelinkednumber {\noexpand\hyperlink {#3}{\the\toks@}}%
+            \Etoc@numbertrue
+            \Etoc@getname ##3\etoc@
+          \else
+            \@namedef {etocnumber }{\leavevmode}%
+            \def\etocthenumber       {}%
+            \def\etocthelinkednumber {}%
+            \Etoc@numberfalse
+            \def\etocthename {#4}%
+            \toks@           {#4}%
+            \edef\etocthelinkedname {\noexpand\hyperlink {#3}{\the\toks@}}%
+          \fi
+         }%
+  \@namedef {etoclink }##1{\leavevmode #1{#2}{#3}{##1}#5}%
+  \edef\etocthelink ##1{\noexpand\hyperlink {#3}{##1}}%
+  \Etoc@getnbr #4\relax\relax\etoc@
+}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\def\Etoc@getit@nohyp #1\hspace#2#3\etoc@ {%
+    \def\Etoc@getname ##1\hspace\relax\etoc@ {%
+       \@namedef {etocname }{\leavevmode ##1}%
+       \def\etocthename       {##1}%
+       \def\etocthelinkedname {##1}%
+    }%
+  \ifx\relax#2\else 
+        \@namedef {etocnumber }{\leavevmode #1}%
+        \def\etocthenumber       {#1}%
+        \def\etocthelinkednumber {#1}%
+        \Etoc@numbertrue
+        \Etoc@getname #3\etoc@
+  \fi
+}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\def\Etoc@getit@hyp #1#2#3#4#5#6\etoc@ {%
+    \def\Etoc@getname ##1\hspace\relax\etoc@ {%
+       \@namedef {etocname }{\leavevmode #1{#2}{#3}{##1}#5}%
+       \def\etocthename {##1}%
+       \toks@           {##1}%
+       \edef\etocthelinkedname {\noexpand\hyperlink {#3}{\the\toks@}}%
+    }%
+    \def\Etoc@getnbr ##1\hspace##2##3\etoc@ {%
+       \ifx\relax##2\else
+         \@namedef {etocnumber }{\leavevmode #1{#2}{#3}{##1}#5}%
+         \def\etocthenumber {##1}%
+         \toks@             {##1}%
+         \edef\etocthelinkednumber {\noexpand\hyperlink {#3}{\the\toks@}}%
+         \Etoc@numbertrue
+         \Etoc@getname ##3\etoc@
+       \fi
+    }%
+  \Etoc@getnbr #4\hspace\relax\etoc@
+}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\newcommand*\etocthename   {}
+\newcommand*\etocthenumber {}
+\newcommand*\etocthepage   {}
+\newcommand*\etocthelinkedname   {}
+\newcommand*\etocthelinkednumber {}
+\newcommand*\etocthelinkedpage   {}
+\newcommand*\etocthelink   {}
+\DeclareRobustCommand*{\etocname}  {}
+\DeclareRobustCommand*{\etocnumber}{}
+\DeclareRobustCommand*{\etocpage}  {}
+\DeclareRobustCommand*{\etoclink}  {}
+\DeclareRobustCommand*{\etocifnumbered}
+   {\ifEtoc@number\expandafter\@firstoftwo\else\expandafter\@secondoftwo\fi}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\def\Etoc@readtoc#1{%
+  \ifeof #1
+     \let\Etoc@nextread\@gobble
+     \global\Etoc@toctoks=\expandafter{\the\Etoc@toctoks}%
+  \else
+     \let\Etoc@nextread\Etoc@readtoc
+     \read #1 to \Etoc@buffer
+     \Etoc@toctoks=\expandafter\expandafter\expandafter
+       {\expandafter\the\expandafter\Etoc@toctoks\Etoc@buffer}%
+  \fi
+  \Etoc@nextread{#1}%
+}
+\IfFileExists{\jobname .toc}
+    {{\endlinechar=-1 
+      \makeatletter
+      \newread\Etoc@tf
+      \openin\Etoc@tf\@filef@und
+      \Etoc@readtoc\Etoc@tf
+      \closein\Etoc@tf}}
+    {\typeout{No file \jobname .toc.}}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\def\Etoc@openouttoc{% formerly \Etoc@starttoc
+%% 1.07d: parskip and \@nobreakfalse stuff moved to \Etoc@tableofcontents
+  \ifEtoc@hyperref 
+    \ifx\hyper@last\@undefined
+    \IfFileExists{\jobname .toc}
+      {\Hy@WarningNoLine 
+         {old toc file detected, not used; run LaTeX again (cheers from etoc)}%
+       \global\Etoc@toctoks={}%
+      }
+      {}%
+    \fi
+  \fi
+  \if@filesw 
+   \newwrite \tf@toc 
+   \immediate \openout \tf@toc \jobname .toc\relax 
+  \fi 
+  \gdef\Etoc@openouttoc{}% 1.07d, rather than using a boolean
+}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\def\Etoc@toctoc{%
+   \global\Etoc@vfalse
+   \global\Etoc@ivfalse
+   \global\Etoc@iiifalse
+   \global\Etoc@iifalse
+   \global\Etoc@ifalse
+   \global\Etoc@false
+   \global\Etoc@jfalse
+   \global\Etoc@jjfalse
+\ifEtoc@standard
+    \etoc@setstyle{@minustwo}{}{}{}{}%
+    \etoc@setstyle{@minusone}{}{}{}{}%
+    \etoc@setstyle{@zero}{}{}{}{}%
+    \etoc@setstyle{@one}{}{}{}{}%
+    \etoc@setstyle{@two}{}{}{}{}%
+    \etoc@setstyle{@three}{}{}{}{}%
+    \etoc@setstyle{@four}{}{}{}{}%
+    \etoc@setstyle{@five}{}{}{}{}%
+\else
+    \def\Etoc@levellist@elt##1{\let##1\Etoc@lxyz}%
+    \Etoc@levellist
+    \let\booknumberline\numberline
+    \let\partnumberline\numberline
+    \let\chapternumberline\numberline
+\fi
+\the\Etoc@toctoks
+\ifEtoc@notactive\else 
+  \ifEtoc@v   \Etoc@end@five\fi
+  \ifEtoc@iv  \Etoc@end@four\fi
+  \ifEtoc@iii \Etoc@end@three\fi
+  \ifEtoc@ii  \Etoc@end@two\fi
+  \ifEtoc@i   \Etoc@end@one\fi
+  \ifEtoc@    \Etoc@end@zero\fi
+  \ifEtoc@j   \Etoc@end@minusone\fi
+  \ifEtoc@jj  \Etoc@end@minustwo\fi
+\fi}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\def\etoc@@startlocaltoc#1#2{%
+\let\Etoc@next\relax
+    \ifEtoc@localtoc 
+    \ifEtoc@notactive
+        \ifnum #1=#2\relax
+          \ifEtoc@jj  \let\Etoc@localtop\Etoc@@minusone@@ \fi
+          \ifEtoc@j   \let\Etoc@localtop\Etoc@@zero@@  \fi
+          \ifEtoc@    \let\Etoc@localtop\Etoc@@one@@   \fi
+          \ifEtoc@i   \let\Etoc@localtop\Etoc@@two@@   \fi
+          \ifEtoc@ii  \let\Etoc@localtop\Etoc@@three@@ \fi
+          \ifEtoc@iii \let\Etoc@localtop\Etoc@@four@@  \fi
+          \ifEtoc@iv  \let\Etoc@localtop\Etoc@@five@@  \fi
+          \ifEtoc@v   \let\Etoc@localtop\Etoc@@six@@   \fi
+          \def\Etoc@next{\global\Etoc@notactivefalse
+                      \global\Etoc@vfalse
+                      \global\Etoc@ivfalse
+                      \global\Etoc@iiifalse
+                      \global\Etoc@iifalse
+                      \global\Etoc@ifalse
+                      \global\Etoc@false
+                      \global\Etoc@jfalse
+                      \global\Etoc@jjfalse}%
+        \fi
+    \fi\fi
+\Etoc@next}
+\let\etoc@startlocaltoc\@gobble
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\def\Etoc@localtableofcontents#1{%
+    \edef\Etoc@tmp{#1}%
+    \ifnum\Etoc@tmp<\@ne
+    \PackageWarning{etoc}
+       {Unknown toc id: run LaTeX to get references right}% 
+     \leavevmode --unknown etoc ref: run latex again--\par
+    \let\Etoc@next\@gobble\else\let\Etoc@next\@firstofone\fi
+    \Etoc@next
+    {\edef\etoc@startlocaltoc##1{%
+         \noexpand\etoc@@startlocaltoc{##1}{#1}}
+    \Etoc@localtoctrue
+    \let\Etoc@localtop\Etoc@@minustwo@@
+    \global\Etoc@stoptocfalse
+    \global\Etoc@notactivetrue
+    \Etoc@tableofcontents}%
+    \endgroup\ifEtoc@mustclosegroup\endgroup\fi}
+%    \end{macrocode}
+% |[2013/03/07]|: I discover a \csa{@namedef} trick to construct the
+% \csa{Etoc@again} space delimited macro:\\ 
+% |    \@namedef {Etoc@again} {...stuff...}|\\
+%  Original version was (copied from analogous stuff in |source2e|):\\
+% |    {\def\1{\Etoc@again}\expandafter\gdef\1 {...stuff...}}|\\
+% and in the end (now that I think about it) I simply use |\@firstofone|.\par
+%    \begin{macrocode}
+\def\Etoc@getrefno #1#2\etoc@ {#1}
+\def\Etoc@getref #1{\@ifundefined{r@#1}{0}{\expandafter\expandafter\expandafter
+          \Etoc@getrefno\csname r@#1\endcsname\relax\etoc@}}
+\def\Etoc@ref#1{\Etoc@localtableofcontents{\Etoc@getref{#1}}}
+\def\Etoc@label#1{\label{#1}\futurelet\Etoc@nexttoken\Etoc@t@bleofcontents}
+\@firstofone{\def\Etoc@again} {\futurelet\Etoc@nexttoken\Etoc@t@bleofcontents}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\def\Etoc@t@bleofcontents{%
+ \ifx\Etoc@nexttoken\label
+    \def\Etoc@next{\expandafter\Etoc@label\@gobble}\else
+ \ifx\Etoc@nexttoken\@sptoken
+    \let\Etoc@next\Etoc@again\else
+ \ifEtoc@tocwithid
+    \def\Etoc@next{\Etoc@localtableofcontents{\c@etoc@tocid}}%
+ \else
+    \ifx\Etoc@nexttoken\ref
+       \def\Etoc@next{\expandafter\Etoc@ref\@gobble}%
+    \else
+       \def\Etoc@next{\Etoc@localtocfalse
+                      \global\Etoc@notactivefalse
+                      \Etoc@tableofcontents
+                      \endgroup
+                      \ifEtoc@mustclosegroup\endgroup\fi}%
+    \fi
+ \fi\fi\fi\Etoc@next}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\def\table@fcontents{%
+    \refstepcounter{etoc@tocid}% 
+    \Etoc@tocwithidfalse
+    \futurelet\Etoc@nexttoken\Etoc@t@bleofcontents}
+\def\localtable@fcontents{%
+    \refstepcounter{etoc@tocid}%
+    \addtocontents{toc}
+       {\string\etoc@startlocaltoc{\arabic{etoc@tocid}}}%
+    \Etoc@tocwithidtrue
+    \futurelet\Etoc@nexttoken\Etoc@t@bleofcontents}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\newcommand*\etocaftertitlehook{}
+\newcommand*\etocaftercontentshook{}
+\renewcommand*\tableofcontents{%
+   \Etoc@openouttoc
+   \Etoc@par
+   \begingroup % closed in \Etoc@t@bleofcontents or \Etoc@localtableofcontents
+     \def\etoc@startlocaltoc##1{\etoc@@startlocaltoc{##1}{\c@etoc@tocid}}%
+     \@ifstar
+     {\def\Etoc@aftertitlehook{}\table@fcontents}
+     {\let\Etoc@aftertitlehook\etocaftertitlehook\table@fcontents}}
+\newcommand*\localtableofcontents{%
+   \Etoc@openouttoc
+   \Etoc@par
+   \begingroup % closed in \Etoc@t@bleofcontents or \Etoc@localtableofcontents
+     \@ifstar
+     {\def\Etoc@aftertitlehook{}\localtable@fcontents}
+     {\let\Etoc@aftertitlehook\etocaftertitlehook\localtable@fcontents}}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\newcommand\etocsettocstyle[2]{%
+\def\Etoc@tableofcontents
+{\ifnum\c@tocdepth>\Etoc@minf
+   \let\Etoc@@next\@firstofone\else
+   \let\Etoc@@next\@gobble
+\fi
+\Etoc@@next{#1\ifEtoc@parskip\parskip\z@skip\fi %1.07d
+              \Etoc@aftertitlehook
+              \let\Etoc@savedcontentsline\contentsline
+              \let\contentsline\Etoc@etoccontentsline
+              \Etoc@toctoc
+              \let\Etoc@@next\relax
+                \ifEtoc@tocwithid\else
+                \ifEtoc@localtoc
+                \ifEtoc@notactive
+                  \def\Etoc@@next{\Etoc@localtocfalse
+                           \global\Etoc@notactivefalse
+                           \Etoc@toctoc}%
+                \fi\fi\fi
+              \Etoc@@next
+              \etocaftercontentshook
+              #2\@nobreakfalse}}}  % 1.07d: \@nobreakfalse moved here
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\newcommand*\etocsetstyle{\Etoc@standardfalse\etoc@setstyle}
+\long\def\etoc@setstyle#1#2#3#4#5{%
+\long\expandafter\def
+     \csname Etoc@begin@\csname Etoc@#1@\endcsname\endcsname {#2}%
+\long\expandafter\def
+     \csname Etoc@prefix@\csname Etoc@#1@\endcsname\endcsname {#3}%
+\long\expandafter\def
+     \csname Etoc@contents@\csname Etoc@#1@\endcsname\endcsname {#4}%
+\long\expandafter\def
+     \csname Etoc@end@\csname Etoc@#1@\endcsname\endcsname {#5}}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\newcommand*\etocfontminustwo {\normalfont \LARGE \bfseries}
+\newcommand*\etocfontminusone {\normalfont \large \bfseries}
+\newcommand*\etocfontzero     {\normalfont \large \bfseries}
+\newcommand*\etocfontone      {\normalfont \normalsize \bfseries}
+\newcommand*\etocfonttwo      {\normalfont \normalsize}
+\newcommand*\etocfontthree    {\normalfont \footnotesize}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\newcommand*\etocsepminustwo  {4ex \@plus .5ex \@minus .5ex}
+\newcommand*\etocsepminusone  {4ex \@plus .5ex \@minus .5ex}
+\newcommand*\etocsepzero      {2.5ex \@plus .4ex \@minus .4ex}
+\newcommand*\etocsepone       {1.5ex \@plus .3ex \@minus .3ex}
+%%\newcommand*\etocseptwo{1ex \@plus .15ex \@minus .15ex} % modified in 1.07e
+\newcommand*\etocseptwo       {.5ex \@plus .1ex \@minus .1ex}
+\newcommand*\etocsepthree     {.25ex \@plus .05ex \@minus .05ex}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\newcommand*\etocbaselinespreadminustwo {1}
+\newcommand*\etocbaselinespreadminusone {1}
+\newcommand*\etocbaselinespreadzero     {1}
+\newcommand*\etocbaselinespreadone      {1}
+\newcommand*\etocbaselinespreadtwo      {1}
+\newcommand*\etocbaselinespreadthree    {.9}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\newcommand*\etocminustwoleftmargin  {1.5em plus 0.5fil}
+\newcommand*\etocminustworightmargin {1.5em plus -0.5fil}
+\newcommand*\etocminusoneleftmargin  {1em}
+\newcommand*\etocminusonerightmargin {1em}
+\newcommand*\etoctoclineleaders 
+        {\hbox{\normalfont\normalsize\hb@xt@2ex {\hss.\hss}}}
+\newcommand*\etocabbrevpagename {p.~}
+\newcommand*\etocpartname       {\partname}
+\newcommand*\etocbookname       {Book}
+%    \end{macrocode}
+% placeholder for comments
+% The macro \csa{etocdefaultlines} was initially called \csa{etoctoclines}. Now
+% \csa{etoctoclines} just does \csa{Etoc@standardfalse}.
+%    \begin{macrocode}
+\def\etocdefaultlines{\Etoc@standardfalse
+%    \end{macrocode}
+% Version |1.07e| has rewritten entirely the stuff related to penalties and
+% \csa{addvspace}, as this was not satisfactory in the earlier versions, which
+% were written at a early stage in the development of the package.
+%    \begin{macrocode}
+%% `book' in memoir class:
+\etoc@setstyle{@minustwo}
+  {\addpenalty\@M\etocskipfirstprefix}
+  {\addpenalty\@secpenalty}
+  {\begingroup 
+   \etocfontminustwo
+   \addvspace{\etocsepminustwo}%
+   \parindent \z@ 
+   \leftskip  \etocminustwoleftmargin
+   \rightskip \etocminustworightmargin
+   \parfillskip \@flushglue
+   \vbox{\etocifnumbered{\etocbookname\enspace\etocnumber:\quad}{}\etocname
+        \baselineskip\etocbaselinespreadminustwo\baselineskip
+        \par}%
+   \addpenalty\@M\addvspace{\etocsepminusone}%
+   \endgroup}
+  {}%
+%% `part':
+\etoc@setstyle{@minusone}
+  {\addpenalty\@M\etocskipfirstprefix}
+  {\addpenalty\@secpenalty}
+  {\begingroup 
+   \etocfontminusone
+   \addvspace{\etocsepminusone}%
+   \parindent \z@ 
+   \leftskip  \etocminusoneleftmargin
+   \rightskip \etocminusonerightmargin
+   \parfillskip \@flushglue
+   \vbox{\etocifnumbered{\etocpartname\enspace\etocnumber.\quad}{}\etocname
+         \baselineskip\etocbaselinespreadminusone\baselineskip
+         \par}%
+   \addpenalty\@M\addvspace{\etocsepzero}%
+   \endgroup}
+  {}%
+%% `chapter':
+\etoc@setstyle{@zero}
+  {\addpenalty\@M\etocskipfirstprefix}
+  {\addpenalty\@itempenalty}
+  {\begingroup 
+   \etocfontzero
+   \addvspace{\etocsepzero}%
+   \parindent \z@ \parfillskip \@flushglue 
+   \vbox{\etocifnumbered{\etocnumber.\enspace}{}\etocname
+         \baselineskip\etocbaselinespreadzero\baselineskip
+         \par}%
+   \endgroup}
+  {\addpenalty{-\@highpenalty}\addvspace{\etocsepminusone}}%
+%% `section':
+\etoc@setstyle{@one}
+  {\addpenalty\@M\etocskipfirstprefix}
+  {\addpenalty\@itempenalty}
+  {\begingroup
+   \etocfontone
+   \addvspace{\etocsepone}%
+   \parindent \z@ \parfillskip \z@ 
+   \setbox\z@\vbox{\parfillskip\@flushglue
+                   \etocname\par
+                   \setbox\tw@\lastbox
+                   \global\setbox\@ne\hbox{\unhbox\tw@\ }}%
+   \dimen\z@=\wd\@ne
+   \setbox\z@=\etoctoclineleaders
+   \advance\dimen\z@\wd\z@
+   \etocifnumbered
+     {\setbox\tw@\hbox{\etocnumber, \etocabbrevpagename\etocpage}}
+     {\setbox\tw@\hbox{\etocabbrevpagename\etocpage}}%
+   \advance\dimen\z@\wd\tw@
+   \ifdim\dimen\z@ < \linewidth
+       \vbox{\etocname~%
+             \leaders\box\z@\hfil\box\tw@
+             \baselineskip\etocbaselinespreadone\baselineskip
+             \par}
+   \else
+       \vbox{\etocname~%
+             \leaders\copy\z@\hfil\break 
+             \hbox{}\leaders\box\z@\hfil\box\tw@
+             \baselineskip\etocbaselinespreadone\baselineskip
+             \par}
+   \fi
+   \endgroup}
+  {\addpenalty\@secpenalty\addvspace{\etocsepzero}}%
+%% `subsection':
+\etoc@setstyle{@two}
+  {\addpenalty\@medpenalty\etocskipfirstprefix} 
+  {\addpenalty\@itempenalty}
+  {\begingroup
+   \etocfonttwo
+   \addvspace{\etocseptwo}%
+   \parindent \z@ \parfillskip \z@
+   \setbox\z@\vbox{\parfillskip\@flushglue
+                   \etocname\par\setbox\tw@\lastbox
+                   \global\setbox\@ne\hbox{\unhbox\tw@}}%
+   \dimen\z@=\wd\@ne
+   \setbox\z@=\etoctoclineleaders
+   \advance\dimen\z@\wd\z@
+   \etocifnumbered
+     {\setbox\tw@\hbox{\etocnumber, \etocabbrevpagename\etocpage}}
+     {\setbox\tw@\hbox{\etocabbrevpagename\etocpage}}%
+   \advance\dimen\z@\wd\tw@
+   \ifdim\dimen\z@ < \linewidth
+       \vbox{\etocname~%
+             \leaders\box\z@\hfil\box\tw@
+             \baselineskip\etocbaselinespreadtwo\baselineskip
+             \par}
+   \else
+       \vbox{\etocname~%
+             \leaders\copy\z@\hfil\break 
+             \hbox{}\leaders\box\z@\hfil\box\tw@
+             \baselineskip\etocbaselinespreadtwo\baselineskip
+             \par}
+   \fi
+   \endgroup}
+  {\addpenalty\@secpenalty\addvspace{\etocsepone}}%
+%% `subsubsection':
+\etoc@setstyle{@three}
+  {\addpenalty\@M
+   \etocfontthree
+   \vspace{\etocsepthree}%
+   \noindent
+   \etocskipfirstprefix}
+  {\allowbreak\,--\,}
+  {\etocname}
+  {.\hfil
+    \begingroup
+     \baselineskip\etocbaselinespreadthree\baselineskip
+     \par
+    \endgroup
+   \addpenalty{-\@highpenalty}}%
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\etoc@setstyle{@four}{}{}{}{}%
+\etoc@setstyle{@five}{}{}{}{}%
+}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\newcommand*\etocabovetocskip{3.5ex \@plus 1ex \@minus .2ex} 
+\newcommand*\etocbelowtocskip{3.5ex \@plus 1ex \@minus .2ex}
+\newcommand*\etoccolumnsep{2em}
+\newcommand*\etocmulticolsep{0ex}
+\newcommand*\etocmulticolpretolerance{-1}
+\newcommand*\etocmulticoltolerance{200}
+\newcommand*\etocdefaultnbcol{2}
+\newcommand*\etocinnertopsep{2ex}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\newcommand\etocmulticolstyle[2][\etocdefaultnbcol]{%
+\etocsettocstyle
+   {\let\etocoldpar\par
+    \addvspace{\etocabovetocskip}%
+    \ifnum #1>\@ne\let\Etoc@next\@firstoftwo
+         \else \let\Etoc@next\@secondoftwo\fi
+    \Etoc@next{%
+    \multicolpretolerance\etocmulticolpretolerance
+    \multicoltolerance\etocmulticoltolerance
+    \setlength{\columnsep}{\etoccolumnsep}%
+    \setlength{\multicolsep}{\etocmulticolsep}%
+    \begin{multicols}{#1}[#2\etocoldpar\addvspace{\etocinnertopsep}]}
+% 2013/01/29: erroneous \etocsepminusone at last replaced by \etocinnertopsep
+% and definition of \etocoldpar added as multicols chokes on \par as part of #2
+    {#2\par\addvspace{\etocinnertopsep}%
+       \pretolerance\etocmulticolpretolerance
+       \tolerance\etocmulticoltolerance}}
+   {\ifnum #1>\@ne\let\Etoc@next\@firstofone
+         \else \let\Etoc@next\@gobble\fi
+    \Etoc@next{\end{multicols}}%
+    \addvspace{\etocbelowtocskip}}}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\newcommand*\etocinnerbottomsep{3.5ex}
+\newcommand*\etocinnerleftsep{2em}
+\newcommand*\etocinnerrightsep{2em}
+\newcommand*\etoctoprule{\hrule}
+\newcommand*\etocleftrule{\vrule}
+\newcommand*\etocrightrule{\vrule}
+\newcommand*\etocbottomrule{\hrule}
+\newcommand*\etoctoprulecolorcmd{\relax}
+\newcommand*\etocbottomrulecolorcmd{\relax}
+\newcommand*\etocleftrulecolorcmd{\relax}
+\newcommand*\etocrightrulecolorcmd{\relax}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\def\etoc@ruledheading #1{%
+   \hb@xt@\linewidth{\color@begingroup
+          \hss #1\hss\hskip-\linewidth
+          \etoctoprulecolorcmd\leaders\etoctoprule\hss
+          \phantom{#1}%
+          \leaders\etoctoprule\hss\color@endgroup}%
+          \nointerlineskip\vskip\etocinnertopsep}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\newcommand*\etocruledstyle[2][\etocdefaultnbcol]{%
+\etocsettocstyle
+   {\addvspace{\etocabovetocskip}%
+    \ifnum #1>\@ne\let\Etoc@next\@firstoftwo
+         \else \let\Etoc@next\@secondoftwo\fi
+    \Etoc@next
+       {\multicolpretolerance\etocmulticolpretolerance
+        \multicoltolerance\etocmulticoltolerance
+        \setlength{\columnsep}{\etoccolumnsep}%
+        \setlength{\multicolsep}{\etocmulticolsep}%
+        \begin{multicols}{#1}[\etoc@ruledheading{#2}]}
+       {\etoc@ruledheading{#2}\nobreak
+         \pretolerance\etocmulticolpretolerance
+         \tolerance\etocmulticoltolerance}} 
+   {\ifnum #1>\@ne\let\Etoc@next\@firstofone
+         \else \let\Etoc@next\@gobble\fi
+    \Etoc@next{\end{multicols}}%
+    \addvspace{\etocbelowtocskip}}}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\newcommand\etocframedmphook{\relax}
+\newcommand*\etocbkgcolorcmd{\relax}
+\def\Etoc@relax{\relax}
+\newbox\etoc@framed@titlebox
+\newbox\etoc@framed@contentsbox
+\newcommand*\etocframedstyle[2][\etocdefaultnbcol]{%
+\etocsettocstyle{%
+    \addvspace{\etocabovetocskip}%
+    \sbox\z@{#2}%
+    \dimen\z@\dp\z@
+        \ifdim\wd\z@<\linewidth \dp\z@\z@ \else \dimen\z@\z@ \fi
+    \setbox\etoc@framed@titlebox=\hb@xt@\linewidth{\color@begingroup
+        \hss 
+        \ifx\etocbkgcolorcmd\Etoc@relax\else 
+            \sbox\tw@{\color{white}%
+            \vrule\@width\wd\z@\@height\ht\z@\@depth\dimen\z@}%
+            \ifdim\wd\z@<\linewidth \dp\tw@\z@\fi
+            \box\tw@
+            \hskip-\wd\z@
+        \fi
+        \copy\z@
+        \hss
+        \hskip-\linewidth
+        \etoctoprulecolorcmd\leaders\etoctoprule\hss%
+        \hskip\wd\z@
+        \etoctoprulecolorcmd\leaders\etoctoprule\hss\color@endgroup}%
+    \setbox\z@\hbox{\etocleftrule\etocrightrule}%
+    \dimen\tw@\linewidth\advance\dimen\tw@-\wd\z@
+        \advance\dimen\tw@-\etocinnerleftsep
+        \advance\dimen\tw@-\etocinnerrightsep
+    \setbox\etoc@framed@contentsbox=\vbox\bgroup
+        \hsize\dimen\tw@
+        \kern\dimen\z@
+        \vskip\etocinnertopsep
+        \hbox\bgroup
+        \begin{minipage}{\hsize}%
+        \etocframedmphook
+    \ifnum #1>\@ne\let\Etoc@next\@firstoftwo
+    \else \let\Etoc@next\@secondoftwo\fi
+        \Etoc@next
+        {\multicolpretolerance\etocmulticolpretolerance
+        \multicoltolerance\etocmulticoltolerance
+        \setlength{\columnsep}{\etoccolumnsep}%
+        \setlength{\multicolsep}{\etocmulticolsep}%
+        \begin{multicols}{#1}}  
+        {\pretolerance\etocmulticolpretolerance
+         \tolerance\etocmulticoltolerance}}
+     {\ifnum #1>\@ne\let\Etoc@next\@firstofone
+         \else \let\Etoc@next\@gobble\fi
+    \Etoc@next{\end{multicols}\unskip}%
+    \end{minipage}%
+    \egroup
+    \vskip\etocinnerbottomsep
+    \egroup
+    \vbox{\hsize\linewidth
+        \ifx\etocbkgcolorcmd\Etoc@relax\else
+            \kern\ht\etoc@framed@titlebox
+            \kern\dp\etoc@framed@titlebox
+            \hb@xt@\linewidth{\color@begingroup
+            \etocleftrulecolorcmd\etocleftrule
+            \etocbkgcolorcmd
+            \leaders\vrule 
+                   \@height\ht\etoc@framed@contentsbox 
+                   \@depth\dp\etoc@framed@contentsbox 
+            \hss
+            \etocrightrulecolorcmd\etocrightrule
+            \color@endgroup}\nointerlineskip
+            \vskip-\dp\etoc@framed@contentsbox
+            \vskip-\ht\etoc@framed@contentsbox
+            \vskip-\dp\etoc@framed@titlebox
+            \vskip-\ht\etoc@framed@titlebox
+        \fi
+    \box\etoc@framed@titlebox\nointerlineskip
+    \hb@xt@\linewidth{\color@begingroup
+    {\etocleftrulecolorcmd\etocleftrule}%
+    \hss\box\etoc@framed@contentsbox\hss
+    \etocrightrulecolorcmd\etocrightrule\color@endgroup}
+    \nointerlineskip
+    \vskip\ht\etoc@framed@contentsbox
+    \vskip\dp\etoc@framed@contentsbox
+    \hb@xt@\linewidth{\color@begingroup\etocbottomrulecolorcmd
+          \leaders\etocbottomrule\hss\color@endgroup}}
+    \addvspace{\etocbelowtocskip}}}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\newcommand\etoc@multicoltoc[2][\etocdefaultnbcol]{%
+    \etocmulticolstyle[#1]{#2}%
+    \tableofcontents}
+\newcommand\etoc@multicoltoci[2][\etocdefaultnbcol]{%
+    \etocmulticolstyle[#1]{#2}%
+    \tableofcontents*}
+\newcommand\etoc@local@multicoltoc[2][\etocdefaultnbcol]{%
+    \etocmulticolstyle[#1]{#2}%
+    \localtableofcontents}
+\newcommand\etoc@local@multicoltoci[2][\etocdefaultnbcol]{%
+    \etocmulticolstyle[#1]{#2}%
+    \localtableofcontents*}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\newcommand*\etoc@ruledtoc[2][\etocdefaultnbcol]{%
+    \etocruledstyle[#1]{#2}%
+    \tableofcontents}
+\newcommand*\etoc@ruledtoci[2][\etocdefaultnbcol]{%
+    \etocruledstyle[#1]{#2}%
+    \tableofcontents*}
+\newcommand*\etoc@local@ruledtoc[2][\etocdefaultnbcol]{%
+    \etocruledstyle[#1]{#2}%
+    \localtableofcontents}
+\newcommand*\etoc@local@ruledtoci[2][\etocdefaultnbcol]{%
+    \etocruledstyle[#1]{#2}%
+    \localtableofcontents*}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\newcommand*\etoc@framedtoc[2][\etocdefaultnbcol]{%
+    \etocframedstyle[#1]{#2}%
+    \tableofcontents}
+\newcommand*\etoc@framedtoci[2][\etocdefaultnbcol]{%
+    \etocframedstyle[#1]{#2}%
+    \tableofcontents*}
+\newcommand*\etoc@local@framedtoc[2][\etocdefaultnbcol]{%
+    \etocframedstyle[#1]{#2}%
+    \localtableofcontents}
+\newcommand*\etoc@local@framedtoci[2][\etocdefaultnbcol]{%
+    \etocframedstyle[#1]{#2}%
+    \localtableofcontents*}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\def\etocmulticol{\begingroup
+    \Etoc@mustclosegrouptrue
+    \@ifstar
+    {\etoc@multicoltoci}
+    {\etoc@multicoltoc}}
+\def\etocruled{\begingroup
+    \Etoc@mustclosegrouptrue
+    \@ifstar
+    {\etoc@ruledtoci}
+    {\etoc@ruledtoc}}
+\def\etocframed{\begingroup
+    \Etoc@mustclosegrouptrue
+    \@ifstar
+    {\etoc@framedtoci}
+    {\etoc@framedtoc}}
+\def\etoclocalmulticol{\begingroup
+    \Etoc@mustclosegrouptrue
+    \@ifstar
+    {\etoc@local@multicoltoci}
+    {\etoc@local@multicoltoc}}
+\def\etoclocalruled{\begingroup
+    \Etoc@mustclosegrouptrue
+    \@ifstar
+    {\etoc@local@ruledtoci}
+    {\etoc@local@ruledtoc}}
+\def\etoclocalframed{\begingroup
+    \Etoc@mustclosegrouptrue
+    \@ifstar
+    {\etoc@local@framedtoci}
+    {\etoc@local@framedtoc}}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\def\etocarticlestyle{%
+    \etocsettocstyle
+    {\section *{\contentsname 
+                \@mkboth {\MakeUppercase \contentsname}
+                         {\MakeUppercase \contentsname}}}
+    {}}
+\def\etocarticlestylenomarks{%
+    \etocsettocstyle
+    {\section *{\contentsname}}
+    {}}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\def\etocbookstyle{%
+    \etocsettocstyle
+    {\if@twocolumn \@restonecoltrue \onecolumn \else \@restonecolfalse \fi 
+     \chapter *{\contentsname 
+                \@mkboth {\MakeUppercase \contentsname}
+                         {\MakeUppercase \contentsname}}}
+    {\if@restonecol \twocolumn \fi}}
+\def\etocbookstylenomarks{%
+    \etocsettocstyle
+    {\if@twocolumn \@restonecoltrue \onecolumn \else \@restonecolfalse \fi 
+     \chapter *{\contentsname}}
+    {\if@restonecol \twocolumn \fi}}
+\let\etocreportstyle\etocbookstyle
+\let\etocreportstylenomarks\etocbookstylenomarks
+\def\etocmemoirtoctotocfmt #1#2{%
+    \def\Etoc@addsuitablecontentsline{\addcontentsline {toc}{#1}{#2}}%
+    \renewcommand*\etocaftertitlehook{%
+      \ifmem@em@starred@listof
+      \else\phantomsection\aftergroup\Etoc@addsuitablecontentsline\fi}}
+\def\etocmemoirstyle{%
+    \etocsettocstyle
+        {\ensureonecol \par \begingroup \@nameuse {@tocmaketitle}
+         \Etoc@aftertitlehook\let\Etoc@aftertitlehook\relax
+         \parskip \cftparskip \@nameuse {cfttocbeforelisthook}}
+        {\@nameuse {cfttocafterlisthook}\endgroup\restorefromonecol}}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\def\etocscrartclstyle{%
+    \etocsettocstyle
+        {\let\if@dynlist\if@tocleft
+         \iftocfeature {toc}{onecolumn}
+             {\iftocfeature {toc}{leveldown}
+              {}
+              {\if@twocolumn \aftergroup \twocolumn \onecolumn \fi }}
+             {}%
+         \tocbasic@listhead {\listoftocname}%
+         \begingroup \expandafter \expandafter \expandafter 
+         \endgroup \expandafter 
+         \ifx 
+             \csname microtypesetup\endcsname \relax 
+         \else 
+             \iftocfeature {toc}{noprotrusion}{}
+                 {\microtypesetup {protrusion=false}%
+                  \PackageInfo {tocbasic}%
+                  {character protrusion at toc deactivated}}%
+         \fi
+         \setlength {\parskip }{\z@ }%
+         \setlength {\parindent }{\z@ }%
+         \setlength {\parfillskip }{\z@ \@plus 1fil}% 
+         \csname tocbasic@@before@hook\endcsname
+         \csname tb@toc@before@hook\endcsname}
+        {\csname tb@toc@after@hook\endcsname 
+         \csname tocbasic@@after@hook\endcsname}}
+\let\etocscrbookstyle\etocscrartclstyle
+\let\etocscrreprtstyle\etocscrartclstyle
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\newcommand*\etocstandarddisplaystyle{\etocarticlestyle}
+\newcommand*\etocmarkboth[1]{%
+    \@mkboth{\MakeUppercase{#1}}{\MakeUppercase{#1}}}
+\newcommand*\etocmarkbothnouc[1]{\@mkboth{#1}{#1}}
+\newcommand\etoctocstyle[3][section]{\etocmulticolstyle[#2]%
+    {\csname #1\endcsname *{#3}}}
+\newcommand\etoctocstylewithmarks[4][section]{\etocmulticolstyle[#2]%
+    {\csname #1\endcsname *{#3\etocmarkboth{#4}}}}
+\newcommand\etoctocstylewithmarksnouc[4][section]{\etocmulticolstyle[#2]%
+    {\csname #1\endcsname *{#3\etocmarkbothnouc{#4}}}}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\def\Etoc@redefetocstyle#1{%
+    \renewcommand\etoctocstylewithmarks[4][#1]
+    {\etocmulticolstyle[##2]%
+          {\csname ##1\endcsname *{##3\etocmarkboth{##4}}}}
+    \renewcommand\etoctocstylewithmarksnouc[4][#1]
+    {\etocmulticolstyle[##2]%
+          {\csname ##1\endcsname *{##3\etocmarkbothnouc{##4}}}}
+    \renewcommand\etoctocstyle[3][#1]{%
+     \etocmulticolstyle[##2]{\csname ##1\endcsname *{##3}}}}
+\@ifclassloaded{scrartcl}
+    {\renewcommand*\etocstandarddisplaystyle{\etocscrartclstyle}}{}
+\@ifclassloaded{book}
+    {\renewcommand*\etocfontone{\normalfont\normalsize}
+     \renewcommand*\etocstandarddisplaystyle{\etocbookstyle}
+     \Etoc@redefetocstyle{chapter}}{}
+\@ifclassloaded{report}
+    {\renewcommand*\etocfontone{\normalfont\normalsize}
+     \renewcommand*\etocstandarddisplaystyle{\etocreportstyle}
+     \Etoc@redefetocstyle{chapter}}{}
+\@ifclassloaded{scrbook}
+    {\renewcommand*\etocfontone{\normalfont\normalsize}
+     \renewcommand*\etocstandarddisplaystyle{\etocscrbookstyle}
+     \Etoc@redefetocstyle{chapter}}{}
+\@ifclassloaded{scrreprt}
+    {\renewcommand*\etocfontone{\normalfont\normalsize}
+     \renewcommand*\etocstandarddisplaystyle{\etocscrreprtstyle}
+     \Etoc@redefetocstyle{chapter}}{}
+\@ifclassloaded{memoir}
+    {\renewcommand*\etocfontone{\normalfont\normalsize}
+     \etocmemoirtoctotocfmt{chapter}{\contentsname}%
+     \renewcommand*\etocstandarddisplaystyle{\etocmemoirstyle}
+     \Etoc@redefetocstyle{chapter}}{}
+%    \end{macrocode}
+% placeholder for comments
+%    \begin{macrocode}
+\def\Etoc@addtocontents #1#2%
+    {\ifEtoc@hyperref
+       \addtocontents {toc}{\protect\contentsline 
+                {#1}{#2}%
+                {\thepage }{\@currentHref }}%
+     \else
+       \addtocontents {toc}{\protect\contentsline 
+          {#1}{#2}{\thepage }}%
+     \fi}
+\def\Etoc@addcontentsline@ #1#2#3%
+    {\@namedef{toclevel@#1}{#3}%
+     \addcontentsline {toc}{#1}{#2}}
+\DeclareRobustCommand*{\etoctoccontentsline}
+    {\@ifstar{\Etoc@addcontentsline@}{\Etoc@addtocontents}}
+\newcommand*\etocstandardlines{\Etoc@standardtrue}
+\newcommand*\etoctoclines{\Etoc@standardfalse} % 1.07b
+\etocdefaultlines  % for initialization
+\etocstandardlines 
+\etocstandarddisplaystyle
+\endinput
+%    \end{macrocode}
+% \MakePercentComment
+\CharacterTable
+ {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+  Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+  Digits        \0\1\2\3\4\5\6\7\8\9
+  Exclamation   \!     Double quote  \"     Hash (number) \#
+  Dollar        \$     Percent       \%     Ampersand     \&
+  Acute accent  \'     Left paren    \(     Right paren   \)
+  Asterisk      \*     Plus          \+     Comma         \,
+  Minus         \-     Point         \.     Solidus       \/
+  Colon         \:     Semicolon     \;     Less than     \<
+  Equals        \=     Greater than  \>     Question mark \?
+  Commercial at \@     Left bracket  \[     Backslash     \\
+  Right bracket \]     Circumflex    \^     Underscore    \_
+  Grave accent  \`     Left brace    \{     Vertical bar  \|
+  Right brace   \}     Tilde         \~}
+
+\CheckSum{2622}
+
+\Finale
+%%
+%% End of file `etoc.dtx'.

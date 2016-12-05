@@ -1,0 +1,389 @@
+\usepackage{calc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,snakes}
+\usepackage{pgf}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
+\usepackage{epstopdf}
+%\usepackage{gnuplot-lua-tikz}
+%\usepackage{maxiplot}
+%\usepackage{gnuplottex}
+\usepackage{pgfplots}
+\usepackage{amsmath,amssymb}
+%\usepackage{helvet}
+\usepackage[T1]{fontenc}
+%\geometry{verbose}
+\usepackage{booktabs}
+\usepackage{courier}
+\usepackage{units}
+\usepackage{url}
+\usepackage{float}
+%\usepackage[dvipsnames]{xcolor}
+\usepackage{mathpazo}
+\usepackage{amsfonts}
+\usepackage{fancyvrb}
+\usepackage{multicol}
+%\usepackage[utf8]{inputenc}
+%\usepackage[calcwidth]{titlesec}
+\usepackage{graphicx}
+\usepackage[oneline,flushleft,footnotesize]{caption2}
+\usepackage{enumerate}
+\usepackage{comment}
+\usepackage{ifthen}
+\usepackage{cancel}
+\usepackage{layout}
+\usepackage{footnote}
+\usepackage{hyperref}
+\usepackage[frame,letter,center,dvips]{crop}
+
+%%%%%%%%%%%%%%%%%%%%%Página par en blanco al final del capítulo%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\def\clearpage{\ifvmode
+\ifnum \@dbltopnum =\m@ne \ifdim \pagetotal <\topskip \hbox{} \fi
+\fi \fi
+\newpage
+\thispagestyle{empty} \write\m@ne{} \vbox{} \penalty -\@Mi }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\@endchapter{\vfil\newpage
+              \if@twoside
+               \if@openright
+                \null
+                \thispagestyle{empty}%
+                \newpage
+               \fi
+              \fi
+              \if@tempswa
+                \twocolumn
+              \fi}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\blackline}{{\setlength{\parindent}{0mm}\color{black}\rule{\linewidth}{0.3mm}}}
+\newcommand{\blueline}{{\setlength{\parindent}{0mm}\color{blue}\rule{\linewidth}{1mm}}}
+\newcommand{\greenline}{{\setlength{\parindent}{0mm}\color{green}\rule{\linewidth}{1mm}}}
+% \renewcommand\section{\@startsection {section}{1}{-10pt}%
+%                                    {3.5ex \@plus 1ex \@minus .2ex
+%                                    }%
+%                                    {2.3ex\@plus .2ex
+%                                    \vskip 0.2\p@ \blackline \vskip 1pt}%
+%                                    {\centering\sc\normalsize\color{black}}}
+
+\renewcommand\subsection{\@startsection {subsection}{1}{-5pt}%
+                                   {3.5ex \@plus 1ex \@minus .2ex
+                                   }%
+                                   {2.3ex\@plus .2ex
+                                   \vskip 0.2\p@ \vskip 1pt}%
+                                   {\centering\sc\normalsize\color{black}}}
+
+\renewcommand\subsubsection{\@startsection {subsubsection}{1}{-5pt}%
+                                   {3.5ex \@plus 1ex \@minus .2ex
+                                   }%
+                                   {2.3ex\@plus .2ex
+                                   \vskip 0.2\p@ \vskip 1pt}%
+                                   {\centering\sc\normalsize\color{black}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Nota y solución%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newcommand{\solucion}{\colorbox{black}{\color{white}{Soluciön:}}}
+\newcommand{\nota}{\colorbox{black}{\color{red!40!black}{Nota:}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&&%%
+\setlength{\parindent}{0pt}
+%%%%%%%%%%%%%tabla de contenido%%%%%%%%%%%%
+  \newif\if@toc \@tocfalse
+\renewcommand\tableofcontents{ \if@twocolumn
+\@restonecoltrue\onecolumn \else \@restonecolfalse \fi
+\begingroup                     \@toctrue
+\chapter*{\Large \contentsname}
+\endgroup
+\pagestyle{empty} \baselineskip=18pt plus .5pt minus .5pt
+{\raggedleft P\'{a}gina \par\vskip-\parskip} \@starttoc{toc}
+\newpage
+\if@restonecol\twocolumn\fi \baselineskip=\normalbaselineskip
+}\let\par \par
+\makeatother
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\captionfont}{\rmfamily}
+\renewcommand{\captionlabelfont}{\footnotesize\bfseries \sffamily}
+\makeatletter
+\renewcommand\footnoterule{  \kern-3\p@
+\hrule\@width.2\columnwidth \kern2.6\p@}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\marginparwidth}{5cm} \setlength{\marginparsep}{0.5cm}
+\setlength{\textheight}{22 cm} \setlength{\textwidth}{15cm}
+\oddsidemargin 0cm
+\evensidemargin 0cm
+%\topmargin-0.2 cm
+\headsep+22pt
+\headheight9pt
+%\hoffset -0.8cm
+%\voffset -1.8cm
+%\footskip 1cm
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%titulo de secciones%%%%%%%%%%%%%%%%%%%%%%
+\def\indexname{\'{\I}ndice}
+\def\contentsname{\Large Contenido}
+\def\listfigurename{Tabla de figuras}
+\def\bibname{\Large Bibliograf\'{\i}a}
+\def\tablename{Tabla}
+\def\proofname{Demostraci\'on}
+\def\appendixname{Ap\'endice}
+\def\chaptername{ Cap\'{\i}tulo}
+\def\figurename{Figura}
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\listtablename}{\'{\I}ndice de Tablas}
+\newdimen\myboxnot
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%definicion de capitulos%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\nomproprebib}[2]{#1 \textsc{#2}}
+\newcommand{\entreebiblivre}[4]{#1, \emph{#2}, #3, #4.}
+\newcommand{\entreebibarticle}[7]{#1, \og #2\fg{}, \emph{#3} \textbf{#4} (#5), p.~#6-#7.}
+\newcommand{\ifempty}[3]{\ifx#1\empty#2\else#3\fi}
+\newcommand{\thechapterimage}{}
+\newcommand{\chapterimage}[1]{\renewcommand*{\thechapterimage}{#1}}
+\newcommand{\chapterheadfont}{\fontfamily{phv}\fontsize{24pt}{30pt}\selectfont}
+\newcommand{\newchaptercmd}[1]{%
+\begin{tikzpicture}[overlay,remember picture]
+\begin{scope}
+\clip (current page.north west) rectangle ($ (current page.north east) + (0cm,-12cm)$);
+\fill[blue!20] (current page.north west) rectangle
+($ (current page.north east) + (0cm,-12cm)$);
+\node[below=-0.35cm] at (current page.north)
+{\ifempty{\thechapterimage}{}{\includegraphics[width=\paperwidth]{\thechapterimage}}};
+\end{scope}
+\node[right=2cm,rectangle,draw,color=white,fill=white,opacity=0.7,inner ysep=10pt,
+inner xsep=15pt,rounded corners=0.75cm] at ($ (current page.north west) + (0cm,-7cm)$)
+{\chapterheadfont\vphantom{pb}\phantom{#1}\hspace{\paperwidth}\null};
+\node[right=2cm,inner ysep=10pt,inner xsep=15pt] at ($ (current page.north west) + (0cm,-7cm)$)
+{\chapterheadfont\vphantom{pb}\color{red!60!black}\chapterlabel#1};
+\end{tikzpicture}
+}
+\titleformat{\chapter}
+{\gdef\chapterlabel{}}
+{\gdef\chapterlabel{\thechapter.\ }}
+{0pt}
+{\newchaptercmd}
+{}
+\titlespacing*{\chapter}{0pt}{0pt}{8cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5 definicion seccion %%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\newsectioncmd}[1]{ %\vskip 5pt
+				\tikzstyle{mybox} = [ draw=blue, fill=red!10, very thick,
+    rectangle,opacity=0.7,inner ysep=10pt,inner xsep=15pt,rounded corners=20pt]
+				 \tikzstyle{fancytitle} =[fill=blue, text=white]
+                        \begin{tikzpicture}
+		             \node [mybox] (box){ \begin{minipage}[c][20pt]{0.7\paperwidth} 
+                      \chapterheadfont\vphantom{pb}\phantom{#1}\hspace{0.7\paperwidth}\null
+                                \end{minipage}};
+                             \node[right=-5cm,inner ysep=10pt,inner xsep=15pt] at (0,0) 
+{\chapterheadfont\vphantom{pb}\color{red!60!black}\thesection \, #1};
+                        \end{tikzpicture}
+
+      
+\vskip -15pt
+}
+\titleformat{\section}
+{\gdef\sectionlabel{}}
+{\gdef\sectionlabel{\thesection.\ }}
+{0pt}
+{\newsectioncmd}
+{}
+\titlespacing*{\section}{0pt}{0pt}{20pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Ejemplo%%%%%%%%%%%%%%%%%%%%
+\newcounter{ejemplo}
+\stepcounter{ejemplo}
+\newenvironment{ejemplo}[1]{\vskip 5pt
+\begin{tikzpicture}
+\tikzstyle{mybox} = [draw=red, fill=blue!20, very thick,
+    rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
+\tikzstyle{fancytitle} =[fill=red, text=black]
+\node [mybox] (box){%
+     \begin{minipage}[r]{\textwidth} 
+                                     {#1}
+                                 \end{minipage}};
+ \node[fancytitle, right=10pt] at (box.north west) {Ejemplo. \thechapter.\theejemplo};
+ \node[fancytitle, rounded corners] at (box.east) {$\blacktriangle$};                    
+      \end{tikzpicture} 
+                        \hspace*{10pt}         }{
+ 
+                \vskip 5pt
+ }%\greenline \vskip 0.1pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% postulado %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{postulado}
+\stepcounter{postulado}
+\newenvironment{postulado}[1]{\vskip 5pt
+  \begin{tikzpicture}
+\tikzstyle{mybox} = [draw=blue, fill=red!10, very thick,
+    rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
+\tikzstyle{fancytitle} =[fill=blue, text=white]
+\node [mybox] (box){ %
+     \begin{minipage}[r]{\textwidth} 
+                                    {#1}
+                                 \end{minipage}};
+ \node[fancytitle, right=10pt] at (box.north west) {Postulado. \thechapter.\thepostulado};
+ \node[fancytitle, rounded corners] at (box.east) {$\clubsuit$};                    
+     \end{tikzpicture} 
+              \hspace*{10pt}                }{
+ 
+                \vskip 5pt 
+ }%\greenline \vskip 0.1pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Conjetura %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{conjetura}
+\stepcounter{conjetura}
+\newenvironment{conjetura}[1]{\vskip 5pt
+  \begin{tikzpicture}
+\tikzstyle{mybox} = [draw=blue, fill=green!20, very thick,
+    rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
+\tikzstyle{fancytitle} =[fill=blue, text=white, ellipse]
+\node [mybox] (box){ %
+     \begin{minipage}[r]{\textwidth} 
+                                    {#1}
+                                 \end{minipage}};
+ \node[fancytitle, right=10pt] at (box.north west) {Conjetura. \thechapter.\theconjetura};
+ \node[fancytitle, rounded corners] at (box.east) {$\clubsuit$};                    
+     \end{tikzpicture} 
+              \hspace*{10pt}                }{
+ 
+                \vskip 5pt 
+ }%\greenline \vskip 0.1pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Definicion %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{definicion}
+\newenvironment{definicion}[2]{\vskip 5pt
+  \begin{tikzpicture}
+\tikzstyle{mybox} = [draw=blue, fill=yellow!20, very thick,
+    rectangle, rounded corners, inner sep=20pt, inner ysep=20pt]
+\tikzstyle{fancytitle} =[fill=red!60, text=white, ellipse]
+\stepcounter{definicion}
+\hspace*{-15pt}
+\node [mybox] (box){ %
+     \begin{minipage}[r]{0.95\textwidth} 
+                                    {#1}
+                                 \end{minipage}};
+ \node[fancytitle, right=10pt] at (box.north west) {Definici\'on. \thechapter.\thedefinicion. \ \bf{#2}};
+ \node[fancytitle, rounded corners] at (box.east) {$\bigstar$};                    
+     \end{tikzpicture} 
+              \hspace*{10pt}                }{
+ 
+                \vskip 5pt 
+ }%\greenline \vskip 0.1pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Teorema %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{teorema}
+\newenvironment{teorema}[2]{\vskip 5pt
+  \begin{tikzpicture}
+\tikzstyle{mybox} = [draw=blue, fill=red!10, very thick,
+    rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
+\tikzstyle{fancytitle} =[fill=blue, text=white, ellipse]
+\stepcounter{teorema}
+\hspace*{-15pt}
+\node [mybox] (box){ %
+     \begin{minipage}[r]{0.85\textwidth} 
+                                    {#1}
+                                 \end{minipage} };
+ \node[fancytitle, right=10pt] at (box.north west) {Teorema. \thechapter.\theteorema.  \ \bf{#2}};
+ \node[fancytitle, rounded corners] at (box.east) {$\clubsuit$};                    
+     \end{tikzpicture} 
+              \hspace*{10pt}                }{
+ 
+                \vskip 5pt 
+ }%\greenline \vskip 0.1pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% construccion%%%%%%%%%%%%%%%%%%%%
+\newcounter{construccion}
+\stepcounter{construccion}
+\newenvironment{construccion}[1]{\vskip 5pt
+\begin{tikzpicture}
+\tikzstyle{mybox} = [draw=red, fill=blue!20, very thick,
+    rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
+\tikzstyle{fancytitle} =[fill=red, text=black]
+\node [mybox] (box){%
+     \begin{minipage}[r]{\textwidth} 
+                                     {#1}
+                                 \end{minipage}};
+ \node[fancytitle, right=10pt] at (box.north west) {Construcci\'on'. \thechapter.\theconstruccion};
+ \node[fancytitle, rounded corners] at (box.east) {$\clubsuit$};                    
+      \end{tikzpicture} 
+                        \hspace*{10pt}         }{
+ 
+                \vskip 5pt
+ }%\greenline \vskip 0.1pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% NoDefinicion %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcounter{tndefinido}
+\newenvironment{tndefinido}[2]{\vskip 5pt
+  \begin{tikzpicture}
+\tikzstyle{mybox} = [draw=blue, fill=yellow!20, very thick,
+    rectangle, rounded corners, inner sep=20pt, inner ysep=20pt]
+\tikzstyle{fancytitle} =[fill=blue, text=white, ellipse]
+\stepcounter{tndefinido}
+ \hspace*{-15pt}
+\node [mybox] (box){ %
+     \begin{minipage}[r]{0.9\textwidth}
+                                    #1
+                                 \end{minipage}};
+ \node[fancytitle, right=10pt] at (box.north west) {T\'ermino no definido. \thechapter. \thetndefinido. \ \bf{#2}};
+ \node[fancytitle, rounded corners] at (box.east) {$\clubsuit$};  
+     \end{tikzpicture} 
+                             }
+                             {\vskip 5pt }%\greenline \vskip 0.1pt}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Encabezado %%%%%%%%%%%%%%%%%%%
+\newpagestyle{estilonew}[\small\sffamily]{\headrule
+\sethead[\thesection. \ \sectiontitle][][A.Olivo]{Geometr\'{\i}a con regla y comp\'as}{}{}
+\footrule\setfoot{}{\usepage}{}}
+\pagestyle{estilonew}
+\renewcommand{\makeheadrule}{%
+\makebox[0pt][l]{\rule[.9\baselineskip]{\linewidth}{0.8pt}}%
+\rule[-.4\baselineskip]{\linewidth}{0.8pt}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fontfamily{pbk}
+\selectfont
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{figura}[3]{\begin{figure}[H]
+\centering
+                               #1
+                              \caption{#2}
+                              \label{#3}
+                              \end{figure}
+}{ \vskip 5pt }
+%%%%%%%%%%%%%%%%%%%%%%%%cambiando margen%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% problemas %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\problema}[1]
+{
+%\noindent
+\section{Problemas}
+\begin{multicols}{2}
+ #1
+\end{multicols}
+{\setlength{\parindent}{0mm}\color{black}\rule{\linewidth}{1mm}}
+}         
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Notas %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{notas}[2]{\vskip 5pt  \colorbox{blue!30}{\color{white}{#1:\, #2}}
+                                     
+                                     }{ \vskip 5pt
+                                        %\blackline
+                                        \vskip 0.2pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% solucion %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\solucion}
+ {\vskip 5pt
+  {
+ \colorbox{red!30}{\color{white}{Soluci\'on:}}
+ }
+}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Prueba %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                   
+                                   
+\newenvironment{prueba}[2]{\renewcommand{\arraystretch}{1.06}
+\vskip 5pt  {
+ \colorbox{red!30}{\color{white}{Prueba:}}
+ }\vskip 5pt
+$ %
+\begin{tabular}
+[t]{ll||c}\hline
+\multicolumn{2}{c||}{Afirmaciones} & Razones\\\hline\hline
+1. & $#1$ & \multicolumn{1}{|l}{Dado}\\
+#2
+\end{tabular}
+\ \ \ $ \vskip 5pt}{\hfill  \raggedright{ \rule{0.5em}{0.5em} }\vskip 5pt }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\endinput

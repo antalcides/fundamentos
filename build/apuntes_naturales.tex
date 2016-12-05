@@ -1,0 +1,322 @@
+\documentclass[12pt]{report}
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\begin{document}
+\newtheorem{theorem}{Teorema}
+\newtheorem{definition}{Definición}
+\newtheorem{remark}{Remark}
+\newtheorem{proposition}{Proposición}
+\newtheorem{lemma}{Lema}
+\newtheorem{corollary}{Corolario}
+\newtheorem{example}{Ejemplo}
+\newtheorem{observation}{Observación}
+\newcommand{\nat}{\mathbb{N} }
+\section{Números Naturales y Cardinales}
+\subsection{Introducción}
+El  Conjunto de los Números Naturales  se representa con la letra $\nat$  y  está formado por los siguientes elementos: $1, 2, 3, 4,\ldots$, es decir\\
+$\nat=\{1,2,3,\ldots\}$\\
+El primer elemento del conjunto de los números naturales es el 1.
+\subsubsection{Sucesor de un número natural}
+Si $n \in \nat$, entonces el sucesor del número n se define como $n+1$. Todo número natural tiene un sucesor.
+\subsubsection{El conjunto de los números cardinales}
+El conjunto de los números cardinales se representa por $\nat_0$ y está formado por el conjunto $\nat \bigcup \nat_0$, esto es :\\
+$$\nat_0=\{0,1,2,\ldots \}$$
+\subsubsection{Algunos conjuntos destacados de $\nat$}
+\begin{enumerate}
+\item El conjunto de los números pares.\\
+$$P=\{n / n=2k \text{ para } k \in \nat\}$$
+\item El conjunto de los números impares\\
+$$I=\{n / n=2k-1 \text{ para } k \in \nat\}$$
+\item El conjunto de los números primos\\
+un número es primo si es divisible por 1 y por si mismo. (Primer número primo el 2)
+\item El conjunto de los números compuestos\\
+Un número es compuesto si admite más de dos divisores. (El primer número compuesto es el 4)
+\end{enumerate}
+Nota: El número 1 no es ni primo ni compuesto, entonces podemos definir al conjunto $\nat= \{1\}\bigcup {Primos}\bigcup{ompuestos}$, o también $\nat={Pares} \bigcup {Impares}$
+\subsubsection{Multiplos de un número natural}
+Los múltiplos de un número natural k, se definen como 
+$$M(k)=\{k,2k,3k,\ldots\}$$
+\subsubsection{Divisores de un número natural}
+Existe una fórmula matemática que determina el número de divisores de un número natural.
+\begin{enumerate}
+\item Descomponer el número N en sus factores primos
+$$N= x^\alpha.y^\beta.z^\gamma\ldots$$
+Los exponentes $\alpha,\beta, \gamma$ se reemplazan en la fórmula\\
+Número de divisores de N= $(\alpha+1).(\beta+1).(\gamma+1)\ldots$\\
+ejemplo.pagina 4
+\end{enumerate}
+\section{Conjuntos equipotentes}
+Nuestro uso cotidiano de la noción de cantidad, o de la noción comparativa "tener la misma (mayor/menor) cantidad de cosas que''parece tener las siguientes consecuencias:
+\begin{itemize}
+\item Si a un conjunto de cosas le quito algunas de esas cosas, el conjunto resultante tiene menos cosas que el original.
+Ejemplo: Conjunto de libros, si saco algunos, me quedan menos.
+\item Si dos conjuntos son tales que, a cada ojeto de uno de ellos acocio uno y sólo un objeto del otro, y esa asociación cubre todos los elementos de ambos conjuntos, entonces ambos conjuntos tienen la misma cantidad de elementos.
+Ejemplo: libros y fichas.\\
+\end{itemize}
+Aunque estas intuiciones parezcan muy firmes, no hay ningún concepto general de cantidad, que encaje con ambas ideas. Es decir, estad dos intuiciones sobre la relación (tener la mima cantidad(mayor/menor)de cosas que) si la relación se quiere daplicar a pares de conjuntos, son contradictorias.
+Ejemplo: conjunto de los naturales $\nat=\{1,2,\ldots\}$, quitemos unos elementos, por ejemplo el 1, el 2, el 3 y el 4. Nos queda el conjunto
+$$\{5,6,\ldots\}$$ 
+Ahora según la primera intuición, el segundo conjunto tiene menos cantidad de elementos que el primero. Pero segúnm la seguna intuición ambos tiene la misma cantidad de elementos, pues como se indica a continuación, es inmediato que puedo asociar a caeda uno de los de arriba uno de los de abajo y visceversa
+1-5,2-6,3-7,4-8....n-n+1.\\
+Así pues, estas dos intuiciones sobre la cantidad son aplicadas a conjuntos cualesquiera, contradictorias. No puede entonces haber ningún concepto coherente de cantidad que encaje con ambas. Lo que sucede es que aunque nos confundamos, porque a veces coinciden, se trata en realidad de dos conceptos de cantidad diferentes. Según un primer concepto, si un conjunto está incluido estrictamente en otro, es subconjunto propio suyo, entonces tiene menos elementos. Según el segundo concepto de cantidad, si dos conjuntos se pueden correlacionar biunívocamente, entonces tienen la misma cantidad de elementos. Para este segundo concepto de cantidad introducimos la noción conjuntista de equipotencia.\\
+Como hemos visto, entonces parece natural preguntarse si dos conjuntos cualesquiera tienen o no el mismo número de elementos. Para el caso de los conjuntos finitos, basta contar los elementos de cada conjunto. Pero cuando se trata de conjuntos infinitos, la respuesta depende de lo que se entienda por conjuntos con el mismo número de elementos, o como se dirá en adelante, por conjuntos equipotentes. Antes se pensaba que todos los conjuntos infinitos eran equipotentes, pero la siguiente definición atribuida al matemático Georg Cantor (1845-1918), revolucionó por completo la teoría de conjuntos.
+\begin{definition}
+  El conjunto A es equipotente al conjunto B, lo que se denota por, $A \sim B$, si existe una función
+$$f: A \rightarrow B$$ inyectiva y sobreyectiva. La función f define entonces lo que se llama una correspondencia biunívoca entre los conjuntos A y B.
+\end{definition}
+Ejemplo: Página 134\\
+\vspace{4cm}
+En el último ejemplo resulta que el conjunto infinito $\nat$ de los número naturales es equivalente a un subconjunto propio suyo, esto es característico de los conjuntos infinitos, se tiene entonces la siguiente
+\begin{definition}
+  Un conjunto A es infinito si es equivalente a uno de sus subconjuntos propios. En caso contrario, el conjunto es finito.
+\end{definition}
+\begin{theorem}
+  La relación entre conjuntos definida por $A \sim B$ es una relación de equivalencia. En efecto
+  \begin{enumerate}
+  \item $A \sim A$ para todo conjunto A.
+  \item Si $A \sim B$, entonces $B \sim A$.
+  \item Si $A \sim B$ y $B \sim C$, entonces $A \sim C$
+  \end{enumerate}
+\end{theorem}
+\subsection{Conjuntos enumerables}
+Sobre la base ya conocida de los números naturales $\nat=\{1,2,\ldots\}$
+\begin{definition}
+  Si un conjunto D es equipotente al conjunto $\nat$ de los números naturales, se llama enumerable y se dice que tiene cardinalidad (alef cero)
+\end{definition}
+\begin{definition}
+  Si un conjunto es finito también se dice enumerable por ser equipotente a un subconjunto de $\nat$. Si un conjunto es infinitoy nos es equipotente a $\nat$, se dice no enumerable.
+\end{definition}
+Ejemplos (página 135)
+\vspace{4cm}\\
+Podemos enunciar algunos teoremas sobre conjuntos enumerables.
+\begin{theorem}
+  Todo conjunto finito contiene algún subconjunto enumerable
+\end{theorem}
+\begin{theorem}
+  Un subconjunto de un conjunto enumerable, o bien es enumerable, o bien es finito, y entonces por extensión se dice también enumerable .
+\end{theorem}
+\begin{theorem}
+  Sea $A_1, A_2, A_3, \ldots$ una familia enumerable de conjuntos enumerables disjuntos dos a dos. La Unión de los conjuntos $$\bigcup_{i\in \nat}A_i$$
+es enumerable.
+\end{theorem}
+\subsubsection{cardinalidad de un conjunto}
+\begin{definition}
+  Dado un conjunto cualquiera A, la familia $\alpha$ de los conjuntos equipotentes a A se llama número cardinal de A, o simplemente cardinal de A y se denota por  $$\alpha= |A|$$
+\end{definition}
+\begin{definition}
+  El número cardinal de cada uno de los conjuntos
+$$\emptyset, \{1\}, \{1,2\},\{1,2,3\}, \ldots$$
+se denota por $0,1,2,3,\ldots$ respectivamente, y se dice un cardinal finito.
+\end{definition}
+\begin{definition}
+  El número cardinal de $\nat$, el conjunto de los números naturales, se simboliza por alef cero.
+\end{definition}
+\subsection{El continuo}
+No todo conjunto infinito es enumerable. Es siguiente teorema presenta un ejemplo particular de extrema importancia.
+\begin{theorem}
+  El intervalo unidad $[0,1]$ no es enumerable.
+\end{theorem}
+\begin{definition}
+  Sea un conjunto $A$ equipotente al intervalo $[0,1]$. Se dice que $A$ tiene la potencia del continuo y que su cardinal es \textit{c}.
+\end{definition}
+Ejemplo(pag) 136
+\vspace{5cm}
+\section{Aritmética Cardinal}
+\begin{definition}(*)
+  Sean $\alpha$ y $\beta$ dos números cardinales y sean A y B dos conjuntos disjuntos tales que 
+$$\alpha= |A|, \beta=|B|$$
+entonces
+$$\alpha+\beta = |A \bigcup B|$$
+$$\alpha. \beta= |AxB|$$
+\end{definition}
+\begin{theorem}
+  La definición (*) es una buena definición, es decir, que la definición de $\alpha + \beta$ y de $\alpha.\beta$ no dependen de los conjuntos particulares A y B.
+  \begin{observation}
+    Las operaciones de adición y multiplicación de cardinales finitos corresponden a las operaciones ordinarias de adición y multiplicación de números naturales.
+  \end{observation}
+ejemplo(página 138)\\
+\vspace{4cm}
+\end{theorem}
+\begin{theorem}
+  Las operaciones de adición y multiplicación de cardinales es asociativa y conmutativa, y la multiplicación es distributiva respecto de la adición es decir, que para cardinales cualesquiera $\alpha, \beta$ y $\gamma$:
+  \begin{enumerate}
+  \item $(\alpha + \beta) + \gamma = \alpha + (\beta+ \gamma)$
+  \item $(\alpha \beta)\gamma= \alpha(\beta \gamma)$
+  \item $\alpha+ \beta= \beta+\alpha$
+  \item $\alpha (\beta + \gamma)= \alpha \beta+\alpha \gamma$
+  \end{enumerate}
+\end{theorem}
+No todas las propiedades de la adición y multiplicación de números naturales son sálidas para los cardinales en gneral. Por ejemplo, para los números naturales se verifica la ley de cancelación, es decir si $a+b=a+c$ implica $b=c$\\
+$ab=bc$ implica $b=c$, si tenemos:
+$$alef_0+alef_0= alef_0= 1+ alef_0$$ no implica $alef_0=1$
+$$alef_0\cdot alef_0= alef_0= 1\cdot alef_0$$ no implica que $alef_0=1$
+\begin{observation}
+  También se pueden introducir exponentes en la aritmática de los cardinales, como sigue:\\
+Sean $\alpha= |A|$ y $\beta= |B|$, y denótese por
+$$B^A$$
+la familia de todas las funciones de A en B. Entonces
+$$\beta^{\alpha}\equiv |B^A|$$
+En efecto, las leyes siguientes de los exponentes, válidad para los números naturales, también lo son para cardinales cualesquiera $\alpha, \beta, \gamma$:
+\begin{enumerate}
+\item  $\alpha^{\beta}\alpha^{\gamma}= \alpha^{\beta+\gamma}$
+ \item $(\alpha^{\beta})^{\gamma}= \alpha^{\beta\cdot\gamma}$
+\item $(\alpha \beta)^{\gamma}=\alpha^{\gamma}\beta^{\gamma}$
+\end{enumerate}
+\end{observation}
+ejemplo página 138.
+\vspace{6cm}
+\section{Desigualdades y Números Cardinales}
+Una relación de desigualdad entre cardinales, se define como sigue:
+\begin{definition}
+  Sean $\alpha= |A|$ y $\beta= |B|$. Suponiendo además que $A$ es equpotente a un subconjunto de $B$, es decir hay una función $f: A \rightarrow B$ inyectiva, entonces se escribe $$A \precsim B$$
+que se lee ``A es anterior a B'' y
+$$\alpha \leq \beta$$
+que se ñee `` $\alpha$ es menor o igual que $\beta$''.\\
+\end{definition}
+Se emplea además la siguiente notación:\\
+$A\prec B$ significa $A \precsim B$ y $A \nsim B$\\
+$\alpha < \beta$ significa $\alpha \leq \beta$ y $\alpha \neq \beta$
+ejemplos página 139\\
+\vspace{5cm}
+\begin{observation}
+  La relación entre conjuntos  definida por $A \precsim B$ es reflexiva y transitiva; y la relación entre cardinales definida por $\alpha \leq \beta$ es también reflexiva y transitiva.
+\end{observation}
+\section{Teorema de Cantor}
+Los únicos cardinales infinitos vistos hasta ahora son $alef_0$ y $c$. Parece natural preguntarse si no habrá otros;  y la respuesta es afirmativa. En efecto, el teoreme de Cantor que se expone a continuación, dice que dado cualquier cardinal $\alpha$, existe un cardinal mayor que $\alpha$
+\begin{theorem}
+  Teorema de Cantor: Para todo conjunto A,
+$$A \prec 2^A$$
+y, por consiguiente, para todo cardinal $\alpha$,
+$$\alpha < 2^{\alpha}$$
+siendo así que si $\alpha = |A|$, $2 ^{\alpha}=|2 ^A|$, número cardinal de la familia de subconjuntos de $A$
+\end{theorem}
+\section{Teorema de Schroeder-Berstein}
+Dados dos conjuntos cualesquiera $A$ y $B$, se verifica una de las siguientes relaciones por lo menos:
+\begin{enumerate}
+\item A es equipotente a B, eso es, $|A|=|B|$
+\item A no es equipotente a B, pero A es equipotente a un subconjunto de B o visceversa, esto es
+$$|A|<|B|\text{ o }|B|<|A|$$
+\item A es equipotente a un subconjunto de B y B  es equipotente a un subconjunto de A, esto es
+$$|A|\leq |B| \text{ y } |B|\leq |A|$$
+En este caso A es equipotente a B.
+\item A no es equipotente a un subconjunto de B y B no es equipotente a un subconjunto de A, esto es
+$$|A| \nless |B|, |A|\neq |B|\text{ y } |A| \ngtr |B|$$
+\end{enumerate}
+ Nótese que el caso 4 es más bien imposible.
+\section{Conjuntos Parcial y totalmetne ordenados}
+\subsection{Conjuntos parcialmente ordenados}
+Un orden parcial en un conjunto $A$ es una relación de $R$ en A con las siguientes características:
+\begin{enumerate}
+\item Reflexiva, es decir $(a,a)\in R$ para toda $a \in A$
+\item Antisimétrica, es decir $(a,b) \in R$ y $(b,a) \in R$ implican que a=b.
+\item Transitiva, es decir $(a,b)\in R$ y $(b,c)\in R$ implican $(a,c)\in R$
+
+\end{enumerate}
+Si una relación $R$ en A define un orden parcial en A, entonces $(a,b) \in R$ se denota por $a \preceq b$ que se lee a anterior a b.
+ejemplo(relacion en los naturales ``x es múltiplo de y'')
+\begin{definition}
+  Un conjunto A y una relación R de orden parcial en A constituyen un conjunto parcialmente ordenado.
+\end{definition}
+\begin{observation}
+  Nótese que un conjunto parcialmente ordenado consiste en un conjunto A y una relaión de tipo particular en A, por esta razón, un conjunto parcialmente ordenado se denota a veces como un par ordenado
+ $$(A,R)\text{ o } (A,\preceq)$$
+Sin embargo, es corriente emplear el mismo símbolo A , por ejemplo para denotar tanto el conjunto parcialmente ordenado como el propio conjunto en que se ha definido el orden parcial.
+\end{observation}
+notaciones página 151
+\vspace{4cm}
+Dos elementos a y b de un conjunto parcialmente ordenado se dicen no comparables si $$a \npreceq b \text{ y }b \npreceq a$$
+en el ejemplo de los naturales, 3 y no son comparables pues ninguno de ellos es múltiplo del otro.
+\begin{observation}
+  Si una relación R en un conjunto A es reflexiva, antisimética y transitiva, antonces, la relación recíproca $R^{-1}$ es también reflexiva, antisimétrica y transitiva. O sea que si R define un orden parcial en R, entonces $R^{-1}$ también define un orden parcial en A, que se llama orden inverso.
+\end{observation}
+\subsection{Conjuntos totalmente ordenados}
+La palabra parcial se emplea al definir un orden parcial en un conjunto porque algunos elementos de A pueden ser no comparables. Si por otra parte, cada par de elementos de un conjunto parcialmente ordenado A, son comparables, entonces el orden parcial en A se llama orden total en A.
+\begin{definition}
+  Un orden total en un conjunto A es un orden parcial en A más la propiedad 
+de que si $a \prec b$, entonces a=b o $a \succ b$ par cualesquiera dos elementos a y b de A. Un conjunto A y un orden total dado en A constituyen un conjunto totalmente ordenado.
+
+\end{definition}
+Ejemplos, página 151
+\vspace{6cm}
+\subsection{Subconjuntos de conjuntos ordenados}
+Suponiendo una relación R que define un orden parcial en un conjunto A, o sea que (A,R) es un conjunto ordenado, sea B un subconjunto de A, entonces el orden parcial R en A induce un orden parcial R' en B de la siguiente manera: si $(a,b)\in B$, entonces
+$$(a,b)\in R'$$esto es $a \preceq b$ como elementos de B, si y solamente si, $(a,b)\in R$, es decir, $a \preceq b$ como elementos de A. Se dice entonces que el conjunto ordenado $(B', R)$ es un subconjunto parcialemente ordenado del conjunto ordenado del conjunto ordenado $(A,R)$\\
+Ejemplo página 152
+\vspace{4cm}
+\subsection{Subconjuntos totalmente ordenados}
+Sea A un conjunto parcialmente ordenado. Entonces, como ya se vio, el orden parcial en A induce un orden parcial en todo subconjunto de A. Algunos de los subconjuntos de A, quedarán en realidad totalmente ordenados.\\
+Nótese que si A es un conjunto totalmente ordenado, todo subconjunto de A es totalmente ordenado.\\
+Ejemplos: página 152
+\vspace{6cm}
+\subsection{Primero y últimos elementos}
+Sea A un conjunto ordenado. El elemento $a \in A$ se dice primer elemento de A si, para todo $x \in A$ $$a \preceq x$$
+es decir, si a es anterior a TODOS los elementos de A. Análogamente un elemento $b \in A$ se dice último elemento de A si, para todo $x\in A$ $$x \preceq b$$ es decir si b es posterior a TODOS los elementos de A.\\
+ejemplos 153
+\vspace{5cm}
+
+\begin{observation}
+  Un  conjunto parcialmente ordenado puede tener a lo más un primer elemento y un último elemento.
+\end{observation}
+\begin{observation}
+  Si a y b son primero y último elementos, respectivamente, de un conjunto parcialmente ordenado A, entonces a y b serán último y primer elementos, respectivamente, en el orden inverso deA 
+\end{observation}
+\vspace{5cm}
+\subsection{Elementos Maximal y Minimal}
+Sea $A$ un conjunto ordenado. Se dice que un elemento $a\in A$ es maximal si $$a \preceq x \text{ implica } a=x$$
+Es decir, $a$ es un elemento maximal si no hay en $A$ ningún elemento posterior a $a$ en el sentido estricto. Análogamente, se dice que un elemento $b \in A$ es minimal si 
+$$x \preceq b \text{ implica } b=x$$
+esto es, ningún elemento de $A$ es estrictamente anterior a b.
+Ejemplo {pag 153)
+\vspace{5cm}
+\begin{observation}
+  Si $a$ es un primer elemento de $A$, entonces $a$ es un elemento minimal de $A$ y es único. Asimismo, un último elemento de $A$ es un elemento maximal de $A$ y es único.
+\end{observation}
+\begin{observation}
+  Si $A$ es totalmente ordenado, puede tener a lo más un elemento minimal, que será entonces primer elemento. De igual modo, puede contener a lo más un  elemento maximal, que será entonces último elemento.
+\end{observation}
+\begin{observation}
+  Todo conjunto finito parcialmente ordenado tiene por lo menos un elemento maximal y un elemento minimal. Un conjunto infinito ordenado , puede no tener  elementos maximales o minimales, aún si es totalmente ordenado.
+\end{observation}
+\subsection{Mayorantes y minorantes}
+Sea $B$ un subconjutno de un conjunto parcialmente ordenado A. un elemento $m$ de $A$ se llama minorante de $B$ si para todo $x\in B$
+$$m \preceq x$$
+es decir, si $m$ es anterior o inferior a todo elemento de $B$. Si un minorante de $B$ es posterior o superior a todos los otros minorantes de $B$, se dice que es el extremo inferior o el ínfimo de $B$ y se le denota por 
+$$\inf (B)$$
+En general, $B$ puede no tener minorantes o tener muchos, pero solo puede haber a lo más un $\inf (B)$. Análogamente, un elemento $M$ de $A$ se llama mayorante de $B$ si $M$ es posterior o superior a todos los elementos de $B$, esto es, si para todo $x \in B$ 
+$$x \preceq M$$
+Si un mayorante de $B$ es anterior o inferior a todos los mayorantes de $B$, se dice que es el extremo superior o supremo de $B$ y se le denota por 
+$$\sup (B)$$
+Solo puede haber a lo más un $\sup(B)$\\
+Ejemplo 154
+\vspace{5cm}
+\subsection{Conjuntos isomorfos}
+Se dice que dos conjuntos ordenados son isomorfos si existe entre sus elementos una correspondencia biunívoca que preserva la relación de orden. En particular,
+\begin{definition}
+  Un conjunto ordenado $A$ es isomorfo a un conjunto ordenado $B$, lo que se denota por $$A \simeq B$$
+si existe una función $f: A \rightarrow B$ inyectiva y sobreyectiva y que tiene la propiedad de que, para cualesquiera elementos $a, a' \in A$,
+$$a \prec a' \text{ si y solo si,  }f(a)\prec f(a')$$
+La función $f$ se dice aplicación isomorfa o isomorfismo de A en B.
+\end{definition}
+ejemplo 155\\
+\vspace{6cm}
+Los siguientes resultados se obtienen directamente de la definición de conjuntos isomorfos.
+\begin{theorem}
+  Si $A$ es totalmente ordenado y $B \simeq A$, $B$ es totalmente ordenado.
+\end{theorem}
+\begin{theorem}
+  Sea $f: A \rightarrow B$ un isomorfismo. Entonces $a \in A$ es primer elemento (último, ninimal o maximal) si y solo si, $f(a)$ es el primer elemento (último, minimal o maximal) de B.
+\end{theorem}
+\begin{theorem}
+  Si $A$ es isomorfo a $B$, entonces A es equipotente a B.
+\end{theorem}
+\begin{theorem}
+  La relación definida entre conkjuntos ordenados por $A \simeq B$ es una relación de equivalencia, es decir:
+  \begin{enumerate}
+  \item $A \simeq A$ para todo conjunto ordenado
+  \item Si $A \simeq B$, entonces $B \simeq A$
+  \item Si $A \simeq B $ y $B \simeq C$, entonces $A \simeq C$
+  \end{enumerate}
+\end{theorem}
+\end{document}

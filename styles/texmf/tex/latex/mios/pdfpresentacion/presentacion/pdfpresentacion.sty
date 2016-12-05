@@ -1,0 +1,254 @@
+%%
+\NeedsTeXFormat{LaTeX2e}
+\def\fileversion{v.0.9}\def\filedate{2002/07/07}
+\ProvidesPackage{pdfpresentacion}
+          [\filedate\space\fileversion\space Diapositivas para Acrobat Reader]
+\RequirePackage{xspace,colortbl}
+\RequirePackage{ifthen}
+\RequirePackage{shortvrb}
+\RequirePackage[screen,panelright,code,paneltoc,sectionbreak,gray]{pdfscreen}
+\DeclareOption{sans-serif}{%
+  \renewcommand{\rmdefault}{cmss}
+  \renewcommand{\sfdefault}{cmr}
+  \renewcommand{\ttdefault}{cmtt}}
+\DeclareOption{roman}{%
+  \renewcommand{\rmdefault}{cmr}
+  \renewcommand{\sfdefault}{cmss}
+  \renewcommand{\ttdefault}{cmtt}}
+\DeclareOption{helvetica}{%
+  \renewcommand{\rmdefault}{phv}
+  \renewcommand{\sfdefault}{phv}
+  \renewcommand{\ttdefault}{pcr}}
+\DeclareOption{palatino}{%
+  \renewcommand{\rmdefault}{ppl}
+  \renewcommand{\sfdefault}{phv}
+  \renewcommand{\ttdefault}{pcr}}
+\DeclareOption{avant}{%
+  \renewcommand{\rmdefault}{pag}
+  \renewcommand{\sfdefault}{pag}
+  \renewcommand{\ttdefault}{pcr}}
+\DeclareOption{times}{%
+  \renewcommand{\rmdefault}{ptm}
+  \renewcommand{\sfdefault}{phv}
+  \renewcommand{\ttdefault}{pcr}}
+\DeclareOption{bookman}{%
+  \renewcommand{\rmdefault}{pbk}
+  \renewcommand{\sfdefault}{phv}
+  \renewcommand{\ttdefault}{pcr}}
+\DeclareOption{newcent}{%
+  \renewcommand{\rmdefault}{pnc}
+  \renewcommand{\sfdefault}{phv}
+  \renewcommand{\ttdefault}{pcr}}
+
+\let\tiny=\scriptsize
+\let\scriptsize=\footnotesize
+\let\footnotesize=\small
+\let\small=\large
+\let\normalsize=\Large
+\let\large=\LARGE
+\let\Large=\huge
+
+\def\@makechapterhead#1{%
+  \null\kern +15\p@%
+  {\parindent \z@ \flushright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+    \if@mainmatter
+    \scalebox{5}{{\Huge\bfseries\textcolor{section0}{\thechapter}}}
+    \par\nobreak
+    \kern +15\p@
+    \else
+    \Huge \phantom{1}
+    \par\nobreak
+    \fi    
+    \vskip50\p@ plus0pt minus0pt
+    \fi
+    \interlinepenalty\@M
+    {\Huge\bfseries\textcolor{section0}{#1}}\par\nobreak
+    \vskip 40\p@
+  }
+}
+
+\panelwidth=1.3in
+\setlength{\fboxrule}{6pt}
+\def\panel{\fcolorbox{marco}{panelbackground}
+  {\begin{minipage}[t][\paperheight-12pt][b]{\panelwidth-12pt}
+      \centering\null\kern15pt
+      \ifx\@empty\eltit%
+      \else
+      \begin{minipage}{1.1in}
+        \begin{center}
+          \hrule height1pt
+          \kern5pt
+          \eltitulo\par
+          \kern5pt
+          \hrule height1pt
+        \end{center}
+      \end{minipage}\par\kern15pt
+      \fi
+      \if@paneltoc%
+      \def\numberline##1{}%
+      \@panel@toc\par\vfill\else\relax\fi%
+      \ifx\@empty\@urlid
+      \else
+      \href{\@urlid}{\addButton{.7in}{\@Panelhomepagename}}\par\kern1pt
+      \fi
+      \Acrobatmenu{FirstPage}{\addButton{.7in}
+        {\FBlack T\'{\i}tulo}}\par\kern1pt
+      \Acrobatmenu{FirstPage}{\addButton{.3in}
+        {\FBlack\scalebox{.8}[1.4]{\btl\btl}}}
+      \Acrobatmenu{LastPage}{\addButton{.3in}
+        {\LBlack\scalebox{.8}[1.4]{\rtl\rtl}}}\par\kern1pt
+      \Acrobatmenu{PrevPage}{\addButton{.3in}
+        {\FBlack\scalebox{.8}[1.4]{\btl}}}
+      \Acrobatmenu{NextPage}{\addButton{.3in}
+        {\LBlack\scalebox{.8}[1.4]{\rtl}}}\hspace{-3pt}\par\kern1pt
+      \Acrobatmenu{GoBack}{\addButton{.7in}
+        {Atr\'as}}\par\kern1pt
+      \Acrobatmenu{GoToPage}{\addButton{.7in}{P\'agina\space
+          \textcolor{red}{\thepage}\space de\space
+          \textcolor{red}{\ScreenLastPage}}}\\\pfill
+      \Acrobatmenu{FullScreen}{\addButton{.7in}{Pant.
+          Completa}}\par\kern1pt
+      \Acrobatmenu{Close}{\addButton{.7in}{Cerrar}}\par
+      \Acrobatmenu{Quit}{\addButton{.7in}{Salir}}\par\kern5pt
+      \ellogo
+      \par\kern15pt
+    \end{minipage}}}
+%% --- Redefiniciones del paneltoc para TeXiendo La 100cia ---
+
+\renewcommand\tableofcontents{\@starttoc{toc}}
+
+\def\@@secHead{section}
+\long\def\contentsline#1#2#3#4{\def\@@cHead{#1}%
+  \ifx\@@cHead\@@secHead\stepcounter{NUM}%
+  \ifnum\thepanel@section=\theNUM%
+  {\definecolor{panelbackground}{gray}{.3}%
+    \definecolor{fgcolor}{gray}{1}%
+    \hyperlink{#4}{\,\scrNormalButton{.8\panelwidth}{\truncate{.79\panelwidth}{#2}}}%
+  }\par\vskip1truept%
+  \else
+  {\definecolor{panelbackground}{gray}{.85}%%
+    \definecolor{fgcolor}{gray}{0}%
+    \hyperlink{#4}{\,\scrNormalButton{.8\panelwidth}{\truncate{.79\panelwidth}{#2}}}%
+  }\par\vskip1truept%
+  \fi\fi}
+%\def\PDF@@TOC{\tableofcontents}
+\def\PDF@@TOC{\stepcounter{@TOC}\ifnum\the@TOC>1\relax%
+  \else\tableofcontents\fi}
+\def\@panel@toc{\vbox\bgroup\rightskip0pt plus 1fill
+  \hbadness 10000%
+  \protect\makeatletter%
+  \InputIfFileExists{\jobname.toc}{\AtEndDocument{\PDF@@TOC}}{\PDF@@TOC}%
+  \protect\makeatother%
+  \egroup}
+%% --- end of paneltoc option ---
+%% Redefinición del ambiente decl
+%% Es exactamente igual que el del pdfscreen
+\if@code
+\def\verbatim@font{%
+  \normalfont \ttfamily
+  \color{section0}
+  \catcode`\<=\active
+  \catcode`\>=\active
+}
+\begingroup
+  \catcode`\<=\active
+  \catcode`\>=\active
+  \gdef<{\@ifnextchar<\@lt\@meta}
+  \gdef>{\@ifnextchar>\@gt\@gtr@err}
+  \gdef\@meta#1>{\@PDFm{#1}}
+  \gdef\@lt<{\char`\<}
+  \gdef\@gt>{\char`\>}
+\endgroup
+\def\@gtr@err{%
+   \PDFSCR@Warning{%
+      Isolated \protect>\MessageBreak%
+      In this document class, \protect<...\protect>\MessageBreak
+      is used to indicate a parameter.\MessageBreak
+      I've just found a \protect> on its own.\MessageBreak
+      Perhaps you meant to type \protect>\protect>?
+   }%
+}
+\def\verbatim@nolig@list{\do\`\do\,\do\'\do\-}
+\def\@PDFm#1{\mbox{\color{red}$\langle$\it#1\/$\rangle$}}
+\def\arg#1{{\color{section1}{\tt\string{}\@PDFm{#1}{\tt\string}}}}
+\def\@PDFM#1{\mbox{\color{red}\it#1\/}}
+\def\Arg#1{{\color{section1}{\tt\string{}\@PDFM{#1}{\tt\string}}}}
+\def\oarg#1{{\color{section1}{\tt[}\@PDFm{#1}{\tt]}}}
+\def\Oarg#1{{\color{section1}{\tt[}\@PDFM{#1}{\tt]}}}
+ \definecolor{wheat}{rgb}{.96, .87, .70}
+ \definecolor{oldlace}{rgb}{.992, .96187, .902}
+ \definecolor{snow}{rgb}{1, .98, .98}
+ \definecolor{ghostwhite}{rgb}{.973, .973, 1}
+ \definecolor{cornsilk}{rgb}{1, .973, .863}
+ \definecolor{honeydew}{rgb}{.941, 1, .941}
+ \definecolor{lavenderdark}{rgb}{.8, .8, .9529411}
+ \definecolor{lavender}{rgb}{.902, .902, .980}
+ \definecolor{lightblue}{rgb}{.8, .8, .95}
+ \definecolor{lightgray}{rgb}{.827, .827, .827}
+ \definecolor{lightsteelblue}{rgb}{.690, .769, .871}
+ \definecolor{lightturquoise}{rgb}{.686, .933, .933}
+ \definecolor{darkgreen}{rgb}{.0, .392, .0}
+ \definecolor{yellowgreen}{rgb}{.604, .804, .196}
+ \definecolor{vlightblue}{rgb}{.88, .85, .95}
+ \definecolor{khaki}{rgb}{.741, .718, .42}
+\@ifundefined{rowcolor}{}{\arrayrulecolor{section1}}
+\definecolor{tabcolor}{rgb}{.973, .973, 1}
+\@ifundefined{decl}{%
+\renewenvironment{decl}[1][]%
+    {\par\small\addvspace{1.5ex plus .5ex minus .5ex}%
+     \vskip -\parskip
+     \noindent\hspace{-\leftmarginii}%
+     \bgroup\begin{tabular}{|>{\columncolor{tabcolor}}l|}\hline\\[-6pt]
+      \ignorespaces}%
+    {\\[3pt]\hline\end{tabular}\egroup\par%
+     \vspace{1.5ex}\ignorespacesafterend\noindent}}{}
+%\RequirePackage{shortvrb}
+\MakeShortVerb{\|}
+%%
+%%
+%%
+%%
+%% \renewenvironment{decl}[1][]%
+%%     {\par\small\addvspace{1.5ex plus .5ex minus .5ex}%
+%%      \vskip -\parskip
+%%      \noindent\hspace{-\leftmarginii}%
+%%      \bgroup\begin{tabular}{|>{\columncolor{tabcolor}}l|}\hline\\[-6pt]
+%%       \ignorespaces}%
+%%     {\\[3pt]\hline\end{tabular}\egroup\par%
+%%      \vspace{1.5ex}\ignorespacesafterend\noindent}
+%%
+\newcommand{\resetcolors}{%
+\definecolor{panelbackground}{gray}{1} % Color de fondo del panel
+\definecolor{marco}{rgb}{.5,.5,.8} % Color del marco del panel
+\definecolor{diabackground}{rgb}{0.95,0.95,0.8}} % Color de fondo de las diapositivas
+%%
+\begin{screen}
+  \margins{.65in}{.65in}{.65in}{.65in} \screensize{6.25in}{8in}
+  \backgroundcolor{diabackground} \def\pfill{\vskip6pt}
+\end{screen}
+%%
+
+\DeclareOption{pcompleta}{
+\hypersetup{
+  pdfpagemode={FullScreen},
+}}
+%% Definiciones de \titulo y \logo
+\newcommand{\titulo}[1]{\def\eltit{#1}} 
+\newcommand{\eltitulo}{{\small\sffamily\bfseries\eltit}}
+\newcommand{\logo}[2][!!!]{\ifthenelse{\equal{#1}{!!!}}
+  {\def\ellogo{\includegraphics[width=0.8in]{#2}}}
+  {\def\ellogo{\href{http://#1}{\includegraphics[width=0.8in]{#2}}}}}
+%% Inicialización de \titulo y \logo
+\titulo{}
+\logo[hipatia.fciencias.unam.mx/texiendo]{texiendo.pdf}
+\resetcolors
+%%
+\DeclareOption{raggedright}{\raggedright}
+\ExecuteOptions{sans-serif}
+\ProcessOptions
+%%
+\setlength{\parskip}{20pt plus10000pt minus10pt}
+\endinput
+%%
+%% Fin del archivo pdfpresentacion.sty

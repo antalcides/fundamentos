@@ -1,0 +1,141 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%keys
+\definecolor{boxhcol}{gray}{.6}
+\definecolor{cajacol}{gray}{.9}
+\define@key{boxedicon}{titlebox}{\def\titlebox{#1}}
+\define@key{boxedicon}{textcol}{\def\textcol{#1}}
+\define@key{boxedicon}{boxheadcol}{\def\boxheadcol{#1}}
+\define@key{boxedicon}{boxcol}{\def\boxcol{#1}}
+\define@key{boxedicon}{tipplogo}{\def\tipplogo{#1}}
+\define@key{boxedicon}{texttcolor}{\def\texttcolor{#1}}
+\define@key{boxedicon}{labeltext}{\def\labeltext{#1}}
+\define@key{boxedicon}{size}{\def\size{#1}}
+\define@key{boxedicon}{iconline}{\def\iconline{#1}}
+%\define@key{boxedicon}{sizeicon}{\def\sizeicon{#1}}
+\presetkeys{boxedicon}{titlebox=Preguntas, textcol=white, boxheadcol=gray!80, boxcol=blue!20, tipplogo=icon-tipp, texttcolor=white ,labeltext=, size=0.8\textwidth,iconline=red }{}
+
+%%%%%%%%%%%%%%%%%entorno principal
+\newlength{\iconwidth}
+\setlength{\iconwidth}{0.9cm}
+\newsavebox\recipebox
+\newlength\recipebreaklength
+\setlength\recipebreaklength{0.4\textheight}
+  \newenvironment{mybg}[1]{%
+ \setkeys{boxedicon}{#1}
+      \def\FrameCommand##1{\fboxsep10pt
+  \hspace*{1.2\iconwidth}\colorbox{\boxcol}{ ##1}}%
+  \MakeFramed {\advance\hsize-1.1\width\FrameRestore}}%
+  {\endMakeFramed}
+  %= = = = =comando logo
+  \newcommand\logof{\begin{minipage}[c][1.2\iconwidth][c]{\iconwidth}
+\includegraphics[width=\iconwidth,height=\iconwidth]{\tipplogo}
+\end{minipage}\hspace{5.5pt}
+\fcolorbox{\boxheadcol}{\boxheadcol}{\begin{minipage}[c]{\dimexpr\columnwidth-1.7\iconwidth\relax}
+\large \bf \textcolor{\texttcolor}{\titlebox \hfill \labeltext}
+\end{minipage}}
+\vspace{-18pt}
+}
+%%%%
+%%%%%%comado del cuerpo
+  \newcommand\typesetbox[2]{%
+  \setkeys{boxedicon}{#1}
+  %\vspace{10pt}
+  \par
+  \logof \ \begin{mybg}{#1}
+  \BODY
+  \end{mybg}
+  \par
+  }
+%%%%%entorno final%%%%%%%%%
+\NewEnviron{tippfancy}[1]{%
+\setlength\parindent{0pt}
+%\vspace{10pt}
+  \savebox{\recipebox}{\parbox{\linewidth}{%
+    \typesetbox{#1}{\BODY}\vspace{10pt}%
+  }}%
+  \ifdim
+      \dimexpr\ht\recipebox+\dp\recipebox\relax 
+      > \recipebreaklength
+    \typesetbox{#1}{\BODY}%
+  \else
+    \par\noindent\usebox\recipebox
+  \fi
+  \bigskip
+}
+%%%%%%%%%%% estructura del teorema 
+   \newcommand{\tipptheorem}[3][]{%
+           \newcounter{#2}[section]
+                     \def\nombre{#3}
+                                  \newenvironment{#2}[1]{%
+                    \refstepcounter{#2}
+                     \def\titulo2{\nombre\ \thesection .\csname the#2\endcsname}
+                           \begin{tippfancy}{#1, titlebox=\titulo2  
+                           }      
+                   ##1
+                      \end{tippfancy}     }%
+               {
+               }
+         
+          
+           }
+%==================   notabox ========================
+\newcommand\logo{\noindent\fcolorbox{\iconline}{white}{\begin{minipage}[c][1.2\iconwidth][c]{1.2\iconwidth}
+\includegraphics[width=\iconwidth]{\tipplogo}
+\end{minipage}}\hspace{1pt}
+\fcolorbox{\boxheadcol}{\boxheadcol}{\begin{minipage}[c][1.2\iconwidth][c]{\dimexpr\columnwidth-1.9\iconwidth\relax}
+\large \bf \textcolor{\texttcolor}{\titlebox \hfill \labeltext}
+\end{minipage}}
+\vspace{-10pt}
+}
+%\newsavebox\recipebox
+%\newlength\recipebreaklength
+%\setlength\recipebreaklength{0.4\textheight}
+\newcommand\typesetrecipe[1]{%
+  \noindent
+      \logo \vspace{-4pt} \begin{colbox}\BODY \end{colbox}\hspace{\iconwidth}
+    \vspace{10pt}
+}
+\NewEnviron{notafancy}[1]{%
+\setkeys{boxedicon}{#1}
+\par
+  \savebox{\recipebox}{\parbox{\linewidth}{%
+    \typesetrecipe{\BODY}%
+    \par
+  }}%
+  \ifdim
+      \dimexpr\ht\recipebox+\dp\recipebox\relax 
+      > \recipebreaklength
+    \typesetrecipe{\BODY}%
+  \else
+    \par\noindent\usebox\recipebox
+  \fi
+  \bigskip
+}
+%\definecolor{colboxcolor}{HTML}{F8E0E0}
+\newenvironment{colbox}{%
+   \def\FrameCommand{\colorbox{\boxcol}}%
+   \MakeFramed{\advance\hsize-\width \FrameRestore}}
+ {\endMakeFramed}
+%%%%%%%%%%% estructura del teorema 
+   \newcommand{\notatheorem}[3][]{%
+           \newcounter{#2}[section]
+                     \def\nombre@c{#3}
+                                  \newenvironment{#2}[1]{%
+                    \refstepcounter{#2}
+                     \def\titulo@c{\nombre@c\ \thesection .\csname the#2\endcsname}
+                           \begin{notafancy}{#1, titlebox=\titulo@c  
+                           }      
+                   ##1
+                      \end{notafancy}     }%
+               {
+               }
+         
+          
+           }
+
+% %=========================fin notabox =============
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \def\tippenv#1#2{%
+                            \NewEnviron{#2}[1]{\begin{tippfancy}{#1}
+                           ##1
+                                                      \end{tippfancy}%
+           }}

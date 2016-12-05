@@ -1,0 +1,72 @@
+        \newcommand\LFrame[2]{ %
+%\fboxrule=\FrameRule
+%\fboxsep=-\errorsize
+\setlength{\parindent}{0pt}
+\setkeys{boxedtheorem}{#1}
+\tikzstyle{mybox}=[draw=\boxcolor,fill=\background ,ultra thick , rectangle , rounded corners , inner sep =10pt , inner ysep=5pt]
+\tikzstyle{fancytitle}=[draw=\titleboxcolor ,ultra thick , rounded corners , fill=\titlebackground ,text=\titlecolor, inner sep =10pt,inner ysep=5pt ]
+\hspace{-10pt}
+\begin{tikzpicture}
+\node[mybox](box){ %
+   \vbox{\vspace{20pt} #2}
+               }; %
+        \node[fancytitle,right=0pt]at (box.north west){\vbox{\bf\title\hfill\labelbox}};
+        \end{tikzpicture}
+                     }
+% % % % % % % % % % % _____________$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+    \newenvironment{xcolorbox}[1]{% 
+       % Optional continuation label defaults to the first label plus
+           %\def\Frame@Lab{#1}%
+%        \fboxrule=\FrameRule 
+%        \fboxsep=\FrameSep   
+      \def\FrameCommand##1{ %\hskip\rightmargin \hskip\leftmargin
+                \LFrame{#1,titlecolor=white}{##1}}%
+      \def\FirstFrameCommand{ %\hskip\rightmargin \hskip\leftmargin
+                \LFrame{#1,titlecolor=white}}%
+      \def\MidFrameCommand{\LFrame{#1,titlecolor=white,labelbox=  (Continuaci\'on)}}%
+      \def\LastFrameCommand{\LFrame{#1,titlecolor=white,labelbox=  (Continuaci\'on)}}%
+      \MakeFramed{\FrameRestore} 
+    }{ \endMakeFramed} 
+  % % %----------------------------------
+     \newcommand\thm@eti[1][]{#1}
+  \newcommand{\xcolortheorem}[3][]{%
+  \newcounter{#2}[section]
+            \def\nombre@xcolor{#3}
+                         \newenvironment{#2}[2][]{%
+           \refstepcounter{#2}
+            \def\titulo@xcolor{\nombre@xcolor\ \thesection .\csname the#2\endcsname}
+                  \begin{xcolorbox}{#1, title=\titulo@xcolor ,labelbox=\thm@eti{##2}
+                  }      
+      
+      }%
+      {%
+      \end{xcolorbox}
+      }
+
+ 
+  }
+  \def\cline{}
+    \gdef\sepline{%
+        \par\noindent\makebox[\linewidth][l]{%
+  \hspace*{-\mdflength{innerleftmargin}}%
+   \tikz\draw[thick,dashed,gray!60] (0,0) --%
+        (\textwidth+\the\mdflength{innerleftmargin}+\the\mdflength{innerrightmargin},0);
+  }\par\nobreak}
+  %%%%%%%%%%%%%%
+  \define@key{fam}{dcol}{\def\dcol{#1}}
+  \presetkeys{fam}{dcol=red}{}
+ \newcommand*{\mydot}[1][]{%
+% #1 is the optional keyval argument
+% #2 is a mandatory argument
+\begingroup
+\setkeys{fam}{#1}%
+%\color{\dcol}
+%\par \dotfill \par
+%%%%%%%%%%%%%
+\par\noindent\makebox[\linewidth][l]{%
+  \hspace*{-\mdflength{innerleftmargin}}%
+   \tikz\draw[ultra thick,dashed,\dcol] (0,0) --%
+        (\textwidth+\the\mdflength{innerleftmargin}+\the\mdflength{innerrightmargin},0);
+  }\par\nobreak
+%%%%%%%%%%%%
+\endgroup}

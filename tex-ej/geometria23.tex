@@ -1,0 +1,240 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{geometria22.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color {darkgray} {\small Geometría del Espacio}} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color {darkgray} {\small Cap. 4. Funciones}} \\ \\ \\
+\end{tabular}
+\docLink{../cap4/04_01.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 3}}  {\large
+{\color{ azulc} MODULO DE GEOMETRÍA}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 3.19. }}
+{\normalsize {\color{naranja} Volumen de un prisma}}
+
+\newline
+
+El volumen de un cuerpo es la medida del espacio que el cuerpo
+ocupa.
+
+\bigskip
+
+Si cada uno de los lados de las caras de un cubo tiene una unidad
+de longitud, podemos afirmar que cada cara tiene una unidad
+cuadrada de área. Como el cubo tiene seis caras podemos decir
+además que el área de la superficie de este cubo es de 6 unidades
+cuadradas; pero también podemos afirmar que este cubo tiene una
+unidad cúbica de volumen $(1u^3)$. Por esta razón es llamado cubo
+unidad. Usualmente el volumen es medido en unidades cúbicas.
+
+\bigskip
+
+\textbf{Ejemplo 3.13}
+
+¿Cuál será entonces el volumen del sólido que se construye como se
+ilustra en la figura con cubos unidad? Las dimensiones de la base
+son respectivamente: 12 y 7 unidades lineales y tiene 17 unidades
+de altura.
+
+\bigskip
+
+\[
+\includegraphics{imagenes/volumen_prisma.gif}
+\]
+
+\bigskip
+
+En la capa de la base se han colocado $12\times 7$ cubos unidad y
+hay 17 de estas capas. Es decir el volumen total se puede hallar
+determinando el producto $12\times 7\times 17$, hay pues en total
+1248 cubos unidad, el volumen es de 1428 unidades cúbicas.
+\end{ejem}
+
+Como en el caso del área de un rectángulo la idea anterior nos
+permite intuir que el volumen de un paralelepípedo rectángulo (una
+caja) es igual al producto de sus tres dimensiones.
+
+\bigskip
+
+\[
+\includegraphics{imagenes/volumen_prisma1.gif}
+\]
+
+\bigskip
+
+Si las dimensiones de este paralelepípedo rectángulo son $a$, $b$,
+$c$ su volumen $V$ es,
+
+\bigskip
+
+\[ V = a\cdot b \cdot c \]
+
+\bigskip
+
+Esta expresión es equivalente a afirmar que si el área de la base
+del paralelepípedo es $A$ y la altura es $c$, el volumen $V$ es,
+
+\bigskip
+
+\[V = A \cdot c\]
+
+\bigskip
+
+Como caso especial, el volumen de un cubo es el cubo de la arista,
+pues sus tres dimensiones son iguales. Si la arista es $a$, el
+volumen $V$ es,
+
+\bigskip
+
+\[V = a^3\]
+
+\bigskip
+
+La idea anterior se puede generalizar al volumen de un
+paralelepípedo cualquiera (o de un prisma cualquiera).
+
+\bigskip
+
+\[
+\includegraphics{imagenes/paralelepipido.gif}
+\]
+
+\bigskip
+
+El volumen del paralelepípedo de la figura es $V = AB \cdot MQ
+\cdot NM$, donde $NM$ es la altura y $AB \cdot MQ$ es el área de
+la base. De donde $V=A*h$, siendo $h$ la altura y $A$ el área de
+la base.
+
+\bigskip
+
+\textbf{Ejemplo 3.14. } \quad \begin{enumerate} \item Si un cubo
+tiene $50$ $cm^3$ de volumen. ¿Cuál es la longitud de un lado?
+
+\bigskip
+
+\emph{Solución}. Sea $s$ la longitud de un lado, como $V=s^3=50$,
+se tiene que $s=\sqrt[3]{50}\approx 3.7cm$
+
+bigskip
+
+\item Si un cubo tiene de lado $a$ $cm$ y otro tiene de lado $4a$
+$cm$, ¿cuál es la razón entre los volúmenes de los dos cubos?
+
+\bigskip
+
+\emph{Solución}. El volumen $V$ del primer cubo es $a^3$ y el
+volumen $V_1$ del segundo cubo es $(4a)^3$ y la razón entre el
+volumen $V$ y el volumen $V_1$ es
+$\frac{a^3}{64a^3}=\frac{1}{64}$.
+
+\bigskip
+
+\item Si las dimensiones de una caja se incrementan en 2, 3 y 4
+unidades. ¿Qué sucede con el volumen de la caja?
+
+\bigskip
+
+\[
+\includegraphics{imagenes/volumen_prisma2.gif}
+\]
+
+\bigskip
+
+\emph{Solución}. Si las dimensiones originales de la caja son $x$,
+$y$, $z$, su volumen original es $x*y*z$. Si las nuevas
+dimensiones son $l$, $w$ y $h$, tenemos que:
+
+\bigskip
+
+\[l = z + 4, \quad w = y + 3 \quad \text{y}\quad h = x + 2.\]
+
+\bigskip
+
+De donde el volumen $V$ de la nueva caja es:
+
+\bigskip
+
+\[V = l*w*h = (z + 4)(y + 3)(x + 2)\]
+
+\bigskip
+
+Efectuando la multiplicación obtenemos que:
+
+\bigskip
+
+\[V = xyz + 3xz + 4xy + 12x + 2yz + 6z + 8 y + 24\]
+
+\bigskip
+
+El volumen se incrementa entonces en: $3xz + 4xy +12x + 2yz + 6z +
+8y + 24$
+
+\bigskip
+
+Por ejemplo si las dimensiones de la caja original son $x=6$,
+$y=6$, $z=10$, el volumen de la caja sería 480 y el de la nueva
+caja sería $(6+2)\cdot(8+3)\cdot(10+4)=1232$. En ese caso se
+incrementaría en 752 unidades cúbicas.
+
+\end{enumerate}
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{geometria22.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color {darkgray} {\small Geometría del Espacio}} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color {darkgray} {\small Cap. 4. Funciones}} \\ \\ \\
+\end{tabular}
+\docLink{../cap4/04_01.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

@@ -1,0 +1,253 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{04_08.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Exponenciales} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Logaritmo Natural} \\ \\ \\
+\end{tabular}
+\docLink{04_10.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 4}}  {\large
+{\color{ azulc} FUNCIONES}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 4.9. }}
+{\normalsize {\color{naranja} Logaritmos}}
+
+\newline
+
+Si $y$ es un número positivo y $y=a^{x}$ para algún número real
+$x$ entonces se dice que $x$ es el {\bf logaritmo en base} $a$
+{\bf de} $y$. Se denota por $\log _{a}y$.
+
+\bigskip
+
+Así, tenemos:
+
+\bigskip
+
+\begin{itemize}
+\item $y=a^{x}\Longleftrightarrow \log _{a}y=x$ \item $\log
+_{a}\left(a^{x}\right)=x$, $x\in \mathbf{R}$ \item $a^{\log
+_{a}y}=y$, $y\in \mathbf{R}^{+}$
+\end{itemize}
+
+\bigskip
+
+La relación existente entre los logaritmos y las exponenciales de
+base $a$ permite demostrar las siguientes
+
+\bigskip
+
+\medskip{\bf Propiedades de los logaritmos}
+
+\bigskip
+
+Si $a$, $b$, $x$ y $y$ son números reales positivos entonces:
+
+\bigskip
+
+\begin{enumerate}
+\item $\log_{a}x+\log_{a}y=\log_{a}xy$ \item
+$\log_{a}x-\log_{a}y=\log_{a}\left(\frac{x}{y}\right)$ \item
+$\log_{a}x^{y}=y\log_{a}x$ \item $\log _{b}x=\frac{\log
+_{a}x}{\log _{a}b}$
+\end{enumerate}
+
+\bigskip
+
+\textit{Demostración. } Sean
+
+\bigskip
+
+\begin{align*}
+r&=\log _{a}x\\
+s&=\log_{a}y\\
+t&=\log _{a}xy\\
+u&=\log_{a}\left(\frac{x}{y}\right)\\
+b&=\log _{a}x^{y}
+\end{align*}
+
+\bigskip
+
+\begin{enumerate}
+\item $a^{r+s}=a^{r}a^{s}=xy$ y $a^{t}=xy$
+
+\bigskip
+
+Así, $a^{r+s}=a^{t}$ entonces $r+s=t$, es decir $\log
+_{a}x+\log_{a}y=\log _{a}xy$.
+
+\item $a^{r-s}=a^{r}a^{-s}=\frac{a}{a^{s}}=\frac{x}{y}$ y
+$a^{u}=\frac{x}{y}$
+
+\bigskip
+
+Así, $a^{r-s}=a^{u}$ de donde
+
+\bigskip
+
+$\log_{a}x-\log_{a}y=\log_{a}\left(\frac{x}{y}\right)$
+
+\item $a^{v}=x^{y}$ y $a^{yr}=\left(a^{r}\right)^{y}=x^{y}$
+
+\bigskip
+
+Así, $a^{v}=a^{yr}$ entonces $\log_{a}x^{y}=y\log_{a}x \Box$
+\end{enumerate}
+
+\bigskip
+
+{\bf Notación}: cuando $a=10$, $\log_{a}x$ se denota simplemente
+por $\log x$.
+
+\bigskip
+
+\textbf{Ejemplo 4.12. } \quad\begin{enumerate} \item
+$\log_{2}32=\log_{2}2^{5}=5$
+
+\item
+$\log_{\frac{1}{2}}\left(4\right)=\log_{\frac{1}{2}}\left(2^{2}\right)=\log_{\frac{1}{2}}\left\{\left[\left(\frac{1}{2}\right)^{-1}\right]^{2}\right\}
+=\log_{\frac{1}{2}}\left[\left(\frac{1}{2}\right)^{-2}\right] =-2$
+
+\item Supongamos que $4^{2x}=64$ entonces
+$2x=\log_{4}64=\log_{4}4^{3}=3$. En consecuencia, $x=\frac{3}{2}$
+
+\item Si $\log_{6}\left( 2x+2\right)=3$ entonces
+$6^{\log_{6}\left(2x+2\right)}=6^{3}$ es decir, $2x+2=216$ de
+donde $x=107$
+
+\item Si $\log \left( x-2\right) =1-\log \left( x+1\right)$
+entonces
+\[10^{\log\left( x-2\right) }=10^{1-\log \left(x+1\right)}=\frac{10}{10^{\log \left( x+1\right)}}\]
+esto es $x-2=\frac{10}{x+1}$ de donde $x^{2}-x-12=0$.
+
+\bigskip
+
+Esta ecuación tiene dos soluciones: $x=4$ y $x=-3$. Pero para
+$x=-3$, $\log \left( x-2\right)$ y $\log \left( x+1\right)$ no
+están definidas. Así, la única solución es $x=4$.
+
+\item Usando un solo logaritmo, vamos a expresar la suma
+
+\bigskip
+
+\[7\log_{a}\left( x+1\right) +\frac{1}{2}\log_{a}\left(3x+6\right) -\log_{a}\left( x^{2}+3x+2\right) \]
+
+\bigskip
+
+La expresión dada es igual a
+
+\bigskip
+
+\[\log_{a}\left( x+1\right)^{7}+\log_{a}\sqrt{3x+6}-\log_{a}\left( x^{2}+3x+2\right) \]
+
+\bigskip
+
+y a su vez esta suma es igual a
+
+\bigskip
+
+\[\log _{a}\frac{\left( x+1\right) ^{7}\sqrt{3x+6}}{x^{2}+3x+2}=\log _{a}\frac{\left( x+1\right) ^{6}\sqrt{3x+6}}{x+2}\]
+\end{enumerate}
+
+\bigskip
+
+Así como deducimos las propiedades de los logaritmos a partir de
+las propiedades de las exponenciales, podemos decir, que si $a>1$,
+a un mayor valor de $x$ corresponde un mayor valor de $\log_{a}x$
+y si $0<a<1$, a un mayor valor de $x$ corresponde un menor valor
+de $\log_{a}x$.
+
+\bigskip
+
+La función logaritmo en base $a$, $\log_{a}$, se define asociando
+a cada número real positivo $x$ el número real $\log_{a}x$.
+
+\bigskip
+
+La observación anterior permite decir que si $a>1$, la función
+$\log_{a}$ es creciente y si $0<a<1$, la función es decreciente.
+
+\bigskip
+
+De otra parte, note que si una pareja $\left( x,y\right)$
+pertenece a la gráfica de la función exponencial de base $a$ es
+porque $y=a^{x}$ , es decir, $\log_{a}y=x$, entonces la pareja
+$\left( y,x\right)$ pertenece a la gráfica de la función
+$\log_{a}$. De igual manera, si una pareja $\left( u,v\right)$
+pertenece a la gráfica de la función $\log _{a}$, entonces la
+pareja $\left( v,u\right) $ pertenece a la gráfica de la función
+exponencial de base $a$. Así, la gráfica de la función $\log_{a}$
+se puede obtener reflejando la gráfica de la función exponencial
+de base $a$ en la recta de ecuación $y=x$.
+
+\bigskip
+
+Estas son las gráficas de las funciones $\log_{a}$ para los
+valores de $a$ tomados como base de las funciones exponenciales
+trazadas anteriormente.
+
+\bigskip
+
+\begin{center}
+\includegraphics{/imagenes/4_29.gif}
+\end{center}
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{04_08.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Exponenciales} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Logaritmo Natural} \\ \\ \\
+\end{tabular}
+\docLink{04_10.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

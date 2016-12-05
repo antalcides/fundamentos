@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html itemscope="" itemtype="http://schema.org/Product"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-animate){display:none !important;}ng\:form{display:block;}</style><title>Basic Drawing Using TikZ - ShareLaTeX, Online LaTeX Editor</title><link rel="icon" href="https://www.sharelatex.com/favicon.ico"><link rel="stylesheet" href="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/style.css"><link href="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/font-awesome.css" rel="stylesheet"><link rel="alternate" href="http://www.sharelatex.com/blog/2013/08/27/tikz-series-pt1.html" hreflang="en"><link rel="alternate" href="http://es.sharelatex.com/blog/2013/08/27/tikz-series-pt1.html" hreflang="es"><meta itemprop="name" content="ShareLaTeX, the Online LaTeX Editor"><meta itemprop="description" content="An online LaTeX editor that's easy to use. No installation, real-time collaboration, version control, hundreds of LaTeX templates, and more."><meta itemprop="image" content="https://www.sharelatex.com/favicon.ico"><script src="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/analytics.js" async=""></script><script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-11004462-4', 'sharelatex.com');
+ga('send', 'pageview');</script><script type="text/javascript">window.csrfToken = "K_ok3eaLvkazLfJZQaHFYnHF";</script><script src="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/jquery.js"></script><script src="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/angular.js"></script><script>window.sharelatex = {
+ siteUrl: 'https://www.sharelatex.com',
+ jsPath:  '/minjs/'
+};
+window.systemMessages = [];
+</script><script>window.sharelatex.algolia = {
+ app_id:'SK53GL4JLY',
+ api_key:'1606ccef5b70ac44680b61e6b0285126',
+ indexes:{"templates":"templates-production","institutions":"institutions"}
+}
+</script><script>window.sharelatex.templates = {
+ user_id : '515d4e908d2c843b4a00620b',
+ cdnDomain : 'https://d1hk1zhcb5hn6i.cloudfront.net',
+ indexName : 'templates-production'
+}</script><script src="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/embed.js" async="" type="text/javascript"></script><script src="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/main.js" data-requiremodule="main" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/libs.js" data-requiremodule="libs" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/algolia-2.js" data-requiremodule="libs/algolia-2.5.2" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><style charset="utf-8" type="text/css">#tender_window{ position: absolute; top: 20px; left: 10px; right: 10px; margin: auto; max-width:680px; height:715px; padding:3px; background:url(https://sharelatex.tenderapp.com/images/widget/overlay_back.png); z-index:9999; }#tender_window iframe{ border:none; width:100%; height:100%; } #tender_window #tender_frame{ width:100%; height:100%; background:url(https://sharelatex.tenderapp.com/images/widget/loader.gif) 50% 50% no-repeat #fff; } #tender_closer{ position:absolute; top:18px; right:18px; color:#fff; font-family:Helvetica, Arial, sans-serif; font-size:12px; font-weight:bold; text-decoration:none; border:none; } #tender_closer{ color: #80B3CC }#tender_toggler{ position:absolute; top:100px; right:0px; width:33px; height:105px; padding:3px 0 3px 3px; background:url(https://sharelatex.tenderapp.com/images/widget/overlay_back.png); } #tender_toggler_link{ display:block; width:100%; height:100%; text-decoration:none; border:none; text-indent:-9999px; background: #006699 url(https://sharelatex.tenderapp.com/images/widget/tab_text_right.gif) !important; } </style></head><body class="ng-scope"><div ng-controller="SystemMessagesController" class="system-messages ng-scope"><!-- ngRepeat: message in messages --></div><nav class="navbar navbar-default"><div class="container-fluid"><div class="navbar-header"><button ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed" ng-class="{active: !navCollapsed}" class="navbar-toggle"><i class="fa fa-bars"></i></button><a href="https://www.sharelatex.com/" class="navbar-brand"></a></div><div style="height: 0px;" collapse="navCollapsed" class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li class="subdued"><a href="https://www.sharelatex.com/user/subscription/plans" class="subdued">Plans &amp; Pricing</a></li><li class="dropdown subdued"><a aria-expanded="false" aria-haspopup="true" href="" class="dropdown-toggle">Help<b class="caret"></b></a><ul class="dropdown-menu"><li><a href="https://www.sharelatex.com/learn">Documentation</a></li><li><a href="#" class="js-tender-widget">Contact us</a></li></ul></li><li><a href="https://www.sharelatex.com/register">Register</a></li><li><a href="https://www.sharelatex.com/login">Log In</a></li></ul></div></div></nav><div class="content content-alt"><div class="blog"><div class="page-header">
+	<div class="container">
+		<h1><a href="https://www.sharelatex.com/blog">ShareLaTeX Blog</a></h1>
+	</div>
+</div>
+	
+<div class="container">
+
+	<div class="row">
+		<div class="col-md-8 col-md-offset post">
+			
+<div class="card post row-spaced">
+	<div class="page-header">
+		<h2>
+			<a href="https://www.sharelatex.com/blog/2013/08/27/tikz-series-pt1.html">Basic Drawing Using TikZ</a>
+		</h2>
+	</div>
+
+	<p><em>To see the corresponding video for this blog post click <a href="http://www.youtube.com/watch?v=pcIzeN46ETc">here</a>.</em></p>
+
+<p>In the next few blog posts we’re going to show you some of the interesting things you can do using the TikZ package. 
+The TikZ package is a package that allows you to draw high quality and often quite complex diagrams. 
+In this post we’re going to show you some of the basics and show you how to draw simple shapes and lines.</p>
+
+<p>To get started with TikZ we need to load up the TikZ package:</p>
+
+<pre><code>\usepackage{tikz}
+</code></pre>
+
+<p>Now whenever we want to create a TikZ diagram we need to use the ‘tikzpicture’ environment.</p>
+
+<pre><code>\begin{tikzpicture}
+
+&lt;code goes here&gt;
+
+\end{tikzpicture}
+</code></pre>
+
+<h2 id="basic-shapes">Basic Shapes</h2>
+<p>One of the simplest and most commonly used commands in TikZ is the <code>\draw</code>
+ command. 
+To draw a straight line we use this command, then we enter a starting 
+co-ordinate, followed by two dashes before the ending co-ordinate. 
+We then finish the statement by closing it with a semicolon.</p>
+
+<pre><code>\draw (0,0) -- (4,0);
+</code></pre>
+
+<p><img src="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/line.png" alt="line"></p>
+
+<p>We can then add more co-ordinates in like this to make it a square:</p>
+
+<pre><code>\draw (0,0) -- (4,0) -- (4,4) -- (0,4) -- (0,0);
+</code></pre>
+
+<p><img src="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/square.png" alt="square"></p>
+
+<p>However this isn’t particularly good style. 
+As we are drawing a line that ends up in the same place we started, it 
+is better to finish the statement with the keyword ‘cycle’ rather than 
+the last co-ordinate.</p>
+
+<pre><code>\draw (0,0) -- (4,0) -- (4,4) -- (0,4) -- cycle;
+</code></pre>
+
+<p>To simplify this code further we can use the ‘rectangle’ keyword 
+after the starting co-ordinate and then follow it with the co-ordinate 
+of the corner diagonally opposite.</p>
+
+<pre><code>\draw (0,0) rectangle (4,4);
+</code></pre>
+
+<p>We can also add lines that aren’t straight. 
+For example, this is how we draw a parabola:</p>
+
+<pre><code>\draw (0,0) parabola (4,4);
+</code></pre>
+
+<p><img src="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/parabola.png" alt="parabola"></p>
+
+<p>To add a curved line we use ‘control points’. 
+We begin with our starting co-ordinate, then use two dots followed by 
+the keyword ‘controls’ and then the co-ordinates of our control points 
+separated by an ‘and’. 
+Then after two more dots we have the final point. 
+These control points act like magnets attracting the line in their 
+direction.</p>
+
+<pre><code>\draw (0,0) .. controls (0,4) and (4,0) .. (4,4);
+</code></pre>
+
+<p><img src="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/curve.png" alt="curve"></p>
+
+<p>We can then add a circle like this. 
+The first co-ordinate is the circle’s centre and the length in brackets at the end is the circle’s radius.</p>
+
+<pre><code>\draw (2,2) circle (3cm);
+</code></pre>
+
+<p><img src="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/circle.png" alt="circle"></p>
+
+<p>This is how we draw an ellipse. 
+This time the lengths in the brackets separated by an ‘and’, are the x-direction radius and the y-direction radius respectively.</p>
+
+<pre><code>\draw (2,2) ellipse (3cm and 1cm);
+</code></pre>
+
+<p><img src="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/ellipse.png" alt="ellipse"></p>
+
+<p>This is how we draw an arc. 
+In the final bracket we enter the starting angle, the ending angle and the radius. 
+This time they are separated by colons.</p>
+
+<pre><code>\draw (3,0) arc (0:75:3cm);
+</code></pre>
+
+<p><img src="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/arc.png" alt="arc"></p>
+
+<p>To customise the way these lines are drawn we add extra arguments into the <code>\draw</code> command. 
+For example we can edit the circle we drew so that the line is red, thick and dashed.</p>
+
+<pre><code>\draw[red,thick,dashed] (2,2) circle (3cm);
+</code></pre>
+
+<p><img src="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/redthickdashed.png" alt="redthickdashed"></p>
+
+<h2 id="grids">Grids</h2>
+<p>Very often when drawing diagrams we will want to draw a grid. 
+To do this we use the <code>\draw</code> command followed by by some additional arguments. 
+For example we specify the grid step size using <code>step=</code> and a
+ length. 
+We’ve also specified the colour ‘gray’ and told it to make the lines 
+‘very thin’. 
+After these arguments we enter the co-ordinates of the bottom left 
+corner, followed by the keyword ‘grid’ and then the co-ordinates of the 
+top right corner.</p>
+
+<pre><code>\draw[step=1cm,gray,very thin] (-2,-2) grid (6,6);
+</code></pre>
+
+<p><img src="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/grid1.png" alt="grid1"></p>
+
+<p>If we want to remove the outer lines around this grid we can crop the size slightly like this.</p>
+
+<pre><code>\draw[step=1cm,gray,very thin] (-1.9,-1.9) grid (5.9,5.9);
+</code></pre>
+
+<p><img src="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/grid2.png" alt="grid2"></p>
+
+<h2 id="colour-filling">Colour Filling</h2>
+<p>Now lets add a shape onto our grid and colour it in. 
+To do this we use the <code>\fill</code> command instead of the <code>\draw</code> command. 
+Then in square brackets we enter a colour. 
+For example this specifies a colour that is 40% blue mixed with 60% white. 
+Then we just specify a closed shape as we would normally.</p>
+
+<pre><code>\fill[blue!40!white] (0,0) rectangle (4,4);
+</code></pre>
+
+<p><img src="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/fill.png" alt="fill"></p>
+
+<p>If we wanted to add a border around this shape we could change it to the <code>\filldraw</code> command and then alter the arguments so that we have both a fill colour and a draw colour specified.</p>
+
+<pre><code>\filldraw[fill=blue!40!white, draw=black] (0,0) rectangle (4,4);
+</code></pre>
+
+<p><img src="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/filldraw.png" alt="filldraw"></p>
+
+<p>If instead of one solid colour we want a colour gradient, we could change it to the <code>\shade</code> command. 
+Then in the square brackets we specify a left colour and a right colour.</p>
+
+<pre><code>\shade[left color=blue,right color=red] (0,0) rectangle (4,4);
+</code></pre>
+
+<p><img src="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/shade1.png" alt="shade1"></p>
+
+<p>Instead of doing it from left to right we could do it from top to bottom.</p>
+
+<pre><code>\shade[top color=blue,bottom color=red] (0,0) rectangle (4,4);
+</code></pre>
+
+<p><img src="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/shade2.png" alt="shade2"></p>
+
+<p>Or we could even change it by specifying an inner and outer colour like this.</p>
+
+<pre><code>\shade[inner color=blue,outer color=red] (0,0) rectangle (4,4);
+</code></pre>
+
+<p><img src="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/shade3.png" alt="shade3"></p>
+
+<p>Finally we could also add a border to this by using the <code>\shadedraw</code> command and adding a draw colour.</p>
+
+<pre><code>\shadedraw[inner color=blue,outer color=red, draw=black] (0,0) rectangle (4,4);
+</code></pre>
+
+<p><img src="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/shadedraw.png" alt="shadedraw"></p>
+
+<h2 id="axes">Axes</h2>
+<p>Let’s finish this post by adding some labeled axes to our grid.
+To do this we draw two normal lines both from (0,0), but we’ll make them
+ thick and add arrowheads using a dash and a pointed bracket.</p>
+
+<pre><code>\draw[thick,-&gt;] (0,0) -- (4.5,0);
+\draw[thick,-&gt;] (0,0) -- (0,4.5);
+</code></pre>
+
+<p><img src="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/plainarrows.png" alt="plainarrows"></p>
+
+<p>We can also label our axes using nodes. 
+To do this we add the keyword ‘node’ into both draw statements next to 
+the end co-ordinates, followed by an anchor specification in square 
+brackets and the text in curly brackets. 
+Every node we create in TikZ has a number of anchors. 
+So when we specify the north west anchor for the x-axis node, we are 
+telling TikZ to use the anchor in the top left hand corner to anchor the
+ node to the co-ordinate.</p>
+
+<pre><code>\draw[thick,-&gt;] (0,0) -- (4.5,0) node[anchor=north west] {x axis};
+\draw[thick,-&gt;] (0,0) -- (0,4.5) node[anchor=south east] {y axis};
+</code></pre>
+
+<p><img src="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/nodes.png" alt="nodes"></p>
+
+<p>To finish our axes we can add in ticks and numbering like this:</p>
+
+<pre><code>\foreach \x in {0,1,2,3,4}
+    \draw (\x cm,1pt) -- (\x cm,-1pt) node[anchor=north] {$\x$};
+\foreach \y in {0,1,2,3,4}
+    \draw (1pt,\y cm) -- (-1pt,\y cm) node[anchor=east] {$\y$};
+</code></pre>
+
+<p><img src="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/foreach.png" alt="foreach"></p>
+
+<p>This clever piece of code uses two ‘for each’ loops to systematically go along the axes adding the ticks and numbers. 
+In each one, the variable x or y takes on all of the numbers in the curly brackets, each in turn and executes the <code>\draw</code> command.</p>
+
+<p>This concludes our discussion on basic drawing in TikZ.
+If you want to play around with the document we created in this post you can access it <a href="https://www.sharelatex.com/project/521b4a1206bf09190f129751">here</a>. 
+In the next post we’ll look exporting TikZ code from GeoGebra. 
+Please do keep in touch with us via <a href="https://www.facebook.com/ShareLaTeX">Facebook</a>, <a href="https://twitter.com/sharelatex">Twitter</a> &amp; <a href="https://plus.google.com/115074691861228882827/posts">Google+</a>.</p>
+
+<h3 id="other-posts-in-this-series">Other posts in this series</h3>
+<p><a href="https://www.sharelatex.com/blog/2013/08/28/tikz-series-pt2.html">Generating TikZ Code from GeoGebra</a></p>
+
+<p><a href="https://www.sharelatex.com/blog/2013/08/29/tikz-series-pt3.html">Creating Flowcharts with TikZ</a></p>
+
+<p><a href="https://www.sharelatex.com/blog/2013/09/02/tikz-series-pt4.html">Circuit Diagrams Using Circuitikz</a></p>
+
+<p><a href="https://www.sharelatex.com/blog/2013/09/04/tikz-series-pt5.html">Creating Mind Maps Using TikZ</a></p>
+
+	<p class="author_details">Posted by Josh Cassidy on 27 Aug 2013</p>
+</div>
+
+
+<div class="row-spaced">
+	<p>
+		<a href="https://www.sharelatex.com/blog/rss.xml">
+			<i class="fa fa-fw fa-rss-square"></i> Subscribe
+		</a> /&nbsp;
+		<a href="https://www.sharelatex.com/blog/atom.xml">
+				<i class="fa fa-fw fa-rss-square"></i> Atom
+		</a>
+	</p>
+</div>
+
+<div id="disqus_thread"><iframe verticalscrolling="no" horizontalscrolling="no" src="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/a.html" style="width: 100% ! important; border: medium none ! important; overflow: hidden ! important; height: 592px ! important;" title="Disqus" tabindex="0" scrolling="no" allowtransparency="true" data-disqus-uid="2" id="dsq-2" frameborder="0" width="100%"></iframe></div>
+
+
+		</div>
+		<div class="col-md-4 blurb">
+			<h2>About Us</h2>
+			<div>
+				<p>
+					<a href="https://www.sharelatex.com/">ShareLaTeX</a> is an online LaTeX editor that
+					allows real-time collaboration in your browser
+					</p>
+					<p>
+					<a class="btn btn-info blog_goto_sharelatex_button" href="https://www.sharelatex.com/">Try ShareLaTeX Now</a>
+				</p>
+			</div>
+			<div>
+				<p>
+					<a href="https://www.sharelatex.com/blog/rss.xml">
+						<i class="fa fa-fw fa-rss-square"></i> Subscribe
+					</a> /&nbsp;
+					<a href="https://www.sharelatex.com/blog/atom.xml">
+						<i class="fa fa-fw fa-rss-square"></i> Atom
+					</a>
+				</p>
+			</div>
+
+			<div>
+				<h2>Recent Posts</h2>
+				<ul class="list-unstyled">
+				
+					<li>
+						<a href="https://www.sharelatex.com/blog/2014/07/28/sharelatex-has-had-a-makeover.html">ShareLaTeX has had a Makeover</a>
+					</li>
+				
+					<li>
+						<a href="https://www.sharelatex.com/blog/2014/07/23/redesign-open-beta.html">Redesign Open Beta</a>
+					</li>
+				
+					<li>
+						<a href="https://www.sharelatex.com/blog/2014/07/14/sharelatex-redesign-preview.html">ShareLaTeX Redesign Preview</a>
+					</li>
+				
+					<li>
+						<a href="https://www.sharelatex.com/blog/2014/05/13/ieee-templates.html">IEEE templates on ShareLaTeX</a>
+					</li>
+				
+					<li>
+						<a href="https://www.sharelatex.com/blog/2014/04/14/incident-report-14th-april-2014.html">Incident Report - 14th April 2014</a>
+					</li>
+				
+					<li>
+						<a href="https://www.sharelatex.com/blog/2014/04/10/forward-and-reverse-search-in-sharelatex.html">Forward and Reverse Search in ShareLaTeX</a>
+					</li>
+				
+				</ul>
+				<a href="https://www.sharelatex.com/blog/all.html" class="view-all">View All</a> 
+			</div>
+
+			<div>
+				<h2>Video Guides</h2>
+				<ul class="list-unstyled">
+				
+					
+					<li>
+						<a href="https://www.sharelatex.com/blog/latex-guides/beginners-tutorial/your-first-latex-document.html">Creating your first LaTeX document</a>
+					</li>
+					
+				
+					
+					<li>
+						<a href="https://www.sharelatex.com/blog/latex-guides/beginners-tutorial/paragraphs-and-sections-in-latex.html">Paragraphs and Sections in LaTeX</a>
+					</li>
+					
+				
+					
+					<li>
+						<a href="https://www.sharelatex.com/blog/latex-guides/beginners-tutorial/mathematics-in-latex.html">Mathematics in LaTeX</a>
+					</li>
+					
+				
+					
+					<li>
+						<a href="https://www.sharelatex.com/blog/latex-guides/beginners-tutorial/images-in-latex.html">Images in LaTeX</a>
+					</li>
+					
+				
+					
+					<li>
+						<a href="https://www.sharelatex.com/blog/latex-guides/beginners-tutorial/bibliographies-in-latex.html">Bibliographies and Natbib</a>
+					</li>
+					
+				
+					
+					<li>
+						<a href="https://www.sharelatex.com/blog/latex-guides/beginners-tutorial/tables-and-matrices-in-latex.html">Tables and Matrices in LaTeX</a>
+					</li>
+					
+				
+					
+					<li>
+						<a href="https://www.sharelatex.com/blog/latex-guides/beginners-tutorial/longer-documents-in-latex.html">Longer Documents in LaTeX</a>
+					</li>
+					
+				
+				<a href="https://www.sharelatex.com/blog/latex-guides/beginners-tutorial.html" class="view-all">View All</a> 
+				</ul>
+			</div>
+
+		</div>
+	</div>
+</div>
+</div></div><footer class="site-footer"><div class="container"><div class="row"><ul class="col-md-6"><li>© 2014 ShareLaTeX</li><li><a href="https://www.sharelatex.com/tos">Terms</a></li><li><a href="https://www.sharelatex.com/privacy_policy">Privacy</a></li><li><a href="https://www.sharelatex.com/security">Security</a></li><li><a href="#" class="js-tender-widget">Contact</a></li><li><a href="https://www.sharelatex.com/about">About</a></li><li><a href="https://www.sharelatex.com/blog">Blog</a></li></ul><ul class="col-md-6"><li><a href="http://www.twitter.com/sharelatex"><i class="fa fa-twitter-square"></i></a></li><li><a href="http://www.facebook.com/pages/ShareLaTeX/301671376556660"><i class="fa fa-facebook-square"></i></a></li><li><a href="https://plus.google.com/115074691861228882827"><i class="fa fa-google-plus-square"></i></a></li><li><a href="https://github.com/sharelatex/sharelatex"><i class="fa fa-github-square"></i></a></li></ul></div></div></footer><script type="text/javascript">window.requirejs = {
+ "urlArgs" : "fingerprint=a9af6bd9d47d9465d3a372efd49305f4-b6a22524cb89601b2d81c5a317e2cb9e",
+ "paths" : {
+  "moment": "libs/moment-2.7.0"
+ }
+};	</script><script data-main="/minjs/main.js" baseurl="/minjs/" src="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/require.js"></script><script src="Basic%20Drawing%20Using%20TikZ%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/tender_widget.js"></script><script type="text/javascript">Tender = {
+ hideToggle: true,
+ widgetToggles: $(".js-tender-widget"),
+ category: "questions"
+};
+
+</script><div><div style="display: none;" id="tender_toggler"><a href="#" id="tender_toggler_link">Help &amp; Support</a></div></div><div id="SL_shadow_translator"><div id="SL_shadow_balloon" style="display: none; top: -10000px; left: -10000px;"><div id="SLplanshet"><div style="display: none;" id="SLarrowTOP"></div><div id="SLtopbar" align="left"><table class="SLtable" cellpadding="0" cellspacing="0" border="0" height="25" width="100%"><tbody><tr><td class="SLtd" align="left" width="24"><div id="SLlogo"></div></td><td class="SLtd" align="left" valign="center" width="210"><span id="SLfrom"></span> » <select class="SLselectbox" id="SLto"></select></td><td class="SLtd" align="right" width="18"><div id="SL_tts" title="Listen to the translation"></div></td><td class="SLtd" align="right" width="18"><div id="SL_copy" class="SL_copy" title="Copy translation to clipboard"></div></td><td class="SLtd" align="right" width="18"><div id="SL_font" class="SL_font_on" title="Font size"></div></td><td class="SLtd" align="right" width="30"><div id="SL_pin" class="SL_pin_on" title="Unpin pop-up bubble"></div></td></tr></tbody></table></div></div><div style="font-size: 13px;" id="SL_result" class="SL_sesultLTRRTL"></div><div id="SL_small_options_switch" class="SL_small_options_switch_off" title="Show options"></div><div id="SL_small_tooltips_switch" class="SL_small_tooltips_switch_on" title="Hide tooltips"></div><div id="SL_small_options" style="display:none;"><div id="SLcontrols"><div class="SLaligner"><input checked="checked" id="SLonoff" type="checkbox"> Pin pop-up bubble</div><div class="SLaligner"><input id="SLshowImTbutton" type="checkbox"> Show Translator's button</div><div class="SLaligner"><input checked="checked" id="SLtranslateOnMouseSelection" type="checkbox"> Translate on mouse selection</div><div id="SLspacer"><table class="SLtable" cellpadding="0" cellspacing="0" border="0" height="16" width="175"><tbody><tr><td class="SLtd"><div id="SLtriggerKey"></div></td><td class="SLtd"><div class="SLaligner2">Trigger&nbsp;key:</div></td><td class="SLtd"><div style="display: none;" id="SL_select_patch"></div><select class="SLselectbox" id="SLoptionsKey"><option value="None">None</option><option selected="selected" value="Alt">Alt</option><option value="Ctrl">Ctrl</option><option value="Shift">Shift</option></select></td></tr></tbody></table></div><div class="SLaligner"><input id="SLAutoCopyClipboard" type="checkbox"> AutoCopy translation to clipboard</div><div class="SLaligner"><div id="SL_sel_source">Select source language:<select id="SLfrom_options"></select></div></div></div><div id="SL_tip">Customize Translator's controls, button and settings</div></div><div id="SL_small_tooltips">Use Options to enable Translator button</div><div style="display: none;" id="SLarrowBOT"></div></div></div></body></html>

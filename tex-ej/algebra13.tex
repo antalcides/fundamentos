@@ -1,0 +1,280 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{algebra12.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Desigualdades} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Valor Absoluto} \\ \\ \\
+\end{tabular}
+\docLink{algebra14.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 2}}  {\large
+{\color{ azulc} FUNDAMENTOS DE ALGEBRA}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 2.14. }}
+{\normalsize {\color{naranja} Desigualdades Cuadráticas}}
+
+\newline
+
+Una desigualdad se llama cuadrática si tiene alguna de las formas
+siguientes:
+
+\bigskip
+
+\begin{gather*}
+ax^{2}+bx+c>0\\
+ax^{2}+bx+c\geq 0\\
+ax^{2}+bx+c\leq 0\\
+ax^{2}+bx+c<0
+\end{gather*}
+
+\bigskip
+
+con $a\neq 0$.
+
+\bigskip
+
+Antes de indicar como se resuelven estas desigualdades, recordamos
+que las soluciones de la ecuación cuadrática $ax^{2}+bx+c=0$ donde
+$a\neq 0$ son
+
+\bigskip
+
+\[r_{1}=\dfrac{-b+\sqrt{b^{2}-4ac}}{2a} \qquad \text{y}
+\qquad r_{2}=\dfrac{-b-\sqrt{b^{2}-4ac}}{2a}\]
+
+\bigskip
+
+Además, fácilmente se verifica que $r_{1}$ y $r_{2}$ satisfacen
+las siguientes relaciones
+
+\bigskip
+
+\[r_{1}+r_{2}=-\dfrac{b}{a}, \qquad r_{1}r_{2}=\dfrac{c}{a} \qquad \text{y} \qquad
+ax^{2}+bx+c=a(x-r_{1})(x-r_{2})\]
+
+\bigskip
+
+La última fórmula nos proporciona un método para factorizar
+cualquier trinomio de la forma $ax^{2}+bx+c$ en todos los casos
+posibles.
+
+\bigskip
+
+Veamos ahora como se resuelven las desigualdades cuadráticas. Una
+primera simplificación que podemos hacer es suponer que $a>0$,
+pues en caso contrario, multiplicando la desigualdad por $-1$,
+esta se transforma en otra desigualdad cuadrática con $a>0$.
+
+\bigskip
+
+Se presentan dos casos
+
+\bigskip
+
+\underline{\textit{Caso 1 }} \qquad Si $b^{2}-4ac\geq 0$.
+
+\bigskip
+
+En este caso la ecuación cuadrática $ax^{2}+bx+c=0$ tiene raíces
+reales $r_{1}$ y $r_{2}$, podemos factorizar el trinomio
+$ax^{2}+bx+c$ en la forma $a(x-r_{1})(x-r_{2})$, y la desigualdad
+se resuelve como en el ejemplo \docLink{algebra11.tex}{2.39}.
+
+\bigskip
+
+\underline{\textit{Caso 2}} \qquad Si $b^{2}-4ac<0$.
+
+\bigskip
+
+En este caso las raíces de la ecuación $ax^{2}+bx+c=0$ no son
+reales, sino complejas, y la factorización $a(x-r_{1})(x-r_{2})$
+no sirve para resolver la desigualdad.
+
+\bigskip
+
+Para resolver la desigualdad en este caso procedemos de la
+siguiente forma:
+
+\bigskip
+
+Completando el cuadrado tenemos
+
+\bigskip
+
+\begin{align*}
+ax^{2}+bx+c&=a(x^{2}+\dfrac{b}{a}x)+c\\
+&=a\left[x^{2}+\dfrac{b}{a}x+\left(\dfrac{b}{2a}\right)^{2}-\left(\dfrac{b}{2a}\right)^{2}\right]+c\\
+&=a\left[x^{2}+\dfrac{b}{a}x+\left(\dfrac{b}{2a}\right)^{2}\right]+\left(c-\dfrac{b^{2}}{4a}\right)\\
+&=a\left(x+\dfrac{b}{2a}\right)^{2}+\dfrac{4ac-b^{2}}{4a}
+\end{align*}
+
+\bigskip
+
+Por lo tanto las desigualdades cuadráticas se transforman en su
+orden en
+
+\bigskip
+
+\begin{gather*}
+a(x+\dfrac{b}{2a})^{2}>\dfrac{b^{2}-4ac}{4a}\\
+a(x+\dfrac{b}{2a})^{2}\geq \dfrac{b^{2}-4ac}{4a}\\
+a(x+\dfrac{b}{2a})^{2}\leq \dfrac{b^{2}-4ac}{4a}\\
+a(x+\dfrac{b}{2a})^{2}<\dfrac{b^{2}-4ac}{4a}
+\end{gather*}
+
+\bigskip
+
+Como estamos suponiendo que $a>0$ y sabemos que $b^{2}-4ac<0$, las
+dos primeras desigualdades son válidas para todo número real y las
+dos últimas para ninguno.
+
+\bigskip
+
+\textbf{Ejemplo 2.46. } Resolvamos la desigualdad
+
+\bigskip
+
+$3x^{2}-10x+2\leq 0$.
+
+\bigskip
+
+En este caso $b^{2}-4ac=(-10)^{2}-4\cdot 3\cdot 2=76\geq 0$. Por
+lo tanto la ecuación $3x^{2}-10x+2=0$ tiene raíces reales que son
+
+\bigskip
+
+\begin{align*}
+r_{1}&=\dfrac{10+\sqrt{76}}{6}=\dfrac{10+2\sqrt{19}}{6}=\dfrac{5+\sqrt{19}}{3}
+\qquad \text{y} \\
+r_{2}&=\dfrac{10-\sqrt{76}}{6}=\dfrac{10-2\sqrt{19}}{6}=\dfrac{5-\sqrt{19}}{3}
+\end{align*}
+
+\bigskip
+
+Luego la factorización de $3x^{2}-10x+2$ es
+
+\bigskip
+
+\[3x^{2}-10x+2=3\left[x-\left(\dfrac{5+\sqrt{19}}{3}\right)\right]\left[x-\left(\dfrac{5-\sqrt{19}}{3}\right)\right],\]
+
+\bigskip
+
+y la desigualdad original es equivalente a
+
+\bigskip
+
+\[3\left[x-\left(\dfrac{5+\sqrt{19}}{3}\right)\right]\left[x-\left(\dfrac{5-\sqrt{19}}{3}\right)\right]\leq 0\]
+
+\bigskip
+
+Elaborando el diagrama de signos tenemos
+
+\bigskip
+
+\[
+\includegraphics{img/img5.gif}
+\]
+
+\bigskip
+
+Vemos que la solución de la desigualdad es el intervalo
+$\left[\dfrac{5-\sqrt{19}}{3},\dfrac{5+\sqrt{19}}{3}\right]$
+
+\bigskip
+
+\textbf{Ejemplo 2.47. } Resolvamos la desigualdad $2x^{2}+4x+5\geq
+0$.
+
+\bigskip
+
+En este caso tenemos que $b^{2}-4ac=4^{2}-4\cdot 2\cdot 5=-24<0$.
+Por lo tanto la ecuación $2x^{2}+4x+5=0$ no tiene raíces reales y
+de acuerdo a la teoría desarrollada, el conjunto solución de la
+desigualdad $2x^{2}+4x+5\geq 0$ es todo $\mathbb{R}$.
+
+\bigskip
+
+\textbf{Ejemplo 2.48. }
+
+\bigskip
+
+Resolvamos la desigualdad $-5x^{2}+7x-6>0$.
+
+\bigskip
+
+La desigualdad es equivalente a $5x^{2}-7x+6<0$.
+
+\bigskip
+
+Para esta última desigualdad tenemos que
+$b^{2}-4ac=(-7)^{2}-4\cdot 5\cdot 6=-71<\dot{0}$. Por lo tanto la
+ecuación $5x^{2}-7x+6=0$ no tiene raíces reales y de acuerdo a la
+teoría desarrollada, el conjunto solución de la desigualdad
+$5x^{2}-7x+6<0$ es $\emptyset$. Es decir, la desigualdad original
+$-5x^{2}+7x-6>0$ no tiene soluciones reales.
+
+\bigskip
+
+Para terminar esta sección, recalcamos que cuando $a>0$ y
+$b^{2}-4ac<0$, las desigualdades cuadráticas, o tienen como
+conjunto solución todo $\mathbb{R}$, o no tienen soluciones
+reales.
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{algebra12.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Desigualdades} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Valor Absoluto} \\ \\ \\
+\end{tabular}
+\docLink{algebra14.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

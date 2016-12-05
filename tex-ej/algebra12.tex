@@ -1,0 +1,269 @@
+
+\documentclass[10pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=Latex.dll}
+%TCIDATA{Version=5.00.0.2606}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{LastRevised=Friday, March 25, 2005 20:37:55}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+
+\input{tcilatex}
+
+\begin{document}
+
+
+%TCIMACRO{%
+%\HTMLButton{ENCABEZADO}{<table width="100&#37" height="100&#37" border="0" cellpadding="0" cellspacing="0">
+%<tr>
+%<td valign="top">
+%<div align="center">
+%<table width="100&#37" border="0" cellspacing="0" cellpadding="3">
+%<tr> <!-- InstanceBeginEditable name="anterior" -->
+%<td width="30&#37"> <div align="left"><a href="algebra11.html"><img src="../../images/navegacion/anterior.gif" width="35" height="35" border="0" align="absmiddle"></a>Fracciones</div></td>
+%<!-- InstanceEndEditable -->
+%<td width="40&#37"> <div align="center"><!-- #BeginLibraryItem "/Library/superiorbar.lbi" --><a href="../../index.html" target="_top"><img src="../../images/navegacion/inicio.gif" alt="Ir al Inicio del Curso" width="35" height="35" border="0"></a><a href="../../docs_curso/contenido.html" target="principal"><img src="../../images/navegacion/contenido.gif" alt="Tabla de contenido del curso" width="35" height="35" border="0"></a><a href="../../docs_curso/descripcion.html" target="principal"><img src="../../images/navegacion/descripcion.gif" alt="Descripci&oacute;n del curso" width="35" height="35" border="0"></a><a href="../../docs_curso/profesor.html" target="principal"><img src="../../images/navegacion/profesor.gif" alt="P&aacute;gina del profesor(a)" width="35" height="35" border="0"></a><!-- #EndLibraryItem --></div></td>
+%<!-- InstanceBeginEditable name="siguiente" -->
+%<td width="30&#37"> <div align="right">Desigualdades Cuadráticas<a href="algebra13.html"><img src="../../images/navegacion/siguiente.gif" width="35" height="35" border="0" align="absmiddle"></a></div></td>
+%<!-- InstanceEndEditable --></tr>
+%</table>
+%</div></td>
+%</tr>
+%<tr>
+%<td valign="top" bgcolor="#FFFFFF">
+%<table width="98&#37" border="0" align="center" cellpadding="5" cellspacing="0">
+%<tr> <!-- InstanceBeginEditable name="titulo" -->
+%<td background="../../images/titulo_bg3.gif" bgcolor="#FFFFFF"> <div align="right" class="titulo">
+%<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="600" height="20">
+%<param name="movie" value="../../flash/titulo.swf?titulo=CAPITULO 2: FUNDAMENTOS DE ALGEBRA">
+%<param name="quality" value="high">
+%<param name="wmode" value="transparent">
+%<embed src="../../flash/titulo.swf?titulo=CAPITULO 2: FUNDAMENTOS DE ALGEBRA" width="600" height="20" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent"></embed></object>
+%</div></td>
+%<!-- InstanceEndEditable --></tr>
+%<tr> <!-- InstanceBeginEditable name="contenido" -->
+%<td valign="top">}}%
+
+%TCIMACRO{%
+%\HTMLButton{TITULOS1}{<br>
+%<p>
+%<table border="0" cellspacing="0" cellpadding="0">
+%<tr>
+%    <td bgcolor="#999999"><font color="#FFFFFF" size="2"><strong>&nbsp;Lección 2.13.
+%      </strong></font><strong><font color="#FFFFFF" size="4">&nbsp;</font></strong>
+%    </td>
+%<td><div align="left"> <font color="#666666" size="4"> &nbsp;&nbsp;<strong>
+%        <font size="3">Desigualdades</font></strong></font>
+%      </div></td>
+%</tr>
+%</table>
+%</p>}}%
+
+Una condici\'{o}n en $x$ es una expresi\'{o}n que contiene la variable $x$ y
+se transforma en una proposici\'{o}n matem\'{a}tica, es decir en una afirmaci%
+\'{o}n que es verdadera o falsa, cuando se sustituye $x$ por un elemento del
+dominio en consideraci\'{o}n, en nuestro caso por un n\'{u}mero real.
+
+El conjunto de elementos del dominio que hacen de la condici\'{o}n una
+proposici\'{o}n verdadera, se llama el \textit{conjunto soluci\'{o}n} de la
+condici\'{o}n.
+
+La mayor\'{\i}a de las condiciones que se presentan en matem\'{a}ticas
+tienen la forma de una ecuaci\'{o}n o de una desigualdad. En esta secci\'{o}%
+n estudiaremos algunas desigualdades y sus soluciones.
+
+Resolver una desigualdad es encontrar su conjunto soluci\'{o}n, es decir
+encontrar todos los n\'{u}meros reales que la hacen verdadera. El
+procedimiento para resolver desigualdades consiste en transformarlas en
+desigualdades equivalentes, es decir desigualdades que tienen las mismas
+soluciones, hasta que el conjunto soluci\'{o}n sea obvio. Las herramientas
+para este trabajo son las propiedades del orden entre los n\'{u}meros reales
+estudiadas en la secci\'{o}n 
+%TCIMACRO{\HTMLButton{link 1.4.}{<a href="../cap1/reales4.tex">1.4.</a>}}%
+. Por su uso tan frecuente nos permitimos recordar las siguientes:
+
+\begin{itemize}
+\item Si $x<y$ entonces $x+z<y+z$ para todo n\'{u}mero real $z$.
+
+\item Si $x<y$ y $z>0$ entonces $xz<yz$ y $\dfrac{x}{z}<\dfrac{y}{z}$.
+
+\item Si $x<y$ y $z<0$ entonces $xz>yz$ y $\dfrac{x}{z}>\dfrac{y}{z}$.
+\end{itemize}
+
+\textbf{Ejemplo 2.41.} Resolvamos la desigualdad
+
+\begin{equation*}
+2x+7\leq 5x-6
+\end{equation*}
+
+Las siguientes desigualdades son equivalentes:
+
+\begin{align*}
+2x+7 \leq 5x-6 \qquad &\text{Desigualdad dada} \\
+-3x+7 \leq -6 \qquad &\text{Sumando $-5x$} \\
+-3x \leq -13 \qquad &\text{Sumando $-7$} \\
+x \geq \dfrac{13}{3} \qquad &\text{Multiplicando por $-\dfrac{1}{3}$} \\
+\end{align*}
+
+Por lo tanto, el conjunto soluci\'{o}n de la desigualdad es el intervalo $[%
+\dfrac{13}{3},\infty )$, que se muestra en la figura siguiente
+
+\begin{center}
+%TCIMACRO{\HTMLButton{[IMAGEN] img/img1.gif}{<img src="img/img1.gif">}}%
+\end{center}
+
+\textbf{Ejemplo 2.42. } Resolvamos la desigualdad
+
+\begin{equation*}
+-5<4x+1<9
+\end{equation*}
+
+Aunque la desigualdad dada es equivalente a las dos desigualdades
+
+\begin{equation*}
+-5<4x+1 \quad \text{y} \quad 4x+1<9
+\end{equation*}
+
+las podemos resolver simult\'{a}neamente de la siguiente forma:
+
+\begin{align*}
+-5 <4x+1<9 \qquad &\text{ Desigualdad dada} \\
+-6 <4x<8 \qquad &\text{Sumando $-1$} \\
+-\dfrac{6}{4} <x<\dfrac{8}{4} \qquad &\text{Multiplicando por $\dfrac{1}{4}$}
+\\
+-\dfrac{3}{2} <x<2 \qquad &\text{Realizando las operaciones}
+\end{align*}
+
+Por lo tanto, el conjunto soluci\'{o}n de la desigualdad es el intervalo $%
+\left(-\dfrac{3}{2},2\right)$.
+
+\textbf{Ejemplo 2.43.}
+
+Resolvamos la desigualdad
+
+\begin{equation*}
+x^{2}-10x+21>0
+\end{equation*}
+
+La desigualdad es equivalente a
+
+\begin{equation*}
+(x-7)(x-3)>0
+\end{equation*}
+
+El producto $(x-7)(x-3)$ puede cambiar de signo solo en $7$ o en $-3$, que
+son los puntos donde $x-7=0$ o $x-3=0$. Estos puntos los podemos llamar
+puntos de separaci\'{o}n y nos dividen la recta en tres intervalos
+
+\begin{equation*}
+(-\infty ,3), \qquad (3,7) \qquad \text{ y } \qquad (7,\infty)
+\end{equation*}
+
+En cada uno de estos intervalos $(x-7)(x-3)$ conserva el signo, es decir,
+siempre es positivo o siempre es negativo. Para determinar el signo en cada
+intervalo usamos un punto de prueba, elegido dentro del intervalo. Por
+ejemplo si tomamos $x=0$ en el intervalo $(-\infty ,3)$ los valores de $(x-7)
+$ y $(x-3)$ son ambos negativos y por lo tanto $(x-7)(x-3)>0$ en este
+intervalo. Similarmente se procede con los otros intervalos. Los resultados
+se pueden expresar en una tabla de signos como la siguiente
+
+\begin{center}
+\begin{tabular}{|l|c|c|c|}
+\hline
+Intervalo & $(-\infty ,3)$ & $(3,7)$ & $(7,\infty )$ \\ \hline
+Signo de $(x-7)$ & $-$ & $-$ & $+$ \\ \hline
+Signo de $(x-3)$ & $-$ & $+$ & $+$ \\ \hline
+Signo de $(x-7)(x-3)$ & $+$ & $-$ & $+$ \\ \hline
+\end{tabular}
+\end{center}
+
+donde el signo $(x-7)(x-3)$ se obtiene aplicando las reglas de los signos.
+
+Por lo tanto, vemos que la soluci\'{o}n de la desigualdad es $%
+(-\infty,3)\cup (7,\infty )$.
+
+Una manera mas pr\'{a}ctica de resolver esta desigualdad es elaborando un
+diagrama de signos, como se muestra a continuaci\'{o}n.
+
+\begin{center}
+%TCIMACRO{\HTMLButton{[IMAGEN] img/img2.gif}{<img src="img/img2.gif">}}%
+\end{center}
+
+En el diagrama, las l\'{\i}neas verticales corresponden a los puntos de
+separaci\'{o}n y la recta horizontal es la recta real.
+
+\textbf{Ejemplo 2.44. } Resolvamos la desigualdad
+
+\begin{equation*}
+(2x+3)(4-x)(x+5)\leq 0
+\end{equation*}
+
+Elaboramos un diagrama de signos. Primero obtenemos los puntos de separaci%
+\'{o}n resolviendo las ecuaciones $2x+3=0$, $4-x=0$ y $x+5=0$. Los puntos de
+separaci\'{o}n son $-\dfrac{3}{2}$, $4$ y $-5$.
+
+Tenemos el siguiente diagrama
+
+\begin{center}
+%TCIMACRO{\HTMLButton{[IMAGEN] img/img3.gif}{<img src="img/img3.gif">}}%
+\end{center}
+
+Analizando el signo resultante, es decir el signo de $(2x+3)(4-x)(x+5)$,
+vemos que la soluci\'{o}n de la desigualdad dada es $\left[-5,-\dfrac{3}{2}%
+\right]\cup \lbrack 4,\infty )$.
+
+\textbf{Ejemplo 2.45. } Resolvamos la desigualdad
+
+\begin{equation*}
+\dfrac{3x-1}{x+4}>2
+\end{equation*}
+
+La desigualdad es equivalente a cada una de las siguientes
+
+\begin{align*}
+\dfrac{3x-1}{x+4}-2 &>0 \\
+\dfrac{(3x-1)-2(x+4)}{x+4} &>0 \\
+\dfrac{x-9}{x+4} &>0
+\end{align*}
+
+Elaborando el diagrama de signos tenemos
+
+\begin{center}
+%TCIMACRO{\HTMLButton{[IMAGEN] img/img4.gif}{<img src="img/img4.gif">}}%
+\end{center}
+
+Por lo tanto la soluci\'{o}n de la desigualdad es $(-\infty,-4)\cup
+(9,\infty )$.
+
+%TCIMACRO{%
+%\HTMLButton{HTML Field}{</td>
+%<!-- InstanceEndEditable --></tr>
+%<tr>
+%<td height="25" background="../../images/titulo_bg3.gif">
+%<div align="center"><font color="#FFFFFF">__</font> </div></td>
+%</tr>
+%</table></td>
+%</tr>
+%<tr>
+%<td valign="bottom">
+%<table width="100&#37" border="0" cellspacing="0" cellpadding="3">
+%<tr> <!-- InstanceBeginEditable name="anterior" -->
+%<td width="30&#37"> <div align="left"><a href="algebra11.html"><img src="../../images/navegacion/anterior.gif" width="35" height="35" border="0" align="absmiddle"></a>Fracciones</div></td>
+%<!-- InstanceEndEditable -->
+%<td width="40&#37"> <div align="center"><!-- #BeginLibraryItem "/Library/superiorbar.lbi" --><a href="../../index.html" target="_top"><img src="../../images/navegacion/inicio.gif" alt="Ir al Inicio del Curso" width="35" height="35" border="0"></a><a href="../../docs_curso/contenido.html" target="principal"><img src="../../images/navegacion/contenido.gif" alt="Tabla de contenido del curso" width="35" height="35" border="0"></a><a href="../../docs_curso/descripcion.html" target="principal"><img src="../../images/navegacion/descripcion.gif" alt="Descripci&oacute;n del curso" width="35" height="35" border="0"></a><a href="../../docs_curso/profesor.html" target="principal"><img src="../../images/navegacion/profesor.gif" alt="P&aacute;gina del profesor(a)" width="35" height="35" border="0"></a><!-- #EndLibraryItem --></div></td>
+%<!-- InstanceBeginEditable name="siguiente" -->
+%<td width="30&#37"> <div align="right">Desigualdades Cuadráticas<a href="algebra13.html"><img src="../../images/navegacion/siguiente.gif" width="35" height="35" border="0" align="absmiddle"></a></div></td>
+%<!-- InstanceEndEditable --></tr>
+%</table></td>
+%</tr>
+%<tr>
+%<td valign="bottom">
+%<div align="right"><img src="../../images/interfaz/copyright.gif" width="470" height="20" border="0" usemap="#Map"></div></td>
+%</tr>
+%</table>}}%
+
+\end{document}

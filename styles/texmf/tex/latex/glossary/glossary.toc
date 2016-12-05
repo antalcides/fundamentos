@@ -1,0 +1,29 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}
+\contentsline {section}{\numberline {2}Installation}{1}{section.2}
+\contentsline {section}{\numberline {3}Generating Glossary Information}{2}{section.3}
+\contentsline {subsection}{\numberline {3.1}Storing Glossary Information}{4}{subsection.3.1}
+\contentsline {section}{\numberline {4}makeglos.pl}{6}{section.4}
+\contentsline {section}{\numberline {5}Displaying the Glossary}{7}{section.5}
+\contentsline {section}{\numberline {6}Package Options}{7}{section.6}
+\contentsline {subsection}{\numberline {6.1}Examples}{9}{subsection.6.1}
+\contentsline {section}{\numberline {7}Defining New Glossary Types}{10}{section.7}
+\contentsline {section}{\numberline {8}Acronyms}{12}{section.8}
+\contentsline {subsection}{\numberline {8.1}Examples}{15}{subsection.8.1}
+\contentsline {section}{\numberline {9}Customizing the Glossary}{16}{section.9}
+\contentsline {section}{\numberline {10}Sample Documents}{19}{section.10}
+\contentsline {section}{\numberline {11}LaTeX2HTML Style File}{21}{section.11}
+\contentsline {subsection}{\numberline {11.1}Limitations}{22}{subsection.11.1}
+\contentsline {section}{\numberline {12}Troubleshooting}{22}{section.12}
+\contentsline {section}{\numberline {13}Obsolete Commands}{27}{section.13}
+\contentsline {section}{\numberline {14}Contact Details}{27}{section.14}
+\contentsline {section}{\numberline {15}Acknowledgements}{27}{section.15}
+\contentsline {section}{\numberline {16}The Code}{27}{section.16}
+\contentsline {subsection}{\numberline {16.1}Package Definition}{27}{subsection.16.1}
+\contentsline {subsection}{\numberline {16.2}Redefining \texttt {\char 92\relax glossary} format}{31}{subsection.16.2}
+\contentsline {subsection}{\numberline {16.3}Storing Glossary Entries}{33}{subsection.16.3}
+\contentsline {subsection}{\numberline {16.4}Makeindex style file}{44}{subsection.16.4}
+\contentsline {subsection}{\numberline {16.5}Defining a new glossary type}{45}{subsection.16.5}
+\contentsline {subsection}{\numberline {16.6}Acronyms}{46}{subsection.16.6}
+\contentsline {subsection}{\numberline {16.7}Glossary Hyperlinks}{50}{subsection.16.7}
+\contentsline {section}{Change History}{52}{subsection.16.7}
+\contentsline {section}{Index}{52}{subsection.16.7}

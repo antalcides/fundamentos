@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html itemscope="" itemtype="http://schema.org/Product"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-animate){display:none !important;}ng\:form{display:block;}</style><title>Generating TikZ Code from GeoGebra for LaTeX Documents and Beamer Presentations - ShareLaTeX, Online LaTeX Editor</title><link rel="icon" href="https://www.sharelatex.com/favicon.ico"><link rel="stylesheet" href="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/style.css"><link href="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/font-awesome.css" rel="stylesheet"><link rel="alternate" href="http://www.sharelatex.com/blog/2013/08/28/tikz-series-pt2.html" hreflang="en"><link rel="alternate" href="http://es.sharelatex.com/blog/2013/08/28/tikz-series-pt2.html" hreflang="es"><meta itemprop="name" content="ShareLaTeX, the Online LaTeX Editor"><meta itemprop="description" content="An online LaTeX editor that's easy to use. No installation, real-time collaboration, version control, hundreds of LaTeX templates, and more."><meta itemprop="image" content="https://www.sharelatex.com/favicon.ico"><script src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/analytics.js" async=""></script><script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-11004462-4', 'sharelatex.com');
+ga('send', 'pageview');</script><script type="text/javascript">window.csrfToken = "K_ok3eaLvkazLfJZQaHFYnHF";</script><script src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/jquery.js"></script><script src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/angular.js"></script><script>window.sharelatex = {
+ siteUrl: 'https://www.sharelatex.com',
+ jsPath:  '/minjs/'
+};
+window.systemMessages = [];
+</script><script>window.sharelatex.algolia = {
+ app_id:'SK53GL4JLY',
+ api_key:'1606ccef5b70ac44680b61e6b0285126',
+ indexes:{"templates":"templates-production","institutions":"institutions"}
+}
+</script><script>window.sharelatex.templates = {
+ user_id : '515d4e908d2c843b4a00620b',
+ cdnDomain : 'https://d1hk1zhcb5hn6i.cloudfront.net',
+ indexName : 'templates-production'
+}</script><script src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/embed.js" async="" type="text/javascript"></script><script src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/main.js" data-requiremodule="main" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/libs.js" data-requiremodule="libs" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/algolia-2.js" data-requiremodule="libs/algolia-2.5.2" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><style charset="utf-8" type="text/css">#tender_window{ position: absolute; top: 20px; left: 10px; right: 10px; margin: auto; max-width:680px; height:715px; padding:3px; background:url(https://sharelatex.tenderapp.com/images/widget/overlay_back.png); z-index:9999; }#tender_window iframe{ border:none; width:100%; height:100%; } #tender_window #tender_frame{ width:100%; height:100%; background:url(https://sharelatex.tenderapp.com/images/widget/loader.gif) 50% 50% no-repeat #fff; } #tender_closer{ position:absolute; top:18px; right:18px; color:#fff; font-family:Helvetica, Arial, sans-serif; font-size:12px; font-weight:bold; text-decoration:none; border:none; } #tender_closer{ color: #80B3CC }#tender_toggler{ position:absolute; top:100px; right:0px; width:33px; height:105px; padding:3px 0 3px 3px; background:url(https://sharelatex.tenderapp.com/images/widget/overlay_back.png); } #tender_toggler_link{ display:block; width:100%; height:100%; text-decoration:none; border:none; text-indent:-9999px; background: #006699 url(https://sharelatex.tenderapp.com/images/widget/tab_text_right.gif) !important; } </style></head><body class="ng-scope"><div ng-controller="SystemMessagesController" class="system-messages ng-scope"><!-- ngRepeat: message in messages --></div><nav class="navbar navbar-default"><div class="container-fluid"><div class="navbar-header"><button ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed" ng-class="{active: !navCollapsed}" class="navbar-toggle"><i class="fa fa-bars"></i></button><a href="https://www.sharelatex.com/" class="navbar-brand"></a></div><div style="height: 0px;" collapse="navCollapsed" class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li class="subdued"><a href="https://www.sharelatex.com/user/subscription/plans" class="subdued">Plans &amp; Pricing</a></li><li class="dropdown subdued"><a aria-expanded="false" aria-haspopup="true" href="" class="dropdown-toggle">Help<b class="caret"></b></a><ul class="dropdown-menu"><li><a href="https://www.sharelatex.com/learn">Documentation</a></li><li><a href="#" class="js-tender-widget">Contact us</a></li></ul></li><li><a href="https://www.sharelatex.com/register">Register</a></li><li><a href="https://www.sharelatex.com/login">Log In</a></li></ul></div></div></nav><div class="content content-alt"><div class="blog"><div class="page-header">
+	<div class="container">
+		<h1><a href="https://www.sharelatex.com/blog">ShareLaTeX Blog</a></h1>
+	</div>
+</div>
+	
+<div class="container">
+
+	<div class="row">
+		<div class="col-md-8 col-md-offset post">
+			
+<div class="card post row-spaced">
+	<div class="page-header">
+		<h2>
+			<a href="https://www.sharelatex.com/blog/2013/08/28/tikz-series-pt2.html">Generating TikZ Code from GeoGebra for LaTeX Documents and Beamer Presentations</a>
+		</h2>
+	</div>
+
+	<p><em>To see the corresponding video for this blog post click <a href="http://www.youtube.com/watch?v=beUSEBoci5c">here</a>.</em></p>
+
+<p>In this video we’re going to look at using GeoGebra to generate TikZ code to use in our LaTeX documents. 
+GeoGebra is a great tool for creating and displaying mathematical diagrams. 
+You can get a copy of GeoGebra from the GeoGebra website, <a href="http://www.geogebra.org/">www.geogebra.org</a>.</p>
+
+<p>Let’s start by creating a simple diagram in GeoGebra. 
+First we’ll add a circle using the ‘Circle with Centre through Point’ tool.</p>
+
+<p><img src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/g1.png" alt="g1" style="width: 400px;"></p>
+
+<p>Next we’ll add a polygon inside our circle using the ‘Polygon’ tool.</p>
+
+<p><img src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/g2.png" alt="g2" style="width: 400px;"></p>
+
+<p>Then we’ll measure an angle inside this polygon using the angle tool. </p>
+
+<p><img src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/g3.png" alt="g3" style="width: 400px;"></p>
+
+<p>Now we’ll add a straight line going through two points on the circle using the ‘Line through Two Points’ tool.</p>
+
+<p><img src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/g4.png" alt="g4" style="width: 400px;"></p>
+
+<p>We’ll finish up by turning the grid on. 
+To do this we select the ‘Move’ tool, right click on the background and select the ‘Grid’ option.</p>
+
+<p><img src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/g5.png" alt="g5" style="width: 400px;"></p>
+
+<p>Now to export this as TikZ code we open the file menu, hover over ‘Export’ and click on ‘Graphics View as PGF/TikZ’. </p>
+
+<p><img src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/export.png" alt="export"></p>
+
+<p>We then tell GeoGebra how much of the grid we want included in our 
+‘tikzpicture’ by altering the x and y minimum and maximum points. 
+You’ll see a blue box represent this area on the grid. 
+Next we check the format is set to LaTeX article class and then click 
+the generate button.</p>
+
+<p><img src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/generate.png" alt="generate" style="width: 450px;"></p>
+
+<p>Now if we hit ‘Copy to Clipboard’ we can then paste it into an empty 
+tex file. 
+You’ll notice that it has generated a preamble where it loads up the 
+TikZ package and a TikZ library, it sets the page style to ‘empty’ and 
+it also defines a new command:</p>
+
+<pre><code>\usepackage{pgf,tikz}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\newcommand{\degre}{\ensuremath{^\circ}}
+</code></pre>
+
+<p>Then it begins the document and defines some colours before opening a ‘tikzpicture’ environment:</p>
+
+<pre><code>\definecolor{qqwuqq}{rgb}{0,0.39,0}
+\definecolor{zzttqq}{rgb}{0.6,0.2,0}
+\definecolor{xdxdff}{rgb}{0.49,0.49,1}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+</code></pre>
+
+<p>If we compile the code we’ll see it appear in the document. 
+As it’s generated from TikZ code rather than an image, it’s very high quality.</p>
+
+<p><img src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/compile.png" alt="compile"></p>
+
+<p>We could also turn the TikZ picture into a figure to give us more control over things like positioning. 
+To do this we simply enclose the ‘tikzpicture’ environment in the ‘figure’ environment. 
+We can then add a placement specifier, a caption and a label:</p>
+
+<pre><code>\begin{figure}[!h]
+
+&lt;tikzpicture environment&gt;
+
+\label{circle1}
+\caption{TikZ from GeoGebra}
+\end{figure}
+</code></pre>
+
+<p>Now if we want to include this figure in an existing document we can copy over everything in the figure environment. 
+We also need to make sure we copy over the relevant parts of the preamble if they’re not in our existing docs preamble already. 
+Therefore we’ll copy over the <code>\usepackage</code> command and <code>\usetikzlibrary</code> command as well as the <code>\newcommand</code> definition. 
+Finally we also need to copy over the colour definitions.</p>
+
+<p><img src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/figure.png" alt="figure"></p>
+
+<p>If we go back to GeoGebra we can alter the way our diagram looks by right clicking on it and changing the object properties. 
+For example we can change colours, point styles, line styles and line thickness.</p>
+
+<p><img src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/colour.png" alt="colour"></p>
+
+<p>Another useful thing we can do with GoeGebra is export to Tikz in a 
+beamer format so that we can add diagrams into presentations. 
+To do this we export like before except we select the ‘LaTeX (beamer 
+class)’ option. </p>
+
+<p><img src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/beamer.png" alt="beamer"></p>
+
+<p>If we now copy this into a blank tex file and compile the document 
+you’ll notice it has generated a number of slides which build up the 
+diagram piece by piece:</p>
+
+<p><img src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/b1.png" alt="b1" style="width: 222px;">
+<img src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/b2.png" alt="b2" style="width: 222px;">
+<img src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/b3.png" alt="b3" style="width: 222px;"></p>
+
+<p><img src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/b4.png" alt="b4" style="width: 222px;">
+<img src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/b5.png" alt="b5" style="width: 222px;">
+<img src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/b6.png" alt="b6" style="width: 222px;"></p>
+
+<p><img src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/b7.png" alt="b7" style="width: 222px;">
+<img src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/b8.png" alt="b8" style="width: 222px;">
+<img src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/b9.png" alt="b9" style="width: 222px;"></p>
+
+<p>This is due to the <code>\onslide</code> overlay specifications that GeoGebra has automatically generated for us. 
+For example this <code>\onslide</code> command tells beamer to show the circle from slide four onwards:</p>
+
+<pre><code>\onslide&lt;4-&gt;{
+  \draw [color=ffqqtt] (2,1) circle (2.82cm);
+}
+</code></pre>
+
+<p>We can edit these overlay specifications to make the diagram come together in whatever way we want. 
+For example we may want to make the circle appear on the same slide that point B appears. 
+To do this we change this <code>\onslide</code> command from <code>&lt;4-&gt;</code> to <code>&lt;3-&gt;</code>
+ and then, as the circle was the only item to appear on slide four, we 
+knock the numbering of all overlay specifications above four down by 
+one.
+Again if you want to add this frame into another beamer presentation you
+ can just copy over all the relevant parts as we did with the document 
+earlier.</p>
+
+<p>This concludes our discussion on using GeoGebra to generate TikZ code. 
+In the next post we’ll look at creating flow charts. 
+Please do keep in touch with us via <a href="https://www.facebook.com/ShareLaTeX">Facebook</a>, <a href="https://twitter.com/sharelatex">Twitter</a> &amp; <a href="https://plus.google.com/115074691861228882827/posts">Google+</a>.</p>
+
+<h3 id="other-posts-in-this-series">Other posts in this series</h3>
+<p><a href="https://www.sharelatex.com/blog/2013/08/27/tikz-series-pt1.html">Basic Drawing Using TikZ</a></p>
+
+<p><a href="https://www.sharelatex.com/blog/2013/08/29/tikz-series-pt3.html">Creating Flowcharts with TikZ</a></p>
+
+<p><a href="https://www.sharelatex.com/blog/2013/09/02/tikz-series-pt4.html">Circuit Diagrams Using Circuitikz</a></p>
+
+<p><a href="https://www.sharelatex.com/blog/2013/09/04/tikz-series-pt5.html">Creating Mind Maps Using TikZ</a></p>
+
+	<p class="author_details">Posted by Josh Cassidy on 28 Aug 2013</p>
+</div>
+
+
+<div class="row-spaced">
+	<p>
+		<a href="https://www.sharelatex.com/blog/rss.xml">
+			<i class="fa fa-fw fa-rss-square"></i> Subscribe
+		</a> /&nbsp;
+		<a href="https://www.sharelatex.com/blog/atom.xml">
+				<i class="fa fa-fw fa-rss-square"></i> Atom
+		</a>
+	</p>
+</div>
+
+<div id="disqus_thread"><iframe verticalscrolling="no" horizontalscrolling="no" src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/a.html" style="width: 100% ! important; border: medium none ! important; overflow: hidden ! important; height: 614px ! important;" title="Disqus" tabindex="0" scrolling="no" allowtransparency="true" data-disqus-uid="2" id="dsq-2" frameborder="0" width="100%"></iframe>
+</div>
+
+
+		</div>
+		<div class="col-md-4 blurb">
+			<h2>About Us</h2>
+			<div>
+				<p>
+					<a href="https://www.sharelatex.com/">ShareLaTeX</a> is an online LaTeX editor that
+					allows real-time collaboration in your browser
+					</p>
+					<p>
+					<a class="btn btn-info blog_goto_sharelatex_button" href="https://www.sharelatex.com/">Try ShareLaTeX Now</a>
+				</p>
+			</div>
+			<div>
+				<p>
+					<a href="https://www.sharelatex.com/blog/rss.xml">
+						<i class="fa fa-fw fa-rss-square"></i> Subscribe
+					</a> /&nbsp;
+					<a href="https://www.sharelatex.com/blog/atom.xml">
+						<i class="fa fa-fw fa-rss-square"></i> Atom
+					</a>
+				</p>
+			</div>
+
+			<div>
+				<h2>Recent Posts</h2>
+				<ul class="list-unstyled">
+				
+					<li>
+						<a href="https://www.sharelatex.com/blog/2014/07/28/sharelatex-has-had-a-makeover.html">ShareLaTeX has had a Makeover</a>
+					</li>
+				
+					<li>
+						<a href="https://www.sharelatex.com/blog/2014/07/23/redesign-open-beta.html">Redesign Open Beta</a>
+					</li>
+				
+					<li>
+						<a href="https://www.sharelatex.com/blog/2014/07/14/sharelatex-redesign-preview.html">ShareLaTeX Redesign Preview</a>
+					</li>
+				
+					<li>
+						<a href="https://www.sharelatex.com/blog/2014/05/13/ieee-templates.html">IEEE templates on ShareLaTeX</a>
+					</li>
+				
+					<li>
+						<a href="https://www.sharelatex.com/blog/2014/04/14/incident-report-14th-april-2014.html">Incident Report - 14th April 2014</a>
+					</li>
+				
+					<li>
+						<a href="https://www.sharelatex.com/blog/2014/04/10/forward-and-reverse-search-in-sharelatex.html">Forward and Reverse Search in ShareLaTeX</a>
+					</li>
+				
+				</ul>
+				<a href="https://www.sharelatex.com/blog/all.html" class="view-all">View All</a> 
+			</div>
+
+			<div>
+				<h2>Video Guides</h2>
+				<ul class="list-unstyled">
+				
+					
+					<li>
+						<a href="https://www.sharelatex.com/blog/latex-guides/beginners-tutorial/your-first-latex-document.html">Creating your first LaTeX document</a>
+					</li>
+					
+				
+					
+					<li>
+						<a href="https://www.sharelatex.com/blog/latex-guides/beginners-tutorial/paragraphs-and-sections-in-latex.html">Paragraphs and Sections in LaTeX</a>
+					</li>
+					
+				
+					
+					<li>
+						<a href="https://www.sharelatex.com/blog/latex-guides/beginners-tutorial/mathematics-in-latex.html">Mathematics in LaTeX</a>
+					</li>
+					
+				
+					
+					<li>
+						<a href="https://www.sharelatex.com/blog/latex-guides/beginners-tutorial/images-in-latex.html">Images in LaTeX</a>
+					</li>
+					
+				
+					
+					<li>
+						<a href="https://www.sharelatex.com/blog/latex-guides/beginners-tutorial/bibliographies-in-latex.html">Bibliographies and Natbib</a>
+					</li>
+					
+				
+					
+					<li>
+						<a href="https://www.sharelatex.com/blog/latex-guides/beginners-tutorial/tables-and-matrices-in-latex.html">Tables and Matrices in LaTeX</a>
+					</li>
+					
+				
+					
+					<li>
+						<a href="https://www.sharelatex.com/blog/latex-guides/beginners-tutorial/longer-documents-in-latex.html">Longer Documents in LaTeX</a>
+					</li>
+					
+				
+				<a href="https://www.sharelatex.com/blog/latex-guides/beginners-tutorial.html" class="view-all">View All</a> 
+				</ul>
+			</div>
+
+		</div>
+	</div>
+</div>
+</div></div><footer class="site-footer"><div class="container"><div class="row"><ul class="col-md-6"><li>© 2014 ShareLaTeX</li><li><a href="https://www.sharelatex.com/tos">Terms</a></li><li><a href="https://www.sharelatex.com/privacy_policy">Privacy</a></li><li><a href="https://www.sharelatex.com/security">Security</a></li><li><a href="#" class="js-tender-widget">Contact</a></li><li><a href="https://www.sharelatex.com/about">About</a></li><li><a href="https://www.sharelatex.com/blog">Blog</a></li></ul><ul class="col-md-6"><li><a href="http://www.twitter.com/sharelatex"><i class="fa fa-twitter-square"></i></a></li><li><a href="http://www.facebook.com/pages/ShareLaTeX/301671376556660"><i class="fa fa-facebook-square"></i></a></li><li><a href="https://plus.google.com/115074691861228882827"><i class="fa fa-google-plus-square"></i></a></li><li><a href="https://github.com/sharelatex/sharelatex"><i class="fa fa-github-square"></i></a></li></ul></div></div></footer><script type="text/javascript">window.requirejs = {
+ "urlArgs" : "fingerprint=a9af6bd9d47d9465d3a372efd49305f4-b6a22524cb89601b2d81c5a317e2cb9e",
+ "paths" : {
+  "moment": "libs/moment-2.7.0"
+ }
+};	</script><script data-main="/minjs/main.js" baseurl="/minjs/" src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/require.js"></script><script src="Generating%20TikZ%20Code%20from%20GeoGebra%20for%20LaTeX%20Documents%20and%20Beamer%20Presentations%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/tender_widget.js"></script><script type="text/javascript">Tender = {
+ hideToggle: true,
+ widgetToggles: $(".js-tender-widget"),
+ category: "questions"
+};
+
+</script><div><div style="display: none;" id="tender_toggler"><a href="#" id="tender_toggler_link">Help &amp; Support</a></div></div></body></html>

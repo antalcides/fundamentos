@@ -1,0 +1,81 @@
+#right-column a.ad {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.bc-red #main-section a.adhere,
+.bc-green #main-section a.adhere,
+.bc-blue #main-section a.adhere {
+    color: #666;
+}
+
+#rokmininews div.bsap_1262453 a {
+    float: none;
+}
+
+#main-section  #bottommodules1 .module-notitle div div div {
+    height: 150px;
+}
+
+#bottommodules1 div.module-notitle,
+#bottommodules1 div.module-notitle > div,
+#bottommodules1 div.module-notitle > div > div,
+#bottommodules1 div.module-notitle > div > div > div {
+    background: none;
+    padding: 0;
+}
+
+#bottommodules1 div.module-notitle {
+    margin: 10px 0;
+}
+
+#bottommodules1 div.module-notitle > div > div > div {
+    padding: 0 10px;
+}
+
+#bottommodules1 div.bsap_1262456 {
+    float: left;
+    width: auto;
+}
+
+#bottommodules1 #bottom_ads > .ad {
+    float: left;
+}
+
+#bottommodules1 #bottom_ads > a.adhere {    
+    display: block;
+    float: left;
+    width: 178px;
+    height: 148px;    
+    
+    font-family: verdana,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #666;
+    line-height: 144px;
+    text-align: center;
+    vertical-align: baseline;
+    text-decoration: none;
+    
+    background-color: #e7e7e7;
+    border: 1px solid #cccccc;
+}
+
+#bottommodules1 #bottom_ads > a.adhere:hover {
+    border: 1px solid #999;
+    background: #ddd;
+}
+
+#bottommodules1 #bsap_1262456 .ad2,
+#bottommodules1 #bsap_1262456 .ad3,
+#bottommodules1 #bsap_1262456 .ad4,
+#bottommodules1 #bsap_1262456 .ad5,
+#bottommodules1 #bsap_1262456 .ad6,
+#bottommodules1 #bottom_ads .ad5, 
+#bottommodules1 #bottom_ads .ad6 {
+    margin-left: 6px;
+}
+
+#bottommodules1 #bottom_ads .ad6 {
+    margin-left: 5px;
+}

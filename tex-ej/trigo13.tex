@@ -1,0 +1,393 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{trigo12.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Ecuaciones Trigonométricas} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small \'{A}ngulos Múltiples} \\ \\ \\
+\end{tabular}
+\docLink{trigo14.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 5}}  {\large
+{\color{ azulc} NOTAS DE TRIGONOMETRIA}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 5.12. }}
+{\normalsize {\color{naranja} Fórmulas de Suma y Resta}}
+
+\newline
+
+En ocasiones se encuentran expresiones de la forma: $\cos
+\left(\alpha +\beta \right)$, $sen\left( \alpha -\beta
+\right)$,\ldots, y es importante poder escribirlas directamente en
+términos de $sen\alpha$, $sen\beta$, $\cos\alpha$, $\cos\beta$.
+
+\bigskip
+
+Mediante construcciones geométricas, la definición de distancia y
+el uso de la identidades fundamentales se puede demostrar que
+
+\bigskip
+
+\[\cos \left( \alpha - \beta \right)=\cos \alpha \cos \beta + sen \alpha sen \beta,\]
+
+\bigskip
+
+y a partir de ella, determinar el valor del coseno de la suma y
+otros resultados.
+
+\bigskip
+
+Las igualdades son válidas para cualquier tipo de ángulos y su
+medida puede estar dada en grados sexagesimales o en radianes.
+Así:
+
+\bigskip
+
+La fórmula para determinar el coseno de la suma se encuentra a
+partir de la anterior, expresando a $s+t$ como $s-(-t)$:
+
+\bigskip
+
+\[\cos\left( s+t \right)= \cos\left(s - \left(-t\right)\right)=\cos s \cos \left( -t\right) + sen s sen \left(-t
+\right)\]
+
+\bigskip
+
+Teniendo en cuenta que $\cos \left( -t \right) =\cos t$ y que $sen
+\left( -t \right) =-sen t$:
+
+\bigskip
+
+\[\cos \left( s+t \right) =\cos s \cos t -sen s sen t\]
+
+\bigskip
+
+Usando estas identidades podemos hallar el seno y el coseno del
+complemento de un ángulo:
+
+\bigskip
+
+\[\cos\left( \dfrac{\pi }{2}-\alpha \right) =\cos\dfrac{\pi}{2}\cos \alpha +sen\dfrac{\pi}{2}sen\alpha.\]
+
+\bigskip
+
+Como $\cos\dfrac{\pi }{2}=0$ y $sen\dfrac{\pi }{2}=1$
+
+\bigskip
+
+\[\cos \left( \frac{\pi }{2}-\alpha \right) =sen \alpha\]
+
+\bigskip
+
+\begin{align*}
+\cos \alpha  &= \cos \left( \frac{\pi }{2}-\left(
+\frac{\pi}{2}-\alpha \right) \right)\\
+\cos \alpha  &= \cos \frac{\pi }{2}\cos\left( \frac{\pi}{2}-\alpha
+\right) + sen \frac{\pi}{2}sen\left(\frac{\pi}{2}-\alpha\right)\\
+\cos \alpha  &= sen \left( \frac{\pi }{2}-\alpha \right)
+\end{align*}
+
+\bigskip
+
+\textbf{Conclusión}: El seno de un ángulo es el coseno de su
+complemento y el coseno de un ángulo es el seno de su complemento.
+
+\bigskip
+
+Haciendo uso de este resultado podemos encontrar el seno de la
+suma y de la diferencia de dos ángulos.
+
+\bigskip
+
+\[sen\left( \alpha +\beta \right) =\cos\left(\frac{\pi }{2}-\left( \alpha +\beta \right) \right) =\cos\left(\left( \frac{\pi }{2}-\alpha \right) -\beta\right).\]
+
+\bigskip
+
+Se utiliza la identidad para el coseno de la diferencia:
+
+\bigskip
+
+\[sen\left( \alpha +\beta \right) =\cos\left(\frac{\pi }{2}-\alpha \right) \cos\beta +sen\left( \frac{\pi}{2}-\alpha \right) sen\beta\]
+
+\bigskip
+
+Nuevamente a partir de la conclusión encontrada:
+
+\bigskip
+
+\bigskip
+
+\[sen \left( \alpha +\beta \right) =sen\alpha\cos\beta +\cos\alpha sen\beta\]
+
+\bigskip
+
+Mediante un razonamiento similar al que se hizo para el caso del
+coseno se puede hallar el seno de la diferencia:
+
+\bigskip
+
+\begin{align*}
+sen \left( \alpha -\beta \right) &=sen\left( \alpha
++\left(-\beta \right) \right) \\
+&=sen\alpha \cos\left( -\beta \right) +\cos\alpha
+sen\left(-\beta \right)\\ \\
+sen\left( \alpha -\beta \right)& =sen\alpha \cos\beta -sen\beta
+\cos\alpha
+\end{align*}
+
+\bigskip
+
+$\tan \left( \alpha \pm \beta \right) $ se obtiene haciendo uso de
+la identidad $\tan t = \dfrac{sen t}{\cos t}$
+
+\bigskip
+
+\begin{align*}
+\tan\left( \alpha +\beta \right) &=\dfrac{\tan\alpha +\tan\beta
+}{1-\tan\alpha \tan\beta };\\
+\tan\left( \alpha -\beta \right) &=\dfrac{\tan\alpha -\tan\beta
+}{1+\tan\alpha \tan\beta }
+\end{align*}
+
+\bigskip
+
+\textbf{Ejemplo 5.32. } Como $\dfrac{11\pi }{12}=\dfrac{2\pi
+}{3}+\dfrac{\pi }{4}$. A partir de los valores de seno y coseno de
+$\dfrac{2\pi }{3}$ y $\dfrac{\pi }{4}$, se puede hallar $sen
+\dfrac{11\pi }{12}$, $\cos \dfrac{11\pi }{12}$ y $\tan \left(
+\frac{\pi }{12}\right)$
+
+\bigskip
+
+\begin{align*}
+sen\left( \dfrac{11\pi }{12}\right) &=sen\left( \dfrac{2\pi
+}{3}+\dfrac{\pi }{4}\right)\\
+&=sen\dfrac{2\pi}{3}\cos\dfrac{\pi}{4}+\cos\dfrac{2\pi}{3}sen\dfrac{\pi}{4}\\
+\\
+sen \left( \dfrac{11\pi }{12}\right)
+&=\dfrac{\sqrt{3}}{2}\dfrac{\sqrt{2}}{2}+\left(-\dfrac{1}{2}\right)
+\left( \dfrac{\sqrt{2}}{2}\right)\\
+&=\dfrac{\sqrt{6}}{4}-\dfrac{\sqrt{2}}{4}
+\end{align*}
+
+\bigskip
+
+\begin{align*}
+\cos\dfrac{11\pi}{12}&=\cos\dfrac{2\pi}{3}\cos\dfrac{\pi}{4}-
+sen\dfrac{2\pi}{3}sen\dfrac{\pi}{4}\\
+&=\left( -\frac{1}{2}\right) \left( \frac{\sqrt{2}}{2}\right) -
+\left( \frac{\sqrt{3}}{2}\right) \left(
+\frac{\sqrt{2}}{2}\right)\\
+&=\left( -\dfrac{\sqrt{2}}{4}\right)
+-\left(\dfrac{\sqrt{6}}{4}\right)\\
+&=-\dfrac{\left(\sqrt{2}+\sqrt{6}\right)}{4}\\
+&=-\frac{\sqrt{2}}{4}\left(1+\sqrt{3}\right)
+\end{align*}
+
+\bigskip
+
+\begin{align*}
+\tan \left( \frac{11\pi }{12}\right) &=\dfrac{\tan\dfrac{2\pi}{3}
++\tan\dfrac{\pi}{4}}{1-\tan\dfrac{2\pi}{3}\tan\dfrac{\pi}{4}}\\
+&=-\dfrac{\sqrt{3}+1}{ 1+\sqrt{3}}
+\end{align*}
+
+\bigskip
+
+\textbf{Ejemplo 5.33. } Si $\alpha $ es un ángulo en el primer
+cuadrante con $\cos \alpha =\frac{4}{5}$ y $\beta $ es un ángulo
+en el segundo cuadrante con $sen \beta =\frac{12}{13}$. Evalúe
+$sen\left( \alpha +\beta\right)$, $\cos \left( \alpha +\beta
+\right)$ y $\tan\left(\alpha +\beta \right)$. Determine el
+cuadrante de $\alpha +\beta$.
+
+\bigskip
+
+\emph{Solución}:
+
+\bigskip
+
+$sen \alpha =\pm \sqrt{1-\frac{16}{25}}$. Como $\alpha $ es un
+ángulo de primer cuadrante:
+
+\bigskip
+
+\begin{align*}
+sen \alpha &=\sqrt{1-\frac{16}{25}}=\frac{3}{5}\\
+\tan \alpha &=\dfrac{\frac{3}{5}}{\frac{4}{5}}=\frac{3}{4}\\ \\
+\cos^{2}\beta &=1-\frac{144}{169}=\frac{25}{169}\\
+\cos \beta &=\pm \sqrt{\frac{25}{169}}=\pm \frac{5}{13}
+\end{align*}
+
+\bigskip
+
+Como $\beta $ es un ángulo de segundo cuadrante:
+
+\bigskip
+
+\begin{align*}
+\cos\beta &=-\frac{5}{13}\\
+\tan \beta &=\dfrac{\frac{12}{13}}{-\frac{5}{13}}=-\frac{12}{5}
+\end{align*}
+
+\bigskip
+
+Entonces:
+
+\bigskip
+
+\begin{align*}
+sen\left( \alpha +\beta \right) &=sen\alpha \cos\beta +sen\beta
+\cos\alpha\\
+&=\left( \frac{3}{5}\right) \left( -\frac{5}{13}\right) +\left(
+\frac{12}{13} \right) \left( \frac{4}{5}\right)\\
+sen\left( \alpha +\beta \right) &=\frac{33}{65}
+\end{align*}
+
+\bigskip
+
+\begin{align*}
+\cos\left( \alpha +\beta \right) &=\cos\alpha \cos\beta
+-sen\alpha sen\beta\\
+&=\left( \frac{4}{5}\right) \left( -\frac{5}{13}\right) -\left(
+\frac{3}{5}\right) \left( \frac{12}{13}\right)\\
+\cos\left( \alpha +\beta \right) &=-\frac{56}{65}
+\end{align*}
+
+\bigskip
+
+\begin{align*}
+\tan\left( \alpha +\beta \right) &=\dfrac{\tan\alpha +\tan\beta
+}{1-\tan\alpha\tan\beta}\\
+&=\dfrac{\frac{3}{4}-\frac{12}{5}}{1-\left( \frac{3}{4}\right)
+\left( -\frac{12}{5}\right) }\\
+\tan\left( \alpha +\beta \right) &=-\dfrac{33}{56}
+\end{align*}
+
+\bigskip
+
+Como $sen\left(\alpha +\beta \right)$ es positivo y
+$\cos\left(\alpha +\beta \right)$ es negativo, $\alpha +\beta$ es
+un ángulo de segundo cuadrante.
+
+\bigskip
+
+\textbf{Ejemplo 5.34. } Si $\alpha$ es un ángulo de segundo
+cuadrante y $\beta$ es un ángulo de tercer cuadrante, con
+$\cos\alpha=\cos\beta=-\frac{3}{7}$, calcule $sen \left( \alpha
+-\beta \right)$ y $\cos\left(\alpha -\beta \right)$ y determine el
+cuadrante para $\alpha -\beta $.
+
+\bigskip
+
+\emph{Solución}:
+
+\bigskip
+
+$sen \alpha =\pm \sqrt{1-\frac{9}{49}}$, como $\alpha $ es un
+ángulo de segundo cuadrante:
+
+\bigskip
+
+\[sen \alpha =\sqrt{\frac{40}{49}}=\frac{2}{7}\sqrt{10}\]
+
+\bigskip
+
+Como $\beta $ es un ángulo de tercer cuadrante:
+
+\bigskip
+
+\[sen\beta =-\frac{2}{7}\sqrt{10}\]
+
+\bigskip
+
+Entonces:
+
+\bigskip
+
+\begin{align*}
+sen \left( \alpha -\beta \right) &=sen\alpha \cos\beta
+-sen\beta \cos\alpha\\
+&=\left( \frac{2}{7}\sqrt{10}\right) \left( -\frac{3}{7}\right)
+-\left( \frac{ -2}{7}\sqrt{10}\right) \left( -\frac{3}{7}\right)\\
+sen \left( \alpha -\beta \right) &=-\frac{12}{49}\sqrt{10}
+\end{align*}
+
+\bigskip
+
+\begin{align*}
+\cos \left( \alpha -\beta \right) &=\cos\alpha \cos\beta
++sen\alpha sen\beta\\
+&=\left( -\frac{3}{7}\right) \left( -\frac{3}{7}\right)
++\left(\frac{2}{7} \sqrt{10}\right)
+\left(-\frac{2}{7}\sqrt{10}\right)\\
+\cos\left( \alpha -\beta \right)
+&=\frac{9}{49}-\frac{4}{49}\sqrt{10}=\frac{1}{49}\left(
+9-4\left(10\right) \right)\\
+&=-\frac{31}{49} < 0
+\end{align*}
+
+\bigskip
+
+Como $sen \left(\alpha -\beta \right)$ y $\cos \left( \alpha
+-\beta \right)$ son negativos, $\alpha -\beta $ es un ángulo de
+tercer cuadrante.
+
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{trigo12.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Ecuaciones Trigonométricas} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small \'{A}ngulos Múltiples} \\ \\ \\
+\end{tabular}
+\docLink{trigo14.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

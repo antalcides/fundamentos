@@ -1,0 +1,289 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{04_04.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Representación Gráfica} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Rectas Paralelas} \\ \\ \\
+\end{tabular}
+\docLink{04_06.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 4}}  {\large
+{\color{ azulc} FUNCIONES}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 4.5. }}
+{\normalsize {\color{naranja} Funciones Lineales}}
+
+\newline
+
+Consideremos el siguiente problema: una compañía fabrica lápices y
+sus costos fijos (como arriendo) ascienden a la suma de dos
+millones de pesos. Si el costo de fabricar un lápiz es de $400$ y
+el precio de venta es de $600$ y $x$ representa un número de
+lápices, entonces el costo de producirlos es de $400x+2.000.000$
+mientras que los ingresos que produce su venta son de $600x$. Así,
+las ganancias de la fábrica están representadas por la función
+
+\bigskip
+
+\[f(x)=600x-\left( 400x+2.000.000\right) =200x-2.000.000\]
+
+\bigskip
+
+Queremos además determinar cuántos lápices debe vender la fábrica
+para obtener una ganancia de $6$ millones de pesos, esto es,
+buscamos $x$ tal que
+
+\bigskip
+
+\[f(x)=200x-2.000.000=6.000.000\]
+
+\bigskip
+
+es decir, tal que
+
+\bigskip
+
+\[200x=8.000.000\]
+
+\bigskip
+
+Entonces
+
+\bigskip
+
+\[x=40.000\]
+
+\bigskip
+
+\textbf{Definición 4.5.1. } Una función $f$ es una {\bf función
+lineal} si la imagen de la variable independiente $x$ se expresa
+en la forma $f(x)=mx+b$ para algunas constantes $m$ y $b$ con
+$m\neq 0$.
+
+\bigskip
+
+La gráfica de una función lineal es una {\bf recta} que intersecta
+el eje $X$ en el punto $\left(-\frac{b}{m},0\right)$ si $m\neq 0$
+e intersecta el eje $Y$ en el punto $\left(0,b\right)$, pues
+$f(-\frac{m}{b})=0$ y $f(0)=b$. Si $m=0$, es decir, si $f(x)=b$
+para todo $x\in \mathbf{R}$, la gráfica está formada por los
+puntos $(x,y)$ del plano cartesiano tales que $x\in \mathbf{R}$ y
+$y=$ $f(x)=b$. La gráfica es entonces una recta horizontal.
+
+\bigskip
+
+\textbf{Ejemplo 4.6. } \quad\begin{enumerate} \item La función
+$f(x)=2x+3$ tiene como gráfica una recta a la cual pertenecen lo
+puntos $(0,3)$ y $(1,5)$ puesto que $f(0)=3$ y $f(1)=5$
+
+\bigskip
+
+\begin{center}
+\begin{tabular}{c}
+\includegraphics{imagenes/4_20.gif}  \\
+$y=2x+3$
+\end{tabular}
+\end{center}
+
+\bigskip
+
+\item La gráfica de la función $f(x)=2$ está formada por los
+puntos $(x,y)$ del plano cartesiano tales que $x\in \mathbf{R}$ y
+$y=2$
+
+\bigskip
+
+\begin{center}
+\begin{tabular}{c}
+\includegraphics{imagenes/4_21.gif}  \\
+$y=2$
+\end{tabular}
+\end{center}
+\end{description}
+\end{enumerate}
+
+\bigskip
+
+La función $f(x)=mx+b$ está determinada por los números reales $m$
+y $b$. Este último, se llama {\bf término independiente} El
+coeficiente $m$ de $x$ es la {\bf pendiente} de la recta y si la
+gráfica de la función es una recta no vertical que pasa por los
+puntos $Q\left(x_{1},y_{1}\right)$ y $P\left(x_{2},y_{2}\right)$
+entonces $y_{1}=mx_{1}+b$ e $y_{2}=mx_{2}+b$, esto es
+$b=y_{1}-mx_{1}=$ $y_{2}-mx_{2}$, de donde
+
+\bigskip
+
+\[m=\frac{y_{2}-y_{1}}{x_{2}-x_{1}}\]
+
+\bigskip
+
+es decir, $m$ es la razón entre el cambio de $y$ (es decir,
+$y_{2}-y_{1}$) y el cambio de $x$ (es decir, $x_{2}-x_{1}$). Para
+puntos cualesquiera que satisfagan la ecuación, esta razón tiene
+el mismo valor, es decir, no depende de los puntos considerados.
+
+\bigskip
+
+Si $m>0$ la recta asciende de izquierda a derecha y si $m<0$ la
+recta desciende de izquierda a derecha.
+
+\bigskip
+
+\begin{center}
+\begin{tabular}{ccc}
+\includegraphics{imagenes/4_22.gif} &
+\includegraphics{imagenes/4_23.gif}  \\
+$y=3x-2$ & $y=-2x+1$
+\end{tabular}
+\end{center}
+
+\bigskip
+
+A una recta vertical no se le define pendiente.
+
+\bigskip
+
+Dados una constante $m$ y un punto $Q\left( x_{1},y_{1}\right)$,
+los puntos $P\left( x,y\right)$, $x\neq x_{1}$ situados sobre la
+recta que contiene el punto $Q$ y tiene pendiente $m$ están
+caracterizados por la condición
+
+\bigskip
+
+\[m=\frac{y-y_{1}}{x-x_{1}}.\]
+
+\bigskip
+
+Una ecuación $y-y_{1}=m\left(x-x_{1}\right)$ es la {\bf forma
+punto- pendiente} de esa recta.
+
+\bigskip
+
+\textbf{Ejemplo 4.7. } La recta que pasa por los puntos
+$\left(4,-3\right)$ y $\left(6,8\right)$ tiene pendiente
+\[m=\frac{8-\left( -3\right)}{6-4}=\frac{11}{2}\]
+una ecuación punto- pendiente de esa recta es
+
+\bigskip
+
+\[y-8=\frac{11}{2}\left( x-6\right)\]
+
+\bigskip
+
+Otra ecuación de esta recta es
+
+\bigskip
+
+\[y+3=\frac{11}{2}\left( x-4\right)\]
+
+\bigskip
+
+Una recta no vertical corta al eje $Y$. Si $\left(0,b\right)$ es
+el punto de corte y $m$ es la pendiente, una ecuación de la recta
+es
+
+\bigskip
+
+\[y-b=m\left( x-0\right)\]
+
+\bigskip
+
+esto es
+
+\bigskip
+
+\[y=mx+b\]
+
+\bigskip
+
+Esta es la {\bf forma pendiente- intersección} de la ecuación de
+la recta.
+
+\bigskip
+
+\textbf{Ejemplo 4.8. } \quad\begin{enumerate} \item La pendiente
+de la recta que tiene ecuación $y=-4x+2$ es $-4$. La recta
+intersecta al eje $Y$ en el punto $\left(0,2\right)$. \item La
+ecuación de una recta vertical es $x=a$ donde $a$ es la abscisa de
+cada uno de los puntos de la recta.
+\end{enumerate}
+
+\bigskip
+
+Cualquiera sea la forma de la ecuación de la recta, es equivalente
+a una ecuación $Ax+By+C=0$ donde $A,B$ y $C$ son constantes y $A$
+y $B$ no son simultáneamente iguales a $0$.
+
+\bigskip
+
+Recíprocamente, la gráfica de una ecuación de esta forma es una
+recta. En efecto, si $B=0$ y $A\neq 0$, la ecuación es
+$x=\frac{-C}{A}$ cuya gráfica es una recta vertical. Si $B\neq 0,$
+la ecuación puede llevarse a la forma
+$y=\frac{-A}{B}x-\frac{C}{B}$ cuya gráfica es una recta no
+vertical. Si, además, $A\neq 0$ la recta tampoco es horizontal.
+
+\bigskip
+
+La ecuación lineal $Ax+By+C=0,$ $A$ y $B$ no simultáneamente
+nulos, es la {\bf ecuación general de la recta}.
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{04_04.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Representación Gráfica} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Rectas Paralelas} \\ \\ \\
+\end{tabular}
+\docLink{04_06.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

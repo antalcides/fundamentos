@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html itemscope="" itemtype="http://schema.org/Product"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-animate){display:none !important;}ng\:form{display:block;}</style><title>Circuit Diagrams Using Circuitikz - ShareLaTeX, Online LaTeX Editor</title><link rel="icon" href="https://www.sharelatex.com/favicon.ico"><link rel="stylesheet" href="Circuit%20Diagrams%20Using%20Circuitikz%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/style.css"><link href="Circuit%20Diagrams%20Using%20Circuitikz%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/font-awesome.css" rel="stylesheet"><link rel="alternate" href="http://www.sharelatex.com/blog/2013/09/02/tikz-series-pt4.html" hreflang="en"><link rel="alternate" href="http://es.sharelatex.com/blog/2013/09/02/tikz-series-pt4.html" hreflang="es"><meta itemprop="name" content="ShareLaTeX, the Online LaTeX Editor"><meta itemprop="description" content="An online LaTeX editor that's easy to use. No installation, real-time collaboration, version control, hundreds of LaTeX templates, and more."><meta itemprop="image" content="https://www.sharelatex.com/favicon.ico"><script src="Circuit%20Diagrams%20Using%20Circuitikz%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/analytics.js" async=""></script><script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-11004462-4', 'sharelatex.com');
+ga('send', 'pageview');</script><script type="text/javascript">window.csrfToken = "K_ok3eaLvkazLfJZQaHFYnHF";</script><script src="Circuit%20Diagrams%20Using%20Circuitikz%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/jquery.js"></script><script src="Circuit%20Diagrams%20Using%20Circuitikz%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/angular.js"></script><script>window.sharelatex = {
+ siteUrl: 'https://www.sharelatex.com',
+ jsPath:  '/minjs/'
+};
+window.systemMessages = [];
+</script><script>window.sharelatex.algolia = {
+ app_id:'SK53GL4JLY',
+ api_key:'1606ccef5b70ac44680b61e6b0285126',
+ indexes:{"templates":"templates-production","institutions":"institutions"}
+}
+</script><script>window.sharelatex.templates = {
+ user_id : '515d4e908d2c843b4a00620b',
+ cdnDomain : 'https://d1hk1zhcb5hn6i.cloudfront.net',
+ indexName : 'templates-production'
+}</script><script src="Circuit%20Diagrams%20Using%20Circuitikz%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/embed.js" async="" type="text/javascript"></script><script src="Circuit%20Diagrams%20Using%20Circuitikz%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/main.js" data-requiremodule="main" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Circuit%20Diagrams%20Using%20Circuitikz%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/libs.js" data-requiremodule="libs" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="Circuit%20Diagrams%20Using%20Circuitikz%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/algolia-2.js" data-requiremodule="libs/algolia-2.5.2" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><style charset="utf-8" type="text/css">#tender_window{ position: absolute; top: 20px; left: 10px; right: 10px; margin: auto; max-width:680px; height:715px; padding:3px; background:url(https://sharelatex.tenderapp.com/images/widget/overlay_back.png); z-index:9999; }#tender_window iframe{ border:none; width:100%; height:100%; } #tender_window #tender_frame{ width:100%; height:100%; background:url(https://sharelatex.tenderapp.com/images/widget/loader.gif) 50% 50% no-repeat #fff; } #tender_closer{ position:absolute; top:18px; right:18px; color:#fff; font-family:Helvetica, Arial, sans-serif; font-size:12px; font-weight:bold; text-decoration:none; border:none; } #tender_closer{ color: #80B3CC }#tender_toggler{ position:absolute; top:100px; right:0px; width:33px; height:105px; padding:3px 0 3px 3px; background:url(https://sharelatex.tenderapp.com/images/widget/overlay_back.png); } #tender_toggler_link{ display:block; width:100%; height:100%; text-decoration:none; border:none; text-indent:-9999px; background: #006699 url(https://sharelatex.tenderapp.com/images/widget/tab_text_right.gif) !important; } </style></head><body class="ng-scope"><div ng-controller="SystemMessagesController" class="system-messages ng-scope"><!-- ngRepeat: message in messages --></div><nav class="navbar navbar-default"><div class="container-fluid"><div class="navbar-header"><button ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed" ng-class="{active: !navCollapsed}" class="navbar-toggle"><i class="fa fa-bars"></i></button><a href="https://www.sharelatex.com/" class="navbar-brand"></a></div><div style="height: 0px;" collapse="navCollapsed" class="navbar-collapse collapse"><ul class="nav navbar-nav navbar-right"><li class="subdued"><a href="https://www.sharelatex.com/user/subscription/plans" class="subdued">Plans &amp; Pricing</a></li><li class="dropdown subdued"><a aria-expanded="false" aria-haspopup="true" href="" class="dropdown-toggle">Help<b class="caret"></b></a><ul class="dropdown-menu"><li><a href="https://www.sharelatex.com/learn">Documentation</a></li><li><a href="#" class="js-tender-widget">Contact us</a></li></ul></li><li><a href="https://www.sharelatex.com/register">Register</a></li><li><a href="https://www.sharelatex.com/login">Log In</a></li></ul></div></div></nav><div class="content content-alt"><div class="blog"><div class="page-header">
+	<div class="container">
+		<h1><a href="https://www.sharelatex.com/blog">ShareLaTeX Blog</a></h1>
+	</div>
+</div>
+	
+<div class="container">
+
+	<div class="row">
+		<div class="col-md-8 col-md-offset post">
+			
+<div class="card post row-spaced">
+	<div class="page-header">
+		<h2>
+			<a href="https://www.sharelatex.com/blog/2013/09/02/tikz-series-pt4.html">Circuit Diagrams Using Circuitikz</a>
+		</h2>
+	</div>
+
+	<p><em>To see the corresponding video for this blog post click <a href="https://www.youtube.com/watch?v=WRTELZP1l0Y">here</a>.</em></p>
+
+<p>In this post we’re going to show you how to draw simple electrical circuits in a LaTeX document. 
+To do this we are going to use the circuitikz package which is based on the TikZ package. 
+To get started we load up the circuitikz package. </p>
+
+<pre><code>\usepackage{circuitikz}
+</code></pre>
+
+<p>We don’t need to load the TikZ package as well because it automatically gets loaded with circuitikz. 
+To draw a diagram we use the circuitikz environment. 
+We then fill the environment with a single <code>\draw</code> command ending in a semicolon. </p>
+
+<pre><code>\begin{circuitikz} \draw
+
+&lt;circuitikz code&gt;
+
+;
+\end{circuitikz}
+</code></pre>
+
+<p>The general format is then a pair of co-ordinates followed by a link and then the next pair of co-ordinates. 
+You can then keep adding further links and co-ordinates like a chain. 
+The link could simply be a line which is achieved using two dashes, or it could be an electrical component. 
+To add a component on a line we use the keyword ‘to’ followed by square brackets containing the name of the component.</p>
+
+<p>For example we’ll start at (0,0) and head towards (0,4) adding a battery in. 
+We’ll then add an ammeter in on the way to (4,4) followed by a simple line to (4,0). 
+We’ll complete the circuit by adding a lamp in on the way back (0,0). </p>
+
+<pre><code>\begin{circuitikz} \draw
+(0,0) to[battery] (0,4)
+      to[ammeter] (4,4) -- (4,0)
+      to[lamp] (0,0)
+;
+\end{circuitikz}
+</code></pre>
+
+<p>This is what the diagram looks like compiled.</p>
+
+<p><img src="Circuit%20Diagrams%20Using%20Circuitikz%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/basic.png" alt="basic"></p>
+
+<p>Now let’s add a voltmeter in parallel to the lamp. 
+To do this we want to branch off the bottom line part way along, then 
+drop down, insert the meter, and then join back up with the bottom line 
+before its end.</p>
+
+<pre><code>\begin{circuitikz} \draw
+(0,0) to[battery] (0,4)
+      to[ammeter] (4,4) -- (4,0)
+      to[lamp] (0,0)
+(0.5,0) -- (0.5,-2)
+      to[voltmeter] (3.5,-2) -- (3.5,0)
+;
+\end{circuitikz}
+</code></pre>
+
+<p><img src="Circuit%20Diagrams%20Using%20Circuitikz%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/withvoltmeter.png" alt="withvoltmeter"></p>
+
+<p>If we wanted to make the points where the lines join into proper terminals represented by circles, we could add <code>*-*</code>
+ into the square brackets where we added the lamp in. 
+This will add terminals in at the co-ordinates either side of the 
+component. 
+Therefore we need to shorten the lines either side of the lamp so that 
+the terminals appear at our line joins, and then we need to fill in the 
+gaps.</p>
+
+<pre><code>\begin{circuitikz} \draw
+(0,0) to[battery] (0,4)
+      to[ammeter] (4,4) -- (4,0) -- (3.5,0)
+      to[lamp, *-*] (0.5,0) -- (0,0)
+(0.5,0) -- (0.5,-2)
+      to[voltmeter] (3.5,-2) -- (3.5,0)
+;
+\end{circuitikz}
+</code></pre>
+
+<p><img src="Circuit%20Diagrams%20Using%20Circuitikz%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/terminals.png" alt="terminals"></p>
+
+<p>Next we’ll add a capacitor in between the lamp and ammeter. 
+We specify a capacitor with a capital C.</p>
+
+<pre><code>\begin{circuitikz} \draw
+(0,0) to[battery] (0,4)
+      to[ammeter] (4,4) 
+      to[C] (4,0) -- (3.5,0)
+      to[lamp, *-*] (0.5,0) -- (0,0)
+(0.5,0) -- (0.5,-2)
+      to[voltmeter] (3.5,-2) -- (3.5,0)
+;
+\end{circuitikz}
+</code></pre>
+
+<p><img src="Circuit%20Diagrams%20Using%20Circuitikz%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/capacitor.png" alt="capacitor"></p>
+
+<p>Often we’ll want to add labels to our diagrams to give the reader more information. 
+To be able to include electrical units in our labels we need to add the ‘siunitx’ option into the <code>\usepackage</code> command.</p>
+
+<pre><code>\usepackage[siunitx]{circuitikz}
+</code></pre>
+
+<p>We could add a label to the ammeter like this. </p>
+
+<pre><code>to[ammeter, l=2&lt;\ampere&gt;]
+</code></pre>
+
+<p><img src="Circuit%20Diagrams%20Using%20Circuitikz%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/2A.html" alt="2A"></p>
+
+<p>The ‘l’ tells LaTeX we are adding a label. 
+Notice that we put the unit commands in pointed brackets. 
+As we’re using SI units we could add an SI prefix in. 
+We could also move the label to below the symbol by adding underscore immediately after the ‘l’. </p>
+
+<pre><code>to[ammeter, l_=2&lt;\milli\ampere&gt;]
+</code></pre>
+
+<p><img src="Circuit%20Diagrams%20Using%20Circuitikz%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/2mA.html" alt="2mA"></p>
+
+<p>As we are displaying current we could place the label next to an arrow on the line by changing the ‘l’ to an ‘i’. </p>
+
+<pre><code>to[ammeter, i_=2&lt;\milli\ampere&gt;]
+</code></pre>
+
+<p><img src="Circuit%20Diagrams%20Using%20Circuitikz%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/i.png" alt="i"></p>
+
+<p>Let’s add some labels in next to the capacitor and the voltmeter. 
+With the capacitor we can just begin the label with an equals following the capital ‘C’.</p>
+
+<pre><code>\begin{circuitikz} \draw
+(0,0) to[battery] (0,4)
+      to[ammeter, i_=2&lt;\milli\ampere&gt;] (4,4) 
+      to[C=3&lt;\farad&gt;] (4,0) -- (3.5,0)
+      to[lamp, *-*] (0.5,0) -- (0,0)
+(0.5,0) -- (0.5,-2)
+      to[voltmeter, l=3&lt;\kilo\volt&gt;] (3.5,-2) -- (3.5,0)
+;
+\end{circuitikz}
+</code></pre>
+
+<p><img src="Circuit%20Diagrams%20Using%20Circuitikz%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/all.png" alt="all"></p>
+
+<p>We could also change the colour of a component like this.</p>
+
+<pre><code>to[voltmeter, l=3&lt;\kilo\volt&gt;, color=red]
+</code></pre>
+
+<p><img src="Circuit%20Diagrams%20Using%20Circuitikz%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/red.png" alt="red"></p>
+
+<p>We can change the size of the diagram by adding a scaling factor in as an option at the end of the <code>\begin</code> command.</p>
+
+<pre><code>\begin{circuitikz}[scale=2] \draw
+</code></pre>
+
+<p><img src="Circuit%20Diagrams%20Using%20Circuitikz%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/scale.png" alt="scale"></p>
+
+<p>Notice that the components stay the same size but the spacing between everything changes.</p>
+
+<p>Let’s finish this post by looking at a selection of other components we could use:</p>
+
+<pre><code>\begin{circuitikz}
+\draw
+(0,0) to[R, o-o] (2,0)
+(4,0) to[vR, o-o] (6,0)
+(0,2) to[transmission line, o-o] (2,2)
+(4,2) to[closing switch, o-o] (6,2)
+(0,4) to[european current source, o-o] (2,4)
+(4,4) to[european voltage source, o-o] (6,4)
+(0,6) to[empty diode, o-o] (2,6)
+(4,6) to[full led, o-o] (6,6)
+(0,8) to[generic, o-o] (2,8)
+(4,8) to[sinusoidal voltage source, o-o] (6,8)
+;
+\end{circuitikz}
+</code></pre>
+
+<p>These examples are all bipoles. </p>
+
+<p><img src="Circuit%20Diagrams%20Using%20Circuitikz%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/more.png" alt="more"></p>
+
+<p>From the bottom left we have; a resistor, a variable resistor, a 
+transmission line, a closing switch, a european current source, a 
+european voltage source, an empty diode, a full led, a generic bipole 
+and a sinusoidal voltage source.</p>
+
+<p>Bipoles aren’t the only type of component we can use. 
+We can also add in monopoles, tripoles, double bipoles, logic gates and amplifiers. 
+However we can’t use the ‘to’ keyword to add these in as we’ve done before, because they don’t naturally fit on a single line. 
+Instead we use node notation. 
+For example, this is how we would display an antenna:</p>
+
+<pre><code>(0,0) node[antenna] {}
+</code></pre>
+
+<p><img src="Circuit%20Diagrams%20Using%20Circuitikz%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/antenna.png" alt="antenna"></p>
+
+<p>You can add text to the symbol using the curly brackets, but note 
+that we still need to enter curly brackets even if we don’t want to use 
+them. 
+Here are some more examples:</p>
+
+<pre><code>(4,0) node[pmos] {}
+(0,4) node[op amp] {}
+(4,4) node[american or port] {}
+(0,8) node[transformer] {}
+(4,8) node[spdt] {}
+</code></pre>
+
+<p><img src="Circuit%20Diagrams%20Using%20Circuitikz%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/evenmore.png" alt="evenmore"></p>
+
+<p>To then link them up with other components we would use the predefined node anchors. 
+For more information about all the components available and how you link components using node anchors, take a look at the <a href="http://mirror.ox.ac.uk/sites/ctan.org/graphics/pgf/contrib/circuitikz/circuitikzmanual.pdf">documentation</a>.</p>
+
+<p>This concludes our post on drawing electrical circuits.
+In the next post we’ll look at drawing mind maps with TikZ. 
+If you want to play around with the flowchart we created in this post you can access it <a href="https://www.sharelatex.com/project/5220bce944fe707038212c94">here</a>.
+Please do keep in touch with us via <a href="https://www.facebook.com/ShareLaTeX">Facebook</a>, <a href="https://twitter.com/sharelatex">Twitter</a> &amp; <a href="https://plus.google.com/115074691861228882827/posts">Google+</a>.</p>
+
+<h3 id="other-posts-in-this-series">Other posts in this series</h3>
+<p><a href="https://www.sharelatex.com/blog/2013/08/27/tikz-series-pt1.html">Basic Drawing Using TikZ</a></p>
+
+<p><a href="https://www.sharelatex.com/blog/2013/08/28/tikz-series-pt2.html">Generating TikZ Code from GeoGebra</a></p>
+
+<p><a href="https://www.sharelatex.com/blog/2013/08/29/tikz-series-pt3.html">Creating Flowcharts with TikZ</a></p>
+
+<p><a href="https://www.sharelatex.com/blog/2013/09/04/tikz-series-pt5.html">Creating Mind Maps Using TikZ</a></p>
+
+	<p class="author_details">Posted by Josh Cassidy on 02 Sep 2013</p>
+</div>
+
+
+<div class="row-spaced">
+	<p>
+		<a href="https://www.sharelatex.com/blog/rss.xml">
+			<i class="fa fa-fw fa-rss-square"></i> Subscribe
+		</a> /&nbsp;
+		<a href="https://www.sharelatex.com/blog/atom.xml">
+				<i class="fa fa-fw fa-rss-square"></i> Atom
+		</a>
+	</p>
+</div>
+
+<div id="disqus_thread"><iframe verticalscrolling="no" horizontalscrolling="no" src="Circuit%20Diagrams%20Using%20Circuitikz%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/a.html" style="width: 100% ! important; border: medium none ! important; overflow: hidden ! important; height: 593px ! important;" title="Disqus" tabindex="0" scrolling="no" allowtransparency="true" data-disqus-uid="2" id="dsq-2" frameborder="0" width="100%"></iframe></div>
+
+
+		</div>
+		<div class="col-md-4 blurb">
+			<h2>About Us</h2>
+			<div>
+				<p>
+					<a href="https://www.sharelatex.com/">ShareLaTeX</a> is an online LaTeX editor that
+					allows real-time collaboration in your browser
+					</p>
+					<p>
+					<a class="btn btn-info blog_goto_sharelatex_button" href="https://www.sharelatex.com/">Try ShareLaTeX Now</a>
+				</p>
+			</div>
+			<div>
+				<p>
+					<a href="https://www.sharelatex.com/blog/rss.xml">
+						<i class="fa fa-fw fa-rss-square"></i> Subscribe
+					</a> /&nbsp;
+					<a href="https://www.sharelatex.com/blog/atom.xml">
+						<i class="fa fa-fw fa-rss-square"></i> Atom
+					</a>
+				</p>
+			</div>
+
+			<div>
+				<h2>Recent Posts</h2>
+				<ul class="list-unstyled">
+				
+					<li>
+						<a href="https://www.sharelatex.com/blog/2014/07/28/sharelatex-has-had-a-makeover.html">ShareLaTeX has had a Makeover</a>
+					</li>
+				
+					<li>
+						<a href="https://www.sharelatex.com/blog/2014/07/23/redesign-open-beta.html">Redesign Open Beta</a>
+					</li>
+				
+					<li>
+						<a href="https://www.sharelatex.com/blog/2014/07/14/sharelatex-redesign-preview.html">ShareLaTeX Redesign Preview</a>
+					</li>
+				
+					<li>
+						<a href="https://www.sharelatex.com/blog/2014/05/13/ieee-templates.html">IEEE templates on ShareLaTeX</a>
+					</li>
+				
+					<li>
+						<a href="https://www.sharelatex.com/blog/2014/04/14/incident-report-14th-april-2014.html">Incident Report - 14th April 2014</a>
+					</li>
+				
+					<li>
+						<a href="https://www.sharelatex.com/blog/2014/04/10/forward-and-reverse-search-in-sharelatex.html">Forward and Reverse Search in ShareLaTeX</a>
+					</li>
+				
+				</ul>
+				<a href="https://www.sharelatex.com/blog/all.html" class="view-all">View All</a> 
+			</div>
+
+			<div>
+				<h2>Video Guides</h2>
+				<ul class="list-unstyled">
+				
+					
+					<li>
+						<a href="https://www.sharelatex.com/blog/latex-guides/beginners-tutorial/your-first-latex-document.html">Creating your first LaTeX document</a>
+					</li>
+					
+				
+					
+					<li>
+						<a href="https://www.sharelatex.com/blog/latex-guides/beginners-tutorial/paragraphs-and-sections-in-latex.html">Paragraphs and Sections in LaTeX</a>
+					</li>
+					
+				
+					
+					<li>
+						<a href="https://www.sharelatex.com/blog/latex-guides/beginners-tutorial/mathematics-in-latex.html">Mathematics in LaTeX</a>
+					</li>
+					
+				
+					
+					<li>
+						<a href="https://www.sharelatex.com/blog/latex-guides/beginners-tutorial/images-in-latex.html">Images in LaTeX</a>
+					</li>
+					
+				
+					
+					<li>
+						<a href="https://www.sharelatex.com/blog/latex-guides/beginners-tutorial/bibliographies-in-latex.html">Bibliographies and Natbib</a>
+					</li>
+					
+				
+					
+					<li>
+						<a href="https://www.sharelatex.com/blog/latex-guides/beginners-tutorial/tables-and-matrices-in-latex.html">Tables and Matrices in LaTeX</a>
+					</li>
+					
+				
+					
+					<li>
+						<a href="https://www.sharelatex.com/blog/latex-guides/beginners-tutorial/longer-documents-in-latex.html">Longer Documents in LaTeX</a>
+					</li>
+					
+				
+				<a href="https://www.sharelatex.com/blog/latex-guides/beginners-tutorial.html" class="view-all">View All</a> 
+				</ul>
+			</div>
+
+		</div>
+	</div>
+</div>
+</div></div><footer class="site-footer"><div class="container"><div class="row"><ul class="col-md-6"><li>© 2014 ShareLaTeX</li><li><a href="https://www.sharelatex.com/tos">Terms</a></li><li><a href="https://www.sharelatex.com/privacy_policy">Privacy</a></li><li><a href="https://www.sharelatex.com/security">Security</a></li><li><a href="#" class="js-tender-widget">Contact</a></li><li><a href="https://www.sharelatex.com/about">About</a></li><li><a href="https://www.sharelatex.com/blog">Blog</a></li></ul><ul class="col-md-6"><li><a href="http://www.twitter.com/sharelatex"><i class="fa fa-twitter-square"></i></a></li><li><a href="http://www.facebook.com/pages/ShareLaTeX/301671376556660"><i class="fa fa-facebook-square"></i></a></li><li><a href="https://plus.google.com/115074691861228882827"><i class="fa fa-google-plus-square"></i></a></li><li><a href="https://github.com/sharelatex/sharelatex"><i class="fa fa-github-square"></i></a></li></ul></div></div></footer><script type="text/javascript">window.requirejs = {
+ "urlArgs" : "fingerprint=a9af6bd9d47d9465d3a372efd49305f4-b6a22524cb89601b2d81c5a317e2cb9e",
+ "paths" : {
+  "moment": "libs/moment-2.7.0"
+ }
+};	</script><script data-main="/minjs/main.js" baseurl="/minjs/" src="Circuit%20Diagrams%20Using%20Circuitikz%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/require.js"></script><script src="Circuit%20Diagrams%20Using%20Circuitikz%20-%20ShareLaTeX,%20Online%20LaTeX%20Editor_files/tender_widget.js"></script><script type="text/javascript">Tender = {
+ hideToggle: true,
+ widgetToggles: $(".js-tender-widget"),
+ category: "questions"
+};
+
+</script><div><div style="display: none;" id="tender_toggler"><a href="#" id="tender_toggler_link">Help &amp; Support</a></div></div></body></html>

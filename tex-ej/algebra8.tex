@@ -1,0 +1,157 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{algebra7.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Suma y Resta} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small División} \\ \\ \\
+\end{tabular}
+\docLink{algebra9.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 2}}  {\large
+{\color{ azulc} FUNDAMENTOS DE ALGEBRA}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 2.8. }}
+{\normalsize {\color{naranja} Multiplicación de Polinomios}}
+
+\newline
+
+La multiplicación de polinomios esta basada en la aplicación
+repetida de la propiedad distributiva y la utilización de la ley
+de los exponentes
+
+\bigskip
+
+\[a^{m}a^{n}=a^{m+n}\]
+
+\bigskip
+
+con $m$ y $n$ enteros positivos.
+
+\bigskip
+
+\textbf{Ejemplo 2.25. } \quad\begin{itemize} \item
+$(5x^{2}y^{3})(-3x^{4}y^{2})=-15x^{6}y^{5}$ \item
+\begin{align*}
+(3x+2y)(2x^{2}-xy+y)&=3x(2x^{2}-xy+y)+2y(2x^{2}-xy+y)\\
+&=(6x^{3}-3x^{2}y+3xy)+(4x^{2}y-2xy^{2}+2y^{2})\\
+&=6x^{3}+x^{2}y+3xy-2xy^{2}+2y^{2}
+\end{align*}
+
+\bigskip
+
+En la práctica se procede como se indica en la siguiente
+ilustración
+
+\bigskip
+
+\begin{center}
+\renewcommand{\tabcolsep}{0cm}
+\begin{tabular}{ccccc}
+$2x^2$ & $-xy$ & $+y$ & & \\
+$3x$ & $+2y$ &&& \\ \cline{1-3} $6x^3$ & $-3x^2y$ & $+3xy$ & & \\
+& $+4x^2$ & & $-2xy^2$ & $2y^2$\\ \hline $6x^3$ & $+x^2y$ & $+3xy$
+& $-2xy^2$ & $+2y^2$
+\end{tabular}
+\end{center}
+
+\bigskip
+
+donde la tercera línea se obtiene multiplicando cada término de la
+primera línea por $3x$ y la cuarta línea se obtiene multiplicando
+cada término de la primera línea por $2y$. Finalmente sumando las
+filas tercera y cuarta se obtiene el resultado que es la última
+fila.
+\end{itemize}
+
+\bigskip
+
+Un caso particular importante es el de la multiplicación de dos
+polinomios en la misma variable. En este caso es conveniente
+ordenar los polinomios de tal forma que el exponente de la
+variable vaya decreciendo.
+
+\bigskip
+
+\textbf{Ejemplo 2.26. } Efectuemos el siguiente producto de
+polinomios
+
+\bigskip
+
+\[(2x^{3}-3x^{2}+x-7)(x^{4}-6x^{2}+1)\]
+
+\bigskip
+
+Tenemos
+
+\bigskip
+
+\begin{center}
+\renewcommand{\tabcolsep}{0cm}
+\begin{tabular}{cccccccc}
+$2x^3$ & $-3x^2$ & $+x$ & $-7$ &&&&\\
+$x^4$ & $-6x^2$ & $+1$ &&&&&\\ \cline{1-4} $2x^7$ & $-3x^6$ &
+$+x^5$ & $-7x^4$ &&&&\\
+&& $-12x^5$ & $+18x^4$ & $-6x^3$ & $+42x^2$ &&\\
+&&&& $+2x^3$ & $-3x^2$ & $+x$ & $-7$ \\ \hline $2x^7$ & $-3x^6$ &
+$-11x^5$ & $+11x^4$ & $-4x^3$ & $+39x^2$ & $+x$ & $-7$
+\end{tabular}
+\end{center}
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{algebra7.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Suma y Resta} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small División} \\ \\ \\
+\end{tabular}
+\docLink{algebra9.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

@@ -1,0 +1,256 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{reales9.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Densidad} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Números Complejos} \\ \\ \\
+\end{tabular}
+\docLink{reales11.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 1}}  {\large
+{\color{ azulc} LOS NUMEROS REALES}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 1.10. }}
+{\normalsize {\color{naranja} Axioma de Completez}}
+
+\newline
+
+Si analizamos cuidadosamente el conjunto $\mathbb{Q}$ de los
+números racionales, observamos que $\mathbb{Q}$ satisface las
+propiedades básicas P-1 a P-6 de la sección
+\docLink{reales2.tex}{1.2} que gobiernan las operaciones de adición y
+multiplicación entre números reales y satisface las propiedades
+P-7 a P-9 de la sección \docLink{reales4.tex}{1.4} que gobiernan
+la relación de orden entre números reales. Sin embargo, dado que
+el conjunto de los números racionales son tan solo un subconjunto
+muy pequeño del conjunto de todos los números reales, debe existir
+por lo menos una propiedad básica adicional que distinga los
+números racionales de los números reales. Esta propiedad es el
+axioma de completez que mencionaremos brevemente en esta sección.
+
+\bigskip
+
+Para empezar, necesitamos introducir una terminología y notaciones
+adicionales.
+
+\bigskip
+
+\textbf{Definición 1.10.1. } Sea $S$ un conjunto no vacío de
+números reales. Un número real $u$ se llama una \textit{cota
+superior} de $S$ si
+
+\bigskip
+
+\[x\leq u \quad \text{para todo $x\in S$}\]
+
+\bigskip
+
+Si $S$ tiene cotas superiores, decimos que $S$ es \textit{acotado
+superiormente}.
+
+\bigskip
+
+\textbf{Ejemplo 1.16. } El intervalo cerrado $[0,1]$ es acotado
+superiormente. Algunas cotas superiores de $[0,1]$ son $1$;
+$10,26$; $\sqrt{33}$; $1,0001$. En general cualquier número mayor
+o igual que $1$ es cota superior de este conjunto.
+
+\bigskip
+
+\textbf{Ejemplo 1.17. } El intervalo abierto $(0,1)$ es un
+conjunto acotado superiormente que tiene las mismas cotas
+superiores que el intervalo cerrado $[0,1]$.
+
+\bigskip
+
+\textbf{Ejemplo 1.18. } El conjunto $\mathbb{R}$ de todos los
+números reales no es acotado superiormente.
+
+\bigskip
+
+Dejamos como ejercicio para el lector, definir las nociones
+análogas de \textit{cota inferior} de un conjunto no vacío de
+números reales y de conjunto \textit{acotado inferiormente}.
+También le solicitamos que de ejemplos de estos conceptos.
+
+\bigskip
+
+\textbf{Definición 1.10.2. } Sea $S$ un conjunto no vacío de
+números reales acotado superiormente. Un número real $u_{0}$ se
+llama \textit{extremo superior} de $S$ si cumple las siguientes
+propiedades:
+
+\bigskip
+
+\begin{enumerate}
+\item[i)] $u_{0}$ es una cota superior de $S$, \item[ii)] Para
+toda cota superior $u$ de $S$ se tiene que $u_{0}\leq u$.
+\end{enumerate}
+
+\bigskip
+
+Observamos que las condiciones i) y ii) expresan que $u_{0}$ es la
+\textit{mínima cota superior} de $S$. En la práctica nos referimos
+al extremo superior de un conjunto como el \textit{supremo},
+abreviado Sup. Notamos el supremo de $S$ como $\sup S$.
+
+\bigskip
+
+El \textit{extremo inferior} o \textit{ínfimo} de $S$ notado $\inf
+S$ se da de forma análoga.
+
+\bigskip
+
+\textbf{Ejemplo 1.19. } Si $S=\{-3,-1,0,\pi ,15,\sqrt{5},11\}$
+entonces $\sup S=15$ y \linebreak$\inf S=$~$-3$
+
+\bigskip
+
+\textbf{Ejemplo 1.20. }
+\begin{itemize}
+\item Si $S=[0,1]$ entonces $\sup S=1$ y $\inf S=0$.
+
+\item Si $T=(0,1)$ entonces $\sup T=1$ y $\inf T=0$.
+\end{itemize}
+
+\bigskip
+
+\textbf{Ejemplo 1.21. } Si $S=\{0.3,0.33,0.333,0.3333,...\}$
+entonces $\sup S=\dfrac{1}{3}$
+
+\bigskip
+
+Estamos listos para introducir la última propiedad básica o axioma
+que caracteriza al conjunto de los números reales.
+
+\bigskip
+
+P-10 \quad \textbf{Axioma de completez.} Todo conjunto $S$ de
+números reales no vacío y acotado superiormente, tiene supremo.
+
+\bigskip
+
+Entre las principales consecuencias de este axioma podemos citar:
+
+\begin{itemize}
+
+\item Todo conjunto $S$ de números reales no vacío y acotado
+inferiormente, tiene ínfimo.
+
+\item El conjunto $\mathbb{N}$ de los números naturales no es
+acotado superiormente.
+
+\item \textbf{Propiedad Arquimediana de los números reales}: Si
+$x>0$ y $z$ es cualquier número real, entonces existe un entero
+positivo $n$ tal que $nx>z$.
+
+\end{itemize}
+
+\bigskip
+
+La propiedad Arquimediana de los números reales tiene la siguiente
+in\-ter\-pre\-ta\-ción geométrica: Si tenemos dos segmentos de
+recta, uno tan largo como queramos de longitud $z$ y otro tan
+corto como queramos de longitud $x$ (ver la figura), tomando un
+número suficiente de veces el segmento pequeño, podemos cubrir el
+segmento largo.
+
+\bigskip
+
+\[
+\includegraphics{img/img9.gif}
+\]
+\bigskip
+
+\centerline{(Existe $n\in \mathbb{N}$ \ tal que \ $nx>z)$}
+
+\bigskip
+
+\bigskip Utilizando la propiedad Arquimediana se puede demostrar con alguna
+dificultad y sin usar representaciones decimales, que el conjunto
+de los números racionales es denso en el conjunto de los números
+reales. A partir de este último resultado se puede deducir
+fácilmente que el conjunto de los números irracionales también es
+denso en el conjunto de los números reales.
+
+\bigskip
+
+Para finalizar estas notas sobre el conjunto de los números reales
+presentaremos un ejemplo que nos muestra que los números
+racionales no satisfacen el axioma de completez.
+
+\bigskip
+
+\textbf{Ejemplo 1.22. } Sea
+
+\bigskip
+
+\[H=\{x\in \mathbb{Q\mid }0\leq x^{2}\leq 2\}\]
+
+\bigskip
+
+Por definición $H$ es un subconjunto del conjunto de los números
+racionales, $H$ es no vacío ya que $0$, $1\in H$ y $H$ es acotado
+superiormente en $\mathbb{Q}$, por ejemplo por $2$ y $4$. Sin
+embargo $H$ no tiene un supremo en $\mathbb{Q}$. El número que
+podría ser el extremo superior de $H$, sería $\sqrt{2}$ pero
+$\sqrt{2}\notin \mathbb{Q}$.
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{reales9.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Densidad} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Números Complejos} \\ \\ \\
+\end{tabular}
+\docLink{reales11.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

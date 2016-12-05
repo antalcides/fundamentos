@@ -1,0 +1,267 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{geometria8.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color {darkgray} {\small Medida de \'{A}ngulos}} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color {darkgray} {\small Rectas Perpendiculares}} \\ \\ \\
+\end{tabular}
+\docLink{geometria11.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 3}}  {\large
+{\color{ azulc} MODULO DE GEOMETRÍA}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 3.9. }}
+{\normalsize {\color{naranja} Propiedades de los \'{A}ngulos}}
+
+\newline
+
+Todo ángulo tiene una única medida y esta medida nos permite
+clasificarlos. Si se considera como unidad el grado, en el rango
+entre 0° y 180°, la clasificación usual es la siguiente:
+
+\bigskip
+
+Si $m$ es la medida de un ángulo, el ángulo es agudo sí y solo sí
+$0 < m < 90$; el ángulo es recto sí y solo sí $m = 90$; es obtuso
+sí y solo sí $90 < m < 180$ y es llano sí y sólo si $m = 180$.
+
+\bigskip
+
+\[
+\begin{array}{ccc}
+\includegraphics{/imagenes/ang_agudo.gif} \ \ & \includegraphics{/imagenes/ang_recto.gif} \ \ & \includegraphics{/imagenes/ang_obtuso.gif} \
+\ & \includegraphics{/imagenes/ang_llano.gif} \ \
+\end{array}
+\]
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  3.9.1. }}
+{\normalsize {\color{naranja} Ángulos Complementarios y
+Suplementarios}}
+
+\newline
+
+Algunas parejas de ángulos tienen propiedades especiales,
+
+\bigskip
+
+\textbf{Definición 3.9.1. } Si las medidas de dos ángulos son
+$m_1$ y $m_2$, entonces los ángulos se dicen:
+
+\bigskip
+
+\begin{description}
+\item[(a)] Complementarios sí y solamente sí $m_1 + m_2 = 90$
+
+\item[(b)] Suplementarios sí y solamente sí $m_1 + m_2 = 180$
+\end{description}
+
+\bigskip
+
+\textbf{Ejemplo 3.2. } Sabiendo que la medida $m$ de cierto ángulo
+es un cuarto de la medida de su suplemento, determine $m$. Si m es
+la medida del ángulo su suplemento tendrá medida $180 - m$.
+Teniendo en cuenta la relación:
+
+\bigskip
+
+\begin{align*}
+m&=\frac{1}{4}(180-m)\\
+4m&=180-m\\
+5m&=180\\
+m&=36
+\end{align*}
+
+\bigskip
+
+Dependiendo de sus posiciones, los ángulos también tienen nombres
+especiales:
+
+\bigskip
+
+\textbf{Definición 3.9.2. } Dos ángulos no nulos y no llanos se
+dicen ángulos adyacentes sí y solo sí tienen un lado común.
+
+\bigskip
+
+\[
+\begin{array}{ccc}
+\includegraphics{/imagenes/ang_adyacentes.gif}
+\end{array}
+\]
+
+\bigskip
+
+($\overrightarrow{OB}$ en la figura es interior al ángulo $\angle
+AOC$ y los ángulos $\angle COB$ y $\angle BOA$ son adyacentes.)
+
+\bigskip
+
+\[
+\begin{array}{ccc}
+\includegraphics{/imagenes/trian_dfe.gif} \ \ & \includegraphics{/imagenes/ang_adyacentes2.gif}
+\end{array}
+\]
+
+\bigskip
+
+Partiendo de la definición podemos afirmar que en las figuras
+anteriores, no son adyacentes los ángulos $D$ y $E$. Tampoco  son
+adyacentes el $\angle PQT$ y el $\angle SQT$ {\bf ¿porqué?}
+
+\bigskip
+
+\textbf{nota} Dos ángulos adyacentes se dicen pares lineales sí y
+solo sí sus lados no comunes están sobre rayos opuestos. Es claro
+que si dos ángulos forman un par lineal entonces son
+suplementarios.
+
+\bigskip
+
+\[
+\begin{array}{ccc}
+\includegraphics{/imagenes/pares_lineales.gif}
+\end{array}
+\]
+
+\bigskip
+
+Cuando dos rectas se intersectan determinan 4 ángulos. Cada par de
+ángulos no adyacentes, se dice opuesto por el vértice.
+
+\bigskip
+
+\textbf{Definición 3.9.3. } Dos ángulos no llanos se dicen
+opuestos por el vértice sí y solo si al unir sus lados se
+determinan dos rectas.
+
+\bigskip
+
+\[
+\begin{array}{ccc}
+\includegraphics{/imagenes/ang_opuestv.gif}
+\end{array}
+\]
+
+\bigskip
+
+En la figura los ángulos 3 y 5 son opuestos por el vértice y cada
+uno de ellos forma un par lineal con el ángulo 6, pero entonces
+podemos afirmar que:  $m\angle 3 + m\angle 6 = {180}^{{o}}$ y
+$m\angle 5 + m\angle 6 = {180}^{{o}}$, entonces $m\angle 3 +
+m\angle 6 = m\angle 5 + m\angle 6$, de esto se concluye que
+$m\angle 3 =  m\angle 5$  y esto muestra un resultado importante:
+{\bf Si dos ángulos son opuestos por el vértice entonces tienen la
+misma medida.}
+
+\bigskip
+
+\textbf{Ejemplo 3.3. } Determinar la medida de los ángulos 1, 2, 3
+en la figura sabiendo que la medida de  $\angle AEB  = 62^o$
+
+\bigskip
+
+\[
+\begin{array}{ccc}
+\includegraphics{/imagenes/ang_op_vert1.gif}
+\end{array}
+\]
+
+\bigskip
+
+Usando el resultado anterior para los ángulos opuestos por el
+vértice que  $m\angle 2 = {62}^{{o}}$, dado que  $\angle AEB$ y
+ángulo 1 forman un par lineal, ellos son  suplementarios, por
+tanto $m\angle 1 = {180}^{{o}}-{62}^{{o}}={118}^{{o}}$ . Como
+además los ángulos 1 y 3 son opuestos por el vértice entonces
+$m\angle 3 = {118}^{{o}}$.
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  3.9.2. }}
+{\normalsize {\color{naranja} Ángulos Correspondientes}}
+
+\newline
+
+Consideremos los ángulos que se forman cuando dos rectas $m$ y
+$n$, son cortadas por una tercera recta $l$ llamada una
+transversal. Se determinan 8 ángulos, cuatro para $m$ y la
+transversal y cuatro para $n$ y la transversal. Cualquier par de
+ángulos en posiciones similares con respecto a la transversal y a
+cada recta, son llamados ángulos correspondientes.
+
+\bigskip
+
+\[
+\begin{array}{ccc}
+\includegraphics{/imagenes/correspondientes.gif}
+\end{array}
+\]
+
+\bigskip
+
+En la figura pares de ángulos correspondientes son: 1 y 5, 2 y 6,
+3 y 7 y 4 y 8.
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{geometria8.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color {darkgray} {\small Medida de \'{A}ngulos}} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color {darkgray} {\small Rectas Perpendiculares}} \\ \\ \\
+\end{tabular}
+\docLink{geometria11.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

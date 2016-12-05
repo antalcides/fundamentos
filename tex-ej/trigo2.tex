@@ -1,0 +1,304 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{trigo1.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Medida de \'{A}ngulos} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Funciones Trigonométricas} \\ \\ \\
+\end{tabular}
+\docLink{trigo3.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 5}}  {\large
+{\color{ azulc} NOTAS DE TRIGONOMETRIA}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 5.2. }}
+{\normalsize {\color{naranja} Trigonometría de Triángulos Rectángulos}}
+
+\newline
+
+En la antigüedad (alrededor del año 100 A.C), para resolver
+problemas de astronomía, navegación y geografía, fueron utilizadas
+relaciones entre lados y ángulos de un triángulo rectángulo, estos
+trabajos dieron origen a la trigonometría.
+
+\bigskip
+
+La palabra trigonometría viene del griego: \emph{Trigonon}:
+triángulo, \emph{Metría}: medida.
+
+\bigskip
+
+Hiparco y Tolomeo crearon esta rama de las matemáticas y su
+primera presentación se encuentra en El Almagesto.Con el uso de la
+trigonometría calcularon tamaños y distancias de cuerpos celestes.
+
+\bigskip
+
+Las definiciones y demostraciones que se utilizan actualmente no
+difieren mucho de las propuestas por ellos.
+
+\bigskip
+
+\begin{center}
+\includegraphics{img/img4.gif}
+\includegraphics{img/img5.gif}
+\end{center}
+
+\bigskip
+
+En los triángulos rectángulos $\triangle ACB$ y $\triangle
+A'C'B'$, $\angle A \equiv \angle A'$ , entonces \linebreak$\angle
+C\equiv \angle C'$ , por el criterio AAA los triángulos son
+semejantes y por lo tanto las razones entre las medidas de los
+lados correspondientes son iguales.
+
+\bigskip
+
+\begin{align*}
+\dfrac{AC}{AB}&=\dfrac{A' C' }{A' B' };\\
+\dfrac{CB}{AB}&=\dfrac{C' B' }{A' B' }; \\
+\dfrac{BC}{AC}&=\dfrac{B' C' }{A' C' }
+\end{align*}
+
+\bigskip
+
+Cada una recibe un nombre especial:
+
+\bigskip
+
+\textbf{Definición 5.2.1. } \quad\begin{align*} \text{seno}\quad
+\left(\angle
+A\right)&=\frac{BC}{AB} \quad \left(\frac{\text{Cateto Opuesto}}{\text{Hipotenusa}}\right)\\
+\text{coseno}\quad\left( \angle A\right)&=\frac{AC}{AB}\quad
+\left( \frac{\text{Cateto Adyacente}}{Hipotenusa}\right)\\
+\text{tangente}\quad\left( \angle A\right)&=\frac{BC}{AC}\quad
+\left( \frac{\text{Cateto Opuesto}}{\text{Cateto Adyacente}}\right)\\
+\end{align*}
+
+\bigskip
+
+Note que estos valores no dependen de la longitud de los lados
+sino de la medida del ángulo.
+
+\bigskip
+
+Si en los triángulos rectángulos: $\triangle ACB$ y $\triangle
+A'C'B'$, $\angle A \equiv \angle A'$, entonces:
+
+\bigskip
+
+\begin{align*}
+sen \angle A &= sen \angle A ';\\
+\cos \angle A &= \cos \angle A ';\\
+\tan \angle A &= \tan \angle A '.
+\end{align*}
+
+\bigskip
+
+\textbf{Ejemplo 5.2. } Los matemáticos griegos y el ingeniero
+Heron mostraron cómo se puede construir un túnel bajo una montaña
+trabajando en los dos lados simultáneamente. Eligieron un punto
+$A$ en un lado, un punto $B$ en el otro y finalmente un punto $C$
+tal que la medida del ángulo $\angle ACB$ fuera de $90^{\circ }$.
+Después midieron $AC$ y $BC$ y encontraron que sus longitudes eran
+100 pies y 75 pies respectivamente.
+
+\bigskip
+
+Ahora, dijo Heron, es posible encontrar la medida de los ángulos
+$\angle A$ y $\angle B$. Entonces instruyó al trabajador ubicado
+en $A$ para que siguiera una línea recta que conservara el ángulo
+calculado con $AC$ y dio instrucciones análogas al trabajador en
+$B$. ¿Cómo calculó estos dos ángulos?
+
+\bigskip
+
+\textbf{Figura :}
+\begin{center}
+\includegraphics{img/img5a.gif}
+\end{center}
+
+\bigskip
+
+\emph{Solución}: Encontrando la tangente del ángulo en $A$:
+$\tan\left(A\right)=\dfrac{75}{100}$ y calculando la tangente del
+ángulo en B: $\tan\left( B\right) =\dfrac{100}{75}$.
+
+\bigskip
+
+\textbf{Ejemplo 5.3. } Sara está volando una cometa y tiene sus
+manos a 5 pies por encima del piso. Si la cometa está a 200 pies
+arriba del suelo, y la cuerda de la cometa forma un ángulo de
+$32.4^{\circ }$ con la horizontal, ¿ Cuántos pies de cuerda está
+utilizando?
+
+\bigskip
+
+\emph{Solución}: Para encontrar la longitud de la cuerda
+utilizamos el siguiente esquema:
+
+\bigskip
+
+\begin{center}
+\includegraphics{img/img6.gif}
+\end{center}
+
+\bigskip
+
+Debe hallarse el valor de $b$.
+
+\bigskip
+
+Haciendo uso de la definición de seno de un ángulo en un triángulo
+rectángulo:
+
+\bigskip
+
+$sen\left(32.4^{\circ }\right)=\dfrac{195}{b}$, entonces:
+$b=\dfrac{195}{sen\left(32.4^{\circ }\right)}$
+
+\bigskip
+
+$b$ es aproximadamente igual a 363 pies.
+
+\bigskip
+
+\textbf{Ejemplo 5.4. } Una trayectoria recta que sube una colina
+se eleva 26 pies por cada 100 pies horizontales.  Qué ángulo forma
+con la horizontal?
+
+\bigskip
+
+\emph{Solución}: La gráfica muestra la situación que se presenta
+durante los primeros 100 pies horizontales:
+
+\bigskip
+
+\begin{center}
+\includegraphics{img/img7.gif}
+\end{center}
+
+\bigskip
+
+Como el valor de las razones trigonométricas no depende de la
+longitud de los lados que se consideran, basta con utilizar como
+medidas, los 100 pies horizontales y los 26 pies verticales
+iniciales.
+
+\bigskip
+
+\[\tan \alpha =\dfrac{26}{100}; \quad \tan\alpha =0.26; \quad \alpha =14.57^{\circ }\]
+
+\bigskip
+
+\textbf{Ejemplo 5.5. } Un automovilista que circula por una
+carretera a una velocidad de 60 Km/h va directamente hacia una
+montaña. Observa que entre la 1:00 p.m. y la 1:10 p.m., el ángulo
+de elevación de la montaña cambia de $10^{\circ }$ a $70^{\circ
+}$. Calcular la altura de la montaña.
+
+\bigskip
+
+\emph{Solución}:
+
+\bigskip
+
+\begin{center}
+\includegraphics{img/img8.gif}
+\end{center}
+
+\bigskip
+
+\begin{align}
+\tan 10^{\circ }&= \dfrac{h}{x+y}\\
+x+y&=\dfrac{h}{\tan 10^{\circ }} \ \ (1).
+\end{align}
+
+\bigskip
+
+$x$ es la distancia que el automovilista ha recorrido en 10
+minutos. Como recorre 60 Km en una hora, se habrá desplazado 10 Km
+en 10 minutos, así $x=10$.
+
+\bigskip
+
+$y=\dfrac{h}{\tan 10^{\circ }}-10$, despejando de la ecuación (1}.
+
+\bigskip
+
+Por definición de tangente: $\tan 70^{\circ }=\dfrac{h}{y}$; Así,
+$y=\dfrac{h}{\tan 70^{\circ }}$.
+
+\bigskip
+
+Por lo tanto
+\begin{align*}
+\dfrac{h}{\tan 10^{\circ }}-10&=\dfrac{h}{\tan 70^{\circ }};\\
+\dfrac{h}{\tan 10^{\circ }}-\dfrac{h}{\tan 70^{\circ }}&=10\\
+\dfrac{h}{0.176}-\dfrac{h}{2.74}&=10\\
+2.74h-0.176h&=10\left( 2.74\right) \left( 0.176\right) \\
+2.564h&=4.82\\
+h&=1.9Km
+\end{align*}
+
+\bigskip
+
+La altura de la montaña es 1.9 Km
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{trigo1.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Medida de \'{A}ngulos} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Funciones Trigonométricas} \\ \\ \\
+\end{tabular}
+\docLink{trigo3.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

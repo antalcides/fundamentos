@@ -1,0 +1,202 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{geometria3.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color {darkgray}{\small Aspectos Iniciales}} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color {darkgray} {\small Regiones Poligonales}} \\ \\ \\
+\end{tabular}
+\docLink{geometria5.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 3}}  {\large
+{\color{ azulc} MODULO DE GEOMETRÍA}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 3.4. }}
+{\normalsize {\color{naranja} Polígonos}}
+
+\newline
+
+Se usan en ocasiones términos relativos a figuras geométricas que
+no han sido cuidadosamente definidos. Las figuras geométricas
+tienen ciertas características que las diferencian. Si nos
+preguntaran por ejemplo:
+
+\bigskip
+
+¿Cuál de las siguientes figuras son rectángulos? ¿Qué
+responderíamos?, ¿Cómo explicamos la escogencia de una de ellas?
+
+\bigskip
+
+\[
+\begin{array}{ccc}
+\includegraphics{/imagenes/rectangulo.gif} \ \ & \includegraphics{/imagenes/rombo.gif} \ \ &
+\includegraphics{/imagenes/palo.gif} \ \ &
+\includegraphics{/imagenes/trapecio.gif} \ \
+&\includegraphics{/imagenes/cuadrado1.gif}
+\end{array}
+\]
+
+\bigskip
+
+O si nos pidieran definir de manera precisa los términos con que
+se nombran figuras como las siguientes:
+
+\bigskip
+
+\[
+\begin{array}{ccc}
+\includegraphics{/imagenes/triangulo1.gif} \ \ & \includegraphics{/imagenes/paralelogramo.gif} \ \ &
+\includegraphics{/imagenes/cuadrilatero.gif} \\
+Triángulo & Paralelogramo & Cuadrilátero \\
+\includegraphics{/imagenes/trapecio1.gif} \ \
+& \includegraphics{/imagenes/rombo1.gif} \ \ &
+\includegraphics{/imagenes/cuadrado1.gif} \\
+Trapecio & Rombo & Cuadrado
+\end{array}
+\]
+
+\bigskip
+
+¿Qué responderíamos?
+
+\bigskip
+
+Definir adecuadamente una figura no es simple en geo\-me\-tría ,
+si decimos por ejemplo que: " Un triángulo es la unión de tres
+segmentos", podrían aparecer figuras como los siguientes:
+
+\bigskip
+
+\[
+\begin{array}{ccc}
+\includegraphics{/imagenes/tres_segmentos.gif} \ \ & \includegraphics{/imagenes/tres_segmentos_1.gif} \ \ &
+\includegraphics{/imagenes/tres_segmentos_2.gif} \ \ &
+\includegraphics{/imagenes/tres_segmentos_3.gif}
+\end{array}
+\]
+
+\bigskip
+
+Todas ellas son la unión de tres segmentos, pero no son
+triángulos, esto significa que nuestra definición no es buena,
+pues cada segmento debe interceptar a los otros y las
+intercepciones deben ser puntos extremos de los segmentos. Este
+criterio nos puede ayudar a dar una buena definición de triángulo
+y nos permite además presentar una definición general del término
+polígono, teniendo en cuenta que aparte de los polígonos muy
+familiares que se presentaban en las figuras anteriores, también
+son polígonos figuras como las siguientes:
+
+\bigskip
+
+\[
+\begin{array}{ccc}
+\includegraphics{/imagenes/poligonos.gif} \ \ & \includegraphics{/imagenes/poligonos1.gif} \ \ &
+\includegraphics{/imagenes/poligonos2.gif}
+\end{array}
+\]
+
+\bigskip
+
+\textbf{Definición 3.4.1.} Un polígono es la unión de segmentos en
+un mismo plano tales que cada segmento intercepta exactamente a
+otros dos, a cada uno de ellos en uno de sus puntos extremos. (Una
+figura plana limitada por rectas que forman una línea cerrada)
+
+\bigskip
+
+\textbf{nota} Los segmentos con los que se determina un polígono
+son sus lados. los puntos extremos de los lados son los vértices
+del polígono. Un polígono puede ser nombrado dando en orden sus
+vértices.
+
+\bigskip
+
+\[
+\begin{array}{ccc}
+\includegraphics{/imagenes/poligonos4.gif} \ \ & \includegraphics{/imagenes/poligonos5.gif}
+\end{array}
+\]
+
+\bigskip
+
+Dos vértices son consecutivos o adyacentes si son puntos extremos
+de un lado. Por ejemplo en la figura 2, $G$ y $H$  son vértices
+adyacentes del polígono. Una diagonal es un segmento que conecta
+vértices adyacentes. Por ejemplo $\overline{NY}$ y $\overline{PG}$
+son diagonales del polígono de la figura
+
+\bigskip
+
+\[
+\begin{array}{ccc}
+\includegraphics{/imagenes/poligonos6.gif}
+\end{array}
+\]
+
+\bigskip
+
+Atendiendo al número de lados los polígonos se clasifican en
+triángulos (3 lados), cuadriláteros (4 lados), pentágonos (5
+lados), hexágonos (6 lados), heptágonos (7), octógonos (8),
+nonágonos (9) y decágonos (10). En general se hace referencia a
+ellos como n-ágonos.
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{geometria3.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color {darkgray}{\small Aspectos Iniciales}} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color {darkgray} {\small Regiones Poligonales}} \\ \\ \\
+\end{tabular}
+\docLink{geometria5.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

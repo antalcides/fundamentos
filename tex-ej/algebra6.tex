@@ -1,0 +1,397 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{algebra5.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Radicales} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Suma y Resta} \\ \\ \\
+\end{tabular}
+\docLink{algebra7.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 2}}  {\large
+{\color{ azulc} FUNDAMENTOS DE ALGEBRA}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 2.6. }}
+{\normalsize {\color{naranja} Definición de Polinomios}}
+
+\newline
+
+Una expresión algebraica se obtiene a partir de variables y
+números reales, mediante sumas, restas, multiplicaciones,
+divisiones, potencias o extracción de raíces, como por ejemplo:
+
+\bigskip
+
+\[4x^{6}-3x^{3}+6x^{2}-3,\qquad 3y^{5}+2y^{3}+\frac{9}{y},\qquad
+\frac{x^{2}+y^{2}}{\sqrt{x+y}},\qquad
+\frac{6x^{2}y+\frac{y}{x^{2}}}{\sqrt[3]{1-xy}}\]
+
+\bigskip
+
+Asumimos que $x,y$ representan números reales y que la expresión
+representa un número real. Esto último puede imponer condiciones
+sobre los valores que pueden tomar las variables. Así, en los
+ejemplos dados antes:
+
+\bigskip
+
+\begin{itemize}
+\item $4x^{6}-3x^{3}+6x^{2}-3$ representa un número real,
+cualquiera sea el valor que tome $x$. \item
+$3y^{5}+2y^{3}+\frac{9}{y}$ representa un número real siempre $y$
+sea diferente de $0$. \item $\dfrac{x^{2}+y^{2}}{\sqrt{x+y}}$
+representa un número real si $x+y>0$. \item
+$\dfrac{6x^{2}y+\frac{y}{x^{2}}}{\sqrt[3]{1-xy}}$ representa un
+número real si $x\neq 0$ y $1-xy\neq 0$, es decir, $y\neq
+\frac{1}{x}$.
+\end{itemize}
+
+\bigskip
+
+Al reemplazar las variables por valores que ellas puedan tomar, se
+obtiene, claro está, un número real que es el valor de la
+expresión en esos números. Así por ejemplo:
+
+\bigskip
+
+\begin{itemize}
+\item El valor de $4x^{6}-3x^{3}+6x^{2}-3$ en $x=0$ es
+$4(0)^{6}-3(0)^{3}+6(0)^{2}-3=-3$. \item El valor de
+$\dfrac{x^{2}+y^{2}}{\sqrt{x+y}}$ en $x=2,y=-1$ es
+$\dfrac{2^{2}+(-1)^{2}}{\sqrt{2+(-1)}}=5$.
+\end{itemize}
+
+\bigskip
+
+Los problemas que se plantean acerca de las expresiones
+algebraicas se refieren a llegar rápidamente al resultado de
+operarlas, particularmente de multiplicarlas y a escribir una
+expresión como producto de otras expresiones (factorizar).
+Conviene tener en cuenta estas identidades:
+
+\bigskip
+
+\begin{enumerate}
+\item $x^{2}+2xy+y^{2}=(x+y)^{2}$ \item
+$x^{2}-2xy+y^{2}=(x-y)^{2}$ \item $x^{2}-y^{2}=(x-y)(x+y)$ \item
+$x^{n}-y^{n}=(x-y)(x^{n-1}+x^{n-2}y+\cdots+xy^{n-2}+y^{n-1})$
+\item
+$x^{n}+y^{n}=(x+y)(x^{n-1}-x^{n-2}y+\cdots-xy^{n-2}+y^{n-1})$ si
+$n$ es impar \item
+$x^{n}+y^{n}=(x+y)(x^{n-1}-x^{n-2}y+\cdots+xy^{n-2}-y^{n-1})$ si
+$n$ es par \item $x^{2}-(a+b)x+ab=(x-a)(x-b)$
+\end{enumerate}
+
+\bigskip
+
+Podemos además deducir, si $2xy>0$
+
+\bigskip
+
+\begin{align*}
+x^{2}+y^{2}&=x^{2}+y^{2}+2xy-2xy=(x+y)^{2}-2xy\\
+&=(x+y)^{2}-(\sqrt{2xy})^{2}=(x+y-\sqrt{2xy})(x+y+\sqrt{2xy)}
+\end{align*}
+
+\bigskip
+
+De manera similar, para todo $x,y$
+
+\bigskip
+
+\begin{align*}
+x^{4}+y^{4}&=x^{4}+y^{4}+2x^{2}y^{2}-2x^{2}y^{2}=(x^{2}+y^{2})^{2}-2x^{2}y^{2}\\
+&=(x^{2}+y^{2}-\sqrt{2}xy)(x^{2}+y^{2}+\sqrt{2}xy)
+\end{align*}
+
+\bigskip
+
+Estudiaremos más detalladamente las expresiones algebraicas
+llamadas polinomios. Un polinomio en $x$ con coeficientes reales
+es una suma finita de productos de la forma $a_{k}x^{k}$ donde el
+coeficiente $a_{k}$ es un número real y $k$ es un entero no
+negativo. Así un polinomio tiene la forma
+
+\bigskip
+
+\[a_{0}+a_{1}x+...+a_{n}x^{n}\]
+
+\bigskip
+
+donde $n$ es un entero no negativo, $a_{i}$ en un número real para
+$0\leq i\leq n$. Su grado es el mayor exponente $n$ de $x$ tal que
+$a_{n}\neq 0$ y $a_{n}$ es su coeficiente principal.
+
+\bigskip
+
+Si no se hace necesario explicitarlo, el polinomio puede
+representarse en la forma $q(x)$. El conjunto de todos los
+polinomios con coeficientes reales es denotado por $\mathbf{R}
+\left[ x\right]$.
+
+\bigskip
+
+\textbf{Ejemplo 2.17. } \quad\begin{itemize}
+
+\item Son polinomios los siguientes:
+\begin{itemize}
+\item $3+12x^{3}+\frac{25}{4}x^{7}-36x^{9}$. Su grado es 9 y su
+coeficiente principal es -36. \item
+$-\frac{1}{5}+\frac{\sqrt{3}}{2}x+x^{2}$. Su grado es 2 y su
+coeficiente principal es 1. \item
+$-1+1,5x^{2}+0,75x^{7}-1,25x^{7}$. Su grado es 7 y su coeficiente
+principal es $-1,25$. \item $\pi +3x,-4+\sqrt{2}x$ y todas las
+expresiones de la forma $b+ax$ con $a,b\in R$. Los polinomios de
+grado 1 son los de esta forma para $a\neq 0$. \item $2=2x^{0}$,
+$-\sqrt{7}=-\sqrt{7}x^{0}$, $\dfrac{9}{2}=\dfrac{9}{2}x^{0}$ y
+todas las constantes no cero son los polinomios de grado 0: si
+$a\neq 0$, $a=ax^{0}$. El 0 es también un polinomio constante pero
+no se le atribuye grado.
+\end{itemize}
+
+\item No son polinomios los siguientes:
+\begin{itemize}
+\item $3+4x^{2}+6x^{-3}$ pues el exponente de $x$ en el tercer
+sumando es un entero negativo. \item $4+2\sqrt{x}+x+3x^{3}$ pues
+el exponente de $x$ en el segundo sumando es positivo pero
+fraccionario. \item $\dfrac{7x+12x^{5}-6x^{10}}{6+12x^{3}}$ no es
+un polinomio, es un cociente de polinomios llamado fracción
+racional.
+\end{itemize}
+
+\end{itemize}
+
+\bigskip
+
+Dos polinomios son iguales si tienen el mismo grado y para cada
+potencia de $x$, $x^{k}$, el coeficiente de $x^{k}$ en un
+polinomio es igual al coeficiente en el otro.
+
+\bigskip
+
+\textbf{Ejemplo 2.18. } \quad \begin{itemize} \item
+$-1+3x^{2}-4x^{5}+9x^{7}=a_{0}+a_{1}x+\cdots+a_{7}x^{7}$ si y solo
+si $a_{0}=-1$, $a_{1}=0$, $a_{2}=3$, $a_{3}=0$, $a_{4}=0$,
+$a_{5}=-4$, $a_{6}=0$, $a_{7}=9$. \item
+$4x+6x^{2}+12x^{3}=b_{0}+b_{1}x+\cdots+b_{5}x^{5}$ si y solo si
+$b_{0}=0$, $b_{1}=4$, $b_{2}=6$, $b_{3}=12$, $b_{4}=0$, $b_{5}=0$.
+\item Los polinomios $-1-3x+2x^{3}-x^{5}$ y
+$1+a_{1}x+\cdots+a_{n}x^{n}$ no pueden ser iguales porque los
+términos independientes son distintos: en el primero es $-1$ y en
+el segundo es $1$.
+\end{itemize}
+
+\bigskip
+
+Puesto que la variable $x$ representa un número real, también un
+polinomio representa un número real y así como los números reales
+se suman, restan, multiplican y dividen, los polinomios también se
+operan teniendo en cuenta las propiedades que satisfacen las
+operaciones de números reales.
+
+\bigskip
+
+En el polinomio que se obtiene al sumar o al restar dos
+polinomios, el coeficiente de $x^{k}$ se obtiene sumando o
+restando los coeficientes que tiene $x^{k}$ en los polinomios que
+se suman o restan, esto es, asociando términos semejantes.
+
+\bigskip
+
+\textbf{Ejemplo 2.19. } \quad \begin{itemize} \item
+\begin{align*}
+&\left(4+6x^{2}+7x^{3}-10x^{5}\right)+\left(3+x+4x^{2}+x^{3}\right)\\
+&\quad=(4+3)+(0+1)x+(6+4)x^{2}+(7+1)x^{3}+(0+0)x^{4}+(-10+0)x^{5}\\
+&\quad=7+x+10x^{2}+8x^{3}-10x^{5}
+\end{align*}
+\item
+\begin{align*}
+&\left(3-4x+5x^{2}-9x^{3}\right)-\left(-2+9x-9x^{3}\right)\\
+&\quad=(3-(-2))+(-4-9)x+(5-0)x^{2}+(-9-(-9))x^{3}\\
+&\quad=5-13x+5x^{2}
+\end{align*}
+\item $(-2+x)-(-2+x)=(-2+x)+(2-x)=0$
+\end{itemize}
+
+\bigskip
+
+Más generalmente, supuesto que $n\geq m$
+
+\bigskip
+
+\begin{align*}
+&\left( a_{0}+a_{1}x+\cdots+a_{n}x^{n}\right) \pm
+\left(b_{0}+b_{1}x+\cdots+b_{m}x^{m}\right)\\
+&\quad=(a_{0}\pm b_{0})+(a_{1}\pm b_{1})x+(a_{2}\pm
+b_{2})x^{2}+\cdots+(a_{m}\pm
+b_{m})x^{m}+a_{m+1}x^{m+1}\\
+&\qquad+\cdots+a_{n}x^{n}
+\end{align*}
+
+\bigskip
+
+o si $n<m$
+
+\bigskip
+
+\begin{align*}
+&\left( a_{0}+a_{1}x+\quad+a_{n}x^{n}\right) \pm
+\left(b_{0}+b_{1}x+\quad+b_{m}x^{m}\right)\\
+&\quad=(a_{0}\pm b_{0})+(a_{1}\pm b_{1})x+\quad+(a_{n}\pm
+b_{n})x^{n}+b_{n+1}x^{n+1}+\quad+b_{m}x^{m}
+\end{align*}
+
+\bigskip
+
+Note que la suma o la diferencia de dos polinomios puede dar el
+polinomio $0$, pero si no es así, el grado del polinomio obtenido
+es menor o igual que el mayor entre los grados de los polinomios
+que se suman o se restan.
+
+\bigskip
+
+Para obtener el polinomio producto de dos polinomios se aplica
+repetidamente la propiedad distributiva y luego se reducen
+términos semejantes.
+
+\bigskip
+
+\textbf{Ejemplo 2.20. } \quad\begin{itemize} \item
+\begin{align*}
+&\left(2+6x-3x^{2}\right) \left(3-2x+4x^{3}\right)\\
+&\quad=2\left( 3-2x+4x^{3}\right) +6x\left( 3-2x+4x^{3}\right)
+-3x^{2}\left( 3-2x+4x^{3}\right)\\
+&\quad=2\ast
+3+2(-2x)+2(4x^{3})+(6x)3+6x(-2x)+6x(4x^{3})+(-3x^{2})3\\
+&\qquad+(-3x^{2})(-2x)(4x^{3})\\
+&\quad=6+(-4+18)x+(-12-9)x^{2}+(8+6)x^{3}+24x^{4}-12x^{5}
+\end{align*}
+\item
+\begin{align*}
+&\left( \frac{2}{3}+4x-\frac{3}{4}x^{3}\right) \left(6+x+\frac{9}{2} x^{2}\right)\\
+&\quad=\frac{2}{3}\left( 6+x+\frac{9}{2}x^{2}\right)
++4x\left(6+x+\frac{9}{2} x^{2}\right)
+-\frac{3}{4}x^{3}\left(6+x+\frac{9}{2}x^{2}\right)\\
+&\quad=4+\left( \frac{2}{3}+24\right) x+\left( 3+4\right)
+x^{2}+\left( 18-\frac{9}{2}\right)
+x^{3}-\frac{3}{4}x^{4}-\frac{27}{8}x^{5}\\
+&\quad=4+\frac{74}{3}x+7x^{2}+\frac{27}{2}x^{3}-\frac{3}{4}x^{4}-\frac{27}{8}x^{5}
+\end{align*}
+\item
+\[\left( 1-\sqrt{2}x\right) \left( 1+\sqrt{2}x\right) =1-2x^{2}\]
+\end{itemize}
+
+\bigskip
+
+Note que el coeficiente principal del polinomio producto es el
+producto de los coeficientes principales (que son números
+diferentes de cero) de los polinomios cuyo producto se está
+efectuando.
+
+\bigskip
+
+Más generalmente tenemos que
+
+\bigskip
+
+\[\left( a_{0}+a_{1}x+\cdots+a_{n}x^{n}\right) \left(b_{0}+b_{1}x+\cdots+b_{m}x^{m}\right)=c_{0}+c_{1}x+\cdots+c_{n+m}x^{n+m}\]
+
+\bigskip
+
+donde  $c_{k}=\sum_{i+j=k}^{{}}a_{i}b_{j}$.
+
+\bigskip
+
+\textbf{Ejemplo 2.21. } \quad\begin{itemize} \item
+$5x^{3}-3x^{2}+6x+8$ y $x^{7}+2x^{4}-3x^{2}-\sqrt{3}x$ son
+polinomios en una variable. \item
+$3xy^{2}-\frac{2}{5}xy+x-\sqrt{2}$ y
+$\sqrt{5}x^{3}y^{2}-3x^{2}y^{2}+4xy-8y+1$ son polinomios en dos
+variables.
+\end{itemize}
+
+\bigskip
+
+Observamos que los únicos exponentes que aparecen en las variables
+son enteros positivos. Los exponentes negativos y fraccionarios
+están excluidos. Sin embargo, los coeficientes numéricos son
+números reales arbitrarios o elementos arbitrarios del dominio en
+consideración.
+
+\bigskip
+
+Llamamos \textit{grado} de una variable en un término de un
+polinomio al exponente que tiene la variable en el término. Por
+ejemplo en el término $3x^{4}y^{3}$, el grado de $x$ es $4$ y el
+grado de $y$ es $3$. El \textit{grado de un término} en dos o mas
+variables es la suma de los grados de las variables que aparecen
+en el término. Por ejemplo el grado del término en dos variables
+$3x^{4}y^{3}$ es $7$. El \textit{grado de un polinomio} en ciertas
+variables es el mayor de los grados de esas variables en los
+términos del polinomio.
+
+\bigskip
+
+\textbf{Ejemplo 2.22. } \quad\begin{itemize} \item
+$7x^{5}-2x^{3}+3x+1$ es un polinomio de grado $5$ en $x$. \item
+$4x^{3}y^{2}-5xy^{3}+x^{4}y^{2}+2y$ es un polinomio de grado $4$
+en $x$, grado $3$ en $y$ y de grado $6$ en $x$ y $y$.
+\end{itemize}
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{algebra5.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Radicales} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Suma y Resta} \\ \\ \\
+\end{tabular}
+\docLink{algebra7.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

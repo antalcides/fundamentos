@@ -1,0 +1,330 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{04_10.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small $e^x$} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Composición} \\ \\ \\
+\end{tabular}
+\docLink{04_12.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 4}}  {\large
+{\color{ azulc} FUNCIONES}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 4.11. }}
+{\normalsize {\color{naranja} Operaciones de Funciones}}
+
+\newline
+
+Así como los números reales se suman, restan, multiplican y
+dividen, también las funciones se operan.
+
+\bigskip
+
+\textbf{Definición 4.11.1. } Una {\bf operación entre funciones}
+es una regla que asocia a dos de ellas en una tercera función,
+precisando cual es la imagen de un número real $x$ por esta
+última.
+
+\bigskip
+
+\colorbox{naranja}{{\color{white} \normalsize 4.11.1. }}
+{\normalsize {\color{naranja} Álgebra de funciones}}
+
+\bigskip
+
+Es posible obtener nuevas funciones operando directamente las
+imágenes, que representan números reales.
+
+\bigskip
+
+\textbf{Definición 4.11.2. } Dadas las funciones $f$ y $g$ se
+definen
+
+\bigskip
+
+\begin{center}\begin{tabular}{lcl}
+{\bf la suma de} $f$ {\bf y} $g$: & & $(f+g)(x)=f(x)+g(x)$\\
+{\bf la resta o la diferencia de} $f$ {\bf y} $g$: & & $(f-g)(x)=f(x)-g(x)$ \\
+{\bf el producto de} $f$ {\bf y} $g$: & & $(f\cdot g)(x)=f(x)\cdot g(x)$ \\
+{\bf el cociente de} $f$ {\bf y} $g$: & &
+$(\frac{f}{g})(x)=\frac{f(x)}{g(x)}$ si $g(x)\neq $ $0$
+\end{tabular}
+\end{center}
+
+\bigskip
+
+Para determinar sus dominio notemos que al definir la imagen de
+$x$, deben estar definidas tanto $f(x)$ como $g(x)$ y que en el
+caso del cociente, $g(x)$ debe ser distinto de $0$. Así, si
+$D_{h}$ denota el dominio de la función $h$ entonces
+
+\bigskip
+
+\begin{align*}
+D_{f+g}&=D_{f-g}=D_{f\cdot g}=D_{f}\cap D_{g}\\
+D_{\frac{f}{g}}&=D_{f}\cap D_{g}-\{x/g(x)=0\}
+\end{align*}
+
+\bigskip
+
+\textbf{Ejemplo 4.13. } \quad \begin{enumerate} \item Sean
+$f(x)=4-2x$ y $g(x)=16-x^{2}$
+
+\bigskip
+
+\begin{align*}
+(f+g)(x)&=\left( 4-2x\right) +\left( 16-x^{2}\right)
+=20-2x-x^{2}\\
+(f-g)(x)&=4-2x-\left( 16-x^{2}\right) =-12-2x+x^{2}\\
+(f\cdot
+g)(x)&=\left(4-2x\right)\left(16-x^{2}\right)=64-32x-4x^{2}+2x^{3}\\
+\left(\frac{f}{g}\right)(x)&=\frac{4-2x}{16-x^{2}}
+\end{align*}
+
+\bigskip
+
+Ahora bien,
+
+\bigskip
+
+\[D_{f}=\mathbf{R}, \quad D_{g}=\mathbf{R}\]
+
+\bigskip
+
+En consecuencia
+
+\bigskip
+
+\begin{align*}
+D_{f+g}&=D_{f-g}=D_{f\cdot g}=\mathbf{R}\quad\text{y}\\
+D\frac{f}{g}&=\mathbf{R-}\left\{
+x\in\mathbf{R/}16-x^{2}=0\right\}=\mathbf{R-}\left\{ -4,4\right\}
+\end{align*}
+
+\bigskip
+
+Estas son sus gráficas
+
+\bigskip
+
+\begin{center}
+\includegraphics{/imagenes/4_33.gif} \\
+\includegraphics{/imagenes/4_34.gif} \\
+\includegraphics{/imagenes/4_35.gif} \\
+\includegraphics{/imagenes/4_36.gif}
+\end{center}
+
+\bigskip
+
+\item Como caso particular del producto tenemos
+$f^{2}(x)=(f(x))^{2}$ y más generalmente $f^{n}(x)=(f(x))^{n}$.
+
+\bigskip
+
+Así, para $f(x)=4-2x$ tenemos que
+
+\bigskip
+
+\begin{align*}
+f^{2}(x)&=\left( 4-2x\right)^{2}=16-16x+4x^{2}\qquad\text{y}\\
+f^{4}(x)&=\left( 4-2x\right)^{4}=\left( 16-16x+4x^{2}\right)
+\left( 16-16x+4x^{2}\right) \\
+&=256-512x+384x^{2}-128x^{3}+16x^{4}
+\end{align*}
+
+\bigskip
+
+Estas son sus gráficas:
+
+\bigskip
+
+${\color{navy}f},{\color{blue}f^{2}},{\color{magenta}f^{4}}$ \\
+
+\bigskip
+
+\begin{center}
+\includegraphics{/imagenes/4_37.gif} \\
+\end{center}
+
+\bigskip
+
+\item Sean $f(x)=e^{x}$ y $g(x)=e^{-x}$
+\begin{align*}
+(f+g)(x)&=e^{x}+e^{-x}\\
+(f-g)(x)&=e^{x}-e^{-x}\\
+(f\cdot g)(x)&=e^{x}e^{-x}=e^{x-x}=e^{0}=1\\
+\left(\frac{f}{g}\right)(x)&=\frac{e^{x}}{e^{-x}}=e^{x}e^{x}=\left(e^{x}\right)^{2}=e^{2x}
+\end{align*}
+
+\bigskip
+
+Ahora bien, $D_{f}=\mathbf{R}$, $D_{g}=\mathbf{R}$ En consecuencia
+$D_{f+g}=D_{f-g}=D_{f\cdot g}=\mathbf{R}$ y
+$D_{\frac{f}{g}}=\mathbf{R-}\left\{ x\in
+\mathbf{R/}e^{x}=0\right\}$. Como $e^{x}>0$ para todo $x$ entonces
+$D_{\frac{f}{g}}=\mathbf{R}$
+
+\bigskip
+
+Estas son sus gráficas
+
+\bigskip
+
+\begin{center}
+\includegraphics{imagenes/4_38.gif} \\
+\includegraphics{imagenes/4_39.gif} \\
+\end{center}
+
+\bigskip
+
+\begin{center}
+\includegraphics{imagenes/4_40.gif} \\
+\includegraphics{imagenes/4_41.gif} \\
+\end{center}
+\end{description}
+
+\bigskip
+
+\colorbox{naranja}{{\color{white} \normalsize 4.11.1. }}
+{\normalsize {\color{naranja} Propiedades}}
+
+\bigskip
+
+Las propiedades que tienen las operaciones definidas en
+$\mathbf{R}$ son heredadas por la suma y el producto de funciones.
+Así tenemos :
+
+\bigskip
+
+\begin{enumerate}
+\item La asociatividad de la suma pues, dadas $f$, $g$ y $h$
+funciones,
+\[\left( \left( f+g\right) +h\right) \left( x\right)=\left(f+g\right) \left( x\right) +h\left( x\right) =\left( f\left(x\right) +g\left( x\right) \right) +h\left(
+x\right)\] Puesto que $f\left( x\right)$, $g\left( x\right) $ y
+$h\left(x\right) $ representan números reales, esta última suma es
+igual a
+\[f\left( x\right) +\left( g\left( x\right) +h\left( x\right)\right) =f\left( x\right) +\left( g+h\right) \left(x\right)\]
+Así:
+
+\bigskip
+
+\[\left( f+g\right) +h=f+\left( g+h\right)\]
+
+\bigskip
+
+De manera similar se prueba la asociatividad del producto.
+
+\bigskip
+
+\item La conmutatividad del producto pues
+
+\bigskip
+
+\[\left( f\cdot g\right)\left(x\right) =f\left( x\right) g\left( x\right),\]
+$f\left( x\right) $ y $g\left( x\right) $ representan números
+entonces este producto es igual a:
+
+\bigskip
+
+\[g\left( x\right) f\left( x\right) =\left( g\cdot f\right) \left(x\right).\]
+
+\bigskip
+
+Así $f\cdot g=g\cdot f$. De manera similar se prueba la
+conmutatividad de la suma.
+
+\bigskip
+
+\item Sea $\overline{0}$ la función que a todo número real $x$
+asocia el número $0$, es decir $\overline{0}\left( x\right) =0$ y
+sea $\overline{1}$ la función que a cada real $x$ asocia el número
+$1$. Entonces, por una parte,
+\[\left( f+\overline{0}\right) \left( x\right) =f\left( x\right) +\overline{0}\left( x\right) =f\left( x\right) +0=f\left( x\right)\]
+es decir,
+\[f+\overline{0}=f\]
+Por otra parte,
+\[\left( f\cdot \overline{1}\right) \left( x\right) =f\left(x\right) \overline{1}\left( x\right) =f\left( x\right) \cdot 1=f\left(x\right)\]
+es decir
+\[f\cdot \overline{1}=f\]
+Así, entre las funciones existen módulos para la suma y para el
+producto.
+
+\item Si la función $-f$ se define por
+\[\left( -f\right) \left( x\right) =-f\left( x\right)\]
+y, para aquellos $x$ para los cuales $f\left( x\right) $
+diferentes de $0$ se define $\frac{1}{f}$ por
+\[\left( \frac{1}{f}\right) \left( x\right) =\frac{1}{f\left(x\right) }\]
+entonces
+\[\left( f+\left( -f\right) \right) \left( x\right) =f\left(x\right) +\left(-f\right) \left( x\right) =f\left( x\right) -f\left( x\right) =0=\overline{0}x\]
+es decir
+\[f+\left( -f\right) =\overline{0}\]
+y
+\[\left( f\cdot \frac{1}{f}\right) \left( x\right) =f\left(x\right) \cdot \frac{1}{f\left( x\right) }=1=\overline{1}\left(x\right)\]
+es decir,
+\[f\cdot \frac{1}{f}=\overline{1.}\]
+\end{enumerate}
+
+\bigskip
+
+Así, entre las funciones existen inversos para la suma e inversos
+parciales para el producto.
+
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{04_10.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small $e^x$} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Composición} \\ \\ \\
+\end{tabular}
+\docLink{04_12.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

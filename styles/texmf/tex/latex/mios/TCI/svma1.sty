@@ -1,0 +1,419 @@
+% Copyright (C) 1988 Springer-Verlag
+%
+% MODIFICACIONES PARA LIBRO EN ESPANOL. AUMENTO DE TAMANNO DE TEXTO Y
+% TRADUCCION DE TITULOS. SEP. 1997. MARGARITA TORO
+%
+% Everyone is granted permission to copy and redistribute this file, as
+% long as it is unchanged.
+%
+% $Revision: 1.8 $
+%
+% svma.sty 1 Jun 90
+%
+% Don't allow space between running head and folio to shrink to zero
+% Change leftmark to use firstmark instead of topmark (section names).
+%
+% svma.sty 30 Nov 89
+%
+% added \flipheads
+%
+% smva.sty 12 Jul 89
+%
+% \@mkboth=\markboth in ps@headings, for toc
+%
+% missing \rm for folio; font change in section affected folio.
+% in svsa, references should start a new ``chapter''.
+%
+% \acknowledgements -> \acknowledgments
+%
+% smva.sty $Date$
+%
+\renewcommand{\appendixname}{Ap\'{e}ndice}
+\newif\if@multipleauthors
+\@ifundefined{@svsa}{%
+        \@multipleauthorstrue
+        \typeout{Sub-style 'svma' (Springer-Verlag Multi-Authored). Jun 1, 1990}}%
+        {\@multipleauthorsfalse}
+\ds@twoside
+\headheight=9pt
+\headsep=15pt   % 2pc-9pt
+\textheight=45pc
+\textwidth=30pc
+\parindent=1em
+%
+% Running head: 9 pt TR, c/lc, 2em# inside of fl. outside folio, base aligns
+% with folio; recto: CN, period, word # to CT; verso: contributor's name(s).
+% In single-author, verso: SN, period, word # to ST.
+%
+% If you want the running heads on the opposite pages, just put after
+% the documentstyle.  LaTeX isn't bright enough to allow one option
+% file to define ds@flipheads.
+%
+\newif\if@flipheads \@flipheadsfalse
+\def\flipheads{\@flipheadstrue}
+%%%
+  \def\ps@headings{%
+      \let\@oddfoot\@empty\let\@evenfoot\@empty
+      \def\@evenhead{\thepage\hfil\slshape\small\leftmark}%
+      \def\@oddhead{{\slshape\small\rightmark}\hfil\thepage}%
+      \let\@mkboth\markboth
+      \def\chaptermark##1{%
+        \markboth {\ifnum \c@secnumdepth >\m@ne
+          \if@mainmatter
+            \@chapapp\ \thechapter. \ \fi
+          \fi
+            ##1}{}}%
+      \def\sectionmark##1{%
+        \markright {\ifnum \c@secnumdepth >\z@
+            \thesection. \ \fi
+            ##1}}}
+\def\ps@myheadings{%
+    \let\@oddfoot\@empty\let\@evenfoot\@empty
+    \def\@evenhead{\thepage\hfil\slshape\small\leftmark}%
+    \def\@oddhead{{\slshape\small\rightmark}\hfil\thepage}%
+    \let\@mkboth\@gobbletwo
+    \let\chaptermark\@gobble
+    \let\sectionmark\@gobble
+    }
+
+\pagestyle{headings}
+\pagenumbering{arabic}   % toc is in roman
+\def\@chapterauthors{}
+\def\markbothsame#1{\markboth{#1}{#1}}
+\def\markleft#1{{\let\protect\noexpand\expandafter\@markleft\@themark
+     {#1}\mark{\@themark}}}
+\def\@markleft#1#2#3{\gdef\@themark{{#3}{#2}}}
+\def\leftmark{\expandafter\@leftmark\firstmark}
+%
+% All pages without running heads must carry corner marks.
+%
+\def\clap#1{\hbox to 0pt{\hss#1\hss}}
+\newdimen\@crosshairrule \@crosshairrule=.24pt
+\def\@crosshairs{\vbox to 0pt{\hsize=0pt\baselineskip=0pt\lineskip=0pt
+                \vss
+                \clap{\vrule height .125in width \@crosshairrule depth 0pt}
+                \clap{\vrule width .25in height \@crosshairrule depth 0pt}
+                \clap{\vrule height .125in width \@crosshairrule depth 0pt}
+                \vss}}
+\def\ps@empty{%
+\def\@oddhead{\hfill\raise\headheight\@crosshairs}
+\let\@evenhead\@oddhead
+\def\@evenfoot{}\let\@oddfoot\@evenfoot}
+\frenchspacing
+\def\@chapapp{}
+\def\viiiONx{\@setsize\viiiONx{10pt}\viipt\@viipt}
+\def\ixONxi{\@setsize\ixONxi{11pt}\ixpt\@ixpt}
+\def\xONxii{\normalsize}
+\def\xiiONxiv{\@setsize\xiiONxiv{14pt}\xiipt\@xiipt}
+\def\xivONxvi{\@setsize\xivONxvi{16pt}\xivpt\@xivpt}
+\def\xivONxiv{\@setsize\xivONxiv{14pt}\xivpt\@xivpt}
+\def\xxONxx{\@setsize\xxONxx{20pt}\xxpt\@xxpt}
+
+\def\chapter{\cleardoublepage      % Starts new recto.
+   \thispagestyle{empty}     % Page style of chapter page is 'empty'
+   \global\@topnum\z@        % Prevents figures from going at top of page.
+   \@afterindentfalse        % Suppresses indent in first paragraph.  Change
+   \secdef\@chapter\@schapter}   % to \@afterindenttrue to have indent.
+
+%
+% Chapter number: 20 TR bold, arabic numeral, fl.l, top text
+% Chapter title: 20/20 TR bold x 27pc, c/lc, fl.l, sink 60 pt from top
+%       type to base of CT, to's fl.l, do not hyphenate
+%
+\def\@makechapterhead#1{             % Heading for \chapter command
+% We want the chapter number to be 20 pts from top text.  The simplest
+% was is to set \topskip, making sure there's nothing between the number
+% and the top of page, so \baselineskip doesn't come in.
+  { \topskip=20pt \parindent 0pt \raggedright 
+    \xxONxx\bf
+    \ifnum \c@secnumdepth >\m@ne     % IF secnumdepth > -1 THEN
+        \@chapapp{} \thechapter % Print 'Chapter' and number.
+    \par 
+    \vskip 20pt \fi             % Space between number and title.
+    #1\par                      % Title.
+    \nobreak                    % TeX penalty to prevent page break.
+    \vskip-\prevdepth           % Fool TeX into ignoring the depth of
+    \prevdepth=0pt              % the CT when spacing to the CA
+    \if@multipleauthors
+     \vskip 16pt                % 2.5pi b/b between title and chapter authors
+    \else
+     \vskip 44pt        % want ~60pt b/b to abstract
+    \fi
+  } }
+
+\def\@makeschapterhead#1{             % Heading for \chapter* command
+  { \topskip=60pt \parindent 0pt \raggedright 
+    \xxONxx\bf
+    #1\par                      % Title.
+    \nobreak                    % TeX penalty to prevent page break.
+    \vskip-\prevdepth           % Fool TeX into ignoring the depth of
+    \prevdepth=0pt              % the CT when spacing to the CA
+    \if@multipleauthors
+     \vskip 16pt                % 2.5pi b/b between title and chapter authors
+    \else
+     \vskip 44pt                % want ~60pt b/b to abstract
+    \fi
+  } }
+
+\if@multipleauthors
+\gdef\chapterauthors#1{%
+        {\def\\{, }\def\footnote##1{}\def\footnotemark[##1]{}%
+                \xdef\@chapterauthors{#1}}%
+        \markleft{\@chapterauthors}%
+        {\parindent0pt \raggedright\xivONxiv\bf #1\par
+                \nobreak
+}}\fi
+
+%
+% Restart the footnote counter each chapter.
+%
+%\newcounter{footnote}[chapter]
+%
+% FN    1pc space above footnotes to text.
+%       5 pc 1/2 pt rule fl.l. above footnotes
+%       leave 6pt # after rule followed by ftn
+%
+\skip\footins=18.5pt    % space above line and below line, 1pc+6pt+.5pt
+\footskip=16pt
+\footnotesep=7pt        % pretty arbitrary
+\def\footnotesize{\@setsize\footnotesize{10pt}\ixpt\@ixpt}
+\def\footnoterule{\kern-6.5pt\hrule width 5pc height .5pt\vskip 6pt}
+%
+% Footnote at end of chapter position below last text line (not at bottom
+% of page).
+%
+\def\clearpage{\par\penalty -\@M \write\m@ne{}\vbox{}\penalty -\@Mi}
+\def\@makecol{\ifvoid\footins \setbox\@outputbox\box\@cclv
+   \else\setbox\@outputbox
+     \vbox{\unvbox\@cclv\vskip\skip\footins\footnoterule\unvbox\footins}\fi
+     \xdef\@freelist{\@freelist\@midlist}\gdef\@midlist{}\@combinefloats
+     \setbox\@outputbox\vbox to\@colht{\boxmaxdepth\maxdepth
+        \@texttop
+        \@tempdima=\@colht \multiply\@tempdima by 10 \divide\@tempdima by 9
+        \ifdim \ht\@outputbox<\@tempdima
+                \unvbox\@outputbox \vfill
+        \else
+                \unvbox\@outputbox
+        \fi
+        \@textbottom}\global\maxdepth\@maxdepth}
+%
+% Abstract: 9/11 TRx25pi, sink 2.5pi b/b from CA
+%
+\def\abstract{\vskip 21pt % from CA
+\rightskip=1pc\leftskip=1pc\parindent=\z@
+\ixONxi\rm
+{RESUMEN }}
+\def\endabstract{\par}  % If we don't do this, the paragraph won't be
+                        % set until after rightskip and leftskip have been
+                        % returned to their old values.
+
+\def\tableofcontents{\@restonecolfalse\if@twocolumn\@restonecoltrue\onecolumn
+  \fi\chapter*{Contenido\@mkboth{Contenido}{Contenido}}
+  \@starttoc{toc}\if@restonecol\twocolumn\fi}
+
+% ---------------------------------------------------
+%
+   \def\introduccion{
+   \chapter*{Introducci\'on}\small\def\baselinestretch{1}\@normalsize
+  	  \addcontentsline{toc}{chapter}{Introducci\'on}}
+
+% --------------------------------------------------------------
+%
+
+% ---------------------------------------------------
+%
+  \def\prefacio{
+  \chapter*{Prefacio}\small\def\baselinestretch{1}\@normalsize
+	  \addcontentsline{toc}{chapter}{Prefacio}}
+
+% --------------------------------------------------------------
+%
+
+%
+% Don't indent the paragraph following each header.  Vertical distances
+% showld have \baselineskip taken out, and the height of the next
+% line, which should be text (10/12 TR).
+%
+\setcounter{secnumdepth}{2}     % number section and subsections
+\setcounter{tocdepth}{2}        % and put them in the table of contents
+% No 1 Head, 14/16 TR, 36pt b/b above, 24 tp b/b below
+\def\section{\@startsection
+    {section}{1}{\z@}{-21pt plus 6pt minus 1pt}{12pt plus 2pt}%
+        {\xivONxvi\rm\raggedright}}
+% No 2 Head, 12/14 TR, c/sc, 30pt above, 18 pt below
+\def\subsection{\@startsection
+    {subsection}{2}{\z@}{-16pt plus 4pt minus 1pt}{6pt plus 1pt}%
+        {\xiiONxiv\sc\raggedright}}
+% No 3 Head, 10/12 TR, 24pt above, 18pt below
+\def\subsubsection{\@startsection
+    {subsubsection}{3}{\z@}{-12pt plus 3pt minus 1pt}{6pt plus 1pt}%
+        {\xONxii\rm\raggedright}}
+% No 4 Head, 10/12 TR italic, 20pt above, 18pt below
+\def\paragraph{\@startsection
+     {paragraph}{4}{\z@}{-8pt plus 2pt minus .5pt}{6pt plus 1pt}%
+        {\xONxii\it\raggedright}}
+% No 5 Head, 10/12 TR italic, period,  en space to run in text, 18pt above
+\def\subparagraph#1{\@startsection
+     {subparagraph}{5}{\z@}{-6pt plus 2pt minus .5pt}{-.5em}{\xONxii\it}{#1.}}
+% Ack: Acknowledgements same as No 5 head, 36pt above
+\def\acknowledgments{\@startsection
+     {subparagraph}{6}{\z@}{-24pt plus 6pt minus 1pt}{-.5em}%
+        {\xONxii\it}*{Acknowledgments:\/}}
+% R-1: ``References'', same as No.2 head
+% unless it's single-author.
+\def\mainbibliography#1{{\@multipleauthorsfalse\bibliography{#1}}}
+\def\thebibliography#1{%
+\if@multipleauthors
+  \@startsection
+    {section}{2}{\z@}{-16pt plus 4pt minus 1pt}{6pt plus 1pt}%
+        {\xiiONxiv\sc\raggedright}{References}%
+\else
+  \chapter*{Referencias\@mkboth
+  {Referencias}{Referencias}}%
+  \addcontentsline{toc}{chapter}{\protect\numberline{}Referencias}%
+\fi
+%endif
+  \list
+  {[\arabic{enumi}]}{\settowidth\labelwidth{[#1]}\leftmargin\labelwidth
+    \advance\leftmargin\labelsep
+    \usecounter{enumi}}
+    \def\newblock{\hskip .11em plus .33em minus -.07em}
+    \sloppy
+    \sfcode`\.=1000\relax}
+% Put index in the toc
+\def\theindex{\@restonecoltrue\if@twocolumn\@restonecolfalse\fi
+\columnseprule \z@
+\columnsep 35pt\twocolumn[\@makeschapterhead{Indice}]
+    \addcontentsline{toc}{chapter}{\protect\numberline{}Indice}%
+    \@mkboth{Indice}{Indice}\thispagestyle{plain}\parindent\z@
+    \parskip\z@ plus .3pt\relax\let\item\@idxitem}
+
+%
+% lists: 10/12 TRx27pc, 1/2line# above/below
+%
+\topsep 6pt plus 3pt minus 1pt     % Extra vertical space, in addition to 
+                                   % \parskip, added above and below list and
+                                   % paragraphing environments.
+\itemsep 6pt plus 2pt minus 1pt    % Extra vertical space, in addition to
+                                   % \parskip, added between list items.
+%
+% Eq: Center on text width; equation numbers set flush right, align with
+% last line of equation, 6pt # above/below.
+%
+\abovedisplayskip=6pt plus 1.5pt minus 3pt
+\belowdisplayskip=\abovedisplayskip
+\abovedisplayshortskip=\z@ plus 1.5pt
+\belowdisplayshortskip=3pt plus 1.5pt minus 1.5pt
+%
+% FL: Figure legends ``FIGURE 0.0'' 9/11 TR, c/lc, period, word # to text.
+%
+\long\def\@makecaption#1#2{{
+   \vskip 10pt
+   \ixONxi
+   \setbox\@tempboxa\hbox{#1. #2}
+   \ifdim \wd\@tempboxa >\hsize   % IF longer than one line:
+       \unhbox\@tempboxa\hfil\par      %   THEN set as ordinary paragraph.
+     \else                        %   ELSE  center.
+       \hbox to\hsize{\hfil\box\@tempboxa\hfil}
+   \fi}}
+\def\fnum@figure{FIGURE~\thefigure}
+%
+% TN+TT: ``TABLE 0.0'' 9/11 TR, c/lc. period, word # to table title:
+% 3 pt # below to 1/2 pt rule x table measuer, 3 pt # below rule to
+% TCH
+%
+\arrayrulewidth=.5pt
+\def\fnum@table{\ixONxi TABLE~\thetable}
+\def\TableSubtitleRule{\noalign{\vskip 3pt}\hline\noalign{\vskip 3pt}}
+\long\def\TableFootnote#1{\gdef\TFN{#1}}
+
+\def\@@startpbox#1{\vtop\bgroup \hsize #1\@arrayparboxrestore
+\parindent=-1em\leftskip=1em}
+\newsavebox{\@stablebox}
+\def\stable#1#2{\@ifnextchar[{\@stable{#1}{#2}}{\@stable{#1}{#2}[h]}}
+\def\@stable#1#2[#3]{\begin{table}[#3]
+        \def\foo{#1}\def\TFN{}%
+        \viiiONx
+        \setbox\@stablebox=\hbox\bgroup
+        \begin{tabular}{#2}%
+        \noalign{\vskip 3pt}
+        \hline
+        \noalign{\vskip 3pt}}
+\@namedef{endstable}{\crcr\noalign{\vskip 6pt}\hline\end{tabular}\egroup
+$$\vbox{\hsize=\wd\@stablebox
+\caption{\foo}
+\box\@stablebox
+\prevdepth=0pt  % last thing was a rule
+\par
+\TFN}$$
+\end{table}}
+
+%%%% GROT.  This is hacked to move a label definition outside.
+%%%% I think the whole stable idea is broken.
+
+\def\stable#1#2{\@ifnextchar[{\@stable{#1}{#2}}{\@stable{#1}{#2}[h]}}
+\def\@stable#1#2[#3]{\table[#3]
+        \def\foo{#1}\def\TFN{}\def\stablelabel{}%
+        \viiiONx
+        \setbox\@stablebox=\hbox\bgroup\def\label##1{\gdef\stablelabel{\label{##1}}}%
+        \tabular{#2}%
+        \noalign{\vskip 3pt}%
+        \hline
+        \noalign{\vskip 3pt}}
+\@namedef{endstable}{\crcr\noalign{\vskip 6pt}\hline\endtabular\egroup
+$$\vbox{\hsize=\wd\@stablebox
+\caption{\foo}\stablelabel
+\box\@stablebox
+\prevdepth=0pt  % last thing was a rule
+\par
+\TFN}$$
+\endtable}
+
+\def\stablecont#1#2{\@ifnextchar[{\@stablecont{#1}{#2}}{\@stablecont{#1}{#2}[h]}}
+\def\@stablecont#1#2[#3]{\table[#3]
+        \def\foo{#1}\def\TFN{}
+        \viiiONx
+        \setbox\@stablebox=\hbox\bgroup\def\label{\error}
+        \tabular{#2}%
+        \noalign{\vskip 3pt}%
+        \hline
+        \noalign{\vskip 3pt}}
+\@namedef{endstablecont}{\crcr\noalign{\vskip 6pt}\hline\endtabular\egroup
+$$\vbox{\hsize=\wd\@stablebox
+  \begingroup
+    \@parboxrestore
+        \vskip 10pt
+        \ixONxi
+           \setbox\@tempboxa\hbox{\ignorespaces \foo}
+           \ifdim \wd\@tempboxa >\hsize   % IF longer than one line:
+               \unhbox\@tempboxa\hfil\par      %   THEN set as ordinary paragraph.
+             \else                        %   ELSE  center.
+               \hbox to\hsize{\hfil\box\@tempboxa\hfil}
+           \fi\par
+  \endgroup
+\box\@stablebox
+\prevdepth=0pt  % last thing was a rule
+\par
+\TFN}$$
+\endtable}
+
+%%%%
+\newdimen\stabularwidth
+
+\def\stabular{\@ifnextchar[{\@stabular}{\@stabular[h]}}
+\def\@stabular[#1]#2{
+        \setbox\@stablebox=\hbox\bgroup\viiiONx
+        \tabular[#1]{#2}%
+        \noalign{\vskip 3pt}%
+        \hline
+        \noalign{\vskip 3pt}}
+\def\endstabular{\crcr\noalign{\vskip 6pt}\hline\endtabular\egroup
+\stabularwidth=\wd\@stablebox
+\box\@stablebox}
+                                          
+\markboth{}{}
+
+
+
+
+

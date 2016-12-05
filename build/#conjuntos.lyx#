@@ -1,0 +1,3866 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass book
+\begin_preamble
+\input{preamble2}
+\input{composicion-codigo}
+\usepackage{fancyvrb}
+\usepackage{cancel}
+\usetikzlibrary{fit,shapes}
+\usepackage{mivenndiagram}
+\usepackage{tikz-cd}% diagramas commutativos
+\usetikzlibrary{matrix}
+\usepackage{mathtools}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=1,
+ breaklinks=false,pdfborder={0 0 0},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false}
+ \newsavebox{\LstBox}
+ %\graphicspath{ {./img/} }
+ \makeatletter
+\def\input@path{{./}{./build/}}
+\makeatother
+ \graphicspath{{./}{./img/}{./build/}}
+ \renewcommand{\baselinestretch}{1.5}
+\raggedbottom %para que no distibuya los espacios verticales en una hoja
+\setcounter{problema}{1}
+%\usepackage[spanish]{babel}
+ 
+%\addto\captionsspanish{
+%\def\tablename{Tabla}
+%\def\listtablename{\'Indice de tablas}
+%}
+\newcommand{\triangulo}{\tikz \filldraw[scale=0.5,fill=teal!20] (0,0) -- ++(60:1) -- ++(-60:1) -- cycle ;
+                 }
+                 \newcommand{\linea}[1]{\overleftrightarrow{#1}}
+\newcommand{\degre}{\ensuremath{^\circ}}
+\newenvironment{prueba}[2]{\renewcommand{\arraystretch}{1.06}
+\vskip 5pt  {
+ \colorbox{teal!30}{\color{white}{Prueba:}}
+ }\vskip 5pt
+$ %
+\begin{tabular}
+[t]{ll||l}\hline
+\multicolumn{2}{c||}{\mbox{Afirmaciones}} & \mbox{Razones}\\\hline\hline
+1. & 
+#1 
+& \multicolumn{1}{|l}{\mbox{Dado}}\\
+#2
+\end{tabular}
+\ \ \ $ 
+\vskip 5pt}{\hfill  \raggedright{ \rule{0.5em}{0.5em} }\vskip 5pt }
+\newcommand{\problemas}[1]
+{
+\section{Problemas}
+\peque
+\begin{changemargin}{22.9cm}{18cm}{0cm}{0cm}{0cm}
+\begin{multicols}{2}
+ \noindent #1
+\end{multicols}
+\end{changemargin}
+{\setlength{\parindent}{0mm}\color{ptctitle}\rule{\linewidth}{1mm}}
+}
+\setlength\columnsep{40pt} 
+%\renewcommand\columnseprulecolor{\color{ptctitle}}
+\setlength{\tabcolsep}{8pt}
+%\setlength\columnseprule{2pt} %linea entrecolumnas por defecto 0pt
+\end_preamble
+\options svgnames,x11names,x11names,HTML
+\use_default_options false
+\master fundamentos-matematica.lyx
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8x
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 0
+\use_mathdots 0
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle headings
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagecolor{white} 
+\backslash
+mainmatter 
+\backslash
+pagestyle{headings} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Teor
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'i
+\end_layout
+
+\end_inset
+
+a de conjuntos y sistemas num
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+'e
+\end_layout
+
+\end_inset
+
+ricos 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+chaptertoc  
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{competencias}  
+\backslash
+begin{lista}  
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Interpreta correctamente los conceptos de conjunto y elemento.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Argumenta los procedimientos para realizar operaciones entre conjuntos
+ .
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Maneja con criterio las operaciones y sus propiedades en los diferentes
+ sistemas numéricos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lista} 
+\backslash
+end{competencias}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{logros}  
+\backslash
+begin{lista}  
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Identifica conjuntos.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Clasifica conjuntos.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Realiza operaciones entre conjuntos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Clasifica los conjuntos numéricos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Realiza operaciones aritméticas en los diferentes conjuntos numéricos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Aplica correctamente las propiedades de las operaciones definidas en los
+ conjuntos numéricos 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lista} 
+\backslash
+end{logros}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+La 
+\family sans
+teoría de conjuntos
+\family default
+, es la rama de las matemáticas a la que el matemático alemán Georg Cantor
+ dio su primer tratamiento formal en el siglo XIX.
+ El concepto de conjunto es uno de los más fundamentales en matemáticas,
+ incluso más que la operación de contar, pues se puede encontrar, implícita
+ o explícitamente, en todas las ramas de las matemáticas puras y aplicadas.
+ En su forma explícita, los principios y terminología de los conjuntos se
+ utilizan para construir proposiciones matemáticas más claras y precisas
+ y para explicar conceptos abstractos como el de infinito.
+\end_layout
+
+\begin_layout Subsection
+Un poco de historia
+\end_layout
+
+\begin_layout Standard
+En el último cuarto del siglo XIX se vivió un episodio apasionante de la
+ historia de las matemáticas que las ligaría desde entonces a la historia
+ de la lógica.
+\end_layout
+
+\begin_layout Standard
+Primero, Georg Boole (1815-1864) en su Mathematical Analysis of Logic trató
+ de presentar la lógica como parte de las matemáticas.
+ 
+\end_layout
+
+\begin_layout Standard
+Poco después Gottlob Frege (1848-1925) intentó mostrar que la aritmética
+ era parte de la lógica en su Die Grundlagen der Arithmetik.
+ Pero, dando un gran paso tanto en la historia de las matemáticas como en
+ la historia de la lógica, G.
+ Cantor se había adelantado a Frege con una fundamentación lógica de la
+ aritmética.
+\end_layout
+
+\begin_layout Standard
+Cantor había demostrado que la totalidad de los números naturales comprendidos
+ en el intervalo de extremos 0 y 1 no es numerable, en el sentido de que
+ su infinitud no es la de los números naturales.
+ Como una consecuencia de esa situación, Cantor creó una nueva disciplina
+ matemática entre 1874 y 1897: la teoría de conjuntos.
+ 
+\end_layout
+
+\begin_layout Standard
+Su obra fue admirada y condenada simultáneamente por sus contemporáneos.
+\end_layout
+
+\begin_layout Standard
+Desde entonces los debates en el seno de la teoría de conjuntos han sido
+ siempre apasionados, sin duda por hallarse estrechamente conectados con
+ importantes cuestiones lógicas.
+ 
+\end_layout
+
+\begin_layout Standard
+Según la definición de conjunto de Cantor, éste es “una colección en un
+ todo de determinados y distintos objetos de nuestra percepción o nuestro
+ pensamiento, llamados los elementos del conjunto”.
+\end_layout
+
+\begin_layout Standard
+Frege fue uno de los admiradores de la nueva teoría de Cantor, y dio una
+ definición de conjunto similar.
+ 
+\end_layout
+
+\begin_layout Standard
+En 1903 B.
+ Russell demostraría que la teoría de conjuntos de Cantor era inconsistente
+ y cuestionaría la definición de conjunto en la teoría de Cantor.
+\end_layout
+
+\begin_layout Standard
+Pero pronto la teoría axiomática de Zermelo (1908) y refinamientos de ésta
+ debidos a Fraenkel (1922), Skolem (1923), von Newman (1925) y otros sentaron
+ las bases para la teoría de conjuntos actual.
+\end_layout
+
+\begin_layout Standard
+Es indiscutible el hecho de que la teoría de conjuntos es una parte de las
+ matemáticas, es además, la teoría matemática dónde fundamentar la aritmética
+ y el resto de teorías matemáticas.
+\end_layout
+
+\begin_layout Standard
+Es también indiscutible que es una parte de la lógica y en particular una
+ parte de la lógica de predicados.
+ 
+\end_layout
+
+\begin_layout Standard
+En esta historia cruzada de las matemáticas, la lógica y los fundamentos
+ de ambas, la teoría de conjuntos permitiría por un lado una fundación logicista
+ de las matemáticas; pero por otro lado la teoría de conjuntos mirada como
+ parte de las matemáticas proporciona el metalenguaje, el contexto o sustrato
+ de las teorías lógicas.
+ Finalmente, puede ser completamente expresada en un lenguaje de primer
+ orden y sus axiomas y teoremas constituyen una teoría de primer orden a
+ la que pueden aplicarse los resultados generales que se aplican a cualquier
+ teoría de primer orden.
+\end_layout
+
+\begin_layout Subsection
+Teoría intuitiva de conjuntos 
+\end_layout
+
+\begin_layout Standard
+La definición inicial de Cantor es totalmente intuitiva: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{definicionn}{Conjunto según Cantor}
+\end_layout
+
+\end_inset
+
+un conjunto es cualquier colección 
+\begin_inset Formula $C$
+\end_inset
+
+ de objetos determinados y bien distintos de nuestra percepción o nuestro
+ pensamiento (objetos 
+\begin_inset Formula $x$
+\end_inset
+
+ que se denominan elementos de 
+\begin_inset Formula $C$
+\end_inset
+
+), reunidos en un todo.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{definicionn}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Igual que en Frege su idea de lo que es un conjunto coincide con la extensión
+ de un predicado (la colección de objetos que satisface el predicado).
+ Esta idea sencilla y tan intuitiva resulta ser también ingenua porque produce
+ enormes contradicciones de inmediato, como por ejemplo la paradoja de Russell.
+\end_layout
+
+\begin_layout Standard
+Para poder mostrarlo es necesario empezar por formalizar esta teoría intuitiva
+ que, aparte de los símbolos para los conjuntos y sus elementos (
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\begin_inset Formula $C$
+\end_inset
+
+, etc.), tendrá los símbolos de pertenencia, 
+\begin_inset Formula $\in$
+\end_inset
+
+ e igualdad 
+\begin_inset Formula $=$
+\end_inset
+
+ (de los objetos del lenguaje formal).
+ 
+\end_layout
+
+\begin_layout Standard
+Que 
+\begin_inset Formula $x$
+\end_inset
+
+ es un elemento del conjunto 
+\begin_inset Formula $C$
+\end_inset
+
+ se expresa 
+\begin_inset Quotes eld
+\end_inset
+
+ 
+\begin_inset Formula $x$
+\end_inset
+
+ pertenece a 
+\begin_inset Formula $C$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ o bien 
+\begin_inset Formula $x$
+\end_inset
+
+ 
+\begin_inset Formula $\in$
+\end_inset
+
+ 
+\begin_inset Formula $C$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Que 
+\begin_inset Formula $x$
+\end_inset
+
+ no es un elemento de 
+\begin_inset Formula $C$
+\end_inset
+
+ se expresa 
+\begin_inset Quotes eld
+\end_inset
+
+ 
+\begin_inset Formula $x$
+\end_inset
+
+ no pertenece a 
+\begin_inset Formula $C$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ o bien 
+\begin_inset Formula $x\notin C$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Tendremos en cuenta que no es necesario denotar siempre con mayúsculas a
+ los conjuntos y con minúsculas a sus elementos, ya que un conjunto puede
+ ser a su vez un elemento de otro conjunto e incluso podemos considerar
+ que en nuestra teoría no hay objetos que no sean conjuntos.
+\end_layout
+
+\begin_layout Standard
+El problema ahora el el siguiente:
+\end_layout
+
+\begin_layout Standard
+¿Cómo se determina una colección? 
+\end_layout
+
+\begin_layout Standard
+De acuerdo con la definición intuitiva de Cantor un conjunto queda definido
+ si es posible describir completamente sus elementos.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lista}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item 
+\end_layout
+
+\end_inset
+
+ El procedimiento mas sencillo de descripción es nombrar cada uno de sus
+ elementos, esta descripción se llama definición por extensión; es conocida
+ la notación de encerrar entre llaves los elementos del conjunto.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejems}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Listar un conjunto 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{enumerate}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $A={a,b,c}$
+\end_inset
+
+.
+ Donde 
+\begin_inset Formula $A$
+\end_inset
+
+ es el conjunto formado por la colección de objetos 
+\begin_inset Formula $a,b$
+\end_inset
+
+ y 
+\begin_inset Formula $c$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $B=\left\{ \oplus,\ominus,\otimes,\oslash,\odot\right\} $
+\end_inset
+
+ Donde 
+\begin_inset Formula $B$
+\end_inset
+
+ es el conjunto formado exactamente por esos cinco círculos.
+ Entonces es cierto que 
+\begin_inset Formula $b\in A$
+\end_inset
+
+ y que 
+\begin_inset Formula $\oplus\in B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{enumerate}
+\backslash
+end{ejems}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El inconveniente para este método de listado o enumeración de los elementos
+ del conjunto es que éstos deben poseer un número finito de elementos y,
+ en la práctica, un número muy pequeño.
+\end_layout
+
+\begin_layout Standard
+¿Entonces qué hacer cuando la colección es infinita, o cuando es finita
+ pero numerosa? 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ Cuando el número de elementos del conjunto es infinito (como el de los
+ número impares) o demasiado numeroso (como el de todas las palabras que
+ pueden formarse con el alfabeto latino) se utiliza el método de definición
+ por extensión, que consiste en la descripción de un conjunto como la extensión
+ de un predicado, esto es, mediante una o varias propiedades (el predicado)
+ que caracterizan a los elementos de ese conjunto.
+\end_layout
+
+\begin_layout Standard
+En principio podría tomarse cualquier lengua natural para describir los
+ objetos (español, inglés, italiano, vasco, catalán, etc), sin embargo es
+ preferible utilizar un lenguaje formal que ofrezca rigor y precisión.
+ 
+\end_layout
+
+\begin_layout Standard
+Dicho lenguaje debe ser suficientemente rico; esto es, lo suficientemente
+ expresivo como para poder describir todas las colecciones matemáticas.
+ Pero también lo suficientemente restrictivo como para limitarse a sólo
+ las colecciones de objetos matemáticos.
+ 
+\end_layout
+
+\begin_layout Standard
+Para expresar predicados utilizaremos el lenguaje formal de la la lógica
+ de predicados de primer orden (el lenguaje de la lógica de proposiciones
+ con los símbolos lógicos de las conectivas 
+\begin_inset Formula $\sim,\wedge,\vee,\rightarrow,\leftrightarrow$
+\end_inset
+
+ más los cuantificadores universal 
+\begin_inset Formula $\forall$
+\end_inset
+
+ y existencial 
+\begin_inset Formula $\exists$
+\end_inset
+
+) al que se añade variables, igualdad y el relator binario de pertenencia.
+\end_layout
+
+\begin_layout Standard
+Este lenguaje puede ser ampliado con los símbolos propios de las operaciones,
+ relaciones o funciones del lenguaje específico de teoría de conjuntos.
+\end_layout
+
+\begin_layout Standard
+En la primera parte, al presentar la Teoría básica de conjuntos, utilizaremos
+ con frecuencia el lenguaje natural para describir propiedades.
+\end_layout
+
+\begin_layout Standard
+Estas propiedades pueden ser aritméticas (
+\begin_inset Formula $>,<,/$
+\end_inset
+
+, etc.) o matemáticas en general, pero también pueden ser propiedades expresadas
+ en lenguaje natural (nombres, verbos,...) que describan colecciones no estrictamen
+te matemáticas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejems}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Descripción de un conjunto por extensión
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{enumerate}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $C={x\in I\!\! N/0<x<230000\wedge2/x}$
+\end_inset
+
+, donde 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang english
+
+\begin_inset Formula $I\!\! N$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang spanish
+ es el conjunto de los números naturales con la ordenación habitual, 
+\begin_inset Formula $<$
+\end_inset
+
+ significa “menor que” y 
+\begin_inset Formula $2/x$
+\end_inset
+
+ significa que “
+\begin_inset Formula $2$
+\end_inset
+
+ divide a 
+\begin_inset Formula $x$
+\end_inset
+
+”.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $D=\{x/x$
+\end_inset
+
+ es una palabra de 
+\begin_inset Formula $2$
+\end_inset
+
+ letras del alfabeto griego (pueden estar repetidas)
+\begin_inset Formula $\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+item
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $E={x/P_{2}(x)\vee P_{3}(x)\vee\cdots\vee P_{10}(x)}$
+\end_inset
+
+ .
+ Donde 
+\begin_inset Formula $P_{i}(x)$
+\end_inset
+
+ significa “
+\begin_inset Formula $x$
+\end_inset
+
+ es una palabra de
+\begin_inset Formula $i$
+\end_inset
+
+ letras del alfabeto griego (pueden estar repetidas).
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{enumerate}
+\backslash
+end{ejems}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lista}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Problemas en la teoría intuitiva de conjuntos: la paradoja de Russell 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+La paradoja original era sobre el barbero de un pueblo que afeitaba a todos
+ los del pueblo que no se afeitaban a sí mismos: ¿Se afeita entonces el
+ barbero a sí mismo? 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pero la definición intuitiva de conjunto como el de una colección de objetos
+ ‘describible’ por un predicado conduce inevitablemente a ciertas contradiccione
+s que se llaman paradojas, la más célebre es la conocida como paradoja de
+ Russell: 
+\end_layout
+
+\begin_layout Standard
+Consideremos el conjunto 
+\begin_inset Formula $A={x:x\notin x}$
+\end_inset
+
+, descrito mediante el predicado del lenguaje formal 
+\begin_inset Formula $x\notin x$
+\end_inset
+
+ .
+ 
+\end_layout
+
+\begin_layout Standard
+Obviamente, para cualquier 
+\begin_inset Formula $b$
+\end_inset
+
+, 
+\begin_inset Formula $b\in A$
+\end_inset
+
+ si y sólo si 
+\begin_inset Formula $b\notin b$
+\end_inset
+
+.
+ Es decir, está en 
+\begin_inset Formula $A$
+\end_inset
+
+ cuando verifica las condiciones que definen a 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ Pero, ¿qué sucede con el propio 
+\begin_inset Formula $A$
+\end_inset
+
+? 
+\end_layout
+
+\begin_layout Standard
+Evidentemente, 
+\begin_inset Formula $A\in A$
+\end_inset
+
+ si y sólo si 
+\begin_inset Formula $A\notin A$
+\end_inset
+
+.
+ Pero este resultado es contradictorio.
+ En vano se debe intentar descubrir un error en el razonamiento, más bien
+ parece que el problema proviene de admitir expresiones como 
+\begin_inset Formula $A\in A$
+\end_inset
+
+ (o conjuntos como el conjunto de todos los conjuntos que produce también
+ paradojas).
+ Se ha visto claramente que el concepto de conjunto no es tan sencillo y
+ que identificarlo sin mayor investigación con el de colección resulta problemát
+ico.
+ Para evitar la paradoja de Russell, y otras de esta naturaleza, es necesario
+ tener más cuidado en la definición de conjunto, lo veremos en lo que sigue.
+ Otras paradojas, de hecho las primeras en descubrirse, afectaban a colecciones
+ grandes, como por ejemplo la de los ordinales, o la de todos los conjuntos.
+ entonces estas colecciones no podrían ser conjuntos.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Solución de las paradojas
+\end_layout
+
+\begin_layout Standard
+Una solución radical al problema de las paradojas es la propuesta en 1903
+ por Russell, su Teoría de Tipos.
+ 
+\end_layout
+
+\begin_layout Standard
+Observa que en todas las paradojas conocidas hay una componente de reflexividad,
+ de circularidad.
+ Técnicamente se evitan las paradojas al eliminar del lenguaje las formaciones
+ circulares.
+\end_layout
+
+\begin_layout Standard
+Se reconoce que nuestro universo matemático no es plano, sino jerarquizado,
+ por niveles, y que el lenguaje más adecuado para hablar de un universo
+ debe tener diversos tipos de variables que correspondan a cada nivel; en
+ particular, la relación de pertenencia se dá entre objetos de distinto
+ nivel.
+ 
+\end_layout
+
+\begin_layout Standard
+En 1908 Zermelo da como solución la definición axiomática de la Teoría de
+ Conjuntos, refinada más tarde por Fraenkel, Skolem, von Neumann y otros.
+ En esta teoría se evita que las colecciones que llevaban a las paradojas
+ puedan ser conjuntos.
+ De hecho, en la solución de Zermelo-Fraenkel, una colección de objetos
+ será un conjunto si los axiomas la respaldan.
+ Dichos axiomas permiten formar conjuntos a partir de conjuntos previamente
+ construídos y postulan la existencia del 
+\begin_inset Formula $\textrm{Ø}$
+\end_inset
+
+ y de al menos un conjunto infinito.
+ Sin embargo, en la solución de von Neumann se admiten colecciones que no
+ son conjuntos, las denominadas clases últimas.
+\end_layout
+
+\begin_layout Standard
+Se definen clases mediante propiedades, sin restricción, pero habrá que
+ mostrar que se trata de conjuntos viendo que pertenecen a alguna clase.
+ Las clases últimas, como la clase universal o la de los ordinales, no pertenece
+n a ninguna otra clase.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+El Universo matemático
+\end_layout
+
+\begin_layout Standard
+La idea intuitivamente más fructífera y también la más extendida es nuestro
+ universo matemático, esto es, el que contiene todas las colecciones de
+ objetos matemáticos, pero solamente los objetos matemáticos constituyen
+ una jerarquía de conjuntos, la denominada Jerarquía de Zermelo.
+ 
+\end_layout
+
+\begin_layout Standard
+En la construcción de los conjuntos que formarán la jerarquía se parte de
+ una colección inicial 
+\begin_inset Formula $M_{0}$
+\end_inset
+
+ de objetos dados y a continuación se construye una colección 
+\begin_inset Formula $M_{1}$
+\end_inset
+
+ de conjuntos de elementos de 
+\begin_inset Formula $M_{0}$
+\end_inset
+
+ , después una colección 
+\begin_inset Formula $M_{2}$
+\end_inset
+
+ de conjuntos de objetos de 
+\begin_inset Formula $M_{0}$
+\end_inset
+
+ y 
+\begin_inset Formula $M_{1}$
+\end_inset
+
+ , etc.
+ ??, el universo de conjuntos construídos es una jerarquía.
+\end_layout
+
+\begin_layout Standard
+Para proporcionar mayor precisión debemos responder a las preguntas siguientes:
+\end_layout
+
+\begin_layout Enumerate
+¿Cual será nuestra colección de partida, ?
+\begin_inset Formula $M_{0}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+¿Qué conjuntos de objetos de niveles inferiores se toman para formar nuevos
+ niveles en la jerarquía? 
+\end_layout
+
+\begin_layout Enumerate
+¿Hasta dónde se extiende esta jerarquía?.
+ 
+\end_layout
+
+\begin_layout Standard
+Para responder a la primera pregunta debemos considerar si nos interesa
+ tomar objetos que no sean conjuntos o si nos basta con partir de un primer
+ nivel que sea sencillamente el conjunto 
+\begin_inset Formula $\emptyset$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Está claro que se toman sólo objetos matemáticos, pero habrá que ver que
+ es suficiente y que podremos finalmente contar en la jerarquía con todos
+ los objetos matemáticos.
+\end_layout
+
+\begin_layout Standard
+Una respuesta a la segunda pregunta que parece razonable es, al ir tomando
+ nuevos conjuntos, que éstos se puedan describir con nuestro lenguaje.
+ Al tomar esta opción formamos la Jerarquía de conjuntos que se pueden construir.
+ Otra posibilidad es tomar como objetos de un nuevo nivel a todos los posibles.
+ Veremos que esta es la opción de Zermelo.
+ 
+\end_layout
+
+\begin_layout Standard
+Finalmente, la tercera de las preguntas es hasta donde se extiende la jerarquía.
+ 
+\end_layout
+
+\begin_layout Standard
+La respuesta es que la jerarquía de conjuntos no tiene fin, siempre se pueden
+ construir nuevos niveles.
+ Para precisar un poco más esta imagen intuitiva de nuestro Universo matemático
+ es conveniente contar con algunas nociones de teoría de conjuntos básica
+ y con el concepto de ordinal.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Teoría axiomática de conjuntos 
+\end_layout
+
+\begin_layout Standard
+Recordemos los componentes de una teoría axiomática: 
+\end_layout
+
+\begin_layout Enumerate
+El lenguaje o símbolos formales de la teoría.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Los axiomas, que son proposiciones acerca de los objetos de la teoría y
+ que imponen el funcionamiento de dichos objetos.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Los teoremas, que son todas las proposiciones demostrables con herramientas
+ lógicas a partir de los axiomas.
+ 
+\end_layout
+
+\begin_layout Standard
+En la teoría de conjuntos axiomática de Zermelo Fraenkel se usará el lenguaje
+ formal de la lógica de predicados de primer orden.
+ 
+\end_layout
+
+\begin_layout Standard
+Las variables de dicho lenguaje formal se referirán a conjuntos; es decir,
+ en la interpretación usual todos los objetos son conjuntos.
+\end_layout
+
+\begin_layout Standard
+Es decir, existir será sinónimo de ser un conjunto.
+\end_layout
+
+\begin_layout Standard
+El lenguaje básico sólo tiene el relator binario de pertenencia, pero se
+ extiende, mediante definiciones pertinentes, para dar cabida a operaciones.
+ 
+\end_layout
+
+\begin_layout Standard
+Los conceptos primitivos de esta teoría son el de conjunto y el de pertenencia.
+ 
+\end_layout
+
+\begin_layout Standard
+En realidad la mayoría de los axiomas sirven para garantizar la existencia
+ de los conjuntos que nos interesa tener.
+ 
+\end_layout
+
+\begin_layout Standard
+Por ello la idea de construcción es esencial en la teoría axiomática de
+ Zermelo-Fraenkel (que notaremos ZF).
+ En la teoría axiomática de conjuntos se respeta la idea fundamental de
+ aceptar que una colección de objetos pueda ser un conjunto, pero se impone
+ la condición de que todos los objetos de una colección deben haberse formado
+ antes de definir dicha colección, y de esta manera se evitarán los problemas
+ que conducen a las paradojas.
+\end_layout
+
+\begin_layout Standard
+Uno de los axiomas de la teoría (se verá más adelante) impondrá esta restricción
+: ”Si 
+\begin_inset Formula $X$
+\end_inset
+
+ es un conjunto ya construido existe un conjunto 
+\begin_inset Formula $Y$
+\end_inset
+
+ formado por los elementos de 
+\begin_inset Formula $X$
+\end_inset
+
+ que satisfacen un predicado 
+\begin_inset Formula $P$
+\end_inset
+
+ que los describe (o lo que es lo mismo, una fórmula con al menos una variable
+ libre)”.
+ Así un predicado describirá un conjunto sólo si los objetos han sido ya
+ construidos (son de otro conjunto X) y además satisfacen el predicado.
+ Con esta restricción a la definición de conjunto de Cantor desaparece la
+ paradoja de Rusell ya que para que 
+\begin_inset Formula $A={x:x\notin x}$
+\end_inset
+
+ sea un conjunto se debería tener un conjunto 
+\begin_inset Formula $X$
+\end_inset
+
+ a partir del cual construirse; es decir, 
+\begin_inset Formula $A={x\in X:x\notin x}$
+\end_inset
+
+.
+ ¿Cómo se resuelve la paradoja? 
+\end_layout
+
+\begin_layout Standard
+Al construirse a partir de un conjunto ya construido desaparece el problema.
+ Ahora, para cualquier 
+\begin_inset Formula $b$
+\end_inset
+
+ se verifica: 
+\begin_inset Formula $b\in A$
+\end_inset
+
+ si y sólo si 
+\begin_inset Formula $b\in X$
+\end_inset
+
+ y 
+\begin_inset Formula $b\notin b$
+\end_inset
+
+.
+ En realidad, puesto que la condición 
+\begin_inset Formula $b\notin b$
+\end_inset
+
+ la cumplen todos, 
+\begin_inset Formula $A$
+\end_inset
+
+ será el propio 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ Además, es imposible que exista el conjunto de todos los conjuntos.
+ 
+\end_layout
+
+\begin_layout Standard
+Desgraciadamente, Bertrand Russell descubrió que la axiomática de Frege
+ era contradictoria.
+\end_layout
+
+\begin_layout Standard
+En efecto, uno de los axiomas básicos de Frege afirmaba lo a siguiente:
+ 
+\end_layout
+
+\begin_layout Standard
+Para toda propiedad 
+\begin_inset Formula $\phi(X)$
+\end_inset
+
+ definida en la teoría, existe un conjunto 
+\begin_inset Formula $Y$
+\end_inset
+
+ cuyos elementos son exactamente los conjuntos 
+\begin_inset Formula $X$
+\end_inset
+
+ que cumplen 
+\begin_inset Formula $\phi(X)$
+\end_inset
+
+.
+ En otros términos, Frege postulaba la existencia del conjunto 
+\begin_inset Formula $Y={X|\phi(X)}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Lo que Russell observó fue que esto podía aplicarse a 
+\begin_inset Formula $\phi(X)\equiv X\notin X$
+\end_inset
+
+, que era una propiedad trivialmente definida en la teoría de Frege, de
+ modo que debía existir un conjunto 
+\begin_inset Formula $R={X:X\notin X}$
+\end_inset
+
+, que claramente nos lleva a la contradicción 
+\begin_inset Formula $R\in R\Leftrightarrow R\notin R$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+A partir de aquí la minuciosa lógica de Frege permitía probar con el mismo
+ rigor que 
+\begin_inset Formula $2+2=4$
+\end_inset
+
+ y que 
+\begin_inset Formula $2+2=5$
+\end_inset
+
+, por lo que su teoría se volvía inservible.
+ El mismo Russell, junto con A.
+ N.
+ Whitehead, presentó́ un tiempo después otra teoría axiomática que, al menos
+ en apariencia, estaba exenta de contradicciones, si bien era tan inútil
+ como la de Frege, esta u vez no por contradictoria sino por complicada.
+ Se trata de los Principia Mathematica.
+ 
+\end_layout
+
+\begin_layout Standard
+La primera teoría axiomática construida por un matemático a gusto de los
+ matemáticos fue la de Zermelo.
+ La forma en que Zermelo evitó la paradoja de Russell fue debilitar el axioma
+ de formación de conjuntos de Frege, reduciéndolo a: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{axioma}{Zermelo}
+\end_layout
+
+\end_inset
+
+Para toda propiedad 
+\begin_inset Formula $\phi(X)$
+\end_inset
+
+ definible en la teoría y todo conjunto 
+\begin_inset Formula $U$
+\end_inset
+
+ , existe un conjunto 
+\begin_inset Formula $Y$
+\end_inset
+
+ cuyos elementos son exactamente los elementos 
+\begin_inset Formula $X\in U$
+\end_inset
+
+ que cumplen 
+\begin_inset Formula $\phi(X).$
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{axioma}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Así, lo que Zermelo postulaba era la existencia de 
+\begin_inset Formula 
+\[
+Y=\left\{ X\in U:\phi\left(X\right)\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ahora bien, este axioma sólo permite definir conjuntos a partir de otros
+ conjuntos, por lo que Zermelo tuvo que añadir otros axiomas que garantizaran
+ la existencia de aquellos conjuntos necesarios que no podían obtenerse
+ como subconjuntos de otros conjuntos dados.
+ Enseguida describiremos con detalle la axiomática de Zermelo, pero antes
+ daremos a algunas indicaciones sobre la lógica matemática que subyace a
+ toda teoría de conjuntos moderna.
+\end_layout
+
+\begin_layout Subsubsection
+El lenguaje de la Teoría de Conjuntos
+\end_layout
+
+\begin_layout Standard
+Un lenguaje formalizado está constituido por un conjunto de símbolos básicos
+ y por reglas que nos permiten formar expresiones más complicadas partir
+ de esos símbolos originales.
+ 
+\end_layout
+
+\begin_layout Standard
+A continuación presentamos el lenguaje formalizado 
+\begin_inset Formula $L_{\in}$
+\end_inset
+
+ con le cual escribiremos la Teoría de Conjuntos.
+ 
+\end_layout
+
+\begin_layout Standard
+Este lenguaje puede entenderse de dos maneras distintas: como lenguaje formal
+ y como abreviaturas de expresiones en español.
+ Esta segunda interpretación será posiblemente la conveniente en un curso
+ introductorio como este.
+\end_layout
+
+\begin_layout Standard
+Los símbolos del lenguaje formal de la teoría de conjuntos serán:
+\end_layout
+
+\begin_layout Enumerate
+Los símbolos de conjuntos serán las letras del alfabeto, mayúsculas y minúsculas
+, es decir: Variables: 
+\begin_inset Formula $x,y,z,X,Y,Z,x1,x2,...$
+\end_inset
+
+, en general, las últimas letras del alfabeto latino, minúsculas o mayúsculas
+ con o sin subíndices.
+ Su significado es el habitual en matemáticas y su rango son los conjuntos.
+\end_layout
+
+\begin_layout Enumerate
+Constantes: 
+\begin_inset Formula $a,b,c,A,B,C,...$
+\end_inset
+
+ , en general, las primeras letras del alfabeto latino.
+ Sirven para referirnos a conjuntos específicos.
+\end_layout
+
+\begin_layout Enumerate
+El símbolo de la relación de pertenencia entre conjuntos es 
+\begin_inset Formula $\in$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Los símbolos lógicos de la lógica de predicados: (
+\begin_inset Formula $\sim$
+\end_inset
+
+negación), 
+\begin_inset Formula $\wedge$
+\end_inset
+
+(conjunción), 
+\begin_inset Formula $\vee$
+\end_inset
+
+(disyunción), 
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+(condicional), 
+\begin_inset Formula $\leftrightarrow$
+\end_inset
+
+(bicondicional),
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ (implicación), 
+\begin_inset Formula $\Leftrightarrow$
+\end_inset
+
+o 
+\begin_inset Formula $\equiv$
+\end_inset
+
+ (equivalencia), 
+\begin_inset Formula $\forall$
+\end_inset
+
+ (cuantificador universal) y 
+\begin_inset Formula $\exists$
+\end_inset
+
+ (cuantificador existencial).
+ Con estos signos básicos se generan todas las fórmulas de la teoría de
+ con juntos.
+ 
+\begin_inset VSpace defskip
+\end_inset
+
+Cualquier cadena finita formada por estos símbolos es una expresión o del
+ lenguaje, pero no toda expresión es aceptable o significativa.
+ Sólo aceptaremos aquellas a las que llamaremos Fórmulas de 
+\begin_inset Formula $L_{\in}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $($
+\end_inset
+
+, 
+\begin_inset Formula $)$
+\end_inset
+
+ (paréntesis).
+ Usados como signos de puntuación
+\end_layout
+
+\begin_layout Enumerate
+Las reglas de formación de fórmulas son las habituales en la lógica de primer
+ orden.
+ A saber:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $x\in y$
+\end_inset
+
+ y 
+\begin_inset Formula $x=y$
+\end_inset
+
+ son fórmulas.
+ Para cualesquiera variables 
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Si  
+\begin_inset Formula $\phi$
+\end_inset
+
+ y 
+\begin_inset Formula $\psi$
+\end_inset
+
+ son fórmulas, también lo son: 
+\begin_inset Formula $\sim\phi$
+\end_inset
+
+, 
+\begin_inset Formula $\phi\wedge\psi$
+\end_inset
+
+, 
+\begin_inset Formula $\phi\vee\psi$
+\end_inset
+
+, 
+\begin_inset Formula $\phi\rightarrow\psi$
+\end_inset
+
+y 
+\begin_inset Formula $\phi\leftrightarrow\psi$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Si 
+\begin_inset Formula $\phi$
+\end_inset
+
+ es una fórmula, 
+\begin_inset Formula $\left(\forall x\right)\phi$
+\end_inset
+
+ y 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang english
+
+\begin_inset Formula $\left(\exists x\right)\phi$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang spanish
+ también lo son.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Solamente aquellas expresiones obtenidas por la aplicación de (un o número
+ finito de) estas reglas es una fórmula de 
+\begin_inset Formula $L_{\in}$
+\end_inset
+
+ .
+ 
+\end_layout
+
+\begin_layout Standard
+Entonces el lenguaje 
+\begin_inset Formula $L_{\in}$
+\end_inset
+
+ se generan mediante las reglas precedentes: 
+\end_layout
+
+\begin_layout Section
+Relaciones y axiomas en la teoría de conjuntos
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{definicionn}{
+\end_layout
+
+\end_inset
+
+ Pertenencia
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $a\in B$
+\end_inset
+
+ significa que el objeto 
+\begin_inset Formula $a$
+\end_inset
+
+ es un elemento del conjunto 
+\begin_inset Formula $B$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{definicionn}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{definicionn}{
+\end_layout
+
+\end_inset
+
+ No pertenece
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $a\notin A$
+\end_inset
+
+ significa que el objeto 
+\begin_inset Formula $a$
+\end_inset
+
+ no es un elemento del conjunto 
+\begin_inset Formula $A.$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{definicionn}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejem}{}
+\end_layout
+
+\end_inset
+
+ Dado el conjunto 
+\begin_inset Formula $A=\{1,2,3,4\}$
+\end_inset
+
+ entonces 
+\begin_inset Formula $1\in A$
+\end_inset
+
+, porque 
+\begin_inset Formula $1$
+\end_inset
+
+ es un elemento de 
+\begin_inset Formula $A.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En cambio 
+\begin_inset Formula $b\notin A$
+\end_inset
+
+, porque 
+\begin_inset Formula $b$
+\end_inset
+
+ no es un elemento del conjunto 
+\begin_inset Formula $A.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejem}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{axioma}{
+\end_layout
+
+\end_inset
+
+ (Axioma de extensión)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "A1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dos conjuntos son iguales si y solo si tienen los mismos elementos.
+ Esto es: el conjunto 
+\begin_inset Formula $A$
+\end_inset
+
+ es igual al conjunto 
+\begin_inset Formula $B$
+\end_inset
+
+ si todo elemento de 
+\begin_inset Formula $A$
+\end_inset
+
+ es elemento de 
+\begin_inset Formula $B$
+\end_inset
+
+ y si todo elemento de 
+\begin_inset Formula $B$
+\end_inset
+
+ es elemento de 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+En el lenguaje 
+\begin_inset Formula $L_{\in}$
+\end_inset
+
+ se expresa.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $∀x(x\in A\Leftrightarrow x∈B)\Rightarrow\left(A=B\right)$
+\end_inset
+
+.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{axioma}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este axioma nos permite demostrar la unicidad de muchos conjuntos definidos
+ de alguna forma concreta.
+ Haremos un ejemplo, dejando el resto de casos de unicidad como ejercicio,
+ explícito o implícito: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejem}{
+\end_layout
+
+\end_inset
+
+ Igualdad de conjuntos 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por ejemplo A = { Los ríos de de América} y B = { Los Ríos de Colombia}.
+\end_layout
+
+\begin_layout Standard
+Es claro que en Colombia no están todos los ríos de América, por tanto 
+\begin_inset Formula $A\neq B$
+\end_inset
+
+, Es decir que los conjuntos 
+\begin_inset Formula $A$
+\end_inset
+
+ y 
+\begin_inset Formula $B$
+\end_inset
+
+ no tienen los mismos elementos.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejem}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Veamos otro ejemplo :
+\end_layout
+
+\begin_layout Standard
+El primer axioma de Zermelo, afirma que si dos conjuntos tienen los mismos
+ elementos entonces son iguales (el recíproco es un caso particular de un
+ principio lógico: si 
+\begin_inset Formula $X=Y$
+\end_inset
+
+ entonces todo lo que vale para 
+\begin_inset Formula $X$
+\end_inset
+
+ vale para 
+\begin_inset Formula $Y$
+\end_inset
+
+ ).
+\end_layout
+
+\begin_layout Standard
+Según hemos comentado en la introducción , el problema que presenta la fundament
+ación de la teoría de conjuntos es que no podemos permitirnos el lujo de
+ postular que toda propiedad define un conjunto.
+ 
+\end_layout
+
+\begin_layout Standard
+En su lugar, la teoría de Zermelo postula la existencia de conjuntos definidos
+ por ciertas propiedades inofensivas (no como 
+\begin_inset Formula $X\notin X$
+\end_inset
+
+).
+ Tal vez el conjunto más inofensivo de todos sea el que nos da el axioma
+ del conjunto vacío 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{axioma}{
+\end_layout
+
+\end_inset
+
+ Conjunto vacío
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ Existe un conjunto que no contiene ningún elemento.
+\begin_inset Formula 
+\[
+\left(\exists X\forall x\right)x\notin X
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{axioma}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este axioma afirma la existencia de un conjunto que no tiene elementos.
+ Dicho conjunto es único, pues dos conjuntos sin elementos tendrían los
+ mismos elementos, como lo probaremos mas adelante.
+ Esto nos permite definir el término
+\begin_inset Formula 
+\[
+\textrm{\emptyset}\equiv\left\{ X:\left(\forall U\right)U\notin X\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+nota
+\backslash
+
+\end_layout
+
+\end_inset
+
+ Observe que 
+\begin_inset Formula $\emptyset$
+\end_inset
+
+ no es un signo del lenguaje de la teoría de conjuntos, si no una abreviatura
+ de un término que puede eliminarse de cualquier expresión sin más que sustituir
+la por el miembro derecho de la definición.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lema}{
+\end_layout
+
+\end_inset
+
+ Unicidad del vacío
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ Existe un único conjunto que no contiene ningún elemento.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lema}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{dems}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Según el axioma de extensión, dos conjuntos A y B son iguales si y solo
+ si 
+\backslash
+[ 
+\backslash
+forall Z (Z
+\backslash
+in A
+\backslash
+Leftrightarrow Z
+\backslash
+in B).
+ 
+\backslash
+] Por otro lado, el axioma del conjunto vacío dice 
+\backslash
+begin{equation}
+\backslash
+label{vacio} 
+\backslash
+exists Y
+\backslash
+forall Z{
+\backslash
+sim}(Z
+\backslash
+in Y) 
+\backslash
+end{equation} Si suponemos que existen conjuntos $Y$ y $Y'$ que satisfacen
+ la condición~
+\backslash
+eqref{A1}; entonces es claro que, para todo $Z$, se satisface 
+\backslash
+[ Z
+\backslash
+in Y
+\backslash
+Leftrightarrow Z
+\backslash
+in Y' 
+\backslash
+] pues ambas expresiones son falsas.
+ Así, por el axioma de extensión resulta que $Y=Y'$.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{dems}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{definicionn}{
+\end_layout
+
+\end_inset
+
+ Subconjunto
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+Decimos que 
+\begin_inset Formula $X$
+\end_inset
+
+ es subconjunto de 
+\begin_inset Formula $Y$
+\end_inset
+
+ , en símbolos , 
+\begin_inset Formula $X\subseteq Y$
+\end_inset
+
+ , si y sólo si todo elemento de 
+\begin_inset Formula $X$
+\end_inset
+
+ es un elemento de 
+\begin_inset Formula $Y$
+\end_inset
+
+ .
+ O sea,
+\begin_inset CommandInset label
+LatexCommand label
+name "subc"
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+X\subseteq Y\Leftrightarrow\forall x(x\in X\Rightarrow x\in Y).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{definicionn}
+\end_layout
+
+\end_inset
+
+ Con la definición 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subc"
+
+\end_inset
+
+ puede escribirse más abreviado el axioma de extensión;
+\begin_inset Formula 
+\[
+\left(\forall X\text{\forall}Y\right)(X\subseteq Y\wedge Y\subseteq X\Rightarrow X=Y).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{axioma}{
+\end_layout
+
+\end_inset
+
+ Especificación o separación
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "A3"
+
+\end_inset
+
+A todo conjunto 
+\begin_inset Formula $A$
+\end_inset
+
+ y a toda condición o fórmula 
+\begin_inset Formula $\psi=S(x)$
+\end_inset
+
+, corresponde un conjunto 
+\begin_inset Formula $B$
+\end_inset
+
+ cuyos elementos son precisamente aquellos elementos de 
+\begin_inset Formula $A$
+\end_inset
+
+ que cumplen 
+\begin_inset Formula $S(x)$
+\end_inset
+
+.
+ Este Axioma ayuda a construir subconjuntos de un conjunto dado.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{axioma}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El axioma de especificación en el lenguaje 
+\begin_inset Formula $L_{\in}$
+\end_inset
+
+se escribe 
+\begin_inset Formula 
+\[
+\left(\forall A\exists B\right)\left(\forall z\right)\left(z\in B\Leftrightarrow\left(z\in A\wedge S\left(x\right)\right)\right)\,\mbox{ó \ensuremath{B=\left\{ x\in A\,:\,\psi=S(x)\right\} .}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este axioma nos dice que para cualquier propiedad (expresada por 
+\begin_inset Formula $S(x)$
+\end_inset
+
+) y cualquier conjunto 
+\begin_inset Formula $A$
+\end_inset
+
+ existe el subconjunto de 
+\begin_inset Formula $A$
+\end_inset
+
+ formado por los elementos que verifican esa propiedad.
+ Obviamente este conjunto es único.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{definicionn}{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+Si 
+\begin_inset Formula $S(x)$
+\end_inset
+
+ es una fórmula de 
+\begin_inset Formula $L_{\in}$
+\end_inset
+
+ y 
+\begin_inset Formula $A$
+\end_inset
+
+ un conjunto, el conjunto cuya existencia está garantizada por el axioma
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "A3"
+
+\end_inset
+
+ se denotará con el símbolo 
+\begin_inset Formula ${x\in A\,:\, S(x)}$
+\end_inset
+
+ y se lee “el conjunto de los elementos de 
+\begin_inset Formula $A$
+\end_inset
+
+ tales que cumplen 
+\begin_inset Formula $S(x)$
+\end_inset
+
+”.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{definicionn}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Recordemos que la paradoja de Russell se produce al tratar de construir
+ el conjunto de todos los conjuntos que verifican una propiedad cualquiera
+ 
+\begin_inset Formula $S(x)$
+\end_inset
+
+.
+ Este axioma limita nuestra capacidad de formar conjuntos de objetos que
+ verifican una cierta propiedad, sólo podemos referirnos a aquellos elementos
+ que perteneciendo a un cierto conjunto dado, verifican la propiedad en
+ cuestión.
+ Veamos que esta restricción evita que se produzca la paradoja.
+\end_layout
+
+\begin_layout Standard
+Para ello tratemos de formar la clase de Russell.
+ Dado un conjunto 
+\begin_inset Formula $A$
+\end_inset
+
+ , el axioma de extensión nos permite formar el conjunto 
+\begin_inset Formula 
+\[
+R=\left\{ x\in A:x\notin x\right\} 
+\]
+
+\end_inset
+
+En este caso tenemos que si 
+\begin_inset Formula $R\in A$
+\end_inset
+
+ y 
+\begin_inset Formula $R\notin R,$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+lo cual es contradicción, luego 
+\begin_inset Formula $R\notin R$
+\end_inset
+
+, lo que, que a diferencia de antes, no es contradictorio, sólo implica
+ que 
+\begin_inset Formula $R\notin A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{teorema}{
+\end_layout
+
+\end_inset
+
+Conjunto de todos los conjuntos
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+No existe el conjunto de todos los conjuntos.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{teorema}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{dems}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por último, cabe destacar que este no es propiamente un axioma sino más
+ bien un esquema.
+ En efecto, para cada fórmula 
+\begin_inset Formula $S(x)$
+\end_inset
+
+ de a o L tenemos un axioma distinto, o sea, hay una cantidad ilimitada
+ de 
+\end_layout
+
+\begin_layout Standard
+Supongamos que si existe el conjunto de todos los conjuntos y llamaremos
+ 
+\begin_inset Formula $V$
+\end_inset
+
+ .
+ Entonces en virtud del axioma 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "A3"
+
+\end_inset
+
+ podemos construir el conjunto de Russell 
+\begin_inset Formula $R={x\in V:x\notin x}$
+\end_inset
+
+, lo cual es una contradicción.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{dems}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por último, cabe destacar que este no es propiamente un axioma si no más
+ bien un esquema.
+ En efecto, para cada fórmula 
+\begin_inset Formula $S(x)$
+\end_inset
+
+ de 
+\begin_inset Formula $L_{\in}$
+\end_inset
+
+ tenemos un axioma distinto, o sea, hay una cantidad ilimitada de instancias
+ para este axioma.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{axioma}{
+\end_layout
+
+\end_inset
+
+ Axioma de Pares
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dados dos conjuntos 
+\begin_inset Formula $X$
+\end_inset
+
+ e 
+\begin_inset Formula $Y$
+\end_inset
+
+, existe un conjunto cuyos únicos elementos son 
+\begin_inset Formula $X$
+\end_inset
+
+ e 
+\begin_inset Formula $Y.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Su expresión en el lenguaje 
+\begin_inset Formula $L_{\in}$
+\end_inset
+
+es 
+\begin_inset Formula 
+\[
+\left(\forall X\forall Y\exists Z\right)\forall x\left(x\in Z\Leftrightarrow\left(x=X\vee x=Y\right)\right)\,ó\: Z=\left\{ X,Y\right\} .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{axioma}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Resulta claro por el axioma 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "A1"
+
+\end_inset
+
+ que este conjunto es único.
+ Lo denotaremos 
+\begin_inset Formula 
+\[
+\{X,Y\}
+\]
+
+\end_inset
+
+ y lo llamaremos par no ordenado 
+\begin_inset Formula $X,Y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+El axioma 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "A1"
+
+\end_inset
+
+también garantiza de un conjunto cuyo único elemento es el conjunto 
+\begin_inset Formula $X$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left\{ X,X\right\} =X,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejem}{
+\end_layout
+
+\end_inset
+
+ conjunto 
+\begin_inset Formula $\left\{ \emptyset\right\} $
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tomando 
+\begin_inset Formula $X=Y=\emptyset,$
+\end_inset
+
+ llegamos a la conclusión de que 
+\begin_inset Formula $\left\{ \emptyset\right\} $
+\end_inset
+
+ es un conjunto no vacío, ya que contiene un elemento.
+ Ahora si tomamos 
+\begin_inset Formula $X=\emptyset,\, Y=\left\{ \emptyset\right\} ,$
+\end_inset
+
+ llegamos a la conclusión que 
+\begin_inset Formula $\left\{ \emptyset,\left\{ \emptyset\right\} \right\} $
+\end_inset
+
+ es un conjunto con dos elementos.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejem}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Operaciones entre conjuntos
+\end_layout
+
+\begin_layout Standard
+En realidad, los axiomas que tenemos hasta ahora sólo garantiza la existencia
+ del conjunto vacío, y la existencia de conjuntos más pequeños a partir
+ de conjuntos ya conocidos.
+ los siguientes axiomas nos permitirán construir conjuntos más grandes.
+\end_layout
+
+\begin_layout Standard
+El siguiente axioma nos permite construir uniones arbitrarias de conjuntos
+ (siempre que los conjuntos que queramos anexar formen un conjunto: recordemos
+ que no existe el conjunto de todos los conjuntos).
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{axioma}{Union de conjuntos}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para todo conjunto 
+\begin_inset Formula $S,$
+\end_inset
+
+ existe un conjunto, que denotaremos 
+\begin_inset Formula $U=\bigcup S,$
+\end_inset
+
+ tal que 
+\begin_inset Formula $x\in\bigcap S$
+\end_inset
+
+ si y sólo si 
+\begin_inset Formula $x\in X$
+\end_inset
+
+ para algún 
+\begin_inset Formula $X\text{\in\ensuremath{S}.}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{axioma}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{ejem}{}
+\end_layout
+
+\end_inset
+
+ Si 
+\begin_inset Formula $S=\left\{ X,Y\right\} ,$
+\end_inset
+
+ entonces obtenemos la unión de 
+\begin_inset Formula $X$
+\end_inset
+
+ e 
+\begin_inset Formula $Y,$
+\end_inset
+
+ que denotamos 
+\begin_inset Formula $X\cup Y.$
+\end_inset
+
+ Además, tomando 
+\begin_inset Formula $S=\left\{ X\cup Y,Z\right\} ,$
+\end_inset
+
+ podemos obtener 
+\begin_inset Formula $\left(X\cup Y\right)\cup Z$
+\end_inset
+
+ y en general, la unión de un número finito de conjuntos
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{ejem}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aplicando el axioma de separación podemos demostrar la existencia del la
+ intersección de conjuntos
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lema}{Intersección de conjuntos}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dados dos conjuntos, 
+\begin_inset Formula $X,Y,$
+\end_inset
+
+ existe un (único) conjunto 
+\begin_inset Formula $Z$
+\end_inset
+
+ tal que 
+\begin_inset Formula $x\in Z$
+\end_inset
+
+ si y sólo si 
+\begin_inset Formula $x\in X$
+\end_inset
+
+ y 
+\begin_inset Formula $x\in Y.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lema}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{dems}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Definamos la propiedad 
+\begin_inset Formula $P\left(x\right)$
+\end_inset
+
+ que sea 
+\begin_inset Formula $x\in Y.$
+\end_inset
+
+ Entonces, por el axioma de separación , existe el conjunto 
+\begin_inset Formula $Z=\left\{ x\in X\,:\, P\left(x\right)\right\} $
+\end_inset
+
+ , que es el conjunto buscado.
+ La demostración de la unicidad se deja como ejercicio, esto se demuestra
+ a partir del axioma de Extensión.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{dems}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{definicionn}{Intersecci
+\backslash
+'on de conjuntos}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El conjunto 
+\begin_inset Formula $Z$
+\end_inset
+
+ cuya existencia acabamos de demostrar se llama intersección de 
+\begin_inset Formula $X$
+\end_inset
+
+ e 
+\begin_inset Formula $Y,$
+\end_inset
+
+y se denota 
+\begin_inset Formula $Z=X\cap Y.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{definicionn}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{teorema}{Diferencia de conjuntos}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dados dos conjuntos 
+\begin_inset Formula $X,Y,$
+\end_inset
+
+ existe un (único) conjunto 
+\begin_inset Formula $Z$
+\end_inset
+
+ tal que 
+\begin_inset Formula $x\in Z$
+\end_inset
+
+ si y sólo si 
+\begin_inset Formula $x\text{\in\ensuremath{X}}$
+\end_inset
+
+y 
+\begin_inset Formula $x\text{\notin\ensuremath{Y}.}$
+\end_inset
+
+ Dicho conjunto se llama diferencia de los conjuntos 
+\begin_inset Formula $X$
+\end_inset
+
+ e 
+\begin_inset Formula $Y.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{teorema}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La demostración queda de tarea.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{definicionn}{Diferencia simétrica}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dados dos conjuntos 
+\begin_inset Formula $X,Y,$
+\end_inset
+
+ se llama diferencia simétrica de 
+\begin_inset Formula $X$
+\end_inset
+
+ e 
+\begin_inset Formula $Y$
+\end_inset
+
+ al conjunto 
+\begin_inset Formula $X\bigtriangleup Y:=\left(X-Y\right)\cup\left(Y-X\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{definicionn}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{axioma}{Conjunto Potencia}
+\end_layout
+
+\end_inset
+
+ Dado cualquier conjunto 
+\begin_inset Formula $X,$
+\end_inset
+
+ existe un conjunto, que denotaremos 
+\begin_inset Formula $\mathbb{P}\left(X\right)$
+\end_inset
+
+ tal que 
+\begin_inset Formula $x\in\mathbb{P}\left(X\right)$
+\end_inset
+
+ si y sólo si 
+\begin_inset Formula $x$
+\end_inset
+
+ es un subconjunto de 
+\begin_inset Formula $X.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{axioma}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Representación de conjuntos
+\end_layout
+
+\begin_layout Section
+Propiedades De los conjuntos
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:problema"
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+problemas
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+En los incisos del 
+\series bold
+a)
+\series default
+ al 
+\series bold
+e)
+\series default
+, escriba las proposiciones como implicaciones, luego decida si es falso
+ o verdadero 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\series bold
+Hipótesis
+\series default
+ 
+\begin_inset Formula $p:$
+\end_inset
+
+ Un hombre vive en Barranquilla, 
+\series bold
+Conclusión
+\series default
+ 
+\begin_inset Formula $q:$
+\end_inset
+
+ Vive en Antioquía.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Hipótesis
+\series default
+ 
+\begin_inset Formula $p:$
+\end_inset
+
+ Algunas manzanas son rojas, 
+\series bold
+Conclusión
+\series default
+ 
+\begin_inset Formula $q:$
+\end_inset
+
+ Los caballos tienen cuatro patas.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Hipótesis
+\series default
+ 
+\begin_inset Formula $p:$
+\end_inset
+
+ Dos rectas se intersecan, 
+\series bold
+Conclusión
+\series default
+ 
+\begin_inset Formula $q:$
+\end_inset
+
+ Las dos rectas no son paralelas.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Conclusión
+\series default
+ 
+\begin_inset Formula $q:$
+\end_inset
+
+ Dos rectas son perpendiculares, 
+\series bold
+Hipótesis
+\series default
+ 
+\begin_inset Formula $p:$
+\end_inset
+
+ Las rectas se intersecan.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Hipótesis
+\series default
+ 
+\begin_inset Formula $p:$
+\end_inset
+
+ Dos ángulos tienen la misma medida, 
+\series bold
+Conclusión
+\series default
+ 
+\begin_inset Formula $q:$
+\end_inset
+
+ Los ángulos son congruentes.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Analice la siguiente conjetura
+\series default
+: Si un triángulo tiene un ángulo recto, tiene dos lados congruentes.
+
+\series bold
+ Comentario:
+\series default
+ Para demostrar que la conjetura es falsa, debe presentar un contraejemplo,
+ para explicar que es verdadera use las definiciones.
+ 
+\end_layout
+
+\begin_layout Standard
+				 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

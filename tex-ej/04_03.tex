@@ -1,0 +1,382 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{04_02.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Fórmula de la Distancia} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Representación Gráfica} \\ \\ \\
+\end{tabular}
+\docLink{04_04.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 4}}  {\large
+{\color{ azulc} FUNCIONES}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 4.3. }}
+{\normalsize {\color{naranja} Funciones y sus Gráficas}}
+
+\newline
+
+En la vida diaria se oyen afirmaciones como las siguientes: el
+precio del transporte depende del precio de la gasolina; el
+consumo de energía en una persona que hace ejercicio, depende de
+la intensidad de este; la temperatura de un lugar situado en el
+trópico depende de su altura sobre el nivel del mar; la oferta de
+un producto determina el precio del mismo; el número de individuos
+de una población varía con el tiempo.
+
+\bigskip
+
+Esa idea de que un dato depende, está en función o varía con otro
+aparece frecuentemente en física: el espacio recorrido por un
+móvil en una unidad de tiempo depende de la velocidad y,
+naturalmente, en matemáticas: el área del círculo es función del
+radio, el volumen de un cono de base fija depende de la altura.
+Con respecto a estos dos últimos ejemplos, si $A$ denota el área y
+$r$ el radio del círculo, para indicar que $A$ depende de $r$, se
+escribe $A(r)$. Si $V$ denota el volumen del cono y $h$ su altura,
+para indicar que $V$ depende de $h$, se escribe $V(h)$.
+Específicamente se tiene
+
+\bigskip
+
+\[A(r)=\pi r^{2} \quad\text{y}\quad V(h)=\frac{1}{3}Bh\]
+
+\bigskip
+
+donde $B$ es el área de la base del cono. Así
+
+\bigskip
+
+\[A(3)=9\pi,\quad V(2)=\frac{2}{3}B.\]
+
+\bigskip
+
+\textbf{Definición 4.3.1. } Sea $D$ un subconjunto no vacío de
+$\mathbf{R}$, el conjunto de los números reales. Definir una {\bf
+función} $f$ de $D$ en $\mathbf{R}$ es asociar a cada número real
+$x$ de $D$ un único número real denotado por $f(x)$ (leído $f$ de
+$x$). El conjunto $D$ es el {\bf dominio} de $f$. Se dice también
+que $f$ está definida sobre $D$ . El número real $f(x)$ es la {\bf
+imagen de} $\mathbf {x}$ por $f$. El {\bf rango de} $\mathbf {f}$
+es el conjunto de la imágenes $f(x)$ con $x$ en $D$, $x$ es la
+{\bf variable independiente} y si $y=f(x)$, $y$ es la {\bf
+variable dependiente}. Dos funciones $f$ y $g$ son {\bf iguales}
+si sus dominios son iguales y $f(x)=g(x)$ para todo $x$ del
+dominio.
+
+\bigskip
+
+\textbf{Ejemplo 4.2. } \quad
+
+\begin{enumerate} \item\quad
+\begin{enumerate}
+\item Consideremos el siguiente conjunto:
+$\left\{(1,2),(2,4),(4,8)\right\}$. Si a la primera componente de
+cada una de las parejas asociamos como imagen la segunda
+componente, obtenemos una función cuyo dominio es
+$\left\{1,2,4\right\}$ y cuyo rango es $\left\{2,4,8\right\}$.
+\item Si procedemos de la misma manera con el conjunto de parejas
+\linebreak $\left\{(1,1),(1,2),(1,3)\right\}$ no obtenemos una
+función puesto que al único elemento del dominio estaríamos
+asociando más de una imagen.
+\end{enumerate}
+
+\item El conjunto de parejas $\left\{(n,n+1)/n\in
+\mathbf{Z}\right\}$ define una función cuyo dominio es el conjunto
+$\mathbf{Z}$ de los números enteros. La imagen de un entero $n$ es
+el siguiente entero $n+1$, es decir,
+
+\bigskip
+
+\[f(n)=n+1\]
+
+\bigskip
+
+El rango es también el conjunto $\mathbf{Z}$.
+
+\item Sea $D=\mathbf{R}$. Si a cada elemento $x\in D$ asociamos
+como imagen $g(x)=x^{2}$ obtenemos una función cuyo dominio es,
+según lo hemos escogido, $\mathbf{R}$. Su rango es el conjunto de
+los números reales no negativos. Una función como esta usualmente
+se expresa simplemente mediante la ecuación $y=x^{2}$.
+
+\item Las funciones constantes son de la forma $f(x)=c$, para todo
+$x$, donde $c$ es una constante. Las funciones lineales: son de la
+forma $f(x)$ $=mx+b$, con $m\neq 0$. Entre estas se halla la
+función identidad $I$, tal que $ I(x)=x$. Las funciones
+cuadráticas: son de la forma: $f(x)=ax^{2}+bx+c$ con $a\neq 0.$ De
+estas funciones nos ocuparemos más ampliamente en secciones
+posteriores.
+
+\item Sean $D=\mathbf{R}$ y $f(x)=x^{2}+3x+1$ para $x\in D$. El
+rango de $f$ es
+
+\bigskip
+
+\[R_{f}=\left\{f(x)/x\in D\right\} =\left\{ y\in R\quad y=f(x)\text{ para algún }x\in D\right\}.\]
+
+\bigskip
+
+Vamos a precisarlo. Si un número real $y$ pertenece a ese
+conjunto, existe algún número real $x$ tal que
+
+\bigskip
+
+\[y=f(x)=x^{2}+3x+1\]
+
+\bigskip
+
+es decir, tal que
+
+\bigskip
+
+\[x^{2}+3x+1-y=0\]
+
+\bigskip
+
+así, $x$ es raíz de un polinomio de grado $2$ y, entonces,
+
+\bigskip
+
+\[x=\frac{-3\pm \sqrt{9-4(1-y)}}{2}=\frac{-3\pm \sqrt{5+4y}}{2}\]
+
+\bigskip
+
+Puesto que $x$ es real, debemos tener $5+4y\geq 0$, es decir
+$y\geq -\frac{5}{4}$.
+
+\bigskip
+
+Además, cada número real $y\geq -\frac{5}{4}$ es imagen de
+$x=\frac{-3\pm \sqrt{5+4y}}{2}$.
+
+\bigskip
+
+En consecuencia, el rango de $f$ es $\left[ \frac{-5}{4},\infty
+\right)$.
+
+\bigskip
+
+\item Estas son algunas funciones de dominio $D=\left[-1,1\right]$
+\begin{enumerate}
+\item $f(x)=\sqrt{1-x^{2}}$  para todo $x\in D$. \item
+$g(x)=-\sqrt{1-x^{2}}$ para todo $x\in D$. \item
+\[h(x)=
+\begin{cases}
+\sqrt{1-x^{2}}, & \text{ para $x$ tal que $-1\leq x\leq 0$}\\
+-\sqrt{1-x^{2}}, &\text{ para $x$ tal que $0 < x \leq 1$}
+\end{cases}
+\]
+\end{enumerate}
+
+\bigskip
+
+Los rangos de estas funciones son $\left[0,1\right]$ para $f$,
+$\left[-1,0\right] $ para $g$ y $\left[-1,1\right]$ para $h$
+
+\item Una circunferencia tiene longitud $L$ el área del círculo
+limitado por ella, expresada como función de $L$ es
+
+\bigskip
+
+\[A(L)=\pi\left(\frac{L}{2\pi}\right)^{2}\]
+
+\bigskip
+
+\item Para elaborar una caja de base cuadrada sin tapa, se emplea
+un cartón cuadrado que tiene $20$ centímetros de lado. En cada una
+de las cuatro esquinas se corta un cuadrado cuyo lado tiene
+longitud $x$. El volumen de la caja, expresado como función de $x$
+es $V\left(x\right)=x\left(20-2x\right)^{2}$
+
+\end{enumerate}
+
+\bigskip
+
+Frecuentemente el dominio de una función $f$ no está indicado. Se
+toma entonces como dominio el conjunto de los números reales para
+los cuales $f(x)$ representa un número real. Ese conjunto es
+llamado el {\bf dominio natural} de $f$.
+
+\bigskip
+
+\textbf{Ejemplo 4.3. } \quad
+\begin{enumerate}
+\item El dominio
+natural de la función $f(x)=\sqrt{x^{2}-1}$ es
+\[\left\{x\in \mathbf{R}\ / f(x)\in \mathbf{R}\right\} =\left\{x\in \mathbf{R}\ /\ x^{2}-1\geq 0\right\}\]
+Como $x^{2}-1\geq 0\Leftrightarrow x^{2}\geq 1\Leftrightarrow
+\left| x\right| \geq 1\Leftrightarrow x\geq 1$ o $x\leq -1$, este
+conjunto es
+
+\bigskip
+
+\[\left(-\infty ,-1\right] \cup \left[1,\infty \right)\]
+
+\bigskip
+
+\item Si $f(x)=\frac{1}{x^{3}-1}$ el dominio natural de $f$ es
+
+\bigskip
+
+\[\left\{ x\in \mathbf{R}\ /\ f(x)\in \mathbf{R}\right\} =\left\{x\in \mathbf{R}\ /\ x^{3}-1\neq 0\right\}\]
+
+\bigskip
+
+Puesto que $1$ es el único valor real de $x$ para el cual
+$x^{3}-1=0$, este conjunto es
+\[\left\{ x\in \mathbf{R}\ /\ x\neq
+1\right\}=\mathbf{R}-\left\{1\right\}.\]
+
+\end{enumerate}
+
+\bigskip
+
+En adelante nos referiremos al dominio natural de una función como
+el dominio de la función, simplemente.
+
+\bigskip
+
+Dada una función $f$, hacer la {\bf evaluación} de $f$ en un valor
+(número) $a$ de su dominio consiste en calcular $f\left(
+a\right)$, la imagen de $a$ por $f$. Para ello basta reemplazar la
+variable independiente por $a$ en la expresión de
+$f\left(x\right)$ y realizar las operaciones que quedan indicadas.
+
+\bigskip
+
+\textbf{Ejemplo 4.4. } \quad
+
+\begin{enumerate}
+
+\item Si $f(x)=x^{3}+x+1$, al evaluar la función en $2$, $0$ y
+$-1$ obtenemos, respectivamente:
+\begin{align*}
+f(2)&=2^{3}+2+1=11\\
+f(0)&=0^{3}+0+1=1\\
+f(-1)&=\left( -1\right) ^{3}-1+1=-1
+\end{align*}
+
+\item Sea $f(x)=2x^{2}+1$ al evaluar esta función en $2$, $3$ y
+$5$ obtenemos
+\begin{align*}
+f(2)&=2.2^{2}+1=9\\
+f(3)&=2.3^{2}+1=19\\
+f(5)&=2.5^{2}+1=51
+\end{align*}
+
+\bigskip
+
+Si comparamos estas imágenes vemos que $f(2)+f(3)\neq f(2+3)$.
+
+\bigskip
+
+Para $a$ y $b$ números reales cualesquiera,
+
+\bigskip
+
+\begin{align*}
+f(a)&=2a^{2}+1\\
+f(b)&=2b^{2}+1\\
+f(a+b)&=2(a+b)^{2}+1=2(a^{2}+2ab+b^{2})+1=2a^{2}+4ab+2b^{2}+1
+\end{align*}
+
+\bigskip
+
+Así, $f(a+b)=f(a)+f(b)$ solo si $4ab=1$, caso en el cual $a\neq
+0$, $b\neq 0$ y, $b=\frac{1}{4a}$, pero, en general, $f(a+b)\neq
+f(a)+f(b)$.
+
+\bigskip
+
+\item Sea $g(x)=2x$. Para $a$ y $b$ números reales cualesquiera,
+\[g(a+b)=2(a+b)=2a+2b=g(a)+g(b)\]
+
+\item Sea $f(x)=x^{2}+2x+2$. Si $h$ representa un número real
+distinto de cero,
+\begin{align*}
+f(4)&=4^{2}-2\cdot 4+2=10\\
+f(4+h)&=(4+h)^{2}-2(4+h)+2=h^{2}+6h+10
+\end{align*}
+
+\bigskip
+
+entonces
+
+\bigskip
+
+\[\frac{f(4+h)-f(4)}{h}=\frac{h^{2}+6h}{h}=\frac{h(h+6)}{h}=h+6\]
+
+\item Si $f(x)=\frac{1}{x}$ y $h$ representa un número real
+distinto de cero,
+\[\frac{f(a+h)-f(a)}{h}=\frac{\frac{1}{a+h}-\frac{1}{a}}{h}=\frac{\frac{a-a-h}{(a+h)a}}{h}=-\frac{1}{a^{2}+ah}\]
+
+\item Al evaluar en $3$ la función $V(r)=\frac{4}{3}\pi r^{3}$, el
+volumen de una esfera como función del radio, obtenemos
+\[V(3)=\frac{4}{3}\pi 3^{3}=36\pi \]
+
+\end{enumerate}
+
+\bigskip
+
+Como en los ejemplos anteriores, las funciones pueden ser
+denotadas con letras distintas de $f$ y la variable independiente
+puede ser denotada con letras distintas de $x$.
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{04_02.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Fórmula de la Distancia} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Representación Gráfica} \\ \\ \\
+\end{tabular}
+\docLink{04_04.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

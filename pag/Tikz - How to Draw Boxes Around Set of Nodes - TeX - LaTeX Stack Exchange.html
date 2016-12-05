@@ -1,0 +1,1810 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <title>Tikz - How to Draw Boxes Around Set of Nodes - TeX - LaTeX Stack Exchange</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/tex/img/favicon.ico?v=8bd9630dcd9e">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/tex/img/apple-touch-icon.png?v=0a90e8f91d4c">
+    <link rel="search" type="application/opensearchdescription+xml" title="TeX - LaTeX Stack Exchange" href="http://tex.stackexchange.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@StackTeX">
+    <meta name="twitter:domain" content="tex.stackexchange.com">
+    <meta name="og:type" content="website">
+    <meta name="og:image" content="http://cdn.sstatic.net/tex/img/apple-touch-icon@2.png?v=eaf26b461720">
+    <meta name="og:title" content="Tikz - How to Draw Boxes Around Set of Nodes">
+    <meta name="og:description" content="How to draw the boxes as shown in the attached image? I could only manage to draw the chart but could not highlight the desired node / nodes with a rectangle box. Preferably dotted. I could not draw ">
+    <meta name="og:url" content="http://tex.stackexchange.com/questions/8890/tikz-how-to-draw-boxes-around-set-of-nodes">
+    <link rel="canonical" href="http://tex.stackexchange.com/questions/8890/tikz-how-to-draw-boxes-around-set-of-nodes">
+
+    
+    
+    <script src="Tikz%20-%20How%20to%20Draw%20Boxes%20Around%20Set%20of%20Nodes%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/quant.js" async=""></script><script src="Tikz%20-%20How%20to%20Draw%20Boxes%20Around%20Set%20of%20Nodes%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/beacon.js" async=""></script><script src="Tikz%20-%20How%20to%20Draw%20Boxes%20Around%20Set%20of%20Nodes%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/analytics.js" async=""></script><script src="Tikz%20-%20How%20to%20Draw%20Boxes%20Around%20Set%20of%20Nodes%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/jquery.js"></script>
+    <script src="Tikz%20-%20How%20to%20Draw%20Boxes%20Around%20Set%20of%20Nodes%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="Tikz%20-%20How%20to%20Draw%20Boxes%20Around%20Set%20of%20Nodes%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/all.css">
+    
+    <link rel="alternate" type="application/atom+xml" title="Feed for question 'Tikz - How to Draw Boxes Around Set of Nodes'" href="http://tex.stackexchange.com/feeds/question/8890">
+    <script>
+        
+        StackExchange.ready(function () {
+
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:1,shownCommentCount:1,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:8890});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('85', '8890');
+            
+                    });
+    </script>
+
+
+    <script>
+        StackExchange.ready(function () {
+            StackExchange.realtime.init('wss://qa.sockets.stackexchange.com,ws://qa.sockets.stackexchange.com');
+            StackExchange.realtime.subscribeToInboxNotifications();
+                    StackExchange.realtime.subscribeToReputationNotifications('85');
+                StackExchange.realtime.subscribeToTopBarNotifications('85');
+        });
+    </script>
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1409922775,"networkMetaHostname":"meta.stackexchange.com","styleCode":true,"enableUserHovercards":true,"site":{"name":"TeX - LaTeX Stack Exchange","description":"Q&A for users of TeX, LaTeX, ConTeXt, and related typesetting systems","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdsB7sSAAAAAAzjgEF_Hd8vXv-C42sa_KyofaGR","recaptchaAudioLang":"en","enableNewTagCreationWarning":false,"enableSocialMediaInSharePopup":true,"useGoogleOAuth2":true},"user":{"fkey":"d7e0a4606f9b482cc0aa2ea4db317c7e","isAnonymous":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"de343f60e0dc","js/moderator.en.js":"3bf88d4bfb80","js/full-anon.en.js":"92f969f30e07","js/full.en.js":"97b3e5de1ac2","js/wmd.en.js":"01338dd4d0bf","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"5a1e717ab0e4","js/help.en.js":"c8c7bae0ab4d","js/tageditor.en.js":"ed2efb9cc7d2","js/tageditornew.en.js":"66116ff1da24","js/inline-tag-editing.en.js":"21223186b436","js/revisions.en.js":"ce4a692d0d20","js/review.en.js":"cfd1cd96065e","js/tagsuggestions.en.js":"7dfec0d2a2d7","js/post-validation.en.js":"b46295429429","js/explore-qlist.en.js":"24424eb238e8","js/events.en.js":"a12784549dc1","js/keyboard-shortcuts.en.js":"4ddb3db16581","js/external-editor.en.js":"4feffae4b337"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script src="Tikz%20-%20How%20to%20Draw%20Boxes%20Around%20Set%20of%20Nodes%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/full-anon.js" async=""></script><script src="Tikz%20-%20How%20to%20Draw%20Boxes%20Around%20Set%20of%20Nodes%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/post-validation.js" async=""></script><script src="Tikz%20-%20How%20to%20Draw%20Boxes%20Around%20Set%20of%20Nodes%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/prettify-full.js" async=""></script></head>
+<body class="question-page new-topbar" itemscope="" itemtype="http://schema.org/QAPage">
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+<div class="topbar">
+    <div class="topbar-wrapper">
+        
+        <div class="js-topbar-dialog-corral">
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://tex.stackexchange.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+            <a href="http://chat.stackexchange.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+                    <a href="http://tex.blogoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:7 })">blog</a>
+            </div>
+
+
+
+
+    <a href="http://tex.stackexchange.com/" class="current-site-link site-link js-gps-track" data-id="85" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-tex" title="TeX - LaTeX"></div>
+        TeX - LaTeX
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.tex.stackexchange.com/" class="site-link js-gps-track" data-id="87" data-gps-track="
+            site.switch({ target_site:87, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-texmeta" title="TeX - LaTeX Meta"></div>
+        TeX - LaTeX Meta
+    </a>
+
+                </li>
+                    </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+                        <a href="https://tex.stackexchange.com/users/signup?returnurl=http%3a%2f%2ftex.stackexchange.com%2fquestions%2f8890%2ftikz-how-to-draw-boxes-around-set-of-nodes" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a>
+                    or
+                    <a href="https://tex.stackexchange.com/users/login?returnurl=http%3a%2f%2ftex.stackexchange.com%2fquestions%2f8890%2ftikz-how-to-draw-boxes-around-set-of-nodes" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a>
+
+                    to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+            
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 131 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+            
+        </div>
+
+        <div class="topbar-links">
+            
+                <div class="links-container">
+                    <span class="topbar-menu-links">
+                            <a href="https://tex.stackexchange.com/users/signup?returnurl=http%3a%2f%2ftex.stackexchange.com%2fquestions%2f8890%2ftikz-how-to-draw-boxes-around-set-of-nodes" class="login-link">sign up</a>
+                            <a href="https://tex.stackexchange.com/users/login?returnurl=http%3a%2f%2ftex.stackexchange.com%2fquestions%2f8890%2ftikz-how-to-draw-boxes-around-set-of-nodes" class="login-link">log in</a>
+                            <a href="http://tex.stackexchange.com/tour">tour</a>
+
+                            <a href="#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://tex.stackexchange.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://tex.stackexchange.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.tex.stackexchange.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+
+                    </span>
+                </div>
+
+			<div class="search-container">
+                <form id="search" action="/search" method="get" autocomplete="off">
+                    <input name="q" placeholder="search" tabindex="1" autocomplete="off" maxlength="240" type="text">
+                </form>
+			</div>
+            	
+        </div>      
+    </div> 
+</div>
+<script>
+    StackExchange.ready(function () { StackExchange.topbar.init(); });
+</script>
+    <div class="container">
+        <div id="header" class="headeranon">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://tex.stackexchange.com/">
+                    TeX - LaTeX
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs mainnavsanon">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://tex.stackexchange.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://tex.stackexchange.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://tex.stackexchange.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://tex.stackexchange.com/help/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://tex.stackexchange.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://tex.stackexchange.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+	<link itemprop="image" href="http://cdn.sstatic.net/tex/img/apple-touch-icon.png">
+			<!--googleoff: all-->
+
+<div id="herobox-mini">
+    <div id="hero-content">
+        <span id="controls">
+            <a href="http://tex.stackexchange.com/tour" id="tell-me-more" class="button">Take the 2-minute tour</a>
+            <span id="close"><a title="click to dismiss">×</a></span>
+        </span>
+        <div id="blurb">
+            TeX - LaTeX Stack Exchange is a question and answer site for
+ users of TeX, LaTeX, ConTeXt, and related typesetting systems. It's 
+100% free, no registration required.
+        </div>        
+    </div>
+    <script>
+        $('#tell-me-more').click(function () {
+            var clickSource = $("body").attr("class") + '-mini';
+            if ($("body").hasClass("questions-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("question-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("home-page")) {
+                clickSource = 'homepagemini';
+            }
+
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("aboutpage.click", { aboutclick_location: clickSource } , true);
+            });
+        });
+        $('#herobox-mini #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close" }, true);
+            });
+            $.cookie("hero", "none", { path: "/", expires: 365 });
+            var $hero = $("#herobox-mini");
+            $hero.slideUp('fast', function () { $hero.remove(); });
+            return false;
+        });
+    </script>
+</div>
+			<!--googleon: all-->
+			<div id="question-header">
+			<h1 itemprop="name"><a href="http://tex.stackexchange.com/questions/8890/tikz-how-to-draw-boxes-around-set-of-nodes" class="question-hyperlink">Tikz - How to Draw Boxes Around Set of Nodes</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="8890" id="question">
+
+        <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="8890" type="hidden">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">25</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+    
+    <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b>6</b></div>   
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+        <p>How to draw the boxes as shown in the attached image? I could
+ only manage to draw the chart but could not highlight the desired node /
+ nodes with a rectangle box. Preferably dotted. I could not draw dotted 
+in MS paint. </p>
+
+<p><img src="Tikz%20-%20How%20to%20Draw%20Boxes%20Around%20Set%20of%20Nodes%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/2yfGv.jpg" alt="alt text"></p>
+
+<pre style="" class="lang-tex prettyprint prettyprinted"><code><span class="kwd">\documentclass</span><span class="pun">{</span><span class="pln">article</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\usepackage</span><span class="pun">{</span><span class="pln">tikz</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">document</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">figure</span><span class="pun">}[</span><span class="pln">!htb</span><span class="pun">]</span><span class="pln">
+</span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">center</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">tikzpicture</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">[</span><span class="pln">auto,
+ block/.style </span><span class="pun">={</span><span class="pln">rectangle, draw</span><span class="pun">=</span><span class="pln">blue, thick, fill</span><span class="pun">=</span><span class="pln">blue!20, text width</span><span class="pun">=</span><span class="lit">5em</span><span class="pln">,align</span><span class="pun">=</span><span class="pln">center, rounded corners, minimum height</span><span class="pun">=</span><span class="lit">2em</span><span class="pun">}</span><span class="pln">,
+ block1/.style </span><span class="pun">={</span><span class="pln">rectangle, draw</span><span class="pun">=</span><span class="pln">blue, thick, fill</span><span class="pun">=</span><span class="pln">blue!20, text width</span><span class="pun">=</span><span class="lit">5em</span><span class="pln">,align</span><span class="pun">=</span><span class="pln">center, rounded corners, minimum height</span><span class="pun">=</span><span class="lit">2em</span><span class="pun">}</span><span class="pln">,
+ line/.style </span><span class="pun">={</span><span class="pln">draw, thick, -latex',shorten &gt;</span><span class="pun">=</span><span class="lit">2pt</span><span class="pun">}</span><span class="pln">,
+ cloud/.style </span><span class="pun">={</span><span class="pln">draw</span><span class="pun">=</span><span class="pln">red, thick, ellipse,fill</span><span class="pun">=</span><span class="pln">red!20,
+ minimum height</span><span class="pun">=</span><span class="lit">1em</span><span class="pun">}]</span><span class="pln">
+</span><span class="kwd">\draw</span><span class="pln"> </span><span class="pun">(</span><span class="pln">2.5,-2</span><span class="pun">)</span><span class="pln"> node</span><span class="pun">[</span><span class="pln">block</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">C</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">Subanta</span><span class="pun">}</span><span class="pln">;
+</span><span class="kwd">\path</span><span class="pln"> </span><span class="pun">(</span><span class="pln">0,-3</span><span class="pun">)</span><span class="pln"> node</span><span class="pun">[</span><span class="pln">block</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">G</span><span class="pun">){</span><span class="pln"> Pumlinga</span><span class="pun">}</span><span class="pln">
+      </span><span class="pun">(</span><span class="pln">0,-4</span><span class="pun">)</span><span class="pln"> node</span><span class="pun">[</span><span class="pln">block</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">H</span><span class="pun">){</span><span class="pln"> Strilinga</span><span class="pun">}</span><span class="pln">
+      </span><span class="pun">(</span><span class="pln">0,-5</span><span class="pun">)</span><span class="pln"> node</span><span class="pun">[</span><span class="pln">block</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">I</span><span class="pun">){</span><span class="pln"> Napumsaka</span><span class="pun">}</span><span class="pln">
+      </span><span class="pun">(</span><span class="pln">5,-3</span><span class="pun">)</span><span class="pln"> node</span><span class="pun">[</span><span class="pln">block</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">J</span><span class="pun">){</span><span class="pln"> Pumlinga</span><span class="pun">}</span><span class="pln">
+      </span><span class="pun">(</span><span class="pln">5,-4</span><span class="pun">)</span><span class="pln"> node</span><span class="pun">[</span><span class="pln">block</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">K</span><span class="pun">){</span><span class="pln"> Strilinga</span><span class="pun">}</span><span class="pln">
+      </span><span class="pun">(</span><span class="pln">5,-5</span><span class="pun">)</span><span class="pln"> node</span><span class="pun">[</span><span class="pln">block</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">L</span><span class="pun">){</span><span class="pln"> Napumsaka</span><span class="pun">}</span><span class="pln">;
+</span><span class="kwd">\draw</span><span class="pln"> </span><span class="pun">(</span><span class="pln">C.south</span><span class="pun">)</span><span class="pln"> -- ++</span><span class="pun">(</span><span class="pln">0,-0.25</span><span class="pun">)</span><span class="pln"> coordinate </span><span class="pun">(</span><span class="pln">linga</span><span class="pun">)</span><span class="pln">;
+</span><span class="kwd">\draw</span><span class="pln"> </span><span class="pun">(</span><span class="pln">linga</span><span class="pun">)</span><span class="pln"> -- ++</span><span class="pun">(</span><span class="pln">-1,0</span><span class="pun">)</span><span class="pln"> coordinate </span><span class="pun">(</span><span class="pln">ling</span><span class="pun">)</span><span class="pln">;
+</span><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">-latex</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">ling</span><span class="pun">)</span><span class="pln"> |- </span><span class="pun">(</span><span class="pln">G.east</span><span class="pun">)</span><span class="pln">;
+</span><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">-latex</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">ling</span><span class="pun">)</span><span class="pln"> |- </span><span class="pun">(</span><span class="pln">H.east</span><span class="pun">)</span><span class="pln">;
+</span><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">-latex</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">ling</span><span class="pun">)</span><span class="pln"> |- </span><span class="pun">(</span><span class="pln">I.east</span><span class="pun">)</span><span class="pln">;
+</span><span class="kwd">\draw</span><span class="pln"> </span><span class="pun">(</span><span class="pln">linga</span><span class="pun">)</span><span class="pln"> -- ++</span><span class="pun">(</span><span class="pln">1,0</span><span class="pun">)</span><span class="pln"> coordinate </span><span class="pun">(</span><span class="pln">hling</span><span class="pun">)</span><span class="pln">;
+</span><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">-latex</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">hling</span><span class="pun">)</span><span class="pln"> |- </span><span class="pun">(</span><span class="pln">J.west</span><span class="pun">)</span><span class="pln">;
+</span><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">-latex</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">hling</span><span class="pun">)</span><span class="pln"> |- </span><span class="pun">(</span><span class="pln">K.west</span><span class="pun">)</span><span class="pln">;
+</span><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">-latex</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">hling</span><span class="pun">)</span><span class="pln"> |- </span><span class="pun">(</span><span class="pln">L.west</span><span class="pun">)</span><span class="pln">;
+</span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">tikzpicture</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">center</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\caption</span><span class="pun">{</span><span class="pln">Summary of Linga </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">\label</span><span class="pun">{</span><span class="pln">linga</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">figure</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">document</span><span class="pun">}</span></code></pre>
+
+<p>Thanks for your help.</p>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://tex.stackexchange.com/questions/tagged/tikz-pgf" class="post-tag js-gps-track" title="show questions tagged 'tikz-pgf'" rel="tag">tikz-pgf</a> <a href="http://tex.stackexchange.com/questions/tagged/nodes" class="post-tag js-gps-track" title="show questions tagged 'nodes'" rel="tag">nodes</a> <a href="http://tex.stackexchange.com/questions/tagged/node-connections" class="post-tag js-gps-track" title="show questions tagged 'node-connections'" rel="tag">node-connections</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://tex.stackexchange.com/q/8890" title="short permalink to this question" class="short-link" id="link-post-8890">share</a><span class="lsep">|</span><a href="http://tex.stackexchange.com/posts/8890/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://tex.stackexchange.com/posts/8890/revisions" title="show all edits to this post">edited <span title="2011-01-13 17:46:28Z" class="relativetime">Jan 13 '11 at 17:46</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2011-01-13 17:03:42Z" class="relativetime">Jan 13 '11 at 17:03</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://tex.stackexchange.com/users/2036/aku"><div class="gravatar-wrapper-32"><img src="Tikz%20-%20How%20to%20Draw%20Boxes%20Around%20Set%20of%20Nodes%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/f27e09d1b05cd911814982f24be55dfa.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://tex.stackexchange.com/users/2036/aku">Aku</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">2,806</span><span title="6 gold badges"><span class="badge1"></span><span class="badgecount">6</span></span><span title="27 silver badges"><span class="badge2"></span><span class="badgecount">27</span></span><span title="67 bronze badges"><span class="badge3"></span><span class="badgecount">67</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-8890" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-14949" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">It's good that you mark your 
+code block. It's even better if you do that by indenting by just 4 
+spaces (and use a bit of further indentation where applicable).</span>
+                –&nbsp;
+                    <a href="http://tex.stackexchange.com/users/1235/hendrik-vogt" title="21373 reputation" class="comment-user">Hendrik Vogt</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment14949_8890"><span title="2011-01-13 17:45:25Z" class="relativetime-clean">Jan 13 '11 at 17:45</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 2 times"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-8890" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								3 Answers
+                                <span style="display:none;" itemprop="answerCount">3</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://tex.stackexchange.com/questions/8890/tikz-how-to-draw-boxes-around-set-of-nodes?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+        <a href="http://tex.stackexchange.com/questions/8890/tikz-how-to-draw-boxes-around-set-of-nodes?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+        <a class="youarehere" href="http://tex.stackexchange.com/questions/8890/tikz-how-to-draw-boxes-around-set-of-nodes?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="8906"></a>
+<div id="answer-8906" class="answer accepted-answer" data-answerid="8906" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="8906" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">16</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>With the help of the »calc« library you can get it right.</p>
+
+<pre style="" class="lang-tex prettyprint prettyprinted"><code><span class="kwd">\documentclass</span><span class="pun">{</span><span class="pln">standalone</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\usepackage</span><span class="pun">{</span><span class="pln">tikz</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\usetikzlibrary</span><span class="pun">{</span><span class="pln">calc</span><span class="pun">}</span><span class="pln">
+
+</span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">document</span><span class="pun">}</span><span class="pln">
+  </span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">tikzpicture</span><span class="pun">}[</span><span class="com">%</span><span class="pln">
+    auto,
+    block/.style</span><span class="pun">={</span><span class="pln">
+      rectangle,
+      draw</span><span class="pun">=</span><span class="pln">blue,
+      thick,
+      fill</span><span class="pun">=</span><span class="pln">blue!20,
+      text width</span><span class="pun">=</span><span class="lit">5em</span><span class="pln">,
+      align</span><span class="pun">=</span><span class="pln">center,
+      rounded corners,
+      minimum height</span><span class="pun">=</span><span class="lit">2em</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">,
+    block1/.style</span><span class="pun">={</span><span class="pln">
+      rectangle,
+      draw</span><span class="pun">=</span><span class="pln">blue,
+      thick,
+      fill</span><span class="pun">=</span><span class="pln">blue!20,
+      text width</span><span class="pun">=</span><span class="lit">5em</span><span class="pln">,
+      align</span><span class="pun">=</span><span class="pln">center,
+      rounded corners,
+      minimum height</span><span class="pun">=</span><span class="lit">2em</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">,
+    line/.style</span><span class="pun">={</span><span class="pln">
+      draw,thick,
+      -latex',
+      shorten &gt;</span><span class="pun">=</span><span class="lit">2pt</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">,
+    cloud/.style</span><span class="pun">={</span><span class="pln">
+      draw</span><span class="pun">=</span><span class="pln">red,
+      thick,
+      ellipse,
+      fill</span><span class="pun">=</span><span class="pln">red!20,
+      minimum height</span><span class="pun">=</span><span class="lit">1em</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+  </span><span class="pun">]</span><span class="pln">
+    </span><span class="kwd">\draw</span><span class="pln"> </span><span class="pun">(</span><span class="pln">2.5,-2</span><span class="pun">)</span><span class="pln"> node</span><span class="pun">[</span><span class="pln">block</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">C</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">Subanta</span><span class="pun">}</span><span class="pln">;
+    </span><span class="kwd">\path</span><span class="pln"> </span><span class="pun">(</span><span class="pln">0,-3</span><span class="pun">)</span><span class="pln"> node</span><span class="pun">[</span><span class="pln">block</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">G</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">Pumlinga</span><span class="pun">}</span><span class="pln">
+          </span><span class="pun">(</span><span class="pln">0,-4</span><span class="pun">)</span><span class="pln"> node</span><span class="pun">[</span><span class="pln">block</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">H</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">Strilinga</span><span class="pun">}</span><span class="pln">
+          </span><span class="pun">(</span><span class="pln">0,-5</span><span class="pun">)</span><span class="pln"> node</span><span class="pun">[</span><span class="pln">block</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">I</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">Napumsaka</span><span class="pun">}</span><span class="pln">
+          </span><span class="pun">(</span><span class="pln">5,-3</span><span class="pun">)</span><span class="pln"> node</span><span class="pun">[</span><span class="pln">block</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">J</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">Pumlinga</span><span class="pun">}</span><span class="pln">
+          </span><span class="pun">(</span><span class="pln">5,-4</span><span class="pun">)</span><span class="pln"> node</span><span class="pun">[</span><span class="pln">block</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">K</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">Strilinga</span><span class="pun">}</span><span class="pln">
+          </span><span class="pun">(</span><span class="pln">5,-5</span><span class="pun">)</span><span class="pln"> node</span><span class="pun">[</span><span class="pln">block</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">L</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">Napumsaka</span><span class="pun">}</span><span class="pln">;
+    </span><span class="kwd">\draw</span><span class="pln"> </span><span class="pun">(</span><span class="pln">C.south</span><span class="pun">)</span><span class="pln"> -- ++</span><span class="pun">(</span><span class="pln">0,-0.25</span><span class="pun">)</span><span class="pln"> coordinate </span><span class="pun">(</span><span class="pln">linga</span><span class="pun">)</span><span class="pln">;
+    </span><span class="kwd">\draw</span><span class="pln"> </span><span class="pun">(</span><span class="pln">linga</span><span class="pun">)</span><span class="pln"> -- ++</span><span class="pun">(</span><span class="pln">-1,0</span><span class="pun">)</span><span class="pln"> coordinate </span><span class="pun">(</span><span class="pln">ling</span><span class="pun">)</span><span class="pln">;
+    </span><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">-latex</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">ling</span><span class="pun">)</span><span class="pln"> |- </span><span class="pun">(</span><span class="pln">G.east</span><span class="pun">)</span><span class="pln">;
+    </span><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">-latex</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">ling</span><span class="pun">)</span><span class="pln"> |- </span><span class="pun">(</span><span class="pln">H.east</span><span class="pun">)</span><span class="pln">;
+    </span><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">-latex</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">ling</span><span class="pun">)</span><span class="pln"> |- </span><span class="pun">(</span><span class="pln">I.east</span><span class="pun">)</span><span class="pln">;
+    </span><span class="kwd">\draw</span><span class="pln"> </span><span class="pun">(</span><span class="pln">linga</span><span class="pun">)</span><span class="pln"> -- ++</span><span class="pun">(</span><span class="pln">1,0</span><span class="pun">)</span><span class="pln"> coordinate </span><span class="pun">(</span><span class="pln">hling</span><span class="pun">)</span><span class="pln">;
+    </span><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">-latex</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">hling</span><span class="pun">)</span><span class="pln"> |- </span><span class="pun">(</span><span class="pln">J.west</span><span class="pun">)</span><span class="pln">;
+    </span><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">-latex</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">hling</span><span class="pun">)</span><span class="pln"> |- </span><span class="pun">(</span><span class="pln">K.west</span><span class="pun">)</span><span class="pln">;
+    </span><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">-latex</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">hling</span><span class="pun">)</span><span class="pln"> |- </span><span class="pun">(</span><span class="pln">L.west</span><span class="pun">)</span><span class="pln">;
+    </span><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">red,thick,dotted</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="typ">$</span><span class="pun">(</span><span class="pln">J.north west</span><span class="pun">)</span><span class="pln">+</span><span class="pun">(</span><span class="pln">-0.3,0.6</span><span class="pun">)</span><span class="typ">$</span><span class="pun">)</span><span class="pln">  rectangle </span><span class="pun">(</span><span class="typ">$</span><span class="pun">(</span><span class="pln">L.south east</span><span class="pun">)</span><span class="pln">+</span><span class="pun">(</span><span class="pln">0.3,-0.6</span><span class="pun">)</span><span class="typ">$</span><span class="pun">)</span><span class="pln">;
+    </span><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">thick,dotted</span><span class="pun">]</span><span class="pln">     </span><span class="pun">(</span><span class="typ">$</span><span class="pun">(</span><span class="pln">I.north west</span><span class="pun">)</span><span class="pln">+</span><span class="pun">(</span><span class="pln">-0.5,0.15</span><span class="pun">)</span><span class="typ">$</span><span class="pun">)</span><span class="pln"> rectangle </span><span class="pun">(</span><span class="typ">$</span><span class="pun">(</span><span class="pln">L.south east</span><span class="pun">)</span><span class="pln">+</span><span class="pun">(</span><span class="pln">0.5,-0.15</span><span class="pun">)</span><span class="typ">$</span><span class="pun">)</span><span class="pln">;
+  </span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">tikzpicture</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">document</span><span class="pun">}</span></code></pre>
+
+<hr>
+
+<p><img src="Tikz%20-%20How%20to%20Draw%20Boxes%20Around%20Set%20of%20Nodes%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/rEHx7.png" alt="enter image description here"></p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://tex.stackexchange.com/a/8906" title="short permalink to this answer" class="short-link" id="link-post-8906">share</a><span class="lsep">|</span><a href="http://tex.stackexchange.com/posts/8906/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://tex.stackexchange.com/posts/8906/revisions" title="show all edits to this post">edited <span title="2012-06-14 21:25:08Z" class="relativetime">Jun 14 '12 at 21:25</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2011-01-13 18:24:04Z" class="relativetime">Jan 13 '11 at 18:24</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://tex.stackexchange.com/users/1063/thorsten-donig"><div class="gravatar-wrapper-32"><img src="Tikz%20-%20How%20to%20Draw%20Boxes%20Around%20Set%20of%20Nodes%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/972daafddb24747730526b8766d3f32b.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://tex.stackexchange.com/users/1063/thorsten-donig">Thorsten Donig</a><br>
+        <span class="reputation-score" title="reputation score 24214" dir="ltr">24.2k</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="55 silver badges"><span class="badge2"></span><span class="badgecount">55</span></span><span title="93 bronze badges"><span class="badge3"></span><span class="badgecount">93</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-8906" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-14969" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">awesome, thanks for your help.</span>
+                –&nbsp;
+                    <a href="http://tex.stackexchange.com/users/2036/aku" title="2806 reputation" class="comment-user owner">Aku</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment14969_8906"><span title="2011-01-13 18:35:08Z" class="relativetime-clean">Jan 13 '11 at 18:35</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-8906" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="8896"></a>
+<div id="answer-8896" class="answer" data-answerid="8896" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="8896" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">27</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<pre style="" class="lang-tex prettyprint prettyprinted"><code><span class="kwd">\node</span><span class="pun">[</span><span class="pln">draw,dotted</span><span class="pun">]</span><span class="pln"> </span><span class="pun">{</span><span class="pln">A</span><span class="pun">}</span><span class="pln">;</span></code></pre>
+
+<p>or</p>
+
+<pre style="" class="lang-tex prettyprint prettyprinted"><code><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">dotted</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">0,0</span><span class="pun">)</span><span class="pln"> rectangle </span><span class="pun">(</span><span class="pln">2,2</span><span class="pun">)</span><span class="pln">;</span></code></pre>
+
+<p>Other options would be <code>densely dotted</code>, <code>loosely dotted</code>, <code>dashed</code>, <code>densely dashed</code>, and <code>loosely dashed</code>.</p>
+
+<p>If you want to fit stuff, use the <code>fit</code>-library (example in Plain):</p>
+
+<pre style="" class="lang-tex prettyprint prettyprinted"><code><span class="kwd">\input</span><span class="pln"> tikz
+</span><span class="kwd">\usetikzlibrary</span><span class="pun">{</span><span class="pln">fit</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\tikzpicture</span><span class="pln">
+</span><span class="kwd">\foreach</span><span class="pln"> </span><span class="kwd">\x</span><span class="pln">/</span><span class="kwd">\z</span><span class="pln"> in </span><span class="pun">{</span><span class="pln">A/1,B/2,C/3,D/4,E/5,F/6,G/7</span><span class="pun">}</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">\node</span><span class="pln"> at </span><span class="pun">(</span><span class="kwd">\z</span><span class="pln">,0</span><span class="pun">)</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">\x</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="kwd">\x</span><span class="pun">}</span><span class="pln">;
+</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\node</span><span class="pun">[</span><span class="pln">draw,dotted,fit</span><span class="pun">=(</span><span class="pln">A</span><span class="pun">)</span><span class="pln"> </span><span class="pun">(</span><span class="pln">B</span><span class="pun">)</span><span class="pln"> </span><span class="pun">(</span><span class="pln">C</span><span class="pun">)]</span><span class="pln"> </span><span class="pun">{}</span><span class="pln">;
+</span><span class="kwd">\endtikzpicture</span><span class="pln">
+</span><span class="kwd">\bye</span></code></pre>
+
+<p><img src="Tikz%20-%20How%20to%20Draw%20Boxes%20Around%20Set%20of%20Nodes%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/LVUZc.png" alt=""></p>
+
+<p>Following Caramdir's suggestion on <code>inner sep</code>, I composed a LaTeX example with some additional tikz libraries which you might be interested in:</p>
+
+<pre style="" class="lang-tex prettyprint prettyprinted"><code><span class="kwd">\documentclass</span><span class="pun">{</span><span class="pln">minimal</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\usepackage</span><span class="pun">{</span><span class="pln">tikz</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\usetikzlibrary</span><span class="pun">{</span><span class="pln"> matrix,      </span><span class="com">% For easy node positioning</span><span class="pln">
+                 fit,         </span><span class="com">% For easily fitting nodes inside another one</span><span class="pln">
+                 positioning, </span><span class="com">% For easy node-relative placements</span><span class="pln">
+               </span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">document</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">tikzpicture</span><span class="pun">}[</span><span class="pln"> </span><span class="com">% Dims on their own lines for easy tweakage</span><span class="pln">
+  myscope/.style</span><span class="pun">={</span><span class="pln">node distance</span><span class="pun">=</span><span class="lit">1em</span><span class="pln"> and </span><span class="lit">0em</span><span class="pun">}</span><span class="pln">,
+  mymatrix/.style</span><span class="pun">={</span><span class="pln">matrix of nodes, nodes</span><span class="pun">=</span><span class="pln">block,
+    column sep</span><span class="pun">=</span><span class="lit">2em</span><span class="pln">,
+    row sep</span><span class="pun">=</span><span class="lit">1em</span><span class="pun">}</span><span class="pln">,
+  block/.style</span><span class="pun">={</span><span class="pln">draw</span><span class="pun">=</span><span class="pln">blue, thick, fill</span><span class="pun">=</span><span class="pln">blue!20, rounded corners,
+    minimum width</span><span class="pun">=</span><span class="lit">6em</span><span class="pln">,
+    minimum height</span><span class="pun">=</span><span class="lit">2em</span><span class="pun">}</span><span class="pln">,
+  vhilit/.style</span><span class="pun">={</span><span class="pln">draw</span><span class="pun">=</span><span class="pln">red, thick, dotted,
+    inner sep</span><span class="pun">=</span><span class="lit">1em</span><span class="pun">}</span><span class="pln">,
+  hhilit/.style</span><span class="pun">={</span><span class="pln">draw</span><span class="pun">=</span><span class="pln">black, thick, densely dotted,
+    inner xsep</span><span class="pun">=</span><span class="lit">2em</span><span class="pln">,
+    inner ysep</span><span class="pun">=</span><span class="lit">.5em</span><span class="pun">}</span><span class="pln">,
+  line/.style</span><span class="pun">={</span><span class="pln">thick, -latex, shorten &gt;</span><span class="pun">=</span><span class="pln"> </span><span class="lit">2pt</span><span class="pun">}</span><span class="pln">
+  </span><span class="pun">]</span><span class="pln">
+
+  </span><span class="kwd">\matrix</span><span class="pun">[</span><span class="pln">mymatrix</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">mx</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="com">% Usage of matrix-lib</span><span class="pln">
+    </span><span class="typ">&amp;</span><span class="pln"> Subanta </span><span class="kwd">\\</span><span class="pln">
+    Pumlinga  </span><span class="typ">&amp;</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> Pumlinga </span><span class="kwd">\\</span><span class="pln">
+    Strilinga </span><span class="typ">&amp;</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> Strilinga </span><span class="kwd">\\</span><span class="pln">
+    Napumsaka </span><span class="typ">&amp;</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> Napumsaka </span><span class="kwd">\\</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">; </span><span class="com">% Now you can refer to nodes as "matrixname-rownumber-columnnumber"</span><span class="pln">
+
+  </span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">scope</span><span class="pun">}[</span><span class="pln">myscope</span><span class="pun">]</span><span class="pln">
+    </span><span class="kwd">\coordinate</span><span class="pun">[</span><span class="pln">below left</span><span class="pun">=</span><span class="pln">of mx-1-2</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">leftBranch</span><span class="pun">)</span><span class="pln">; </span><span class="com">% Usage of positioning-lib</span><span class="pln">
+    </span><span class="kwd">\coordinate</span><span class="pun">[</span><span class="pln">below right</span><span class="pun">=</span><span class="pln">of mx-1-2</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">rightBranch</span><span class="pun">)</span><span class="pln">;
+  </span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">scope</span><span class="pun">}</span><span class="pln">
+
+  </span><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">thick</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">mx-1-2</span><span class="pun">)</span><span class="pln"> |- </span><span class="pun">(</span><span class="pln">leftBranch</span><span class="pun">)</span><span class="pln"> -- </span><span class="pun">(</span><span class="pln">rightBranch</span><span class="pun">)</span><span class="pln">;
+
+  </span><span class="kwd">\foreach</span><span class="pln"> </span><span class="kwd">\x</span><span class="pln"> in </span><span class="pun">{</span><span class="pln">2,3,4</span><span class="pun">}</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">line</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">leftBranch</span><span class="pun">)</span><span class="pln">  |- </span><span class="pun">(</span><span class="pln">mx-</span><span class="kwd">\x</span><span class="pln">-1</span><span class="pun">)</span><span class="pln">;
+    </span><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">line</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">rightBranch</span><span class="pun">)</span><span class="pln"> |- </span><span class="pun">(</span><span class="pln">mx-</span><span class="kwd">\x</span><span class="pln">-3</span><span class="pun">)</span><span class="pln">;
+  </span><span class="pun">}</span><span class="pln">
+
+  </span><span class="kwd">\node</span><span class="pun">[</span><span class="pln">vhilit, fit</span><span class="pun">=(</span><span class="pln">mx-2-3</span><span class="pun">)</span><span class="pln"> </span><span class="pun">(</span><span class="pln">mx-3-3</span><span class="pun">)</span><span class="pln"> </span><span class="pun">(</span><span class="pln">mx-4-3</span><span class="pun">)]</span><span class="pln"> </span><span class="pun">{}</span><span class="pln">; </span><span class="com">% Usage of fit-lib</span><span class="pln">
+  </span><span class="kwd">\node</span><span class="pun">[</span><span class="pln">hhilit, fit</span><span class="pun">=(</span><span class="pln">mx-4-1</span><span class="pun">)</span><span class="pln"> </span><span class="pun">(</span><span class="pln">mx-4-3</span><span class="pun">)]</span><span class="pln"> </span><span class="pun">{}</span><span class="pln">;
+
+</span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">tikzpicture</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">document</span><span class="pun">}</span></code></pre>
+
+<p><img src="Tikz%20-%20How%20to%20Draw%20Boxes%20Around%20Set%20of%20Nodes%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/MZJfw.png" alt=""></p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://tex.stackexchange.com/a/8896" title="short permalink to this answer" class="short-link" id="link-post-8896">share</a><span class="lsep">|</span><a href="http://tex.stackexchange.com/posts/8896/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://tex.stackexchange.com/posts/8896/revisions" title="show all edits to this post">edited <span title="2012-01-16 09:27:22Z" class="relativetime">Jan 16 '12 at 9:27</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://tex.stackexchange.com/users/4012/doncherry"><div class="gravatar-wrapper-32"><img src="Tikz%20-%20How%20to%20Draw%20Boxes%20Around%20Set%20of%20Nodes%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/a65ec60b8080583b8f03557d39af0882.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://tex.stackexchange.com/users/4012/doncherry">doncherry</a><br>
+        <span class="reputation-score" title="reputation score 21921" dir="ltr">21.9k</span><span title="13 gold badges"><span class="badge1"></span><span class="badgecount">13</span></span><span title="82 silver badges"><span class="badge2"></span><span class="badgecount">82</span></span><span title="144 bronze badges"><span class="badge3"></span><span class="badgecount">144</span></span>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2011-01-13 17:36:45Z" class="relativetime">Jan 13 '11 at 17:36</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://tex.stackexchange.com/users/1410/morbusg"><div class="gravatar-wrapper-32"><img src="Tikz%20-%20How%20to%20Draw%20Boxes%20Around%20Set%20of%20Nodes%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/430e268ac31a3400cbaf4f9d797c837e.jpeg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://tex.stackexchange.com/users/1410/morbusg">morbusg</a><br>
+        <span class="reputation-score" title="reputation score 15754" dir="ltr">15.8k</span><span title="2 gold badges"><span class="badge1"></span><span class="badgecount">2</span></span><span title="33 silver badges"><span class="badge2"></span><span class="badgecount">33</span></span><span title="91 bronze badges"><span class="badge3"></span><span class="badgecount">91</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-8896" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-14946" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I guess the question from the
+ OP is how to draw boxes around sets of named nodes, without having to 
+guess the appropriate coordinates.</span>
+                –&nbsp;
+                    <a href="http://tex.stackexchange.com/users/169/juan-a-navarro" title="18115 reputation" class="comment-user">Juan A. Navarro</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment14946_8896"><span title="2011-01-13 17:42:02Z" class="relativetime-clean">Jan 13 '11 at 17:42</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-14951" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@juan - you are correct, I would like to draw around set of nodes to take the guess work out.</span>
+                –&nbsp;
+                    <a href="http://tex.stackexchange.com/users/2036/aku" title="2806 reputation" class="comment-user owner">Aku</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment14951_8896"><span title="2011-01-13 17:47:56Z" class="relativetime-clean">Jan 13 '11 at 17:47</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-14952" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@Aku: I edited my answer accordingly.</span>
+                –&nbsp;
+                    <a href="http://tex.stackexchange.com/users/1410/morbusg" title="15754 reputation" class="comment-user">morbusg</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment14952_8896"><span title="2011-01-13 17:50:13Z" class="relativetime-clean">Jan 13 '11 at 17:50</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-14958" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">You might also want to specify <code>inner sep</code> to change how loosely the rectangle fits around the nodes.</span>
+                –&nbsp;
+                    <a href="http://tex.stackexchange.com/users/83/caramdir" title="43416 reputation" class="comment-user">Caramdir</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment14958_8896"><span title="2011-01-13 18:10:59Z" class="relativetime-clean">Jan 13 '11 at 18:10</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-8896" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="8934"></a>
+<div id="answer-8934" class="answer" data-answerid="8934" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="8934" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">9</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>You can use the fitting library from tikz. Here you have your modified example.  </p>
+
+<pre style="" class="lang-tex prettyprint prettyprinted"><code><span class="kwd">\documentclass</span><span class="pun">{</span><span class="pln">article</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\usepackage</span><span class="pun">{</span><span class="pln">tikz</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\usetikzlibrary</span><span class="pun">{</span><span class="pln">shapes,fit</span><span class="pun">}</span><span class="pln"> </span><span class="com">%use shapes library if you need ellipse</span><span class="pln">
+</span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">document</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">figure</span><span class="pun">}[</span><span class="pln">!htb</span><span class="pun">]</span><span class="pln">
+</span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">center</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">tikzpicture</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">[</span><span class="pln">auto,
+ block/.style </span><span class="pun">={</span><span class="pln">rectangle, draw</span><span class="pun">=</span><span class="pln">blue, thick, fill</span><span class="pun">=</span><span class="pln">blue!20, text width</span><span class="pun">=</span><span class="lit">5em</span><span class="pln">,align</span><span class="pun">=</span><span class="pln">center, rounded corners, minimum height</span><span class="pun">=</span><span class="lit">2em</span><span class="pun">}</span><span class="pln">,
+ block1/.style </span><span class="pun">={</span><span class="pln">rectangle, draw</span><span class="pun">=</span><span class="pln">blue, thick, fill</span><span class="pun">=</span><span class="pln">blue!20, text width</span><span class="pun">=</span><span class="lit">5em</span><span class="pln">,align</span><span class="pun">=</span><span class="pln">center, rounded corners, minimum height</span><span class="pun">=</span><span class="lit">2em</span><span class="pun">}</span><span class="pln">,
+ line/.style </span><span class="pun">={</span><span class="pln">draw, thick, -latex',shorten &gt;</span><span class="pun">=</span><span class="lit">2pt</span><span class="pun">}</span><span class="pln">,
+ cloud/.style </span><span class="pun">={</span><span class="pln">draw</span><span class="pun">=</span><span class="pln">red, thick, ellipse,fill</span><span class="pun">=</span><span class="pln">red!20,
+ minimum height</span><span class="pun">=</span><span class="lit">1em</span><span class="pun">}]</span><span class="pln">
+</span><span class="kwd">\draw</span><span class="pln"> </span><span class="pun">(</span><span class="pln">2.5,-2</span><span class="pun">)</span><span class="pln"> node</span><span class="pun">[</span><span class="pln">block</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">C</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">Subanta</span><span class="pun">}</span><span class="pln">;
+</span><span class="kwd">\path</span><span class="pln"> </span><span class="pun">(</span><span class="pln">0,-3</span><span class="pun">)</span><span class="pln"> node</span><span class="pun">[</span><span class="pln">block</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">G</span><span class="pun">){</span><span class="pln"> Pumlinga</span><span class="pun">}</span><span class="pln">
+      </span><span class="pun">(</span><span class="pln">0,-4</span><span class="pun">)</span><span class="pln"> node</span><span class="pun">[</span><span class="pln">block</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">H</span><span class="pun">){</span><span class="pln"> Strilinga</span><span class="pun">}</span><span class="pln">
+      </span><span class="pun">(</span><span class="pln">0,-5</span><span class="pun">)</span><span class="pln"> node</span><span class="pun">[</span><span class="pln">block</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">I</span><span class="pun">){</span><span class="pln"> Napumsaka</span><span class="pun">}</span><span class="pln">
+      </span><span class="pun">(</span><span class="pln">5,-3</span><span class="pun">)</span><span class="pln"> node</span><span class="pun">[</span><span class="pln">block</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">J</span><span class="pun">){</span><span class="pln"> Pumlinga</span><span class="pun">}</span><span class="pln">
+      </span><span class="pun">(</span><span class="pln">5,-4</span><span class="pun">)</span><span class="pln"> node</span><span class="pun">[</span><span class="pln">block</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">K</span><span class="pun">){</span><span class="pln"> Strilinga</span><span class="pun">}</span><span class="pln">
+      </span><span class="pun">(</span><span class="pln">5,-5</span><span class="pun">)</span><span class="pln"> node</span><span class="pun">[</span><span class="pln">block</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">L</span><span class="pun">){</span><span class="pln"> Napumsaka</span><span class="pun">}</span><span class="pln">;
+</span><span class="kwd">\draw</span><span class="pln"> </span><span class="pun">(</span><span class="pln">C.south</span><span class="pun">)</span><span class="pln"> -- ++</span><span class="pun">(</span><span class="pln">0,-0.25</span><span class="pun">)</span><span class="pln"> coordinate </span><span class="pun">(</span><span class="pln">linga</span><span class="pun">)</span><span class="pln">;
+</span><span class="kwd">\draw</span><span class="pln"> </span><span class="pun">(</span><span class="pln">linga</span><span class="pun">)</span><span class="pln"> -- ++</span><span class="pun">(</span><span class="pln">-1,0</span><span class="pun">)</span><span class="pln"> coordinate </span><span class="pun">(</span><span class="pln">ling</span><span class="pun">)</span><span class="pln">;
+</span><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">-latex</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">ling</span><span class="pun">)</span><span class="pln"> |- </span><span class="pun">(</span><span class="pln">G.east</span><span class="pun">)</span><span class="pln">;
+</span><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">-latex</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">ling</span><span class="pun">)</span><span class="pln"> |- </span><span class="pun">(</span><span class="pln">H.east</span><span class="pun">)</span><span class="pln">;
+</span><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">-latex</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">ling</span><span class="pun">)</span><span class="pln"> |- </span><span class="pun">(</span><span class="pln">I.east</span><span class="pun">)</span><span class="pln">;
+</span><span class="kwd">\draw</span><span class="pln"> </span><span class="pun">(</span><span class="pln">linga</span><span class="pun">)</span><span class="pln"> -- ++</span><span class="pun">(</span><span class="pln">1,0</span><span class="pun">)</span><span class="pln"> coordinate </span><span class="pun">(</span><span class="pln">hling</span><span class="pun">)</span><span class="pln">;
+</span><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">-latex</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">hling</span><span class="pun">)</span><span class="pln"> |- </span><span class="pun">(</span><span class="pln">J.west</span><span class="pun">)</span><span class="pln">;
+</span><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">-latex</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">hling</span><span class="pun">)</span><span class="pln"> |- </span><span class="pun">(</span><span class="pln">K.west</span><span class="pun">)</span><span class="pln">;
+</span><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">-latex</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">hling</span><span class="pun">)</span><span class="pln"> |- </span><span class="pun">(</span><span class="pln">L.west</span><span class="pun">)</span><span class="pln">;
+
+</span><span class="kwd">\node</span><span class="pun">[</span><span class="pln">draw</span><span class="pun">=</span><span class="pln">red, fit</span><span class="pun">=(</span><span class="pln">I</span><span class="pun">)</span><span class="pln"> </span><span class="pun">(</span><span class="pln">L</span><span class="pun">)](</span><span class="pln">FIt1</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{}</span><span class="pln">;
+</span><span class="kwd">\node</span><span class="pun">[</span><span class="pln">ellipse,draw</span><span class="pun">=</span><span class="pln">green, fit</span><span class="pun">=(</span><span class="pln">J</span><span class="pun">)</span><span class="pln"> </span><span class="pun">(</span><span class="pln">L</span><span class="pun">)</span><span class="pln">,inner sep</span><span class="pun">=</span><span class="lit">3mm</span><span class="pun">](</span><span class="pln">FIt2</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{}</span><span class="pln">;
+
+</span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">tikzpicture</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">center</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\caption</span><span class="pun">{</span><span class="pln">Summary of Linga </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">\label</span><span class="pun">{</span><span class="pln">linga</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">figure</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">document</span><span class="pun">}</span><span class="pln">`</span><span class="kwd">\documentclass</span><span class="pun">{</span><span class="pln">article</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\usepackage</span><span class="pun">{</span><span class="pln">tikz</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\usetikzlibrary</span><span class="pun">{</span><span class="pln">shapes,fit</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">document</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">figure</span><span class="pun">}[</span><span class="pln">!htb</span><span class="pun">]</span><span class="pln">
+</span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">center</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">tikzpicture</span><span class="pun">}</span><span class="pln">
+</span><span class="pun">[</span><span class="pln">auto,
+ block/.style </span><span class="pun">={</span><span class="pln">rectangle, draw</span><span class="pun">=</span><span class="pln">blue, thick, fill</span><span class="pun">=</span><span class="pln">blue!20, text width</span><span class="pun">=</span><span class="lit">5em</span><span class="pln">,align</span><span class="pun">=</span><span class="pln">center, rounded corners, minimum height</span><span class="pun">=</span><span class="lit">2em</span><span class="pun">}</span><span class="pln">,
+ block1/.style </span><span class="pun">={</span><span class="pln">rectangle, draw</span><span class="pun">=</span><span class="pln">blue, thick, fill</span><span class="pun">=</span><span class="pln">blue!20, text width</span><span class="pun">=</span><span class="lit">5em</span><span class="pln">,align</span><span class="pun">=</span><span class="pln">center, rounded corners, minimum height</span><span class="pun">=</span><span class="lit">2em</span><span class="pun">}</span><span class="pln">,
+ line/.style </span><span class="pun">={</span><span class="pln">draw, thick, -latex',shorten &gt;</span><span class="pun">=</span><span class="lit">2pt</span><span class="pun">}</span><span class="pln">,
+ cloud/.style </span><span class="pun">={</span><span class="pln">draw</span><span class="pun">=</span><span class="pln">red, thick, ellipse,fill</span><span class="pun">=</span><span class="pln">red!20,
+ minimum height</span><span class="pun">=</span><span class="lit">1em</span><span class="pun">}]</span><span class="pln">
+</span><span class="kwd">\draw</span><span class="pln"> </span><span class="pun">(</span><span class="pln">2.5,-2</span><span class="pun">)</span><span class="pln"> node</span><span class="pun">[</span><span class="pln">block</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">C</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">Subanta</span><span class="pun">}</span><span class="pln">;
+</span><span class="kwd">\path</span><span class="pln"> </span><span class="pun">(</span><span class="pln">0,-3</span><span class="pun">)</span><span class="pln"> node</span><span class="pun">[</span><span class="pln">block</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">G</span><span class="pun">){</span><span class="pln"> Pumlinga</span><span class="pun">}</span><span class="pln">
+      </span><span class="pun">(</span><span class="pln">0,-4</span><span class="pun">)</span><span class="pln"> node</span><span class="pun">[</span><span class="pln">block</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">H</span><span class="pun">){</span><span class="pln"> Strilinga</span><span class="pun">}</span><span class="pln">
+      </span><span class="pun">(</span><span class="pln">0,-5</span><span class="pun">)</span><span class="pln"> node</span><span class="pun">[</span><span class="pln">block</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">I</span><span class="pun">){</span><span class="pln"> Napumsaka</span><span class="pun">}</span><span class="pln">
+      </span><span class="pun">(</span><span class="pln">5,-3</span><span class="pun">)</span><span class="pln"> node</span><span class="pun">[</span><span class="pln">block</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">J</span><span class="pun">){</span><span class="pln"> Pumlinga</span><span class="pun">}</span><span class="pln">
+      </span><span class="pun">(</span><span class="pln">5,-4</span><span class="pun">)</span><span class="pln"> node</span><span class="pun">[</span><span class="pln">block</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">K</span><span class="pun">){</span><span class="pln"> Strilinga</span><span class="pun">}</span><span class="pln">
+      </span><span class="pun">(</span><span class="pln">5,-5</span><span class="pun">)</span><span class="pln"> node</span><span class="pun">[</span><span class="pln">block</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">L</span><span class="pun">){</span><span class="pln"> Napumsaka</span><span class="pun">}</span><span class="pln">;
+</span><span class="kwd">\draw</span><span class="pln"> </span><span class="pun">(</span><span class="pln">C.south</span><span class="pun">)</span><span class="pln"> -- ++</span><span class="pun">(</span><span class="pln">0,-0.25</span><span class="pun">)</span><span class="pln"> coordinate </span><span class="pun">(</span><span class="pln">linga</span><span class="pun">)</span><span class="pln">;
+</span><span class="kwd">\draw</span><span class="pln"> </span><span class="pun">(</span><span class="pln">linga</span><span class="pun">)</span><span class="pln"> -- ++</span><span class="pun">(</span><span class="pln">-1,0</span><span class="pun">)</span><span class="pln"> coordinate </span><span class="pun">(</span><span class="pln">ling</span><span class="pun">)</span><span class="pln">;
+</span><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">-latex</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">ling</span><span class="pun">)</span><span class="pln"> |- </span><span class="pun">(</span><span class="pln">G.east</span><span class="pun">)</span><span class="pln">;
+</span><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">-latex</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">ling</span><span class="pun">)</span><span class="pln"> |- </span><span class="pun">(</span><span class="pln">H.east</span><span class="pun">)</span><span class="pln">;
+</span><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">-latex</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">ling</span><span class="pun">)</span><span class="pln"> |- </span><span class="pun">(</span><span class="pln">I.east</span><span class="pun">)</span><span class="pln">;
+</span><span class="kwd">\draw</span><span class="pln"> </span><span class="pun">(</span><span class="pln">linga</span><span class="pun">)</span><span class="pln"> -- ++</span><span class="pun">(</span><span class="pln">1,0</span><span class="pun">)</span><span class="pln"> coordinate </span><span class="pun">(</span><span class="pln">hling</span><span class="pun">)</span><span class="pln">;
+</span><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">-latex</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">hling</span><span class="pun">)</span><span class="pln"> |- </span><span class="pun">(</span><span class="pln">J.west</span><span class="pun">)</span><span class="pln">;
+</span><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">-latex</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">hling</span><span class="pun">)</span><span class="pln"> |- </span><span class="pun">(</span><span class="pln">K.west</span><span class="pun">)</span><span class="pln">;
+</span><span class="kwd">\draw</span><span class="pun">[</span><span class="pln">-latex</span><span class="pun">]</span><span class="pln"> </span><span class="pun">(</span><span class="pln">hling</span><span class="pun">)</span><span class="pln"> |- </span><span class="pun">(</span><span class="pln">L.west</span><span class="pun">)</span><span class="pln">;
+
+</span><span class="com">%Two nodes fitting your selected ones</span><span class="pln">
+</span><span class="kwd">\node</span><span class="pun">[</span><span class="pln">draw</span><span class="pun">=</span><span class="pln">red, fit</span><span class="pun">=(</span><span class="pln">I</span><span class="pun">)</span><span class="pln"> </span><span class="pun">(</span><span class="pln">L</span><span class="pun">)](</span><span class="pln">FIt1</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{}</span><span class="pln">;
+</span><span class="kwd">\node</span><span class="pun">[</span><span class="pln">ellipse,draw</span><span class="pun">=</span><span class="pln">green, fit</span><span class="pun">=(</span><span class="pln">J</span><span class="pun">)</span><span class="pln"> </span><span class="pun">(</span><span class="pln">L</span><span class="pun">)](</span><span class="pln">FIt2</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{}</span><span class="pln">;
+
+</span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">tikzpicture</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">center</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\caption</span><span class="pun">{</span><span class="pln">Summary of Linga </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">\label</span><span class="pun">{</span><span class="pln">linga</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">figure</span><span class="pun">}</span><span class="pln">
+</span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">document</span><span class="pun">}</span></code></pre>
+
+<p>and the result</p>
+
+<p><img src="Tikz%20-%20How%20to%20Draw%20Boxes%20Around%20Set%20of%20Nodes%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/RD4F3.png" alt="alt text"></p>
+
+<p>Hope it helps.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://tex.stackexchange.com/a/8934" title="short permalink to this answer" class="short-link" id="link-post-8934">share</a><span class="lsep">|</span><a href="http://tex.stackexchange.com/posts/8934/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://tex.stackexchange.com/posts/8934/revisions" title="show all edits to this post">edited <span title="2011-01-14 09:41:31Z" class="relativetime">Jan 14 '11 at 9:41</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2011-01-14 09:29:23Z" class="relativetime">Jan 14 '11 at 9:29</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://tex.stackexchange.com/users/1952/ignasi"><div class="gravatar-wrapper-32"><img src="Tikz%20-%20How%20to%20Draw%20Boxes%20Around%20Set%20of%20Nodes%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/d7cae235208c9eeacfc3168da4439295.jpeg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://tex.stackexchange.com/users/1952/ignasi">Ignasi</a><br>
+        <span class="reputation-score" title="reputation score 23259" dir="ltr">23.3k</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="36 silver badges"><span class="badge2"></span><span class="badgecount">36</span></span><span title="80 bronze badges"><span class="badge3"></span><span class="badgecount">80</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-8934" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-15038" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Please don't sign your posts with your name: It anyway appears in the lower right corner.</span>
+                –&nbsp;
+                    <a href="http://tex.stackexchange.com/users/1235/hendrik-vogt" title="21373 reputation" class="comment-user">Hendrik Vogt</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment15038_8934"><span title="2011-01-14 09:34:30Z" class="relativetime-clean">Jan 14 '11 at 9:34</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-15039" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@Hendrik: OK! I've deleted my name.</span>
+                –&nbsp;
+                    <a href="http://tex.stackexchange.com/users/1952/ignasi" title="23259 reputation" class="comment-user">Ignasi</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment15039_8934"><span title="2011-01-14 09:42:32Z" class="relativetime-clean">Jan 14 '11 at 9:42</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-15056" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@all- your help is greatly appreciated.</span>
+                –&nbsp;
+                    <a href="http://tex.stackexchange.com/users/2036/aku" title="2806 reputation" class="comment-user owner">Aku</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment15056_8934"><span title="2011-01-14 12:41:01Z" class="relativetime-clean">Jan 14 '11 at 12:41</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+            <div id="comments-link-8934" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span><a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+            </div>
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="/questions/8890/answer/submit" method="post" class="post-form">
+						    <input id="post-id" value="8890" type="hidden">
+                            <input id="qualityBanWarningShown" name="qualityBanWarningShown" value="false" type="hidden">
+							<h2 class="space">Your Answer</h2>
+
+
+
+        
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+         
+        prepareEditor({
+            heartbeatType: 'answer',
+            bindNavPrevention: true,
+            postfix: "",
+            onDemand: true,
+            discardSelector: ".discard-answer"
+            ,immediatelyShowMarkdownHelp:true
+        });
+        
+
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li style="left: 0px;" class="wmd-button" id="wmd-bold-button"><span style="background-position: 0px -20px;"></span></li><li style="left: 25px;" class="wmd-button" id="wmd-italic-button"><span style="background-position: -20px -20px;"></span></li><li style="left: 50px;" class="wmd-spacer" id="wmd-spacer1"><span style="background-position: -40px -20px;"></span></li><li style="left: 75px;" class="wmd-button" id="wmd-link-button"><span style="background-position: -40px -20px;"></span></li><li style="left: 100px;" class="wmd-button" id="wmd-quote-button"><span style="background-position: -60px -20px;"></span></li><li style="left: 125px;" class="wmd-button" id="wmd-code-button"><span style="background-position: -80px -20px;"></span></li><li style="left: 150px;" class="wmd-button" id="wmd-image-button"><span style="background-position: -100px -20px;"></span></li><li style="left: 175px;" class="wmd-spacer" id="wmd-spacer2"><span style="background-position: -120px -20px;"></span></li><li style="left: 200px;" class="wmd-button" id="wmd-olist-button"><span style="background-position: -120px -20px;"></span></li><li style="left: 225px;" class="wmd-button" id="wmd-ulist-button"><span style="background-position: -140px -20px;"></span></li><li style="left: 250px;" class="wmd-button" id="wmd-heading-button"><span style="background-position: -160px -20px;"></span></li><li style="left: 275px;" class="wmd-button" id="wmd-hr-button"><span style="background-position: -180px -20px;"></span></li><li style="left: 300px;" class="wmd-spacer" id="wmd-spacer3"><span style="background-position: -200px -20px;"></span></li><li style="left: 325px;" class="wmd-button" id="wmd-undo-button"><span style="background-position: -200px -20px;"></span></li><li style="left: 350px;" class="wmd-button" id="wmd-redo-button"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="d7e0a4606f9b482cc0aa2ea4db317c7e" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+</div>
+							<div style="position: relative;">
+								
+            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://tex.stackexchange.com/users/login?returnurl=%2fquestions%2f8890%2ftikz-how-to-draw-boxes-around-set-of-nodes%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Stack Exchange</span></p>
+                        </div>
+                    </div>
+                    <input name="manual-openid" class="manual-openid" type="hidden">
+                    <input name="use-facebook" class="use-facebook" value="false" type="hidden">
+                    <input name="use-google-oauth2" class="use-google-oauth2" value="false" type="hidden">
+                    <input class="submit-openid" value="Submit" style="display:none" type="button">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" size="30" maxlength="100" tabindex="106" type="text">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', '%2fquestions%2f8890%2ftikz-how-to-draw-boxes-around-set-of-nodes%23new-answer');
+                    }
+                );
+            </script>
+            <noscript>
+                        <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+            </noscript>
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" value="Post Your Answer" tabindex="110" type="submit">
+									<a href="#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input name="legalLinksShown" value="1" type="hidden">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://tex.stackexchange.com/questions/tagged/tikz-pgf" class="post-tag" title="show questions tagged 'tikz-pgf'" rel="tag">tikz-pgf</a> <a href="http://tex.stackexchange.com/questions/tagged/nodes" class="post-tag" title="show questions tagged 'nodes'" rel="tag">nodes</a> <a href="http://tex.stackexchange.com/questions/tagged/node-connections" class="post-tag" title="show questions tagged 'node-connections'" rel="tag">node-connections</a>  or <a href="http://tex.stackexchange.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2011-01-13 17:03:42Z"><b>3 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>13233 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://tex.stackexchange.com/questions/8890/tikz-how-to-draw-boxes-around-set-of-nodes?lastactivity" class="lastactivity-link" title="2012-06-14 21:25:08Z">2 years ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+			<div class="module community-bulletin" data-tracker="cb=1">
+    <div class="related">
+                <div class="bulletin-title">
+                    Upcoming Events
+                </div>
+                <hr>
+    <div class="spacer">
+        
+    <div class="bulletin-item-type"><a href="http://chat.stackexchange.com/rooms/41/tex-latex-and-friends?cb=1" class="question-hyperlink"><div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div></a></div>
+    <div class="bulletin-item-content">
+        <a href="http://chat.stackexchange.com/rooms/41/tex-latex-and-friends?cb=1" class="question-hyperlink">Answer the Unanswered</a>
+        <div><span title="2014-09-06 21:00:00Z" class="relativetime">tomorrow</span></div>
+    </div>
+    <br class="cbt">
+</div>
+    </div>
+</div>			
+			<style type="text/css">
+    .ads { margin-left: 60px; }
+    .ad-container { width: 220px; height: 250px; margin-right: 20px; margin-bottom: 20px; }
+    .ad-container .ad { height: 250px; }
+    .ad-container .footer-container { overflow: hidden; height: 30px; position: relative; top: -30px; }
+    .ad-container .footer-container .footer { font-family: Arial,Helvetic,Sans-Serif; font-size: 12px; text-align: center; padding-top: 9px; background-color: #000; color: #EFF; opacity: 0.9; filter: alpha(opacity=90); top: 30px; height: 30px; position: relative; }
+    .ad-container a:hover { text-decoration: underline; }
+    #adzerk2 { height: 250px; }
+</style>
+<script>
+    StackExchange.ready(function () {
+        $(".ad-container").hover(
+            function () {
+                $(".ad-container .footer-container .footer").stop(true, true).animate({ top: "0px" }, "fast");
+            },
+            function () {
+                $(".ad-container .footer-container .footer").animate({ top: "30px" }, "fast");
+            });
+    });
+</script>
+    <div class="ad-container">    
+        <div class="ad">    
+        <a href="http://meta.tex.stackexchange.com/ads/ct/4017?url=http%3a%2f%2fwww.latexsearch.com%2f" rel="nofollow" target="_blank"><img src="Tikz%20-%20How%20to%20Draw%20Boxes%20Around%20Set%20of%20Nodes%20-%20TeX%20-%20LaTeX%20Stack%20Exchange_files/9NapU.png" alt="LaTeX Search" title="LaTeX Search" height="250" width="220"></a>
+        </div>
+        <div class="footer-container">
+            <div class="footer">
+                11 votes · <a href="http://meta.tex.stackexchange.com/questions/4009#4017" title="click to comment on this ad" target="_blank">comment</a> · <a href="http://meta.tex.stackexchange.com/ads/display/4009" target="_blank">stats</a>
+            </div>
+        </div>
+    </div>
+			  
+    
+            
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://tex.stackexchange.com/q/5114?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">11
+    </div>
+</a><a href="http://tex.stackexchange.com/questions/5114/path-from-and-to-same-node-in-tikz-flowchart?rq=1" class="question-hyperlink">Path From and To Same Node in tikz Flowchart</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://tex.stackexchange.com/q/8842?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">11
+    </div>
+</a><a href="http://tex.stackexchange.com/questions/8842/tikz-how-to-connect-nodes?rq=1" class="question-hyperlink">Tikz - How to connect nodes</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://tex.stackexchange.com/q/14769?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">33
+    </div>
+</a><a href="http://tex.stackexchange.com/questions/14769/add-more-anchors-to-standard-tikz-nodes?rq=1" class="question-hyperlink">Add more anchors to standard TikZ nodes</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://tex.stackexchange.com/q/40848?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">5
+    </div>
+</a><a href="http://tex.stackexchange.com/questions/40848/edit-tikz-chains-to-add-labels-and-maintain-the-option-to-add-individual-styles?rq=1" class="question-hyperlink">Edit TikZ Chains to add labels and maintain the option to add individual styles</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://tex.stackexchange.com/q/53818?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">10
+    </div>
+</a><a href="http://tex.stackexchange.com/questions/53818/how-to-position-nodes-around-another-node-in-tikz?rq=1" class="question-hyperlink">How to position nodes around another node in TiKZ?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://tex.stackexchange.com/q/61805?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">9
+    </div>
+</a><a href="http://tex.stackexchange.com/questions/61805/tikz-using-loop-to-draw-grid-of-nodes?rq=1" class="question-hyperlink">TikZ: Using Loop to Draw Grid of Nodes</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://tex.stackexchange.com/q/82901?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">4
+    </div>
+</a><a href="http://tex.stackexchange.com/questions/82901/how-do-i-layer-nodes-boxes-in-a-drawing?rq=1" class="question-hyperlink">How do I layer nodes/boxes in a drawing?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://tex.stackexchange.com/q/105876?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">3
+    </div>
+</a><a href="http://tex.stackexchange.com/questions/105876/drawing-a-rectangular-shape-with-a-border-around-it-in-tikz?rq=1" class="question-hyperlink">Drawing a rectangular shape with a border around it in TikZ</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://tex.stackexchange.com/q/144983?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">5
+    </div>
+</a><a href="http://tex.stackexchange.com/questions/144983/how-can-i-create-this-kind-of-flow-chart?rq=1" class="question-hyperlink">How can I create this kind of flow chart?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://tex.stackexchange.com/q/171899?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">7
+    </div>
+</a><a href="http://tex.stackexchange.com/questions/171899/how-to-outline-a-path-in-tikz?rq=1" class="question-hyperlink">How to “outline” a path in TiKZ?</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/37217/rosetta-stone-challenge-whats-average-anyways" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Rosetta Stone Challenge: What's Average Anyways?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/194769/is-there-a-phrase-or-idiom-for-being-defeated-by-future-problems" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there a phrase or idiom for "being defeated by future problems"?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/199662/lower-case-first-character" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Lower case first character
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/133904/neutron-to-antiproton-decay" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Neutron to antiproton decay
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/199670/first-half-of-plots-is-missing" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    First half of plots is missing
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/25680461/variadic-template-pack-expansion" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Variadic template pack expansion
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/194684/why-can-we-say-an-american-but-not-a-british" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why can we say 'an American' but not 'a British'?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-gaming" title="Arqade"></div><a href="http://gaming.stackexchange.com/questions/183191/how-do-you-install-skins-on-steam" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:41 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do you install skins on Steam?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-movies" title="Movies &amp; TV Stack Exchange"></div><a href="http://movies.stackexchange.com/questions/24407/why-we-say-that-captain-america-is-the-first-avenger" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:367 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why we say that captain america is the first avenger?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/920101/a-circle-is-a-set-of-measure-zero-generalizations" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    A circle is a set of measure zero. Generalizations?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/36172/how-can-i-work-out-the-price-of-a-uk-bus-fare-online" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I work out the price of a UK bus fare online?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/28055/how-to-ensure-that-putting-a-products-photo-in-a-paper-does-not-violate-copyrig" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to ensure that putting a product's photo in a paper does not violate copyright?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/153885/how-to-configure-ruby-to-use-the-correct-gemset-or-ruby-verion-on-a-per-project" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to configure Ruby to use the correct gemset or Ruby verion on a per-project basis?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-aviation" title="Aviation Stack Exchange"></div><a href="http://aviation.stackexchange.com/questions/8471/why-are-the-lights-inside-commercial-airplanes-turned-off-during-take-off-and-la" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why are the lights inside commercial airplanes turned off during take off and landing?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="http://workplace.stackexchange.com/questions/33308/how-can-i-handle-a-situation-where-my-manager-is-verbally-abusing-someone-else" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I handle a situation where my manager is verbally abusing someone else?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/66782/what-is-tls-version-intolerance" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is 'TLS version intolerance'
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="http://superuser.com/questions/807346/what-does-fck-ram-memory-speed-stand-for" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What does fCK (RAM memory speed) stand for?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-sharepoint" title="SharePoint Stack Exchange"></div><a href="http://sharepoint.stackexchange.com/questions/114184/invite-external-users-gives-uls-error" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:232 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Invite External Users gives ULS error
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-ell" title="English Language Learners Stack Exchange"></div><a href="http://ell.stackexchange.com/questions/32789/will-you-still-love-me-when-im-no-longer-young-and-beautiful" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Will you still love me when I'm no longer young and beautiful?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-stats" title="Cross Validated"></div><a href="http://stats.stackexchange.com/questions/114428/how-do-you-interpret-a-significant-but-weak-correlation" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:65 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do you interpret a significant but weak correlation?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-wordpress" title="WordPress Development Stack Exchange"></div><a href="http://wordpress.stackexchange.com/questions/160279/does-wordpress-work-without-a-theme" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:110 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does WordPress work without a theme?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-gaming" title="Arqade"></div><a href="http://gaming.stackexchange.com/questions/183197/can-i-give-a-portal-key-to-another-player-in-ingress" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:41 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can I give a portal key to another player in Ingress?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-spanish" title="Spanish Language Stack Exchange"></div><a href="http://spanish.stackexchange.com/questions/8518/por-qu%c3%a9-se-usa-la-forma-t%c3%ba-en-publicidades-en-vez-de-usted" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:353 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    ¿Por qué se usa la forma "tú" en publicidades en vez de "usted"?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="http://codereview.stackexchange.com/questions/61994/simple-fizzbuzz" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Simple FizzBuzz
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://tex.stackexchange.com/feeds/question/8890" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/8890/ivc/15b7');});
+</script>
+<noscript>
+    <div><img src="/posts/8890/ivc/15b7" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">lang-tex</div></div>
+
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://tex.stackexchange.com/tour">tour</a>
+                    <a href="http://tex.stackexchange.com/help">help</a>
+                        <a href="http://tex.stackexchange.com/help/badges">badges</a>
+                    <a href="http://tex.blogoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackexchange.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick='StackExchange.switchMobile("on")'>mobile</a>
+                    <b><a href="http://tex.stackexchange.com/contact">contact us</a></b>
+                        <b><a href="http://meta.tex.stackexchange.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="professional system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems.">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="Information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (14)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (10)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2014 stack exchange inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2014.9.5.1816
+            </div>
+            
+        </div>
+    </div>
+    <noscript>
+        <div id="noscript-warning">TeX - LaTeX Stack Exchange works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-24', '.stackexchange.com');
+        
+        
+        ga('set', 'dimension2', '|tikz-pgf|nodes|node-connections|');         
+        ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>        
+    
+    
+</body></html>

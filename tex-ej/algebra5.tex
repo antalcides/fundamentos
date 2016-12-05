@@ -1,0 +1,150 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{algebra4.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Exponentes Racionales} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Polinomios} \\ \\ \\
+\end{tabular}
+\docLink{algebra6.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 2}}  {\large
+{\color{ azulc} FUNDAMENTOS DE ALGEBRA}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 2.5. }}
+{\normalsize {\color{naranja} Radicales}}
+
+\newline
+
+En algunas ocasiones es mas ventajoso expresar las cantidades en
+términos de radicales que en términos de exponentes racionales.
+Las leyes de los radicales se siguen inmediatamente de las leyes
+de los exponentes. Si $m$ y $n$ son enteros positivos y $a$ y $b$
+son números reales positivos, entonces
+
+\bigskip
+
+\begin{enumerate}
+\item $\sqrt[n]{ab}=\sqrt[n]{a}\sqrt[n]{b}$ \item
+$\sqrt[n]{\dfrac{a}{b}}=\dfrac{\sqrt[n]{a}}{\sqrt[n]{b}}$ \item
+$\sqrt[m]{\sqrt[n]{a}}=\sqrt[mn]{a}$
+\end{enumerate}
+
+\bigskip
+
+
+\textbf{Ejemplo 2.13. } \quad\begin{itemize} \item
+$\sqrt{180}=\sqrt{36\cdot 5}=\sqrt{36}\sqrt{5}=6\sqrt{5}$ \item
+$\sqrt[3]{\dfrac{250}{27}}=\dfrac{\sqrt[3]{250}}{\sqrt[3]{27}}=
+\dfrac{\sqrt[3]{125\cdot 2}}{3}= \dfrac{\sqrt[3]{125}\cdot
+\sqrt[3]{2}}{3}=\dfrac{5 \sqrt[3]{2}}{3}$ \item
+$\sqrt[6]{81}=\sqrt[3]{\sqrt{81}}=\sqrt[3]{9}$ \item Si $x$ es un
+número real, entonces $\sqrt{x^{2}}=\left| x\right|$ (Por qué?).
+\end{itemize}
+
+\bigskip
+
+Al simplificar un radical, lo hacemos de tal forma que no existan
+potencias $n$-ésimas de radicales cuyo índice es $n$, no se tengan
+fracciones bajo el signo de radical y los radicales tengan el
+índice más pequeño posible.
+
+\bigskip
+
+\textbf{Ejemplo 2.14. } \quad\begin{itemize} \item
+$\sqrt[4]{48x^{6}y^{9}}=\sqrt[4]{(16x^{4}y^{8})(3x^{2}y)}=
+\sqrt[4]{16x^{4}y^{8}}\sqrt[4]{3x^{2}y}=2xy^{2}\sqrt[4]{3x^{2}y}$
+\item
+$\sqrt[3]{\dfrac{x}{y^{2}}}=\dfrac{\sqrt[3]{x}}{\sqrt[3]{y^{2}}}=
+\dfrac{\sqrt[3]{x}\sqrt[3]{y}}{\sqrt[3]{y^{2}}\sqrt[3]{y}}=
+\dfrac{\sqrt[3]{xy}}{y}$
+\end{itemize}
+
+\bigskip
+
+En la simplificación de radicales generalmente es mas fácil
+trabajarlos como exponentes racionales
+
+\bigskip
+
+\textbf{Ejemplo 2.15. }
+\[\sqrt[4]{\dfrac{256a^{2}b^{4}}{c^{2}}}=\left(\dfrac{2^{8}a^{2}b^{4}}{c^{2}}\right)^{\frac{1}{4}}=\dfrac{2^{2}a^{\frac{1}{2}}b}{c^{\frac{1}{2}}}=\dfrac{4ba^{\frac{1}{2}}}{c^{\frac{1}{2}}}\cdot
+\dfrac{c^{\frac{1}{2}}}{c^{\frac{1}{2}}}=\dfrac{4ba^{\frac{1}{2}}c^{\frac{1}{2}}}{c}=\dfrac{4b}{c}\sqrt{ac}\]
+
+\bigskip
+
+Para terminar, queremos señalar un error muy frecuente en el uso
+de los radicales. Este error consiste en creer que se tiene la
+siguiente fórmula \textbf{incorrecta}
+
+\bigskip
+
+\[\sqrt[n]{a\pm b}=\sqrt[n]{a}\pm \sqrt[n]{b}\]
+
+\bigskip
+
+\textbf{Ejemplo 2.16. } \quad\begin{itemize} \item
+$\sqrt{9+16}\neq\sqrt{9}+\sqrt{16}$, pues
+$\sqrt{9+16}=\sqrt{25}=5$ y $\sqrt{9}+\sqrt{16}=3+4=7$. \item
+$\sqrt[3]{4^{3}-2^{3}}\neq \sqrt[3]{4^{3}}-\sqrt[3]{2^{3}}$, pues
+$\sqrt[3]{4^{3}-2^{3}}=\sqrt[3]{56}$ y
+$\sqrt[3]{4^{3}}-\sqrt[3]{2^{3}}=4-2=2$.
+\end{itemize}
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{algebra4.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Exponentes Racionales} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Polinomios} \\ \\ \\
+\end{tabular}
+\docLink{algebra6.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

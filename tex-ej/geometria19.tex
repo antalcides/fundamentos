@@ -1,0 +1,342 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{geometria18.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color {darkgray} {\small Teorema de Pitágoras}} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color {darkgray} {\small Triángulos Semejantes}} \\ \\ \\
+\end{tabular}
+\docLink{geometria21.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 3}}  {\large
+{\color{ azulc} MODULO DE GEOMETRÍA}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 3.16. }}
+{\normalsize {\color{naranja} La Circunferencia y el Círculo}}
+
+\newline
+
+\textbf{Definición 3.16.1. } Una circunferencia es el conjunto de
+todos los puntos de un plano que se encuentran a una distancia
+fija, su radio, desde un cierto punto, su centro. O de manera más
+precisa una curva plana y cerrada cuyos puntos equidistan de un
+punto interior llamado centro.
+
+\bigskip
+
+\[
+\includegraphics{imagenes/circunferencia.gif}
+\]
+
+\bigskip
+
+La circunferencia con centro en $O$ y radio $r$ es el conjunto de
+todos los puntos en el plano con $PO=r$.
+
+\bigskip
+
+El radio es pues la distancia del centro a un punto sobre la
+circunferencia y el diámetro es la longitud del segmento que une
+dos puntos sobre la circunferencia y contiene al centro, la
+longitud de este segmento es entonces el doble del radio $(2r)$.
+
+\bigskip
+
+Se hace también referencia al círculo, superficie plana limitada
+por la circunferencia. Incluye los puntos que están sobre la
+circunferencia y los puntos que están en el interior, es decir
+todos los puntos cuya distancia al centro es menor o igual que el
+radio $r$. En la figura aparece sombreado el interior.
+
+\bigskip
+
+\[
+\includegraphics{imagenes/circunferencia1.gif}
+\]
+
+\bigskip
+
+Un segmento que conecta dos puntos sobre la circunferencia es
+llamado una {\bf cuerda} (En la figura  $\overline{AB}$  es una
+cuerda). Desde luego el diámetro es una cuerda, pero no toda
+cuerda pasa por el centro.
+
+\bigskip
+
+\[
+\begin{array}{cc}
+\includegraphics{imagenes/circunferencia2.gif} & \includegraphics{imagenes/circunferencia3.gif}
+\end{array}
+\]
+
+\bigskip
+
+Una tangente es una recta que tiene un solo punto en común con la
+circunferencia y una secante es una recta que corta la
+circunferencia en dos puntos.
+
+\bigskip
+
+Un sector circular es la parte del círculo comprendida entre dos
+radios y el arco interceptado por ellos. En la figura $ORS$.
+
+\bigskip
+
+\[
+\includegraphics{imagenes/circunferencia4.gif}
+
+\]
+
+\bigskip
+
+Y un {\bf ángulo central} es el que tiene su vértice en el centro
+de la circunferencia y cuyos lados son radios,  $\angle BOR$  en
+la figura.
+
+\bigskip
+
+\[
+\includegraphics{imagenes/circunferencia5.gif}
+\]
+
+\bigskip
+
+\colorbox{naranja}{{\color{white} \normalsize 3.19.1. }}
+{\normalsize {\color{naranja} El Perímetro de la Circunferencia}}
+
+\bigskip
+
+Seguramente usted ya ha realizado en el colegio una actividad como
+la siguiente
+
+\bigskip
+
+\begin{itemize}
+\item Construir circunferencias de diferentes radios
+$3,4,5,6,\ldots,10$ por ejemplo. \item Medir con una cuerda la
+longitud de cada una de estas circunferencias que llamaremos $C$.
+\item Calcular la razón
+\[\frac{\text{Longitud de la
+circunferencia}}{\text{diámetro}}=\frac{C}{d}.\]
+\end{itemize}
+
+\bigskip
+
+En esta actividad podemos observar que esta razón, en todos los
+casos es muy próxima a $3.14$. Esta observación se puso ya de
+manifiesto en culturas muy antiguas como la egipcia y la
+babilónica a las que nos referimos en la introducción.
+
+\bigskip
+
+Realmente la razón es constante, es el número irracional  $\pi$,
+que tiene un expresión decimal infinita no periódica.
+
+\bigskip
+
+Como curiosidad las primeras 50 cifras decimales de este número
+son:
+
+\bigskip
+
+\[3.14159265358979323846264338327950288419716939937510\ldots\]
+
+\bigskip
+
+Una buena aproximación la usaban ya los Babilonios, simplemente la
+fracción $\frac{22}{7}$. En muchas de las aplicaciones que
+nosotros trabajamos basta tomar $3.14$.
+
+\bigskip
+
+De la mencionada razón es posible obtener una expresión para el
+perímetro o longitud de la circunferencia, que es simplemente:
+
+\bigskip
+
+\[C=\pi d  \quad\text{o}\quad C=2\pi r\]
+
+\bigskip
+
+\textbf{nota} La longitud de un arco se obtiene dividiendo la
+circunferencia entre 360 y multiplicando el cociente por el número
+de grados del arco.
+
+\bigskip
+
+La longitud de un arco de 1º es $\frac{2\pi r}{360}$. Por tanto la
+longitud $l$ del arco de $nº$ es
+
+\bigskip
+
+\[
+$l= \frac{2\pi r}{360}\times n = \frac{2\pi n r}{360}$
+\]
+
+\bigskip
+
+\textbf{Ejemplo 3.8. } En la circunferencia de la figura
+$OB=1.3cm$ y $m\angle AOB=80°$. Encontrar la longitud del arco
+$\begin{array}{c}
+  \frown \\
+  AB
+\end{array}$
+
+\bigskip
+
+\[
+\includegraphics{imagenes/circunferencia6.gif}
+\]
+
+\bigskip
+
+\emph{Solución: } La longitud de la circunferencia puede ser vista
+como la longitud del arco de un ángulo de $360º$; además la medida
+en grados de un arco nos dice qué porción de la circunferencia es
+cubierta por el arco. Por tanto para calcular la longitud de un
+arco basta conocer el radio de la circunferencia y la medida en
+grados del arco.
+
+\bigskip
+
+Como $m\angle AOB=80°$, entonces la medida del arco, $m
+\begin{array}{c}
+  \frown \\
+  AB
+\end{array}$. De donde $\begin{array}{c}
+  \frown \\
+  AB
+\end{array}$, cubre $\dfrac{80º}{360º}$ del total de la circunferencia.
+
+\bigskip
+
+Por tanto,
+
+\bigskip
+
+\begin{array}{rl}
+\text{longitud de $AB$}&=\frac{80º}{360º} \times C \\
+&=\frac{80º}{360º}\times(2\pi \ r ) \\
+&=\frac{80º}{360º}\times(2\pi )\times 1.3 \\
+&=\frac{208\pi }{360º}cm \\
+&=1.8 cm
+\end{array}
+
+\bigskip
+
+\colorbox{naranja}{{\color{white} \normalsize 3.16.2. }}
+{\normalsize {\color{naranja} Área del Círculo}}
+
+\newline
+
+La circunferencia no es un polígono pero puede ser aproximada por
+polígonos tanto como uno lo desee. Para determinar el área de la
+región interior podemos intentar recubrirla como lo hacíamos con
+los polígonos, pero resulta mas fácil usar sectores circulares
+para recubrirla. (Un sector es una región limitada por dos radios
+y un arco de la circunferencia).
+
+Observa la figura,
+
+
+\bigskip
+
+\begin{center}
+\includegraphics{imagenes/area_circulo.gif}
+
+\bigskip
+
+\includegraphics{imagenes/area_circulo1.gif}
+\end{center}
+
+\bigskip
+
+Las áreas se aproximan más y más al área del círculo cuando el
+número de subdivisiones de la circunferencia es cada vez mayor.
+Desde esta idea se puede concluir que el área $A$ del círculo de
+radio $r$ es:
+
+\[A=\pi {r}^{{2}}\]
+
+\textbf{Ejemplo 3.9. } Encontrar el área del sector circular
+sombreado en la figura.
+
+\bigskip
+
+\[
+\includegraphics{imagenes/circunferencia7.gif}
+\]
+
+\bigskip
+
+\emph{Solución}:
+
+$m\angle AOB=30°$, por tanto el sector sombreado es
+$\frac{30}{360}$ del área del círculo. Por tanto:
+
+\[\text{Área del sector sombreado} =  \frac{30}{360}* \text{área del
+círculo}\]
+
+\begin{align*}
+\text{Área del sector sombreado} &=  \frac{1}{12}* \pi
+*(15{)}^{{2}}\\
+&= \frac{225}{12} \pi \\
+&= 58.90 \text{ unidades cuadradas.}
+\end{align*}
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{geometria18.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color {darkgray} {\small Teorema de Pitágoras}} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color {darkgray} {\small Triángulos Semejantes}} \\ \\ \\
+\end{tabular}
+\docLink{geometria21.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

@@ -1,0 +1,204 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{04_01.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Plano Cartesiano} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Funciones y sus Gráficas} \\ \\ \\
+\end{tabular}
+\docLink{04_03.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 4}}  {\large
+{\color{ azulc} FUNCIONES}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 4.2. }}
+{\normalsize {\color{naranja} Fórmula de la Distancia}}
+
+\newline
+
+Disponiendo de un sistema de coordenadas se puede, mediante el uso
+del teorema de Pitágoras, hallar la distancia entre dos puntos del
+plano.
+
+\bigskip
+
+Consideremos los puntos $P(x_{1},y_{1})$ y $Q(x_{2},y_{2})$. La
+distancia entre ellos es la hipotenusa del triángulo rectángulo
+cuyos vértices son $P(x_{1},y_{1})$, $Q(x_{2},y_{2})$ y
+$R(x_{2},y_{1})$. En el vértice $R$ está el ángulo recto.
+
+\bigskip
+
+\begin{center}
+\includegraphics{imagenes/4_1.gif}
+\end{center}
+
+\bigskip
+
+Entonces, la distancia entre $P$ y $Q$ es
+
+\bigskip
+
+\[d(P,Q)=\sqrt{(x_{1}-x_{2})^{2}+(y_{2}-y_{1})^{2}}\]
+
+\bigskip
+
+Note que, por tratarse de cuadrados de números reales,
+
+\bigskip
+
+\[(x_{2}-x_{1})^{2}=(x_{1}-x_{2})^{2} \quad\text{y}\quad (y_{2}-y_{1})^{2}=(y_{1}-y_{2})^{2}\]
+
+\bigskip
+
+así que $d(P,Q)=d(Q,P)$.
+
+\bigskip
+
+Otras {\bf propiedades de la distancia} son las siguientes:
+
+\bigskip
+
+\begin{enumerate}
+\item $d(P,Q)\geq 0$ y $d(P,Q)=0$ si y solo si $P=Q$ \item Si $R$
+es cualquier otro punto del plano $d(P,Q)\leq d(P,R)+d(R,Q)$. Esta
+es la desigualdad triangular. La igualdad se presenta cuando los
+puntos están alineados
+\end{enumerate}
+
+\bigskip
+
+\begin{center}
+\includegraphics{imagenes/4_2.gif}
+\end{center}
+
+\bigskip
+
+\textbf{Ejemplo 4.1. } \quad\begin{enumerate}
+
+\bigskip
+
+\item \quad
+\begin{enumerate}
+\item Si $P(-1,3)$ y $Q(2,-1)$ entonces
+\[d(P,Q)=\sqrt{(2-(-1))^{2}+(-1-3)^{2}}=\sqrt{9+16}=\sqrt{25}=5.\]
+\item Si $P\left(\sqrt{2},\sqrt{3}\right)$ y
+$Q\left(-\sqrt{3},\sqrt{2}\right)$, entonces
+\begin{align*}
+d(P,Q)&=\sqrt{\left(-\sqrt{3}-\sqrt{2}\right)^{2}+\left(\sqrt{2}-\sqrt{3}\right)^{2}}\\
+&=\sqrt{3+2\sqrt{6}+2+2-2\sqrt{6}+3}\\
+&=\sqrt{10}
+\end{align*}
+
+\end{enumerate}
+
+\bigskip
+
+\item Los puntos $P(6,-3)$, $Q(1,-5)$ y $R(-3,5)$ son los vértices
+de un triángulo rectángulo. En efecto,
+
+\bigskip
+
+\begin{align*}
+d(P,Q)^{2}&=(1-6)^{2}+(-5+3)^{2}=25+4=29\\
+d(Q,R)^{2}&=(-3-1)^{2}+(5+5)^{2}=16+100=116\\
+d(P,R)^{2}&=(-3-6)^{2}+(5+3)^{2}=81+64=145
+\end{align*}
+
+\bigskip
+
+así $d(P,R)^{2}=d(P,Q)^{2}+d(Q,R)^{2}$.
+
+\bigskip
+
+$P$, $Q$ y $R$ son los vértices de un triángulo rectángulo cuyos
+catetos son el segmento que une $P$ y $Q$ y el segmento que une
+$Q$ y $R$ y cuya hipotenusa es el segmento que une los puntos $P$
+y $R$.
+
+\bigskip
+
+\item Sean $P(x_{1},y_{1})$ y $Q(x_{2},y_{2})$. Buscamos el punto
+medio del segmento que une estos puntos. Supongamos que $x_{1}<
+x_{2}$.
+
+\bigskip
+
+Sobre el eje $X$, el punto medio entre $(x_{1},0)$ y $(x_{2},0)$
+tiene segunda coordenada 0 y primera coordenada dada así
+
+\bigskip
+
+\[x_{1}+\frac{x_{2}-x_{1}}{2}=\frac{x_{1}+x_{2}}{2}\]
+
+\bigskip
+
+De manera de similar, sobre el eje $Y$, el punto medio entre
+$(0,y_{1})$ y $(0,y_{2})$ es el punto
+$\left(0,\frac{y_{1}+y_{2}}{2}\right)$.
+
+\bigskip
+
+En consecuencia, el punto medio entre $P$ y $Q$ es el punto de
+coordenadas
+$\left(\frac{x_{1}+x_{2}}{2},\frac{y_{1}+y_{2}}{2}\right)$.
+
+\end{enumerate}
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{04_01.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Plano Cartesiano} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Funciones y sus Gráficas} \\ \\ \\
+\end{tabular}
+\docLink{04_03.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

@@ -1,0 +1,210 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{trigo9.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Expresiones con Seno y Coseno} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Identidades} \\ \\ \\
+\end{tabular}
+\docLink{trigo11.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 5}}  {\large
+{\color{ azulc} NOTAS DE TRIGONOMETRIA}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 5.9. }}
+{\normalsize {\color{naranja} Gráficas Sinusoidales}}
+
+\newline
+
+En general: funciones que pueden representarse por:
+
+\bigskip
+
+\[y = A sen\left( Bx+C\right), \quad y = A \cos\left( Bx+C\right) \]
+
+\bigskip
+
+o una combinación de estas puede ser usada para obtener
+conocimientos en los mundos físico,económico, político, artísticos
+y seguramente en muchos otros. Veamos matemáticamente como se
+interpreta una de estas funciones.
+
+\bigskip
+
+{\bf Características de la Función:} $y = Asen\left(Bx+C\right)$,
+$B> 0$.
+
+\bigskip
+
+\begin{enumerate}
+\item La amplitud es el mayor valor que toma la función.
+
+\begin{itemize}
+\item Como $-1\leq sen\left( Bx+C\right) \leq 1$. \item Si $A\geq
+0$ , $-A\leq Asen\left(Bx+C\right) \leq A$. \item Si $A\leq 0$,
+$-A\geq Asen\left( Bx+C\right)\geq A$.
+\end{itemize}
+
+\bigskip
+
+Por lo tanto Amplitud de la función es $\left| A\right| $.
+
+\bigskip
+
+\item La función es periódica y el periodo es $\dfrac{2\pi }{B}$.
+
+\item La gráfica, con respecto a la de la función seno está
+desplazada $-\dfrac{C}{B}$ unidades a la derecha o a la izquierda,
+según si $C$ es negativo o positivo respectivamente.
+\end{enumerate}
+
+\bigskip
+
+\textbf{Ejemplo 5.17. } $y=2sen 3x$
+
+\bigskip
+
+Amplitud:2, \quad Periodo: $\dfrac{2\pi }{3}$
+
+\bigskip
+
+\begin{center}
+\includegraphics{img/grafica_trigonometrica1.gif}
+\end{center}
+
+\bigskip
+
+\end{description}
+
+\bigskip
+
+\textbf{Ejemplo 5.18. } $y=-3sen\left( 2x-\frac{\pi }{3}\right)$
+
+\bigskip
+
+Amplitud: $\left| -3\right|$, \quad Periodo: $\dfrac{2\pi }{2}$,
+\quad Desfase: $\dfrac{\pi }{6}$
+
+\bigskip
+
+\begin{center}
+\includegraphics{img/grafica_trigonometrica2.gif}
+\end{center}
+
+\bigskip
+
+\end{description}
+
+\bigskip
+
+\textbf{Ejemplo 5.19. } Un Tsunami es una ola de marea ocasionada
+por un terremoto bajo el mar. Estas olas pueden medir más de 100
+pies de altura y pueden viajar a grandes velocidades. A veces los
+ingenieros representan estas olas por expresiones trigonométricas
+de la forma: $y= a\cos\left(bt\right)$ y utilizan estas
+representaciones para calcular la efectividad de los muros
+rompeolas. Supongamos que una ola en el instante $t=0$ tiene una
+altura de $y=25$ pies, viaja a razón de 180 pies por segundo con
+un periodo de 30 min.
+
+\bigskip
+
+La expresión del movimiento de las olas es:
+
+\bigskip
+
+\[y=a\cos\left( bt\right)\]
+
+\bigskip
+
+Como para $t=0$  $y = 25$ pies, entonces:
+
+\bigskip
+
+$25=a\cos \left( b0\right)$, así $a = 25$ pies.
+
+\bigskip
+
+El periodo es 30 min. por lo tanto: $\dfrac{2\pi
+}{b}=30m\acute{\imath}n$.
+
+\bigskip
+
+De donde: $b=\dfrac{\pi }{15}$.
+
+\bigskip
+
+La ecuación es: $y=25\cos \frac{\pi }{15}t$.
+
+\bigskip
+
+Podemos calcular la distancia entre dos crestas consecutivas:
+
+\bigskip
+
+Como recorre 180 pies en un segundo, recorrerá 10800 pies en un
+minuto.
+
+\bigskip
+
+La longitud de onda es la distancia entre dos crestas
+consecutivas, como el periodo es 30 min., en 30 minutos recorrerá:
+$\left( 10800\right) \left( 30\right) =324.000$ pies
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{trigo9.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Expresiones con Seno y Coseno} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Identidades} \\ \\ \\
+\end{tabular}
+\docLink{trigo11.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

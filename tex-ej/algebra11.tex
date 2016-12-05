@@ -1,0 +1,362 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{algebra10.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Productos Notables} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Desigualdades} \\ \\ \\
+\end{tabular}
+\docLink{algebra12.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 2}}  {\large
+{\color{ azulc} FUNDAMENTOS DE ALGEBRA}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 2.12. }}
+{\normalsize {\color{naranja} Fracciones Algebraicas}}
+
+\newline
+
+Una \textit{fracción algebraica} es el cociente de dos expresiones
+algebraicas. Si la fracción algebraica es el cociente de dos
+polinomios, la llamamos una \textit{fracción racional}. Algunos
+ejemplos son
+
+\bigskip
+
+\[\dfrac{3x^{2}-5x+1}{2x+7}, \quad \dfrac{7x-\sqrt{x^{2}-5}}{x^{\frac{2}{3}}+1}, \quad \dfrac{5x^{2}y-x^{3}+6y^{2}}{2xy-y^{4}}, \quad
+\dfrac{\sqrt{x}-1}{x-\sqrt{x}}\]
+
+\bigskip
+
+La primera y tercera fracciones son fracciones racionales.
+
+\bigskip
+
+La mayoría de las fracciones que consideramos, son fracciones
+racionales en una sola variable. Como la división por cero no es
+posible, siempre que tratemos con fracciones, supondremos
+implícitamente que los denominadores son diferentes de cero.
+
+\bigskip
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 2.12.1.
+}} {\normalsize {\color{naranja} Simplificación de fracciones}}
+
+\bigskip
+
+En el trabajo con fracciones, se acostumbra a simplificarlas hasta
+donde sea posible, de tal manera que obtengamos fracciones donde
+el numerador y el denominador no tengan factores comunes. El
+principio básico para simplificar fracciones es la relación
+siguiente, que mencionamos en el capítulo 1,
+
+\bigskip
+
+\[\dfrac{xz}{yz}=\dfrac{x}{y}\quad \text{si} \quad z\neq 0\]
+
+\bigskip
+
+Este principio, nos indica que podemos cancelar los factores
+comunes distintos de cero que aparecen en el numerador y el
+denominador de una fracción.
+
+\bigskip
+
+\textbf{Ejemplo 2.34. } Simplifiquemos algunas fracciones
+
+\begin{itemize}
+\item [a)]
+$\dfrac{2x^{2}+5x-3}{x^{2}-2x-15}=\dfrac{(2x-1)(x+3)}{(x-5)(x+3)}=\dfrac{2x-1}{x-5}$.
+\item [b)]
+$\dfrac{x^{2}-y^{2}}{x^{3}-y^{3}}=\dfrac{(x-y)(x+y)}{(x-y)(x^{2}+xy+y^{2})}=\dfrac{x+y}{x^{2}+xy+y^{2}}$.
+\item [c)]
+$\dfrac{x(x+y)(x^{3}-y^{3})}{(x-y)(x^{2}-y^{2})}=\dfrac{x(x+y)(x-y)(x^{2}+xy+y^{2})}{(x-y)(x-y)(x+y)}=\dfrac{x(x^{2}+xy+y^{2})}{x-y}$.
+\end{itemize}
+
+\bigskip
+
+Algunos errores muy frecuentes en la simplificación de fracciones
+se presentan por aplicación de las siguientes fórmulas incorrectas
+
+\bigskip
+
+\begin{align*}
+&\dfrac{x+y}{x+z}=\dfrac{y}{z}\\
+&\dfrac{x+y}{x}=y \qquad\text{(Fórmulas incorrectas)}\\
+&\dfrac{x+y}{x}=1+y
+\end{align*}
+
+\bigskip
+
+\textbf{Ejemplo 2.35. } \quad \begin{itemize} \item [a)]
+$\dfrac{5x+3}{5x+8}$ no es igual a $\dfrac{3}{8}$ \item [b)]
+$\dfrac{3x+4y}{3x}$ no es igual a $4y$ ni $1+4y$
+\end{itemize}
+
+\bigskip
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 2.12.2.
+}} {\normalsize {\color{naranja} Operaciones con fracciones}}
+
+\bigskip
+
+Las operaciones de suma resta multiplicación y división de
+fracciones se basan en las propiedades que mencionamos en el
+capítulo 1 y que para comodidad repetimos ahora. Estas propiedades
+son:
+
+\bigskip
+
+\begin{itemize}
+\item $\dfrac{x}{z}\pm \dfrac{y}{w}=\dfrac{xw\pm yz}{zw}$ \item
+$\dfrac{x}{z}\cdot \dfrac{y}{w}=\dfrac{xy}{zw}$ \item
+$\dfrac{x}{z}\div
+\dfrac{y}{w}=\frac{\dfrac{x}{z}}{\dfrac{y}{w}}=\dfrac{x}{z}\cdot
+\dfrac{w}{y}=\dfrac{xw}{yz}$
+\end{itemize}
+
+\bigskip
+
+Cuando realizamos operaciones con fracciones debemos simplificar
+el resultado hasta donde sea posible. En los casos de
+multiplicación y división de fracciones, cuando sea factible, se
+simplifican numeradores y denominadores, antes de realizar las
+operaciones mas complejas.
+
+\bigskip
+
+\textbf{Ejemplo 2.36. } \quad\begin{itemize} \item [a)]
+\begin{align*}
+\dfrac{x}{x+y}+\dfrac{3}{x^{2}-y^{2}}&=\dfrac{x(x^{2}-y^{2})+3(x+y)}{(x+y)(x^{2}-y^{2})}=\dfrac{x(x-y)(x+y)+3(x+y)}{(x+y)(x^{2}-y^{2})}\\
+&=\dfrac{(x(x-y)+3)(x+y)}{(x^{2}-y^{2})(x+y)}=\dfrac{x(x-y)+3}{(x^{2}-y^{2})}=\dfrac{x^{2}-xy+3}{(x^{2}-y^{2})}.
+\end{align*}
+\item [b)]
+\begin{align*}
+\dfrac{(4x^{2}+4xy-3y^{2})}{(x^{2}-2xy-3y^{2})}\cdot
+\dfrac{(2x^{2}-xy-3y^{2})}{(4x^{2}-9y^{2})}&=\dfrac{(4x^{2}+4xy-3y^{2})(2x^{2}-xy-3y^{2})}{(x^{2}-2xy-3y^{2})(4x^{2}-9y^{2})}\\
+&=\dfrac{(2x+3y)(2x-y)(2x-3y)(x+y)}{(x-3y)(x+y)(2x-3y)(2x+3y)}\\
+&=\dfrac{2x-y}{x-3y}.
+\end{align*}
+\item [c)]
+\begin{align*}
+\dfrac{\dfrac{a^{2}-2ab+b^{2}}{a^{2}-2ab}}{\dfrac{a^{2}-b^{2}}{a^{2}-ab-2b^{2}}}&=\dfrac{(a^{2}-2ab+b^{2})(a^{2}-ab-2b^{2})}{(a^{2}-2ab)(a^{2}-b^{2})}\\
+&=\dfrac{(a-b)^{2}(a-2b)(a+b)}{a(a-2b)(a-b)(a+b)}=\dfrac{a-b}{a}
+\end{align*}
+\end{itemize}
+
+\bigskip
+
+Cuando se suman o restan dos o mas fracciones algebraicas, es
+aconsejable escribir todas las fracciones con el mismo denominador
+pues en este caso las operaciones resultan inmediatas si aplicamos
+repetidamente las fórmulas
+
+\bigskip
+
+\[\dfrac{x}{y}+\dfrac{z}{y}=\dfrac{x+z}{y} \quad \text{ y } \quad
+\dfrac{x}{y}-\dfrac{z}{y}=\dfrac{x-z}{y}\]
+
+\bigskip
+
+Cualquier denominador común funciona, pero el mas utilizado es el
+\textit{mínimo común denominador} (m.c.d.), que podemos encontrar
+de la siguiente forma: Primero factorizamos todos los
+denominadores y luego formamos un producto que contenga a todos
+los factores que aparezcan en cualquiera de los denominadores,
+elevados a la mayor potencia conque se presenten en ellos. Este
+producto es el mínimo común denominador.
+
+\bigskip
+
+\textbf{Ejemplo 2.37. } Hallemos el m.c.d. de las siguientes
+expresiones
+
+\bigskip
+
+\[x^{2}-y^{2}, \quad x^{2}+2xy+y^{2}, \quad x^{2}-3xy+2y^{2} \quad \text{ y } \quad
+x^{3}+y^{3}.\]
+
+\bigskip
+
+Tenemos
+
+\bigskip
+
+\begin{align*}
+x^{2}-y^{2}&=(x-y)(x+y)\\
+x^{2}+2xy+y^{2}&=(x+y)^{2}\\
+x^{2}-3xy+2y^{2}&=(x-2y)(x-y)\\
+x^{3}+y^{3}&=(x+y)(x^{2}-xy+y^{2})
+\end{align*}
+
+\bigskip
+
+Luego el mínimo común denominador es
+
+\bigskip
+
+\[(x-y)(x+y)^{2}(x-2y)(x^{2}-xy+y^{2}).\]
+
+\bigskip
+
+\textbf{Ejemplo 2.38. } Hallemos
+
+\bigskip
+
+\[\dfrac{2x+1}{x^{2}-4}+\dfrac{x}{x+2}-\dfrac{3x-1}{x^{2}-4x+4}\]
+
+\bigskip
+
+El mínimo común denominador es $(x-2)^{2}(x+2)$. Por lo tanto
+
+\bigskip
+
+\[\dfrac{2x+1}{x^{2}-4}=\dfrac{2x+1}{(x-2)(x+2)}=\dfrac{(2x+1)(x-2)}{(x-2)^{2}(x+2)}, \qquad
+\dfrac{x}{x+2}=\dfrac{x(x-2)^{2}}{(x-2)^{2}(x+2)}\]
+
+\bigskip
+
+y
+
+\bigskip
+
+\[\dfrac{3x-1}{x^{2}-4x+4}=\dfrac{3x-1}{(x-2)^{2}}=\dfrac{(3x-1)(x+2)}{(x-2)^{2}(x+2)},\]
+
+\bigskip
+
+luego {\small
+\begin{align*}
+\dfrac{2x+1}{x^{2}-4}+\dfrac{x}{x+2}-\dfrac{3x-1}{x^{2}-4x+4}&=\dfrac{(2x+1)(x-2)+x(x-2)^{2}-(3x-1)(x+2)}{(x-2)^{2}(x+2)}\\
+&=\dfrac{x^{3}-5x^{2}-4x}{(x-2)^{2}(x+2)}
+\end{align*}}
+
+\bigskip
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 2.12.2.
+}} {\normalsize {\color{naranja} Racionalización de fracciones}}
+
+\bigskip
+
+Algunas veces se hace necesario expresar una fracción de tal
+manera que su numerador o su denominador no contenga radicales. El
+proceso a seguir se conoce con el nombre de racionalización del
+numerador o el denominador, según sea el caso y lo ilustramos en
+los siguientes ejemplos.
+
+\bigskip
+
+\textbf{Ejemplo 2.39. } \quad\begin{itemize} \item [a)]
+Racionalicemos el denominador en la siguiente expresión
+
+\bigskip
+
+\[\dfrac{h}{\sqrt{x+h}-\sqrt{x}}\]
+
+\bigskip
+
+Para eliminar los radicales en el denominador nos basamos en el
+producto notable
+
+\bigskip
+
+\[(a-b)(a+b)=a^{2}-b^{2} \quad \text{ con }\quad a=\sqrt{x+h} \quad \text{ y }\quad
+b=\sqrt{x}\]
+
+\bigskip
+
+Tenemos
+
+\bigskip
+
+\begin{align*}
+\dfrac{h}{\sqrt{x+h}-\sqrt{x}}&=\dfrac{h(\sqrt{x+h}+\sqrt{x})}{(\sqrt{x+h}-\sqrt{x})(\sqrt{x+h}+\sqrt{x})}=\dfrac{h(\sqrt{x+h}+\sqrt{x})}{(\sqrt{x+h})^{2}-(\sqrt{x})^{2}}\\
+&=\dfrac{h(\sqrt{x+h}+\sqrt{x})}{(x+h)-x}=\dfrac{h(\sqrt{x+h}+\sqrt{x})}{h}=(\sqrt{x+h}+\sqrt{x})
+\end{align*}
+\item [b)] Racionalicemos el numerador en la expresión
+
+\[\dfrac{\sqrt[3]{x}-\sqrt[3]{y}}{x-y}\]
+
+\bigskip
+
+En este caso nos basaremos en el producto notable
+
+\bigskip
+
+\[(a-b)(a^{2}+ab+b^{2})=a^{3}-b^{3}\]
+
+\bigskip
+
+con $a=\sqrt[3]{x}$ y $b=\sqrt[3]{y}$.
+
+\bigskip
+
+Tenemos
+
+\bigskip
+
+\begin{align*}
+\dfrac{\sqrt[3]{x}-\sqrt[3]{y}}{x-y}&=\dfrac{(\sqrt[3]{x}-\sqrt
+[3]{y})((\sqrt[3]{x})^{2}+\sqrt[3]{x}\sqrt[3]{y}+(\sqrt[3]{y})^{2})}{(x-y)((\sqrt[3]{x})^{2}+\sqrt[3]{x}\sqrt[3]{y}+(\sqrt[3]{y})^{2})}\\
+&=\dfrac{(\sqrt[3]{x})^{3}-(\sqrt[3]{y})^{3}}{(x-y)(\sqrt[3]{x^{2}}+\sqrt[3]{xy}+\sqrt[3]{y^{2}})}\\
+&=\dfrac{(x-y)}{(x-y)(\sqrt[3]{x^{2}}+\sqrt[3]{xy}+\sqrt[3]{y^{2}})}\\
+&=\dfrac{1}{(\sqrt[3]{x^{2}}+\sqrt[3]{xy}+\sqrt[3]{y^{2}})}
+\end{align*}
+\end{itemize}
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{algebra10.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Productos Notables} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Desigualdades} \\ \\ \\
+\end{tabular}
+\docLink{algebra12.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

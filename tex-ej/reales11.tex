@@ -1,0 +1,444 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{reales10.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Axioma de Completez} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Raíz Cuadrada de Números Negativos} \\ \\ \\
+\end{tabular}
+\docLink{reales12.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 1}}  {\large
+{\color{ azulc} LOS NUMEROS REALES}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 1.11. }}
+{\normalsize {\color{naranja} Números Complejos}}
+
+\newline
+
+Ningún número real es solución de la ecuación $x^2+1=0$. La
+solución de esta ecuación se halla en el conjunto $\mathbb{C}$ de
+los \textbf{números complejos}, el cual contiene tanto
+$\mathbb{R}$ como los números cuyo cuadrado es negativo. La
+\textbf{unidad imaginaria} es $i=\sqrt{-1}$.
+
+\bigskip
+
+Puesto que $\mathbb{R}\subseteq \mathbb{C}$ e $i\in\mathbb{C}$ y
+se espera operar elementos de $\mathbb{C}$ con una suma y un
+producto sucede en $\mathbb{R}$, el conjunto $\mathbb{C}$ debe
+contener los productos de la forma $bi$ para $b\in\mathbb{R}$, y
+las sumas $a+bi$, donde $a$ y $b$ son números reales. En efecto
+tenemos que:
+
+\bigskip
+
+\[\mathbb{C}=\{a+bi:\ a,b\in\mathbb{R},\ i^2=-1\}\]
+
+\bigskip
+
+\textbf{Definición 1.11.1. } Los reales $a$ y $b$ son,
+respectivamente, la \textbf{parte real} y la \textbf{parte
+imaginaria} del número complejo $a+bi$. Si $b\neq 0$, un número
+$a+bi$ es un \textbf{complejo no real} y si, además, $a=0$, el
+número (es decir $bi$) es un \textbf{imaginario puro}.
+
+\bigskip
+
+\textbf{Note} que un número real $a$ tiene la forma $a+bi$ con
+$b=0$.
+
+\bigskip
+
+\textbf{Ejemplo 1.23. }
+\begin{enumerate}
+\item La parte real de $2+\frac{3}{4}i$ es 2 y su parte imaginaria
+es $\frac{3}{4}$.
+
+\bigskip
+
+\item La parte imaginaria de $4-5i$ es $-5$.
+
+\item La parte real de $\pi+i$ es $\pi$.
+
+\item $2+3i$, $4-5i$, $\pi+i$ son complejos, no reales.
+
+\item $6i$, $\sqrt{2}i$, $-i$, $\pi i$ son imaginarios puros.
+\end{enumerate}
+
+\bigskip
+
+La \textbf{igualdad de números complejos} se define así:
+
+\bigskip
+
+\[a+bi=c+di\text{\quad si y sólo si \quad}a=c\text{ y }b=d\]
+
+\bigskip
+
+(Esto es, dos complejos son iguales si y sólo si sus partes reales
+son iguales y sus partes imaginarias son iguales)
+
+\bigskip
+
+Las operaciones de suma y producto se definen haciendo uso de las
+operaciones de números reales y teniendo en cuenta que $i^2=-1$.
+Así tenemos:
+
+\bigskip
+
+\begin{align*}
+\text{\textbf{Suma:}} &\qquad(a+bi)+(c+di)=(a+c)+(b+d)i\\
+\text{\textbf{Producto:}} &\qquad (a+bi)(c+di)=(ac-bd)+(ac+bd)i
+\end{align*}
+
+\bigskip
+
+\textbf{Ejemplo 1.24. }
+\begin{enumerate}
+\item \begin{enumerate}
+
+\item $a+3i=4+3i$ si y sólo si $a=4$.
+
+\item $a+bi=-6$ si y sólo si $a=-6$ y $b=0$.
+
+\item No existe un real $a$ para el cual $3+6i=a+i$ y no existe un
+real $b$ para el cual $-\frac{1}{2}+7i=bi$.
+\end{enumerate}
+
+\bigskip
+
+\item \begin{enumerate}
+
+\item $(4-6i)+(5+7i)=(4+5)+(-6+7)i=9+1i=9+i$
+
+\item $(9-3i)+3\pi=(9+3\pi)-3i=3(3+\pi)-3i$. La parte real de este
+complejo es el número real $3(3+\pi)$.
+\end{enumerate}
+
+\item \begin{enumerate}
+
+\item
+$\left(1+\frac{4}{7}i\right)\left(-\frac{2}{3}+9i\right)=\left(-\frac{2}{3}-\frac{36}{7}\right)+\left(9-\frac{8}{21}i\right)$
+
+\item $a+bi+0=a+bi$
+
+\item $3i(8-3i)=9+24i$
+
+\item $-\frac{7}{5}(10+2i)=-14-\frac{14}{5}i$
+
+\item
+$\left(-\frac{1}{2}+\frac{\sqrt{3}}{2}i\right)\left(-\frac{1}{2}+\frac{\sqrt{3}}{2}i\right)\left(-\frac{1}{2}+\frac{\sqrt{3}}{2}i\right)$\linebreak$=\left[\left(\frac{1}{4}-\frac{3}{4}\right)+\left(-\frac{\sqrt{3}}{4}-\frac{\sqrt{3}}{4}\right)i\right]\left(-\frac{1}{2}+\frac{\sqrt{3}}{2}i\right)=\left(-\frac{1}{2}-\frac{\sqrt{3}}{2}i\right)\left(-\frac{1}{2}+\frac{\sqrt{3}}{2}i\right)$\linebreak$=\left(\frac{1}{4}+\frac{3}{4}\right)+\left(-\frac{\sqrt{3}}{4}+\frac{\sqrt{3}}{4}\right)i=1$
+
+\item $(a+bi)1=a+bi$ \item $i^2=-1$, $i^3=-i$, $i^4=1$. En
+general, si $n$ es un número entero, $n$ puede ser divido por $4$
+y en ese caso se obtienen un cociente $b$ y un residuo $r$ tales
+que $0\leq r< 4$ y $n=4b+r$. Entonces
+$i^n=i^{4b+r}=(i^4)^bi^r=i^r$
+\end{enumerate}
+\end{enumerate}
+
+\bigskip
+
+La suma y el producto de números complejos cumplen las condiciones
+de cuerpo o de campo que cumplen la suma y el producto de números
+reales  (es decir, las propiedades 1 a 5 de la sección anterior,
+se cumplen si se supone que los elementos son números complejos).
+Hablamos entonces del \textbf{cuerpo} o \textbf{campo de los
+números complejos}. La verificación de casi todas las propiedades
+es rutinaria. Nos detendremos en la que no lo es: la existencia de
+inversos.
+
+\bigskip
+
+Un número complejo $y$ posee inverso para la suma pues si $y=a+bi$
+y $z=-a-bi$ entonces $z$ es el inverso de $y$. En efecto,
+
+\bigskip
+
+\[y+z=(a+bi)+(-a-bi)=(a-a)+(b-b)i=0\]
+
+\bigskip
+
+Comprobaremos la existencia de inversos para el producto después
+de introducir otros conceptos.
+
+\bigskip
+
+\textbf{Note} que $-a-bi=(-1)(a+bi)$. Este complejo se denota por
+$-(a+bi)$.
+
+\bigskip
+
+La \textbf{resta} se define así: si $u$ y $v$ son números
+complejos,
+
+\bigskip
+
+\[u-v=u+(-v)\]
+
+\bigskip
+
+o, más explícitamente,
+
+\bigskip
+
+\[(c+di)-(a+bi)=(c+di)+(-a-bi)=(c-a)+(d-b)i\]
+
+\bigskip
+
+\textbf{Ejemplo 1.25. }
+\begin{enumerate}
+\item $(7+6i)-(6-3i)=(7-6)+(6-(-3))i=1+9i$ \item Si $z$ es un
+número complejo tal que $\left(\frac{3}{2}-4i\right)+z=2+3i$,
+entonces \linebreak$z=(2+3i)-(\frac{3}{2}-4i)$, es decir,
+$z=\frac{1}{2}+7i$ \item
+$\left(\frac{\sqrt{2}}{2}+\frac{\sqrt{2}}{2}i\right)-\left(\frac{\sqrt{2}}{2}-\frac{\sqrt{2}}{2}i\right)=\sqrt{2}i$
+\end{enumerate}
+
+\bigskip
+
+El \textbf{conjugado} de un número complejo $z=a+bi$, denotado por
+$\overline{z}$ se define así: $\overline{z}=a-bi$ (o
+$\overline{a+bi}=a-bi$)
+
+\bigskip
+
+\textbf{Ejemplo 1.26. }\quad
+\begin{enumerate}
+\item \begin{enumerate} \item $\overline{6+5i}=6-5i$ \item
+$\overline{9-2i}=9+2i$ \item $-3+\sqrt{2}i=-3-\sqrt{2}i$ \item
+$\overline{i}=-i$ \item $\overline{2}=2$ \item
+$-\overline{10}=-10$ \item Si $a\in\mathbb{R}$ entonces
+$\overline{a}=a$
+\end{enumerate}
+
+\bigskip
+
+\item Si $z\in\mathbb{C}$ y $z=\overline{z}$ entonces $z$ es un
+número real. Para probarlo, supongamos que $z=a+bi$. Como
+$z=\overline{z}$, es decir, $a+bi=a-bi$, entonces $b=-b$, lo cual
+implica que $b=0$ y, en consecuencia, $z=a+0i=a\in\mathbb{R}$.
+
+\item \begin{enumerate}
+
+\item $(a+bi)+\overline{(a+bi)}=(a+bi)+(a-bi)=2a$
+
+\item $(a+bi)-\overline{(a+bi)}=2bi$
+
+\item
+$(a+bi)\overline{(a+bi)}=(a+bi)(a-bi)=(a^2-b(-b))+(a(-b)+ab)i=a^2+b^2$
+
+\item $\overline{\overline{a+bi}}=\overline{a-bi}=a+bi$
+\end{enumerate}
+\end{enumerate}
+
+\bigskip
+
+En el tercer ejemplo tenemos la comprobación de las siguientes
+\textbf{propiedades} referentes al conjugado $\overline{z}$ de
+$z$, un número complejo.
+
+\bigskip
+
+\begin{enumerate}
+\item $z+\overline{z}=2R(z)$, donde $R(z)$ denota la parte real de
+$z$. Así $z+\overline{z}$ es un número real.
+
+\item $z-\overline{z}=2I(z)i$, donde $I(z)$ es la parte imaginaria
+de $z$. Así, $z-\overline{z}$ es 0 o un número imaginario puro.
+
+\item $z\overline{z}=R(z)^2+I(z)^2$. Este es un número real
+positivo o cero. Es cero si y sólo si $z=0$.
+
+\item $z=\overline{z}$, si y sólo si $z$ es un número real.
+\end{enumerate}
+
+\bigskip
+
+\textbf{Definición 1.11.2. } El \textbf{módulo} del número
+complejo $z$ se denota $|z|$ y se define así:
+$|z|=\sqrt{z\overline{z}}$ (la raíz cuadrada positiva del número
+real $z\overline{z}$).
+
+\bigskip
+
+Con estos elementos verificamos las existencia de inversos para el
+producto de números complejos (propiedad 4 en la sección
+\docLink{reales1.tex}{1.1} en el caso complejo). Esa propiedad dice
+que dado $z\in\mathbb{C}$, $z\neq 0$, existe $w\in\mathbb{C}$ tal
+que $zw=1$ pues si tomamos
+$w=\frac{\overline{z}}{z\overline{z}}=\frac{\overline{z}}{|z|^2}$
+tenemos:
+
+\bigskip
+
+\[zw=z\frac{\overline{z}}{|z|^2}=\frac{z\overline{z}}{|z|^2}=\frac{|z|^2}{|z|^2}=1\]
+
+\bigskip
+
+Así el inverso de $z$ para el producto es
+$\frac{\overline{z}}{|z|^2}$. Se denota por $z^{-1}$ o
+$\frac{1}{z}$. Explí\-ci\-ta\-men\-te, si $z=a+bi$, entonces
+
+\bigskip
+
+\[z^{-1}=\frac{a}{a^2+b^2}-\frac{b}{a^2+b^2}i\]
+
+\bigskip
+
+La \textbf{división} de números complejos se define así: si $w$ y
+$z$, son números complejos y $z\neq 0$
+
+\bigskip
+
+\[\frac{w}{z}=w\frac{1}{z}=wz^{-1}=w\frac{\overline{z}}{|z|^2}=\frac{w\overline{z}}{|z|^2}\]
+
+\bigskip
+
+Más explícitamente,
+
+\bigskip
+
+\[\frac{c+di}{a+bi}=\frac{(c+di)(a-bi)}{(a+bi)(a-bi)}=\frac{ca+db}{a^2+b^2}+\frac{da-cb}{a^2+b^2}i\]
+
+
+\bigskip
+
+\textbf{Ejemplo 1.27. }
+\begin{enumerate}
+\item \begin{enumerate}
+
+\item $|-4+i|=\sqrt{(-4)^2+1^2}=\sqrt{17}$
+
+\item $|i|=1$
+
+\item $|1|=1$, $|-3|=3$, más generalmente, si $z$ es un número
+real entonces $z=a\in\mathbb{R}$ y el módulo de $z$ es
+$|z|=\sqrt{a^2}=|a|$, es decir, el módulo de un número real es
+igual a su valor absoluto (\docLink{reales5.tex}{sección 1.5}).
+\end{enumerate}
+
+\item \begin{enumerate}
+
+\item
+$(2+3i)^{-1}=\frac{2-3i}{(2+3i)(2-3i)}=\frac{2-3i}{4+9}=\frac{2}{13}-\frac{3}{13}i$
+
+\item $i^{-1}=\frac{-i}{i(-i)}=-i$
+
+\item Si $z=a\in\mathbb{R}$, $a\neq 0$,
+$z^{-1}=\frac{1}{z}=\frac{1}{a}$, es decir es el inverso de $a$
+para el producto de números reales.
+\end{enumerate}
+
+\item
+$\frac{4+6i}{1-2i}=\frac{(4+6i)(1+2i)}{(1-2i)(1+2i)}=\frac{-8+14i}{1+4}=-\frac{8}{5}+\frac{14}{5}i$
+
+\item
+$\frac{\sqrt{7}-5i}{3i}=\frac{(\sqrt{7}-5i)(-3i)}{(3i)(-3i)}=\frac{-15-3\sqrt{7}i}{9}=-\frac{15}{9}-\frac{3\sqrt{7}}{9}i=-\frac{5}{3}-\frac{\sqrt{7}}{3}i$
+
+\item
+$\frac{\left(\frac{\sqrt{3}}{4}+\frac{1}{4}i\right)i^3}{(2-2i)(-i)^2}=\frac{\left(\frac{\sqrt{3}}{4}+\frac{1}{4}i\right)(-i)}{(2-2i)(-1)}=\frac{\left(-\frac{1}{4}i+\frac{\sqrt{3}}{4}i\right)(2+2i)}{(2-2i)(2+2i)}=\frac{\left(-\frac{1}{2}-\frac{\sqrt{3}}{2}\right)+\left(-\frac{1}{2}+\frac{\sqrt{3}}{2}\right)}{4+4}=\frac{\frac{-1-\sqrt{3}}{2}+\frac{\sqrt{3}-1}{2}i}{8}=\frac{-1-\sqrt{3}}{16}+\frac{\sqrt{3}-1}{16}i$
+
+\end{enumerate}
+
+\bigskip
+
+Otras propiedades del conjugado se refieren a su comportamiento en
+relación con las operaciones entre números complejos. A
+continuación enunciamos esas propiedades:
+
+\bigskip
+
+Si $y,z,z_1,z_2,\ldots,z_n$ son números complejos arbitrarios
+entonces
+
+\bigskip
+
+\begin{enumerate}
+\item $\overline{y+z}=\overline{y}+\overline{z}$ o, más
+generalmente,
+$\overline{z_1+z_2+\cdots+z_n}=\overline{z_1}+\overline{z_2}+\cdots+\overline{z_n}$
+
+\item $\overline{y-z}=\overline{y}-\overline{z}$
+
+\item $\overline{yz}=\overline{y}\ \overline{z}$ o, más
+generalmente, $\overline{z_1 z_2 \cdots z_n}=\overline{z_1}\
+\overline{z_2} \cdots \overline{z_n}$
+
+\item $\overline{\left(\frac{y}{z}\right)}=\frac{\overline{y}}{z}$
+si $z\neq 0$
+\end{enumerate}
+
+\bigskip
+
+\textbf{Ejemplo 1.28. }
+\begin{enumerate}
+\item $\overline{(2+3i)+(4-i)}=\overline{6+2i}=6-2i$\\
+$\overline{2+3i}+\overline{4-i}=(2-3i)+(4+i)=6-2i$
+
+\item $\overline{(-1+i)(-1-i)}=\overline{2}=2$\\
+$\overline{(-1+i)}\ \overline{(-1-i)}=(-1-i)(-1+i)=2$
+
+\item
+$\overline{\left(\frac{4-7i}{-2i}\right)}=\overline{\left(\frac{(4-7i)(2i)}{(-2i)(2i)}\right)}=\overline{\left(\frac{14-8i}{4}\right)}=\overline{\left(\frac{7}{2}+2i\right)}=\frac{7}{2}-2i$\\
+$\frac{\overline{4-7i}}{-2i}=\frac{4+7i}{2i}=\frac{(4-7i)(-2i)}{(2i)(-2i)}=\frac{14-8i}{4}=\frac{7}{2}-2i$
+\end{enumerate}
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{reales10.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Axioma de Completez} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Raíz Cuadrada de Números Negativos} \\ \\ \\
+\end{tabular}
+\docLink{reales12.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

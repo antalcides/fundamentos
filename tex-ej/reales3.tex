@@ -1,0 +1,238 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{reales2.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Adición y Multiplicación} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Orden} \\ \\ \\
+\end{tabular}
+\docLink{reales4.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 1}}  {\large
+{\color{ azulc} LOS NUMEROS REALES}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 1.3. }}
+{\normalsize {\color{naranja} Diferencia y Cociente en los Números Reales}}
+
+\newline
+
+La diferencia y el cociente de dos números reales se pueden
+expresar en términos de la adición y la multiplicación de acuerdo
+con las siguientes definiciones:
+
+\bigskip
+
+\textbf{Definición 1.3.1.} Si $x$ y $y$ son números reales, la
+diferencia de $x$ y $y$ es
+\[x-y=x+(-y)\]
+
+\bigskip
+
+\textbf{Definición 1.3.2.} Si $x$ y $y$ son números reales con
+$y\neq 0$, el cociente de $x$ por $y$ es
+\[\dfrac{x}{y}=x\dfrac{1}{y}\]
+
+\bigskip
+
+Hacemos notar que como el número cero carece de inverso
+multiplicativo, la división por cero no está definida.
+
+\bigskip
+
+La importancia de las propiedades básicas P.1 a P.6 es que a
+partir de ellas se pueden deducir todas las demás propiedades
+relativas a la adición y multiplicación de números reales. A
+manera de ejemplo podemos citar algunas de ellas de uso muy
+frecuente:
+
+\bigskip
+
+\begin{itemize}
+
+\item\textit{Propiedades cancelativas}:
+
+\bigskip
+
+\begin{itemize}
+\item Si $x,y$ y $z$ son números reales tales que $x+y=x+z$,
+entonces $y=z$. \item Si $x,y$ y $z$ son números reales tales que
+$xy=xz$ y $x\neq 0$ entonces $y=z$.
+\end{itemize}
+
+\bigskip
+
+\item \textit{Unicidad de los inversos}:
+
+\bigskip
+
+\begin{itemize}
+\item Si $x$ y $y$ son números reales tales que $x+y=0$, entonces
+$y=-x$. \item Si $x$ y $y$ son números reales con $x\neq 0$ tales
+que $xy=1$, entonces $y=\dfrac{1}{x}$.
+\end{itemize}
+
+\bigskip
+
+\item \textit{Reglas de los signos}:
+
+\bigskip
+
+Si $x$ y $y$ son números reales arbitrarios, entonces
+\begin{itemize}
+\item $(-x)y=-(xy)$, \item $x(-y)=-(xy)$ \item $(-x)(-y)=xy$
+\end{itemize}
+
+\bigskip
+
+\item \textit{Regla de los signos para las fracciones}:
+
+\bigskip
+
+Si $x$ y $y$ son números reales con $y\neq 0$, entonces
+\[-\dfrac{x}{y}=\dfrac{-x}{y}=\dfrac{x}{-y}\]
+
+\bigskip
+
+\item \textit{Simplificación de fracciones}:
+
+\bigskip
+
+Si $x,y$ y $z$ son números reales con $y\neq 0$ y $z\neq 0$ ,
+entonces
+
+\bigskip
+
+\[\dfrac{xz}{yz}=\dfrac{x}{y}\]
+
+\bigskip
+
+\item \textit{Operaciones con fracciones}:
+
+\bigskip
+
+Si $x,y,z$ y $w$ son números reales con $z\neq 0$ y $w\neq 0,$
+entonces
+
+\bigskip
+
+\begin{itemize}
+\item $\dfrac{x}{z}+\dfrac{y}{w}=\dfrac{xw+yz}{zw}$ \item
+$\dfrac{x}{z}\cdot \dfrac{y}{w}=\dfrac{xy}{zw}$
+\end{itemize}
+
+\bigskip
+
+Si además, $y\neq 0$,  entonces
+
+\bigskip
+
+\begin{itemize}
+\item $\dfrac{\dfrac{x}{z}}{\dfrac{y}{w}}=\dfrac{x}{z}\cdot
+\dfrac{w}{y}=\dfrac{xw}{yz}$
+\end{itemize}
+\end{itemize}
+
+\bigskip
+
+\textbf{Ejemplo 1.2. } En la siguiente lista utilizamos algunas de
+las propiedades mencionadas. Siempre suponemos que los
+denominadores de las fracciones son diferentes de cero.
+
+\bigskip
+
+\begin{itemize}
+\item Si $4x=12$ entonces $x=3$\quad Propiedad cancelativa.
+
+\item $(-8x)(-7y)=56xy$\quad Regla de los signos.
+
+\item $-\dfrac{1-x}{x+2}=\dfrac{x-1}{x+2}$\quad Regla de los
+signos para fracciones.
+
+\item $\dfrac{5}{x}+\dfrac{4}{y}=\dfrac{5y+4x}{xy}$\quad Suma de
+fracciones.
+
+\item $\dfrac{-2xy}{-5z}=\dfrac{2xy}{5z}$\quad Regla de los
+signos.
+
+\item $\dfrac{(x+y)(x-5y)}{(x+y)(3x+y)}=\dfrac{x-5y}{3x+y}$\quad
+Simplificación de fracciones.
+
+\item $\dfrac{a-1}{a+1}\cdot
+\dfrac{a+2}{a-3}=\dfrac{(a-1)(a+2)}{(a+1)(a-3)}$\quad
+
+\bigskip
+
+Multiplicación de fracciones.
+
+\bigskip
+
+\item $\dfrac{\frac{2}{3}}{\frac{-4}{5}}=\dfrac{2\cdot 5}{3\cdot (-4)}=\dfrac{10}{%
+-12}=-\dfrac{10}{12}$\quad División de fracciones y regla de los
+signos.
+\end{itemize}
+
+
+\bigskip
+
+
+En el próximo capítulo usaremos intensivamente las propiedades
+básicas de la adición y multiplicación de números reales, y las
+propiedades que de ellas se deducen.
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{reales2.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Adición y Multiplicación} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Orden} \\ \\ \\
+\end{tabular}
+\docLink{reales4.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

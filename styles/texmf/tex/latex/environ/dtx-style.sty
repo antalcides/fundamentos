@@ -1,0 +1,126 @@
+\ProvidesPackage{dtx-style}
+
+\errorcontextlines=999
+
+\def\@dotsep{1000}
+\setcounter{tocdepth}{2}
+\setlength\columnseprule{0.1pt}
+\renewcommand\tableofcontents{\relax
+  \begin{multicols}{2}[\section*{\contentsname}]\small
+    \@starttoc{toc}\relax
+  \end{multicols}}
+
+\setcounter{IndexColumns}{2}
+\renewenvironment{theglossary}
+  {\small\list{}{}
+     \item\relax
+     \glossary@prologue\GlossaryParms
+     \let\item\@idxitem \ignorespaces
+     \def\pfill{\hspace*{\fill}}}
+  {\endlist}
+
+\usepackage{booktabs,calc,color,enumitem,fancyvrb,graphicx,ifthen,refstyle,subfig,varioref}
+\expandafter\usepackage\expandafter{\jobname}
+
+\usepackage{url}
+
+\usepackage[sc,osf]{mathpazo}
+
+\linespread{1.1}      % A bit more space between lines
+\frenchspacing         % Remove ugly extra space after punctuation
+
+\definecolor{niceblue}{rgb}{0.2,0.4,0.8}
+\newenvironment{example}[1]
+  {\VerbatimEnvironment
+   \def\Options{#1}%
+   \begin{VerbatimOut}[gobble=2]{\examplefilename}}
+  {\end{VerbatimOut}\relax
+   \typesetexample}
+
+\fvset{formatcom=\color{niceblue}}
+\DefineShortVerb{\|}
+
+\def\theCodelineNo{\textcolor{niceblue}{\sffamily\tiny\arabic{CodelineNo}}}
+
+\let\examplesize\normalsize
+\let\auxwidth\relax
+
+\newlength\examplewidth\newlength\verbatimwidth
+\newlength\exoutdent   \newlength\exverbgap
+\setlength\exverbgap{1em}
+\setlength\exoutdent{-0.15\textwidth}
+\newsavebox\verbatimbox
+\edef\examplefilename{\jobname.example}
+
+\newcommand\typesetexample{\relax
+   \smallskip
+   \noindent
+   \begin{minipage}{\linewidth}
+   \color{niceblue}
+   \hrulefill\par
+   \edef\@tempa{[gobble=0,fontsize=\noexpand\small,\Options]}%
+   \begin{lrbox}{\verbatimbox}\relax
+     \expandafter\BVerbatimInput\@tempa{\examplefilename}%
+   \end{lrbox}
+   \begin{list}{}{\setlength\itemindent{0pt}
+                  \setlength\leftmargin\exoutdent
+                  \setlength\rightmargin{0pt}}\item
+   \ifx\auxwidth\relax
+     \setlength\verbatimwidth{\wd\verbatimbox}%
+   \else
+     \setlength\verbatimwidth{\auxwidth}%
+   \fi
+   \begin{minipage}[c]{\textwidth-\exoutdent-\verbatimwidth-\exverbgap}
+     \catcode`\%=14\centering\linespread{1.6}\input\examplefilename\relax
+   \end{minipage}\hfill
+   \begin{minipage}[c]{\verbatimwidth}
+     \usebox\verbatimbox
+   \end{minipage}
+   \end{list}
+   \par\noindent\hrulefill
+   \end{minipage}\par
+   \smallskip\noindent}
+
+\newcommand*\setverbwidth[1]{\def\auxwidth{#1}}
+
+\newcommand*\name[1]{{#1}}
+\newcommand*\pkg[1]{\textsf{#1}}
+\newcommand*\feat[1]{\texttt{#1}}
+\newcommand*\opt[1]{\texttt{#1}}
+
+\newcommand*\ltx[1]{%
+  \ifx3#1\relax
+    \textsc{ltx3}%
+  \else
+    \LaTeXe
+  \fi}
+
+\newcommand\note{\unskip\footnote}
+
+\let\latin\textit
+\def\eg{\latin{e.g.}}
+\def\Eg{\latin{E.g.}}
+\def\ie{\latin{i.e.}}
+\def\etc{\@ifnextchar.{\latin{etc}}{\latin{etc.}\@}}
+
+\def\STIX{\textsc{stix}}
+\def\MacOSX{Mac~OS~X}
+\def\ascii{\textsc{ascii}}
+\def\OMEGA{Omega}
+\def\CTAN{\textsc{ctan}}
+
+\newcounter{argument}
+\g@addto@macro\endmacro{\setcounter{argument}{0}}
+\newcommand*\darg[1]{%
+  \stepcounter{argument}%
+  {\ttfamily\char`\{\char`\#\theargument\char`\}:~}#1\par\noindent\ignorespaces}
+\newcommand*\doarg[1]{%
+  \stepcounter{argument}%
+  {\ttfamily[\char`\#\theargument]:~}#1\par\noindent\ignorespaces}
+
+\def\codeline{\par\hspace{0.5\parindent}}
+
+\newcommand\unichar[2]{\textsc{\MakeLowercase{u+#1: #2}}}
+
+\setlength\parindent{2em}
+

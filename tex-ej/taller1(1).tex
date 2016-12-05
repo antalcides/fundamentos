@@ -1,0 +1,235 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.50,0.42,0.42,0.06} % color leccion
+
+\def\Reales{\mathbb{R}}
+\def\Naturales{\mathbb{N}}
+\def\Enteros{\mathbb{Z}}
+\def\Racionales{\mathbb{Q}}
+\def\Irr{\mathbb{I}}
+\def\contradiccion{($\rightarrow \leftarrow$)}
+
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+&
+\docLink[_top]{../../../index.html}{\includegraphics{../../../images/navegacion/inicio.gif}}
+\docLink{../../../docs_curso/contenido.html}{\includegraphics{../../../images/navegacion/contenido.gif}}
+\docLink{../../../docs_curso/descripcion.html}{\includegraphics{../../../images/navegacion/descripcion.gif}}
+\docLink{../../../docs_curso/profesor.html}{\includegraphics{../../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Taller 2} \\ \\ \\
+\end{tabular}
+\docLink{taller2.tex}{\includegraphics{../../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large FUNDAMENTOS DE ALGEBRA}}  {\large
+{\color{ azulc} }}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  TALLER 1 }}
+{\normalsize {\color{naranja} }}
+
+\newline
+
+\begin{enumerate}
+
+\item Determinar si cada uno de los siguientes enunciados es
+Verdadero o Falso. En cada caso justificar su respuesta.
+\begin{enumerate}
+\item Si $x$ es un número real diferente de cero y $n$ es un
+entero positivo, entonces
+
+\[\left( \frac{12x^{2n-2}}{6x^{n-2}}\right)^4 \left( \frac{1}{2x^{2n}}\right)^2=4x\]
+
+\item Si $p$ y $q$ son números reales diferentes de cero, entonces
+
+\[\left( \frac{p^{-1} q^{-1}}{p^{-1}-q^{-1}}\right)^{-2}=\frac{p^2q^2}{p^2-q^2}\]
+
+\item Para todo número real $a$, se tiene que $\left(
+a^{\frac{1}{2}}\right)^2 = a$. \item Para todo número real $a$, y
+todo $r$ y $s$ números racionales positivos, se tiene que
+$\left(a^r \right)^s=a^{rs}$. \item Para todo $a$ y $b$ reales, se
+tiene que $\sqrt{\left( a-1\right)^2 + \left( b+1 \right)^2}=a+b$.
+\item $\left( \frac{e^x + e^{-x}}{2}\right)^2 - \left( \frac{e^x -
+e^{-x}}{2}\right)^2=1$. \item Para todo número real $z \neq 0$ se
+tiene que
+
+\[\left( z^{-5} - z ^{-10}\right)^{\frac{3}{5}}=\frac{\left( z^5 -1 \right)^{\frac{3}{5}}}{z^6}.\]
+
+\item Para todo número real $x \neq 0$ se tiene que
+
+\[\frac{5x-1}{x+x^2}+\frac{3}{x-x^2}=\frac{5x+2}{2x}.\]
+
+\item Para todo $x,y$ y $z$ números reales distintos de cero, se
+tiene que
+
+\[\sqrt[5]{\frac{-96 x^{25}y^{12}}{z^6}}=-\frac{2x^5
+y^2}{z^2}\sqrt[5]{3y^2z^4}.\]
+
+\item Si los cocientes están definidos, se tiene que
+$\frac{x-2}{\left( 3x-5 \right)x-2}=\frac{1}{3x-5}$.
+\end{enumerate}
+
+\item Determinar si cada uno de los siguientes enunciados es
+Verdadero o Falso. En cada caso justificar su respuesta.
+\begin{enumerate}
+\item Si $x,y$ y $z$ son números reales distintos de cero entonces
+
+\[\frac{64^{2/3}x^{-2/5}y^{-1/3}z^{1/2}}{32^{4/5}x^{3/5}y^{-1}z^{-1/2}}= \frac{y^{2/3}z}{x}.\]
+
+\item Si $a$ y $b$ son números reales diferentes de cero, entonces
+
+\[\left(\frac{a^{-2}-b^{-2}}{a^{-1}-b^{-1}}\right)^-1=\frac{ab}{a+b}.\]
+
+\item Si $a$ y $b$ son números reales positivos, entonces
+
+\[\frac{\sqrt{56a^6b^{-1}}\sqrt{108a^{-3}b^3}}{\sqrt{21ab^{-5}}} =12a^{3}\sqrt{2z}.\]
+
+\item Para todo $x$ y $y$ números reales se tiene que $\left( 2x +
+3y \right)^2=4x^2 + 9y^2$. \item $\left( \sqrt{3 - \sqrt{5}} +
+\sqrt{3 + \sqrt{5}} \right)^2 = 6$. \item Para todo $x$ y $y$
+números reales se tiene que $\left( x - y \right)\left( x^2 - xy +
+y^2 \right) = x^3 - y^3$. \item Para todo $x$ y $y$ números reales
+se tiene que $\sqrt[3]{x + y}\sqrt[3]{x - y} = \sqrt[3]{2x}$.
+\item Si los denominadores son distintos de cero, se tiene que
+$\frac{y + 4}{\left( 2y + 9\right) y + 4}= \frac{1}{2y + 9}$.
+\item Al dividir el polinomio $2x^4 - x^3 y + 2xy^3 - y^4$ por el
+polinomio $x^2 - xy + y^2$ el residuo es $0$. \item Suponiendo que
+las fracciones están definidas, se tiene que $\frac{1}{\sqrt[3]{x
++ h}-\sqrt[3]{x}}=\frac{\sqrt[3]{x + h}+\sqrt[3]{x}}{h}$.
+\end{enumerate}
+
+\item En cada caso efectuar las operaciones y/o simplificar hasta
+donde sea posible.
+\begin{enumerate}
+\item $\dfrac{2^{n+3}-2^n+7}{2^{n+1}-2^n+1}$. \item $\dfrac{x^3 -
+y^3}{x^2 - xy +y^2} \div \left( \dfrac{x^2 + xy + y^2}{x^3 + y^3}
+\times \dfrac{x^2 + y^2}{x^2 - y^2} \right)$. \item
+$\dfrac{\frac{z^6 - 1}{z^4 -1} \times \frac{z^4 - -2z^2 + 1}{z^8
+-1}}{\frac{z^4+z^2+1}{z^4+1}}$. \item $\dfrac{x^2 + 2x - 8}{x^2 -
+6x + 8} \div \dfrac{x^2 + 10x + 24}{x^2 - 2x - 8}$. \item
+$\dfrac{4x^2 - 15x - 4}{8x^2 - 10x -3}$. \item $\left(
+\dfrac{15s^2 + 2st - 8t^2}{3s^2 + st - 2t^2}\right)\left(
+\dfrac{2s^2 + st - t^2}{5s^2 - st -4t^2}\right)$. \item
+$\dfrac{x^2}{\left( x - y \right)\left( x - z \right)} +
+\dfrac{y^2}{\left( y - x \right)\left( y - z \right)} +
+\dfrac{z^2}{\left( z - x \right)\left( z - y \right)}$. \item
+$\dfrac{2x -1}{2x^2-x-6} + \dfrac{x+3}{6x^2+x-12} -
+\dfrac{2x-3}{3x^2-10x+8}$. \item $\dfrac{\frac{1}{1 + x} +
+\frac{1}{1 - x}}{x+\frac{x^3}{1 - x^2}}$.
+\end{enumerate}
+
+\item En cada caso efectuar las operaciones y/o simplificar hasta
+donde sea posible.
+\begin{enumerate}
+\item Si $r_1=\dfrac{-b + \sqrt{b^2-4ac}}{2a}$ y $r_2 = \dfrac{-b
+- \sqrt{b^2 - 4ac}}{2a}$, hallar $r_1 + r_2$, $r_1r_2$ y $a \left(
+x - r_1\right) \left( x - r_2\right)$. \item
+$\dfrac{\sqrt{\frac{1+a}{1-a}} + \sqrt{\frac{1 - a}{1 +
+a}}}{\sqrt{\frac{1 + a}{1 - a}} - \sqrt{\frac{1 - a}{1 + a}}}-
+\dfrac{1}{a}$. \item $\dfrac{2a\sqrt{1 + x^2}}{x+ \sqrt{1+x^2}}$ \
+si \ $x=\frac{1}{2}\left(\sqrt{\frac{a}{b}} - \sqrt{\frac{b}{a}}
+\right)$. \item $\dfrac{y + 2 + \sqrt{y^2 - 4}}{y + 2 - \sqrt{y^2
+- 4}} + \dfrac{y + 2 - \sqrt{y^2 - 4}}{y + 2 + \sqrt{y^2 - 4}}$ .
+\end{enumerate}
+
+\item
+\begin{enumerate}
+\item En cada caso racionalizar el numerador
+\begin{enumerate}
+\item $\dfrac{\sqrt{x + h}-\sqrt{x}}{h}$ \item
+$\dfrac{2\sqrt{x}-\sqrt{y}}{16x^2 - y^2}$ \item $\dfrac{\sqrt[3]{x
++ h}-\sqrt[3]{x}}{h}$ \item $\dfrac{\sqrt{x^2 - 3}+\sqrt{x -
+4}}{x}$
+\end{enumerate}
+\item En cada caso racionalizar el denominador
+\begin{enumerate}
+\item $\dfrac{\sqrt{x}}{\sqrt{x + 3} - \sqrt{x + 2}}$ \item
+$\dfrac{5}{\sqrt{5} + \sqrt{3} - \sqrt{2}}$ \item $\dfrac{y}{y +
+\sqrt[3]{x}}$ \item $\dfrac{x^2}{\sqrt{x^2 + 9} - 3}$
+\end{enumerate}
+\end{enumerate}
+
+\item Resolver cada una de las siguientes ecuaciones
+\begin{enumerate}
+\item $\dfrac{2}{y + 5} - \dfrac{y + 3}{\left( y + 4 \right)
+\left( y + 5 \right)} = \dfrac{1}{4 \left( y - 8 \right) }$ \item
+$\dfrac{4x + 3}{3x - 2} - \dfrac{3x - 2}{2x + 5} + \dfrac{x^2 -
+10x + 3}{6x^2 + 11x - 10}= 0$ \item $y^4 - 10y^2 + 21 = 0$ \item
+$4z^{2/3} - 8z^{1/3} + 3 = 0$ \item $6x - 7\sqrt{x} + 2 = 0$ \item
+$\sqrt{x - 5} + \sqrt{x - 2} = 1$ \item $\sqrt{1 - 5x} + \sqrt{1 -
+x} = 0$ \item $\sqrt{2x + \sqrt{6 + x}}= 3$ \item $\dfrac{\sqrt{2x
+- 2} + 1}{\sqrt{x + 1} - 1} - 3 = 0$
+\end{enumerate}
+
+\item Resolver cada una de las siguientes desigualdades
+\begin{enumerate}
+\item $5x - 4 \leq 8x + 3$ \item $\dfrac{3}{1 - x} > \dfrac{5}{3x
+- 6}$ \item $\dfrac{2x + 3}{4x - 1} \leq 2$ \item $6x^2 10x -4 >
+0$ \item $-2x^2 + x - 1 < 0$ \item $2x^2 + 3x - 3 \geq 0$ \item
+$\left( 3 - x \right)\left( x + 2 \right) \left( 4x - 11 \right) >
+0$ \item $\dfrac{1}{x - 2} - \dfrac{20}{x^2 - 4} < 2$ \item
+$\dfrac{\sqrt{x - 3}}{x^2 - 4x - 5} \leq 0$ \item $2x^3 - 5x^2 - x
++ 6 < 0$
+\end{enumerate}
+
+\item Resolver cada una de las siguientes desigualdades
+\begin{enumerate}
+\item $\left| \dfrac{3x + 4}{2} \right| \leq 1$ \item $\left| 6 -
+2x \right| > 8$ \item $3 \leq \left| 2x - 3 \right| \leq 7$ \item
+$\left| \dfrac{x + 2}{3x - 1} \right| \leq 4$ \item $\left|
+\dfrac{x + 6}{2x + 1} \right| > 2$ \item $\left| x - 3 \right| +
+\left| x + 3 \right| < 18$ \item $\left| x \right| > \left| x - 1
+\right|$ \item $\left| 2 - \left| x + 1 \right| \right| < 1$ \item
+$\left| 7x + 3 \right| + \left| 3 - x \right| \geq 6 \left| x + 1
+\right|$
+\end{enumerate}
+
+\item Para qué valores de  $k$ la desigualdad $\left( k^2 - 1
+\right) x^2 + 2 \left( k - 1 \right) x + 2 > 0$ es verdadera para
+todo $x \in \mathbf{R}$.
+
+\end{enumerate}
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+&
+\docLink[_top]{../../../index.html}{\includegraphics{../../../images/navegacion/inicio.gif}}
+\docLink{../../../docs_curso/contenido.html}{\includegraphics{../../../images/navegacion/contenido.gif}}
+\docLink{../../../docs_curso/descripcion.html}{\includegraphics{../../../images/navegacion/descripcion.gif}}
+\docLink{../../../docs_curso/profesor.html}{\includegraphics{../../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Taller 2} \\ \\ \\
+\end{tabular}
+\docLink{taller2.tex}{\includegraphics{../../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

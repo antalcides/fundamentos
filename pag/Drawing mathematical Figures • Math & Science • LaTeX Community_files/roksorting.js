@@ -1,0 +1,18 @@
+/**
+ * RokSorting - Sortable Drag&Drop functionality to resort phpbb3 forum categories.
+ * 
+ * @version		1.0
+ * 
+ * @author		Djamil Legato <djamil@rockettheme.com>
+ * @copyright	Andy Miller @ Rockettheme, LLC
+ */
+
+window.addEvent('load', function() {
+	var rokroksorting = new RokSorting('#page-body', {
+		radius: 4
+	});
+});
+
+// Do not edit below!
+
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('8 16=1X;16.1m({\'1B\':b(1p){8 u=1p.1W.y;3.M=3.M||u;8 U=((3.M-u)>0);8 p=3.k.1o();8 o=3.k.1l();c(p&&p.1n(\'w-P\'))p=p.1o()||p;c(o&&o.1n(\'w-P\'))o=o.1l()||o;c(p&&U&&u<p.N().1T)3.k.1U(p);c(o&&!U&&u>o.N().1s)3.k.1q(o);3.12.1q(3.k);3.M=u}});8 1b=j 21({22:\'1.0\',H:{G:4},23:b(g,H){3.E=$$(g)[0];c(!3.E)q S;3.1R(H);3.F=j 1i.1O(\'1b\',{1F:1H});3.1v=(1G.1E)?\'1D\':\'1Q\';8 1u=b(e){j 1k(e).1I()};8 L=j T(\'O\',{\'15\':\'w-P\',\'19\':{\'B\':\'1P\',\'13\':\'1g\'}}).r(1N.1M),C=3;3.s=$$(g+\' O.1J\');3.17=j T(\'O\').r(3.s[0],\'1f\').1K(3.s);3.5={};3.s.R(b(6){6.9=6.I(\'a\').1L.1r(\'f=\')[1].1r(\'&\')[0]});c(3.s.Q>1)3.1c=3.1y(L);c(3.F.Q)3.1h();3.s.R(b(6){3.5[6.9]=3.5[6.9]||{};8 5=3.5[6.9];5.Z=6.I(\'1A.28\').1a(\'29\',\'2u\');5.m=(2t(5.m)==\'2s\')?10:5.m;5.h=5.Z.N().n;5.W=j 2q.2w(5.Z,\'n\',{2v:S});6.1t(3.1v,1u);6.1t(\'2x\',b(e){e=j 1k(e);c(5.m)3.J(0,6);x 3.J(1,6);3.K()}.1z(3));c(!5.m)3.J(0,6)},3);c(!3.F.Q)3.K();q 3},J:b(1x,6){2r(1x){2e 0:3.5[6.9].m=S;3.5[6.9].W.1d(0);2f;2p:3.5[6.9].m=10;8 n=3.n(6.9);3.5[6.9].W.1d(n)}q 3},n:b(9){q 3.5[9].h},K:b(){8 X={};8 Y=3.1c.Y(b(d){q d.9});Y.R(b(6,i){8 5=3.5[6],k;c(!3.5[6].m)k=0;x k=1;X[i]={\'k\':k,\'g\':6}},3);3.F.2h(X);q 3},1h:b(){8 v=j 1i(3.F.2n),E,B;2l(i=0,l=v.Q;i<l;i++){8 d=$(v.11(i).g);c(d){c(!i){E=d.2i();B=d;d.r(E,\'1s\')}x{d.r(B,\'2d\');B=$(v.11(i).g)}c(!v.11(i).k){3.5[d.9]={};3.5[d.9].m=S}x{3.5[d.9]={};3.5[d.9].m=10}}x{2o}};q},1y:b(L){8 1C=3.s.I(\'1A\').I(\'.2z\');8 14=[];1C.R(b(V){V.24().1a(\'27\',\'26\');14.20(j T(\'1Z\',{\'15\':\'w-1S\',\'19\':{\'1V\':\'1B\'}}).r(V))});8 C=3;q j 16(3.17,{1Y:14,2y:3.K.1z(3),2c:b(g,D){8 A=g.N();8 t=L.2a(\'t-z\').2b()||0;D.r(C.17);D.1j({\'1w\':0.7,\'z\':A.z,\'n\':A.n});3.12=j T(\'O\',{\'15\':\'w-P\',\'19\':{\'z\':A.z-(t*2),\'n\':A.n-(t*2),\'-2k-t-G\':C.H.G+\'1e\',\'-2j-t-G\':C.H.G+\'1e\'}}).r(g,\'1f\');g.1a(\'13\',\'1g\')},2g:b(g,D){g.1j({\'13\':\'\',\'1w\':1});D.18();3.12.18();3.25.18()}})}});1b.1m(j 2m);',62,160,'|||this||mini|block||var|id||function|if|el|||element|||new|active||open|height|next|prev|return|inject|blocks|border|now|hash|roksorting|else||width|sizes|position|self|ghost|container|cookie|radius|options|getElement|show|store|dummy|previous|getCoordinates|div|drop|length|each|false|Element|up|pM|fx|save|serialize|inner|true|get|tmp|display|movers|class|SortablesII|wrapper|remove|styles|setStyle|RokSorting|sortables|start|px|before|none|restore|Hash|setStyles|Event|getNext|implement|hasClass|getPrevious|event|injectAfter|split|top|addEvent|stopEvent|selection|opacity|status|doSortable|bind|ul|move|preMovers|selectstart|ie|duration|window|30|stop|forabg|adopt|href|body|document|Cookie|absolute|mousedown|setOptions|mover|bottom|injectBefore|cursor|page|Sortables|handles|span|push|Class|version|initialize|getFirst|trash|left|float|forums|overflow|getStyle|toInt|onDragStart|after|case|break|onDragComplete|extend|getParent|webkit|moz|for|Options|obj|continue|default|Fx|switch|undefined|typeof|hidden|wait|Style|dblclick|onComplete|lastpost'.split('|'),0,{}))

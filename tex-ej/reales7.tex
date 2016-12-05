@@ -1,0 +1,232 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{reales6.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Los Enteros} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Expresiones Decimales} \\ \\ \\
+\end{tabular}
+\docLink{reales8.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 1}}  {\large
+{\color{ azulc} LOS NUMEROS REALES}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 1.7. }}
+{\normalsize {\color{naranja} Números Racionales e Irracionales}}
+
+Como indicamos en la sección \docLink{reales1.tex}{1.1} los
+números racionales son los que se pueden expresar en la forma
+$\dfrac{p}{q}$ donde $p$ y $q$ son enteros y $q\neq 0$. El
+conjunto $\mathbb{Q}$ de los números racionales contiene como
+subconjunto al conjunto $\mathbb{Z}$ de todos los enteros, pues
+cualquier entero $n$ lo podemos expresar en la forma
+$\dfrac{n}{1}$, es decir como un racional con denominador igual a
+$1$.
+
+\bigskip
+
+Observamos que existen varias expresiones de la forma
+$\dfrac{p}{q}$ que representan el mismo número racional, por
+ejemplo $\dfrac{2}{3}=\dfrac{4}{6}$. Caracterizamos estas
+expresiones de acuerdo a la siguiente definición.
+
+\bigskip
+
+\textbf{Definición 1.7.1. } Los números racionales $\dfrac{p}{q}$
+y $\dfrac{r}{s}$ con $q\neq 0$ y $s\neq 0$ son iguales cuando
+$ps=rq$.
+
+\bigskip
+
+Es decir tenemos:
+
+\bigskip
+
+\[\dfrac{p}{q}=\dfrac{r}{s} \quad\text{ si y sólo si }\quad
+ps=qr.\]
+
+\bigskip
+
+Si tenemos en cuenta las operaciones con fracciones que
+mencionamos en la sección \docLink{reales2.tex}{1.2}, vemos que los
+números racionales resultan cerrados para la adición, la resta, la
+multiplicación y la división, ya que en todos los casos se
+obtienen fracciones cuyos numeradores y denominadores son números
+enteros.
+
+\bigskip
+
+Los números reales que no son racionales, los llamamos números
+irracionales. Como ejemplo podemos citar $\sqrt{2},\sqrt{3},\pi$ y
+$e$.
+
+\bigskip
+
+En general es muy difícil probar que un número real es irracional.
+Sin embargo, hay una demostración fácil de que el número
+$\sqrt{2}$ es irracional. Hela aquí:
+
+\bigskip
+
+Por el algoritmo de la división sabemos que todo entero $a$ es par
+o impar, es decir puede expresarse en una de las dos formas
+
+\bigskip
+
+\[a=
+\begin{cases}
+2k &\text{}\\
+2k+1 &\text{}
+\end{cases}
+\text{con $k$ entero}
+\]
+
+\bigskip
+
+y por lo tanto
+
+\bigskip
+
+\[a^{2}=
+\begin{cases}
+4k^{2} &\text{}\\
+4k^{2}+4k+1 &\text{}
+\end{cases}
+\text{con $k$ entero}
+\]
+
+\bigskip
+
+De las igualdades anteriores concluimos que si $a^{2}$ es par
+entonces $a$ es par.
+
+\bigskip
+
+Supongamos que $\sqrt{2}$ es racional. Luego
+$\sqrt{2}=\dfrac{p}{q}$ con $p$ y $q$ enteros. Podemos asumir que
+$p$ y $q$ no tienen ningún factor común. Luego
+$2=\dfrac{p^{2}}{q^{2}}$ o sea $p^{2}=2q^{2}$, es decir $p^{2}$ es
+par y por la observación preliminar, $p$ también es par. Podemos
+escribir $p=2r$ con $r$ entero. Sustituyendo este valor en la
+ecuación $p^{2}=2q^{2}$, tenemos $4r^{2}=2q^{2}$, o
+$q^{2}=2r^{2}$, por consiguiente $q$ es un entero par y $q$ se
+puede expresar en la forma $q=2s$ con $s$ entero. De esta forma
+hemos llegado a contradecir que los enteros $p$ y $q$ no tienen
+ningún factor común. Por lo tanto nuestra hipótesis de que
+$\sqrt{2}$ es racional es imposible y en consecuencia $\sqrt{2}$
+es irracional.
+
+\bigskip
+
+A partir de un número irracional dado, podemos construir una
+infinidad de números irracionales, pues fácilmente se demuestra el
+siguiente resultado:
+
+\bigskip
+
+" Si $\alpha$ es un número irracional y $r$ es cualquier número
+racional diferente de cero, entonces los números $\alpha+r$,
+$\alpha -r$, $r-\alpha$, $\alpha r$, $\dfrac{\alpha}{r}$,
+$-\alpha$ y $\dfrac{1}{\alpha}$ son todos números irracionales."
+
+\bigskip
+
+La irracionalidad de cualquiera de estos números se demuestra
+inmediatamente por contradicción. Por ejemplo, si $\alpha+r$ fuera
+un número racional, tendríamos $\alpha+r=r_{1}$ con $r_{1}$
+racional. Despejando $\alpha$ tendríamos $\alpha =r_{1}-r$ que es
+un número racional, pues la diferencia de dos números racionales
+es un número racional. Esto contradice que $\alpha $ es
+irracional. Por lo tanto $\alpha +r$ no puede ser un número
+racional.
+
+\bigskip
+
+\textbf{Ejemplo 1.10.} Todos los siguientes números son
+irracionales
+
+\bigskip
+
+\[-\sqrt{2}, \quad 3+\sqrt{2}, \quad \dfrac{1}{\sqrt{2}}, \quad \dfrac{5}{7}\sqrt{2}, \quad \dfrac{1}{3+\sqrt{2}},
+\quad -\sqrt{2}-17,\quad \dfrac{8-5\sqrt{2}}{7}\]
+
+\bigskip
+
+El ejemplo siguiente nos muestra que los números irracionales no
+son cerrados para la adición, la resta, la multiplicación y la
+división, es decir hay casos en que estas operaciones aplicadas a
+números irracionales producen como resultado un número racional.
+
+\bigskip
+
+\textbf{Ejemplo 1.11. }
+
+\bigskip
+
+\begin{itemize}
+\item $(\sqrt{2}+5)+(2-\sqrt{2})=7$
+
+\item $\sqrt{2}-\sqrt{2}=0$
+
+\item $(5+\sqrt{2})(5-\sqrt{2})=23$
+
+\item $\dfrac{\sqrt{2}}{\sqrt{2}}=1$
+\end{itemize}
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{reales6.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Los Enteros} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Expresiones Decimales} \\ \\ \\
+\end{tabular}
+\docLink{reales8.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

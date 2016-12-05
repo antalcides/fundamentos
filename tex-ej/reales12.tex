@@ -1,0 +1,124 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{reales11.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Números Complejos} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Cap. 2. Algebra} \\ \\ \\
+\end{tabular}
+\docLink{../cap2/algebra1.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 1}}  {\large
+{\color{ azulc} LOS NUMEROS REALES}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 1.12. }}
+{\normalsize {\color{naranja} Raíces Cuadradas de Números Reales
+Negativos}}
+
+\newline
+
+El número complejo $i$ es $\sqrt{-1}$. ¿Qué podemos decir acerca
+de las raíces cuadradas de los números reales negativos en
+general?
+
+\bigskip
+
+Si $a$ es un real negativo entonces $-a$ es un real positivo y
+$\sqrt{-a}$ (la raíz cuadrada positiva de $-a$), es un número
+real. Tenemos
+
+\bigskip
+
+\[(\sqrt{-a}i)^2=(\sqrt{-a})^2 i^2=a\text{\quad y\quad} (-\sqrt{-a}i)^2=a\]
+
+\bigskip
+
+Así que $\sqrt{-a}i$ y $-\sqrt{-a}i$ son las raíces cuadradas de
+$a$ para $a<0$.
+
+\bigskip
+
+La \textbf{raíz cuadrada principal} de $a$ es $\sqrt{-a}i$. Es
+denotada por $\sqrt{a}$.
+
+\bigskip
+
+\textbf{Ejemplo 1.29. }
+\begin{enumerate}
+\item $\sqrt{-4}=\sqrt{4}i=2i$\\
+$\sqrt{-7}=\sqrt{7}i$
+
+\item Si $b$ y $c$ son números reales positivos
+$\sqrt{b}\sqrt{c}=\sqrt{bc}$. Sin embargo, en el caso de los
+reales negativos la igualdad \textbf{no es válida}. En efecto,
+
+\bigskip
+
+$\sqrt{-4}\sqrt{-4}=(2i)(2i)=-4$ mientras que
+$\sqrt{(-4)(-4)}=\sqrt{16}=4$\\
+$\sqrt{-4}\sqrt{-7}=(2i)\left(\sqrt{7}i\right)=-2\sqrt{7}$
+mientras que $\sqrt{(-4)(-7)}=\sqrt{28}=2\sqrt{7}$
+
+\item
+$\left(\sqrt{18}+\sqrt{-9}\right)\left(\sqrt{2}-\sqrt{-6}\right)=\left(\sqrt{18}-\sqrt{9}i\right)\left(\sqrt{2}-\sqrt{6}i\right)$\\
+$=\left(\sqrt{18}\sqrt{2}-\sqrt{9}\sqrt{6}\right)+\left(-\sqrt{18}\sqrt{6}-\sqrt{9}\sqrt{2}\right)i$\\
+$=\left(6-3\sqrt{6}\right)-\left(6\sqrt{3}+3\sqrt{2}\right)i$
+\end{enumerate}
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{reales11.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Números Complejos} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Cap. 2. Algebra} \\ \\ \\
+\end{tabular}
+\docLink{../cap2/algebra1.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

@@ -1,0 +1,149 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{algebra1.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Expresiones Algebraicas} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Exponentes Enteros} \\ \\ \\
+\end{tabular}
+\docLink{algebra3.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 2}}  {\large
+{\color{ azulc} FUNDAMENTOS DE ALGEBRA}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 2.2. }}
+{\normalsize {\color{naranja} Exponentes Enteros Positivos}}
+
+\newline
+
+En nuestros ejemplos de expresiones algebraicas, hemos utilizado
+símbolos tales como $x^{3}$ y $a^{3}$. Un símbolo como $x^{2}$
+representa el producto $x\cdot x$, similarmente $a^{3}$ representa
+el producto $a\cdot a\cdot a$. En general establecemos la
+siguiente definición.
+
+\bigskip
+
+\textbf{Definición 2.2.1. } Si $a$ es un número real arbitrario y
+$n$ es un entero positivo, definimos $a^{n}$ como el producto de
+$n$ factores iguales a $a$. Es decir
+
+\bigskip
+
+\[a^{n}=\underbrace{a\cdot a\cdot a\cdots a}_{\text{$n$ factores de $a$}}\]
+
+\bigskip
+
+En el símbolo $a^{n}$, a se llama la base y $n$ el exponente o la
+potencia. También decimos que $a^{n}$ es $a$ elevado a la potencia
+$n$.
+
+\bigskip
+
+\textbf{Ejemplo 2.4. } \quad\begin{itemize} \item $2^{4}=2\cdot
+2\cdot 2\cdot 2=16$ \item $(-3)^{5}=(-3)\cdot (-3)\cdot (-3)\cdot
+(-3)\cdot (-3)=-243$ \item
+$\left(\dfrac{1}{4}\right)^{3}=\left(\dfrac{1}{4}\right)\cdot
+\left(\dfrac{1}{4}\right)\cdot \left(\dfrac{1}{4}\right)=
+\dfrac{1}{64}$ \item $(\sqrt{2})^{6}=(\sqrt{2})\cdot
+(\sqrt{2})\cdot (\sqrt{2})\cdot (\sqrt{2})\cdot (\sqrt{2})\cdot
+(\sqrt{2})=8$
+\end{itemize}
+
+\bigskip
+
+A partir de la definición 2.2.1 podemos comprobar las siguientes
+propiedades básicas que satisfacen los exponentes enteros
+positivos. Si $a$ y $b$ son números reales arbitrarios y $m$ y $n$
+son enteros positivos, entonces tenemos:
+
+\bigskip
+
+\begin{align*}
+a^{m}a^{n}&=a^{m+n}\\
+(a^{m})^{n}&=a^{mn}\\
+(ab)^{n}&=a^{n}b^{n}
+\end{align*}
+
+\bigskip
+
+El siguiente razonamiento es una justificación de la primera de
+las propiedades mencionadas.
+
+\bigskip
+
+\[a^{m}a^{n}= \underbrace{a\cdot a\cdot a\cdots a}_{\text{$m$ factores de
+$a$}}\cdot \underbrace{a\cdot a\cdot a\cdots a}_{\text{$n$
+factores de $a$}}= \underbrace{a\cdot a\cdot a\cdots
+a}_{\text{$m+n$ factores de $a$}}\]
+
+\bigskip
+
+Se pueden hacer justificaciones similares para comprobar las otras
+dos propiedades.
+
+\bigskip
+
+\textbf{Ejemplo 2.5. } \quad \begin{itemize} \item $5^{2}\cdot
+5^{3}=5^{2+3}=5^{5}=625$ \item $(2^{2})^{4}=2^{2\cdot
+4}=2^{8}=256$ \item $\left( 3\cdot 5\right) ^{2}=3^{2}\cdot
+5^{2}=9\cdot 25=225$ \item $(ab)^{3}=a^{3}b^{3}$
+\end{itemize}
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{algebra1.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Expresiones Algebraicas} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Exponentes Enteros} \\ \\ \\
+\end{tabular}
+\docLink{algebra3.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

@@ -1,0 +1,263 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{geometria16.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color {darkgray} {\small Área de Polígonos}} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color {darkgray} {\small Circunferencia}} \\ \\ \\
+\end{tabular}
+\docLink{geometria19.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 3}}  {\large
+{\color{ azulc} MODULO DE GEOMETRÍA}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 3.15. }}
+{\normalsize {\color{naranja} Teorema de Pitágoras}}
+
+\newline
+
+En cualquier triángulo rectángulo con catetos de longitudes $a$ y
+$b$ e hipotenusa de longitud $c$, se tiene que $a^2+b^2=c^2$.
+
+\bigskip
+
+\[
+\includegraphics{imagenes/teorema_pitagoras.gif}
+\]
+
+\bigskip
+
+El teorema de Pitágoras relaciona las longitudes de los tres lados
+de cualquier triángulo rectángulo.
+
+\bigskip
+
+Este teorema recibe este nombre porque el matemático griego
+Pitágoras o uno de sus estudiantes lo demostró 600 años antes de
+Cristo. Todavía hoy siguen apareciendo variadas demostraciones de
+este teorema, provenientes de culturas diversas a través del
+mundo. No es claro realmente donde se enunció por primera vez y
+donde se presentó la primera demostración. Como lo comentamos en
+la reseña inicial, este teorema era conocido por los Babilonios
+por el 1650 antes de Cristo y, posiblemente, se conoció también en
+la India hacia el 800 antes de Cristo. Una colección de 370
+diferentes demostraciones de este teorema fueron compiladas en
+1940 por Elisa Loomis. Incluye allí demostraciones del matemático
+indú Bhaskara (Siglo XII), de Leonardo Da Vinci (Siglo XV) y hasta
+del presidente de los Estados Unidos, James A Garfield (Siglo
+XIX). No en vano este teorema es llamado por algunos historiadores
+" El primer gran teorema en matemáticas"
+
+\bigskip
+
+El teorema se puede enunciar también en la siguiente forma:
+
+\bigskip
+
+\textbf{3.15.1. (Teorema de Pitágoras)} En cualquier triángulo
+rectángulo, la suma de las áreas de los cuadrados construidos
+sobre los catetos es igual al área del cuadrado construido sobre
+la hipotenusa.
+
+\bigskip
+
+\textit{Una demostración del teorema de Pitágoras.} Dado un
+triángulo rectángulo con catetos $a$, $b$ e hipotenusa $c$,
+debemos demostrar que: $a^2 + b^2 = c^2$.
+
+\bigskip
+
+{\bf Argumento}
+
+\bigskip
+
+El triángulo rectángulo y sus " copias" congruentes se muestran en
+la siguiente figura:
+
+\bigskip
+
+\bigskip
+
+\[
+\begin{array}{cc}
+\includegraphics{imagenes/dem_teorema_pitagoras.gif} & \includegraphics{imagenes/dem_teorema_pitagoras1.gif}
+\end{array}
+\]
+
+\bigskip
+
+El cuadrilátero exterior es un cuadrado porque cada uno de sus
+lados tiene longitud $(a+b)$ y tiene cuatro ángulos rectos. El
+cuadrilátero sombreado también es un cuadrado porque cada lado
+tiene longitud c y cada uno de sus ángulos es recto (¿Porqué?).
+Determinemos ahora el área del cuadrado sombreado.
+
+\bigskip
+
+Área de cuadrado sombreado = Área del cuadrado mayor - Área de los
+4 triángulos rectángulos.
+
+\bigskip
+
+Dado que el lado del cuadrado mayor es $(a+b)$, su área es
+$(a+b{)}^{{2}}$.
+
+\bigskip
+
+Cada uno de los cuatro triángulos tiene área  $\frac{1}{2}ab$.
+
+\bigskip
+
+De donde el área del cuadrado sombreado es:
+
+\bigskip
+
+\[(a+b{)}^{{2}}-4(\frac{1}{2}ab)=({a}^{{2}}+2ab+{b}^{{2}})-2ab={a}^{{2}}+{b}^{{2}}.\]
+
+\bigskip
+
+Pero, de otra parte, el cuadrado sombreado tiene lado $c$ y por
+tanto su área es $c^2$.
+
+\bigskip
+
+Concluimos entonces que: $c^2 = a^2 + b^2$.
+
+\bigskip
+
+\textbf{nota} Si un triángulo con lados de longitudes $a$, $b$,
+$c$ satisface que $a^2 + b^2 = c^2$, entonces el triángulo es un
+{\bf triángulo rectángulo}.
+
+\bigskip
+
+\textbf{Ejemplo 3.7. } \quad\begin{enumerate} \item Encontrar en
+cada caso la longitud de la hipotenusa.
+
+\bigskip
+
+\[
+\begin{array}{cc}
+\includegraphics{imagenes/ejm_teorema_pitagoras.gif} & \includegraphics{imagenes/ejm_teorema_pitagoras1.gif}
+\end{array}
+\]
+
+\bigskip
+
+\emph{Solución}: Para el primer triángulo se tiene que $a=b=3$, de
+donde
+
+\bigskip
+
+\[a^2 + b^2 = a^2 + a^2 =2a^2 = 2(3)2 = 18.\]
+
+\bigskip
+
+Como
+
+\bigskip
+
+\[{c}^{{2}}={a}^{{2}}+{b}^{{2}}=18,{c}^{{2}}=18,c=\sqrt{{18}}=3\sqrt{{2}}.\]
+
+\bigskip
+
+Para el segundo se tiene que $a = 40$, $b = 9$, de donde
+
+\bigskip
+
+\[{c}^{{2}}={a}^{{2}}+{b}^{{2}}=(40{)}^{{2}}+(9{)}^{{2}}=1681\]
+
+\bigskip
+
+y de aquí  $c=\sqrt{{1681}}$.
+
+\bigskip
+
+\item Encontrar longitud del cateto desconocido en el triángulo de
+la figura
+
+\bigskip
+
+\[
+\includegraphics{imagenes/ejm_teorema_pitagoras3.gif}
+\]
+
+\bigskip
+
+\emph{Solución}: En la figura el cateto $b = 1$ y la hipotenusa
+$c= 40$. Aplicando el teorema tenemos que:
+
+\bigskip
+
+\[{c}^{{2}}=(40{)}^{{2}}={a}^{{2}}+{b}^{{2}}={a}^{{2}}+(1{)}^{{2}}\]
+
+\bigskip
+
+De donde,
+\begin{align*}
+(40{)}^{{2}}-1&={a}^{{2}}\\
+1599&={a}^{{2}}\\
+\sqrt{{1599}}&=a.
+\end{align*}
+
+\bigskip
+
+\end{enumerate}
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{geometria16.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color {darkgray} {\small Área de Polígonos}} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color {darkgray} {\small Circunferencia}} \\ \\ \\
+\end{tabular}
+\docLink{geometria19.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

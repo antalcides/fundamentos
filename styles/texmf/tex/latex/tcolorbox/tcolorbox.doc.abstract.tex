@@ -1,0 +1,32 @@
+% !TeX root = tcolorbox.tex
+% include file of tcolorbox.tex (manual of the LaTeX package tcolorbox)
+\begin{center}
+\vspace*{5mm}\par
+{\bfseries\LARGE The \texttt{tcolorbox} package\par}
+{\large Manual for version \version\ (\datum)\par}\bigskip
+{\large Thomas F.~Sturm%
+  \footnote{Prof.~Dr.~Dr.~Thomas F.~Sturm, Institut f\"{u}r Mathematik und Informatik,
+    Universit\"{a}t der Bundeswehr M\"{u}nchen, D-85577 Neubiberg, Germany;
+     email: \href{mailto:thomas.sturm@unibw.de}{thomas.sturm@unibw.de}} }
+\end{center}
+\bigskip
+\begin{absquote}
+  \begin{center}\bfseries Abstract\end{center}
+  |tcolorbox| provides an environment for colored and framed text boxes with a
+  heading line. Optionally, such a box can be split in an upper and a lower
+  part. The package |tcolorbox| can be used for the setting of \LaTeX\ examples where
+  one part of the box displays the source code and the other part shows the
+  output. Another common use case is the setting of theorems. The package supports
+  saving and reuse of source code and text parts.
+\end{absquote}
+
+\begin{tcolorbox}[breakable,enhanced,title={Contents},fonttitle=\bfseries\Large,
+  colback=yellow!10!white,colframe=red!50!black,before=\par\bigskip\noindent,
+  watermark color=yellow!75!red!25!white,pad at break=3mm,
+  watermark text={\bfseries\Large Contents},
+  %enlargepage=2\baselineskip,
+  drop fuzzy shadow]
+\makeatletter
+\@starttoc{toc}
+\makeatother
+\end{tcolorbox}

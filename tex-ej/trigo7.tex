@@ -1,0 +1,311 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{trigo6.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Números Reales} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small \'{A}ngulos de Referencia} \\ \\ \\
+\end{tabular}
+\docLink{trigo8.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 5}}  {\large
+{\color{ azulc} NOTAS DE TRIGONOMETRIA}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 5.6. }}
+{\normalsize {\color{naranja} Algunas Propiedades de las Funciones Trigonométricas}}
+
+\newline
+
+\begin{center}
+\includegraphics{img/img21.gif}
+\end{center}
+
+\bigskip
+
+Consideremos un círculo trigonométrico, es decir de radio 1,
+tomemos ángulos en posición normal orientados positivamente cuya
+medida aumente progresivamente de 0 hasta el valor
+$\dfrac{\pi}{2}$. Observamos que la ordenada va aumentando de 0 a
+1. Si se tiene en cuenta que la ordenada es el valor del seno,
+este va aumentando de 0 a 1. Si se toman ángulos de medida mayor
+que$\dfrac{\pi }{2}$ pero menor que $\pi$, la ordenada disminuye
+hasta tomar el valor 0. Para los ángulos cuya medida está entre
+$\pi $ y $\dfrac{3\pi }{2}$, la ordenada es negativa y va de 0
+hasta $-1$. Y para ángulos entre$\dfrac{3\pi}{2}$ y $2\pi $ la
+ordenada sigue siendo negativa y va tomando valores entre -1 y 0
+(hemos tomado como unidad de medida el radián).
+
+\bigskip
+
+Si se continúa con el giro, notamos que la situación descrita
+anteriormente se repite.
+
+\bigskip
+
+De estas observaciones se derivan las siguientes conclusiones:
+
+\bigskip
+
+\begin{enumerate}
+\item  El mayor valor que toma el seno de un número real es 1.
+
+\item  El menor valor que toma el seno de un número real es -1.
+
+\item  Los números $t$, $t+ 2\pi $, $t + 4 \pi $,\ldots tienen el
+mismo valor de seno. Esto es, $sen t = sen \left(t+2\pi \right)
+=sen \left( t+4\pi \right) = \ldots$
+\end{enumerate}
+
+\bigskip
+
+Si el movimiento se realiza en sentido contrario a las manecillas
+del reloj, concluimos:
+
+\bigskip
+
+\[sen t=sen\left( t-2\pi \right) =sen\left( t-4\pi \right) =sen\left( t-6\pi \right)
+=\ldots\]
+
+\bigskip
+
+Si además durante el recorrido descrito tenemos en cuenta la
+variación de la abscisa, que es el valor del coseno, concluimos:
+
+\bigskip
+
+\begin{enumerate}
+\item El mayor valor de coseno es 1.
+
+\item  El menor valor de coseno es -1.
+
+\item $\cos t= \cos \left( t+2\pi \right) =\cos\left( t+4\pi
+\right) =\ldots=\cos\left( t-2\pi \right) =\cos\left( t-4\pi
+\right) =\ldots$
+\end{enumerate}
+
+\bigskip
+
+{\normalsize {\color{naranja} Funciones periódicas}}
+
+\bigskip
+
+\textbf{Definición 5.6.1. } Una función $f$ es periódica si existe
+un real positivo $p$ tal que para cualquier $t$ en el dominio de
+$f:f\left(t+p\right)=f\left(t\right)$.
+
+\bigskip
+
+El menor $p$ positivo que cumple esta condición recibe el nombre
+de periodo. Una característica importante de la gráfica de una
+función con periodo $p$ es que la gráfica se repite en intervalos
+de longitud $p$.
+
+\bigskip
+
+Como
+\begin{align*}
+sen t &= sen\left( t+2n\pi \right) , \quad n =\ldots -2, -1, 0,
+1, 2,\ldots\\
+\cos t &= \cos\left( t+2n\pi \right) , \quad n =\ldots -2, -1, 0,
+1, 2,\ldots
+\end{align*}
+
+\bigskip
+
+Las funciones seno y coseno son periódicas con periodo $2\pi $.
+
+\bigskip
+
+\textbf{GRÁFICAS:}
+
+\bigskip
+
+\texttt{\textbf{Función seno:}}
+
+\bigskip
+
+\begin{center}
+\includegraphics{img/seno.gif}
+\end{center}
+
+\bigskip
+
+\texttt{\textbf{Función coseno:}}
+
+\bigskip
+
+\begin{center}
+\includegraphics{img/coseno.gif}
+\end{center}
+
+\bigskip
+
+\textbf{Ejemplo 5.11. }
+\begin{align*}
+sen \left(14\dfrac{\pi}{3}\right)&=sen\left(\dfrac{2\pi}{3}+4\pi\right)\\
+&=sen\left( \dfrac{2\pi }{3}\right)
+\end{align*}
+\begin{align*}
+\cos\left(25\dfrac{\pi}{4}\right)&=\cos\left(6\pi+\dfrac{\pi}{4}\right)\\
+&=\cos\left( \dfrac{\pi }{4}\right)
+\end{align*}
+\begin{align*}
+sen \left( -13\dfrac{\pi }{6}\right) &=-sen\left( 13\dfrac{\pi
+}{6}\right)\\
+&=-sen\left( 2\pi +\dfrac{\pi }{6}\right)\\
+&=-sen\left( \dfrac{\pi }{6}\right)
+\end{align*}
+\begin{align*}
+\cos\left( -390^{\circ }\right) &=\cos\left( 390^{\circ }\right)\\
+&= \cos\left( 360^{\circ }+30^{\circ }\right)\\
+&= \cos \left(30^{\circ }\right)
+\end{align*}
+
+\bigskip
+
+\texttt{\textbf{Función tangente:}}
+
+\bigskip
+
+Para analizar el comportamiento de la función tangente, usaremos
+nuevamente el círculo trigonométrico.
+
+\bigskip
+
+\begin{center}
+\includegraphics{img/tangente.gif}
+\end{center}
+
+\bigskip
+
+$\tan t=\dfrac{PQ}{OQ}$.
+
+\bigskip
+
+Como $OQ$ es igual a 1, entonces $\tan t = PQ$, esto es la
+longitud del segmento obtenido de la intersección de la recta
+tangente a la circunferencia en $Q$ con la prolongación del lado
+final de $t$. Al realizar la variación de $t$ de 0 a
+$\frac{\pi}{2}$, el valor de la tangente va aumentado; cuando
+$t=\frac{\pi}{2}$, ni el lado final del ángulo ni su prolongación
+cortan al segmento $PQ$ luego la tangente no está definida. Si $t$
+toma progresivamente valores mayores que $\frac{\pi}{2}$, pero
+menores que $\pi$, el valor de la tangente, aumenta continuamente
+y sus valores son todos negativos.
+
+\bigskip
+
+Si $t$ varía de $\pi$ a $3\dfrac{\pi }{2}$, el comportamiento es
+igual al que se presenta entre 0 y $\dfrac{\pi }{2}$. Para $t$
+entre $\dfrac{3\pi }{2}$ y $2\pi $ se repiten los valores que se
+obtuvieron entre $\dfrac{\pi }{2}$ y $\pi $.
+
+\bigskip
+
+La gráfica es:
+
+\bigskip
+
+\begin{center}
+\includegraphics{img/tangente1.gif}
+\end{center}
+
+\bigskip
+
+De estas observaciones se derivan las siguientes conclusiones:
+
+\bigskip
+
+\begin{enumerate}
+\item  Al dominio de la función tangente no pertenecen los números
+reales que sean múltiplos impares de $\dfrac{\pi}{2}$.
+
+\bigskip
+
+\item La tangente de un número puede tomar cualquier valor real.
+
+\item El periodo de la función tangente es $\pi $
+\end{enumerate}
+
+\textbf{Ejemplo 5.12. } $\tan\dfrac{5\pi }{4}=\tan\left( \pi
++\dfrac{\pi }{4}\right)$, entonces $\tan\dfrac{5\pi
+}{4}=\tan\dfrac{\pi }{4}$.
+
+\bigskip
+
+$\tan\left( \dfrac{7\pi }{2}\right)$ NO ESTÁ DEFINIDA.
+
+\bigskip
+
+$\tan\left(-205^{\circ }\right) =-\tan\left( 205^{\circ }\right)$,
+
+\bigskip
+
+entonces:
+
+\bigskip
+
+$\tan\left(-205^{\circ}\right)=-\tan\left(205^{\circ}-180^{\circ}\right)
+=-\tan\left( 25^{\circ }\right)$.
+
+\bigskip
+
+$\tan\left(-\dfrac{11\pi}{10}\right)=-\tan\left(\dfrac{\pi}{10}\right)$
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{trigo6.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Números Reales} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small \'{A}ngulos de Referencia} \\ \\ \\
+\end{tabular}
+\docLink{trigo8.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

@@ -1,0 +1,8 @@
+\long\def\wrap#1{[\arg#1]}
+\def\arg#1{---#1---\par}
+\newenvironment{test}{\Collect@Body\wrap}{}
+\begin{test}{arg}
+  hello
+
+  there
+\end{test}

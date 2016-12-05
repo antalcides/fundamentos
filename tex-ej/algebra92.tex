@@ -1,0 +1,157 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{algebra9.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small División de Polinomios} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Productos Notables} \\ \\ \\
+\end{tabular}
+\docLink{algebra10.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 2}}  {\large
+{\color{ azulc} FUNDAMENTOS DE ALGEBRA}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 2.10. }}
+{\normalsize {\color{naranja} Raíces de Polinomios}}
+
+\newline
+
+Una raíz o un cero de un polinomio $p(x)\in
+\mathbf{R}\left[x\right] $ es un número complejo $z$ (real o no)
+que verifica $p(z)=0$ (o, de otra, manera, es una solución de la
+ecuación $p(x)=0$).
+
+\bigskip
+
+\textbf{Ejemplo 2.28. } \quad \begin{enumerate} \item Si
+$z=-\dfrac{1}{2}+\dfrac{\sqrt{3}}{2}i$, entonces
+$z^{2}=-\dfrac{1}{2}-\dfrac{\sqrt{3}}{2}i$ y $1+z+z^{2}=0$, es
+decir, $z$ es raíz del polinomio.
+
+\bigskip
+
+Además, $\overline{z}$, el conjugado de $z$ es
+$\overline{z}=-\dfrac{1}{2}-\dfrac{\sqrt{3}}{2}i$, así
+$\overline{z}=z^{2}$ y $\overline{z}^{2}=z$. Entonces
+$1+\overline{z}+\overline{z}^{2}=1+z^{2}+z=0$, es decir, también
+$\overline{z}$ es raíz del polinomio.
+
+\bigskip
+
+Ahora bien $z^{3}-1=\left( z-1\right) \left( 1+z+z^{2}\right)$ y
+$\overline{z}^{3}-1=\left( \overline{z}-1\right) \left(
+1+\overline{z}+ \overline{z}^{2}\right)$ entonces $z$ y
+$\overline{z}$, además de 1 son raíces de $x^{3}-1$.
+
+\bigskip
+
+\item Para hallar las raíces del polinomio de grado 2,
+$ax^{2}+bx+c$ con $a\neq 0,$ o dicho de otra manera, para hallar
+las soluciones de la ecuación
+
+\bigskip
+
+\[ax^{2}+bx+c=0\]
+
+\bigskip
+
+basta hallar las soluciones de la ecuación
+
+\bigskip
+
+\[x^{2}+\frac{b}{a}x+\frac{c}{a}=0\]
+
+\bigskip
+
+puesto que
+$ax^{2}+bx+c=a\left(x^{2}+\dfrac{b}{a}x+\dfrac{c}{a}\right)$ y
+$a\neq 0$.
+
+\bigskip
+
+Para hacerlo, completamos cuadrados en la ecuación
+
+\bigskip
+
+\[x^{2}+\frac{b}{a}x=-\frac{c}{a}\]
+
+\bigskip
+
+\[x^{2}+\frac{b}{a}x+\left( \frac{b}{a}x\right)^{2}=\left( \frac{b}{a}x\right)
+^{2}-\frac{c}{a}\]
+
+\bigskip
+
+esto es
+
+\bigskip
+
+\[\left(x+\frac{b}{2a}x\right)^{2}=\frac{b^{2}}{4a^{2}}-\frac{c}{a}=\frac{b^{2}-4ac}{4a^{2}}\]
+
+\bigskip
+
+así, $x+\dfrac{b}{2a}x=\pm \sqrt{\dfrac{b^{2}-4ac}{4a^{2}}}$
+
+\bigskip
+
+de donde $x=-\dfrac{b}{2a}\pm
+\dfrac{\sqrt{b^{2}-4ac}}{2a}=\dfrac{-b\pm \sqrt{b^{2}-4ac}}{2a}$
+\end{enumerate}
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{algebra9.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small División de Polinomios} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Productos Notables} \\ \\ \\
+\end{tabular}
+\docLink{algebra10.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

@@ -1,0 +1,183 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.50,0.42,0.42,0.06} % color leccion
+
+\def\Reales{\mathbb{R}}
+\def\Naturales{\mathbb{N}}
+\def\Enteros{\mathbb{Z}}
+\def\Racionales{\mathbb{Q}}
+\def\Irr{\mathbb{I}}
+\def\contradiccion{($\rightarrow \leftarrow$)}
+
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{taller1.tex}{\includegraphics{../../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Taller 1 } \\ \\ \\
+\end{tabular}&
+\docLink[_top]{../../../index.html}{\includegraphics{../../../images/navegacion/inicio.gif}}
+\docLink{../../../docs_curso/contenido.html}{\includegraphics{../../../images/navegacion/contenido.gif}}
+\docLink{../../../docs_curso/descripcion.html}{\includegraphics{../../../images/navegacion/descripcion.gif}}
+\docLink{../../../docs_curso/profesor.html}{\includegraphics{../../../images/navegacion/profesor.gif}}
+&
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large FUNCIONES}}  {\large
+{\color{ azulc} }}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  TALLER 2 (POLINOMIOS)}}
+{\normalsize {\color{naranja} }}
+
+\newline
+
+\begin{enumerate}
+
+\item Halle todos los valores enteros $b$ y $c$ tales que cada uno
+de los siguientes polinomios pueda escribirse como producto de
+polinomios de grado uno y coeficientes enteros.
+\begin{enumerate}
+\item $x^{2}+3x+c$ \item $2x^{2}+bx-3$
+\end{enumerate}
+
+\item En cada caso determine si existen enteros $x$ y $y$ que
+satisfagan la ecuación
+\begin{enumerate}
+\item $x^{2}-y^{2}=17$ \item $x^{2}-y^{2}=12$
+\end{enumerate}
+
+\item En cada caso divida $f\left( x\right) $ por $p\left(
+x\right) $
+\begin{enumerate}
+\item $f\left( x\right) =27x^{4}-36x^{2}+x+9$, \quad $p\left(
+x\right) =3x^{2}+x+2$ \item $f\left( x\right)=7x+6$, \quad
+$p\left( x\right) =2x^{2}-3$ \item $f\left( x\right) =x^{2}+x+1$,
+\quad $p\left( x\right)=x^{2}+1$
+\end{enumerate}
+
+\item Use división sintética para determinar el cociente y el
+residuo de dividir $f\left( x\right) $ por $p\left( x\right) $ en
+cada uno de los siguientes casos.
+\begin{enumerate}
+\item $f\left( x\right) =x^{5}-3x^{2}+4x+5$, \quad $p\left(
+x\right) =x-\frac{1}{4}$ \item $f\left( x\right)
+=-4x^{6}-21x^{5}+26x^{3}-27x$, \quad $p\left( x\right) =x+5$ \item
+$f\left( x\right) =12x^{3}+5x^{2}-11x-6$, \quad $p\left( x\right)
+=3x+2$ \quad (Sugerencia: $3x+2=3\left(x+\frac{2}{3}\right) $).
+\end{enumerate}
+
+\item Usando el teorema del residuo. Determine el residuo de
+dividir $f\left( x\right) $ por $p\left( x\right) $ en cada uno de
+los siguientes casos.
+\begin{enumerate}
+\item $f\left( x\right) =2x^{7}-3x^{5}+4x-2$, \quad $p\left(
+x\right) =x+2$ \item $f\left( x\right)
+=\dfrac{x^{4}}{27}-\dfrac{x^{3}}{9}+x+1$, \quad $p\left( x\right)
+=x-3$ \item $f\left( x\right)
+=6x^{100}+10x^{85}-x^{38}+4x^{17}-12$, \quad $p\left( x\right)
+=x-1$
+\end{enumerate}
+
+\item En cada caso demuestre que $p\left( x\right)$ es factor de
+$f\left(x\right) $
+\begin{enumerate}
+\item $f\left( x\right)=6x^{100}+10x^{85}-x^{38}+4x^{17}-12$,
+\quad $p\left(x\right) =x-1$ \item $f\left( x\right)
+=4x^{3}+4x^{2}-x-1$, \quad $p\left( x\right) =x+1$ \item $f\left(
+x\right) =5x^{12}-20480$, \quad $p\left(x\right) =x-2$ \item
+$f\left( x\right) =x^{49}+3^{49}$, \quad $p\left( x\right) =x+3$
+\item $f\left( x\right) =6x^{3}-7x^{2}+1$, \quad $p\left( x\right)
+=x-\frac{1}{2}$
+\end{enumerate}
+
+\item Para qué valores de $k$, $f\left( x\right) $ es divisible
+por el polinomio lineal?
+\begin{enumerate}
+\item $f\left( x\right) =x^{3}-k^{2}x^{2}-8kx-16$, $x-4$ \item
+$f\left( x\right) =kx^{3}-17x^{2}-4kx+5$, $x-5$
+\end{enumerate}
+
+\item Halle todos los valores de $k$ para los cuales el residuo de
+dividir \linebreak$f\left( x\right)=3x^{2}+4kx^{2}+6,$ por $x+2$
+sea $-2.$
+
+\item Si se divide $f\left( x\right) =x^{2}-5x+5$, por $x-c$ y se
+obtiene como residuo $r=-1$ a qué es igual $c$?
+
+\item Halle el polinomio $f\left( x\right)$ de coeficientes reales
+y coeficiente principal $1$, que tiene el grado y las raíces que
+se indican
+\begin{enumerate}
+\item grado $4$, raíces $-\frac{1}{2},1,3,-3$ \item grado $4$,
+raíces $-\frac{1}{4},-3i,0,-3$ \item grado $5$, raíces $-3i,1+i,2$
+\end{enumerate}
+
+\item Determine el polinomio $f\left( x\right) $ de grado 3 y
+coeficientes reales que tenga los ceros indicados y satisfaga la
+condición dada
+\begin{enumerate}
+\item $-1,2,3,$ $f\left( -2\right) =80$ \item $-3,-2,0,$ $f\left(
+-4\right) =16$ \item $-2i,2i,3,$ $f\left(1\right) =20$
+\end{enumerate}
+
+\item Halle el polinomio $f\left( x\right) $ de grado 7 para el
+cual $-2$ y $2$ son raíces de multiplicidad 2, 0 es raíz de
+multiplicidad 3 y $f\left( -1\right) =27$
+
+\item Para cada uno de los siguientes polinomios halle todas sus
+raíces y escríbalo como producto de factores lineales
+\begin{enumerate}
+\item $x^{3}-x^{2}+x-1$ \item $2x^{4}+x^{3}-3x^{2}-x+1$ \item
+$8x^{6}+7x^{3}-1$ \item $x^{6}-64$
+\end{enumerate}
+
+\item Halle todas las soluciones de cada una de las siguientes
+ecuaciones
+\begin{enumerate}
+\item $x^{\frac{2}{5}}-x^{\frac{1}{5}}-2=0$ \item
+$\sqrt{x}-6\sqrt[4]{x}+9=0$ \item $\sqrt{2x+3}-\sqrt{x-2}-2=0$
+\item $\sqrt{4x-3x}+\sqrt{3x-9}=\sqrt{3x-14}$
+\end{enumerate}
+
+\end{enumerate}
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{taller1.tex}{\includegraphics{../../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Taller 1 } \\ \\ \\
+\end{tabular}&
+\docLink[_top]{../../../index.html}{\includegraphics{../../../images/navegacion/inicio.gif}}
+\docLink{../../../docs_curso/contenido.html}{\includegraphics{../../../images/navegacion/contenido.gif}}
+\docLink{../../../docs_curso/descripcion.html}{\includegraphics{../../../images/navegacion/descripcion.gif}}
+\docLink{../../../docs_curso/profesor.html}{\includegraphics{../../../images/navegacion/profesor.gif}}
+&
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

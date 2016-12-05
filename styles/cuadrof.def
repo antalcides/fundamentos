@@ -1,0 +1,24 @@
+ \newcommand{\@txt@tmp}{} \newlength{\DSFBox}
+   \newlength{\SSFBox} \newlength{\DEFBox}
+    \newlength{\EFBox}
+      \define@key{BCouleur}{ctexte}{\def\CTexte{#1}} 
+      \define@key{BCouleur}{cbord}{\def\CBord{#1}} 
+      \define@key{BCouleur}{cfond}{\def\CFond{#1}}
+       \define@key{BCouleur}{sfbox}{\def\SFBox{#1}} 
+       \define@key{BCouleur}{epaisfbox}{\def\EpaisFBox{#1}}
+        \setlength{\DSFBox}{5pt}
+         \setlength{\DEFBox}{3pt} 
+\setkeys{BCouleur}{ctexte=black,cbord=red,cfond=white,sfbox=\the\DSFBox,epaisfbox=\the\DEFBox}{} 
+         \newenvironment{recuadro}[1][]{% 
+\setkeys{BCouleur}{#1} 
+\def\FrameCommand{\fboxrule=\FrameRule 
+\fboxsep=\FrameSep 
+\color{\CTexte}
+\fcolorbox{\CBord}{\CFond}}
+ \setlength{\SSFBox}{\SFBox} 
+ \setlength\FrameSep{\the\SSFBox} 
+ \setlength{\EFBox}{\EpaisFBox} 
+ \setlength\FrameRule{\the\EFBox}
+  \MakeFramed{\advance\hsize-\width \FrameRestore}} {\endMakeFramed}  
+  %=============================
+  

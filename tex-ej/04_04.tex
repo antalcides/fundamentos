@@ -1,0 +1,247 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{04_03.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Funciones y sus Gráficas} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Funciones Lineales} \\ \\ \\
+\end{tabular}
+\docLink{04_05.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 4}}  {\large
+{\color{ azulc} FUNCIONES}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 4.4. }}
+{\normalsize {\color{naranja} Representación Gráfica de Funciones}}
+
+\newline
+
+\textbf{Definición 4.4.1. } La {\bf representación gráfica}, o
+simplemente, la {\bf gráfica} de una función $f$ de dominio $D$,
+es el conjunto de los puntos $(x,y)$ del plano cartesiano tales
+que $x\in D$ y $\ y=$ $f(x)$. Se dice que la gráfica representa
+$f$ o que la gráfica tiene ecuación cartesiana $y=$ $f(x)$.
+
+\bigskip
+
+Note que no toda curva dibujada en el plano es la gráfica de una
+función. En efecto, puesto que para cada real $x$ del dominio
+existe solamente un real $y$ tal que $y=$ $f(x)$, no pueden
+pertenecer a la gráfica dos puntos cuyas abscisas coincidan. Así,
+ninguna recta vertical puede intersectar la gráfica en más de un
+punto. Este es el {\bf criterio de la recta vertical}.
+
+\bigskip
+
+Un método para estudiar algunas funciones y para trazar sus
+gráficas es compararlas con otras conocidas o simples.
+Consideremos por ejemplo, $f(x)=x^{2}$ y comparemos las gráficas
+de, $y=f(x)$, $y=f(x-2)$, $y=f(x+2)$.
+
+\bigskip
+
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics{imagenes/4_4.gif} &
+\includegraphics{imagenes/4_5.gif} \\
+$y=x^{2}$ & $y=(x+2)^{2}$
+\end{tabular}
+\\
+\includegraphics{imagenes/4_3.gif} \\
+$y=(x-2)^{2}$
+\end{center}
+
+\bigskip
+
+Las curvas tienen la misma forma pero al reemplazar $x$ por $x-2$
+en $f(x)$, la gráfica que se obtiene es la de $y=f(x)$ desplazada
+dos unidades a la derecha. Al reemplazar $x$ por $x+2,$ la gráfica
+es también la de $y=f(x)$, desplazada esta vez dos unidades hacia
+la izquierda. Este es otro hecho general: si $a>0$, la gráfica de
+$y=f(x-a)$ se puede hallar por {\bf traslación} de la gráfica de
+$y=f(x)$ un número $a$ de unidades hacia la derecha y la de
+$y=f(x+a)$ se puede hallar por traslación de la gráfica de
+$y=f(x)$ un número $a$ de unidades hacia la izquierda.
+
+\bigskip
+
+Desplazar la gráfica de una función verticalmente hacia arriba un
+número de $b$ unidades corresponde a aumentar en $b$ unidades,
+$b>0$, el valor de la segunda coordenada $y$. Un desplazamiento de
+$b$ unidades hacia abajo, corresponde a disminuir la segunda
+coordenada en $b$ unidades. Así, en el primer caso se tiene la
+gráfica de $y=f(x)+b$ y en el segundo caso, la de $y=f(x)-b$.
+Estas ultimas igualdades se obtienen reemplazando $y$ por $y-b$ o
+por $y+b$, según sea el caso, en la ecuación $y=f(x)$.
+
+\bigskip
+
+\begin{center}
+\begin{tabular}{ccc}
+\includegraphics{imagenes/4_6.gif} &
+\includegraphics{imagenes/4_7.gif} \\
+$y=x^{2}$ & $y=x^{2}+3$
+\end{tabular}
+\\
+\includegraphics{imagenes/4_8.gif} \\
+$y=x^{2}-3$
+\end{center}
+
+\bigskip
+
+Adicionalmente, si en $y=f(x)$, se reemplaza $x$ por $ax$, con $a$
+como una constante positiva, cada valor de la variable
+independiente $x$ tendrá como imagen la de $ax$, con $ax>x$ si
+$a>1$. Así la gráfica de $y=f(ax)$ se obtiene mediante una {\bf
+compresión horizontal} de factor $a$ de la gráfica de $f(x)$. Si
+$0<a<1$, al reemplazar $x$ por $ax$ en $f(x)$, la gráfica de la
+función que resulta, es decir de $y=f(ax)$, se puede obtener de la
+de $f(x)$ mediante una {\bf expansión horizontal} de factor $a$.
+
+\bigskip
+
+Además, la gráfica de $y=af(x)$ se obtiene de la gráfica de $f(x)$
+mediante una {\bf compresión vertical} de factor $a$ si $0\leq
+a\leq 1$ y mediante una {\bf expansión vertical} de factor $a$ si
+$a>1$.
+
+\bigskip
+
+\begin{center}
+\begin{tabular}{ccc}
+\includegraphics{imagenes/4_9.gif} &
+\includegraphics{imagenes/4_10.gif} \\
+$y=x^{2}$ & $y=(2x)^{2}$
+\end{tabular}
+\\
+\includegraphics{imagenes/4_11.gif} \\
+$(\frac{1}{2}x)^{2}$
+\end{center}
+
+\bigskip
+
+\begin{center}
+\begin{tabular}{ccc}
+\includegraphics{imagenes/4_12.gif} &
+\includegraphics{imagenes/4_13.gif}  \\
+$\qquad y=2x^{2}$ & $y=\frac{1}{2}x^{2}$
+\end{tabular}
+\end{center}
+
+\bigskip
+
+Finalmente, la gráfica de $y=f(-x)$ se obtiene reflejando la de
+$y=f(x)$ en el eje $Y$ y la de $y=-f(x)$, reflejándola en el eje
+$X$.
+
+\bigskip
+
+\begin{center}
+\begin{tabular}{ccc}
+\includegraphics{imagenes/4_14.gif} &
+\includegraphics{imagenes/4_15.gif}  \\
+$y=\left( -x\right) ^{2}$ & $\ y=-\left( x^{2}\right) $
+\end{tabular}
+\end{center}
+
+\bigskip
+
+\textbf{Ejemplo 4.5. } Sea
+\[h(x)=4x^{2}-8x+3=(2x-2)^{2}-1=(2(x-1))^{2}-1\]
+entonces la gráfica de $h(x)$ se puede obtener a partir de la
+gráfica de la función $i(x)=x^{2}$ por una secuencia de
+transformaciones cada una de las cuales da lugar a una curva cuya
+ecuación aparece frente a la transformación en esta lista:
+
+\bigskip
+
+\begin{itemize}
+\item traslación horizontal hacia la derecha, de una unidad
+$y=(x-1)^{2}$ \item compresión horizontal de factor 2\qquad
+$y=(2(x-1))^{2}$ \item traslación vertical hacia abajo de una
+unidad $y=(2x-2)^{2}-1$
+\end{itemize}
+
+\bigskip
+
+\begin{center}
+\begin{tabular}{ccc}
+\includegraphics{imagenes/4_16.gif} &
+\includegraphics{imagenes/4_17.gif}  \\
+$y=x^{2}$ & $y=(x-1)^{2}$
+\end{tabular}
+\end{center}
+
+\bigskip
+
+\begin{center}
+\begin{tabular}{ccc}
+\includegraphics{imagenes/4_18.gif} &
+\includegraphics{imagenes/4_19.gif}  \\
+$y=(2x-2)^{2}$ & $y=(2x-2)^{2}-1$
+\end{tabular}
+\end{center}
+
+\bigskip
+
+Estudiamos ahora tres familias de funciones: las funciones
+lineales, las funciones cuadráticas y las funciones exponenciales.
+
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{04_03.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Funciones y sus Gráficas} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Funciones Lineales} \\ \\ \\
+\end{tabular}
+\docLink{04_05.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

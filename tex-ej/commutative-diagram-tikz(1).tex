@@ -1,0 +1,47 @@
+% A simple commutative diagram
+% Stefan Kottwitz
+\documentclass{article}
+\usepackage{tikz}
+%%%<
+\usepackage{verbatim}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{5pt}%
+%%%>
+\begin{comment}
+:Title: Commutative diagram
+:Tags: Matrices;Arrows;Diagrams;Mathematics
+:Author: Stefan Kottwitz
+:Slug: commutative-diagram-tikz
+
+A simple example of a commutative diagram using TikZ, short and readable.
+It has been posted as answer to the question
+http://tex.stackexchange.com/q/45741/213 of Elias.
+
+* A matrix is used for positioning the main nodes
+* Arrows are drawn as edges, between the main nodes,
+  using further nodes for labeling
+* As columns and row distance is expressed by em units, which scale
+  with the font size, the diagram can be scaled by using font size commands
+  such as \Large, \huge etc.
+
+Note the (m-2-1.east|-m-2-2) syntax for getting a horizontal arrow
+between cells of a different height.
+\end{comment}
+\usetikzlibrary{matrix}
+\begin{document}
+\begin{tikzpicture}
+  \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
+  {
+     F_t(x) & F(x) \\
+     A_t & A \\};
+  \path[-stealth]
+    (m-1-1) edge node [left] {$\mathcal{B}_X$} (m-2-1)
+            edge [double] node [below] {$\mathcal{B}_t$} (m-1-2)
+    (m-2-1.east|-m-2-2) edge node [below] {$\mathcal{B}_T$}
+            node [above] {$\exists$} (m-2-2)
+    (m-1-2) edge node [right] {$\mathcal{B}_T$} (m-2-2)
+            edge [dashed,-] (m-2-1);
+\end{tikzpicture}
+\end{document}
+

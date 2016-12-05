@@ -1,0 +1,18 @@
+
+
+El paquete pdfpresentacion.sty requiere del paquete pdfscreen.sty que
+necesita de truncate.sty.
+
+Para instalarlo(s) para todos los usuarios basta con descomprimir
+pdfpresentacion.tgz en algún directorio que TeX reconozca (e.g.,
+/usr/share/texmf/tex/latex/pdf), donde pdf seguramente no existe pero
+puedes crearlo, y (como root) ejecutar mktexlsr y ¡listo!
+
+Como usuario descomprimirlo en tu directorio, crea una liga a
+pdfscreen/pdfscreen.sty en presentacion
+	cd presentacion
+	ln -s  pdfscreen/pdfscreen.sty .
+
+ y trabaja en el directorio presentacion
+
+Para saber cómo se usa abre el archivo manual.pdf.

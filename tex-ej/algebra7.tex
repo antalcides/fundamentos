@@ -1,0 +1,165 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{algebra6.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Polinomios} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Multiplicación} \\ \\ \\
+\end{tabular}
+\docLink{algebra8.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 2}}  {\large
+{\color{ azulc} FUNDAMENTOS DE ALGEBRA}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 2.7. }}
+{\normalsize {\color{naranja} Suma y Resta de Polinomios}}
+
+\newline
+
+El procedimiento para sumar y restar polinomios esta basado
+directamente en las propiedades asociativas y conmutativas de la
+adición y multiplicación de números reales, y en la propiedad
+distributiva de la multiplicación con respecto a la adición. Es
+decir, esta basado en las propiedades P.2, P.3 y P.4 de los
+números reales, estudiadas en el capítulo 1. Básicamente lo que se
+hace es agrupar y reducir los términos semejantes. Se llaman
+\textit{términos semejantes} los que difieren únicamente en su
+coeficiente numérico, por ejemplo $5x^{2}y$ y $-7x^{2}y$ son
+términos semejantes.
+
+\bigskip
+
+\textbf{Ejemplo 2.23. } Efectuemos la siguiente suma
+
+\bigskip
+
+\[(4x^{2}-2xy+2y^{2}+7x)+(6xy-5y^{2}+3x^{2})\]
+
+\bigskip
+
+Primero utilizamos las propiedades conmutativa y asociativa para
+agrupar los términos semejantes, obteniendo
+
+\bigskip
+
+\[(4x^{2}+3x^{2})+(-2xy+6xy)+(2y^{2}-5y^{2})+7x,\]
+
+\bigskip
+
+luego, aplicamos la propiedad distributiva para reducir los
+términos semejantes, obteniendo como resultado final
+
+\bigskip
+
+\[7x^{2}+4xy-3y^{2}+7x.\]
+
+\bigskip
+
+En la práctica se escriben en fila los polinomios a sumar, de tal
+forma que las columnas contengan solo términos semejantes. El
+ejemplo anterior nos queda de la siguiente forma
+
+\bigskip
+
+\begin{center}
+\renewcommand{\tabcolsep}{0cm}
+\begin{tabular}{cccc}
+$4x^2$ & $-2xy$ & $+2y^2$ & $+7x$\\
+$3x^2$ & $+6xy$ & $-5y^2$ & \\ \hline $7x^2$ & $+4xy$ & $-3y^2$ &
+$+7x$
+\end{tabular}
+\end{center}
+
+\bigskip
+
+donde la tercera línea presenta el resultado después de reducir
+los términos semejantes.
+
+\bigskip
+
+Si tenemos en cuenta la definición de resta, el problema de restar
+dos polinomios se transforma en el problema de sumar dos
+polinomios.
+
+\bigskip
+
+\textbf{Ejemplo 2.24. } Efectuemos la siguiente resta de
+polinomios
+
+\bigskip
+
+\[(5x^{2}+3xy-y^{3})-(2x^{2}-4xy+1)\]
+
+\bigskip
+
+La resta anterior se convierte en la suma
+
+\bigskip
+
+\[(5x^{2}+3xy-y^{3})+(-2x^{2}+4xy-1)\]
+
+\bigskip
+
+que es igual a
+
+\bigskip
+
+\[3x^{2}+7xy-y^{3}-1.\]
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{algebra6.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Polinomios} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Multiplicación} \\ \\ \\
+\end{tabular}
+\docLink{algebra8.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

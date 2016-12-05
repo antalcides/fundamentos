@@ -1,0 +1,1035 @@
+%% The LaTeX package tcolorbox - version 2.40 (2013/07/15)
+%% tcbskins.code.tex: Code for colorboxes with different skins
+%%
+%% -------------------------------------------------------------------------------------------
+%% Copyright (c) 2006-2013 by Prof. Dr. Dr. Thomas F. Sturm <thomas dot sturm at unibw dot de>
+%% -------------------------------------------------------------------------------------------
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status `author-maintained'.
+%%
+%% This work consists of all files listed in README
+%%
+\tcb@set@library@version{2.40}
+
+\RequirePackage{tikz}[2010/10/13]
+
+\def\tcb@creategeonodes@true{%
+  \begin{scope}[every node/.style={line width=0mm,inner sep=0mm,draw=none,fill=none,rectangle}]
+    \node[name=frame,at={(0,0)},above right,minimum width=\tcb@width,minimum height=\tcb@height]{};
+    \node[name=interior,at={({\kvtcb@left@rule},{\kvtcb@bottom@rule})},above right,minimum width=\tcb@innerwidth,minimum height=\tcb@innerheight]{};
+    \ifnum\tcb@segment@state=1%
+    \node[name=segmentation,at={({\kvtcb@left@rule},{\the\dimexpr\kvtcb@bottom@rule+\kvtcb@boxsep*2+\tcb@break@bottomsep+\kvtcb@bottom+\tcb@height@lower\relax})},above right,
+       minimum width=\tcb@innerwidth,minimum height=\the\dimexpr\kvtcb@middle*2\relax]{};
+    \else\iftcb@sidebyside%
+    \node[name=segmentation,at={({\the\dimexpr\kvtcb@left@rule+\kvtcb@boxsep+\kvtcb@leftupper+\tcb@w@upper\relax},{\the\dimexpr\kvtcb@bottom@rule\relax})},above right,
+       minimum width=\the\dimexpr\kvtcb@sbs@gap\relax,minimum height=\tcb@innerheight]{};
+    \fi\fi%
+    \iftcb@hasTitle%
+    \node[name=title,at={({\kvtcb@left@rule},{\the\dimexpr\kvtcb@bottom@rule+\tcb@innerheight+\kvtcb@title@rule\relax})},above right,
+       minimum width=\tcb@innerwidth,minimum height=\the\dimexpr\tcb@h@title+\kvtcb@toptitle+\kvtcb@bottomtitle+\kvtcb@boxsep*2\relax]{};
+    \fi%
+  \end{scope}%
+}
+
+\def\tcb@spec#1{\tikzset{tcb@spec/.style={#1}}}
+
+% fill frame
+\def\tcb@drawframe@path{%
+  \path[fill=\kvtcb@colframe,rounded corners=\tcb@outer@arc,tcb@spec,frame@style]
+  (frame.south west) rectangle (frame.north east);%
+}
+
+\def\tcb@drawframe@pathfirst{%
+  \path[fill=\kvtcb@colframe,rounded corners=\tcb@outer@arc,tcb@spec,frame@style]
+      (frame.south west) -- (frame.north west) --
+      (frame.north east)[sharp corners] -- (frame.south east) -- cycle;%
+}
+
+\def\tcb@drawframe@pathmiddle{%
+  \path[fill=\kvtcb@colframe,tcb@spec,frame@style]
+      (frame.south west) rectangle (frame.north east);%
+}
+
+\def\tcb@drawframe@pathlast{%
+  \path[fill=\kvtcb@colframe,rounded corners=\tcb@outer@arc,tcb@spec,frame@style]
+      (frame.north east) -- (frame.south east) --
+      (frame.south west)[sharp corners] -- (frame.north west) -- cycle;
+}
+
+% fill inner box with title
+\def\tcb@drawwithtitle@path{%
+  \path[fill=\kvtcb@colback,tcb@spec,interior@style] (interior.north west)
+    --(interior.north east)[rounded corners=\kvtcb@arc]
+    --(interior.south east)--(interior.south west)[sharp corners]
+    -- cycle;%
+}
+
+\def\tcb@drawwithtitle@pathfirst{%
+  \path[fill=\kvtcb@colback,tcb@spec,interior@style]
+    (interior.south west|-frame.south west) rectangle (interior.north east);%
+}
+
+\let\tcb@drawwithtitle@pathmiddle=\tcb@drawwithtitle@pathfirst
+
+\let\tcb@drawwithtitle@pathlast=\tcb@drawwithtitle@path
+
+% fill inner box without title
+\def\tcb@drawwithouttitle@path{%
+  \path[fill=\kvtcb@colback,rounded corners=\kvtcb@arc,tcb@spec,interior@style]
+  (interior.south west) rectangle (interior.north east);%
+}
+
+\def\tcb@drawwithouttitle@pathfirst{%
+  \path[fill=\kvtcb@colback,rounded corners=\kvtcb@arc,tcb@spec,interior@style]
+    (interior.south west|-frame.south west) -- (interior.north west) --
+    (interior.north east)[sharp corners] -- (interior.south east|-frame.south east) -- cycle;%
+}
+
+\def\tcb@drawwithouttitle@pathmiddle{%
+  \path[fill=\kvtcb@colback,tcb@spec,interior@style]
+    (interior.south west|-frame.south west) rectangle (interior.north east|-frame.north east);%
+}
+
+\def\tcb@drawwithouttitle@pathlast{%
+  \path[fill=\kvtcb@colback,rounded corners=\kvtcb@arc,tcb@spec,interior@style]
+    (interior.north east|-frame.north east) -- (interior.south east) --
+    (interior.south west)[sharp corners] -- (interior.north west|-frame.north west) -- cycle;%
+}
+
+
+% draw segmentation line
+\def\tcb@drawlower@path{%
+  \iftcb@sidebyside%
+    \path[draw=\kvtcb@colframe,dash pattern=on 1mm off 1mm,dash phase=0.5mm,tcb@spec,segmentation@style]
+    (segmentation.north)--(segmentation.south);%
+  \else%
+    \path[draw=\kvtcb@colframe,dash pattern=on 1mm off 1mm,dash phase=0.5mm,tcb@spec,segmentation@style]
+    (segmentation.west)--(segmentation.east);%
+  \fi%
+}
+
+\long\def\tcb@pseudo@segmentation#1{%
+{\parskip\z@\par\nointerlineskip\hfilneg\kern-\@totalleftmargin}\begingroup%
+\tcb@shield@externalize\begin{tikzpicture}%
+  \path[use as bounding box] (0,{\the\dimexpr-\kvtcb@middle-\kvtcb@boxsep\relax})
+     rectangle (\linewidth,{\the\dimexpr\kvtcb@middle+\kvtcb@boxsep\relax});
+  \node[line width=0mm,inner sep=0mm,draw=none,fill=none,rectangle,
+        name=segmentation,at={({\the\dimexpr-#1-\kvtcb@boxsep\relax},0)},right,%
+        minimum width=\tcb@innerwidth,minimum height=\the\dimexpr\kvtcb@middle*2\relax]{};
+  \tcb@drawlower@path%
+\end{tikzpicture}%
+\endgroup{\parskip\z@\par\nointerlineskip}%
+}
+
+\def\tcbline{\iftcb@hasLower\tcb@pseudo@segmentation{\kvtcb@leftlower}%
+  \else\tcb@pseudo@segmentation{\kvtcb@leftupper}\fi}
+
+% draw title box
+\def\tcb@drawtitle@path{%
+  \path[tcb@spec,title@style]
+  (title.south east)--(title.south west)[rounded corners=\kvtcb@arc]
+    -- (title.north west)--(title.north east)[sharp corners]
+    -- cycle;%
+}
+
+\let\tcb@drawtitle@pathfirst=\tcb@drawtitle@path
+
+\def\tcb@drawtitle@pathmiddle{%
+  \path[tcb@spec,title@style] (title.south west) rectangle (title.north east);%
+}
+
+\let\tcb@drawtitle@pathlast=\tcb@drawtitle@pathmiddle
+
+% draw special versions
+\def\tcb@drawspec@UT#1{%
+  \path[#1,interior@style]
+    (segmentation.west) rectangle (interior.north east);%
+}
+
+\def\tcb@drawspec@UR#1{%
+  \path[#1,interior@style]
+    (segmentation.east)--(segmentation.west)[rounded corners=\kvtcb@arc]
+    -- (interior.north west)--(interior.north east)[sharp corners]
+    -- cycle;%
+}
+
+\def\tcb@drawspec@US#1{%
+  \path[#1,interior@style]
+    (segmentation.west) rectangle (interior.north east|-frame.north east);
+}
+
+\def\tcb@drawspec@LR#1{%
+  \path[#1,segmentation@style]
+  ([yshift=0.1mm]segmentation.west)--([yshift=0.1mm]segmentation.east)[rounded corners=\kvtcb@arc]
+    --(interior.south east)--(interior.south west)[sharp corners]
+    -- cycle;%
+}
+
+\def\tcb@drawspec@LS#1{%
+  \path[#1,segmentation@style]
+    (interior.south west|-frame.south west) rectangle
+    ([yshift=0.1mm]segmentation.east);%
+}
+
+\def\tcb@drawspec@sbs@A#1{%
+  \path[#1,segmentation@style]
+  (segmentation.south)--(segmentation.north)[rounded corners=\kvtcb@arc]
+    --(interior.north east)--(interior.south east)[sharp corners]
+    -- cycle;%
+}
+
+\def\tcb@drawspec@sbs@B#1{%
+  \path[#1,segmentation@style]
+  (segmentation.south)--(segmentation.north)
+    --(interior.north east)[rounded corners=\kvtcb@arc]
+    --(interior.south east)[sharp corners] -- cycle;%
+}
+
+\def\tcb@drawspec@sbs@C#1{%
+  \path[#1,segmentation@style]
+  (segmentation.south|-frame.south)--(segmentation.north)[rounded corners=\kvtcb@arc]
+    --(interior.north east)[sharp corners]--(interior.south east|-frame.south)
+    -- cycle;%
+}
+
+\def\tcb@drawspec@sbs@D#1{%
+  \path[#1,segmentation@style]
+  (segmentation.south|-frame.south) rectangle (interior.north east);%
+}
+
+\def\tcb@drawspec@sbs@E#1{%
+  \path[#1,segmentation@style]
+  (segmentation.south|-frame.south) rectangle (interior.north east|-frame.north);%
+}
+
+\def\tcb@drawspec@sbs@F#1{%
+  \path[#1,segmentation@style]
+  (segmentation.south)--(segmentation.north|-frame.north)
+    --(interior.north east|-frame.north)[rounded corners=\kvtcb@arc]
+    --(interior.south east)[sharp corners] -- cycle;%
+}
+
+\def\tcb@drawspec@T{%
+  \path[top color=\kvtcb@colframe,bottom color=\kvtcb@colback]
+      ([yshift=-0.01pt]interior.north west) rectangle
+      ([yshift=0.01pt]title.south east);%
+}
+
+\def\tcb@drawframe@freelance{\tcb@frame@code}
+\def\tcb@drawwithtitle@freelance{\tcb@interiortitled@code}
+\def\tcb@drawwithouttitle@freelance{\tcb@interior@code}
+\def\tcb@drawlower@freelance{\tcb@segmentation@code}
+\def\tcb@drawtitle@freelance{\tcb@title@code}
+
+\tcbset{%
+  frame style/.code={\tikzset{frame@style/.style={#1}}},%
+  frame hidden/.style={frame style={draw=none,fill=none}},
+  frame code/.code={\def\tcb@frame@code{#1}},%
+  frame code/.default=\tcb@drawframe@standard,%
+  interior style/.code={\tikzset{interior@style/.style={#1}}},%
+  interior hidden/.style={interior style={draw=none,fill=none}},
+  interior titled code/.code={\def\tcb@interiortitled@code{#1}},%
+  interior titled code/.default=\tcb@drawwithtitle@standard,%
+  interior code/.code={\def\tcb@interior@code{#1}},%
+  interior code/.default=\tcb@drawwithouttitle@standard,%
+  segmentation style/.code={\tikzset{segmentation@style/.style={#1}}},%
+  segmentation hidden/.style={segmentation style={draw=none,fill=none}},
+  segmentation code/.code={\def\tcb@segmentation@code{#1}},%
+  segmentation code/.default=\tcb@drawlower@standard,%
+  title style/.code={\tikzset{title@style/.style={#1}}},%
+  title hidden/.style={title style={draw=none,fill=none}},
+  colbacktitle/.style={title style={fill=#1}},
+  title code/.code={\def\tcb@title@code{#1}},%
+  title code/.default=\tcb@drawtitle@standard,%
+  colbacklower/.store in=\kvtcb@colbacklower,%
+  clear@spec/.code={\tcb@spec{}},%
+}
+
+\tcbset{%
+  base@unbroken/.style={%
+    clear@spec,graphical environment=tikzpicture,geometry nodes,%
+    set@extensions@preframe={\tcb@draw@shadow@unbroken},%
+    set@extensions@postframe={\tcb@draw@border@unbroken\tcb@apply@overlay},%
+  },%
+  base@first/.style={%
+    clear@spec,graphical environment=tikzpicture,geometry nodes,%
+    set@extensions@preframe={\tcb@draw@shadow@first},%
+    set@extensions@postframe={\tcb@draw@border@first\tcb@apply@overlay},%
+  },%
+  base@middle/.style={%
+    clear@spec,graphical environment=tikzpicture,geometry nodes,%
+    set@extensions@preframe={\tcb@draw@shadow@middle},%
+    set@extensions@postframe={\tcb@draw@border@middle\tcb@apply@overlay},%
+  },%
+  base@last/.style={%
+    clear@spec,graphical environment=tikzpicture,geometry nodes,%
+    set@extensions@preframe={\tcb@draw@shadow@last},%
+    set@extensions@postframe={\tcb@draw@border@last\tcb@apply@overlay},%
+  },%
+}
+
+\tcbset{skin@enhanced/.style={base@unbroken,%
+  frame engine=path,interior titled engine=path,
+  interior engine=path,segmentation engine=path,title engine=path,
+  skin first=enhancedfirst,skin middle=enhancedmiddle,skin last=enhancedlast},
+  enhanced/.style={skin=enhanced},%
+  enhanced standard/.style={skin=enhanced,
+    skin first=enhanced,skin middle=enhanced,skin last=enhanced},%
+  blank/.style={enhanced,frame hidden,interior hidden,segmentation hidden,%
+    arc=0pt,boxsep=0pt,top=0pt,bottom=0pt,left=0pt,right=0pt,boxrule=0pt,%
+    bottomtitle=6pt,middle=3pt},%
+}
+
+\tcbset{skin@enhancedfirst/.style={base@first,%
+  frame engine=pathfirst,interior titled engine=pathfirst,
+  interior engine=pathfirst,segmentation engine=path,title engine=pathfirst,
+  skin first=enhancedfirst,skin middle=enhancedmiddle,skin last=enhancedmiddle
+}}
+
+\tcbset{skin@enhancedmiddle/.style={base@middle,%
+  frame engine=pathmiddle,interior titled engine=pathmiddle,
+  interior engine=pathmiddle,segmentation engine=path,title engine=pathmiddle,
+  skin first=enhancedmiddle,skin middle=enhancedmiddle,skin last=enhancedmiddle
+}}
+
+\tcbset{skin@enhancedlast/.style={base@last,%
+  frame engine=pathlast,interior titled engine=pathlast,
+  interior engine=pathlast,segmentation engine=path,title engine=pathlast,
+  skin first=enhancedmiddle,skin middle=enhancedmiddle,skin last=enhancedlast
+}}
+
+\tcbset{skin@freelance/.style={base@unbroken,%
+  frame engine=freelance,interior titled engine=freelance,
+  interior engine=freelance,segmentation engine=freelance,title engine=freelance,
+  skin first=freelance,skin middle=freelance,skin last=freelance},
+  freelance/.style={skin=freelance}}
+
+\tcbset{skin@bicolor/.style={base@unbroken,%
+  frame engine=path,interior titled engine=freelance,
+  interior engine=freelance,segmentation engine=freelance,title engine=path,
+  interior titled code={%
+    \iftcb@lowerseparated%
+      \ifcase\tcb@segment@state%
+      {\tcb@spec{fill=\kvtcb@colback}\tcb@drawwithtitle@path}%
+      \or%
+      \tcb@drawspec@UT{fill=\kvtcb@colback}%
+      \else%
+      {\tcb@spec{fill=\kvtcb@colbacklower}\tcb@drawwithtitle@path}%
+      \fi%
+    \else%
+      {\tcb@spec{fill=\kvtcb@colback}\tcb@drawwithtitle@path}%
+    \fi},
+  interior code={%
+    \iftcb@lowerseparated%
+      \ifcase\tcb@segment@state%
+      {\tcb@spec{fill=\kvtcb@colback}\tcb@drawwithouttitle@path}%
+      \or%
+      \tcb@drawspec@UR{fill=\kvtcb@colback}%
+      \else%
+      {\tcb@spec{fill=\kvtcb@colbacklower}\tcb@drawwithouttitle@path}%
+      \fi%
+    \else%
+      {\tcb@spec{fill=\kvtcb@colback}\tcb@drawwithouttitle@path}%
+    \fi},
+  segmentation code={\iftcb@sidebyside%
+    \iftcb@hasTitle\tcb@drawspec@sbs@B{fill=\kvtcb@colbacklower}\else%
+    \tcb@drawspec@sbs@A{fill=\kvtcb@colbacklower}\fi\else\tcb@drawspec@LR{fill=\kvtcb@colbacklower}\fi},%
+  skin first=bicolorfirst,skin middle=bicolormiddle,skin last=bicolorlast},
+  bicolor/.style={skin=bicolor}}
+
+\tcbset{skin@bicolorfirst/.style={base@first,%
+  frame engine=pathfirst,interior titled engine=freelance,
+  interior engine=freelance,segmentation engine=freelance,title engine=pathfirst,
+  interior titled code={%
+    \iftcb@lowerseparated%
+      \ifcase\tcb@segment@state%
+      {\tcb@spec{fill=\kvtcb@colback}\tcb@drawwithtitle@pathfirst}%
+      \or%
+      \tcb@drawspec@UT{fill=\kvtcb@colback}%
+      \else%
+      {\tcb@spec{fill=\kvtcb@colbacklower}\tcb@drawwithtitle@pathfirst}%
+      \fi%
+    \else%
+      {\tcb@spec{fill=\kvtcb@colback}\tcb@drawwithtitle@pathfirst}%
+    \fi},
+  interior code={%
+    \iftcb@lowerseparated%
+      \ifcase\tcb@segment@state%
+      {\tcb@spec{fill=\kvtcb@colback}\tcb@drawwithouttitle@pathfirst}%
+      \or%
+      \tcb@drawspec@UR{fill=\kvtcb@colback}%
+      \else%
+      {\tcb@spec{fill=\kvtcb@colbacklower}\tcb@drawwithouttitle@pathfirst}%
+      \fi%
+    \else%
+      {\tcb@spec{fill=\kvtcb@colback}\tcb@drawwithouttitle@pathfirst}%
+    \fi},
+  segmentation code={\iftcb@sidebyside%
+    \iftcb@hasTitle\tcb@drawspec@sbs@D{fill=\kvtcb@colbacklower}\else%
+    \tcb@drawspec@sbs@C{fill=\kvtcb@colbacklower}\fi\else\tcb@drawspec@LS{fill=\kvtcb@colbacklower}\fi},%
+  skin first=bicolorfirst,skin middle=bicolormiddle,skin last=bicolormiddle
+}}
+
+\tcbset{skin@bicolormiddle/.style={base@middle,%
+  frame engine=pathmiddle,interior titled engine=freelance,
+  interior engine=freelance,segmentation engine=freelance,title engine=pathmiddle,
+  interior titled code={%
+    \iftcb@lowerseparated%
+      \ifcase\tcb@segment@state%
+      {\tcb@spec{fill=\kvtcb@colback}\tcb@drawwithtitle@pathmiddle}%
+      \or%
+      \tcb@drawspec@UT{fill=\kvtcb@colback}%
+      \else%
+      {\tcb@spec{fill=\kvtcb@colbacklower}\tcb@drawwithtitle@pathmiddle}%
+      \fi%
+    \else%
+      {\tcb@spec{fill=\kvtcb@colback}\tcb@drawwithtitle@pathmiddle}%
+    \fi},
+  interior code={%
+    \iftcb@lowerseparated%
+      \ifcase\tcb@segment@state%
+      {\tcb@spec{fill=\kvtcb@colback}\tcb@drawwithouttitle@pathmiddle}%
+      \or%
+      \tcb@drawspec@US{fill=\kvtcb@colback}%
+      \else%
+      {\tcb@spec{fill=\kvtcb@colbacklower}\tcb@drawwithouttitle@pathmiddle}%
+      \fi%
+    \else%
+      {\tcb@spec{fill=\kvtcb@colback}\tcb@drawwithouttitle@pathmiddle}%
+    \fi},
+  segmentation code={\iftcb@sidebyside%
+    \iftcb@hasTitle\tcb@drawspec@sbs@D{fill=\kvtcb@colbacklower}\else%
+    \tcb@drawspec@sbs@E{fill=\kvtcb@colbacklower}\fi\else\tcb@drawspec@LS{fill=\kvtcb@colbacklower}\fi},%
+  skin first=bicolormiddle,skin middle=bicolormiddle,skin last=bicolormiddle
+}}
+
+\tcbset{skin@bicolorlast/.style={base@last,%
+  frame engine=pathlast,interior titled engine=freelance,
+  interior engine=freelance,segmentation engine=freelance,title engine=pathlast,
+  interior titled code={%
+    \iftcb@lowerseparated%
+      \ifcase\tcb@segment@state
+      {\tcb@spec{fill=\kvtcb@colback}\tcb@drawwithtitle@pathlast}%
+      \or%
+      \tcb@drawspec@UT{fill=\kvtcb@colback}%
+      \else%
+      {\tcb@spec{fill=\kvtcb@colbacklower}\tcb@drawwithtitle@pathlast}%
+      \fi%
+    \else%
+      {\tcb@spec{fill=\kvtcb@colback}\tcb@drawwithtitle@pathlast}%
+    \fi},
+  interior code={%
+    \iftcb@lowerseparated%
+      \ifcase\tcb@segment@state%
+      {\tcb@spec{fill=\kvtcb@colback}\tcb@drawwithouttitle@pathlast}%
+      \or%
+      \tcb@drawspec@US{fill=\kvtcb@colback}%
+      \else
+      {\tcb@spec{fill=\kvtcb@colbacklower}\tcb@drawwithouttitle@pathlast}%
+      \fi%
+    \else%
+      {\tcb@spec{fill=\kvtcb@colback}\tcb@drawwithouttitle@pathlast}%
+    \fi},
+  segmentation code={\iftcb@sidebyside%
+    \iftcb@hasTitle\tcb@drawspec@sbs@B{fill=\kvtcb@colbacklower}\else%
+    \tcb@drawspec@sbs@F{fill=\kvtcb@colbacklower}\fi\else\tcb@drawspec@LR{fill=\kvtcb@colbacklower}\fi},%
+  skin first=bicolormiddle,skin middle=bicolormiddle,skin last=bicolorlast
+}}
+
+
+\tikzset{beamer@color/.style={top color=\kvtcb@colback,bottom color=\kvtcb@colback!85!black}}
+
+\tcbset{%
+  skin@beamer/.style={base@unbroken,%
+  frame engine=path,interior titled engine=freelance,
+  interior engine=freelance,segmentation engine=freelance,title engine=path,
+  interior titled code={%
+    \iftcb@lowerseparated%
+      \ifnum\tcb@segment@state=1%
+      \tcb@drawspec@UT{beamer@color}%
+      \else%
+      {\tcb@spec{beamer@color}\tcb@drawwithtitle@path}%
+      \fi%
+    \else%
+      {\tcb@spec{beamer@color}\tcb@drawwithtitle@path}%
+    \fi%
+    \tcb@drawspec@T},
+  interior code={%
+    \iftcb@lowerseparated%
+      \ifnum\tcb@segment@state=1
+      \tcb@drawspec@UR{beamer@color}%
+      \else%
+      {\tcb@spec{beamer@color}\tcb@drawwithouttitle@path}%
+      \fi%
+    \else%
+      {\tcb@spec{beamer@color}\tcb@drawwithouttitle@path}%
+    \fi},
+  segmentation code={\iftcb@sidebyside\tcb@drawlower@path\else\tcb@drawspec@LR{beamer@color}\fi},%
+  skin first=beamerfirst,skin middle=beamermiddle,skin last=beamerlast},
+  beamer/.style={skin=beamer,boxrule=0mm,titlerule=1mm,toptitle=0.5mm,arc=2mm,fonttitle=\bfseries,
+    drop fuzzy shadow,
+    },
+}
+
+\tcbset{%
+  skin@beamerfirst/.style={base@first,%
+  frame engine=pathfirst,interior titled engine=freelance,
+  interior engine=freelance,segmentation engine=freelance,title engine=pathfirst,
+  interior titled code={%
+    \iftcb@lowerseparated%
+      \ifnum\tcb@segment@state=1%
+      \tcb@drawspec@UT{beamer@color}%
+      \else%
+      {\tcb@spec{beamer@color}\tcb@drawwithtitle@pathfirst}%
+      \fi%
+    \else%
+      {\tcb@spec{beamer@color}\tcb@drawwithtitle@pathfirst}%
+    \fi%
+    \tcb@drawspec@T},
+  interior code={%
+    \iftcb@lowerseparated%
+      \ifnum\tcb@segment@state=1
+      \tcb@drawspec@UR{beamer@color}\else%
+      {\tcb@spec{beamer@color}\tcb@drawwithouttitle@pathfirst}%
+      \fi%
+    \else%
+      {\tcb@spec{beamer@color}\tcb@drawwithouttitle@pathfirst}%
+    \fi},
+  segmentation code={\iftcb@sidebyside\tcb@drawlower@path\else\tcb@drawspec@LS{beamer@color}\fi},%
+  skin first=beamerfirst,skin middle=beamermiddle,skin last=beamermiddle}}
+
+\tcbset{%
+  skin@beamermiddle/.style={base@middle,%
+  frame engine=pathmiddle,interior titled engine=freelance,
+  interior engine=freelance,segmentation engine=freelance,title engine=pathmiddle,
+  interior titled code={%
+    \iftcb@lowerseparated%
+      \ifnum\tcb@segment@state=1%
+      \tcb@drawspec@UT{beamer@color}%
+      \else%
+      {\tcb@spec{beamer@color}\tcb@drawwithtitle@pathmiddle}%
+      \fi%
+    \else%
+      {\tcb@spec{beamer@color}\tcb@drawwithtitle@pathmiddle}%
+    \fi%
+    \tcb@drawspec@T},
+  interior code={%
+    \iftcb@lowerseparated%
+      \ifnum\tcb@segment@state=1
+      \tcb@drawspec@US{beamer@color}%
+      \else%
+      {\tcb@spec{beamer@color}\tcb@drawwithouttitle@pathmiddle}%
+      \fi%
+    \else%
+      {\tcb@spec{beamer@color}\tcb@drawwithouttitle@pathmiddle}%
+    \fi},
+  segmentation code={\iftcb@sidebyside\tcb@drawlower@path\else\tcb@drawspec@LS{beamer@color}\fi},%
+  skin first=beamermiddle,skin middle=beamermiddle,skin last=beamermiddle}}
+
+\tcbset{%
+  skin@beamerlast/.style={base@last,%
+  frame engine=pathlast,interior titled engine=freelance,
+  interior engine=freelance,segmentation engine=freelance,title engine=pathlast,
+  interior titled code={%
+    \iftcb@lowerseparated%
+      \ifnum\tcb@segment@state=1%
+      \tcb@drawspec@UT{beamer@color}%
+      \else%
+      {\tcb@spec{beamer@color}\tcb@drawwithtitle@pathlast}%
+      \fi%
+    \else%
+      {\tcb@spec{beamer@color}\tcb@drawwithtitle@pathlast}%
+    \fi%
+    \tcb@drawspec@T},
+  interior code={%
+    \iftcb@lowerseparated%
+      \ifnum\tcb@segment@state=1
+      \tcb@drawspec@US{beamer@color}%
+      \else%
+      {\tcb@spec{beamer@color}\tcb@drawwithouttitle@pathlast}%
+      \fi%
+    \else%
+      {\tcb@spec{beamer@color}\tcb@drawwithouttitle@pathlast}%
+    \fi},
+  segmentation code={\iftcb@sidebyside\tcb@drawlower@path\else\tcb@drawspec@LR{beamer@color}\fi},%
+  skin first=beamermiddle,skin middle=beamermiddle,skin last=beamerlast}}
+
+
+\def\tcb@drawspec@widgetsegment{%
+  \iftcb@sidebyside%
+  \tcb@drawlower@path%
+  \else%
+  \path[left color=\kvtcb@colframe!75!white,right color=\kvtcb@colframe!75!white!25!\kvtcb@colback,segmentation@style]
+    ([yshift={-\kvtcb@middle/4}]segmentation.west) rectangle ([yshift={\kvtcb@middle/4}]segmentation.east);
+  \fi%
+}
+
+\tikzset{widget@color/.style={left color=\kvtcb@colframe!75!white,right color=\kvtcb@colframe!75!white!25!\kvtcb@colback}}
+
+\tcbset{skin@widget/.style={base@unbroken,%
+  frame engine=path,interior titled engine=path,
+  interior engine=path,segmentation engine=freelance,title engine=freelance,
+  title code={{\tcb@spec{widget@color}\tcb@drawtitle@path}},
+  segmentation code={\tcb@drawspec@widgetsegment},%
+  skin first=widgetfirst,skin middle=widgetmiddle,skin last=widgetlast},
+  widget/.style={skin=widget,arc=0.5mm,fonttitle=\bfseries,
+    titlerule=0mm,toprule at break=0mm},
+}
+
+\tcbset{skin@widgetfirst/.style={base@first,%
+  frame engine=pathfirst,interior titled engine=pathfirst,
+  interior engine=pathfirst,segmentation engine=freelance,title engine=freelance,
+  title code={{\tcb@spec{widget@color}\tcb@drawtitle@pathfirst}},
+  segmentation code={\tcb@drawspec@widgetsegment},%
+  skin first=widgetfirst,skin middle=widgetmiddle,skin last=widgetmiddle}}
+
+\tcbset{skin@widgetmiddle/.style={base@middle,%
+  frame engine=pathmiddle,interior titled engine=pathmiddle,
+  interior engine=pathmiddle,segmentation engine=freelance,title engine=freelance,
+  title code={{\tcb@spec{widget@color}\tcb@drawtitle@pathmiddle}},
+  segmentation code={\tcb@drawspec@widgetsegment},%
+  skin first=widgetmiddle,skin middle=widgetmiddle,skin last=widgetmiddle}}
+
+
+\tcbset{skin@widgetlast/.style={base@last,%
+  frame engine=pathlast,interior titled engine=pathlast,
+  interior engine=pathlast,segmentation engine=freelance,title engine=freelance,
+  title code={{\tcb@spec{widget@color}\tcb@drawtitle@pathlast}},
+  segmentation code={\tcb@drawspec@widgetsegment},%
+  skin first=widgetmiddle,skin middle=widgetmiddle,skin last=widgetlast}}
+
+
+\tcbset{skin@draft/.style={clear@spec,%
+  graphical environment=tikzpicture,geometry nodes,
+  frame engine=freelance,interior titled engine=freelance,
+  interior engine=freelance,segmentation engine=path,title engine=path,
+  skin first=draft,skin middle=draft,skin last=draft,
+  interior style=,frame style=,segmentation style={draw=black,dashed},
+  colupper=black!50!white,collower=black!50!white,coltitle=black!50!white,
+  frame code={%
+    \path[draw=blue!10!white,double,line width=1pt,dashed] (current bounding box.south west) rectangle (current bounding box.north east);
+    {\tcb@spec{fill=black!15!white,draw=black}\tcb@drawframe@path}%
+    \iftcb@hasTitle%
+      \path[fill=red!10!white,draw,dotted,rounded corners=\kvtcb@arc]
+        ([xshift={\kvtcb@left@rule},yshift={\kvtcb@bottom@rule}]frame.south west) rectangle
+        (interior.north east);
+      \path[fill=red!10!white,draw,dotted,rounded corners=\kvtcb@arc]
+        ([yshift={\kvtcb@title@rule}]interior.north west) rectangle
+        ([xshift={-\kvtcb@right@rule},yshift={-\kvtcb@top@rule}]frame.north east);
+      \path[fill=white,draw,dotted]
+        ([xshift={\kvtcb@boxsep},yshift={\kvtcb@boxsep}]title.south west) rectangle
+        ([xshift={-\kvtcb@boxsep},yshift={-\kvtcb@boxsep}]title.north east);
+      \path[fill=green!20!white,draw=green!75!black,dashed]
+        ([xshift={\kvtcb@boxsep+\kvtcb@lefttitle},yshift={\kvtcb@boxsep+\kvtcb@bottomtitle}]title.south west)
+         rectangle node[font=\scriptsize] {title: w=\tcb@w@title, h=\tcb@h@title}
+        +(\tcb@w@title,\tcb@h@title);
+      \path[draw=red,opacity=0.5] (title.south west) rectangle (title.north east);
+    \else%
+      \path[fill=red!10!white,draw,dotted,rounded corners=\kvtcb@arc]
+        ([xshift={\kvtcb@left@rule},yshift={\kvtcb@bottom@rule}]frame.south west) rectangle
+        ([xshift={-\kvtcb@right@rule},yshift={-\kvtcb@top@rule}]frame.north east);
+    \fi%
+    \ifcase\tcb@segment@state
+      \path[fill=white,draw,dotted]
+        ([xshift={\kvtcb@boxsep},yshift={\kvtcb@boxsep+\tcb@break@bottomsep}]interior.south west) rectangle
+        ([xshift={-\kvtcb@boxsep},yshift={-\kvtcb@boxsep-\tcb@break@topsep}]interior.north east);
+      \path[fill=green!20!white,draw=green!75!black,dashed]
+        ([xshift={\kvtcb@boxsep+\kvtcb@leftupper},yshift={\kvtcb@boxsep+\kvtcb@bottom+\tcb@break@bottomsep}]interior.south west)
+        rectangle node[font=\scriptsize] {upper: w=\tcb@w@upper, h=\tcb@height@upper}
+        +(\tcb@w@upper,\tcb@height@upper);
+      \iftcb@sidebyside%
+      \path[fill=green!20!white,draw=green!75!black,dashed]
+        ([yshift={\kvtcb@boxsep+\kvtcb@bottom+\tcb@break@bottomsep}]segmentation.south east)
+        rectangle node[font=\scriptsize] {lower: w=\tcb@w@lower, h=\tcb@height@upper}
+        +(\tcb@w@lower,\tcb@height@upper);
+      \fi%
+    \or%
+      \ifdim\wd\tcb@upperbox=0pt\relax
+        \path[fill=white,draw,dotted]
+          ([xshift={\kvtcb@boxsep},yshift={\kvtcb@boxsep+\tcb@break@bottomsep}]interior.south west) rectangle
+          ([xshift={-\kvtcb@boxsep},yshift={-\kvtcb@boxsep-\tcb@break@topsep}]interior.north east);
+      \else
+        \path[fill=white,draw,dotted]
+          ([xshift={\kvtcb@boxsep},yshift={\kvtcb@boxsep+\tcb@break@bottomsep}]interior.south west) rectangle
+          ([xshift={-\kvtcb@boxsep},yshift={-\kvtcb@boxsep}]segmentation.east);
+        \path[fill=white,draw,dotted]
+           ([xshift={\kvtcb@boxsep},yshift={\kvtcb@boxsep}]segmentation.west)
+           rectangle ([xshift={-\kvtcb@boxsep},yshift={-\kvtcb@boxsep-\tcb@break@topsep}]interior.north east);
+        \path[fill=green!20!white,draw=green!75!black,dashed]
+          ([xshift={\kvtcb@boxsep+\kvtcb@leftupper},yshift={\kvtcb@boxsep}]segmentation.north west)
+           rectangle node[font=\scriptsize] {upper: w=\tcb@w@upper, h=\tcb@height@upper}
+           +(\tcb@w@upper,\tcb@height@upper);
+      \fi%
+      \path[fill=green!20!white,draw=green!75!black,dashed]
+        ([xshift={\kvtcb@boxsep+\kvtcb@leftlower},yshift={\kvtcb@boxsep+\kvtcb@bottom+\tcb@break@bottomsep}]interior.south west)
+        rectangle  node[font=\scriptsize] {lower: w=\tcb@w@lower, h=\tcb@height@lower}
+        +(\tcb@w@lower,\tcb@height@lower);
+      \path[draw=red,opacity=0.5] (segmentation.south west) rectangle (segmentation.north east);
+    \else
+      \path[fill=white,draw,dotted]
+        ([xshift={\kvtcb@boxsep},yshift={\kvtcb@boxsep+\tcb@break@bottomsep}]interior.south west) rectangle
+        ([xshift={-\kvtcb@boxsep},yshift={-\kvtcb@boxsep-\tcb@break@topsep}]interior.north east);
+      \path[fill=green!20!white,draw=green!75!black,dashed]
+        ([xshift={\kvtcb@boxsep+\kvtcb@leftlower},yshift={\kvtcb@boxsep+\kvtcb@bottom+\tcb@break@bottomsep}]interior.south west)
+        rectangle  node[font=\scriptsize] {lower: w=\tcb@w@lower, h=\tcb@height@lower}
+        +(\tcb@w@lower,\tcb@height@lower);
+    \fi%
+    \path[draw=red,opacity=0.5] (interior.south west) rectangle (interior.north east);
+    \path[draw=red,opacity=0.5] (frame.south west) rectangle (frame.north east);
+    \node[above,font=\scriptsize,red!50!black] at (interior.south) {interior: w=\tcb@innerwidth, h=\tcb@innerheight};
+    \node[above,font=\scriptsize,red!50!black] at (frame.north) {frame: w=\the\dimexpr\tcb@width\relax, h=\tcb@height};
+    \path[draw=blue!10!white,double,line width=1pt,dashed,opacity=0.3] (current bounding box.south west) rectangle (current bounding box.north east);
+    \pgfsetfillopacity{0.3}
+  },
+  set@extensions@postframe={},%
+  interior titled code=,interior code=,},
+  draft/.style={skin=draft}}
+
+\def\tcb@clip@interior{%
+  \begingroup%
+  \tcbset{interior hidden}%
+  \tcb@spec{forced clip}%
+  \def\tcb@spec##1{}%
+  \iftcb@hasTitle%
+    \csname tcb@drawwithtitle@\kvtcb@engine@interiortitled\endcsname%
+  \else%
+    \csname tcb@drawwithouttitle@\kvtcb@engine@interior\endcsname%
+  \fi%
+  \endgroup%
+}
+
+\def\tcb@clip@frame{%
+  \begingroup%
+  \tcbset{frame hidden}%
+  \tcb@spec{forced clip}%
+  \def\tcb@spec##1{}%
+  \csname tcb@drawframe@\kvtcb@engine@frame\endcsname%
+  \endgroup%
+}
+
+\def\tcb@clip@title{%
+  \begingroup%
+  \tcbset{title hidden}%
+  \tcb@spec{forced clip}%
+  \def\tcb@spec##1{}%
+    \iftcb@hasTitle%
+      \csname tcb@drawtitle@\kvtcb@engine@title\endcsname%
+    \fi%
+  \endgroup%
+}
+
+\newenvironment{tcbclipinterior}{\begin{scope}\tcb@clip@interior}{\end{scope}}
+\newenvironment{tcbclipframe}{\begin{scope}\tcb@clip@frame}{\end{scope}}
+\newenvironment{tcbcliptitle}{\begin{scope}\tcb@clip@title}{\end{scope}}
+
+\newbox\tcb@waterbox
+
+\def\tcb@setratio#1#2#3{\edef#1{\strip@pt\dimexpr\number\numexpr\number\dimexpr#2\relax*65536/\number\dimexpr#3\relax\relax sp\relax}}
+
+\def\tcb@setratiorobust#1#2#3{\ifdim\dimexpr#3<1pt\tcb@setratio#1{#2}{1pt}\else\tcb@setratio#1{#2}{#3}\fi}
+
+\def\tcb@comp@wm@stretch{%
+  \tcb@setratiorobust\tcb@scale@x{\dimexpr\kvtcb@watermark@factor\dimexpr\tcb@innerwidth\relax\relax}{\wd\tcb@waterbox}%
+  \tcb@setratiorobust\tcb@scale@y{\dimexpr\kvtcb@watermark@factor\dimexpr\tcb@innerheight\relax\relax}{\ht\tcb@waterbox+\dp\tcb@waterbox}%
+}
+
+\def\tcb@comp@wm@zoom{%
+  \tcb@setratiorobust\tcb@scale@x{\dimexpr\kvtcb@watermark@factor\dimexpr\tcb@innerwidth\relax\relax}{\wd\tcb@waterbox}%
+  \tcb@setratiorobust\tcb@scale@y{\dimexpr\kvtcb@watermark@factor\dimexpr\tcb@innerheight\relax\relax}{\ht\tcb@waterbox+\dp\tcb@waterbox}%
+  \ifdim\dimexpr\tcb@scale@x pt\relax<\dimexpr\tcb@scale@y pt\relax\let\tcb@scale@y=\tcb@scale@x\else\let\tcb@scale@x=\tcb@scale@y\fi%
+}
+
+\def\tcb@comp@wm@overzoom{%
+  \tcb@setratiorobust\tcb@scale@x{\dimexpr\kvtcb@watermark@factor\dimexpr\tcb@innerwidth\relax\relax}{\wd\tcb@waterbox}%
+  \tcb@setratiorobust\tcb@scale@y{\dimexpr\kvtcb@watermark@factor\dimexpr\tcb@innerheight\relax\relax}{\ht\tcb@waterbox+\dp\tcb@waterbox}%
+  \ifdim\dimexpr\tcb@scale@x pt\relax>\dimexpr\tcb@scale@y pt\relax\let\tcb@scale@y=\tcb@scale@x\else\let\tcb@scale@x=\tcb@scale@y\fi%
+}
+
+\def\tcb@drawspec@watermark@@noclip{%
+  \tcb@comp@wm%
+  \node[opacity=\kvtcb@watermark@opacity,anchor=center] at (interior) {\scalebox{\tcb@scale@x}[\tcb@scale@y]{\box\tcb@waterbox}};%
+}
+
+\def\tcb@drawspec@watermark@@clip{%
+  \begin{tcbclipinterior}%
+  \tcb@drawspec@watermark@@noclip%
+  \end{tcbclipinterior}%
+}
+
+\def\tcb@drawspec@watermark@tikz#1{%
+  \setbox\tcb@waterbox=\hbox{\pgfinterruptpicture{\pgfsetbaseline{0pt}\begin{tikzpicture}[color=\kvtcb@watermark@color]#1\end{tikzpicture}}\endpgfinterruptpicture}%
+  \tcb@drawspec@watermark%
+}
+
+\def\tcb@drawspec@watermark@graphics#1{%
+  \setbox\tcb@waterbox=\hbox{\pgfinterruptpicture{\includegraphics{#1}}\endpgfinterruptpicture}%
+  \tcb@drawspec@watermark%
+}
+
+\def\tcb@drawspec@watermark@text#1{%
+  \tcb@drawspec@watermark@tikz{\node[inner sep=0pt,align=flush center]{#1};}%
+}
+
+\tikzset{forced clip/.code={\tikz@addmode{\tikz@mode@cliptrue}\let\tikz@options=\pgfutil@empty}}
+
+\tcbset{%
+  watermark opacity/.store in=\kvtcb@watermark@opacity,%
+  watermark color/.store in=\kvtcb@watermark@color,%
+  watermark zoom/.code={\def\kvtcb@watermark@factor{#1}\let\tcb@comp@wm=\tcb@comp@wm@zoom},%
+  watermark overzoom/.code={\def\kvtcb@watermark@factor{#1}\let\tcb@comp@wm=\tcb@comp@wm@overzoom},%
+  watermark stretch/.code={\def\kvtcb@watermark@factor{#1}\let\tcb@comp@wm=\tcb@comp@wm@stretch},%
+%
+  watermark tikz/.style={overlay={\tcb@drawspec@watermark@tikz{#1}}},
+  watermark tikz on/.style args={#1 is #2}{overlay #1={\tcb@drawspec@watermark@tikz{#2}}},%
+  watermark graphics/.style={overlay={\tcb@drawspec@watermark@graphics{#1}}},
+  watermark graphics on/.style args={#1 is #2}{overlay #1={\tcb@drawspec@watermark@graphics{#2}}},
+  watermark text/.style={overlay={\tcb@drawspec@watermark@text{#1}}},
+  watermark text on/.style args={#1 is #2}{overlay #1={\tcb@drawspec@watermark@text{#2}}},
+  no watermark/.style={no overlay},
+  clip watermark/.is choice,
+  clip watermark/true/.code={\let\tcb@drawspec@watermark=\tcb@drawspec@watermark@@clip},
+  clip watermark/false/.code={\let\tcb@drawspec@watermark=\tcb@drawspec@watermark@@noclip},
+  clip watermark/.default=true,
+}
+
+\def\tcb@tdraw@title@clip{%
+  \begin{tcbcliptitle}%
+  \tcb@tdraw@title@core%
+  \end{tcbcliptitle}%
+}
+
+\def\tcb@tdraw@upper@clip{%
+  \begin{tcbclipinterior}%
+  \tcb@tdraw@upper@core%
+  \end{tcbclipinterior}%
+}
+
+\def\tcb@tdraw@lower@clip{%
+  \begin{tcbclipinterior}%
+  \tcb@tdraw@lower@core%
+  \end{tcbclipinterior}%
+}
+
+\tcbset{%
+  clip title/.is choice,
+  clip title/true/.code={\let\tcb@tdraw@title=\tcb@tdraw@title@clip},
+  clip title/false/.code={\let\tcb@tdraw@title=\tcb@tdraw@title@core},
+  clip title/.default=true,
+  clip upper/.is choice,
+  clip upper/true/.code={\let\tcb@tdraw@upper=\tcb@tdraw@upper@clip},
+  clip upper/false/.code={\let\tcb@tdraw@upper=\tcb@tdraw@upper@core},
+  clip upper/.default=true,
+  clip lower/.is choice,
+  clip lower/true/.code={\let\tcb@tdraw@lower=\tcb@tdraw@lower@clip},
+  clip lower/false/.code={\let\tcb@tdraw@lower=\tcb@tdraw@lower@core},
+  clip lower/.default=true,
+}
+
+
+\tcbset{marker/.style={%
+  skin=enhancedmiddle,
+  breakable,parbox=false,
+  boxrule=0mm,leftrule=5mm,rightrule=5mm,boxsep=0mm,
+  left=3mm,right=3mm,top=1mm,bottom=1mm,
+  toptitle=1mm,bottomtitle=1mm,fonttitle=\bfseries,
+  arc=0mm,outer arc=0mm,
+  colback=yellow!10!white,colframe=red,
+  watermark color=yellow!75!red!25!white,
+  enlarge left by=-8mm,
+  enlarge right by=-8mm,
+  enlarge top by=0mm,
+  enlarge bottom by=0mm,
+  width=\the\dimexpr\linewidth+1.6cm\relax,
+  frame style={top color=\kvtcb@colframe,bottom color=\kvtcb@colframe,middle color=yellow!75!\kvtcb@colframe},
+  title style={left color=\kvtcb@colframe,right color=\kvtcb@colframe,middle color=yellow!75!\kvtcb@colframe},
+  watermark tikz={\draw[line width=2mm] circle (1cm) node{\fontfamily{ptm}\fontseries{b}\fontsize{20mm}{20mm}\selectfont!};},
+  watermark zoom=0.75,
+}}
+
+
+\def\tcb@border@prepare#1#2{%
+  \tcbdimto\tcb@border@ts{#2+(#1)/2}%
+  \ifdim\dimexpr\tcb@outer@arc>\tcb@border@ts\relax%
+    \tcbdimto\tcb@border@arc{\tcb@outer@arc-\tcb@border@ts}%
+  \else%
+    \let\tcb@border@arc=\tcb@zpt%
+  \fi%
+}
+
+\def\tcb@border@unbroken#1#2#3{%
+  \tcb@border@prepare{#1}{#2}%
+  \draw[line width=#1,rounded corners=\tcb@border@arc,#3]
+    ([xshift=\tcb@border@ts,yshift=\tcb@border@ts]frame.south west)%
+      rectangle ([xshift=-\tcb@border@ts,yshift=-\tcb@border@ts]frame.north east);%
+}
+
+\def\tcb@border@first#1#2#3{%
+  \tcb@border@prepare{#1}{#2}%
+  \draw[line width=#1,rounded corners=\tcb@border@arc,#3]
+    ([xshift=\tcb@border@ts]frame.south west) --
+    ([xshift=\tcb@border@ts,yshift=-\tcb@border@ts]frame.north west) --
+    ([xshift=-\tcb@border@ts,yshift=-\tcb@border@ts]frame.north east) --
+    ([xshift=-\tcb@border@ts]frame.south east);%
+}
+
+\def\tcb@border@middle#1#2#3{%
+  \tcb@border@prepare{#1}{#2}%
+  \draw[line width=#1,#3]
+    ([xshift=\tcb@border@ts]frame.north west) -- ([xshift=\tcb@border@ts]frame.south west);%
+  \draw[line width=#1,#3]
+    ([xshift=-\tcb@border@ts]frame.north east) -- ([xshift=-\tcb@border@ts]frame.south east);%
+}
+
+\def\tcb@border@last#1#2#3{%
+  \tcb@border@prepare{#1}{#2}%
+  \draw[line width=#1,rounded corners=\tcb@border@arc,#3]
+    ([xshift=\tcb@border@ts]frame.north west) --
+    ([xshift=\tcb@border@ts,yshift=\tcb@border@ts]frame.south west) --
+    ([xshift=-\tcb@border@ts,yshift=\tcb@border@ts]frame.south east) --
+    ([xshift=-\tcb@border@ts]frame.north east);%
+}
+
+
+\def\tcb@draw@border@unbroken{%
+  \let\tcb@border=\tcb@border@unbroken%
+  \kvtcb@borderline%
+}
+
+\def\tcb@draw@border@first{%
+  \let\tcb@border=\tcb@border@first%
+  \kvtcb@borderline%
+}
+
+\def\tcb@draw@border@middle{%
+  \let\tcb@border=\tcb@border@middle%
+  \kvtcb@borderline%
+}
+
+\def\tcb@draw@border@last{%
+  \let\tcb@border=\tcb@border@last%
+  \kvtcb@borderline%
+}
+
+\tcbset{%
+  border@line app/.code={\appto\kvtcb@borderline{#1}},%
+  borderline/.style args={#1#2#3}{border@line app={\tcb@border{#1}{#2}{#3}}},%
+  no borderline/.code={\def\kvtcb@borderline{}},%
+}
+
+\def\tcb@shadow@prepare#1#2{%
+  \ifdim#2>0pt\relax\tcbdimto\tcb@shadow@ts{#1-#2/2}%%
+  \else\tcbdimto\tcb@shadow@ts{#1+#2/2}\fi%
+  \ifdim\dimexpr\tcb@outer@arc>\tcb@shadow@ts\relax%
+    \tcbdimto\tcb@shadow@arc{\tcb@outer@arc-\tcb@shadow@ts}%
+  \else%
+    \let\tcb@shadow@arc=\tcb@zpt%
+  \fi%
+}
+
+\def\tcb@shadow@unbroken#1#2#3#4{%
+  \tcb@shadow@prepare{#3}{#1}%
+  \fill[line width=0pt,rounded corners=\tcb@shadow@arc,#4]%
+    ([xshift=#1+#3,yshift=#2+#3]frame.south west)%
+      rectangle ([xshift=#1-#3,yshift=#2-#3]frame.north east);%
+}
+
+
+\def\tcb@shadow@first#1#2#3#4{%
+  \tcb@shadow@prepare{#3}{#1}%
+  \fill[line width=0pt,rounded corners=\tcb@shadow@arc,#4]
+    ([xshift=#1+#3,yshift=#2+#3]frame.south west) --
+    ([xshift=#1+#3,yshift=#2-#3]frame.north west) --
+    ([xshift=#1-#3,yshift=#2-#3]frame.north east)[sharp corners] --
+    ([xshift=#1-#3,yshift=#2+#3]frame.south east) -- cycle;%
+}
+
+\def\tcb@shadow@middle#1#2#3#4{%
+  \tcb@shadow@prepare{#3}{#1}%
+  \fill[line width=0pt,sharp corners,#4]%
+    ([xshift=#1+#3,yshift=#2+#3]frame.south west)%
+      rectangle ([xshift=#1-#3,yshift=#2-#3]frame.north east);%
+}
+
+\def\tcb@shadow@last#1#2#3#4{%
+  \tcb@shadow@prepare{#3}{#1}%
+  \fill[line width=0pt,rounded corners=\tcb@shadow@arc,#4]
+    ([xshift=#1-#3,yshift=#2-#3]frame.north east) --
+    ([xshift=#1-#3,yshift=#2+#3]frame.south east) --
+    ([xshift=#1+#3,yshift=#2+#3]frame.south west)[sharp corners] --
+    ([xshift=#1+#3,yshift=#2-#3]frame.north west) -- cycle;%
+}
+
+\def\tcb@draw@shadow@unbroken{%
+  \let\tcb@shadow=\tcb@shadow@unbroken%
+  \kvtcb@shadow%
+}
+
+\def\tcb@draw@shadow@first{%
+  \let\tcb@shadow=\tcb@shadow@first%
+  \kvtcb@shadow%
+}
+
+\def\tcb@draw@shadow@middle{%
+  \let\tcb@shadow=\tcb@shadow@middle%
+  \kvtcb@shadow%
+}
+
+\def\tcb@draw@shadow@last{%
+  \let\tcb@shadow=\tcb@shadow@last%
+  \kvtcb@shadow%
+}
+
+
+\tcbset{%
+  shad@w app/.code={\appto\kvtcb@shadow{#1}},%
+  shadow/.style args={#1#2#3#4}{shad@w app={\tcb@shadow{#1}{#2}{#3}{#4}}},%
+  no shadow/.code={\def\kvtcb@shadow{}},%
+  fuzzy shadow/.style args={#1#2#3#4#5}{shad@w app={%
+    \begin{scope}[#5]%
+      \tcb@shadow{#1}{#2}{\the\dimexpr#3-4\dimexpr#4\relax}{opacity=0.01}%
+      \tcb@shadow{#1}{#2}{\the\dimexpr#3-3\dimexpr#4\relax}{opacity=0.02}%
+      \tcb@shadow{#1}{#2}{\the\dimexpr#3-2\dimexpr#4\relax}{opacity=0.04}%
+      \tcb@shadow{#1}{#2}{\the\dimexpr#3-#4\relax}{opacity=0.07}%
+      \tcb@shadow{#1}{#2}{#3}{opacity=0.11}%
+      \tcb@shadow{#1}{#2}{\the\dimexpr#3+#4\relax}{opacity=0.11}%
+      \tcb@shadow{#1}{#2}{\the\dimexpr#3+2\dimexpr#4\relax}{opacity=0.07}%
+      \tcb@shadow{#1}{#2}{\the\dimexpr#3+3\dimexpr#4\relax}{opacity=0.04}%
+      \tcb@shadow{#1}{#2}{\the\dimexpr#3+4\dimexpr#4\relax}{opacity=0.02}%
+      \tcb@shadow{#1}{#2}{\the\dimexpr#3+5\dimexpr#4\relax}{opacity=0.01}%
+  \end{scope}}},%
+  %
+  drop shadow/.style={shadow={0.9mm}{-0.9mm}{0mm}{opacity=0.5,#1}},
+  drop shadow/.default={black!50!white},%
+  halo/.style args={#1 with #2}{shadow={0mm}{0mm}{-#1}{opacity=0.5,#2}},
+  halo/.default={0.9mm with yellow},%
+  drop fuzzy shadow/.style={fuzzy shadow={1.0mm}{-1.0mm}{0mm}{0.12mm}{#1}},
+  drop fuzzy shadow/.default={black!50!white},%
+  fuzzy halo/.style args={#1 with #2}{fuzzy shadow={0mm}{0mm}{-#1}{0.12mm}{#2}},
+  fuzzy halo/.default={1.0mm with yellow},%
+}
+
+
+
+\tcbset{%
+  reset@skins/.style={%
+    frame style=,interior style=,segmentation style=,%
+    frame code,interior titled code,interior code,segmentation code,%
+    title style=,title code,colbacklower=black!15!white,%
+    clear@spec,%
+    watermark opacity=1.00,watermark color=\kvtcb@colback!85!\kvtcb@colframe,%
+    watermark zoom=0.75,clip watermark,%
+    clip title=false,clip upper=false,clip lower=false,
+    no borderline,no shadow,%
+  },
+  initialize@reset=reset@skins,
+}
+
+

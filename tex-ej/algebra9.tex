@@ -1,0 +1,471 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{algebra8.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Multiplicación} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Raíces de Polinomios} \\ \\ \\
+\end{tabular}
+\docLink{algebra92.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 2}}  {\large
+{\color{ azulc} FUNDAMENTOS DE ALGEBRA}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 2.9. }}
+{\normalsize {\color{naranja} División de Polinomios}}
+
+\newline
+
+En cuanto a la división tenemos el principio de la división
+euclidiana de acuerdo con el cuál, dados dos polinomios $p(x)$ y
+$q(x)$ con $q(x)\neq 0$, al dividir $p(x)$ por $q(x)$ se obtienen
+dos polinomios: un cociente $c(x)$ y un residuo $r(x)$ tales que
+
+\bigskip
+
+\begin{align*}
+p(x)&=q(x)c(x)+r(x) \quad\text{y} \\
+r(x)&=0\quad \text{o}\quad r(x)\neq 0\quad \text{y su grado es
+menor que el grado de $q(x)$}
+\end{align*}
+
+\bigskip
+
+Los polinomios $c(x)$ y $r(x)$ son únicos. Estos polinomios se
+obtienen mediante el proceso llamado división larga.
+
+\bigskip
+
+Consideremos por ejemplo,
+
+\begin{align*}
+p(x)&=4+3x-2x^{2}+3x^{3}+6x^{4}\\
+q(x)&=1+x+4x^{2}
+\end{align*}
+
+\bigskip
+
+O escritos en orden descendente de los exponentes de $x$,
+
+\bigskip
+
+\begin{align*}
+p(x)&=6x^{4}+3x^{3}-2x^{2}+3x+4\\
+q(x)&=4x^{2}+x+1
+\end{align*}
+
+\bigskip
+
+Al dividir $p(x)$ por $q(x)$ obtenemos
+
+\bigskip
+
+\begin{center}
+\renewcommand{\arraystretch}{2.2}
+\renewcommand{\tabcolsep}{0cm}
+\begin{tabular}{ccccccccc}
+$6x^{4}$ & $+3x^{3}$ & $-2x^{2}$ & $+3x$ & $+4$ & \qquad\qquad &
+$4x^{2}$ & $+x$ & $+1$\\ \cline{7-9} $-6x^{4}$ &
+$-\dfrac{3}{2}x^{3}$ & $-\dfrac{3}{2}x^{2}$ &&&&
+$\dfrac{3}{2}x^{2}$ & $+\dfrac{3}{8}x$ & $-\dfrac{31}{32}$\\
+\cline{1-3} & $\dfrac{3}{2}x^{3}$ & $-\dfrac{7}{2}x^{2}$ &&&&&&\\
+& $-\dfrac{3}{2}x^{3}$ & $-\dfrac{3}{8}x^{2}$ & $-\dfrac{3}{8}x$
+&&&&& \\ \cline{2-4} && $-\dfrac{31}{8}x^{2}$ & $+\dfrac{21}{8}x$
+&&&&& \\ &&
+$\dfrac{31}{8}x^{2}$ & $+\dfrac{31}{8}x$ & $+\dfrac{31}{32}$ &&&& \\
+\cline{3-5} &&& $\dfrac{115}{32}x$ & $+\dfrac{159}{32}$ &&&&
+\end{tabular}
+\end{center}
+
+\bigskip
+
+de donde el cociente es
+
+\bigskip
+
+\[c(x)=\frac{3}{2}x^{2}+\frac{3}{8}x-\frac{31}{32}\]
+
+\bigskip
+
+y el residuo es
+
+\bigskip
+
+\[r(x)=\frac{115}{32}x+\frac{159}{32}\]
+
+\bigskip
+
+tenemos efectivamente que
+
+\bigskip
+
+\begin{align*}
+q(x)c(x)+r(x)&=\left( 4x^{2}+x+1\right) \left(
+\frac{3}{2}x^{2}+\frac{3}{8}x-\frac{31}{32}\right) +\left(
+\frac{115}{32}x+\frac{159}{32}\right)\\
+&=\left( 6x^{4}+3x^{3}-2x^{2}-\frac{19}{32}x- \frac{31}{32}\right)
++\left( \frac{115}{32}x+\frac{159}{32}\right)\\
+&=6x^{4}+3x^{3}-2x^{2}+3x+4=p(x)
+\end{align*}
+
+\bigskip
+
+Veamos otros casos:
+
+\bigskip
+
+\begin{enumerate}
+\item Sean
+
+\begin{align*}
+p(x)&=x^{2}+x+1\\
+q(x)&=2x^{3}-x^{2}+x-1
+\end{align*}
+
+\bigskip
+
+Tenemos la igualdad
+
+\bigskip
+
+\[x^{2}+x+1=\left( 2x^{3}-x^{2}+x-1\right) .0+\left(x^{2}+x+1\right)\]
+
+\bigskip
+
+es decir, el cociente es el polinomio $0$ y el residuo es el
+polinomio $p(x)$.
+
+\bigskip
+
+Este ejemplo ilustra el caso en que $p(x)=0$ o el grado de $p(x)$
+es menor que el grado de $q(x)$: como cociente basta tomar 0 y
+como residuo el mismo polinomio que se está dividiendo.
+
+\item
+\begin{align*}
+p(x)&=5x^{4}+3x^{3}-x^{2}+3x+2\\
+q(x)&=x-2
+\end{align*}
+
+\bigskip
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\renewcommand{\tabcolsep}{0cm}
+\begin{tabular}{*{10}{c}}
+$5x^{4}$ & $+3x^{3}$ & $-x^{2}$ & $+3x$ & $+2$ & \qquad\qquad &
+$x$ & $-2$ &&\\ \cline{7-10} $-5x^{4}$ & $+10x^{3}$ &&&&& $5x^{3}$
+& $+13x^{2}$ & $+25x$ & $+53$ \\ \cline{1-2} & $13x^{3}$ &&&&&&&& \\
+& $-13x^{3}$ & $+26x^{2}$ &&&&&&& \\ \cline{2-3} && $25x^{2}$
+&&&&&&& \\ && $-25x^{2}$ & $+50x$ &&&&&&\\ \cline{3-4} &&& $53x$
+&&&&&&\\ &&& $-53x$ & $+106$ &&&&&\\ \cline{4-5} &&&& $108$ &&&&&
+\end{tabular}
+\end{center}
+
+\bigskip
+
+Así, el cociente es $c(x)=5x^{3}+13x^{2}+25x+53$ el residuo es
+$r(x)=108$.
+
+\bigskip
+
+También en este caso,
+
+\bigskip
+
+\begin{align*}
+q(x)c(x)+r(x)&=(x-2)(5x^{3}+13x^{2}+25x+53)+108\\
+&=5x^{4}+(13-2\times 5)x^{3}+(25-2\times 13)x^{2}\\
+&\quad+(53-2\times 25)x+(108-2\times 53)\\
+&=5x^{4}+3x^{3}-x^{2}+3x+2
+\end{align*}
+
+\bigskip
+
+Observemos los dos últimos renglones: el coeficiente principal de
+$p(x)$ , que es $5$, y el coeficiente principal del cociente
+coinciden puesto que el coeficiente principal de $q(x)$ es 1. Los
+demás coeficientes de $p(x)$ se obtienen al realizar las
+operaciones $q(x)c(x)+r(x)$. Así $3$, el coeficiente de $x^{3}$ en
+$p(x),$ es igual a $13$, que es el coeficiente de $x^{2}$ en
+$c(x)$, menos 2 veces $5$, que es el coeficiente de $x^{3}$ de
+$c(x).$ El coeficiente de $x^{2}$ en $p(x),$ esto es $-1,$es igual
+a $25$, que es el coeficiente de $x$\ en $c(x)$, menos 2 veces
+$13$ que es el coeficiente de $x^{2}$ en $c(x).$ El coeficiente de
+$x$ en $p(x),$es decir $3$, es igual a $53$, que es el término
+independiente de $c(x)$, menos 2 veces $25$, que es el coeficiente
+de $x$ en $c(x)$. Finalmente, el término independiente de $p(x)$,
+es decir $2$, es igual a $106$, que es el residuo $r(x)$, menos 2
+veces $53$, que es el término independiente de $c(x)$.
+
+\bigskip
+
+Esto nos permite expresar los coeficientes del cociente así:
+
+\bigskip
+
+El coeficiente principal, coeficiente de $x^{3}$, es igual al
+coeficiente principal de $p(x)$.
+
+\bigskip
+
+El coeficiente de $x^{2}$ en $c(x)$ es igual al coeficiente de
+$x^{3}$ en $p(x)$ más 2 veces el coeficiente de $x^{3}$ en $c(x)$.
+
+\bigskip
+
+El coeficiente de $x$ en $c(x)$ es igual al coeficiente de $x^{2}$
+en $p(x)$ más 2 veces el coeficiente de $x^{2}$ en $c(x)$.
+
+\bigskip
+
+El término independiente de $c(x)$ es igual al coeficiente de $x$
+en $p(x)$ más 2 veces el coeficiente de $x$ en $c(x)$.
+
+\bigskip
+
+El residuo $r(x)$ es igual al término independiente de $p(x)$ más
+2 veces el término independiente de $c(x)$.
+
+\end{enumerate}
+
+\bigskip
+
+También en este caso podemos hacer un análisis más general: al
+dividir un polinomio $p(x)$ de grado n por uno de grado 1 de la
+forma $x-d$, se obtiene un cociente cuyo grado es $n-1$ y un
+residuo que es 0 o un polinomio de grado 0, es decir, una
+constante.
+
+\bigskip
+
+Si
+\begin{align*}
+p(x)&=a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots+a_{0}\\
+c(x)&=b_{n-1}x^{n-1}+b_{n-2}x^{n-2}+\cdots+b_{0}\qquad\text{y}\\
+r(x)&=k
+\end{align*}
+
+\bigskip
+
+la igualdad
+
+\bigskip
+
+\[p(x)=(x-d)c(x)+r(x)\]
+
+\bigskip
+
+es decir,
+
+\bigskip
+
+\begin{align*}
+a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots+a_{0}&=(x-d)(b_{n-1}x^{n-1}+\cdots+b_{0})+k\\
+&=b_{n-1}x^{n}+(b_{n-2}-db_{n-1})x^{n-1}\\
+&\quad+(b_{n-3}-db_{n-2})x^{n-2}+\cdots\\
+&\quad+(b_{0}-db_{1})x+(k-db_{0})
+\end{align*}
+
+\bigskip
+
+implica
+
+\begin{align*}
+a_{n}&=b_{n-1}\\
+a_{n-1}&=b_{n-2}-db_{n-1}\\
+a_{n-2}&=b_{n-3}-db_{n-2}\\
+a_{1}&=b_{0}-db_{1}\\
+a_{0}&=k-db_{0} \\
+\intertext{es decir,}\\
+b_{n-1}&=a_{n}\\
+b_{n-2}&=a_{n-1}+db_{n-1}\\
+b_{n-3}&=a_{n-2}+db_{n-2}\\
+&\vdots\\
+b_{0}&=a_{1}+db_{1}\\
+k&=a_{0}+db_{0}\\
+\end{align*}
+
+\bigskip
+
+Así, tomando una fila formada por todos los coeficientes de $p(x)$
+en orden $a_{n}a_{n-1}\ldots a_{0}$ y sumando $0$ a $a_{n}$ y así
+sucesivamente a cada uno de los demás coeficientes
+$a_{n-1},a_{n-2},\ldots,a_{0}$, el producto de $d$ por la última
+suma, se obtienen, en orden, los coeficientes del cociente y el
+residuo.
+
+\bigskip
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{*{6}{c}}
+$a_{n}$ & $a_{n-1}$ & $a_{n-2}$ & $\cdots$ & $a_{1}$ & $a_{0}$\\
+$0$ & $db_{n-1}$ & $db_{n-2}$ & $\cdots$ & $db_{1}$ & $db_{0}$\\
+\hline $b_{n-1}$ & $b_{n-2}$ & $b_{n-3}$ & $\cdots$ & $b_{0}$ &
+$k$
+\end{tabular}
+\end{center}
+
+\bigskip
+
+En esto consiste la \textbf{división sintética}.
+
+\bigskip
+
+Así, para obtener el cociente de dividir
+$7x^{5}+4x^{3}+3x^{2}-x-6$ por $x+1$, tenemos en cuenta que
+$x+1=x-(-1)$ procedemos así:
+
+\bigskip
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{*{6}{r}}
+7 & 0 & $-4$ & 3 & $-1$ & $-6$\\
+0 & $-7$ & 7 & $-3$ & 0 & 1\\ \hline 7 & $-7$ & 3 & 0 & $-1$ &
+$-5$
+\end{tabular}
+\end{center}
+
+\bigskip
+
+El cociente es entonces $c(x)=7x^{4}-7x^{3}+3x^{2}-1$ y el residuo
+es $r(x)=-5$.
+
+\bigskip
+
+\bigskip Volviendo a la discusión general acerca de la división, cuando, el
+divisor es de forma $x-d$, el residuo es una contante $k$ y
+
+\bigskip
+
+\[p(x)=(x-d)c(x)+k\]
+
+\bigskip
+
+Entonces, al calcular $p(x)$ en $d$ (es decir al reemplazar $x$
+por $d$ en el polinomio y realizar las operaciones indicadas),
+obtenemos:
+
+\bigskip
+
+\begin{align*}
+p(d)&=(d-d)c(d)+k\\
+&=0+k=k
+\end{align*}
+
+\bigskip
+
+Así hemos demostrado el \textbf{TEOREMA DEL RESIDUO}:
+
+\bigskip
+
+\textbf{Teorema 2.9.1. (Teorema del Residuo)} El residuo de
+dividir un polinomio $p(x)$ por el polinomio $x-d$ es $p(d)$.
+
+\bigskip
+
+\textbf{Ejemplo 2.27. } \quad\begin{enumerate} \item Al evaluar el
+polinomio
+\[p(x)=2+3x-x^{2}+3x^{3}+5x^{4}\quad \text{en} \quad x=2\]
+
+\bigskip
+
+obtenemos
+
+\bigskip
+
+\begin{align*}
+p(2)&=2+3\ast 2-2^{2}+3\ast 2^{3}+5-2^{4}\\
+&=108
+\end{align*}
+
+\bigskip
+
+y este es el residuo de dividir $p(x)$ por $x-2$ como fue visto
+antes.
+
+\bigskip
+
+\item Podemos asegurar que el residuo de dividir
+$p(x)=-6-x+3x^{2}+4x^{3}+7x^{5}$ por $x+1$ es $-5=p(-1)$. Este
+resultado también fue hallado por división sintética antes.
+\end{enumerate}
+
+\bigskip
+
+Como un caso particular del teorema del residuo aparece el
+\textbf{TEOREMA DEL FACTOR:}
+
+\bigskip
+
+\textbf{Teorema 2.9.2. (Teorema del Factor)} El polinomio $x-d$ es
+factor del polinomio $p(x)$ si y solo si $p(d)=0$.
+
+\bigskip
+
+\textit{Demostración : } Como $p(x)=(x-d)c(x)+p(d)$, $x-d$ es
+factor del $p(x)$ si y solo si $p(d)=0$.
+
+\bigskip
+
+A continuación nos ocuparemos de este caso.
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{algebra8.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Multiplicación} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Raíces de Polinomios} \\ \\ \\
+\end{tabular}
+\docLink{algebra92.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

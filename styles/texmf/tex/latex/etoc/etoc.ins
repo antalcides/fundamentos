@@ -1,0 +1,31 @@
+\def\pkgname{etoc}
+\def\pkgdate{2013/03/07}
+\def\pkgversion{v1.07f}
+\def\pkgdescription{Completely customisable TOCs (jfB)}
+%%
+%% Package `etoc' by Jean-Francois Burnol
+%% Copyright (C) 2012, 2013 by Jean-Francois Burnol
+%%
+%% This file `etoc.ins' is provided for compatibility with TeX distributions
+%% expecting to find it for installation of `etoc.sty'.
+%%
+%% As usual `latex etoc.ins' produces `etoc.sty' from the source `etoc.dtx'
+%% (an already existing etoc.sty in the same repertory will be overwritten)
+%%
+%% Move `etoc.sty' to a suitable location:
+%% etoc.sty -> <TDS>/tex/latex/etoc/etoc.sty
+%%
+%% The generated auxiliary files may be discarded. See `etoc.dtx' for the
+%% statements of copyright and conditions of distribution or modification.
+%%
+\input docstrip.tex
+\askforoverwritefalse
+\def\pkgpreamble{\defaultpreamble^^J\MetaPrefix^^J%
+\string\ProvidesPackage{\pkgname}^^J%
+\space[\pkgdate\space\pkgversion\space\pkgdescription]}
+\generate{\usepreamble\pkgpreamble
+\file{\pkgname.sty}{\from{\pkgname.dtx}{package}}}
+\endbatchfile
+\endinput
+%%
+%% End of file `etoc.ins'.

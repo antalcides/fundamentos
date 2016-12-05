@@ -1,0 +1,333 @@
+% Modificaciones a mitthesis.sty  12 Sep 89
+% Para elaborar tesis de Universidad Nacional
+% For Massachusetts Institute of Technology theses (grad and undergrad),
+% based on "Specifications for Thesis Preparation" Modificado 1996.
+%
+% This style option is designed to work with the report document
+% style of LaTeX version 2.09.  Use
+% \documentstyle[unaltes]{report}
+
+% "Preferably, the text should appear on only one side of the paper."
+% Hence no doubleside option.
+
+% Copyright (c) 1987 by Stephen Gildea
+% Permission to copy all or part of this work is granted, provided
+% that the copies are not made or distributed for resale, and that
+% the copyright notice and this notice are retained.
+% 
+% THIS WORK IS PROVIDED ON AN "AS IS" BASIS.  THE AUTHOR PROVIDES NO
+% WARRANTY WHATSOEVER, EITHER EXPRESS OR IMPLIED, REGARDING THE WORK,
+% INCLUDING WARRANTIES WITH RESPECT TO ITS MERCHANTABILITY OR FITNESS
+% FOR ANY PARTICULAR PURPOSE.
+
+% If you make any improvements, I'd like to hear about them.
+
+% Stephen Gildea
+% MIT Earth Resources Lab
+% Cambridge, Massachusetts 02139
+% mit-erl!gildea
+% gildea@erl.mit.edu
+
+% 29 Jun 87 original version
+% 12 Sep 89 <prange> \supervisor optional arg added
+
+% "Margins must be at least an inch and a quarter on the binding margin
+% (normally the left side), and at least one inch on the other sides."
+%
+
+%
+% Agregar agradecimientos
+\input tcilcomm.tex
+\input ulem.sty
+\oddsidemargin .25in
+\evensidemargin 0in
+
+\topmargin 0in
+\headheight 0in                 % no header
+\headsep \headheight
+
+\textwidth 6.25in
+\textheight 8.5in
+
+\footskip .4in
+
+% "The main body of the text should utilize a space and a half or double
+% spacing.  The abstract, biography, footnotes, and bibliography
+% sections may be single spaced"
+\input doublesp.sty          %available from Clarkson LaTeX-style collection
+\def\baselinestretch{1.5}
+
+%% End of formatting parameters %%
+
+%% Define all the pieces that go on the title page and the abstract.
+
+% \title and \author already exist
+%\newfield{acknowledgments}{Agradecimientos}
+%\newfield{firmas}{firmas}
+
+
+\renewcommand{\chaptername}{Cap\'{\i}tulo}
+\renewcommand{\abstractname}{Resumen}
+\renewcommand{\bibname}{Bibliograf\'{\i}a}
+\renewcommand{\listtablename}{Lista de Tablas}
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\figurename}{Figura}
+
+
+
+\def\department#1{\gdef\@department{#1}}
+
+% If you are getting two degrees, use \and between the names.
+\def\degree#1{\setbox0\hbox{#1}  %for side effect of setting \@degreeword
+  \gdef\@degree{#1}}
+
+% \and is used inside the \degree argument to separate two degrees
+\def\and{\gdef\@degreeword{degrees} \par and \par}
+\def\@degreeword{degree}
+
+% If there is no \copyrightnotice command, it is asssumed that MIT
+% holds the copyright.  This commands adds the copyright symbol to the
+% beginning, and puts the standard permission notice below.
+\def\copyrightnotice#1{\copyrightnoticetext{\copyright\ #1\par\permission}}
+
+% Occacionally you will need to exactly specify the text of the 
+% copyright notice.  The \copyrightnoticetext command is then useful.
+\long\def\copyrightnoticetext#1{\gdef\@copyrightnotice{#1}}
+\def\@copyrightnotice{\copyright\ \Mit\ \@degreeyear}
+
+
+\def\thesisdate#1{\gdef\@thesisdate{#1}}
+
+% typically just a month and year
+\def\degreemonth#1{\gdef\@degreemonth{#1}}
+\def\degreeyear#1{\gdef\@degreeyear{#1}}
+
+% Usage: \supervisor{name}{title}
+%        \chairman{name}{title}
+
+% since there can be more than one supervisor,
+% we build the appropriate boxes for the titlepage and
+% the abstractpage as the user makes multiple calls
+% to \supervisor
+\newbox\@titlesupervisor        \newbox\@abstractsupervisor
+
+% The \supervisor command takes an optional argument in case you
+% want to label a person other than "Thesis Supervisor".  For example,
+% \supervisor[Thesis Co-supervisor]{Arthur Cheng}{Principle Research Scientist}
+
+\def\supervisor{\@ifnextchar[{\@supervisor}{\@supervisor[Thesis Supervisor]}}
+\def\@supervisor[#1]#2#3{\setbox\@titlesupervisor\vbox
+  {\unvbox\@titlesupervisor \vskip 10pt plus 1fil minus 1fil
+  \def\baselinestretch{1}\large
+  \signature{Certificado por}{#2 \\ #3 \\ #1}}
+  \setbox\@abstractsupervisor\vbox{\unvbox\@abstractsupervisor
+  \vskip\baselineskip \def\baselinestretch{1}\@normalsize 
+  \par\noindent #1: #2 \\ Title: #3}}
+
+% department chairman, not thesis committee chairman
+\def\chairman#1#2{\gdef\@chairmanname{#1}\gdef\@chairmantitle{#2}}
+
+% Agregado para financiacion
+
+
+\def\maketitle{\begin{titlepage}
+ \large
+\null
+\null
+\null
+\pagenumbering{roman}
+{\def\baselinestretch{1.2}\Large\bf \@title \par}
+por\par
+{\Large \@author}
+\par
+\par
+Trabajo presentado como requisito parcial \\
+ para optar al T\'{\i}tulo de
+\par
+\@degree
+\null
+\null
+\par
+\@chairmanname  
+\par
+\null
+\par
+Universidad Nacional de Colombia \\Sede Medell\'{\i}n\\
+\null
+Facultad de Ciencias \\
+\null
+\@department 
+\par
+\@degreemonth\ \@degreeyear\\
+\par
+\null
+\null
+\null
+\null
+\null
+\null
+\end{titlepage}
+}
+
+% this environment should probably be called abstract,
+% but we want people to also be able to get at the more
+% basic abstact environment
+
+\def\abstractpage{\newpage
+\begin{center}{\large{\bf \@title} \\
+Por \\
+\@author \\[\baselineskip]}
+\par
+\def\baselinestretch{1}\@normalsize
+\end{center}
+\newpage
+\thispagestyle{empty}   
+\def\baselinestretch{2}\small\normalsize%
+\par
+\vskip \baselineskip
+\signature{Firma del Autor}{\@department \\ \@thesisdate}
+\par
+\unvbox\@titlesupervisor
+\par
+\signature{Aceptada por}{\@chairmanname \\ \@chairmantitle}
+\newpage
+\par
+\begin{abstract}}
+\def\endabstractpage{\end{abstract}\noindent
+  \unvbox\@abstractsupervisor \newpage
+}
+
+% You can use the titlepage environment to do it all yourself if you
+% don't want to use \maketitle.  If the titlepage environment, the
+% paragraph skip is infinitely stretchable, so if you leave a blank line
+% between lines that you want space between, the space will stretch so
+% that the title page fills up the entire page.
+\def\titlepage{\newpage\centering
+  \thispagestyle{empty}
+  \parindent 0pt \parskip 10pt plus 1fil minus 1fil
+  \def\baselinestretch{1}\@normalsize\vbox to \vsize\bgroup\vbox to 9in\bgroup}
+% The \kern0pt pushes any depth into the height.  Thanks to Richard Stone.
+\def\endtitlepage{\par\kern 0pt\egroup\vss\egroup\newpage}
+
+\def\Unal{Universidad Nacional de Colombia \\ Sede Medell\'{\i}n}
+
+\def\permission{\par\noindent{\centering
+  The author hereby grants to MIT permission to reproduce and \\*
+  to distribute copies of this thesis document in whole or in part.}\par}
+
+\def\signature#1#2{\par\noindent#1\dotfill\null\\*
+  {\raggedleft #2\par}}
+
+\def\firmas{\chapter*{Firmas}\small\def\baselinestretch{1}\@normalsize}
+\def\endfirmas{\par}
+
+ 
+
+% Esta parte se puede suprimir si no se tiene financiancion
+% Eliminar desde aca ...
+%\@super \\}
+%\begin{center}{
+%\par
+%\null
+%\null
+%\vskip 6.5in
+%\null
+%\null
+%\par}
+%Este trabajo ha sido apoyado parcialmente por COLCIENCIAS,
+%\par
+%contrato No. 086-95, c\'odigo 1118-05-112-94.
+%\end{center}
+
+
+%\newpage
+% ... hasta aca
+\def\abstract{\par
+\chapter*{Resumen}\small\def\baselinestretch{1}\@normalsize}
+\def\endabstract{\par}
+%
+\def\acknowledgments{
+\chapter*{Agradecimientos}\small\def\baselinestretch{1}\@normalsize}
+\def\endacknowledgments{\par}
+%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+\def\introduccion{
+\chapter*{Introducci\'on}\small\def\baselinestretch{1}\@normalsize
+	  \addcontentsline{toc}{chapter}{Introducci\'on}}
+%      
+% Agregado para cambiar la tabla de contenido
+%
+\def\@do@toc{\tableofcontents}
+\setcounter{tocdepth}{5}
+%\setcounter{secnumdepth}{0}
+       \setcounter{section}{0}
+	   \setcounter{secnumdepth}{3}
+%
+%
+\def\arabicnumbering{\pagenumbering{arabic}
+	   \def\arabicnumbering{\relax}}
+%
+\def\@makechapterhead#1{\arabicnumbering
+   {\parindent \z@\raggedright
+    \ifnum \c@secnumdepth >\m@ne
+     \huge\bf \@chapapp{} \thechapter
+    \par
+    \vskip 20\p@ \fi
+    \huge \bf
+    #1\par
+    \nobreak
+    \vskip 40\p@
+  }}
+%
+\def\tableofcontents{\@restonecolfalse
+  \if@twocolumn\@restonecoltrue\onecolumn\fi
+  \chapter*{Contenido
+	\@mkboth{CONTENIDO}{CONTENIDO}}%
+  \@starttoc{toc}\if@restonecol\twocolumn\fi}
+%
+\def\listoffigures{\chapter*{Lista de Figuras\@mkboth
+ {LISTA DE FIGURAS}{LISTA DE FIGURAS}}\@starttoc{lof}}
+%
+\def\appendix{%
+       \newpage
+	   \addtocontents{toc}{\protect{\addvspace{12pt}}} 
+	   \addtocontents{toc}{\protect{\noindent{Apendices}\para}}
+		     % Previous sections were not numbered - start now.
+	   \setcounter{section}{0}
+	   \setcounter{secnumdepth}{1}
+	   \def\thesection{\Alph{section}.}
+       \def\theequation{\thesection\arabic{equation}}
+}
+%%
+\def\conclusion{\chapter*{Ap\'endice\@mkboth
+      {\uppercase{Ap\'endice}}{\uppercase{Ap\'endice}}
+	   \addcontentsline{toc}{chapter}{\noindent{\bf Ap\'endice}}}
+	     % Previous sections were not numbered - start now.
+	   \setcounter{section}{0}
+	   \setcounter{secnumdepth}{2}
+	   \def\thesection{\Alph{section}.}
+       \def\theequation{\thesection\arabic{equation}}
+}
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\def\thebibliography#1{%
+	  \chapter*{Bibliograf\'{\i}a}
+       \addtocontents{toc}{\protect{\addvspace{12pt}}} 
+ \addcontentsline{toc}{chapter}{\noindent{\bf Bibliograf\'{\i}a}}
+\list
+ {[\arabic{enumi}]}{\settowidth\labelwidth{[#1]}\leftmargin\labelwidth
+ \advance\leftmargin\labelsep
+ \usecounter{enumi}}
+ \def\newblock{\hskip .11em plus .33em minus .07em}
+ \sloppy\clubpenalty4000\widowpenalty4000
+ \sfcode`\.=1000\relax}
+\let\endthebibliography=\endlist
+%%%%%%%
+%
+% If using the report style, use - instead of . in the figure number.
+\@ifundefined{thechapter}{}{\def\thefigure{\thechapter-\arabic{figure}}}

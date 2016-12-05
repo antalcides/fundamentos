@@ -1,0 +1,81 @@
+
+\newcommand{\imagen}[2][0.8\linewidth]{%
+  \pgfdeclareimage[width=#1]{#2}{\imgpath/#2}
+}
+\ifx\ifHtml\undefined
+\newcommand{\usarimagen}[1]{\pgfuseimage{#1}}
+\else
+\newcommand{\usarimagen}[1]{\includegraphics{\imgpath/#1.eps}}
+\fi
+
+\newcommand{\captura}[3]{%
+  \begin{figure}[htbp]
+    \center
+    \fbox{\usarimagen{#1}}
+    \caption{#2}
+    \label{#3}
+  \end{figure}
+}
+
+\newcommand{\entrada}[1]{\begin{flushleft}%
+    \textsc{\footnotesize ENTRADA:} \fbox{\texttt{#1}}\end{flushleft}%
+}
+
+\newcommand{\ii}[1]{\textcolor{\maximapromptcolor}{(\%i#1)}}
+\newcommand{\oo}[1]{\textcolor{\maximapromptcolor}{(\%o#1)}}
+\renewcommand{\maximafont}{\ttfamily}
+
+
+\newcommand{\programfont}[1]{\textsf{\textsl{#1}}}
+\renewcommand{\Maxima}{\programfont{Maxima}\xspace}
+\newcommand{\wxMaxima}{\programfont{wxMaxima}\xspace}
+\newcommand{\xMaxima}{\programfont{xmaxima}\xspace}
+\newcommand{\emacs}{\programfont{Emacs}\xspace}
+\newcommand{\Macsyma}{\programfont{Macsyima}\xspace}
+\newcommand{\Mathematica}{\programfont{Mathematica}\xspace}
+\newcommand{\Maple}{\programfont{Maple}\xspace}
+\newcommand{\Matlab}{\programfont{Matlab}\xspace}
+\newcommand{\gnuplot}{\programfont{gnuplot}\xspace}
+\newcommand{\wxmaxima}{\programfont{wxMaxima}\xspace}
+\newcommand{\xmaxima}{\programfont{xMaxima}\xspace}
+\newcommand{\texmacs}{\programfont{\TeX macs}\xspace}
+\newcommand{\wims}{\programfont{WIMS}\xspace}
+\newcommand{\axiom}{\programfont{Axiom}\xspace}
+\newcommand{\yacas}{\programfont{YACAS}\xspace}
+\newcommand{\pari}{\programfont{Pari}\xspace}
+\newcommand{\superficie}{\programfont{Superficie}\xspace}
+\newcommand{\octave}{\programfont{Octave}\xspace}
+\newcommand{\euler}{\programfont{EULER}\xspace}
+\newcommand{\tela}{\programfont{Tela}\xspace}
+\newcommand{\scilab}{\programfont{Scilab}\xspace}
+\newcommand{\R}{\programfont{R}\xspace}
+
+% >>>>>>>>>>>>> Definición de \etiqueta{a}, \boton{a} y \menu{a,b,c}
+\newcommand{\etiqueta}[1]{\textsf{#1}}
+\newcommand{\boton}[1]{[\textsf{#1}]}
+\makeatletter
+\def\menu#1{%
+  \def\@separador{}
+  \COMAS@do#1,\relax,
+  \def\@separador{}}
+\def\COMAS@do#1,{%
+  \ifx\relax#1\empty\else
+  \@separador''\etiqueta{#1}''\def\@separador{ $\!\rightarrow\!$ }%
+  \expandafter\COMAS@do\fi}
+\makeatother
+% <<<<<<<<<<<<<
+
+\newenvironment{problema}[1][Problema]
+{\begin{quotation}\noindent\em 
+    \textbf{Problema:}\par\noindent}
+  {\end{quotation}}
+
+\newcommand{\ventana}[1]{{\em #1}}
+\newcommand{\tecla}[1]{\textsc{#1}}
+\newcommand{\paquete}[1]{``#1''}
+\newcommand{\var}[1]{\texttt{#1}}
+\newcommand{\literal}[1]{``{\tt #1}''}
+\newcommand{\literind}[1]{\literal{#1}\index{#1}}
+
+\renewcommand{\maximainputcolor}{blue}
+\renewcommand{\maximaoutputcolor}{black}

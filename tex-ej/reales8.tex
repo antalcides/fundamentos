@@ -1,0 +1,310 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{reales7.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Racionales e Irracionales} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Densidad} \\ \\ \\
+\end{tabular}
+\docLink{reales9.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 1}}  {\large
+{\color{ azulc} LOS NUMEROS REALES}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 1.8. }}
+{\normalsize {\color{naranja} Expresiones Decimales}}
+
+\newline
+
+Dado que todo número racional es el cociente de dos enteros,
+efectuando una división ordinaria lo podemos representar mediante
+una \textit{expresión decimal}. Estas representaciones o bien son
+finitas, como en el caso de
+
+\bigskip
+
+\[\dfrac{1}{2}=0,5 \quad \text{y} \quad \dfrac{35}{8}=4,375\]
+
+\bigskip
+
+o bien se repiten en ciclos regulares indefinidamente como en el
+caso de
+
+\bigskip
+
+\[\dfrac{27}{11}=2,454545\ldots \quad \text{y} \quad
+\dfrac{10}{7}=1,428571428571\ldots\]
+
+\bigskip
+
+Cuando en una expresión decimal hay un ciclo de cifras que se
+repiten indefinidamente, decimos que el decimal es
+\textit{periódico}. Llamamos \textit{período} al conjunto de
+cifras que forman el ciclo que se repite y para representar el
+número sin ambigüedades trazamos una barra sobre este ciclo. Todo
+decimal finito puede considerarse como un decimal periódico donde
+la cifra que se repite es el cero. Usando estas notaciones
+tenemos;
+
+\bigskip
+
+\begin{align*}
+\dfrac{1}{2}&=0,5\overline{0}\\
+\dfrac{35}{8}&=4,375\overline{0}\\
+\dfrac{27}{11}&=2,\overline{45}\\
+\dfrac{10}{7}&=1,\overline{428571}
+\end{align*}
+
+\bigskip
+
+Hemos visto que todo número racional se puede representar como una
+expresión decimal periódica. También es cierto que toda expresión
+decimal periódica representa un número racional. Los siguientes
+ejemplos nos muestran como encontrar el racional representado por
+una expresión decimal.
+
+\bigskip
+
+\textbf{Ejemplo 1.12.} Hallemos el número racional representado
+por $x=5,\overline{2}$.
+
+\bigskip
+
+Tenemos
+
+\bigskip
+
+\begin{align*}
+x&=5,\overline{2}\\
+10x&=52,\overline{2},\quad \text{luego}\\
+9x&=47 \quad \text{y} \\
+x&=\dfrac{47}{9}.
+\end{align*}
+
+\bigskip
+
+En el siguiente ejemplo, el período contiene más de un dígito
+
+\bigskip
+
+\textbf{Ejemplo 1.13.} Hallemos el número racional representado
+por $x=4,\overline{35}$.
+
+\bigskip
+
+Tenemos
+
+\bigskip
+
+\begin{align*}
+x&=4,\overline{35}\\
+100&x=435,\overline{35}\quad\text{luego}\\
+99x&=431 \quad \text{y}\\
+x&=\dfrac{431}{99}
+\end{align*}
+
+\bigskip
+
+El caso más general se presenta en el siguiente ejemplo
+
+\bigskip
+
+\textbf{Ejemplo 1.14. } Hallemos el número racional representado
+por $x=2,18\overline{512}$.
+
+\bigskip
+
+Tenemos
+
+\bigskip
+
+\[y=100x=218,\overline{512}\]
+
+\bigskip
+
+y luego procedemos con $y$, como en el ejemplo anterior. Es decir
+
+\bigskip
+
+\begin{align*}
+1000y&=218512,\overline{512}\\
+999y&=218294\\
+y&=\dfrac{218294}{999}
+\end{align*}
+
+\bigskip
+
+y como $y=100x$ entonces $x=\dfrac{y}{100}=\dfrac{218294}{99900}$.
+
+\bigskip
+
+En el desarrollo de los ejemplos anteriores, se multiplicó el
+número $x$ por ciertas potencias de $10$. Estas potencias no se
+eligieron al azar, sino que se escogieron cuidadosamente, de tal
+forma que los números $10^{r}x$ tuvieran la misma parte decimal
+que $x$. De esta forma, al efectuar las restas $10^{r}x-x$ se
+obtuvieron números enteros a partir de los cuales se despejo el
+número racional $x$.
+
+\bigskip
+
+La discusión anterior nos muestra que el conjunto de los números
+racionales es idéntico con el conjunto de los decimales
+periódicos. En consecuencia, el conjunto de los números
+irracionales esta constituido por todos los decimales no
+periódicos. Como ejemplos de un decimales no periódicos, podemos
+citar las expresiones
+
+\bigskip
+
+\[0,202002000200002\cdots \quad \text{y}3,124701001000100001\cdots
+\]
+
+\bigskip
+
+donde el número de ceros que preceden a $2$ o a $1$ va aumentando
+cada vez.
+
+\bigskip
+
+Sea $x=a_{0},a_{1}a_{2}\cdots a_{n}$ una expresión decimal finita.
+Multiplicando por $10^{n}$ tenemos
+
+\bigskip
+
+\[10^{n}x=a_{0}a_{1}a_{2}\cdots a_{n}\]
+
+\bigskip
+
+o sea
+
+\bigskip
+
+\[10^{n}x=a_{0}10^{n}+a_{1}10^{n-1}+a_{2}10^{n-2}+\cdots +a_{n}\]
+
+\bigskip
+
+Despejando $x$ obtenemos el número racional
+
+\bigskip
+
+\[x=a_{0}+\dfrac{a_{1}}{10}+\dfrac{a_{2}}{10^{2}}+\cdots +\dfrac{a_{n}}{10^{n}}\]
+
+\bigskip
+
+Por lo tanto, $x$ satisface las siguientes relaciones
+
+\bigskip
+
+\begin{gather*}
+a_{0}<x<a_{0}+1\\
+a_{0}+\dfrac{a_{1}}{10}<x<a_{0}+\dfrac{a_{1}+1}{10}\\
+a_{0}+\dfrac{a_{1}}{10}+\dfrac{a_{2}}{10^{2}}<x<a_{0}+\dfrac{a_{1}}{10}+\dfrac{a_{2}+1}{10^{2}}\\
+\vdots\\
+a_{0}+\dfrac{a_{1}}{10}+\dfrac{a_{2}}{10^{2}}+\cdots
++\dfrac{a_{n-1}}{10^{n-1}}<x<a_{0}+\dfrac{a_{1}}{10}+\dfrac{a_{2}}{10^{2}}+\cdots
++\dfrac{a_{n-1}+1}{10^{n-1}}
+\end{gather*}
+
+\bigskip
+
+\[a_{0}+\dfrac{a_{1}}{10}+\dfrac{a_{2}}{10^{2}}+\cdots+\dfrac{a_{n}}{10^{n}}=x\]
+
+\bigskip
+
+Similarmente, si $x=a_{0}a_{1}a_{2}a_{3}\cdots$ es un número real
+positivo que tiene una expansión decimal infinita, entonces el
+número $x$ esta localizado sobre la recta numérica de tal forma
+que satisface las siguientes desigualdades
+
+\bigskip
+
+\begin{gather*}
+a_{0}<x<a_{0}+1\\
+a_{0}+\dfrac{a_{1}}{10}<x<a_{0}+\dfrac{a_{1}+1}{10}\\
+a_{0}+\dfrac{a_{1}}{10}+\dfrac{a_{2}}{10^{2}}<x<a_{0}+\dfrac{a_{1}}{10}+\dfrac{a_{2}+1}{10^{2}}\\
+a_{0}+\dfrac{a_{1}}{10}+\dfrac{a_{2}}{10^{2}}+\dfrac{a_{3}}{10^{3}}<x<a_{0}+\dfrac{a_{1}}{10}+\dfrac{a_{3}+1}{10^{3}}\\
+\vdots
+\end{gather*}
+
+\bigskip
+
+Observamos que la representación decimal esta asociada con la
+división de un intervalo unidad en 10 partes iguales, la división
+de cada una de estas subdivisiones en 10 partes iguales y así
+sucesivamente. Si por ejemplo consideramos el número decimal
+$x=0,\overline{3}=0,3333\cdots$ tenemos las gráficas siguientes
+
+\bigskip
+
+\[
+\includegraphics{img/img8.gif}
+\]
+
+\bigskip
+
+y ampliando
+
+\bigskip
+
+\[
+\includegraphics{img/img8a.gif}
+\]
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{reales7.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color{darkgray}\small Racionales e Irracionales} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Densidad} \\ \\ \\
+\end{tabular}
+\docLink{reales9.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

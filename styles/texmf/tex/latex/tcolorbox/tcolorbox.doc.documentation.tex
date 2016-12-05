@@ -1,0 +1,431 @@
+% !TeX root = tcolorbox.tex
+% include file of tcolorbox.tex (manual of the LaTeX package tcolorbox)
+\clearpage
+\section{Library 'documentation'}\label{sec:documentation}
+This library has the single purpose to support \LaTeX\ package documentations
+like this one. Actually, the visual nature follows the approach from
+Till Tantau's |pgf| \cite{tantau:2010c} documentation.
+Typically, this library is assumed to be used in conjunction with the
+class |ltxdoc| or alike.
+
+The library is loaded by a package option or inside the preamble by:
+\begin{dispListing}
+  \tcbuselibrary{documentation}
+\end{dispListing}
+This also loads the library 'listings', see section \ref{sec:listings},
+and a bunch of packages, namely
+|doc|, |pifont|, |marvosym|, |hyperref|, |makeidx|, and |refcount|.
+
+For UTF-8 support, load:
+\begin{dispListing}
+  \tcbuselibrary{listingsutf8,documentation}
+\end{dispListing}
+
+
+\subsection{Macros of the Library}
+
+\begin{docEnvironment}[doclang/environment content=command description]{docCommand}{\oarg{options}\marg{name}\marg{parameters}}
+  Documents a \LaTeX\ macro with given \meta{name} where \meta{name} is
+  written without backslash. The given \meta{options} are set with \refCom{tcbset}.
+  This macro takes mandatory or optional \meta{parameters}.
+  It is automatically indexed and can be referenced with
+  \refCom{refCom}\marg{name}.
+\begin{dispExample}
+\begin{docCommand}{foomakedocSubKey}{\marg{name}\marg{key path}}
+  Creates a new environment \meta{name} based on \refEnv{docKey} for the
+  documentation of keys with the given \meta{key path}.
+\end{docCommand}
+\end{dispExample}
+\begin{dispExample}
+\begin{docCommand}[color definition=blue]{foomakedocSubKey*}%
+    {\marg{name}\marg{key path}}
+  Creates a new environment \meta{name} based on \refEnv{docKey} for the
+  documentation of keys with the given \meta{key path}.
+\end{docCommand}
+\end{dispExample}
+\end{docEnvironment}
+
+\clearpage
+{\let\xdocEnvironment\docEnvironment
+\let\endxdocEnvironment\enddocEnvironment
+\begin{xdocEnvironment}[doclang/environment content=environment description]{docEnvironment}{\oarg{options}\marg{name}\marg{parameters}}
+  Documents a \LaTeX\ environment with given \meta{name}.
+  The given \meta{options} are set with \refCom{tcbset}.
+  This environment takes mandatory or optional \meta{parameters}.
+  It is automatically indexed and can be referenced with
+  \refCom{refEnv}\marg{name}.
+\begin{dispExample}
+\begin{docEnvironment}{foocolorbox}{\oarg{options}}
+  This is the main environment to create an accentuated colored text box with
+  rounded corners and, optionally, two parts.
+\end{docEnvironment}
+\end{dispExample}
+\begin{dispExample}
+\begin{docEnvironment}%
+    [doclang/environment content=My content text]%
+    {foocolorbox*}{\oarg{options}}
+  This is the main environment to create an accentuated colored text box with
+  rounded corners and, optionally, two parts.
+\end{docEnvironment}
+\end{dispExample}
+\end{xdocEnvironment}}
+
+
+\begin{docEnvironment}[doclang/environment content=key description]{docKey}{\oarg{key path}\marg{name}\marg{parameters}\marg{description}}
+  Documents a key with given \meta{name} and an optional \meta{key path}.
+  This key takes mandatory or optional \meta{parameters} as value
+  with a short \meta{description}.
+  It is automatically indexed and can be referenced with
+  \refCom{refKey}\marg{name}.
+\begin{dispExample}
+\begin{docKey}[foo]{footitle}{=\meta{text}}{no default, initially empty}
+  Creates a heading line with \meta{text} as content.
+\end{docKey}
+\end{dispExample}
+\end{docEnvironment}
+
+
+\begin{docCommand}{docAuxCommand}{\marg{name}}
+  Documents an auxiliary or minor \LaTeX\ macro with given \meta{name}
+  where \meta{name} is written without backslash.
+  This macro is automatically indexed.
+\begin{dispExample}
+The macro \docAuxCommand{fooaux} holds some interesting data.
+\end{dispExample}
+\end{docCommand}
+
+\clearpage
+\begin{docCommand}{docColor}{\marg{name}}
+  Documents a color with given \meta{name}. The color is automatically indexed.
+\begin{dispExample}
+The color \docColor{foocolor} is available.
+\end{dispExample}
+\end{docCommand}
+
+
+\begin{docCommand}{cs}{\marg{name}}
+  Macro from |ltxdoc| \cite{carlisle:2007a} to typeset a command word \meta{name}
+  where the backslash is prefixed. The library overwrites the original macro.
+\begin{dispExample}
+This is a \cs{foocommand}.
+\end{dispExample}
+\end{docCommand}
+
+\begin{docCommand}{meta}{\marg{text}}
+  Macro from |doc| \cite{mittelbach:2011a} to typeset a meta \meta{text}.
+\begin{dispExample}
+This is a \meta{text}.
+\end{dispExample}
+\end{docCommand}
+
+\begin{docCommand}{marg}{\marg{text}}
+  Macro from |ltxdoc| \cite{carlisle:2007a} to typeset a \meta{text} with
+  curly brackets as a mandatory argument. The library overwrites the original macro.
+\begin{dispExample}
+This is a mandatory \marg{argument}.
+\end{dispExample}
+\end{docCommand}
+
+
+\begin{docCommand}{oarg}{\marg{text}}
+  Macro from |ltxdoc| \cite{carlisle:2007a} to typeset a \meta{text} with
+  square brackets as an optional argument. The library overwrites the original macro.
+\begin{dispExample}
+This is an optional \oarg{argument}.
+\end{dispExample}
+\end{docCommand}
+
+
+\begin{docCommand}{brackets}{\marg{text}}
+  Sets the given \meta{text} with curly brackets.
+\begin{dispExample}
+  Here we use \brackets{some text}.
+\end{dispExample}
+\end{docCommand}
+
+\clearpage
+
+{\let\xdispExample\dispExample
+  \let\endxdispExample\enddispExample
+\begin{docEnvironment}{dispExample}{}
+  Creates a colored box based on a \refEnv{tcolorbox}.
+  It displays the environment content as source code in the upper part
+  and as compiled text in the lower part of the box.
+  The appearance is controlled by \refKey{/tcb/documentation listing style}
+  and the style \refKey{/tcb/docexample}. It may be
+  changed by redefining this style.
+{
+%\tcbset{before lower app={\tcbset{docexample/.style={docexample original}}}}
+%\tcbset{docexample/.style={docexample original}}%
+\begin{xdispExample}
+\begin{dispExample}
+This is a \LaTeX\ example.
+\end{dispExample}
+\end{xdispExample}
+}
+\end{docEnvironment}}
+
+
+{\let\xdispExample\dispExample
+  \let\endxdispExample\enddispExample
+\begin{docEnvironment}{dispExample*}{\marg{options}}
+  The starred version of \refEnv{dispExample} takes \refEnv{tcolorbox} \meta{options}
+  as parameter. These \meta{options} are executed after \refKey{/tcb/docexample}.
+\begin{xdispExample}
+\begin{dispExample*}{sidebyside}
+This is a \LaTeX\ example.
+\end{dispExample*}
+\end{xdispExample}
+\end{docEnvironment}}
+
+
+\clearpage
+\begin{docEnvironment}{dispListing}{}
+  Creates a colored box based on a \refEnv{tcolorbox}.
+  It displays the environment content as source code.
+  The appearance is controlled by \refKey{/tcb/documentation listing style}
+  and the style \refKey{/tcb/docexample}. It may be
+  changed by redefining this style.
+\begin{dispExample}
+\begin{dispListing}
+This is a \LaTeX\ example.
+\end{dispListing}
+\end{dispExample}
+\end{docEnvironment}
+
+\begin{docEnvironment}{dispListing*}{\marg{options}}
+  The starred version of \refEnv{dispListing} takes \refEnv{tcolorbox} \meta{options}
+  as parameter. These \meta{options} are executed after \refKey{/tcb/docexample}.
+\begin{dispExample}
+\begin{dispListing*}{title=My listing}
+This is a \LaTeX\ example.
+\end{dispListing*}
+\end{dispExample}
+\end{docEnvironment}
+
+
+\begin{docEnvironment}{absquote}{}
+  Used to typeset an abstract as quoted and small text.
+\begin{dispExample}
+\begin{absquote}
+|tcolorbox| provides an environment for colored and framed text boxes with a
+heading line. Optionally, such a box can be split in an upper and a lower part.
+\end{absquote}
+\end{dispExample}
+\end{docEnvironment}
+
+\clearpage
+\begin{docCommand}{tcbmakedocSubKey}{\marg{name}\marg{key path}}
+  Creates a new environment \meta{name} based on \refEnv{docKey} for the
+  documentation of keys with the given \meta{key path} as default.
+  The new environment \meta{name} takes the same para\-meters as \refEnv{docKey} itself.
+\begin{dispExample}
+\tcbmakedocSubKey{docFooKey}{foo}
+
+\begin{docFooKey}{foodummy}{=\meta{nothing}}{no default, initially empty}
+Some key.
+\end{docFooKey}
+\end{dispExample}
+\end{docCommand}
+
+
+\begin{docCommand}{refCom}{\marg{name}}
+  References a documented \LaTeX\ macro with given \meta{name} where \meta{name} is
+  written without backslash. The page reference is suppressed if it links
+  to the same page.
+\begin{dispExample}
+We have created \refCom{foomakedocSubKey} as an example.
+\end{dispExample}
+\end{docCommand}
+
+\begin{docCommand}{refCom*}{\marg{name}}
+  References a documented \LaTeX\ macro with given \meta{name} where \meta{name} is
+  written without backslash. There is no page reference.
+\begin{dispExample}
+We have created \refCom*{foomakedocSubKey} as an example.
+\end{dispExample}
+\end{docCommand}
+
+
+\begin{docCommand}{refEnv}{\marg{name}}
+  References a documented \LaTeX\ environment with given \meta{name}.
+  The page reference is suppressed if it links to the same page.
+\begin{dispExample}
+We have created \refEnv{foocolorbox} as an example.
+\end{dispExample}
+\end{docCommand}
+
+\begin{docCommand}{refEnv*}{\marg{name}}
+  References a documented \LaTeX\ environment with given \meta{name}.
+  There is no page reference.
+\begin{dispExample}
+We have created \refEnv*{foocolorbox} as an example.
+\end{dispExample}
+\end{docCommand}
+
+\clearpage
+\begin{docCommand}{refKey}{\marg{name}}
+  References a documented key with given \meta{name} where \meta{name}
+  is the full path name of the key.
+  The page reference is suppressed if it links to the same page.
+\begin{dispExample}
+We have created \refKey{/foo/footitle} as an example.
+\end{dispExample}
+\end{docCommand}
+
+\begin{docCommand}{refKey*}{\marg{name}}
+  References a documented key with given \meta{name} where \meta{name}
+  is the full path name of the key.
+  There is no page reference.
+\begin{dispExample}
+We have created \refKey*{/foo/footitle} as an example.
+\end{dispExample}
+\end{docCommand}
+
+%
+\begin{docCommand}{colDef}{\marg{text}}
+Sets \meta{text} with the definition color, see \refKey{/tcb/color definition}.
+\begin{dispExample}
+This is my \colDef{text}.
+\end{dispExample}
+\end{docCommand}
+
+\begin{docCommand}{colOpt}{\marg{text}}
+  Sets \meta{text} with the option color, see \refKey{/tcb/color option}.
+\begin{dispExample}
+This is my \colOpt{text}.
+\end{dispExample}
+\end{docCommand}
+
+
+\clearpage
+\subsection{Option Keys of the Library}
+
+\begin{docTcbKey}{docexample}{}{style, no value}
+  Sets the style for \refEnv{dispExample} and \refEnv{dispListing}
+  with the colors |ExampleBack| and |ExampleFrame|.
+  To change the appearance of the examples, this style can be
+  redefined.
+\end{docTcbKey}
+
+\begin{docTcbKey}{documentation listing style}{=\meta{listing style}}{no default, initially |tcbdocumentation|}
+  Sets a \meta{listing style} for the |listings| package \cite{heinz:2007a}.
+  It is used inside \refEnv{dispExample} and \refEnv{dispListing} to typeset
+  the listings. Note that this is not identical to the key
+  \refKey{/tcb/listing style} which is used for 'normal' listings.
+\end{docTcbKey}
+
+\begin{docTcbKey}{color definition}{=\meta{color}}{no default, initially |Definition|}
+  Sets the highlight color used by macro and key definitions.
+\end{docTcbKey}
+
+\begin{docTcbKey}{color option}{=\meta{color}}{no default, initially |Option|}
+  Sets the color used for optional arguments.
+\end{docTcbKey}
+
+\begin{docTcbKey}{color hyperlink}{=\meta{color}}{no default, initially |Hyperlink|}
+  Sets the color for all hyper-links, i.\,e. all internal and external links.
+\end{docTcbKey}
+
+\begin{docTcbKey}{before example}{=\meta{macros}}{no default, initially \cs{par}\cs{smallskip}}
+  Sets the \meta{macros} which are executed before \refEnv{dispExample} and \refEnv{dispListing}
+  additional to \refKey{/tcb/before}.
+\end{docTcbKey}
+
+\begin{docTcbKey}{after example}{=\meta{macros}}{no default, initially empty}
+  Sets the \meta{macros} which are executed after \refEnv{dispExample} and \refEnv{dispListing}
+  additional to \refKey{/tcb/after}.
+\end{docTcbKey}
+
+\begin{docTcbKey}{index format}{=\meta{format}}{no default, initially |pgf|}
+  Determines the basic \meta{format} of the generated index.
+  Feasible values are:
+  \begin{itemize}
+  \item |pgf|: The index is formatted like in the |pgf| documentation.
+  \item |doc|: The index assumed to be formatted by |doc|/|ltxdoc|. A usage of |makeindex|
+    with |-s gind.ist| is assumed. The package |hypdoc| has to be loaded
+    \emph{before} |tcolorbox|.
+  \end{itemize}
+\end{docTcbKey}
+
+\begin{docTcbKey}{index actual}{=\meta{character}}{no default, initially |@|}
+  Sets the character for 'actual' in automatic indexing.
+\end{docTcbKey}
+
+\begin{docTcbKey}{index quote}{=\meta{character}}{no default, initially |"|}
+  Sets the character for 'quote' in automatic indexing.
+\end{docTcbKey}
+
+\begin{docTcbKey}{index level}{=\meta{character}}{no default, initially |!|}
+  Sets the character for 'level' in automatic indexing.
+\end{docTcbKey}
+
+\begin{docTcbKey}{index default settings}{}{style, no value}
+  Sets the |makeindex| default values for
+  \refKey{/tcb/index actual},
+  \refKey{/tcb/index quote}, and
+  \refKey{/tcb/index level}.
+\end{docTcbKey}
+
+\begin{docTcbKey}{index german settings}{}{style, no value}
+  Sets the |makeindex| values recommended for German language texts.
+  This is identical to setting the following:
+\begin{dispListing}
+\tcbset{index actual={=},index quote={!},index level={>}}
+\end{dispListing}
+\end{docTcbKey}
+
+\clearpage
+The following keys are provided for language specific settings.
+The English language is predefined.
+
+\begin{docTcbKey}{english language}{}{style, no value}
+  Sets all language specific settings to English.
+\end{docTcbKey}
+
+\begin{langTcbKey}{color}{=\meta{text}}{no default, initially |color|}
+  Text used in the index for colors.
+\end{langTcbKey}
+
+\begin{langTcbKey}{colors}{=\meta{text}}{no default, initially |Colors|}
+  Heading text in the index for colors.
+\end{langTcbKey}
+
+\begin{langTcbKey}{environment content}{=\meta{text}}{no default, initially |environment content|}
+  Text used in \refEnv{docEnvironment}.
+\end{langTcbKey}
+
+\begin{langTcbKey}{environment}{=\meta{text}}{no default, initially |environment|}
+  Text used in the index for environments.
+\end{langTcbKey}
+
+\begin{langTcbKey}{environments}{=\meta{text}}{no default, initially |Environments|}
+  Heading text in the index for environments.
+\end{langTcbKey}
+
+\begin{langTcbKey}{key}{=\meta{text}}{no default, initially |key|}
+  Text used in the index for keys.
+\end{langTcbKey}
+
+\begin{langTcbKey}{index}{=\meta{text}}{no default, initially |Index|}
+  Heading text for the index.
+\end{langTcbKey}
+
+\begin{langTcbKey}{pageshort}{=\meta{text}}{no default, initially |P.|}
+  Short text for page references.
+\end{langTcbKey}
+
+
+\subsection{Predefined Colors of the Library}
+The following colors are predefined. They are used as default colors
+in some library commands.
+
+\def\dispColor#1{\docColor{#1}~\tikz[baseline=1mm]\path[fill=#1,draw] (0,0) rectangle (0.4,0.4);~}
+
+\dispColor{Option},
+\dispColor{Definition},
+\dispColor{ExampleFrame},
+\dispColor{ExampleBack},
+\dispColor{Hyperlink}.
+
+

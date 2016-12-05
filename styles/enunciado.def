@@ -1,0 +1,85 @@
+\newcommand\L@Frame[2]{ %
+%\fboxrule=\FrameRule
+%\fboxsep=-\errorsize
+%\usetikzlibrary{shadows}
+\setkeys{boxedtheorem}{#1}
+\tikzstyle{mybox}=[draw=\boxcolor,fill=\background ,ultra thick , rectangle , rounded corners , inner sep =10pt , inner ysep=20pt, drop shadow={\shad , shadow xshift=0.2,shadow yshift=-0.2,opacity=0.3}]
+\tikzstyle{fancytitle}=[draw=\titleboxcolor ,very thick , rounded corners , fill=\titlebackground ,text=\titlecolor]
+\hspace{-10pt}
+\begin{tikzpicture}
+\node[mybox](box){ %
+%\begin{minipage}{0.8\textwidth}
+ \vbox{#2}
+%\end{minipage}
+               }; %
+        \node[fancytitle,right=10pt]at (box.north west){\enun  \title  };
+        %\node[fancytitle,left=10pt]at (box.north east){\labelbox};
+\end{tikzpicture}
+                     }
+                     %%%%%%frame cont
+\newcommand\L@cFrame[2]{ %
+%\fboxrule=\FrameRule
+%\fboxsep=-\errorsize
+
+\setkeys{boxedtheorem}{#1}
+\tikzstyle{mibox}=[draw=\boxcolor,fill=\background ,ultra thick , rectangle , rounded corners , inner sep =10pt , inner ysep=20pt , drop shadow={\shad , shadow xshift=0.2,shadow yshift=-0.2,opacity=0.3}]
+\tikzstyle{fancytitle}=[draw=\titleboxcolor ,very thick , rounded corners , fill=\titlebackground ,text=\titlecolor]
+\hspace{-10pt}
+\begin{tikzpicture}
+\node[mibox](box){ %
+%\begin{minipage}{0.8\textwidth}
+ \vbox{#2}
+%\end{minipage}
+               }; %
+        \node[fancytitle,right=10pt]at (box.north west){ \enun   \title  \hspace{5pt} \labelbox};
+        %\node[fancytitle,left=10pt]at (box.north east){\labelbox};
+\end{tikzpicture}
+                     }                     
+                     %%%%%%%%%%%%%%
+% % % % % % % % % % % _____________$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+    \newenvironment{enunciado}[1]{% 
+      % Optional continuation label defaults to the first label plus
+           %\def\Frame@Lab{#1}%
+%        \fboxrule=\FrameRule 
+%        \fboxsep=\FrameSep   
+      \def\FrameCommand##1{ %\hskip\rightmargin \hskip\leftmargin
+          \L@Frame{#1}{##1}}%
+      \def\FirstFrameCommand{ %\hskip\rightmargin \hskip\leftmargin
+                \L@Frame{#1}}%
+      \def\MidFrameCommand{\L@cFrame{#1,labelbox=  (Continuaci\'on)}}%
+      \def\LastFrameCommand{\L@cFrame{#1,labelbox=  (Continuaci\'on)}}%
+      \MakeFramed{\FrameRestore} 
+    }{ \endMakeFramed} 
+  % % %----------------------------------
+     \newcommand\thmetiqenum[1][]{#1}
+  \newcommand{\enunciadotheorem}[3][]{%
+  \newcounter{#2}[section]
+            \def\nombre@enunciado{#3}
+                         \newenvironment{#2}[2][]{%
+           \refstepcounter{#2}
+            \def\titulo@enunciado{ \csname the#2\endcsname :\  }
+                  \begin{enunciado}{#1,enun=\nombre@enunciado , title=\titulo@enunciado\ \thmetiqenum{##2}
+                  }      
+      
+      }%
+      {%
+      \end{enunciado}
+      }
+
+ 
+  }
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \newcommand\envetiqenum[1]{#1}
+  \newcommand{\enunciadoenv}[2]{%
+                           \newenvironment{#2}[1][]{%
+                                         \begin{enunciado}{#1,enun=\envetiqenum{##1} , title= 
+                  }      
+      
+      }%
+      {%
+      \end{enunciado}
+      }
+
+ 
+  }
+  

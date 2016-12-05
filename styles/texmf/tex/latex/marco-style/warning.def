@@ -1,0 +1,33 @@
+\definecolor{warningColor}{named}{Red3}
+\tikzset{
+  warningsymbol/.style={
+      rectangle,
+      draw=warningColor,
+      fill=white,
+      scale=1,
+      overlay}
+}
+
+\mdfdefinestyle{warning}{%
+ hidealllines=true,leftline=true,
+ skipabove=12,skipbelow=12pt,
+ innertopmargin=0.4em,%
+ innerbottommargin=0.4em,%
+ innerrightmargin=0.7em,%
+ rightmargin=0.7em,%
+ innerleftmargin=1.7em,%
+ leftmargin=0.7em,%
+ middlelinewidth=.2em,%
+ linecolor=warningColor,%
+ fontcolor=warningColor,%
+ firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$) 
+                           node[warningsymbol] {\danger};},%
+ secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$) 
+                           node[warningsymbol] {\danger};},%
+ middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$) 
+                           node[warningsymbol] {\danger};},%
+ singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$) 
+                           node[warningsymbol] {\danger};},%
+}
+
+\newmdenv[style=warning]{Warning}

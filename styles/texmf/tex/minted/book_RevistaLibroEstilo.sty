@@ -1,0 +1,458 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{book_RevistaLibroEstilo}[2011/11/12]
+
+\RequirePackage[utf8x]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{pslatex}       % fuentes finas postscript 
+%\RequirePackage[sc]{mathpazo}
+\RequirePackage{helvet}
+\linespread{1.05}      % fuente Palatino needs more leading (space between lines)
+\RequirePackage{palatino}  
+\RequirePackage{textcomp}  % caracteres especiales como ' (recto)
+\RequirePackage{hyperref}
+
+%%%%%%%%%%%%%%%%%% % % % % % % % % % % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{xcolor}
+\RequirePackage{graphicx}
+\RequirePackage{tikz}                 %
+\RequirePackage{epstopdf}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg,.gif, .eps}
+\RequirePackage{multicol} 
+\RequirePackage{amsmath,amssymb,amsfonts,latexsym,cancel,stmaryrd} %Soporte math smbolos-fonts.
+\RequirePackage[amsmath,thmmarks,hyperref]{ntheorem}
+\RequirePackage[ruled,,vlined,lined,linesnumbered,algochapter]{algorithm2e}
+\RequirePackage{float}
+\RequirePackage{subfigure}
+\RequirePackage{answers}
+% Uso
+	%\begin{sol} Solution text \end{sol}
+	%     end chapter -> \solutions  \solutionchap{1}
+\RequirePackage{anyfontsize}
+\RequirePackage{wboiboites}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\renewcommand{\baselinestretch}{1.1}
+\frenchspacing
+\thispagestyle{empty}
+\parindent=0mm
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\renewcommand{\contentsname}{Contenido}
+\renewcommand{\partname}{Parte}
+\renewcommand{\appendixname}{Apndice}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\chaptername}{Captulo}
+\renewcommand{\bibname}{Bibliografa}
+
+% COLOR con xcolor %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{styrmitcrfondocaja}{rgb}{0.92549, 0.92549, 1.}
+\definecolor{styrmitcrnblue}{rgb}{.0,.0,.3}
+\definecolor{styrmitcrnred}{rgb}{.8,.0,0}
+\definecolor{styrmitcrngris1}{rgb}{.5,.5,.5}
+\definecolor{styrmitcrngris2}{rgb}{.3,.3,.3}
+\definecolor{styrmitcrorange1}{rgb}{.9,.24,.16}
+\definecolor{styrmitcrorange2}{rgb}{0.91, 0.43, 0.0}
+\definecolor{styrmitcryelloworange}{cmyk}{0, 0.42, 1 ,0}
+\definecolor{styrmitcrbluefrance}{rgb}{0.1647, 0.4980, 1}
+\definecolor{styseudoindigo}{rgb}{0.345,0.1176,0.5490}
+\definecolor{styrmitcrcelestetxt}{rgb}{0, 0.4, 1}
+\definecolor{styrmitcrcitem}{rgb}{0.2, 0.5019, 1}
+\definecolor{styrmitcrtitlecajainterior}{rgb}{0.2156, 0.4431, 0.7843}
+\definecolor{styrmitcrbordecontenidointerior}{rgb}{0.1372, 0.1764, 0.4862} 
+\definecolor{styrmitcrcontenidointerior}{rgb}{0.9764, 0.9764, 0.9762}
+\definecolor{styrmitcrtxtgris}{rgb}{0.9568, 0.9333, 0.8431}
+\definecolor{styrmitcrwcajagray}{rgb}{0.2,0.2,0.2}
+\definecolor{styrmitcrwcgray1}{rgb}{0.2,0.2,0.2}
+\definecolor{styrmitcrwcgray2}{rgb}{0,0.1333,0.3333}
+\definecolor{styrmitcrwrojo}{rgb}{0.6078,0.019,0.141}
+\definecolor{styrmitcrazulmathcode}{rgb}{0,0.2,0.6}
+\definecolor{styrmitcrverdecomentario}{rgb}{0,0.5019,0}
+\definecolor{styrmitcrazulmetal}{rgb}{0,0.54,0.72}
+\definecolor{styrmitcrceleste}{rgb}{0.33,0.59,0.83}
+\definecolor{styrmitcrshadecolor}{rgb}{0.7,0.82,1} 
+\definecolor{styrmitcrverde}{rgb}{0,0.8,0.3}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % Layout
+\textheight=23cm
+\textwidth=18cm
+\topmargin=0cm
+\oddsidemargin=0pt
+\evensidemargin=0pt
+\parindent=1pc
+\parskip=0pt %plus .1pt
+\headheight 12pt
+\headsep 18pt
+\topskip  10pt
+\footskip 18pt
+\columnsep 10pt
+\columnseprule 0pt
+\footnotesep 6.65pt
+\skip\footins 18pt
+\floatsep 12pt plus 2pt minus 2pt
+\textfloatsep 20pt plus 2pt minus 4pt
+\intextsep 12pt plus 2pt minus 2pt
+\parindent=0mm
+% %Ejercicios
+\Newassociation{sol}{Soluc\'on}{ans}
+\newtheorem{exer}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Cabeceras
+\newcommand{\helv}{\fontfamily{phv}\fontsize{9}{11}\selectfont}
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markboth{\thesection\#1}}
+\fancyhf{} % borra cabecera y pie actuales
+\fancyhead[LE,RO]{\helv\thepage} %Left Even page - Right Odd page
+\fancyhead[LO]{\helv\rightmark}
+\fancyhead[RE]{\helv\leftmark}
+\renewcommand{\headrulewidth}{0pt} % Sin raya. Con raya?: cambiar {0} por {0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\headheight}{0.5pt} % espacio para la raya
+\fancypagestyle{plain}{%
+\fancyhead{} % elimina cabeceras y raya en pginas "plain"
+\renewcommand{\headrulewidth}{0pt} }
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % Pgina de Ttulo
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1pt\hfill \kern \z@}
+\renewcommand{\maketitle}{\begin{titlepage}%
+    \let\footnotesize\small
+    \let\footnoterule\relax
+    \parindent \z@
+    \reset@font
+    \null\vfil
+    \hrule height 4pt
+    \vskip 10\p@
+    \begin{flushright}
+      \LARGE 
+      \strut \@title \par
+      \vskip 30\p@
+      \normalfont
+      \@author
+    \end{flushright}
+    \vskip 5\p@
+    \hrule height 1pt
+    \vskip 60\p@
+    \vfil\null
+    \vfill
+    \begin{center}
+    %\IfFileExists{RevistaLogo.pdf}{\includegraphics{RevistaLogo.pdf}}{}%
+    \IfFileExists{images/RevistaLogo.pdf}{\includegraphics{images/RevistaLogo.pdf}}{}
+    \end{center}
+  \end{titlepage}%
+  \setcounter{footnote}{0}%
+}
+\makeatother
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+  
+%%Opciones de color en las cajas de teoremas, def, ejemplos, etc
+
+ \DeclareOption{tema1}{ 
+   \definecolor{styrmitcrtitlecajainterior2}{RGB}{74,0,148}
+   \definecolor{styrmitcrtitlecajainteriorDefTeo}{RGB}{115,0,132}
+   \definecolor{styrmitcrcontenidointeriorDefTeo}{RGB}{239,227,239}
+ }
+\DeclareOption{tema2}{
+ \definecolor{styrmitcrtitlecajainterior2}{RGB}{51,149,48}
+ \definecolor{styrmitcrtitlecajainteriorDefTeo}{RGB}{14,44,142}
+ \definecolor{styrmitcrcontenidointeriorDefTeo}{RGB}{249,249,249}
+}
+
+\DeclareOption{tema3}{
+				%Para ejemplo: bordes de las cajas+background cajita ttulo
+ \definecolor{styrmitcrtitlecajainterior2}{RGB}{204,96,0}
+                % Def, Teo: background cajita ttulo
+  \definecolor{styrmitcrtitlecajainteriorDefTeo}{RGB}{72,55,62}
+                % color background caja de texto teo, def, ejemplo 
+\definecolor{styrmitcrcontenidointeriorDefTeo}{RGB}{248,245,240}
+
+}
+
+\DeclareOption{tema4}{
+				%Para ejemplo: bordes de las cajas+background cajita ttulo
+ \definecolor{styrmitcrtitlecajainterior2}{RGB}{123,11,24}
+                % Def, Teo: background cajita ttulo
+  \definecolor{styrmitcrtitlecajainteriorDefTeo}{RGB}{72,55,62}
+                % color background caja de texto teo, def, ejemplo 
+\definecolor{styrmitcrcontenidointeriorDefTeo}{RGB}{248,245,240}
+
+}
+%Default options
+\ExecuteOptions{tema1}
+\ProcessOptions
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Entornos  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % bTeoremas, bdefiniciones,bejepmlos etc. (con wboiboites) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+  % Contadores para teoremas, def, ejemplos, etc. Usando wboiboites
+  \newcounter{DefinicionCounter}[chapter]
+  \newcounter{TeoremaCounter}[chapter]
+  \newcounter{EjemploCounter}[chapter]
+  %Formato del contador: capitulo.contador, como 3.11
+  \renewcommand{\theDefinicionCounter}{\thechapter.\arabic{DefinicionCounter}}
+  \renewcommand{\theTeoremaCounter}{\thechapter.\arabic{TeoremaCounter}}
+  \renewcommand{\theEjemploCounter}{\thechapter.\arabic{EjemploCounter}}
+
+% % comandos cortos
+\newcommand{\nuevoboiejemplo}[6]{ \newboxedtheorem[
+boxcolor=#3,
+ background=#4, 
+ titlebackground=#5,
+ titleboxcolor = #6, 
+ size = \textwidth]{#1}{#2}{EjemploCounter}}
+ 
+ \newcommand{\nuevoboidefi}[6]{ \newboxedtheorem[
+ boxcolor=#3,
+  background=#4, 
+  titlebackground=#5,
+  titleboxcolor = #6, 
+  size = \textwidth]{#1}{#2}{DefinicionCounter}}
+  
+\newcommand{\nuevoboiteo}[6]{ \newboxedtheorem[
+   boxcolor=#3,
+    background=#4, 
+    titlebackground=#5,
+    titleboxcolor = #6, 
+    size = \textwidth]{#1}{#2}{TeoremaCounter}}
+    
+\newcommand{\nuevoboicaja}[5]{ \newboxedtheorem[
+   boxcolor=#2,
+    background=#3, 
+    titlebackground=#4,
+    titleboxcolor = #5, 
+    size = \textwidth]{#1}{}{}}    
+
+ % % bejemplo  
+ \newboxedtheorem[boxcolor=styrmitcrtitlecajainterior2, background=styrmitcrcontenidointerior, titlebackground=styrmitcrtitlecajainterior2,
+ 		 titleboxcolor = styrmitcrtitlecajainterior2, size = \textwidth]{bejemplo}{\white Ejemplo}{EjemploCounter}%{thCounter}%{anything}	 
+ 		 
+ % %bejemplocont = continuacin de un ejemplo		  		 
+ \newenvironment{bejemplocont}{
+ \addtocounter{EjemploCounter}{-1} \begin{bejemplo}[\textbf{(continuacin).}]}{
+    \end{bejemplo}}		 
+    		 
+ \newcommand{\wbejemplo}[1]{\begin{bejemplo}#1\end{bejemplo}}	
+ \newcommand{\wbejemplocont}[1]{\begin{bejemplocont}#1\end{bejemplocont}}	 
+ 
+  % % bcaja  = solo una caja
+  \newboxedtheoremDefTeo[boxcolor=styrmitcrcontenidointeriorDefTeo, background=styrmitcrcontenidointeriorDefTeo, titlebackground=styrmitcrtitlecajainteriorDefTeo,
+   		 titleboxcolor = styrmitcrtitlecajainteriorDefTeo, size = \textwidth]{bcaja}{}{}%{thCounter}%{anything}
+ % %bdefi	 
+  \newboxedtheoremDefTeo[boxcolor=styrmitcrcontenidointeriorDefTeo, background=styrmitcrcontenidointeriorDefTeo, titlebackground=styrmitcrtitlecajainteriorDefTeo,
+  		 titleboxcolor = styrmitcrtitlecajainteriorDefTeo, size = \textwidth]{bdefi}{\white Definicin}{DefinicionCounter}%{thCounter}%{anything 
+ % % bteo	 
+  \newboxedtheoremDefTeo[boxcolor=styrmitcrcontenidointeriorDefTeo, background=styrmitcrcontenidointeriorDefTeo, titlebackground=styrmitcrtitlecajainteriorDefTeo,
+  		 titleboxcolor =styrmitcrtitlecajainteriorDefTeo, size = \textwidth]{bteo}{\white Teorema}{TeoremaCounter}%{thCounter}%{anything} 
+  		 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Teoremas, definiciones, (sin boiboites) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+\setcounter{chapter}{0}
+\RequirePackage[amsmath,thmmarks,hyperref]{ntheorem} 
+
+%Color nmero=##1,  ##2=Teorema (def, etc) y ##3=[Teorema tal]
+\makeatletter 
+\renewtheoremstyle{plain}% 
+{\item[\hskip\labelsep \theorem@headerfont \color{styrmitcrnblue} ##1\ {\color{styrmitcrnred}##2}\color{white}\theorem@separator]}% 
+{\item[\hskip\labelsep \theorem@headerfont \color{styrmitcrnblue} ##1\ {\color{styrmitcrnred} ##2}\ {\color{styrmitcrnblue}\normalfont(##3)}\color{white}\theorem@separator]}
+\makeatother 
+
+\newtheorem{teo}{Teorema}[chapter]
+\newtheorem{lema}{Lema}[chapter]
+\newtheorem{coro}{{Corolario}}[chapter]
+\newtheorem{defi}{Definicin}[chapter]
+\newtheorem{ejemplo}{Ejemplo}[chapter]
+                %\begin{ejemplocont} \end{ejemplocont} para la continuacin de un ejemplo
+\newenvironment{ejemplocont}{
+\addtocounter{ejemplo}{-1} \begin{ejemplo}[continuacin]}{
+   \end{ejemplo}}
+%\let\example\relax
+\theoremheaderfont{\small\sffamily\bfseries\color{styrmitcrnblue}}
+\theorembodyfont{\normalfont}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHApTER  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Agrega una figura "imagencapitulo.pdf" (si esta presente) a la izquierda de chapter %%%%%%%%%
+\RequirePackage{psboxit}
+\RequirePackage{pstricks}
+\makeatletter
+\def\@makechapterhead#1{%
+  {\parindent \z@ \raggedright \reset@font
+  \hbox to \hsize{%
+    \rlap{\raisebox{-2.5em}{\raisebox{\depth}{% 
+          \IfFileExists{imagencapitulo.pdf}{\includegraphics{imagencapitulo.pdf}}{}%
+          \IfFileExists{images/imagencapitulo.pdf}{\includegraphics{images/imagencapitulo.pdf}}{}
+          }}}
+    \rlap{\hbox to 6em{\hss
+        %\reset@font\sffamily\fontsize{12em}{12em}\selectfont\black
+        \reset@font\fontsize{12em}{12em}\selectfont\black
+        \thechapter\hss}}%
+    \hspace{10em}%
+    \vbox{%
+      \advance\hsize by -10em
+      \reset@font\bfseries\Huge\selectfont#1   %texto del ttulo
+      %\reset@font\fontfamily{hv}\bfseries\Huge\selectfont\red#1   %texto del ttulo
+      \par
+      }%
+    }}%
+  \vskip 5pt
+  \hrulefill
+  \vskip 50pt
+  }
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%  SECCIONES Y TITULO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\verde}{\color{miverde}}
+\newcommand{\mcaja}[1]{%
+{{\fboxsep 12pt \fboxrule 0pt%
+\fcolorbox{white}{white}{%
+\color{red} \huge #1}}} %color numeracin secciones
+}
+\newcommand{\ssection}[1]{\section[#1]{\mcaja{#1}}}
+
+\makeatletter
+\def\section{\@ifstar\unnumberedsection\numberedsection}
+\def\numberedsection{\@ifnextchar[%]
+  \numberedsectionwithtwoarguments\numberedsectionwithoneargument}
+\def\unnumberedsection{\@ifnextchar[%]
+  \unnumberedsectionwithtwoarguments\unnumberedsectionwithoneargument}
+
+\def\numberedsectionwithoneargument#1{\numberedsectionwithtwoarguments[#1]{#1}}
+\def\unnumberedsectionwithoneargument#1{\unnumberedsectionwithtwoarguments[#1]{#1}}
+\def\numberedsectionwithtwoarguments[#1]#2{%
+  \ifhmode\par\fi
+  \removelastskip
+  \vskip 3ex\goodbreak
+  \refstepcounter{section}%
+  \begingroup
+  %\noindent
+  \leavevmode\large\bfseries\raggedright\mcaja%caja aplica a number section
+  \thesection\ \color{styrmitcrnblue} #2\par\nobreak   %Color del texto de \section{texto}
+  \endgroup
+  \noindent\hrulefill\nobreak
+  \vskip 2ex\nobreak
+  \addcontentsline{toc}{section}{%
+    \protect\numberline{\thesection}%
+    #1}%
+  }
+\def\unnumberedsectionwithtwoarguments[#1]#2{%
+  \ifhmode\par\fi
+  \removelastskip
+  \vskip 3ex\goodbreak
+%  \refstepcounter{section}%
+  \begingroup
+  \noindent
+  \leavevmode\Large\bfseries\raggedright
+%  \thesection\
+  #2\par\nobreak
+  \endgroup
+  \noindent\hrulefill\nobreak
+  \vskip 0ex\nobreak
+  \addcontentsline{toc}{section}{%
+%    \protect\numberline{\thesection}%
+    #1}%
+  }
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% subsecciones  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\renewcommand{\subsection}{\@startsection{subsection}{2}{\z@}%
+                                     {-16pt plus -1pt minus -3pt
+}%
+                                     {8pt}%
+                                 {\reset@font\large\bfseries\boldmath\subsectionfont\color{styrmitcrnblue}}}
+\makeatother
+
+\makeatletter
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{\z@}%
+                                     {-12pt plus -1pt minus -6pt
+}%
+                                     {-1em}
+                           {\reset@font\normalsize\bfseries\boldmath\subsubsectionfont\color{styrmitcrnblue}}}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Listas tikz
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \newcommand{\tpto}{\tikz \shadedraw [shading=ball] (0,0) circle (.1cm);}
+  \newcommand{\ttpto}[1]{\begin{tikzpicture}
+  	\node[scale=.5, circle, shade, ball color=blue]  {\color{white}\Large\textbf#1};
+  \end{tikzpicture}}
+  \newcommand{\ttptov}{\begin{tikzpicture}
+  	\node[scale=.5, circle, shade, ball color=green]  {\color{white}\Large\textbf.};
+  \end{tikzpicture}}
+  \newcommand{\ttptor}{\begin{tikzpicture}
+  	\node[scale=.5, circle, shade, ball color=red]  {\color{white}\Large\textbf.};
+  \end{tikzpicture}}
+  \newcommand{\ptoazul}[1]{\begin{tikzpicture}
+  	\node[scale=.5, circle, shade, ball color=blue]  {\color{white}\Large\textbf#1};
+  \end{tikzpicture}}
+ \newcommand{\ptomb}{\ptoazul$\;$}
+ \newcommand{\itempto}{\item[\tpto]}
+ \newcommand{\pto}{\tpto}               
+ \newcommand{\ptom}{\tpto$\;$}
+ \newcommand{\ptomv}{\ttptov$\;$}
+ \newcommand{\ptomr}{\ttptor$\;$}
+ 
+ % %listas con puntos
+ \RequirePackage{enumitem}
+ \newcommand*{\itembolasgrises}[1]{%
+ \footnotesize\protect\tikz[baseline=-3pt]%
+ \protect\node[fill=gray!50,shape=circle,draw,inner sep=1.2pt,line width=0.2mm](n1){#1};}
+ \newcommand*{\itembolasazules}[1]{%
+ \footnotesize\protect\tikz[baseline=-3pt]%
+ \protect\node[scale=.5, circle, shade, ball color=blue]  {\color{white}\Large\bf#1};}
+ \newcommand*{\itembolasverdes}[1]{%
+ \footnotesize\protect\tikz[baseline=-3pt]%
+ \protect\node[scale=.5, circle, shade, ball color=green]  {\color{white}\Large\bf#1};}
+ \newcommand*{\itembolasrojas}[1]{%
+  \footnotesize\protect\tikz[baseline=-3pt]%
+  \protect\node[scale=.5, circle, shade, ball color=red]  {\color{white}\Large\bf#1};}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+\RequirePackage{fancyvrb}
+%\RequirePackage{minted}   %habilitar solo en Ubuntu (Linux) despus de instalar python y pygments. Windows 7 requiere detalles, ver manual minted
+\renewcommand{\theFancyVerbLine}{\sffamily
+	\textcolor[rgb]{0,0,0.5}{\scriptsize
+    \oldstylenums{\arabic{FancyVerbLine}}}}
+\RequirePackage{colortbl} 
+\RequirePackage{tabularx}
+
+ % %% \todo notes al margen
+ \RequirePackage[colorinlistoftodos, textwidth=2cm, shadow]{todonotes} %Notas 
+%\todo notes % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\setlength{\marginparwidth}{2cm} %\marginpar{...}
+\RequirePackage{tabularx}
+\def\imagetop#1{\vtop{\null\hbox{#1}}} % tablas con figuras
+\newcommand{\internet}{\ttptor$\;$\cfnte[pag][7]{Hacer clic en la figura para ver en 3D (en Internet)}}	
+
+% % % % % % % % % % % % % % % % %  TiKz adicionales % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+%\definecolor{clrBarra}{RGB}{55,55,200}
+%\definecolor{clrInterior}{RGB}{249,249,249}
+\usetikzlibrary{shapes,shapes.multipart} % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % Paralelogramo % % % % % % % % % % % % % % % % % % %
+\newcommand{\paralelogramo}{\begin{tikzpicture}
+\node [draw,trapezium,trapezium left angle=70,trapezium right angle=-70,minimum height=0.25cm] {};
+%\node [rectangle, draw, xslant=0.6] at (0,0) {};
+\end{tikzpicture}}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\renewcommand{\ttdefault}{pcr} % volver a ttfamily
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  \makeindex
+%1. ENTRADAS: \inx{word} OR \inx{w1\,w2}
+%2. Compila
+%3. The MS-DOS command  sort:  sort  manual.inx > manual.srt.
+%4. Corrregir .srt: > at the top of the srt file and a ~ al final.
+%5. \printindex (where you want the index to appear)
+%No usar \RequirePackage{makeidx}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+

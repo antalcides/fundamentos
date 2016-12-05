@@ -1,0 +1,64 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{Sweave}{}
+
+\RequirePackage{ifthen}
+\newboolean{Sweave@gin}
+\setboolean{Sweave@gin}{true}
+\newboolean{Sweave@ae}
+\setboolean{Sweave@ae}{true}
+
+\DeclareOption{nogin}{\setboolean{Sweave@gin}{false}}
+\DeclareOption{noae}{\setboolean{Sweave@ae}{false}}
+\ProcessOptions
+
+\RequirePackage{graphicx,fancyvrb,listings,color}
+\lstset{ frame=Ltb,
+     framerule=0pt,
+     aboveskip=0.5cm,
+     framextopmargin=3pt,
+     framexbottommargin=3pt,
+     framexleftmargin=0.4cm,
+     framesep=0pt,
+     rulesep=.4pt,
+     backgroundcolor=\color{gray97},
+     rulesepcolor=\color{black},
+     %
+     stringstyle=\ttfamily,
+     showstringspaces = false,
+     basicstyle=\small\ttfamily,
+     commentstyle=\color{gray45},
+     keywordstyle=\bfseries,
+     %
+     numbers=left,
+     numbersep=15pt,
+     numberstyle=\tiny,
+     numberfirstline = false,
+     breaklines=true,
+   }
+\definecolor{gray97}{gray}{.97}
+\definecolor{gray75}{gray}{.75}
+\definecolor{gray45}{gray}{.45}
+\lstdefinestyle{R}
+   {basicstyle=\scriptsize\bf\ttfamily,
+    backgroundcolor=\color{gray75},
+   }
+\IfFileExists{upquote.sty}{\RequirePackage{upquote}}{}
+\ifthenelse{\boolean{Sweave@gin}}{\setkeys{Gin}{width=0.8\textwidth}}{}%
+\ifthenelse{\boolean{Sweave@ae}}{%
+  \RequirePackage[T1]{fontenc}
+  \RequirePackage{ae}
+}{}%
+\lstnewenvironment{Sinput}
+{\lstset{style=R,}}
+{}
+%\DefineVerbatimEnvironment{Sinput}{Verbatim}{fontshape=sl}
+\DefineVerbatimEnvironment{Soutput}{Verbatim}{}
+\DefineVerbatimEnvironment{Scode}{Verbatim}{fontshape=sl}
+
+\newenvironment{Schunk}{}{}
+
+\newcommand{\Sconcordance}[1]{%
+  \ifx\pdfoutput\undefined%
+  \csname newcount\endcsname\pdfoutput\fi%
+  \ifcase\pdfoutput\special{#1}%
+  \else\immediate\pdfobj{#1}\fi}

@@ -1,0 +1,405 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\docLink{geometria19.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color {darkgray} {\small Circunferencia }} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color {darkgray} {\small Geometría del Espacio}} \\ \\ \\
+\end{tabular}
+\docLink{geometria22.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 3}}  {\large
+{\color{ azulc} MODULO DE GEOMETRÍA}}
+\end{center}
+
+\newline
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 3.17. }}
+{\normalsize {\color{naranja} Triángulos Semejantes}}
+
+\newline
+
+Se habla de figuras semejantes cuando tienen " la misma forma" y
+diferente tamaño, pero de manera mas precisa son semejantes si los
+ángulos correspondientes tienen la misma medida y la razón entre
+lados correspondientes se mantiene constante.
+
+\bigskip
+
+\[
+\includegraphics{imagenes/trigo1.gif}
+\]
+
+\bigskip
+
+\[
+\includegraphics{imagenes/trigo2.gif}
+\]
+
+\bigskip
+
+\[
+\includegraphics{imagenes/trigo3.gif}
+\]
+
+\bigskip
+
+De las anteriores figuras son semejantes 1 y 2, no son semejantes
+3 y 4, son semejantes 5 y 6, son semejantes 7 y 8 y no son
+semejantes 9 y 10.
+
+\bigskip
+
+Los triángulos  $ABC$  y  $QRS$  de la figura son {\bfseries
+semejantes} ($\Delta ABC\sim \Delta QRS$).
+\bigskip
+
+\[
+\includegraphics{imagenes/semejantes6.gif}
+\]
+
+\bigskip
+
+Comparando las dimensiones de sus lados correspondientes,
+observamos que:
+
+\bigskip
+
+$\frac{2}{1.5}=\frac{4}{3}=\frac{5}{3.75}$, es decir sus tres
+lados son proporcionales.
+
+\bigskip
+
+El resultado anterior es válido en general y se conoce como
+Teorema o Criterio de semejanza (Lado - Lado - Lado) LLL
+
+\bigskip
+
+\emph{Si los tres lados de un triángulo son proporcionales a los
+tres lados de un segundo triángulo, entonces los triángulos son
+semejantes.}
+
+\bigskip
+
+\[
+\includegraphics{imagenes/semejantes7.gif}
+\]
+
+\bigskip
+
+Si los tres lados del $\Delta XYZ$ son proporcionales a los tres
+lados del $\Delta ABC$ se cumple que:
+
+\bigskip
+
+\[\frac{XY}{AB}=\frac{YZ}{BC}=\frac{XZ}{AC}=k\]
+
+\bigskip
+
+Los lados del triángulo $XYZ$  son respectivamente $XY=kAB$,
+$YZ=kBC$ y $XZ=kAC$. En ese caso el triángulo $XYZ$ puede
+considerarse como una ampliación o una reducción del triángulo
+$ABC$ dependiendo del valor de $k$, pero en cualquier de los casos
+los triángulos resultan ser semejantes. Observa la figura.
+
+\bigskip
+
+\[
+\includegraphics{imagenes/semejantes8.gif}
+\]
+
+\bigskip
+
+\textbf{Ejemplo 3.10. }
+
+\bigskip
+
+\[
+\includegraphics{imagenes/semejantes9.gif}
+\]
+
+\bigskip
+
+\emph{Solución}:
+
+\bigskip
+
+Para aplicar el criterio anterior y determinar si dos triángulos
+son semejantes, basta ordenar las longitudes de los lados de cada
+triángulo y comparar las razones formadas por longitudes
+correspondientes.
+
+\bigskip
+
+En este caso las longitudes del triángulo mayor son, en orden de
+menor a mayor: 6, 8, 12 y las del triángulo menor son en el mismo
+orden 3, 4, 6.
+
+\bigskip
+
+Las razones correspondientes son entonces:
+
+\bigskip
+
+\[\frac{6}{3}=\frac{8}{4}=\frac{ 12}{6}.\]
+
+\bigskip
+
+Dado que son iguales los triángulos son semejantes. Si resulta mas
+claro podemos decir que el triángulo $OYU$ es una ampliación del
+triángulo $ALE$, o lo que es lo mismo el triángulo $ALE$ es una
+reducción del triángulo $OYU$.
+
+\bigskip
+
+Recordemos ahora otro criterio.
+
+\bigskip
+
+En la figura los dos triángulos tienen dos ángulos congruentes y
+se puede afirmar que también ellos son semejantes:
+
+\bigskip
+
+\[
+\includegraphics{imagenes/semejantes10.gif}
+\]
+
+\bigskip
+
+La afirmación anterior corresponde a un segundo criterio de
+semejanza AA (ángulo-ángulo), que se expresa en general de la
+siguiente manera:
+
+\bigskip
+
+\emph{Si dos ángulos de un triángulo son congruentes a dos ángulos
+de otro, entonces los triángulos son semejantes.}
+
+\bigskip
+
+Sean  $ABC$  y  $XYZ$  triángulos que satisfacen que  $\angle
+A\cong \angle Xy\angle B\cong \angle Y$:
+
+\bigskip
+
+\[
+\includegraphics{imagenes/semejantes11.gif}
+\]
+
+\bigskip
+
+Los ángulos congruentes determinan los vértices correspondientes y
+a su vez los vértices correspondientes determinan los lados
+correspondientes. Se tiene entonces que $X$ y $A$, $Y$ y $B$ son
+vértices correspondientes.
+
+\bigskip
+
+Por tanto los lados $\overline{XY}$ y $\overline{AB}$ son
+correspondientes. Sea $k=\frac{XY}{AB}$.
+
+\bigskip
+
+En la figura, se puede observar la transformación que se aplica al
+triángulo $ABC$, que conserva la medida de los ángulos.
+
+\bigskip
+
+\[
+\includegraphics{imagenes/semejantes12.gif}
+\]
+
+\bigskip
+
+Se tiene entonces que $A' B' = k\times AB=\frac{XY}{AB}\times AB =
+XY$.
+
+\bigskip
+
+Como la transformación conserva medida de los ángulos, $m\angle A'
+=m\angle X$  y $m\angle B \prime = m\angle Y$; de donde los
+triángulos $A' B' C'$ y $XYZ$ son congruentes y entonces el
+triángulo $ABC$ puede ser transformado en $XYZ$ al aplicar dos
+transformaciones sucesivas: una ampliación y una reflexión.
+
+\bigskip
+
+Lo anterior permite concluir que $\Delta ABC\cong \Delta XYZ$.
+
+\bigskip
+
+\textbf{Ejemplo 3.11. } Si en un determinado instante del día una
+estaca de un metro produce una sombra de 70cm de longitud. ¿Cuál
+será la altura de un árbol que en ese mismo instante produce una
+sombra de $3.4m$ de longitud?
+
+\bigskip
+
+\[
+\includegraphics{imagenes/semejantes13.gif}
+\]
+
+\bigskip
+
+\emph{Solución}:
+
+Asumiendo que los rayos del sol pueden ser considerados como
+paralelos. Se determinan triángulos rectángulos con ángulos agudos
+congruentes.
+
+\bigskip
+
+\[
+\includegraphics{imagenes/semejantes14.gif}
+\]
+
+\bigskip
+
+Por el criterio anterior, estos triángulos son semejantes, de
+donde se concluye que sus lados correspondientes son
+proporcionales.
+
+\bigskip
+
+\[\frac{1m}{70cm}=\frac{h}{3.4m}\]
+
+\bigskip
+
+Realizando conversión de unidades se tiene:
+
+\bigskip
+
+\[\frac{100cm}{70cm}=\frac{h}{340cm}\]
+
+\bigskip
+
+De donde
+
+\bigskip
+
+\begin{align*}
+70h&=34000\\
+h&=486cm
+\end{align*}
+
+\bigskip
+
+El árbol tiene entonces una altura aproximada de $4.9m$.
+
+\bigskip
+
+El tercer criterio importante para determinar la semejanza de
+triángulos es el llamado Lado-Ángulo-Lado (LAL).
+
+\bigskip
+
+\emph{Si en dos triángulos, las razones de dos pares de lados
+correspondientes son iguales y los ángulos que estos lados
+determinan son congruentes, entonces los triángulos son
+semejantes.}
+
+\bigskip
+
+\[
+\includegraphics{imagenes/semejantes15.gif}
+\]
+
+\bigskip
+
+Específicamente si en los triángulos $ABC$ y $XYZ$, se tiene que
+$\angle B \approx  \angle Y$ y  $\frac{AB}{XY}=\frac{BC}{YZ}$
+entonces  $\Delta ABC\approx \Delta XYZ$.
+
+\bigskip
+
+(El argumento de la demostración es similar al ilustrado en el
+criterio anterior).
+
+\bigskip
+
+\textbf{Ejemplo 3.12. }
+
+\bigskip
+
+En la figura, $T$ es el punto medio de $\overline{PS}$ y $Q$ es
+punto medio de  $\overline{PR}$.
+
+\bigskip
+
+Se afirma que $\Delta PTQ\approx \Delta PSR$. ¿Porqué?
+
+\bigskip
+
+\[
+\includegraphics{imagenes/semejantes16.gif}
+\]
+
+\bigskip
+
+\emph{Solución}:
+
+\bigskip
+
+$\frac{PT}{PS}=\frac{PQ}{PR}=\frac{1}{2}$, $\angle P$, incluido
+por estos lados es común a los dos triángulos.
+
+\bigskip
+
+Por tanto por el criterio LAL se tiene $\Delta PTQ\approx \Delta
+PSR$.
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+\docLink{geometria19.tex}{\includegraphics{../../images/navegacion/anterior.gif}}
+\begin{tabular}{l}
+{\color {darkgray} {\small Circunferencia }} \\ \\ \\
+\end{tabular} &
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color {darkgray} {\small Geometría del Espacio}} \\ \\ \\
+\end{tabular}
+\docLink{geometria22.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

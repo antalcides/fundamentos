@@ -1,0 +1,190 @@
+\documentclass[10pt]{article} %tipo documento y tipo letra
+
+\definecolor{azulc}{cmyk}{0.72,0.58,0.42,0.20} % color titulo
+\definecolor{naranja}{cmyk}{0.21,0.5,1,0.03} % color leccion
+
+\def\eje{\centerline{\textbf{ EJERCICIOS.}}} % definiciones propias
+
+\begin{document}
+
+\begin{quote}
+
+% inicio encabezado
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+&
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Adición y Multiplicación} \\ \\ \\
+\end{tabular}
+\docLink{reales2.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\\ \hline
+\end{tabular}
+}
+%fin encabezado
+
+%nombre capitulo
+\begin{center}
+\colorbox{azulc}{{\color{white} \large CAPÍTULO 1}}  {\large
+{\color{ azulc} LOS NUMEROS REALES}}
+\end{center}
+
+\newline
+
+El estudio de cualquier rama de las matemáticas requiere un buen
+conocimiento de las principales propiedades de los números reales,
+así como de propiedades especiales de algunos de sus subconjuntos
+más notables. El propósito de este capítulo es presentar el mínimo
+de nociones que consideramos indispensables para cubrir estas
+necesidades.
+
+\bigskip
+
+%nombre leccion
+
+\colorbox{naranja}{{\color{white} \normalsize  Lecci\'on 1.1. }}
+{\normalsize {\color{naranja} Una Visión Preliminar}}
+
+\bigskip
+
+La noción de número es una de las más fundamentales en
+matemáticas. Su origen se remonta a la antigüedad y a través de
+los siglos ha pasado por un largo proceso de extensión y de
+generalización.
+
+\bigskip
+
+Los números más simples, los que utilizamos para contar, son los
+\textit{enteros positivos}:
+
+\bigskip
+
+\[1,2,3,4,5,\ldots\]
+
+\bigskip
+
+Representamos el conjunto de los enteros positivos por
+$\mathbb{Z}^{+}$.
+
+\bigskip
+
+Si al conjunto de los enteros positivos le añadimos el número $0$,
+obtenemos el conjunto de los \textit{números naturales }que
+representamos por $\mathbb{N}$. Es decir,
+
+\bigskip
+
+\[\mathbb{N=\{}0,1,2,3,4,5,\ldots\}\]
+
+\bigskip
+
+Si a $\mathbb{N}$ le agregamos los inversos aditivos
+$-1,-2,-3,-4,-5,\ldots$ de los enteros positivos, obtenemos el
+conjunto de los \textit{números enteros} que representamos por
+$\mathbb{Z}$. Luego,
+
+\bigskip
+
+\[\mathbb{Z=\{}\ldots -5,-4,-3,-2,-1,0,1,2,3,4,5,\ldots\}\]
+
+\bigskip
+
+El conjunto de números más simple después de los enteros es el
+conjunto de los \textit{números racionales}. Los números
+racionales surgieron ante la necesidad de medir con bastante
+precisión distintas magnitudes tales como longitud, peso, tiempo y
+muchas otras. Un número es \textit{racional} si puede expresarse
+en la forma $\dfrac{p}{q}$ donde $p$ y $q$ son enteros con $q\neq
+0$. Como ejemplo de números racionales podemos citar:
+
+\bigskip
+
+\[\dfrac{1}{2},\dfrac{236}{43},\dfrac{2}{3},\dfrac{-5}{6},\dfrac{4}{1},
+\dfrac{-121}{15}\text{ y }\dfrac{12}{-6}\]
+
+\bigskip
+
+Observamos que los números racionales $\dfrac{4}{1}$ y
+$\dfrac{12}{-6}$ son simplemente los enteros $4$ y $-2$. En
+general, todo número entero es un número racional.
+
+\bigskip
+
+El conjunto de los números racionales lo representamos con el
+símbolo $\mathbb{Q}$.
+
+\bigskip
+
+Los griegos fueron conscientes de que los números racionales no
+son suficientes para medir todas las longitudes. Aunque ellos
+demostraron que $\sqrt{2}$ mide la longitud de la diagonal de un
+cuadrado de lado $1$, también probaron que $\sqrt{2}$ no puede
+escribirse como el cociente de dos enteros.
+
+\bigskip
+
+Los números que no son racionales, se llaman \textit{números
+irracionales}. En un contexto más avanzado, se puede demostrar que
+existen mucho más números irracionales que números racionales. Por
+el momento, podemos mencionar que si $r$ es un número racional y
+$r\neq 0$ entonces $r\sqrt{2}$ es un número irracional. La reunión
+de todos los números racionales y todos los números irracionales
+constituye el conjunto de los \textit{números reales} que
+representamos por $\mathbb{R}$.
+
+\bigskip
+
+Entre los conjuntos numéricos hasta ahora mencionados existen las
+siguientes relaciones:
+
+\bigskip
+
+\[\mathbb{Z}^{+}\mathbb{\subset N\subset Z\subset Q\subset R}\]
+
+\bigskip
+
+donde $\subset$ representa la inclusión entre conjuntos. En todos
+los casos la inclusión es estricta.
+
+\bigskip
+
+También es conveniente mencionar que el conjunto de los números
+irracionales es el complemento del conjunto de los números
+racionales con respecto a $\mathbb{R}$. Por lo tanto si
+representamos por $\mathbb{I}$ el conjunto de todos los números
+irracionales, tenemos la relación
+
+\bigskip
+
+\[\mathbb{R=Q\cup I}\]
+
+
+%Pie de página
+\newline
+
+{\color{gray}
+\begin{tabular}{@{\extracolsep{\fill}}lcr}
+\hline \\
+&
+\docLink[_top]{../../index.html}{\includegraphics{../../images/navegacion/inicio.gif}}
+\docLink{../../docs_curso/contenido.html}{\includegraphics{../../images/navegacion/contenido.gif}}
+\docLink{../../docs_curso/descripcion.html}{\includegraphics{../../images/navegacion/descripcion.gif}}
+\docLink{../../docs_curso/profesor.html}{\includegraphics{../../images/navegacion/profesor.gif}}
+& \begin{tabular}{r}
+{\color{darkgray}\small Adición y Multiplicación} \\ \\ \\
+\end{tabular}
+\docLink{reales2.tex}{\includegraphics{../../images/navegacion/siguiente.gif}}
+\end{tabular}
+}
+
+\end{quote}
+
+\newline
+
+\begin{flushright}
+\includegraphics{../../images/interfaz/copyright.gif}
+\end{flushright}
+\end{document}

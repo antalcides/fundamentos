@@ -1,0 +1,197 @@
+%Identificacion
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{marco}[2012/12/14 Teoremas con marco. Antalcides Olivo]
+%%
+%% Este trabajo fue inspirado en los trabajos realizados por:
+%%1. boboite
+%
+%%2. Title: Nice shaded/framed paragraphs using tikz and framed
+%%:Tags: Decorations; Shadings
+%%:Author: Jose Luis Diaz
+%%:Slug: framed-tikz
+%%.....
+%%
+%declaracion de paquetes
+\RequirePackage{comment}
+\RequirePackage{xcolor}
+\RequirePackage{xkeyval}
+\RequirePackage{xargs}
+\RequirePackage{tikz,pgf}
+\RequirePackage{verbatim}
+\RequirePackage{framed}
+\RequirePackage[thref,thmmarks,framed, amsthm]{ntheorem}
+\RequirePackage{amsmath}
+%\RequirePackage{amsthm}
+\RequirePackage[framemethod=tikz]{mdframed}
+\RequirePackage{etoolbox}
+\RequirePackage{xparse}
+\RequirePackage{ifmtarg}% http://ctan.org/pkg/ifmtarg
+\RequirePackage{xifthen}% http://ctan.org/pkg/xifthen
+\RequirePackage{environ}% http://ctan.org/pkg/environ
+\RequirePackage{multido}% http://ctan.org/pkg/multido
+\RequirePackage{xkeyval}
+\RequirePackage{ifthen}
+\RequirePackage{hhline}
+\RequirePackage{multirow} 
+\RequirePackage{colortbl}
+\RequirePackage{calc}
+\RequirePackage{verbatim}
+\RequirePackage{listing}
+%\RequirePackage[framed,amsthm]{ntheorem}
+%librerias de Tikz
+\usetikzlibrary{shadows}
+\usetikzlibrary{shapes}
+%\usetikzlibrary{decoration}
+%%(================= primer marco ============================)
+%%%(==========================================================:)
+% % % % % % % % % % % %
+%\makeatletter
+% % % % % % % % % % % %
+\define@key{boxedtheorem}{titlecolor}{\def\titlecolor{#1}}
+\define@key{boxedtheorem}{titlebackground}{\def\titlebackground{#1}}
+\define@key{boxedtheorem}{background}{\def\background{#1}}
+\define@key{boxedtheorem}{titleboxcolor}{\def\titleboxcolor{#1}}
+\define@key{boxedtheorem}{boxcolor}{\def\boxcolor{#1}}
+\define@key{boxedtheorem}{thcounter}{\def\thcounter{#1}}
+\define@key{boxedtheorem}{title}{\def\title{#1}}
+\define@key{boxedtheorem}{size}{\def\size{#1}}
+\define@key{boxedtheorem}{labelbox}{\def\labelbox{#1}}
+\define@key{boxedtheorem}{shad}{\def\shad{#1}}
+\define@key{boxedtheorem}{enun}{\def\enun{#1}}
+\presetkeys{boxedtheorem}{title=,titlecolor = black, titlebackground = white, background = Gray!20,%
+                         titleboxcolor = black, boxcolor = black, thcounter=,labelbox=, size = .9\textwidth ,shad=black ,enun=}{}
+   \newdimen\errorsize 
+   \errorsize=0.2pt
+                         % % % % % % % % % % % % % % % % % % % % %
+% % % % % original -----------------------------------------------------------------------
+
+
+
+% % %TT-----------------------------------------------------------------------------------
+% % % % Nuevo ____&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+\newcommand\LabFrame[2]{ %
+%\fboxrule=\FrameRule
+%\fboxsep=-\errorsize
+
+\setkeys{boxedtheorem}{#1}
+\tikzstyle{mybox}=[draw=\boxcolor,fill=\background ,ultra thick , rectangle , rounded corners , inner sep =10pt , inner ysep=20pt]
+\tikzstyle{fancytitle}=[draw=\titleboxcolor ,very thick , rounded corners , fill=\titlebackground ,text=\titlecolor]
+\hspace{-20pt}
+\begin{tikzpicture}
+\node[mybox](box){ %
+\begin{minipage}{0.7\textwidth}
+ \vbox{#2}
+\end{minipage}
+               }; %
+        \node[fancytitle,right=10pt]at (box.north west){\title};
+        \node[fancytitle,left=10pt]at (box.north east){\labelbox};
+\end{tikzpicture}
+                     }
+% % % % % % % % % % % _____________$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+    \newenvironment{marco}[1]{% 
+      % Optional continuation label defaults to the first label plus
+           %\def\Frame@Lab{#1}%
+%        \fboxrule=\FrameRule 
+%        \fboxsep=\FrameSep   
+      \def\FrameCommand##1{ %\hskip\rightmargin \hskip\leftmargin
+          \LabFrame{#1}{##1}}%
+      \def\FirstFrameCommand{ %\hskip\rightmargin \hskip\leftmargin
+                \LabFrame{#1}}%
+      \def\MidFrameCommand{\LabFrame{#1,labelbox=  (Continuaci\'on)}}%
+      \def\LastFrameCommand{\LabFrame{#1,labelbox=  (Continuaci\'on)}}%
+      \MakeFramed{\FrameRestore} 
+    }{ \endMakeFramed} 
+  % % %----------------------------------
+%  \newcommand{\couleurs}[1][]{%
+%      \setkeys{boxedtheorem}{#1}
+%  }
+\newcommand\thmetiq[1][]{#1}
+     \newcommand{\newboxedtheorem}[2][]{%
+  
+  \newcounter{#2}[section]
+            
+                         \newenvironment{#2}[2][]{%
+           \refstepcounter{#2}
+            %\newcommand{\titulo@b}{ \thesection .\csname the#2\endcsname}
+                  \begin{marco}{#1 ,labelbox=\thmetiq{##2}
+                  }      
+      
+      }%
+      {%
+      \end{marco}
+      }
+
+ 
+  }
+  %%(================= Final del primer marco
+  % % % % % % :(========== variacion del primer marco ========
+  \newcommand\LabFramenew[2]{ %
+  %\fboxrule=\FrameRule
+  %\fboxsep=-\errorsize
+  
+  \setkeys{boxedtheorem}{#1}
+  \tikzstyle{mybox}=[draw=\boxcolor,fill=\background ,ultra thick , rectangle , rounded corners , inner sep =10pt , inner ysep=20pt]
+  \tikzstyle{fancytitle}=[draw=\titleboxcolor ,very thick , rounded corners , fill=\titlebackground ,text=\titlecolor]
+  \hspace{-10pt}
+  \begin{tikzpicture}
+  \node[mybox](box){ %
+  %\begin{minipage}{0.8\textwidth}
+   \vbox{#2}
+  %\end{minipage}
+                 }; %
+          \node[fancytitle,right=10pt]at (box.north west){\title};
+          %\node[fancytitle,left=10pt]at (box.north east){\labelbox};
+  \end{tikzpicture}
+                       }
+  % % % % % % % % % % % _____________$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+      \newenvironment{marconew}[1]{% 
+        % Optional continuation label defaults to the first label plus
+             %\def\Frame@Lab{#1}%
+  %        \fboxrule=\FrameRule 
+  %        \fboxsep=\FrameSep   
+        \def\FrameCommand##1{ %\hskip\rightmargin \hskip\leftmargin
+            \LabFramenew{#1}{##1}}%
+        \def\FirstFrameCommand{ %\hskip\rightmargin \hskip\leftmargin
+                  \LabFramenew{#1}}%
+        \def\MidFrameCommand{\LabFrame{#1,labelbox=  (Continuaci\'on)}}%
+        \def\LastFrameCommand{\LabFrame{#1,labelbox=  (Continuaci\'on)}}%
+        \MakeFramed{\FrameRestore} 
+      }{ \endMakeFramed} 
+        % % % % %
+        \newcommand{\nboxedtheorem}[3][]{%
+          \newcounter{#2}[section]
+                    \def\nombre@a{#3}
+                                 \newenvironment{#2}[1][]{%
+                   \refstepcounter{#2}
+                    \def\titulo@a{\nombre@a\ \thesection .\csname the#2\endcsname}
+                          \begin{marconew}{#1, title=\titulo@a  
+                          }      
+                            }%
+              {%
+              \end{marconew}
+              }
+        
+         
+          }
+\InputIfFileExists{tipp.def}{}{}
+\InputIfFileExists{hojar.def}{}{}
+\InputIfFileExists{beamerbox.def}{}{}
+\InputIfFileExists{cuadrof.def}{}{}
+\InputIfFileExists{frame-box.def}{}{}
+\InputIfFileExists{marco.def}{}{}
+\InputIfFileExists{warning.def}{}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\InputIfFileExists{enunciado.def}{}{}
+%\InputIfFileExists{enun.def}{}{}
+\InputIfFileExists{mycolorbox.def}{}{}
+\InputIfFileExists{mark-fancy.def}{}{}
+\InputIfFileExists{myframe.def}{}{}
+\InputIfFileExists{bclogof.def}{}{}
+\InputIfFileExists{barfancy.def}{}{}
+\InputIfFileExists{extframe.def}{}{}
+\InputIfFileExists{cuadrofancy.def}{}{}
+  %  ================ Final de la variacion del primer marcp ===:)
+\endinput
+%%
+%% End of file `minted.sty'.
+   
